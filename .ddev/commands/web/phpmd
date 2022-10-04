@@ -1,0 +1,13 @@
+#!/bin/bash
+
+## Description: Runs phpmd
+## Usage: phpmd
+## Example: "ddev phpmd"
+cd $DDEV_DOCROOT && cd ..
+composer run-script phpmd-local
+if [ $? == "0" ]; then
+  echo "No errors were found.";
+  rm -rf phpmd-report.json;
+else
+  echo "Results for PHPMD are in the phpmd-report.json in the project root.";
+fi

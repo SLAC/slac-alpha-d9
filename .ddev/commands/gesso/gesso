@@ -1,0 +1,32 @@
+#!/bin/bash
+
+## Description: Run Gesso commands to rebuild the theme
+## Usage: gesso install|build|deploy|watch|(some other command in the theme service)
+## Example: "ddev gesso watch"
+
+case $1 in
+  install)
+    npm ci
+  ;;
+  build)
+    npm run build
+  ;;
+  deploy)
+    npm run build-storybook
+  ;;
+  eslint)
+    npx eslint source/**/!\(*.stories\).js
+  ;;
+  stylelint)
+    npx stylelint "source/**/*.scss"
+  ;;
+  watch)
+    npm run dev
+  ;;
+  "")
+    echo "Usage: gesso install|build|deploy|watch|(some other command in the theme service)"
+  ;;
+  *)
+    "$@"
+  ;;
+esac

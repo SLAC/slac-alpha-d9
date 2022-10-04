@@ -1,0 +1,23 @@
+version: '3.6'
+services:
+  gesso:
+    container_name: ddev-${DDEV_SITENAME}-gesso
+    image: node:14
+    command: "sleep infinity"
+    expose:
+      - 6006
+    volumes:
+      - ./../web/themes/gesso:/var/www/html/web/themes/gesso:cached
+      - ".:/mnt/ddev_config"
+    working_dir: /var/www/html/web/themes/gesso
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    environment:
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
+      - HTTP_EXPOSE=6006:6006
+      - HTTPS_EXPOSE=6007:6006
+    networks: [default, ddev_default]
+  web:
+    links:
+      - gesso:gesso

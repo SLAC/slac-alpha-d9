@@ -1,93 +1,172 @@
 {
-    "name": "pantheon-upstreams/drupal-composer-managed",
-    "description": "Install Drupal 9 with Composer on Pantheon.",
+    "name": "forumone/drupal-project-pantheon",
+    "description": "Project template for Drupal projects with composer for pantheon",
     "type": "project",
-    "license": "MIT",
+    "license": "GPL-2.0-or-later",
     "repositories": [
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "path",
-            "url": "upstream-configuration"
         }
     ],
     "require": {
-        "pantheon-upstreams/upstream-configuration": "dev-main",
-        "composer/installers": "^1.9",
-        "drupal/core-composer-scaffold": "^9.2",
-        "drupal/core-recommended": "^9.2",
-        "pantheon-systems/drupal-integrations": "^9",
+        "php": ">=7.3",
+        "composer/installers": "^1.10",
         "cweagans/composer-patches": "^1.7",
-        "drush/drush": "^11 || ^12"
+        "drupal/address": "^1.9",
+        "drupal/admin_toolbar": "^3.0",
+        "drupal/allowed_formats": "^1.3",
+        "drupal/anchor_link": "^2.5",
+        "drupal/ckeditor_indentblock": "^1.0@beta",
+        "drupal/components": "^2.4",
+        "drupal/config_direct_save": "^2.1",
+        "drupal/config_split": "^1.7",
+        "drupal/contact_storage": "^1.1",
+        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-recommended": "^9",
+        "drupal/core-vendor-hardening": "^9",
+        "drupal/devel": "^4.1",
+        "drupal/diff": "^1.0",
+        "drupal/entityqueue": "^1.2",
+        "drupal/facets": "^1.8",
+        "drupal/field_group": "^3.2",
+        "drupal/focal_point": "^1.5",
+        "drupal/google_tag": "^1.4",
+        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/libraries": "^3.0@beta",
+        "drupal/login_history": "^1.0",
+        "drupal/maxlength": "^2.0@RC",
+        "drupal/metatag": "^1.16",
+        "drupal/pantheon_advanced_page_cache": "^1.2",
+        "drupal/paragraphs": "^1.12",
+        "drupal/password_policy": "^3.0",
+        "drupal/pathauto": "^1.8",
+        "drupal/rabbit_hole": "^1.0@beta",
+        "drupal/redirect": "^1.6",
+        "drupal/redis": "^1.5",
+        "drupal/save_edit": "^1.3",
+        "drupal/search_api": "^1.21",
+        "drupal/simple_sitemap": "^3.11",
+        "drupal/twig_field_value": "^2.0",
+        "drupal/twig_tweak": "^3.1",
+        "drupal/username_enumeration_prevention": "^1.2",
+        "drush/drush": "^9.7.1 | ^10.0.0",
+        "joachim-n/composer-manifest": "^1",
+        "pantheon-systems/drupal-integrations": "^9.0",
+        "rvtraveller/qs-composer-installer": "^1.2",
+        "vlucas/phpdotenv": "^4.0",
+        "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "drupal/core-dev": "^9.2"
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+        "drupal/console": "^1.0.2",
+        "drupal/core-dev": "^9",
+        "drupal/coder": "^8.3",
+        "phpmd/phpmd": "2.10.2",
+        "phpspec/prophecy-phpunit": "^2",
+        "squizlabs/php_codesniffer": "^2.7 || ^3"
     },
     "conflict": {
-            "drupal/drupal": "*"
+        "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
-    "extra": {
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "./web"
-            },
-            "allowed-packages": [
-                "pantheon-systems/drupal-integrations"
-            ],
-            "file-mapping": {
-                "[project-root]/.editorconfig": false,
-                "[project-root]/pantheon.upstream.yml": false,
-                "[project-root]/.gitattributes": false
-            }
-        },
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
-        },
-        "composer-exit-on-patch-failure": true,
-        "patchLevel": {
-            "drupal/core": "-p2"
-        }
-    },
-    "autoload": {
-        "classmap": [
-            "upstream-configuration/scripts/ComposerScripts.php"
-        ]
-    },
-    "scripts": {
-        "pre-update-cmd": [
-            "DrupalComposerManaged\\ComposerScripts::preUpdate"
-        ],
-        "upstream-require": [
-            "DrupalComposerManaged\\ComposerScripts::upstreamRequire"
-        ]
-    },
-    "scripts-descriptions": {
-        "upstream-require": "Add a dependency to an upstream. See https://pantheon.io/docs/create-custom-upstream for information on creating custom upstreams."
-    },
     "config": {
-        "preferred-install": "dist",
-        "sort-packages": false,
+        "sort-packages": true,
         "platform": {
-            "php": "7.4"
+            "ext-gd": "1.0.0",
+            "ext-opcache": "1.0.0",
+            "ext-pdo": "1.0.0"
         },
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-vendor-hardening": true,
+            "drupal/console-extend-plugin": true,
+            "joachim-n/composer-manifest": true,
+            "rvtraveller/qs-composer-installer": true
+        }
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": [
+            "load.environment.php"
+        ]
+    },
+    "scripts": {
+        "build-assets": [
+            "composer install --optimize-autoloader --no-dev"
+        ],
+        "lint": "find web/modules/custom web/themes/custom -name '*.php' -exec php -l {} \\;",
+        "phpmd": [
+            "phpmd . json phpmd.xml.dist --exclude \"web/private/*,modules/contrib/*,drush/*,vendor/*,web/core*,web/private/*,scripts/*\""
+        ],
+        "phpmd-local": [
+            "@phpmd --reportfile phpmd-report.json"
+        ],
+        "code-sniff": [
+            "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
+            "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/themes/custom",
+            "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
+            "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/themes/custom"
+        ],
+        "unit-test": "echo 'No unit test step defined.'",
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-create-project-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "patches-file": "composer.patches.json",
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "drupal-scaffold": {
+            "allowed-packages": [
+                "pantheon-systems/drupal-integrations"
+            ],
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "installer-paths": {
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "harvesthq/chosen",
+                "type:npm-asset"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
         }
     }
 }
