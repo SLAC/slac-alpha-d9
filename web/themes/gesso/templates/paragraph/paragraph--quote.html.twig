@@ -1,0 +1,18 @@
+{% set quote %}
+{% include '@components/quote/quote.twig' with {
+  quote_image: content.field_image|field_value,
+  quote_author: content.field_text|field_value,
+  quote_author_desc: content.field_short_text|field_value,
+  quote_link: content.field_link|field_value,
+  quote_content: content|without('field_image', 'field_short_text', 'field_text', 'field_link'),
+  has_constrain: true,
+} %}
+{% endset %}
+
+{% if is_nested %}{{ quote }}{% else %}
+  {% include '@layouts/section/section.twig' with {
+    section_content: quote,
+    modifier_classes: 'l-section--no-padding',
+    has_constrain: true
+  } %}
+{% endif %}

@@ -1,0 +1,26 @@
+uuid: 78dcc830-684d-4692-af27-609d369c8691
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.media_usage_information
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: site_setting_entity.media_usage_information.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: media_usage_information
+label: Body
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

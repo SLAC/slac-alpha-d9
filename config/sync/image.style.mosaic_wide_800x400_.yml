@@ -1,0 +1,17 @@
+uuid: e9e121da-6c29-48a3-876c-17a56e2c88ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: mosaic_wide_800x400_
+label: 'Mosaic Wide (800x400)'
+effects:
+  d71fbbfd-457e-446f-a227-fe686f3c4eab:
+    uuid: d71fbbfd-457e-446f-a227-fe686f3c4eab
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 400
+      crop_type: focal_point

@@ -1,0 +1,157 @@
+uuid: 13ed7564-de8c-493d-9511-6c7dd85d84bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_content
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.callout_box
+    - paragraphs.paragraphs_type.content_embed
+    - paragraphs.paragraphs_type.embed_block
+    - paragraphs.paragraphs_type.embed_full_html_
+    - paragraphs.paragraphs_type.embed_view
+    - paragraphs.paragraphs_type.extra_large_card
+    - paragraphs.paragraphs_type.fifty_fifty
+    - paragraphs.paragraphs_type.fifty_fifty_staggered
+    - paragraphs.paragraphs_type.image_carousel
+    - paragraphs.paragraphs_type.image_embed
+    - paragraphs.paragraphs_type.overlap_image
+    - paragraphs.paragraphs_type.promo_box
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.tout
+    - paragraphs.paragraphs_type.video_lightbox
+    - paragraphs.paragraphs_type.wide_card
+    - paragraphs.paragraphs_type.wysiwyg
+    - taxonomy.vocabulary.event_type
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.event_type.field_content
+field_name: field_content
+entity_type: taxonomy_term
+bundle: event_type
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion: accordion
+      callout_box: callout_box
+      content_embed: content_embed
+      embed_block: embed_block
+      embed_full_html_: embed_full_html_
+      embed_view: embed_view
+      extra_large_card: extra_large_card
+      fifty_fifty: fifty_fifty
+      fifty_fifty_staggered: fifty_fifty_staggered
+      image_carousel: image_carousel
+      image_embed: image_embed
+      overlap_image: overlap_image
+      promo_box: promo_box
+      quote: quote
+      section: section
+      tout: tout
+      video_lightbox: video_lightbox
+      wide_card: wide_card
+      wysiwyg: wysiwyg
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 32
+        enabled: true
+      accordion_item:
+        weight: 33
+        enabled: false
+      article_hero:
+        weight: 34
+        enabled: false
+      callout_box:
+        weight: 35
+        enabled: true
+      card:
+        weight: 36
+        enabled: false
+      content_embed:
+        weight: 37
+        enabled: true
+      embed_block:
+        weight: 38
+        enabled: true
+      embed_full_html_:
+        weight: 39
+        enabled: true
+      embed_view:
+        weight: 40
+        enabled: true
+      extra_large_card:
+        weight: 41
+        enabled: true
+      fifty_fifty:
+        weight: 42
+        enabled: true
+      fifty_fifty_staggered:
+        weight: 43
+        enabled: true
+      image_carousel:
+        weight: 44
+        enabled: true
+      image_embed:
+        weight: 45
+        enabled: true
+      image_hero:
+        weight: 46
+        enabled: false
+      microsite_hero:
+        weight: 47
+        enabled: false
+      microsite_navigation_marker:
+        weight: 48
+        enabled: false
+      overlap_image:
+        weight: 49
+        enabled: true
+      promo_box:
+        weight: 50
+        enabled: true
+      quote:
+        weight: 51
+        enabled: true
+      section:
+        weight: 52
+        enabled: true
+      small_card_with_icon:
+        weight: 53
+        enabled: false
+      small_card_with_image:
+        weight: 54
+        enabled: false
+      small_card_with_solid_background:
+        weight: 55
+        enabled: false
+      table_of_contents:
+        weight: 56
+        enabled: false
+      text_block:
+        weight: 57
+        enabled: true
+      tout:
+        weight: 58
+        enabled: true
+      video_hero:
+        weight: 59
+        enabled: false
+      video_lightbox:
+        weight: 60
+        enabled: true
+      wide_card:
+        weight: 61
+        enabled: true
+      wysiwyg:
+        weight: 62
+        enabled: true
+field_type: entity_reference_revisions

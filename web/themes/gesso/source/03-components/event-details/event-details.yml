@@ -1,0 +1,27 @@
+---
+event_type: 'Lecture'
+start_date:
+  month: 'Apr'
+  day: '19'
+end_date: null
+image: '<img src="http://fpoimg.com/600x600?text=" alt="Close-up shot of a telescope lens">'
+calendar_link_url: '#0'
+calendar_link_text: |-
+  Thursday, March 25, 2022<br>
+  1:00 &ndash; 3:00 p.m. PT
+map_link_text: '123 Fastest Way, Menlo Park, CA 94025'
+map_link_url: '#0'
+ctas:
+  - url: '#0'
+    text: 'Join us on Zoom'
+  - url: '#0'
+    text: 'Zoom Intl. (passcode: 6650650)'
+zoom_details: |-
+  <b>Meeting ID:</b> 963 7597 6345<br>
+  <b>Password:</b> 650650<br>
+  <b>iPhone one-tap (US Toll):</b> +18333021536, 97744554730# or +16507249799, 97744554730#<br>
+  <b>Telephone: Dial:</b> +1 650 724 9799 (US, Canada, Caribbean Toll) or +1 833 302 1536 (US, Canada, Caribbean Toll Free)
+additional_links:
+  - '<a href="#0" class="c-event-details__link">Event Poster</a>'
+  - '<a href="#0" class="c-event-details__link">SLAC Campus Map</a>'
+  - '<a href="#0" class="c-event-details__link">Stanford University Campus Map</a>'

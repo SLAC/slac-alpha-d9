@@ -1,0 +1,19 @@
+uuid: b224af0b-9b71-4d40-a608-c6818901a6b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.image_hero
+id: paragraph.image_hero.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: image_hero
+label: Kicker
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

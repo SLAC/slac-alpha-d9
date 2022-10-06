@@ -1,0 +1,24 @@
+uuid: 256442fd-430f-4bab-949b-31a5879bb856
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video_lightbox.field_video
+    - paragraphs.paragraphs_type.video_lightbox
+  module:
+    - media_library
+id: paragraph.video_lightbox.default
+targetEntityType: paragraph
+bundle: video_lightbox
+mode: default
+content:
+  field_video:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

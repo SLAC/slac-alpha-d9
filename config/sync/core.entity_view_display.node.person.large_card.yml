@@ -1,0 +1,95 @@
+uuid: 566d41eb-7b9d-4b1c-9fe0-ede80b9f3cf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.large_card
+    - field.field.node.person.field_body
+    - field.field.node.person.field_boolean
+    - field.field.node.person.field_image
+    - field.field.node.person.field_link
+    - field.field.node.person.field_links
+    - field.field.node.person.field_long_text
+    - field.field.node.person.field_teaser
+    - field.field.node.person.field_text
+    - field.field.node.person.field_text_title
+    - node.type.person
+  module:
+    - slac_core
+    - user
+id: node.person.large_card
+targetEntityType: node
+bundle: person
+mode: large_card
+content:
+  field_body:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_text_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_boolean: true
+  field_link: true
+  field_links: true
+  field_long_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,10 @@
+uuid: 740cbc1d-a960-4319-b943-3a1f50dae93c
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.large_image
+label: 'Large Image'
+targetEntityType: paragraph
+cache: true

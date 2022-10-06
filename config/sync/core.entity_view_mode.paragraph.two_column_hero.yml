@@ -1,0 +1,10 @@
+uuid: a4f19ea9-f536-44ba-aeee-9303218e0196
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.two_column_hero
+label: 'Two-Column Hero'
+targetEntityType: paragraph
+cache: true

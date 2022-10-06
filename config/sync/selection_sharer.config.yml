@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: 1p4ujWNTUVk9JMkt8QntsHVHzxVbWFSFo93hS7rntC4
+selection_sharer:
+  jquery_selectors: body
+jquery_selectors: |-
+  div
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
+  p

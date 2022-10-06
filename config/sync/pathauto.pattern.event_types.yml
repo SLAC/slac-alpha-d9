@@ -1,0 +1,22 @@
+uuid: 5deded5a-4541-46dc-bceb-2e5117fc72de
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: event_types
+label: 'Event Types'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/news-and-events/events/[term:name]'
+selection_criteria:
+  6e5b3c82-7137-4c59-a91b-4b703d589229:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 6e5b3c82-7137-4c59-a91b-4b703d589229
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      event_type: event_type
+selection_logic: and
+weight: -5
+relationships: {  }

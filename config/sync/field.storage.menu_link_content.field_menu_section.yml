@@ -1,0 +1,36 @@
+uuid: c89ed50e-c7b3-415b-96a6-d94d93e2287b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+    - options
+id: menu_link_content.field_menu_section
+field_name: field_menu_section
+entity_type: menu_link_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: about
+      label: About
+    -
+      value: research
+      label: Research
+    -
+      value: facilities-centers
+      label: 'Facilities & Centers'
+    -
+      value: partner-with-us
+      label: 'Work with Us'
+    -
+      value: news-events
+      label: 'News & Events'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

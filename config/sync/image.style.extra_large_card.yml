@@ -1,0 +1,17 @@
+uuid: b78ea85c-ea8b-48e0-b36c-d396c33de59f
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: extra_large_card
+label: 'Extra Large Card (1340x600)'
+effects:
+  cbcdc31c-0a90-4770-a933-4c34bfcbfed2:
+    uuid: cbcdc31c-0a90-4770-a933-4c34bfcbfed2
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1340
+      height: 600
+      crop_type: focal_point

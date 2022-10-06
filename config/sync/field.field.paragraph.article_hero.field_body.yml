@@ -1,0 +1,26 @@
+uuid: 5112931d-8298-484f-9c7e-30cc7c208f0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.article_hero
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.article_hero.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: article_hero
+label: Caption
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

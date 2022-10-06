@@ -1,0 +1,10 @@
+uuid: 3152d60f-c3e6-480f-ac63-3e1d8c9a6a12
+langcode: en
+status: true
+dependencies: {  }
+id: tout
+label: Tout
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

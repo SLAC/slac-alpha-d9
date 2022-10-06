@@ -1,0 +1,10 @@
+uuid: 1083f757-8619-418b-a132-5ea8162ac72d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.extra_large_card
+label: 'Extra Large Card'
+targetEntityType: media
+cache: true

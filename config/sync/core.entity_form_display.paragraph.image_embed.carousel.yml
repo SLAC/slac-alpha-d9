@@ -1,0 +1,45 @@
+uuid: b18f967c-ee2e-4ccb-9315-4ee0620bac5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.paragraph.carousel
+    - field.field.paragraph.image_embed.field_boolean
+    - field.field.paragraph.image_embed.field_image
+    - field.field.paragraph.image_embed.field_long_text
+    - field.field.paragraph.image_embed.field_view_mode
+    - paragraphs.paragraphs_type.image_embed
+  module:
+    - media_library
+    - text
+id: paragraph.image_embed.carousel
+targetEntityType: paragraph
+bundle: image_embed
+mode: carousel
+content:
+  field_boolean:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_long_text:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_view_mode: true
+  status: true

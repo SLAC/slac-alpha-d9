@@ -1,0 +1,26 @@
+// @file
+// Component: c-arrow-link
+@use '00-config' as *;
+
+.c-arrow-link {
+  @include arrow-link(red);
+
+  & + & {
+    margin-left: rem(gesso-spacing(3)); // LTR
+
+    @if $support-for-rtl {
+      [dir='rtl'] & {
+        margin-left: 0;
+        margin-right: rem(gesso-spacing(3));
+      }
+    }
+  }
+
+  .c-lede & {
+    font-weight: gesso-font-weight(bold);
+  }
+}
+
+.c-arrow-link--white {
+  @include arrow-link(white);
+}

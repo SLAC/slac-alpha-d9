@@ -1,0 +1,17 @@
+uuid: d7f921d2-9f64-492c-9f86-d75b93f18000
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: mosaic_short
+label: 'Mosaic Short (400x190)'
+effects:
+  4b249884-a86c-44ea-bc38-2ae88387ca55:
+    uuid: 4b249884-a86c-44ea-bc38-2ae88387ca55
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 190
+      crop_type: focal_point

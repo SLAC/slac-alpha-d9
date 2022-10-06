@@ -1,0 +1,131 @@
+uuid: 96a37385-d12b-416f-b604-2b8a930c3981
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.cards_with_show_more
+    - paragraphs.paragraphs_type.content_card
+    - paragraphs.paragraphs_type.media_card
+  module:
+    - entity_reference_revisions
+id: paragraph.cards_with_show_more.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: cards_with_show_more
+label: Cards
+description: 'For the best user experience, this should be limited to 6 content embeds.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card: card
+      content_card: content_card
+      media_card: media_card
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 34
+        enabled: false
+      accordion_item:
+        weight: 35
+        enabled: false
+      article_hero:
+        weight: 36
+        enabled: false
+      callout_box:
+        weight: 37
+        enabled: false
+      card:
+        weight: 38
+        enabled: true
+      cards_with_show_more:
+        weight: 39
+        enabled: false
+      content_card:
+        weight: 40
+        enabled: true
+      content_embed:
+        weight: 41
+        enabled: false
+      embed_block:
+        weight: 42
+        enabled: false
+      embed_full_html_:
+        weight: 43
+        enabled: false
+      embed_view:
+        weight: 44
+        enabled: false
+      extra_large_card:
+        weight: 45
+        enabled: false
+      fifty_fifty:
+        weight: 46
+        enabled: false
+      image_carousel:
+        weight: 47
+        enabled: false
+      image_embed:
+        weight: 48
+        enabled: false
+      image_hero:
+        weight: 49
+        enabled: false
+      media_card:
+        weight: 50
+        enabled: true
+      microsite_hero:
+        weight: 51
+        enabled: false
+      microsite_navigation_marker:
+        weight: 52
+        enabled: false
+      overlap_image:
+        weight: 53
+        enabled: false
+      promo_box:
+        weight: 54
+        enabled: false
+      quote:
+        weight: 55
+        enabled: false
+      section:
+        weight: 56
+        enabled: false
+      small_card_with_icon:
+        weight: 57
+        enabled: false
+      small_card_with_image:
+        weight: 58
+        enabled: false
+      small_card_with_solid_background:
+        weight: 59
+        enabled: false
+      table_of_contents:
+        weight: 60
+        enabled: false
+      text_block:
+        weight: 61
+        enabled: false
+      tout:
+        weight: 62
+        enabled: false
+      video_hero:
+        weight: 63
+        enabled: false
+      video_lightbox:
+        weight: 64
+        enabled: false
+      wide_card:
+        weight: 65
+        enabled: false
+      wysiwyg:
+        weight: 66
+        enabled: false
+field_type: entity_reference_revisions

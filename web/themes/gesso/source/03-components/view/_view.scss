@@ -24,5 +24,57 @@
 }
 
 .c-view__exposed {
-  margin-bottom: rem(gesso-spacing(2));
+  margin-bottom: rem(gesso-spacing(5));
+
+  select.c-form-item--select {
+    font-size: rem(gesso-font-size(2));
+    height: auto;
+    line-height: 1.4;
+    padding: rem(gesso-spacing(1)) 3rem rem(gesso-spacing(1))
+      rem(gesso-spacing(1.5));
+  }
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    form {
+      align-items: flex-end;
+      display: flex;
+      gap: gesso-spacing(2.5);
+    }
+
+    .c-button,
+    .c-form-item,
+    .c-form-item__select {
+      margin-bottom: 0;
+    }
+
+    select.c-form-item--select {
+      width: 100%;
+    }
+  }
+}
+
+.c-view__display {
+  display: inline-flex;
+  gap: rem(gesso-spacing(1));
+  justify-content: flex-end;
+}
+
+.c-view__toggle {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: gesso-color(button, disabled, text);
+  cursor: pointer;
+  display: none;
+  font-size: rem(gesso-font-size(6));
+  padding: 0;
+
+  &[aria-expanded='true'],
+  &.views-display-switch__link--active {
+    color: gesso-color(text, primary);
+  }
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    display: inline-block;
+  }
 }

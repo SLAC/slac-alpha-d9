@@ -7,11 +7,7 @@
 {% set pagination_id = 'pagination-heading'|unique_id %}
 
 {% if pager_items.previous or pager_items.next %}
-  <nav {{ add_attributes({
-    'class': classes,
-    'aria-label': heading|default('Pagination'),
-    'role': 'navigation'
-  })}}>
+  <nav {{ add_attributes({ 'class': classes, 'aria-label': heading|default('Pagination'), 'role': 'navigation' } )}}>
     <ul class="c-pager__items js-pager__items">
 
       {% if pager_items.previous %}
@@ -24,8 +20,9 @@
                 'modifier_classes': 'c-icon--pager is-spaced-after',
                 'icon_name': 'angle-left',
               } %}
-              <span class="u-visually-hidden">{{ link_label }}</span>
-              <span aria-hidden="true">{{ 'Previous'|t }}</span>
+              <span class="u-visually-hidden">
+                {{ link_label }}
+              </span>
             {% endspaceless -%}
           </a>
         </li>
@@ -45,8 +42,9 @@
         <li class="c-pager__item c-pager__item--next">
           <a class="c-pager__link c-pager__link--next" href="{{ pager_items.next.href }}" aria-label="{{ link_label }}" title="{{ link_label }}" rel="next" {{ pager_items.next.attributes|without('aria-label', 'href', 'rel', 'title') }}>
             {%- spaceless %}
-              <span class="u-visually-hidden">{{ link_label }}</span>
-              <span aria-hidden="true">{{ 'Next'|t }}</span>
+              <span class="u-visually-hidden">
+                {{ link_label }}
+              </span>
               {% include '@components/icon/icon.twig' with {
                 'is_hidden': true,
                 'modifier_classes': 'c-icon--pager is-spaced-before',

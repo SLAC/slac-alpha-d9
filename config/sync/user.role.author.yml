@@ -1,0 +1,65 @@
+uuid: c68ce2e1-415b-47c6-89b7-86fd543b0e27
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+    - media.type.image
+    - media.type.remote_audio
+    - media.type.remote_video
+    - node.type.event
+    - node.type.homepage
+    - node.type.landing_page
+    - node.type.media_mention
+    - node.type.news_article
+    - node.type.news_collection
+    - node.type.page
+    - node.type.person
+    - node.type.resource
+    - workflows.workflow.content
+  module:
+    - content_moderation
+    - media
+    - node
+    - paragraphs
+    - system
+    - toolbar
+id: author
+label: 'Content author'
+weight: -5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access media overview'
+  - 'access toolbar'
+  - 'create document media'
+  - 'create event content'
+  - 'create image media'
+  - 'create landing_page content'
+  - 'create media_mention content'
+  - 'create news_article content'
+  - 'create news_collection content'
+  - 'create page content'
+  - 'create person content'
+  - 'create remote_audio media'
+  - 'create remote_video media'
+  - 'create resource content'
+  - 'delete media'
+  - 'delete own event content'
+  - 'delete own homepage content'
+  - 'delete own landing_page content'
+  - 'delete own media_mention content'
+  - 'delete own news_article content'
+  - 'delete own news_collection content'
+  - 'delete own page content'
+  - 'delete own person content'
+  - 'delete own resource content'
+  - 'edit behavior plugin settings'
+  - 'update any media'
+  - 'update media'
+  - 'use content transition create_new_draft'
+  - 'use content transition publish'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view the administration theme'

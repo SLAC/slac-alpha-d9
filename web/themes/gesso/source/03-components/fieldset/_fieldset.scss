@@ -17,7 +17,7 @@ $fieldset-legend-offset: rem(
 .c-fieldset__legend {
   box-sizing: content-box;
   display: block;
-  font-weight: gesso-font-weight(semibold);
+  font-weight: gesso-font-weight(bold);
   left: -1px; // LTR
   position: absolute;
   text-indent: 0;

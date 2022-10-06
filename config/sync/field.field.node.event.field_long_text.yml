@@ -1,0 +1,26 @@
+uuid: 900b2b89-1be9-4082-86d3-7b31de6ecef9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_long_text
+    - node.type.event
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.event.field_long_text
+field_name: field_long_text
+entity_type: node
+bundle: event
+label: 'Speaker Bio'
+description: 'In SLAC jargon this is also called an abstract.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: fddb81aa-a0c3-4fd6-ad1b-cab6c238e37b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_boolean
+    - media.type.remote_audio
+id: media.remote_audio.field_boolean
+field_name: field_boolean
+entity_type: media
+bundle: remote_audio
+label: 'Hide detail page from public?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

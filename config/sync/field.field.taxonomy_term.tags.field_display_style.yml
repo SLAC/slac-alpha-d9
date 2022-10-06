@@ -1,0 +1,21 @@
+uuid: 3293b233-640b-4973-888e-1c4a5f9c4ae9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_display_style
+    - taxonomy.vocabulary.tags
+  module:
+    - options
+id: taxonomy_term.tags.field_display_style
+field_name: field_display_style
+entity_type: taxonomy_term
+bundle: tags
+label: 'Display Style'
+description: 'The Topics landing page uses a masonry layout. Choose the display style that should be used for the taxonomy term on the landing page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,276 @@
+uuid: 9b140d62-1981-44ad-b06b-60c42715050c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: CknWh8sjP13fJsZFDKAsrFj_Uy1lsauJU0t4YBXNc8Q
+id: upgrade_d7_node_complete_lecture
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Lecture)'
+source:
+  plugin: d7_node
+  node_type: lecture
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
+      source: node_uid
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: get
+      source: status
+  moderation_state:
+    plugin: static_map
+    source: status
+    default_value: draft
+    map:
+      - draft
+      - published
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_lecture/0/status:
+    -
+      plugin: get
+      source: comment
+  field_body/0/value:
+    -
+      plugin: dom
+      method: import
+      source: body/0/value
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: //img
+      attribute_options:
+        name: src
+      search: 'https://www6.slac.stanford.edu/files'
+      replace: /sites/default/files
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: //a
+      attribute_options:
+        name: href
+      search: 'https://www6.slac.stanford.edu/'
+      replace: /
+    -
+      plugin: dom_remove
+      mode: attribute
+      selector: '//span[@style] | //a[@style] | //em[@style] | //strong[@style]'
+      attribute: style
+    -
+      plugin: dom
+      method: export
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
+  _embed_based_format:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: body/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_select
+      selector: '//iframe | //embed | //a[@data-flickr-embed]'
+      limit: 1
+    -
+      plugin: default_value
+      default_value: NO_EMBED
+    -
+      plugin: static_map
+      map:
+        NO_EMBED: basic_html
+      default_value: full_html
+  _default_basic_html_format:
+    -
+      plugin: default_value
+      default_value: basic_html
+  field_body/0/format:
+    -
+      plugin: null_coalesce
+      source:
+        - '@_embed_based_format'
+        - '@_default_basic_html_format'
+  field_long_text/0/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_about_the_speaker/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: //img
+      attribute_options:
+        name: src
+      search: 'https://www6.slac.stanford.edu/'
+      replace: /
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: //a
+      attribute_options:
+        name: href
+      search: 'https://www6.slac.stanford.edu/'
+      replace: /
+    -
+      plugin: dom_remove
+      mode: attribute
+      selector: '//span[@style] | //a[@style] | //em[@style] | //strong[@style]'
+      attribute: style
+    -
+      plugin: dom
+      method: export
+    -
+      plugin: media_wysiwyg_filter
+  field_long_text/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
+  field_image:
+    -
+      plugin: media_migration_delta_sort
+      source: field_image
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
+  field_datetime_range:
+    -
+      plugin: sub_process
+      source: field_lecture_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d\TH:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+        end_value:
+          plugin: add_one_hour
+          source: value
+  field_link:
+    -
+      plugin: skip_on_empty
+      source: field_location/0/value
+      method: process
+    -
+      plugin: sub_process
+      source: field_location
+      process:
+        title: value
+        uri:
+          plugin: default_value
+          default_value: '<nolink>'
+  field_name:
+    -
+      plugin: get
+      source: field_speaker_name
+  field_name/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
+  field_video:
+    -
+      plugin: media_migration_delta_sort
+      source: field_video
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
+  field_type/0/target_id:
+    -
+      plugin: default_value
+      default_value: Lecture
+    -
+      plugin: entity_lookup
+      value_key: name
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: event_type
+      ignore_case: true
+  field_person_image:
+    -
+      plugin: media_migration_delta_sort
+      source: field_speaker_image
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
+  field_boolean2:
+    -
+      plugin: default_value
+      default_value: true
+destination:
+  plugin: 'entity:node'
+  default_bundle: event
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+  optional: {  }

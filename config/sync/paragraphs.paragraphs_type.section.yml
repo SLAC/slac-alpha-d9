@@ -1,0 +1,14 @@
+uuid: 61995eb1-7f85-4efc-ad24-d5f41528fdae
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: section
+label: Section
+icon_uuid: null
+icon_default: null
+description: 'Create a page section with a background color and (optionally) place components into a layout.'
+behavior_plugins:
+  style_options:
+    enabled: true

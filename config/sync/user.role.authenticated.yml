@@ -1,28 +1,78 @@
-uuid: 2470165a-e105-4a86-9577-6998b62ff6dc
+uuid: 1d974c67-fc84-4ddd-8081-ce2677fa1c56
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.restricted_html
+    - node.type.event
+    - node.type.homepage
+    - node.type.landing_page
+    - node.type.media_mention
+    - node.type.news_article
+    - node.type.news_collection
+    - node.type.page
+    - node.type.person
+    - node.type.resource
   module:
     - comment
-    - contact
+    - contextual
+    - environment_indicator
+    - eu_cookie_compliance
     - filter
+    - media
+    - node
+    - paragraphs
     - search
     - shortcut
+    - site_settings
+    - sitewide_alert
     - system
+    - toolbar
+    - view_modes_display
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
 id: authenticated
 label: 'Authenticated user'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access contextual links'
+  - 'access environment indicator'
   - 'access shortcuts'
-  - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'display eu cookie compliance popup'
+  - 'edit own event content'
+  - 'edit own homepage content'
+  - 'edit own landing_page content'
+  - 'edit own media_mention content'
+  - 'edit own news_article content'
+  - 'edit own news_collection content'
+  - 'edit own page content'
+  - 'edit own person content'
+  - 'edit own resource content'
   - 'post comments'
+  - 'preview view modes'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format restricted_html'
+  - 'view event revisions'
+  - 'view homepage revisions'
+  - 'view landing_page revisions'
+  - 'view media'
+  - 'view media_mention revisions'
+  - 'view news_article revisions'
+  - 'view news_collection revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view person revisions'
+  - 'view published site setting entities'
+  - 'view published sitewide alert entities'
+  - 'view resource revisions'
+  - 'view unpublished paragraphs'
+  - 'view unpublished site setting entities'
+  - 'view unpublished sitewide alert entities'

@@ -11,6 +11,10 @@
   max-width: rem(gesso-constrain(lg));
 }
 
+.l-constrain--small {
+  max-width: rem(gesso-constrain(sm));
+}
+
 .l-constrain--no-padding {
   padding-left: 0;
   padding-right: 0;

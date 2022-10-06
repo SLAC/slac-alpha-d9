@@ -1,0 +1,21 @@
+uuid: 42a1cb02-1695-4c6b-995d-1d991ca92941
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.field_line_3
+field_name: field_line_3
+entity_type: site_setting_entity
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: f0fad990-54fc-48af-ab52-a9a009d2aa47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.footer_copyright_message.field_body
+    - site_settings.site_setting_entity_type.footer_copyright_message
+  module:
+    - text
+id: site_setting_entity.footer_copyright_message.default
+targetEntityType: site_setting_entity
+bundle: footer_copyright_message
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  fieldset: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

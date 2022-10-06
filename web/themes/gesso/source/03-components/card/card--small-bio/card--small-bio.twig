@@ -1,0 +1,34 @@
+{% set classes = [
+  'c-card',
+  'c-card--small-bio',
+  not title_url ? 'c-card--no-link' : '',
+  color ? 'c-card--' ~ color : '',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  <div class="c-card__media">
+    {% spaceless %}
+      <h3 class="c-card__title">
+        {% if title_url %}
+          <a href="{{- title_url -}}" class="c-card--small-bio__link">
+            {{- title -}}
+          </a>
+        {% else %}
+          {{- title -}}
+        {% endif %}
+      </h3>
+    {% endspaceless %}
+  </div>
+  <div class="c-card__body">
+    {% if name %}
+      {% if name_url %}
+        <a href="{{ name_url }}" class="c-arrow-link">
+        {% endif %}
+        {{ name }}
+        {% if name_url %}
+        </a>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

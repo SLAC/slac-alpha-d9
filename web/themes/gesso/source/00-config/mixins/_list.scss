@@ -10,52 +10,64 @@
   margin: 0;
   padding: 0;
 
+  :where(li) {
+    padding-left: 0;
+  }
+
+  li::before {
+    display: none;
+  }
+}
+
+@mixin list-inline($inline-on-mobile: true, $wrap: wrap) {
+  display: flex;
+  flex-flow: row $wrap;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+
   li {
     padding-left: 0;
+  }
 
-    &::before {
-      display: none;
+  > li {
+    display: inline-block;
+  }
+
+  @if (not $inline-on-mobile) {
+    @include breakpoint-max(gesso-breakpoint(tablet), true) {
+      align-items: center;
+      flex-flow: column nowrap;
     }
   }
 }
 
-@mixin list-inline {
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 0;
-
-  li {
-    padding-left: 0;
-  }
-
-  > li {
-    display: inline;
-  }
-}
-
-@mixin list-pipeline($pipeline-border-color: gesso-color(ui, generic, border)) {
-  @include clearfix();
+@mixin list-pipeline(
+  $pipeline-border-color: gesso-color(ui, generic, border),
+  $angle: true,
+  $inline-on-mobile: true,
+  $wrap: wrap
+) {
+  @include list-inline($inline-on-mobile, $wrap);
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
 
   > li {
-    border-right: 1px solid $pipeline-border-color; // LTR
-    display: block;
-    float: left; // LTR
+    align-items: center;
+    display: inline-flex;
+    gap: 0.75em; // LTR
     margin-right: 0.75em; // LTR
-    padding-left: 0;
-    padding-right: 0.75em; // LTR
 
-    @if $support-for-rtl {
-      [dir='rtl'] & {
-        border-left: 1px solid $pipeline-border-color;
-        border-right: 0;
-        float: right;
-        margin-left: 0.75em;
-        margin-right: 0;
-        padding-left: 0.75em;
-        padding-right: 0;
+    &::after {
+      background: $pipeline-border-color; // LTR
+      content: '';
+      display: inline-block;
+      height: 1em;
+      width: 1px;
+
+      @if ($angle) {
+        transform: rotate(30deg);
       }
     }
 
@@ -64,15 +76,15 @@
     }
 
     &:last-child {
-      border-right: 0; // LTR
-      margin-right: 0; // LTR
-      padding-right: 0; // LTR
+      &::after {
+        display: none;
+      }
+    }
 
-      @if $support-for-rtl {
-        [dir='rtl'] & {
-          border-left: 0;
-          margin-left: 0;
-          padding-left: 0;
+    @if (not $inline-on-mobile) {
+      @include breakpoint-max(gesso-breakpoint(tablet), true) {
+        &::after {
+          display: none;
         }
       }
     }

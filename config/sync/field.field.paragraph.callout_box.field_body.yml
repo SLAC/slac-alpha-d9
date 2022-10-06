@@ -1,0 +1,26 @@
+uuid: 3112d9d3-4377-4736-894a-649104da8bce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.callout_box
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.callout_box.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: callout_box
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

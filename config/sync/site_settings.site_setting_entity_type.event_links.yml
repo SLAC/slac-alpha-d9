@@ -1,0 +1,8 @@
+uuid: c7e6667f-81fe-463f-bb8e-cfb89baf31fe
+langcode: en
+status: true
+dependencies: {  }
+id: event_links
+label: 'Event: Links'
+fieldset: 'Event: Links'
+multiple: false

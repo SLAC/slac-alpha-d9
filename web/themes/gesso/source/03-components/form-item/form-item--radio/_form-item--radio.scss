@@ -4,32 +4,40 @@
 @use '../form-item' as *;
 
 .c-form-item--radio {
-  & + & {
-    margin-top: -1 * gesso-spacing(2);
+  line-height: 30px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
   }
 
   .c-form-item__radio {
-    @include focus();
     appearance: none;
     background-color: gesso-color(form, background-unchecked);
-    border: 1px solid gesso-color(form, border-dark);
+    border: 6px solid gesso-color(form, background-unchecked);
     border-radius: 50%;
-    box-shadow: 0 0 0 2px transparent;
+    box-shadow: 0 0 0 1px gesso-grayscale(black);
     cursor: pointer;
-    height: 18px;
-    margin-right: 3px;
-    outline: none;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 2px;
+    margin-right: 8px;
     position: relative;
-    top: 2px;
     transition-duration: gesso-duration(short);
-    transition-property: background-color, border-color, border-radius;
+    transition-property: background-color;
     transition-timing-function: gesso-easing(ease-in-out);
-    width: 18px;
+    vertical-align: middle;
+    width: 30px;
 
     &:checked {
-      background-color: gesso-color(form, background-checked);
-      border: 2px solid gesso-color(form, background-unchecked);
-      box-shadow: 0 0 0 2px gesso-color(form, background-checked);
+      background-color: gesso-grayscale(black);
+      border: 6px solid gesso-color(form, background-unchecked);
+      box-shadow: 0 0 0 1px gesso-grayscale(black);
+    }
+
+    &:focus {
+      outline: 2px solid gesso-color(ui, generic, focus);
+      outline-offset: 4px;
     }
 
     &:disabled {

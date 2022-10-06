@@ -1,0 +1,23 @@
+uuid: 48d51603-66bf-4ba0-825e-8a8a0d2cb6e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: image_remote_video_based_on_title
+label: 'Image & Remote Video (Based on Title)'
+type: 'canonical_entities:media'
+pattern: '/media/[media:name]'
+selection_criteria:
+  3a54dbdc-8f36-4197-8047-917528047d20:
+    id: 'entity_bundle:media'
+    negate: false
+    uuid: 3a54dbdc-8f36-4197-8047-917528047d20
+    context_mapping:
+      media: media
+    bundles:
+      image: image
+      remote_video: remote_video
+selection_logic: and
+weight: -5
+relationships: {  }

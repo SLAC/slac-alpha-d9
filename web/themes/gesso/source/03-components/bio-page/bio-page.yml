@@ -1,0 +1,13 @@
+---
+bio_kicker: 'SLAC Experts'
+bio_name: 'Mark Hogan'
+bio_job_title: 'Director, Facility for Advanced Accelerator Experimental Tests (FACET)'
+bio_image: '<img src="https://picsum.photos/387" alt="Headshot Placeholder">'
+bio_image_caption: 'This is a placeholder caption.'
+bio_page_content: |-
+  <p>Areas of Expertise: Advanced accelerators; plasma wakefield acceleration</p>
+bio_page_quote: |-
+  <p>FACET-II is a unique facility to explore revolutionary accelerator concepts. Our goal is to create technology that enables much more powerful particle colliders and X-ray lasers for years to come.”</p>
+bio_page_buttons: |-
+  <a href="#0" class="c-button c-button--outline c-button--chevron">FACET-II website</a>
+  <a href="#0" class="c-button c-button--outline c-button--chevron">Media contact</a>

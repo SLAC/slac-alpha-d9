@@ -1,0 +1,10 @@
+uuid: 1997a373-d48e-42a1-b4f2-c2b98b63be82
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.speaker_bio
+label: 'Speaker Bio'
+targetEntityType: media
+cache: true

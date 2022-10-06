@@ -1,0 +1,8 @@
+uuid: b96448ca-09fc-4d88-91ed-78efaf6bf4c7
+langcode: en
+status: true
+dependencies: {  }
+id: media_about_slac
+label: 'Media: About SLAC'
+fieldset: 'Media: About SLAC'
+multiple: true

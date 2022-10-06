@@ -14,18 +14,40 @@
       item.below ? 'has-subnav' : '',
       item.in_active_trail ? 'in-active-trail' : '',
     ] %}
-    {% set item_description = item.description %}
-    <li {{ add_attributes({ 'class': item_classes}) }}>
+    {% set item_description = item.content ? item.content.field_link_description|render|striptags|trim : item.description %}
+    {% set item_section = item.content ? item.content.field_menu_section|render|striptags|trim : item.section %}
+    <li {{ add_attributes({ 'class': item_classes }) }}>
       {% if item.below %}
-        <button class="c-mega-menu__link js-top-level" aria-expanded="false" aria-controls="mega-menu-{{ menu_name }}--{{ loop.index }}" aria-current="{{ item.is_active ? 'page' : null  }}">
+        <button class="c-mega-menu__link js-top-level{% if item.in_active_trail %} is-active-trail{% endif %}" aria-expanded="false" aria-controls="mega-menu-{{ menu_name }}--{{ loop.index }}">
           <span>{{ item.title }}</span>
         </button>
-        <div class="c-mega-menu__section" id="mega-menu-{{ menu_name }}--{{ loop.index }}" hidden>
+        <div class="c-mega-menu__section c-menu-menu__section--{{ item_section }}" id="mega-menu-{{ menu_name }}--{{ loop.index }}" hidden>
           <div class="c-mega-menu__section-inner">
-            <div class="c-mega-menu__overview">
-              <h2 class="c-mega-menu__section-title">{{ item.title }}</h2>
-            </div>
-            {{ menus.menu_links(item.below, attributes, 1) }}
+            <ul {{ add_attributes({class: ['c-mega-menu__subnav']}) }}>
+              <li class="c-mega-menu__item">
+                {% set link_classes = ['c-mega-menu__link'] %}
+                {{ link(item.title, item.url, {class: ['c-mega-menu__link']}) }}
+                {% if item_description %}
+                  <p class="c-mega-menu__description">{{ item_description }}</p>
+                {% endif %}
+              </li>
+              {{ menus.menu_links(item.below, attributes, 1) }}
+              {% if item_section == 'about' or item_section == 'news-events' %}
+                {% block social_links %}
+                  <li class="c-mega-menu__item">
+                    <a class="c-mega-menu__link" href="#0">{{ 'Connect with Us'|t }}</a>
+                    {% include '@components/social-links/social-links.twig' with {
+                      'facebook': '#',
+                      'twitter': '#',
+                      'instagram': '#',
+                      'flickr': '#',
+                      'youtube': '#',
+                      'linkedin': '#',
+                    } %}
+                  </li>
+                {% endblock %}
+              {% endif %}
+            </ul>
             {% block featured %}
               {{ item.featured }}
             {% endblock %}

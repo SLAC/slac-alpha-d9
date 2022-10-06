@@ -2,6 +2,7 @@
 
 @use '../functions/' as *;
 @use './focus' as *;
+@use 'breakpoint' as *;
 
 $button-border-width: 0 !default;
 $button-border-radius: 0 !default;
@@ -31,7 +32,6 @@ $button-text-color-hover: gesso-color(button, primary, text-hover) !default;
 $button-font-size: gesso-base-font-size() !default;
 
 @mixin button(
-  $color-background: $button-background-color,
   $color-text: $button-text-color,
   $color-border: $button-border-color,
   $color-background-hover: $button-background-color-hover,
@@ -46,7 +46,8 @@ $button-font-size: gesso-base-font-size() !default;
   $border-width: $button-border-width,
   $font-size: $button-font-size
 ) {
-  background-color: $color-background;
+  background-position: right bottom;
+  background-size: 201% 100%;
   @if $border-width != 0 {
     border: $border-width solid $color-border;
   } @else {
@@ -55,7 +56,7 @@ $button-font-size: gesso-base-font-size() !default;
   border-radius: $border-radius;
   color: $color-text;
   cursor: pointer;
-  display: inline-block;
+  display: block;
   font-family: gesso-font-family(primary);
   font-size: rem($font-size);
   -moz-osx-font-smoothing: grayscale;
@@ -65,17 +66,17 @@ $button-font-size: gesso-base-font-size() !default;
   padding: rem(gesso-spacing(1)) rem(gesso-spacing(2));
   text-align: center;
   text-decoration: none;
-  transition: background gesso-duration(short) gesso-easing(ease-in);
+  transition: background gesso-duration(standard) gesso-easing(ease-out);
   vertical-align: top;
-  white-space: normal;
+  white-space: nowrap;
 
   &:visited {
     color: $color-text;
   }
 
   &:hover,
-  &:focus {
-    background-color: $color-background-hover;
+  &:focus-visible {
+    background-position: left bottom;
     @if $border-width != 0 {
       border-color: $color-border-hover;
     }
@@ -84,18 +85,22 @@ $button-font-size: gesso-base-font-size() !default;
 
   &:active,
   &.is-active {
-    background-color: $color-background-active;
     color: $color-text-active;
   }
 
   &[disabled] {
     background-color: $color-background-disabled;
+    background-image: none;
     @if $border-width != 0 {
       border-color: $color-border-disabled;
     }
     color: $color-text-disabled;
     cursor: default;
     pointer-events: none;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
+    display: inline-block;
   }
 }
 

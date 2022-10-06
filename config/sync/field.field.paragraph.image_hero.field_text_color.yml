@@ -1,0 +1,23 @@
+uuid: 6f976ce6-0cde-4b5d-8b56-3484b0565fb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_color
+    - paragraphs.paragraphs_type.image_hero
+  module:
+    - options
+id: paragraph.image_hero.field_text_color
+field_name: field_text_color
+entity_type: paragraph
+bundle: image_hero
+label: 'Text Color'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: white
+default_value_callback: ''
+settings: {  }
+field_type: list_string

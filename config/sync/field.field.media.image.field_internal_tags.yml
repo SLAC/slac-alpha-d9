@@ -1,0 +1,29 @@
+uuid: da624977-a6e4-4d0a-8dc1-d9308a37fccd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_internal_tags
+    - media.type.image
+    - taxonomy.vocabulary.internal_tags
+id: media.image.field_internal_tags
+field_name: field_internal_tags
+entity_type: media
+bundle: image
+label: 'Internal Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      internal_tags: internal_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

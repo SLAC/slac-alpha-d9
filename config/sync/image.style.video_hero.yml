@@ -1,0 +1,17 @@
+uuid: 8edf8c17-7cf7-4fe6-a09b-dfb02781a41b
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: video_hero
+label: 'Video Hero (600x337)'
+effects:
+  ba64d003-9765-4034-9583-900d035a046d:
+    uuid: ba64d003-9765-4034-9583-900d035a046d
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 337
+      crop_type: focal_point

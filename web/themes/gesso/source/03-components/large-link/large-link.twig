@@ -1,0 +1,18 @@
+{% set classes = [
+  'c-large-link',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<article {{ add_attributes({ class: classes }) }}>
+  <h2 class="c-large-link__title">{% spaceless %}
+    {% if link_url %}<a href="{{ link_url }}">{% endif %}
+      {{ link_title }}
+    {% if link_url %}</a>{% endif %}
+  {% endspaceless %}</h2>
+  {% if link_source or link_date %}
+    <footer class="c-large-link__footer">
+      {% if link_source %}<span class="c-large-link__source">{{ link_source }}</span>{% endif %}
+      {% if link_date %}<span class="c-large-link__date">{{ link_date }}</span>{% endif %}
+    </footer>
+  {% endif %}
+</article>

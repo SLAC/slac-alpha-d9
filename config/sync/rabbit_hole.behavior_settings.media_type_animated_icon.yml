@@ -1,0 +1,14 @@
+uuid: c6d11d46-6d29-4c23-8c81-d2d1e29c63dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.animated_icon
+id: media_type_animated_icon
+entity_type_id: media_type
+entity_id: animated_icon
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

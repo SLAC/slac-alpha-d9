@@ -1,0 +1,10 @@
+uuid: 46eca612-379b-478c-8f61-58c53f17e93e
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.token
+label: Token
+targetEntityType: site_setting_entity
+cache: true

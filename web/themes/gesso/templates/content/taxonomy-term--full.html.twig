@@ -23,6 +23,12 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
+{% set classes = [
+  not term.isPublished() ? 'is-unpublished',
+] %}
+
+{% set attributes = attributes.addClass(classes) %}
+
 {% set admin_info %}
   {{ region_status }}
 {% endset %}
@@ -33,12 +39,40 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-{% include '@templates/page/page.twig' with {
-  'title': term_name,
+{% set description %}
+  {% include '@components/wysiwyg/wysiwyg.twig' with {
+    content: content.description|field_value,
+  } %}
+{% endset %}
+
+{% set term_content %}
+  {% include '@layouts/section/section.twig' with {
+    'section_content': description,
+    'has_constrain': true,
+    'modifier_classes': 'l-section--white l-section--no-padding',
+  } %}
+  {% include '@layouts/section/section.twig' with {
+    'section_content': content|without("description", "field_lede", "field_display_name"),
+    'has_constrain': true,
+    'modifier_classes': 'l-section--white',
+  } %}
+  {% include '@layouts/section/section.twig' with {
+    'section_title': 'Related Content'|t,
+    'section_content': drupal_view('taxonomy_term', 'default', term.tid.value),
+    'has_constrain': true,
+    'modifier_classes': 'l-section--white',
+  } %}
+{% endset %}
+
+{% include '@components/article/article.twig' with {
+  'title': term.hasField('field_display_name') ? content.field_display_name|field_value : name,
   'show_admin_info': show_admin_info,
+  'lede': term.hasField('field_lede') ? content.field_lede|field_value : null,
   'admin_info': admin_info,
   'show_footer': false,
-  'content': content,
+  'date': null,
+  'rdf_metadata': metadata,
+  'content': term_content,
 } %}
 
 {# Uncomment the following if you don’t render the content variable. #}

@@ -1,0 +1,43 @@
+uuid: d3e55a9f-ffba-4620-9cfe-58785e4480b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wide_card.field_body
+    - field.field.paragraph.wide_card.field_image
+    - field.field.paragraph.wide_card.field_short_text
+    - paragraphs.paragraphs_type.wide_card
+  module:
+    - media_library
+    - text
+id: paragraph.wide_card.default
+targetEntityType: paragraph
+bundle: wide_card
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_short_text:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

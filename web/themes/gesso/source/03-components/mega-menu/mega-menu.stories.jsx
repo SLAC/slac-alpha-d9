@@ -4,7 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 import twigTemplate from './mega-menu.twig';
 import globalData from '../../00-config/storybook.global-data.yml';
 import data from './mega-menu.yml';
-import { ImageTeaser } from '../image-teaser/image-teaser.stories.jsx';
+import { MenuCard } from '../card/card.stories';
 import './mega-menu.scss';
 import './mega-menu.es6';
 import '../mobile-menu/mobile-menu.scss';
@@ -17,16 +17,11 @@ const settings = {
 const menuItems = data.items.map(item => ({
   ...item,
   featured: `${ReactDOMServer.renderToStaticMarkup(
-    <>{ImageTeaser(ImageTeaser.args)}</>
+    <>{MenuCard(MenuCard.args)}</>
   )}`,
 }));
 
-const MegaMenu = args => (
-  <>
-    {parse(twigTemplate(args))}
-    <div style={{ height: '100vh' }} />
-  </>
-);
+const MegaMenu = args => <>{parse(twigTemplate(args))}</>;
 MegaMenu.args = {
   ...globalData,
   ...data,

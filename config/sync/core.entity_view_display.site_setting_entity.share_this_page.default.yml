@@ -1,0 +1,61 @@
+uuid: 363444be-7144-48cd-92ef-b8c85b55622a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.share_this_page.field_link
+    - field.field.site_setting_entity.share_this_page.field_text_list
+    - site_settings.site_setting_entity_type.share_this_page
+  module:
+    - link
+    - options
+    - user
+id: site_setting_entity.share_this_page.default
+targetEntityType: site_setting_entity
+bundle: share_this_page
+mode: default
+content:
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text_list:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  fieldset:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  user_id:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

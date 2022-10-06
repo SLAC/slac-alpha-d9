@@ -1,7 +1,6 @@
 ---
-media: |-
-  <div class="c-video has-iframe">
-    <iframe class="c-video__iframe" src="https://player.vimeo.com/video/505735218" title="Say Hello to the New Forum One" allowfullscreen frameborder="0"></iframe>
-  </div>
+media: '<img src="https://picsum.photos/600/450?image=237" alt="dog photo">'
+is_video: true
+video_button_label: 'Play video: Video Title'
 caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper vel metus at cursus.'
-modifier_classes: 'c-figure--iframe'
+lightbox_id: 'video-lightbox'

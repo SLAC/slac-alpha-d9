@@ -43,9 +43,14 @@
 {% endif %}
 
 {# Placeholder #}
+{% if errors %}
+  {% set placeholder = false %}
+{% endif %}
+
 {% if placeholder %}
+  {% set placeholder_text = required or is_required ? placeholder ~ ' *' : placeholder %}
   {% set attributes_to_add = attributes_to_add|merge({
-    'placeholder': placeholder,
+    'placeholder': placeholder_text,
   }) %}
 {% endif %}
 

@@ -4,40 +4,31 @@
 @use 'sass:math';
 @use '00-config' as *;
 
-$mobile-menu-bg-color: rgba(
-  gesso-color(ui, generic, background-light),
-  0.98
-) !default;
-$mobile-menu-link-color: gesso-color(ui, generic, text-dark) !default;
-$mobile-menu-link-hover-color: gesso-color(ui, generic, text-darker) !default;
-$mobile-menu-submenu-fallback-bg-color: gesso-color(
-  ui,
-  generic,
-  background-lighter
-) !default;
-$mobile-menu-submenu-bg-color: rgba(
-  gesso-color(ui, generic, background-lighter),
-  0.98
-) !default;
-$mobile-menu-submenu-link-color: gesso-color(ui, generic, text-dark) !default;
-$mobile-menu-submenu-link-hover-color: gesso-color(
-  ui,
-  generic,
-  text-darker
-) !default;
-$mobile-menu-button-height: 54px;
-$mobile-menu-button-width: 44px;
-$mobile-menu-font-size: gesso-font-size(4);
-$mobile-menu-line-height: gesso-line-height(base);
+$mobile-menu-bg-color: linear-gradient(
+  to bottom,
+  gesso-brand(sky, dark),
+  gesso-brand(palo-verde, dark)
+);
+$mobile-menu-link-color: gesso-color(text, on-dark);
+$mobile-menu-link-hover-color: gesso-color(text, on-dark);
+$mobile-menu-submenu-bg-color: transparent;
+$mobile-menu-submenu-link-color: inherit;
+$mobile-menu-submenu-link-hover-color: inherit;
+$mobile-menu-button-height: 50px;
+$mobile-menu-button-width: 48px;
+$mobile-menu-font-size: gesso-font-size(3);
+$mobile-menu-line-height: gesso-line-height(tight);
+$mobile-menu-border-color: gesso-brand(sky, base);
 
 .c-mobile-menu {
-  background-color: $mobile-menu-bg-color;
+  background: $mobile-menu-bg-color;
+  color: $mobile-menu-link-color;
   display: none;
+  font-size: rem($mobile-menu-font-size);
+  height: 100vh;
   left: 0;
-  max-height: 100vh;
   overflow-y: auto;
-  padding-bottom: 4px;
-  padding-top: 0;
+  padding: 0 rem(gesso-spacing(2)) 4px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -46,27 +37,83 @@ $mobile-menu-line-height: gesso-line-height(base);
   &.is-open {
     display: block;
   }
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    left: auto;
+    right: 0;
+    width: rem(375px);
+
+    &::after {
+      background: rgba(gesso-grayscale(black), 0.7);
+      content: '';
+      height: 100vh;
+      left: 0;
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      width: calc(100vw - #{rem(375px)});
+    }
+  }
+}
+
+.c-mobile-menu__header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-mobile-menu__logo {
+  path {
+    fill: gesso-color(text, on-dark);
+  }
 }
 
 .c-mobile-menu__menu {
   @include list-clean();
   margin: 0.75em 0 0;
+  width: 100%;
 }
 
 .c-mobile-menu__item {
+  border: solid $mobile-menu-border-color;
+  border-width: 0 0 1px;
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
-  padding: 0;
   position: relative;
+
+  .c-mobile-menu__item {
+    display: block;
+    padding: 0;
+
+    .c-mobile-menu__item {
+      border-width: 0;
+    }
+  }
+
+  .c-mobile-menu__menu > & {
+    &:first-child {
+      border-top-width: 1px;
+    }
+  }
+
+  img {
+    display: none;
+  }
+
+  .c-card__media img {
+    display: block;
+  }
 }
 
 .c-mobile-menu__link {
   background-color: transparent;
-  border: 0;
+  border: solid transparent;
+  border-width: 0 0 0 5px;
   color: $mobile-menu-link-color;
   display: block;
-  font-family: gesso-font-family(system);
-  font-size: rem($mobile-menu-font-size);
-  font-weight: gesso-font-weight(bold);
+  flex: 1;
+  letter-spacing: 1px;
   line-height: $mobile-menu-line-height;
   margin: 0;
   padding: rem(
@@ -76,9 +123,10 @@ $mobile-menu-line-height: gesso-line-height(base);
         2
       )
     )
-    rem(gesso-spacing(2));
+    rem(gesso-spacing(0.5));
   text-align: left;
   text-decoration: none;
+  text-transform: uppercase;
   white-space: normal;
   width: auto;
   z-index: 3;
@@ -93,63 +141,96 @@ $mobile-menu-line-height: gesso-line-height(base);
   &.has-subnav {
     margin-right: $mobile-menu-button-width;
   }
+
+  &.is-expanded,
+  &.is-active-trail {
+    border-left-color: currentColor;
+  }
 }
 
 button.c-mobile-menu__link {
   cursor: pointer;
 }
 
-.c-mobile-menu__subnav-arrow {
-  @include focus();
-  @include image-replace($mobile-menu-button-width, $mobile-menu-button-height);
-  @include svg-background(mobile-arrow-down);
-  background-attachment: initial;
-  background-color: initial;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: 19px 12px;
-  border: 0;
-  box-shadow: none;
-  cursor: pointer;
-  display: inline-block;
-  outline-offset: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  vertical-align: top;
-  z-index: 2;
+.c-mobile-menu__section {
+  width: 100%;
+}
 
-  @if $support-for-rtl {
-    [dir='rtl'] & {
-      left: 0;
-      right: auto;
-    }
-  }
+.c-mobile-menu__description {
+  display: none;
 
-  &[aria-expanded='true'] {
-    @include svg-background(mobile-arrow-up);
+  .c-menu-menu__section--facilities-centers .c-mobile-menu__subnav & {
+    display: block;
+    font-size: rem(12px);
+    padding-left: rem(gesso-spacing(6));
   }
 }
 
 .c-mobile-menu__subnav {
   background-color: $mobile-menu-submenu-bg-color;
+  font-size: rem(gesso-font-size(2));
   list-style: none;
   margin: 0;
   padding: 0;
 
   .c-mobile-menu__link {
+    border-left-width: 0;
     color: $mobile-menu-submenu-link-color;
     padding-left: gesso-spacing(3);
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &:active {
       color: $mobile-menu-submenu-link-hover-color;
+      text-decoration: underline;
+    }
+
+    .c-icon {
+      color: inherit;
+    }
+  }
+
+  .c-mobile-menu__social {
+    padding-left: gesso-spacing(6);
+  }
+}
+
+.c-mobile-menu__subnav .c-mobile-menu__subnav {
+  .c-mobile-menu__link {
+    letter-spacing: normal;
+    padding-left: gesso-spacing(6);
+    text-transform: none;
+
+    .c-menu-menu__section--facilities-centers & {
+      @include arrow-link(white);
+      padding-bottom: 0;
     }
   }
 }
 
+.c-mobile-menu__subnav-toggle {
+  background: rgba(gesso-grayscale(stanford-black), 0.22);
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  height: $mobile-menu-button-height;
+  width: $mobile-menu-button-width;
+}
+
+.c-mobile-menu__subnav-icon {
+  transition: transform gesso-duration(short) ease-out;
+
+  .c-mobile-menu__subnav-toggle[aria-expanded='true'] & {
+    transform: rotate(45deg);
+  }
+}
+
 .c-mobile-menu__section-inner {
-  @include layout-constrain();
   background-color: $mobile-menu-submenu-bg-color;
+}
+
+.c-mobile-menu__block {
+  .is-open & {
+    color: inherit;
+  }
 }

@@ -1,0 +1,27 @@
+uuid: 7bddb5c8-f0b6-4d6f-ae94-12ef330fdb1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.footer_email_signup_form
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+      - full_html
+id: site_setting_entity.footer_email_signup_form.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: footer_email_signup_form
+label: WYSIWYG
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

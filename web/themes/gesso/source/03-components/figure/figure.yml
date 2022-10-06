@@ -1,4 +1,10 @@
 ---
-media: '<img src="https://picsum.photos/200/200?image=237" alt="dog photo">'
-caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper vel metus at cursus.'
+media: '<img src="https://picsum.photos/600/450?image=237" alt="dog photo">'
+caption: |-
+  Praesuli desolationem promoveram Propter Conalus Quod, tibi, praecedentia eum ea purus
+  te p manibus regnandi postscripta etiam Zelabant tempore Regalis Unde purus ut a secretarius
+  deserunt si a NUNC intendo est. Cras hac Quae arcu eros personami qui gubernia at meritorum
+  occiditur quae te aligua, recedendo eos fusius, iure rerum me SED. REM in eum si est fuga
+  quinta arcu sufficere si invidiae nostris subsellia.
+  <i>(Firstname Lastname/SLAC National Accelerator Laboratory)</i>'
 modifier_classes: ''

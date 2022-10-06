@@ -1,0 +1,21 @@
+uuid: 4b55da08-083f-4a6e-ba52-6dc27f4c2476
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+  theme:
+    - gesso
+id: footer_tagline
+theme: gesso
+region: disabled
+weight: -7
+provider: null
+plugin: single_rendered_site_settings_block
+settings:
+  id: single_rendered_site_settings_block
+  label: 'Footer Tagline'
+  label_display: '0'
+  provider: site_settings
+  setting: footer_tagline
+visibility: {  }

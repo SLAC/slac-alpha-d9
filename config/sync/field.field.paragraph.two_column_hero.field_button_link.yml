@@ -1,0 +1,23 @@
+uuid: c8abe541-dd65-422c-bebb-9709a3980971
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_link
+    - paragraphs.paragraphs_type.two_column_hero
+  module:
+    - link
+id: paragraph.two_column_hero.field_button_link
+field_name: field_button_link
+entity_type: paragraph
+bundle: two_column_hero
+label: 'RSS Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

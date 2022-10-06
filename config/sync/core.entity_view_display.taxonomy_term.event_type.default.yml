@@ -1,0 +1,61 @@
+uuid: adf3e7bc-4ad5-4ae0-bff6-1bdbc4947df9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.event_type.field_content
+    - field.field.taxonomy_term.event_type.field_display_name
+    - field.field.taxonomy_term.event_type.field_lede
+    - field.field.taxonomy_term.event_type.field_paragraph
+    - taxonomy.vocabulary.event_type
+  module:
+    - entity_reference_revisions
+    - text
+id: taxonomy_term.event_type.default
+targetEntityType: taxonomy_term
+bundle: event_type
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_content:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_display_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_lede:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: large_image
+      link: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

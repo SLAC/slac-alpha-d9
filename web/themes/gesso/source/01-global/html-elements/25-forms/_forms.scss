@@ -25,6 +25,27 @@ input {
   line-height: normal;
 }
 
+// Hide chrome's native search input ui
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+// And Microsoft's
+input[type='search']::-ms-clear {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+input[type='search']::-ms-reveal {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
 // input[type='button'] {}
 // input[type='checkbox'] {}
 // input[type='color'] {}
@@ -77,4 +98,9 @@ optgroup {
 
 textarea {
   overflow: auto;
+}
+
+::placeholder {
+  color: gesso-color(text, primary);
+  opacity: 1;
 }

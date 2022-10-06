@@ -1,0 +1,98 @@
+{% set classes = [
+  'media-detail',
+  'l-section',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  <div class="l-constrain">
+    {% if show_admin_info %}
+      {% if not admin_info %}
+        {% set admin_info %}
+          {% include '@components/message/message.twig' with {
+            'heading': 'Status message',
+            'messages': ['This is a status message about <em class="placeholder">something</em> that has been updated. <a href="#">This is a link</a>.'],
+          } %}
+          {% include '@components/button-group/button-group.twig' with {
+            'heading': 'Primary tabs',
+            'element': 'nav',
+            'button_modifier_classes': 'c-button--base',
+            'buttons': [
+              {
+                'text': 'View',
+                'active': true,
+              },
+              {
+                'text': 'Edit',
+              },
+              {
+                'text': 'Delete',
+              },
+              {
+                'text': 'Revisions',
+              },
+            ],
+          } %}
+        {% endset %}
+      {% endif %}
+      {% block admin_info %}
+        {{ admin_info }}
+      {% endblock %}
+    {% endif %}
+    {{ title_prefix }}
+    {% include '@components/kicker/kicker.twig' with {
+      kicker_content: media_type
+    } %}
+    {% include '@components/page-title/page-title.twig' %}
+    {{ title_suffix }}
+    {% embed '@layouts/grid/grid.twig' with { num_of_cols: 2 } %}
+      {% block content %}
+        <div class="media-detail__col">
+          <div class="media-detail__media">
+            {{ media }}
+          </div>
+          {{ media_cta }}
+        </div>
+        <div class="media-detail__col">
+          {% include '@components/wysiwyg/wysiwyg.twig' with {
+            'content': media_caption,
+            'modifier_classes': 'c-wysiwyg--no-constrain media-detail__content',
+          } %}
+          {% if media_credit or media_use or media_about %}
+            {% set accordion_items %}
+              {% if media_transcript %}
+                {% include '@components/accordion/accordion-item.twig' with {
+                  'accordion_title': 'Transcript'|t,
+                  'accordion_content': media_transcript
+                } %}
+              {% endif %}
+              {% if media_credit %}
+                {% include '@components/accordion/accordion-item.twig' with {
+                  'accordion_title': 'Credit'|t,
+                  'accordion_content': media_credit
+                } %}
+              {% endif %}
+              {% if media_use %}
+                {% include '@components/accordion/accordion-item.twig' with {
+                  'accordion_title': 'Media Use'|t,
+                  'accordion_content': media_use
+                } %}
+              {% endif %}
+              {% if media_about %}
+                {% include '@components/accordion/accordion-item.twig' with {
+                  'accordion_title': 'About SLAC'|t,
+                  'accordion_content': media_about
+                } %}
+              {% endif %}
+            {% endset %}
+            {% include '@components/accordion/accordion.twig' with {
+              'accordion_items': accordion_items
+            } %}
+          {% endif %}
+          {{ tags }}
+        </div>
+
+      {% endblock %}
+    {% endembed %}
+  </div>
+</div>

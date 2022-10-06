@@ -1,0 +1,35 @@
+uuid: 26cac3ad-18c2-47ec-bd18-7389b006da22
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.large_link_list
+    - field.field.node.media_mention.field_link
+    - field.field.node.media_mention.field_tags
+    - node.type.media_mention
+  module:
+    - link
+    - user
+id: node.media_mention.large_link_list
+targetEntityType: node
+bundle: media_mention
+mode: large_link_list
+content:
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_research_area: true
+  field_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

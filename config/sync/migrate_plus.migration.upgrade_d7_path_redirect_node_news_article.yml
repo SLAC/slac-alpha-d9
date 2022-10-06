@@ -1,0 +1,89 @@
+uuid: e298891d-777e-4111-8a3c-0965dd054bc1
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: hpDGLR8EeHTVdiqMaOKbBJQyGXgCsGXuX58xUN1d624
+id: upgrade_d7_path_redirect_node_news_article
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Path Redirect (News-article)'
+source:
+  plugin: d7_url_alias
+  constants:
+    slash: /
+    source_prefix: 'entity:'
+process:
+  _skip_non_nodes:
+    -
+      plugin: explode
+      source: source
+      delimiter: /
+    -
+      plugin: extract
+      default: INVALID_TYPE
+      index:
+        - 0
+    -
+      plugin: skip_on_value
+      not_equals: true
+      method: row
+      value:
+        - node
+  _skip_non_news:
+    -
+      plugin: explode
+      source: source
+      delimiter: /
+    -
+      plugin: extract
+      default: INVALID_NID
+      index:
+        - 1
+    -
+      plugin: migration_lookup
+      migration:
+        - upgrade_d7_node_complete_news_article
+    -
+      plugin: skip_on_empty
+      method: row
+  rid:
+    -
+      plugin: entity_lookup
+      source: alias
+      value_key: redirect_source__path
+      entity_type: redirect
+      ignore_case: true
+    -
+      plugin: skip_on_empty
+      method: process
+  uid:
+    plugin: default_value
+    default_value: 1
+  language:
+    plugin: default_value
+    source: language
+    default_value: und
+  status_code:
+    plugin: default_value
+    default_value: 301
+  redirect_source/path: alias
+  redirect_redirect/uri:
+    -
+      plugin: concat
+      source:
+        - constants/source_prefix
+        - source
+destination:
+  plugin: 'entity:redirect'
+migration_dependencies:
+  required: {  }
+  optional: {  }

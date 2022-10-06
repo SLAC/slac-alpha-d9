@@ -1,0 +1,25 @@
+uuid: 5ffb461c-0fe0-4e5e-a27c-a2a556fa2589
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-contact
+  module:
+    - system
+  theme:
+    - gesso
+id: footercontact
+theme: gesso
+region: footer
+weight: -5
+provider: null
+plugin: 'system_menu_block:footer-contact'
+settings:
+  id: 'system_menu_block:footer-contact'
+  label: 'Footer contact'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

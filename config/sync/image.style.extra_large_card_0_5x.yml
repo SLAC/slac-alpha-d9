@@ -1,0 +1,17 @@
+uuid: b8283cff-4a8e-4d45-91cc-e862012f1305
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: extra_large_card_0_5x
+label: 'Extra Large Card (0.5x)'
+effects:
+  8dc20b7b-02a3-4549-97e0-4f765839df40:
+    uuid: 8dc20b7b-02a3-4549-97e0-4f765839df40
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 670
+      height: 300
+      crop_type: focal_point

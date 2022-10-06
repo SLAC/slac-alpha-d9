@@ -1,0 +1,103 @@
+uuid: e313fb3c-96af-4947-a488-a5454405d6d5
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: aHDp0bgJJP65JA7iKd-2C9GBQZk1GuWniNDO5D8xHz4
+id: upgrade_d7_paragraphs_simple
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Simple)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: simple
+process:
+  field_body/0/value:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_content/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: //img
+      attribute_options:
+        name: src
+      search: 'https://www6.slac.stanford.edu/files'
+      replace: /sites/default/files
+    -
+      plugin: dom_str_replace
+      mode: attribute
+      xpath: //a
+      attribute_options:
+        name: href
+      search: 'https://www6.slac.stanford.edu/'
+      replace: /
+    -
+      plugin: dom_remove
+      mode: attribute
+      selector: '//span[@style] | //a[@style] | //em[@style] | //strong[@style]'
+      attribute: style
+    -
+      plugin: dom
+      method: export
+    -
+      plugin: media_wysiwyg_filter
+    -
+      plugin: img_tag_to_embed
+  _embed_based_format:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: field_content/0/value
+    -
+      plugin: dom
+      method: import
+    -
+      plugin: dom_select
+      selector: '//iframe | //embed | //a[@data-flickr-embed]'
+      limit: 1
+    -
+      plugin: default_value
+      default_value: NO_EMBED
+    -
+      plugin: static_map
+      map:
+        NO_EMBED: basic_html
+      default_value: full_html
+  _default_basic_html_format:
+    -
+      plugin: default_value
+      default_value: basic_html
+  field_body/0/format:
+    -
+      plugin: null_coalesce
+      source:
+        - '@_embed_based_format'
+        - '@_default_basic_html_format'
+  type:
+    -
+      plugin: static_map
+      source: '@field_body/0/format'
+      map:
+        basic_html: wysiwyg
+        full_html: embed_full_html_
+      default_value: wysiwyg
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: wysiwyg
+migration_dependencies:
+  required: {  }
+  optional: {  }

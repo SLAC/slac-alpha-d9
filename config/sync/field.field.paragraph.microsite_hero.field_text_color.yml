@@ -1,0 +1,23 @@
+uuid: 3fc119b9-feb8-4acd-bdf2-5c25befe0029
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_color
+    - paragraphs.paragraphs_type.microsite_hero
+  module:
+    - options
+id: paragraph.microsite_hero.field_text_color
+field_name: field_text_color
+entity_type: paragraph
+bundle: microsite_hero
+label: 'Text Color'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: white
+default_value_callback: ''
+settings: {  }
+field_type: list_string

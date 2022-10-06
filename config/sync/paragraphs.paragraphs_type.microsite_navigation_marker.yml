@@ -1,0 +1,10 @@
+uuid: c9adab81-34d5-41eb-af89-beeedb8b49ac
+langcode: en
+status: true
+dependencies: {  }
+id: microsite_navigation_marker
+label: 'Microsite Navigation Marker'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

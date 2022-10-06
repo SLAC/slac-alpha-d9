@@ -1,0 +1,27 @@
+uuid: 30016307-634b-4370-8091-1d331019fe09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file_1
+    - media.type.animated_icon
+  module:
+    - file
+id: media.animated_icon.field_media_file_1
+field_name: field_media_file_1
+entity_type: media
+bundle: animated_icon
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: json
+  max_filesize: ''
+  description_field: false
+field_type: file

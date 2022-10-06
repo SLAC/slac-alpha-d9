@@ -1,0 +1,26 @@
+uuid: b2ee81c3-1134-4dca-a434-95a8bcb0e309
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.large_card
+    - core.entity_view_mode.paragraph.teaser_card
+    - field.storage.paragraph.field_display_style
+    - paragraphs.paragraphs_type.card
+  module:
+    - view_mode_switch
+id: paragraph.card.field_display_style
+field_name: field_display_style
+entity_type: paragraph
+bundle: card
+label: 'Display Style'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_view_modes:
+    large_card: large_card
+    teaser_card: teaser_card
+field_type: view_mode_switch

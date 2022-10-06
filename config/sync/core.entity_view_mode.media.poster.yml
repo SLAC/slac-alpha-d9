@@ -1,0 +1,10 @@
+uuid: d22443cd-d791-46ef-98e9-22ca8283cf42
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.poster
+label: Poster
+targetEntityType: media
+cache: true

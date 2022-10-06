@@ -1,0 +1,10 @@
+uuid: 5990f705-a688-44ad-9ed5-6a440109bb1a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.teaser_card
+label: 'Teaser Card'
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,19 @@
+uuid: f3307fbc-30c1-4c9e-8861-7670440996c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_line_3
+    - site_settings.site_setting_entity_type.colorful_tagline_for_homepage
+id: site_setting_entity.colorful_tagline_for_homepage.field_line_3
+field_name: field_line_3
+entity_type: site_setting_entity
+bundle: colorful_tagline_for_homepage
+label: 'Line 3'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

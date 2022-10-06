@@ -1,0 +1,11 @@
+@use '../functions/gesso' as *;
+
+@mixin font-family-primary {
+  font-family: gesso-font-family(primary);
+  font-feature-settings: 'liga' off;
+}
+
+@mixin font-family-secondary {
+  font-family: gesso-font-family(secondary);
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}

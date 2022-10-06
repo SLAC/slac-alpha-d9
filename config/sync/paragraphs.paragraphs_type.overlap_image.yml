@@ -1,0 +1,14 @@
+uuid: 32fbbc2a-32aa-4d35-bdf5-cee2fc6a38e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: overlap_image
+label: 'Overlap Image'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  style_options:
+    enabled: true

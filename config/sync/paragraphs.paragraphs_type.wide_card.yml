@@ -1,0 +1,10 @@
+uuid: 37c006d4-2ad9-4339-9772-0f1be6f05193
+langcode: en
+status: true
+dependencies: {  }
+id: wide_card
+label: 'Wide Card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

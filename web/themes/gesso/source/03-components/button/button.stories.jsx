@@ -7,52 +7,85 @@ const settings = {
   title: 'Components/Button',
 };
 
-const Primary = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Primary = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Primary.args = { ...data };
 
-const Secondary = args => (
-  parse(twigTemplate({
-    ...args,
-    modifier_classes: 'c-button--secondary',
-  }))
-);
+const Secondary = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-button--secondary',
+    })
+  );
 Secondary.args = { ...data };
 
-const Base = args => (
-  parse(twigTemplate({
-    ...args,
-    modifier_classes: 'c-button--base',
-  }))
-);
+const Outline = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-button--outline',
+    })
+  );
+Outline.args = { ...data };
+
+const OutlineSecondary = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-button--outline-secondary',
+    })
+  );
+OutlineSecondary.args = { ...data };
+
+const Base = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-button--base',
+    })
+  );
 Base.args = { ...data };
 
-const Danger = args => (
-  parse(twigTemplate({
-    ...args,
-    modifier_classes: 'c-button--danger',
-  }))
-);
+const Danger = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-button--danger',
+    })
+  );
 Danger.args = { ...data };
 
-const Small = args => (
-  parse(twigTemplate({
-    ...args,
-    modifier_classes: 'c-button--small',
-  }))
-);
+const Small = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-button--small',
+    })
+  );
 Small.args = { ...data };
 
-const Large = args => (
-  parse(twigTemplate({
-    ...args,
-    modifier_classes: 'c-button--large',
-  }))
-);
+const Large = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-button--large',
+    })
+  );
 Large.args = { ...data };
 
 export default settings;
-export { Primary, Secondary, Base, Danger, Large, Small };
+export {
+  Primary,
+  Secondary,
+  Outline,
+  OutlineSecondary,
+  Base,
+  Danger,
+  Large,
+  Small,
+};

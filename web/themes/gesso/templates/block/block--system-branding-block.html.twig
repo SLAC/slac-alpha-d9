@@ -16,10 +16,11 @@
 
 {% block block_content %}
   {% if site_logo %}
-    {% include '@components/site-logo/site-logo.twig' with {
+    {% include '@components/logo/logo.twig' with {
       'attributes': '',
       'url': path('<front>'),
       'site_logo': site_logo,
+      'title': 'Home'|t
     } %}
   {% endif %}
 

@@ -1,0 +1,53 @@
+uuid: a100e3d7-c3be-435a-8a5a-cb9c60b258d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_hero.field_body
+    - field.field.paragraph.image_hero.field_image
+    - field.field.paragraph.image_hero.field_lottiefile
+    - field.field.paragraph.image_hero.field_text
+    - field.field.paragraph.image_hero.field_text_color
+    - paragraphs.paragraphs_type.image_hero
+  module:
+    - lottiefiles_field
+    - text
+id: paragraph.image_hero.default
+targetEntityType: paragraph
+bundle: image_hero
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: image_hero
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_lottiefile:
+    type: lottiefiles_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_text_color: true
+  search_api_excerpt: true

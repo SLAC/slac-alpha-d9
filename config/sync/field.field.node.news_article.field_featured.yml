@@ -1,0 +1,23 @@
+uuid: a8b3f89e-b0c7-4626-9b8a-fa0137ce8912
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured
+    - node.type.news_article
+id: node.news_article.field_featured
+field_name: field_featured
+entity_type: node
+bundle: news_article
+label: 'Is featured news article?'
+description: 'If this news article is featured, it will be eligible for display in the featured news article space on the news and events listing page.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

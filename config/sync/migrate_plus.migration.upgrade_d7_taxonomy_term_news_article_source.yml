@@ -1,0 +1,47 @@
+uuid: 2cfc2b65-bada-4812-8d14-1d783cbf0dc8
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: XtBIU1ltN-ZrlNkY5JiCmsUPQWadGnZg9PrU3XXvjEU
+id: upgrade_d7_taxonomy_term_news_article_source
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Taxonomy terms (News-article source)'
+source:
+  plugin: d7_taxonomy_term
+  bundle: news_article_source
+process:
+  tid:
+    -
+      plugin: static_map
+      source: name
+      bypass: true
+      map:
+        External: External
+        Symmetry: 'Symmetry Magazine'
+        Fermilab: Fermilab
+    -
+      plugin: entity_lookup
+      value_key: name
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: news_source
+      ignore_case: true
+    -
+      plugin: skip_on_empty
+      method: row
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: news_source
+migration_dependencies:
+  required: {  }
+  optional: {  }

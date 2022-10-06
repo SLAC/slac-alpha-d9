@@ -1,0 +1,26 @@
+uuid: e07fb3c3-8c8e-40c0-996f-82e91ce0eb2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.two_column_hero
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.two_column_hero.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: two_column_hero
+label: Lede
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

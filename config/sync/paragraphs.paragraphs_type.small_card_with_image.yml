@@ -1,0 +1,10 @@
+uuid: 7b134e3b-e7f4-4de4-ad10-b329664a6c44
+langcode: en
+status: true
+dependencies: {  }
+id: small_card_with_image
+label: 'Small Card with Image'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,23 @@
+uuid: 5f6d226b-fafc-4402-a068-6499e294fd51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video_lightbox.field_video
+    - paragraphs.paragraphs_type.video_lightbox
+id: paragraph.video_lightbox.default
+targetEntityType: paragraph
+bundle: video_lightbox
+mode: default
+content:
+  field_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: video_lightbox
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

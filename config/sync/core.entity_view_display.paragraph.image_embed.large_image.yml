@@ -1,0 +1,30 @@
+uuid: bf5714fc-ac0d-4110-a46e-1ad3061d1fd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.large_image
+    - field.field.paragraph.image_embed.field_boolean
+    - field.field.paragraph.image_embed.field_image
+    - field.field.paragraph.image_embed.field_long_text
+    - field.field.paragraph.image_embed.field_view_mode
+    - paragraphs.paragraphs_type.image_embed
+id: paragraph.image_embed.large_image
+targetEntityType: paragraph
+bundle: image_embed
+mode: large_image
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_boolean: true
+  field_long_text: true
+  field_view_mode: true
+  search_api_excerpt: true

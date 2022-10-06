@@ -1,0 +1,29 @@
+uuid: 75ab1e59-144b-49ed-b64a-d6ebc53638e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_image_3
+    - media.type.image
+    - site_settings.site_setting_entity_type.colorful_tagline_for_our_story
+id: site_setting_entity.colorful_tagline_for_our_story.field_image_3
+field_name: field_image_3
+entity_type: site_setting_entity
+bundle: colorful_tagline_for_our_story
+label: 'Line 3 Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

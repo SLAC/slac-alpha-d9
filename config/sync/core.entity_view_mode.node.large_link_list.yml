@@ -1,0 +1,10 @@
+uuid: 1ef13cb3-5e0a-4a65-9e18-92c56b9abf87
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.large_link_list
+label: 'Large link list'
+targetEntityType: node
+cache: true

@@ -1,0 +1,56 @@
+uuid: 3d78c3cd-c9d3-40e5-bab9-9ee8dfce3013
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tout.field_body
+    - field.field.paragraph.tout.field_image
+    - field.field.paragraph.tout.field_link
+    - field.field.paragraph.tout.field_text
+    - paragraphs.paragraphs_type.tout
+  module:
+    - link
+    - text
+id: paragraph.tout.default
+targetEntityType: paragraph
+bundle: tout
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: tout
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

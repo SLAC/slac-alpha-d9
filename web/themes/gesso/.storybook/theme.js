@@ -3,18 +3,18 @@ import { create } from '@storybook/theming';
 const storybookTheme = create({
   appBg: '#F8F8F8',
   appContentBg: '#fff',
-  barBg: '#19013A',
-  barSelectedColor: '#EE2737',
-  barTextColor: '#fff',
+  barBg: '#fff',
+  barSelectedColor: '#8c1515',
+  barTextColor: '#2e2d29',
   base: 'light',
-  brandTitle: 'Forum One',
-  brandUrl: 'https://forumone.com',
+  brandTitle: 'SLAC',
+  brandUrl: 'https://www6.slac.stanford.edu/',
   brandImage:
-    'https://www.forumone.com/wp-content/themes/forumone/images/forumone.svg',
-  colorPrimary: '#3E2A5E',
-  colorSecondary: '#EE2737',
-  fontBase: '"Barlow", sans-serif',
-  textColor: '#3f3f3f',
+    './images/logo.svg',
+  colorPrimary: '#8c1515',
+  colorSecondary: '#8c1515',
+  fontBase: '"Lato", Arial, sans-serif',
+  textColor: '#2e2d29',
 });
 
 export default storybookTheme;

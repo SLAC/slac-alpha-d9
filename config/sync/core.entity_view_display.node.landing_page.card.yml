@@ -1,0 +1,82 @@
+uuid: 952cc5ec-d1c1-4482-b1e3-f60605db55ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.landing_page.field_boolean
+    - field.field.node.landing_page.field_long_text
+    - field.field.node.landing_page.field_paragraphs
+    - field.field.node.landing_page.field_teaser
+    - field.field.node.landing_page.field_teaser_image
+    - field.field.node.landing_page.field_text
+    - node.type.landing_page
+  module:
+    - slac_core
+    - user
+id: node.landing_page.card
+targetEntityType: node
+bundle: landing_page
+mode: card
+content:
+  field_paragraphs:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_teaser:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_boolean: true
+  field_long_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

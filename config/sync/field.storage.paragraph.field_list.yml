@@ -1,0 +1,30 @@
+uuid: 4b7eb820-ddf3-49fa-8b99-15808471c941
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_list
+field_name: field_list
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: card
+      label: Card
+    -
+      value: teaser
+      label: Teaser
+    -
+      value: large_card
+      label: 'Large Card (Person Only)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

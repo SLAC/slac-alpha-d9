@@ -1,0 +1,17 @@
+uuid: 56c27296-2b62-4183-87a8-c449302a05e0
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: 61dzDkJtn-diD6PrzdP22Evk2HOdmGcZJFUwMuBkFCc
+id: migrate_drupal_7
+label: 'Import from Drupal 7'
+description: 'Migrations originally generated from drush migrate-upgrade --configure-only'
+source_type: 'Drupal 7'
+module: null
+shared_configuration:
+  source:
+    key: drupal7

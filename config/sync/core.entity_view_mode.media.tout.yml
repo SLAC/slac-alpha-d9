@@ -1,0 +1,10 @@
+uuid: 092f6ca0-39b0-40fe-a211-8b859e176b42
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.tout
+label: Tout
+targetEntityType: media
+cache: true

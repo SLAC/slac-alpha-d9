@@ -1,0 +1,29 @@
+uuid: c2d20003-4c36-4b49-9d2d-85b03db435f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_research_area
+    - media.type.remote_video
+    - taxonomy.vocabulary.research_area
+id: media.remote_video.field_research_area
+field_name: field_research_area
+entity_type: media
+bundle: remote_video
+label: 'Research Area'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      research_area: research_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

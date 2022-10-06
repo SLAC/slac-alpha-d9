@@ -1,0 +1,23 @@
+{% set classes = [
+  'c-overlay-link',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<a {{ add_attributes({ class: classes, href: link } ) }}>
+  {{ image }}
+  {% if label %}
+    {% include '@components/kicker/kicker.twig' with {
+      kicker_content: label,
+      modifier_classes: 'c-overlay-link__label',
+    }
+  %}
+  {% endif %}
+  <div class="c-overlay-link__content">
+    {% if kicker %}
+      {% include '@components/kicker/kicker.twig' with { kicker_content: kicker } %}
+    {% endif %}
+    <span class="c-overlay-link__title{% if link %} c-arrow-link--white{% endif %}">
+      {{ title }}
+    </span>
+  </div>
+</a>

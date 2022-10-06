@@ -1,0 +1,11 @@
+uuid: 2a5b83e6-999f-4c92-abe5-0af2cc19e4c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - oembed_providers.provider.art19
+id: art19
+label: ART19
+description: ''
+providers:
+  - ART19

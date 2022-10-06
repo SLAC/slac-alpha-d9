@@ -1,0 +1,39 @@
+{% set classes = [
+  'c-drawer',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{% set trigger_classes = [
+  'c-button',
+  'c-drawer__trigger',
+  trigger_modifier_classes ? trigger_modifier_classes : ''
+]|join(' ')|trim %}
+
+{{ attach_library('gesso/drawer') }}
+
+<div {{ add_attributes({ class: classes }) }}>
+  <div class="c-drawer__content">
+    <div class="c-drawer__content-collapsed">
+      {{ drawer_content_collapsed }}
+    </div>
+    <div class="c-drawer__content-expanded">
+      {{ drawer_content_expanded }}
+    </div>
+  </div>
+  <button class="{{ trigger_classes }}">
+    <span class="c-drawer__trigger-label-expanded">
+      {{ drawer_trigger_label_expanded ? drawer_trigger_label_expanded : drawer_trigger_label_collapsed }}
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'minus',
+        'is_hidden': true
+      } %}
+    </span>
+    <span class="c-drawer__trigger-label-collapsed">
+      {{ drawer_trigger_label_collapsed ? drawer_trigger_label_collapsed : drawer_trigger_label_expanded }}
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'plus',
+        'is_hidden': true
+      } %}
+    </span>
+  </button>
+</div>

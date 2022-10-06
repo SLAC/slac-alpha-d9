@@ -1,0 +1,25 @@
+uuid: f4ee0e39-a4f5-4847-b696-650ce97f4d9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.colorful_tagline_for_homepage
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: site_setting_entity.colorful_tagline_for_homepage.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: colorful_tagline_for_homepage
+label: WYSIWYG
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

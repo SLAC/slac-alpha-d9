@@ -1,7 +1,7 @@
 ---
-has_overlay: true
+text_color: 'white'
 hero_title: 'Hero Title'
-hero_summary: '<p>Hero summary text.</p>'
-hero_button_text: 'Hero Button'
-hero_image: '<img src="https://picsum.photos/1600/800?image=11" alt="alt text" />'
-hero_button_url: '#0'
+hero_summary: ''
+hero_image: '<img src="https://picsum.photos/1440/768?image=11" alt="alt text" />'
+hero_kicker: 'Hero Kicker'
+icon: 'xray'

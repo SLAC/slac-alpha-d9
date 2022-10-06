@@ -1,0 +1,112 @@
+uuid: 92190646-3416-4d07-8e62-dd50a0bc60d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_paragraph
+    - node.type.homepage
+    - paragraphs.paragraphs_type.video_hero
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_hero_paragraph
+field_name: field_hero_paragraph
+entity_type: node
+bundle: homepage
+label: Hero
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      video_hero: video_hero
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 24
+        enabled: false
+      accordion_item:
+        weight: 25
+        enabled: false
+      article_hero:
+        weight: 26
+        enabled: false
+      callout_box:
+        weight: 32
+        enabled: false
+      card:
+        weight: 27
+        enabled: false
+      content_embed:
+        weight: 31
+        enabled: false
+      embed_block:
+        weight: 32
+        enabled: false
+      embed_full_html_:
+        weight: 36
+        enabled: false
+      extra_large_card:
+        weight: 28
+        enabled: false
+      fifty_fifty:
+        weight: 29
+        enabled: false
+      image_carousel:
+        weight: 31
+        enabled: false
+      image_embed:
+        weight: 32
+        enabled: false
+      image_hero:
+        weight: 33
+        enabled: false
+      microsite_hero:
+        weight: 34
+        enabled: false
+      overlap_image:
+        weight: 35
+        enabled: false
+      promo_box:
+        weight: 36
+        enabled: false
+      quote:
+        weight: 37
+        enabled: false
+      section:
+        weight: 38
+        enabled: false
+      small_card_with_icon:
+        weight: 39
+        enabled: false
+      small_card_with_image:
+        weight: 40
+        enabled: false
+      small_card_with_solid_background:
+        weight: 41
+        enabled: false
+      table_of_contents:
+        weight: 46
+        enabled: false
+      text_block:
+        weight: 47
+        enabled: false
+      tout:
+        weight: 42
+        enabled: false
+      video_hero:
+        weight: 43
+        enabled: true
+      video_lightbox:
+        weight: 44
+        enabled: false
+      wide_card:
+        weight: 45
+        enabled: false
+      wysiwyg:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

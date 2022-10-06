@@ -1,0 +1,8 @@
+{% block search_label %}
+  <label for="{{ search_id }}" class="u-visually-hidden">
+    {{ 'Search'|t }}
+  </label>
+{% endblock %}
+{% block search_input %}
+  <input type="search" placeholder="{{ 'Search'|t }}" id="{{ search_id }}" class="c-search__input"/>
+{% endblock %}

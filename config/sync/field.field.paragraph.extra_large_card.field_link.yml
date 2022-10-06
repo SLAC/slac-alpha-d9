@@ -1,0 +1,23 @@
+uuid: bf44ee08-a790-4965-bd9a-8d2f3b5083bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.extra_large_card
+  module:
+    - link
+id: paragraph.extra_large_card.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: extra_large_card
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

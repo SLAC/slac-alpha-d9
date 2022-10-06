@@ -1,0 +1,26 @@
+uuid: 7dc3b6d3-8f24-4ee1-b8c9-e954a105b78e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lede
+    - taxonomy.vocabulary.tags
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: taxonomy_term.tags.field_lede
+field_name: field_lede
+entity_type: taxonomy_term
+bundle: tags
+label: Lede
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

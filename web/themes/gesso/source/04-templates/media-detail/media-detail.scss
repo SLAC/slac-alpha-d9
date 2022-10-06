@@ -1,0 +1,15 @@
+@use '00-config' as *;
+
+.media-detail__media {
+  margin-bottom: rem(gesso-spacing(8));
+
+  > iframe {
+    aspect-ratio: 16/9;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.media-detail__content {
+  margin-bottom: rem(gesso-spacing(8));
+}

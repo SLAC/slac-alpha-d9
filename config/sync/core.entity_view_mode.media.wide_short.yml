@@ -1,0 +1,10 @@
+uuid: 8a6c3ad5-1860-458a-a3a0-7475d337b2d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.wide_short
+label: 'Wide and Short'
+targetEntityType: media
+cache: true

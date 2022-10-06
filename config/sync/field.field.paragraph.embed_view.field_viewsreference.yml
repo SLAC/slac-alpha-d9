@@ -1,0 +1,67 @@
+uuid: 6197662f-4ebb-4215-a1c1-d1efd5413b12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_viewsreference
+    - paragraphs.paragraphs_type.embed_view
+  module:
+    - viewsreference
+id: paragraph.embed_view.field_viewsreference
+field_name: field_viewsreference
+entity_type: paragraph
+bundle: embed_view
+label: View
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    embed: embed
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+    attachment: 0
+  preselect_views:
+    3_cards_with_show_more: 3_cards_with_show_more
+    landing_pages: landing_pages
+    landing_pages_media: landing_pages_media
+    landing_pages_taxonomy_term: landing_pages_taxonomy_term
+    landing_page_topic_views: landing_page_topic_views
+    news_collection_views: news_collection_views
+    teaser_list: teaser_list
+    block_content: 0
+    comment: 0
+    comments_recent: 0
+    content: 0
+    content_recent: 0
+    event_type_taxonomy_term: 0
+    files: 0
+    frontpage: 0
+    media: 0
+    media_library: 0
+    moderated_content: 0
+    related_content_for_detail_pages: 0
+    related_content_for_media_pages: 0
+    search: 0
+    taxonomy_term: 0
+    user_admin_people: 0
+    watchdog: 0
+    webform_submissions: 0
+    who_s_new: 0
+    who_s_online: 0
+  enabled_settings:
+    limit: limit
+    argument: argument
+    exposed_filters: exposed_filters
+    offset: 0
+    pager: 0
+    title: 0
+field_type: viewsreference

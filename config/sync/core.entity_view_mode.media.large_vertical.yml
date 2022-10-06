@@ -1,0 +1,10 @@
+uuid: 2267d460-c4b1-4fbc-8a43-43da2a37c154
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.large_vertical
+label: 'Large Vertical'
+targetEntityType: media
+cache: true

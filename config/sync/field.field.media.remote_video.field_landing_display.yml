@@ -1,0 +1,23 @@
+uuid: 8e0d8ac2-23ae-49a6-9367-6e965ced8100
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_landing_display
+    - media.type.remote_video
+id: media.remote_video.field_landing_display
+field_name: field_landing_display
+entity_type: media
+bundle: remote_video
+label: 'Display on Images & Video landing page?'
+description: 'If this toggle is enabled, this media will be included on the Images & Videos landing page.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

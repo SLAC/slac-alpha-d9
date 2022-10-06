@@ -1,0 +1,23 @@
+{% set is_link_card = content.field_links|field_value is not empty %}
+
+{% if is_link_card %}
+  {% set attributes = attributes.addClass('c-card--link') %}
+  {% set title %}
+    {% if content.field_link|field_value %}
+      <a href="{{ content.field_link|field_value }}" class="c-arrow-link">
+        {{- content.field_short_text|field_value -}}
+      </a>
+    {% else %}
+      {{- content.field_short_text|field_value -}}
+    {% endif %}
+  {% endset %}
+{% endif %}
+
+{% include '@components/card/card.twig' with {
+  kicker: content.field_text|field_value,
+  title: is_link_card ? title : content.field_short_text|field_value,
+  url: is_link_card ? false : content.field_link|field_value,
+  media: content.field_image|field_value,
+  card_content: content|without('field_text', 'field_short_text', 'field_link', 'field_image', 'field_list'),
+  modifier_classes: modifier_classes ? modifier_classes : ""
+} %}

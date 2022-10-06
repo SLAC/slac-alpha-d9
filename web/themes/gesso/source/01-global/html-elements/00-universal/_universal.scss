@@ -6,6 +6,7 @@
 //   transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, transform;
 //   transition-timing-function: gesso-easing(ease-in);
 // }
+@use '00-config' as *;
 
 *,
 *::before,
@@ -23,4 +24,11 @@
   @page {
     margin: 2cm;
   }
+}
+
+:root {
+  @include default-variables;
+  --gesso-header-initial-height: 1px;
+  --gesso-header-current-height: 1px;
+  --gesso-footer-overlap: 82px;
 }

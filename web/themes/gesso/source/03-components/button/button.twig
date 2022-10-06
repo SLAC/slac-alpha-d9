@@ -11,5 +11,7 @@
 
 {% if is_demo %}
   {{ link(text_demo, url, {'class': classes}) }}
+  {{ link(chevron_demo, url, {'class': classes ~ ' c-button--chevron'}) }}
+  {{ link(download_demo, url, {'class': classes ~ ' c-button--download'}) }}
   <button {{ add_attributes({ 'class': classes }) }} disabled>Disabled {{ text }}</button>
 {% endif %}

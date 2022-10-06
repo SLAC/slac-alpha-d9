@@ -1,0 +1,33 @@
+<div class="c-view__display views-display-switch">
+  {% for link in links %}
+    {% if link['#options']['target_display_id'] == 'search_grid' %}
+      {% set link_content %}
+        {% include '@components/icon/icon.twig' with {
+          icon_name: 'grid',
+          label: 'Display Grid'|t
+        } %}
+      {% endset %}
+      {% set link_attributes = link['#options']['attributes']|merge({
+        'class': link['#options']['attributes']['class']|merge(['c-view__toggle'])
+      }) %}
+      <a href="{{ link['#url'] }}" {{ add_attributes(link_attributes) }}>
+        {{ link_content }}
+      </a>
+    {% elseif link['#options']['target_display_id'] == 'search_list' %}
+      {% set link_content %}
+        {% include '@components/icon/icon.twig' with {
+          icon_name: 'list',
+          label: 'Display List'|t
+        } %}
+      {% endset %}
+      {% set link_attributes = link['#options']['attributes']|merge({
+        'class': link['#options']['attributes']['class']|merge(['c-view__toggle'])
+      }) %}
+      <a href="{{ link['#url'] }}" {{ add_attributes(link_attributes) }}>
+        {{ link_content }}
+      </a>
+    {% else %}
+      {{ link }}
+    {% endif %}
+  {% endfor%}
+</div>

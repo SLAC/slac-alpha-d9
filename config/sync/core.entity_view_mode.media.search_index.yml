@@ -1,0 +1,10 @@
+uuid: 7d2f2bdd-2663-4275-9457-2912fb991189
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.search_index
+label: 'Search index'
+targetEntityType: media
+cache: true

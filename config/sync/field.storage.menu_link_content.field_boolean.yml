@@ -1,0 +1,18 @@
+uuid: 4bab8e73-af66-4bd6-af53-2bbcf577c96e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.field_boolean
+field_name: field_boolean
+entity_type: menu_link_content
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

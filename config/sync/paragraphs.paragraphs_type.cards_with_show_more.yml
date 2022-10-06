@@ -1,0 +1,10 @@
+uuid: 6c7fa237-28a1-4b46-9908-a398ce8ba980
+langcode: en
+status: true
+dependencies: {  }
+id: cards_with_show_more
+label: 'Cards with Show More'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

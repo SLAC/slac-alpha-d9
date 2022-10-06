@@ -1,0 +1,47 @@
+uuid: 55e7f4fd-4394-4b73-9e94-7557f3e5c00b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.mosaic_card
+    - field.field.taxonomy_term.tags.field_display_style
+    - field.field.taxonomy_term.tags.field_image
+    - field.field.taxonomy_term.tags.field_kicker
+    - field.field.taxonomy_term.tags.field_lede
+    - field.field.taxonomy_term.tags.field_paragraphs
+    - field.field.taxonomy_term.tags.field_research_area
+    - field.field.taxonomy_term.tags.field_rss
+    - taxonomy.vocabulary.tags
+  module:
+    - options
+    - view_mode_select_by_token
+id: taxonomy_term.tags.mosaic_card
+targetEntityType: taxonomy_term
+bundle: tags
+mode: mosaic_card
+content:
+  field_display_style:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: view_mode_select_by_token_rendered_with_select
+    label: hidden
+    settings:
+      view_mode: '[term:field_display_style:value]'
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  field_kicker: true
+  field_lede: true
+  field_paragraphs: true
+  field_research_area: true
+  field_rss: true
+  langcode: true
+  search_api_excerpt: true

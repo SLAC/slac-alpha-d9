@@ -1,0 +1,27 @@
+uuid: 48367a38-c558-4bdc-b331-d335c53b9e66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_embed.field_list
+    - field.field.paragraph.content_embed.field_node
+    - paragraphs.paragraphs_type.content_embed
+  module:
+    - view_mode_select_by_token
+id: paragraph.content_embed.default
+targetEntityType: paragraph
+bundle: content_embed
+mode: default
+content:
+  field_node:
+    type: view_mode_select_by_token_rendered_with_select
+    label: hidden
+    settings:
+      view_mode: '[paragraph:field_list:value]'
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_list: true
+  search_api_excerpt: true

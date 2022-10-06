@@ -20,10 +20,16 @@
   {% if has_constrain %}
     <div {{ add_attributes({ 'class': constrain_classes }) }}>
   {% endif %}
+  {% block logo %}
+    <a href="{{ url('<front>') }}" class="l-header__brand">
+      {% include '@layouts/header/_slac-logo.twig' %}
+    </a>
+  {% endblock %}
   {% block content %}
     {{ header_content }}
   {% endblock %}
   {% if has_constrain %}
     </div>
   {% endif %}
+  <div class="l-header__progress" aria-hidden="true"></div>
 </header>

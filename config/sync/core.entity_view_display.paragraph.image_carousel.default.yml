@@ -1,0 +1,25 @@
+uuid: f860e0b8-8d70-40c4-a669-d90446795572
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_carousel.field_paragraphs
+    - paragraphs.paragraphs_type.image_carousel
+  module:
+    - entity_reference_revisions
+id: paragraph.image_carousel.default
+targetEntityType: paragraph
+bundle: image_carousel
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: carousel
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

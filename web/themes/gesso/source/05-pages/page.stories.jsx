@@ -1,30 +1,32 @@
 import React from 'react';
-import parse from 'html-react-parser';
+import ReactDOMServer from 'react-dom/server';
 
-import globalData from '../00-config/storybook.global-data.yml';
 import PageWrapper from './page-wrappers/default.jsx';
-import twigTemplate from '../04-templates/page/page.twig';
+import { Page as PageTemplate } from '../04-templates/page/page.stories';
+import sectionTwigTemplate from '../02-layouts/section/section.twig';
+import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
 
 export default {
   title: 'Pages/Page',
   parameters: {
     controls: {
-      include: [
-        'show_admin_info',
-      ]
-    }
-  }
+      include: ['show_admin_info'],
+    },
+  },
 };
 
-// For an example of customizing the content on a demo page, see Article page.
-const pageContent = args => twigTemplate({
-  ...args,
-  title: 'Page Title',
-});
-
-const Page = args => <PageWrapper>{parse(pageContent(args))}</PageWrapper>;
-Page.args = {
-  ...globalData,
-};
-
+const Page = args => (
+  <PageWrapper>
+    {PageTemplate({
+      ...PageTemplate.args,
+      content: sectionTwigTemplate({
+        section_content: ReactDOMServer.renderToStaticMarkup(
+          WYSIWYG(WYSIWYG.args)
+        ),
+        has_constrain: true,
+        modifier_classes: 'l-section--no-padding',
+      }),
+    })}
+  </PageWrapper>
+);
 export { Page };

@@ -1,0 +1,61 @@
+uuid: b52e9e99-7cdb-4566-a980-52ef5b093aac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.promo_box.field_button_link
+    - field.field.paragraph.promo_box.field_image
+    - field.field.paragraph.promo_box.field_link
+    - field.field.paragraph.promo_box.field_links
+    - field.field.paragraph.promo_box.field_text
+    - paragraphs.paragraphs_type.promo_box
+  module:
+    - link
+    - media_library
+id: paragraph.promo_box.default
+targetEntityType: paragraph
+bundle: promo_box
+mode: default
+content:
+  field_button_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_links:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

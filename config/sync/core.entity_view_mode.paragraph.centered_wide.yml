@@ -1,0 +1,10 @@
+uuid: 8580e33f-3a91-4069-ae33-cc2eb88928ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.centered_wide
+label: 'Centered Wide'
+targetEntityType: paragraph
+cache: true

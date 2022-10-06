@@ -1,4 +1,4 @@
-uuid: ef27d8f3-b9d5-4167-8975-3141605c7632
+uuid: 9bb74e73-1762-4a93-bf07-ee4b3a2fd3c0
 langcode: en
 status: true
 dependencies:
@@ -283,7 +283,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: string
-          operator: contains
+          operator: allwords
           value: ''
           group: 1
           exposed: true
@@ -302,7 +302,12 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
               administrator: '0'
+              author: '0'
+              manager: '0'
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -345,6 +350,53 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: uid
+          plugin_id: user_name
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: uid_op
+            label: 'Authored by'
+            description: ''
+            use_operator: false
+            operator: uid_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: uid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -406,37 +458,38 @@ display:
                 title: Unpublished
                 operator: '='
                 value: '0'
-        langcode:
-          id: langcode
-          table: node_field_data
-          field: langcode
+        field_featured_value:
+          id: field_featured_value
+          table: node__field_featured
+          field: field_featured_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: langcode
-          plugin_id: language
-          operator: in
-          value: {  }
+          plugin_id: boolean
+          operator: '='
+          value: All
           group: 1
           exposed: true
           expose:
-            operator_id: langcode_op
-            label: Language
+            operator_id: ''
+            label: 'Is featured event or news article?'
             description: ''
             use_operator: false
-            operator: langcode_op
+            operator: field_featured_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: langcode
+            identifier: field_featured_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
               administrator: '0'
-            reduce: false
+              author: '0'
+              manager: '0'
           is_grouped: false
           group_info:
             label: ''

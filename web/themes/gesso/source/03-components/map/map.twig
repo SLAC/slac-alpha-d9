@@ -1,0 +1,8 @@
+{% set classes = [
+  'c-map',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  {{ map_iframe|raw }}
+</div>

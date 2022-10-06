@@ -1,0 +1,128 @@
+uuid: b12de817-d89d-4281-be55-3086f80e7425
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.news_article.field_bio
+    - field.field.node.news_article.field_bio_related_content
+    - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_estimated_read_time
+    - field.field.node.news_article.field_featured
+    - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_internal_tags
+    - field.field.node.news_article.field_lede
+    - field.field.node.news_article.field_news_source
+    - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_paragraphs_1
+    - field.field.node.news_article.field_research_area
+    - field.field.node.news_article.field_source_link
+    - field.field.node.news_article.field_source_name
+    - field.field.node.news_article.field_tags
+    - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
+    - field.field.node.news_article.field_text
+    - field.field.node.news_article.field_type
+    - node.type.news_article
+  module:
+    - entity_reference_revisions
+    - gesso_helper
+    - layout_paragraphs
+    - user
+id: node.news_article.full
+targetEntityType: node
+bundle: news_article
+mode: full
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_bio:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_boolean:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_hero_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_lede:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_paragraphs:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_paragraphs_1:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_tags:
+    type: gesso_tag
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bio_related_content: true
+  field_estimated_read_time: true
+  field_featured: true
+  field_internal_tags: true
+  field_news_source: true
+  field_research_area: true
+  field_source_link: true
+  field_source_name: true
+  field_teaser: true
+  field_teaser_image: true
+  field_type: true
+  langcode: true
+  search_api_excerpt: true

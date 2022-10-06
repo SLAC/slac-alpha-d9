@@ -1,0 +1,23 @@
+uuid: 4d136725-37e2-44d3-baab-fab1851ee8e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_landing_display
+    - media.type.image
+id: media.image.field_landing_display
+field_name: field_landing_display
+entity_type: media
+bundle: image
+label: 'Display on Images & Video landing page?'
+description: 'If this toggle is enabled, this media will be included on the Images & Videos landing page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,26 @@
+uuid: 3c23fe15-652e-496f-8512-7709709359c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_body
+    - media.type.image
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: media.image.field_body
+field_name: field_body
+entity_type: media
+bundle: image
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

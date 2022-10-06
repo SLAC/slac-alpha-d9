@@ -1,0 +1,23 @@
+uuid: cc341856-cdb0-46e9-b964-1cb0cc6947fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_boolean
+    - paragraphs.paragraphs_type.image_embed
+id: paragraph.image_embed.field_boolean
+field_name: field_boolean
+entity_type: paragraph
+bundle: image_embed
+label: 'Override caption?'
+description: 'Caption saved in the media library will be used unless the caption is overridden.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

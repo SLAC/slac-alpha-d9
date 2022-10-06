@@ -1,0 +1,34 @@
+{% set classes = [
+  'c-grid-with-featured',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('gesso/grid_with_featured') }}
+
+{% set left_col %}
+<div>
+{{ header }}
+{{ first_row }}
+</div>
+{% endset %}
+{% set right_col %}
+<div>
+  {{ featured }}
+</div>
+{% endset %}
+
+{% set top_grid_content %}
+  {{ left_col }}
+  {{ right_col }}
+{% endset %}
+
+<div {{ add_attributes({ class: classes }) }}>
+  {% include '@layouts/grid/grid.twig' with {
+    'num_of_cols': 2,
+    'grid_content': top_grid_content,
+    'modifier_classes': 'c-grid-with-featured__grid'
+  } %}
+  {% include '@components/expandable-grid/expandable-grid.twig' with {
+    'grid_items': remaining_rows
+  } %}
+</div>

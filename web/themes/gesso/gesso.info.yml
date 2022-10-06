@@ -8,8 +8,21 @@ libraries:
   - gesso/global
 libraries-override:
   core/drupal.dropbutton: gesso/dropbutton
+  facets/drupal.facets.checkbox-widget: gesso/checkbox_widget
+  addtocal/addtocal:
+    css:
+      theme:
+        addtocal.css: dist/css/addtocal.css
+libraries-extend:
+  sitewide_alert/init:
+    - gesso/alert_bar
+  addtocal/addtocal:
+    - gesso/addtocal_a11y
 ckeditor_stylesheets:
-  - //fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap
+  - //fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap
+  - dist/css/editor-styles.css
+ckeditor5-stylesheets:
+  - //fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap
   - dist/css/editor-styles.css
 dependencies:
   - components
@@ -25,7 +38,6 @@ components:
 regions:
   page_top: 'Page top'
   header: Header
-  navigation: 'Main navigation'
   breadcrumb: Breadcrumbs
   help: Help
   preface: Preface
@@ -33,5 +45,6 @@ regions:
   content: Content
   postscript: Postscript
   footer: Footer
+  subfooter: Subfooter
   disabled: Disabled
   page_bottom: 'Page bottom'

@@ -1,0 +1,19 @@
+uuid: 928a5aa6-2924-49e5-8a92-b5557223a0df
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+id: taxonomy_term.field_rss
+field_name: field_rss
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

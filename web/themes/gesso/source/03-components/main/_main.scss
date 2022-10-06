@@ -1,0 +1,13 @@
+@use '00-config' as *;
+
+.c-main {
+  position: relative;
+}
+
+.c-main__meta {
+  @include breakpoint-max(gesso-breakpoint(desktop), true) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}

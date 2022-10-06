@@ -1,0 +1,8 @@
+uuid: ae56e243-0ad5-4ff0-a2bf-10568bd63fc7
+langcode: en
+status: true
+dependencies: {  }
+id: footer-contact
+label: 'Footer contact'
+description: 'Contact links for site visitors'
+locked: false

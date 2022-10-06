@@ -1,0 +1,23 @@
+uuid: 66a937b0-f965-41c5-a003-f961789a255e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_boolean
+    - node.type.news_collection
+id: node.news_collection.field_boolean
+field_name: field_boolean
+entity_type: node
+bundle: news_collection
+label: 'Show boilerplate disclaimer?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

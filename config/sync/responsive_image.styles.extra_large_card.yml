@@ -1,0 +1,23 @@
+uuid: 249f3cd8-c834-4350-bfba-cc3cd278c7dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.extra_large_card
+    - image.style.extra_large_card_0_25x
+    - image.style.extra_large_card_0_5x
+id: extra_large_card
+label: 'Extra Large Card'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 80em) 1340px, 100vw'
+      sizes_image_styles:
+        - extra_large_card
+        - extra_large_card_0_25x
+        - extra_large_card_0_5x
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: extra_large_card_0_25x

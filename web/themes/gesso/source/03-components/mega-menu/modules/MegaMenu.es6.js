@@ -88,6 +88,9 @@ class MegaMenu {
     switch (event.key) {
       case 'ArrowUp':
       case 'ArrowLeft':
+        if (document.activeElement.matches('input')) {
+          return;
+        }
         event.preventDefault();
         if (currentIndex > -1) {
           const prevIndex = Math.max(0, currentIndex - 1);
@@ -96,6 +99,9 @@ class MegaMenu {
         break;
       case 'ArrowDown':
       case 'ArrowRight':
+        if (document.activeElement.matches('input')) {
+          return;
+        }
         event.preventDefault();
         if (currentIndex > -1) {
           const nextIndex = Math.min(menuLinks.length - 1, currentIndex + 1);
@@ -218,7 +224,7 @@ class MegaMenu {
    * @return {void}
    */
   handleClickAnywhere(event) {
-    if (!event.target.closest('.c-mega-menu')) {
+    if (!this.menu.contains(event.target)) {
       this.toggleExpand(this.openIndex, false);
       this.closeMenu();
     }
@@ -256,6 +262,7 @@ class MegaMenu {
   closeMenu() {
     window.removeEventListener('click', this.handleClickAnywhere);
     window.removeEventListener('keydown', this.handleKeydownAnywhere);
+    document.body.classList.remove('has-open-menu');
   }
 
   /**
@@ -265,6 +272,7 @@ class MegaMenu {
   openMenu() {
     window.addEventListener('click', this.handleClickAnywhere);
     window.addEventListener('keydown', this.handleKeydownAnywhere);
+    document.body.classList.add('has-open-menu');
   }
 
   /**

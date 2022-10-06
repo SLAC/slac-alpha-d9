@@ -1,0 +1,26 @@
+uuid: bafa01ea-3ffa-4efb-adbe-54ec133faa84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.resource
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.resource.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: resource
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

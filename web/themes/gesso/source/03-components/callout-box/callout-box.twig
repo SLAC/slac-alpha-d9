@@ -1,0 +1,20 @@
+{% set classes = [
+  'c-callout-box',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  <div class="c-callout-box__inner">
+    <div class="c-callout-box__body">
+      <h2 class="h4">
+        {{ callout_title }}
+      </h2>
+      {{ callout_content }}
+    </div>
+    {% if callout_media %}
+      <div class="c-callout-box__media">
+        {{ callout_media }}
+      </div>
+    {% endif %}
+  </div>
+</div>

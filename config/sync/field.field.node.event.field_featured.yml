@@ -1,0 +1,23 @@
+uuid: 72ceb4a8-11c2-48ad-b8a5-c3501fb17b43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured
+    - node.type.event
+id: node.event.field_featured
+field_name: field_featured
+entity_type: node
+bundle: event
+label: 'Is featured event?'
+description: 'If this event is featured, it will be eligible for display in the featured event space on the event listing page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: a1b83261-f346-4dbb-8e93-75f9521d002e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_card.field_node
+    - paragraphs.paragraphs_type.content_card
+id: paragraph.content_card.default
+targetEntityType: paragraph
+bundle: content_card
+mode: default
+content:
+  field_node:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -5,10 +5,33 @@
  * Functions to support theming.
  */
 
+/**
+ * Implements hook_theme().
+ */
+function gesso_theme() {
+  return [
+    'facet_label' => [
+      'template' => 'form/facet-label',
+      'render element' => 'element',
+      'preprocess functions' => [
+        'template_preprocess',
+        'template_preprocess_form_element_label',
+        'twig_preprocess',
+        'twig_preprocess_form_element_label',
+        'twig_preprocess_filter_label',
+        'gesso_preprocess',
+        'gesso_preprocess_form_element_label',
+        'gesso_preprocess_filter_label',
+      ],
+    ]
+  ];
+}
+
 require_once dirname(__FILE__) . '/includes/block.inc';
 require_once dirname(__FILE__) . '/includes/field.inc';
 require_once dirname(__FILE__) . '/includes/form.inc';
 require_once dirname(__FILE__) . '/includes/html.inc';
+require_once dirname(__FILE__) . '/includes/page.inc';
 require_once dirname(__FILE__) . '/includes/libraries.inc';
 require_once dirname(__FILE__) . '/includes/media.inc';
 require_once dirname(__FILE__) . '/includes/navigation.inc';

@@ -1,0 +1,26 @@
+uuid: d577ba57-c278-49b5-b09b-665bfbd74da4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_title
+    - site_settings.site_setting_entity_type.event_visitor_details
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: site_setting_entity.event_visitor_details.field_title
+field_name: field_title
+entity_type: site_setting_entity
+bundle: event_visitor_details
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

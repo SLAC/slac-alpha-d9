@@ -1,0 +1,31 @@
+// @file
+// Component: c-tagline
+@use '00-config' as *;
+
+.c-tagline {
+  @include display-text-style(body);
+}
+
+.c-tagline__heading {
+  @include responsive-font-size(10);
+  color: rgba(gesso-brand(lagunita, light), 0.6);
+  font-weight: gesso-font-weight(black);
+  line-height: gesso-line-height(tight);
+  text-transform: uppercase;
+
+  @include breakpoint(gesso-breakpoint(desktop)) {
+    white-space: nowrap;
+  }
+
+  .c-tagline--colorful & {
+    color: gesso-brand(lagunita, light);
+
+    span:nth-child(1) {
+      color: gesso-brand(palo-verde, dark);
+    }
+
+    span:nth-child(3) {
+      color: gesso-brand(lagunita, dark);
+    }
+  }
+}

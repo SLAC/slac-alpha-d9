@@ -1,7 +1,7 @@
 ---
 title: 'Text'
-label_display: 'before'
-description_display: 'after'
+label_display: 'invisible'
+description_display: 'invisible'
 placeholder: 'Placeholder'
 is_disabled: false
 is_full_width: false

@@ -1,0 +1,262 @@
+uuid: 0ca6487a-dbaf-46f2-aebc-0f6990466ce0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_caption
+    - field.storage.media.field_long_text
+    - field.storage.node.field_lede
+    - field.storage.node.field_long_text
+    - field.storage.node.field_name
+    - search_api.server.pantheon_solr8
+    - core.entity_view_mode.media.search_index
+    - core.entity_view_mode.node.search_index
+  module:
+    - search_api_solr
+    - media
+    - node
+    - search_api
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    debug_finalize: false
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: America/Los_Angeles
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+id: content
+name: Content
+description: 'Primary content index for site-wide search. '
+read_only: false
+field_settings:
+  body:
+    label: Description
+    property_path: aggregated_field
+    type: text
+    boost: 1.2
+    configuration:
+      type: first
+      fields:
+        - 'entity:media/field_body'
+        - 'entity:node/field_body'
+  caption:
+    label: Caption
+    datasource_id: 'entity:media'
+    property_path: field_caption
+    type: text
+    dependencies:
+      config:
+        - field.storage.media.field_caption
+  display_name:
+    label: 'Media display name'
+    datasource_id: 'entity:media'
+    property_path: field_long_text
+    type: text
+    boost: 1.5
+    dependencies:
+      config:
+        - field.storage.media.field_long_text
+  entity_id:
+    label: 'Entity ID'
+    property_path: aggregated_field
+    type: integer
+    configuration:
+      type: first
+      fields:
+        - 'entity:media/mid'
+        - 'entity:node/nid'
+  entity_type:
+    label: 'Entity type'
+    property_path: aggregated_field
+    type: string
+    configuration:
+      type: first
+      fields:
+        - 'entity:media/bundle'
+        - 'entity:node/type'
+  field_long_text:
+    label: 'Speaker bio'
+    datasource_id: 'entity:node'
+    property_path: field_long_text
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_long_text
+  lede:
+    label: Lede
+    datasource_id: 'entity:node'
+    property_path: field_lede
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_lede
+  media_name:
+    label: 'Media name'
+    datasource_id: 'entity:media'
+    property_path: name
+    type: text
+    dependencies:
+      module:
+        - media
+  published:
+    label: Published
+    property_path: aggregated_field
+    type: boolean
+    configuration:
+      type: first
+      fields:
+        - 'entity:media/status'
+        - 'entity:node/status'
+  rendered_item:
+    label: 'Rendered item'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:media':
+          image: search_index
+          remote_video: ''
+        'entity:node':
+          event: ''
+          news_article: search_index
+          person: ''
+  research_area:
+    label: 'Research area'
+    property_path: aggregated_field
+    type: string
+    configuration:
+      type: first
+      fields:
+        - 'entity:media/field_research_area'
+        - 'entity:node/field_research_area'
+  sort_date:
+    label: 'Sort date'
+    property_path: aggregated_field
+    type: date
+    configuration:
+      type: last
+      fields:
+        - 'entity:media/created'
+        - 'entity:node/created'
+        - 'entity:node/field_datetime_range'
+  speaker_name:
+    label: 'Speaker name'
+    datasource_id: 'entity:node'
+    property_path: field_name
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_name
+  tags:
+    label: Tags
+    property_path: aggregated_field
+    type: integer
+    configuration:
+      type: union
+      fields:
+        - 'entity:media/field_tags'
+        - 'entity:node/field_tags'
+  teaser:
+    label: Teaser
+    property_path: aggregated_field
+    type: text
+    configuration:
+      type: first
+      fields:
+        - 'entity:media/field_teaser'
+        - 'entity:node/field_teaser'
+  title:
+    label: 'Content title'
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 2
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:media':
+    bundles:
+      default: false
+      selected:
+        - image
+        - remote_video
+    languages:
+      default: true
+      selected: {  }
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - event
+        - news_article
+        - person
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  auto_aggregated_fulltext_field: {  }
+  double_quote_workaround:
+    weights:
+      postprocess_query: 0
+      preprocess_index: -15
+      preprocess_query: -15
+    all_fields: true
+    fields: {  }
+    replacement: '|9999999998|'
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_boost_more_recent:
+    weights:
+      preprocess_query: 0
+    boosts: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: pantheon_solr8

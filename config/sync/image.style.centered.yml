@@ -1,0 +1,15 @@
+uuid: 632b036f-75b1-4885-b3c8-e34e48882af0
+langcode: en
+status: true
+dependencies: {  }
+name: centered
+label: 'Centered (812)'
+effects:
+  4d5aa05d-1574-4bf8-9b08-9b1f8825504b:
+    uuid: 4d5aa05d-1574-4bf8-9b08-9b1f8825504b
+    id: image_scale
+    weight: 1
+    data:
+      width: 812
+      height: null
+      upscale: false

@@ -1,0 +1,30 @@
+// Component: Account Menu
+
+@use '00-config' as *;
+
+.c-menu--subfooter {
+  @include list-pipeline(
+    $pipeline-border-color: currentColor,
+    $angle: false,
+    $inline-on-mobile: false,
+    $wrap: nowrap
+  );
+  @include responsive-font-size(1);
+  margin-bottom: rem(gesso-spacing(2));
+
+  .c-menu__link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .c-icon {
+      color: inherit;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+uuid: 6902cbe4-2948-4a68-830a-712bd5fc7a8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: carousel_small
+label: 'Carousel (Small) (600x600)'
+effects:
+  6957d209-7c3e-465b-b93f-f15aba81f228:
+    uuid: 6957d209-7c3e-465b-b93f-f15aba81f228
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 600
+      crop_type: focal_point

@@ -1,0 +1,112 @@
+uuid: 75777c94-ab91-46ff-a14f-306cace1388f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news_collection.field_boolean
+    - field.field.node.news_collection.field_hero_paragraph
+    - field.field.node.news_collection.field_long_text
+    - field.field.node.news_collection.field_paragraphs
+    - field.field.node.news_collection.field_paragraphs_1
+    - field.field.node.news_collection.field_tags
+    - field.field.node.news_collection.field_teaser
+    - field.field.node.news_collection.field_teaser_image
+    - field.field.node.news_collection.field_text
+    - node.type.news_collection
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.news_collection.default
+targetEntityType: node
+bundle: news_collection
+mode: default
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_boolean:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_hero_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_long_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_paragraphs_1:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_teaser:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_teaser_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

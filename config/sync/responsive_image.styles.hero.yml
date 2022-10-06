@@ -1,0 +1,25 @@
+uuid: 1e348914-d10e-4e29-ba0d-ee56dfee7e1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.hero
+    - image.style.hero_0_25x
+    - image.style.hero_0_5x
+    - image.style.hero_2x
+id: hero
+label: Hero
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - hero
+        - hero_0_25x
+        - hero_0_5x
+        - hero_2x
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: hero_0_25x

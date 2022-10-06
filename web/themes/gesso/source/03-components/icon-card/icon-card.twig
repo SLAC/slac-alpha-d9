@@ -1,0 +1,23 @@
+{% set classes = [
+  'c-icon-card',
+  not url ? 'c-icon-card--no-link' : '',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('gesso/icon_card') }}
+
+<div {{ add_attributes({ class: classes }) }}>
+  {% block animated_icon %}
+    {% include '@components/animated-icon/animated-icon.twig' with {
+      animation: icon,
+      color: 'black'
+    } %}
+  {% endblock %}
+  {% if kicker %}
+    {% include "@components/kicker/kicker.twig" with {
+      kicker_content: kicker
+    } %}
+  {% endif %}
+  <h3 class="c-icon-card__title">{% if url %}<a href="{{ url }}" class="c-icon-card__link c-arrow-link">{% endif %}{{ card_title }}{% if url %}</a>{% endif %}</h3>
+  <div class="c-icon-card__description">{{ card_description }}</div>
+</div>

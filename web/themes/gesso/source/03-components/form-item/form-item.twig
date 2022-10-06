@@ -17,27 +17,35 @@
   description_display == 'invisible' ? 'u-visually-hidden' : '',
 ]|join(' ')|trim %}
 
-  {% set description_attributes_to_add = {
+{% set description_attributes_to_add = {
     class: description_classes,
   } %}
 
-  {% if id %}
-    {% set description_attributes_to_add = description_attributes_to_add|merge({
+{% if id %}
+  {% set description_attributes_to_add = description_attributes_to_add|merge({
       id: id ~ '-description',
     }) %}
+{% endif %}
+
+<div {{ add_attributes({class: classes} ) }}>
+  {% if errors %}
+    <div class="c-form-item__error-message">
+      {{ errors }}
+    </div>
   {% endif %}
 
-<div {{ add_attributes({class: classes}) }}>
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
   {% endif %}
 
   {% if prefix or suffix %}
-  <div class="c-form-item__element">
+    <div class="c-form-item__element">
     {% endif %}
 
     {% if prefix %}
-      <span class="c-form-item__prefix">{{ prefix }}</span>
+      <span class="c-form-item__prefix">
+        {{ prefix }}
+      </span>
     {% endif %}
 
     {% if description_display == 'before' and description.content %}
@@ -49,21 +57,17 @@
     {{ children }}
 
     {% if suffix %}
-      <span class="c-form-item__suffix">{{ suffix }}</span>
+      <span class="c-form-item__suffix">
+        {{ suffix }}
+      </span>
     {% endif %}
 
     {% if prefix or suffix %}
-  </div>
+    </div>
   {% endif %}
 
   {% if label_display == 'after' %}
     {{ label }}
-  {% endif %}
-
-  {% if errors %}
-    <div class="c-form-item__error-message">
-      {{ errors }}
-    </div>
   {% endif %}
 
   {% if description_display in ['after', 'invisible'] and description.content %}

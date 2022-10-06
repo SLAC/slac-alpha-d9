@@ -4,6 +4,7 @@
   display: inline-block;
   fill: currentColor;
   height: 1em;
+  pointer-events: none;
   position: relative;
   top: -2px;
   transition: none;
@@ -22,4 +23,8 @@
   &.is-spaced-after {
     margin-right: 0.25em;
   }
+}
+
+.c-icon--back-to-top {
+  top: 0;
 }

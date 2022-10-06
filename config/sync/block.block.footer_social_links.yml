@@ -1,0 +1,31 @@
+uuid: 02cef4c5-12d0-4933-97e4-f574884354bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social-links
+  module:
+    - menu_block
+  theme:
+    - gesso
+id: footer_social_links
+theme: gesso
+region: footer
+weight: 0
+provider: null
+plugin: 'menu_block:social-links'
+settings:
+  id: 'menu_block:social-links'
+  label: 'Footer Social Links'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'social-links:menu_link_content:6cf19938-0ec3-4e4b-932b-52f97ec86c05'
+  suggestion: social_links
+visibility: {  }

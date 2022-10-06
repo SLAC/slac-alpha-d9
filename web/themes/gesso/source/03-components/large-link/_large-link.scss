@@ -1,0 +1,65 @@
+// @file
+// Component: c-large-link
+@use '00-config' as *;
+
+.c-large-link {
+  // Container queries are a thing now, Stylelint!
+  // https://developer.chrome.com/blog/has-with-cq-m105
+  // stylelint-disable-next-line property-no-unknown
+  container-type: inline-size;
+}
+
+.c-large-link__title {
+  @include responsive-font-size(4);
+  font-weight: gesso-font-weight(semibold);
+
+  a {
+    text-decoration-color: currentcolor;
+    text-decoration-thickness: 1px;
+  }
+
+  .c-icon {
+    color: inherit;
+  }
+}
+
+.c-large-link__footer {
+  @include responsive-font-size(2);
+}
+
+.c-large-link__source {
+  color: var(--gesso-text-color);
+  display: block;
+  font-style: italic;
+
+  @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
+    display: inline-block;
+
+    // stylelint-disable-next-line scss/at-rule-no-unknown
+    @container (max-width: #{gesso-breakpoint(mobile-lg)}) {
+      display: block;
+    }
+  }
+}
+
+.c-large-link__date {
+  color: var(--gesso-text-color);
+  display: block;
+
+  @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
+    display: inline-block;
+
+    .c-large-link__source + & {
+      margin-left: rem(gesso-spacing(3));
+    }
+
+    // stylelint-disable-next-line scss/at-rule-no-unknown
+    @container (max-width: #{gesso-breakpoint(mobile-lg)}) {
+      display: block;
+
+      .c-large-link__source + & {
+        margin-left: 0;
+      }
+    }
+  }
+}

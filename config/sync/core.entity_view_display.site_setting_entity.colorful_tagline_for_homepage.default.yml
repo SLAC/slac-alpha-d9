@@ -1,0 +1,53 @@
+uuid: dfebad32-47b1-4564-a103-8148ea05d904
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.colorful_tagline_for_homepage.field_body
+    - field.field.site_setting_entity.colorful_tagline_for_homepage.field_heading
+    - field.field.site_setting_entity.colorful_tagline_for_homepage.field_line_2
+    - field.field.site_setting_entity.colorful_tagline_for_homepage.field_line_3
+    - site_settings.site_setting_entity_type.colorful_tagline_for_homepage
+  module:
+    - text
+id: site_setting_entity.colorful_tagline_for_homepage.default
+targetEntityType: site_setting_entity
+bundle: colorful_tagline_for_homepage
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_line_2:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_line_3:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  fieldset: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

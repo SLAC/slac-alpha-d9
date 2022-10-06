@@ -1,0 +1,17 @@
+uuid: bbb2ed3b-b879-49a7-902b-2175f6b19a52
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: carousel_large
+label: 'Carousel (Large) (920x413)'
+effects:
+  ec26fb48-4c52-4fde-a557-4b2290b53fb1:
+    uuid: ec26fb48-4c52-4fde-a557-4b2290b53fb1
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 920
+      height: 413
+      crop_type: focal_point

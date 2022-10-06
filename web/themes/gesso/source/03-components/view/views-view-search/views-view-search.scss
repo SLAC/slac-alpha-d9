@@ -1,0 +1,15 @@
+@use '00-config' as *;
+
+.c-view--search {
+  .c-view__header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: rem(gesso-spacing(5));
+  }
+
+  .facet-summary-checklist {
+    width: 100%;
+  }
+}

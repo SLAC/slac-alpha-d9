@@ -1,0 +1,8 @@
+uuid: 7f2a2f79-769d-430d-aeb5-0d477af845c6
+langcode: en
+status: true
+dependencies: {  }
+id: news_boilerplate
+label: 'News: Boilerplate'
+fieldset: 'News: Boilerplate'
+multiple: true

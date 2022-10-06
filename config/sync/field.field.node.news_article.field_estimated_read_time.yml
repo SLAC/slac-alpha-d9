@@ -1,0 +1,23 @@
+uuid: 66baf26d-ac21-4898-a9d1-5433150eab4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_estimated_read_time
+    - node.type.news_article
+  module:
+    - estimated_read_time
+id: node.news_article.field_estimated_read_time
+field_name: field_estimated_read_time
+entity_type: node
+bundle: news_article
+label: 'Estimated Read Time'
+description: 'Internal field used to automatically calculate the estimated read time for the News Article.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  view_mode: reading_text
+  words_per_minute: 230
+field_type: estimated_read_time

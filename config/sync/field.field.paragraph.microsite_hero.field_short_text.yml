@@ -1,0 +1,19 @@
+uuid: bb874f90-01b0-47ed-a9f9-e40bf6cd6588
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_short_text
+    - paragraphs.paragraphs_type.microsite_hero
+id: paragraph.microsite_hero.field_short_text
+field_name: field_short_text
+entity_type: paragraph
+bundle: microsite_hero
+label: 'Overlay Title'
+description: 'Plain text overlaid on the hero image. If not specified, the page title is displayed.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

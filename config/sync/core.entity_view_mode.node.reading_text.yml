@@ -1,0 +1,10 @@
+uuid: 4720f415-ad50-4c51-b282-d649f103ab3d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.reading_text
+label: 'Reading text'
+targetEntityType: node
+cache: true

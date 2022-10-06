@@ -1,0 +1,31 @@
+{#
+/**
+ * @file site_setting_entity.html.twig
+ * Default theme implementation to present Site Setting data.
+ *
+ * This template is used when viewing Site Setting pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_site_setting_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% include '@components/tagline/tagline--long/tagline--long.twig' with {
+  'tagline1_image': content.field_image|field_value,
+  'tagline1': content.field_heading|field_value,
+  'tagline1_content':  content.field_body|field_value,
+  'tagline2_image': content.field_image_2|field_value,
+  'tagline2': content.field_line_2|field_value,
+  'tagline2_content': content.field_body_2|field_value,
+  'tagline3_image': content.field_image_3|field_value,
+  'tagline3': content.field_line_3|field_value,
+  'tagline3_content': content.field_body_3|field_value
+} %}
+
+{% set catch_cache = content|render %}

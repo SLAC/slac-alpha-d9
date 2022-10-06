@@ -1,0 +1,26 @@
+uuid: f96090f2-0931-420d-b9fc-c5833d572935
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_credit
+    - media.type.remote_video
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: media.remote_video.field_credit
+field_name: field_credit
+entity_type: media
+bundle: remote_video
+label: Credit
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

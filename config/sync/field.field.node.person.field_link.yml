@@ -1,0 +1,23 @@
+uuid: 03aede09-6566-4c3d-a3a7-b86a5c1dff24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link
+    - node.type.person
+  module:
+    - link
+id: node.person.field_link
+field_name: field_link
+entity_type: node
+bundle: person
+label: 'External Bio Link'
+description: 'If an external bio link is present, the card and teaser display will link to the external link rather than a detail page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

@@ -1,0 +1,10 @@
+uuid: d9298fd6-ea06-48aa-852a-113a8fd7e3df
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.centered_wide
+label: 'Centered Wide'
+targetEntityType: media
+cache: true

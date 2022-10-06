@@ -1,4 +1,4 @@
-uuid: af46563e-0d6c-4ce7-858e-dd508e5d9a92
+uuid: ec3f372a-947b-406c-931b-cd8dea66c646
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: 6eeliKIydPjqyv5V__QqTfahvJMWkHjOVUUuUIdB1ik
+  default_config_hash: XEFoA1ECJzKZN4VpnDqqRQO-oltuYdmjjvGEYDKs8uU
 id: frontpage
 label: Frontpage
 module: node
@@ -30,7 +30,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 3
           total_pages: 0
           id: 0
           tags:
@@ -46,7 +46,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 9
+          quantity: 3
       exposed_form:
         type: basic
         options:
@@ -98,7 +98,7 @@ display:
           plugin_id: title
           label: ''
           empty: true
-          title: Welcome!
+          title: 'Welcome to [site:name]'
       sorts:
         sticky:
           id: sticky

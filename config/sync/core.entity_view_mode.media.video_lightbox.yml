@@ -1,0 +1,10 @@
+uuid: e7943030-03ae-4363-84d8-fa95009eec93
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_lightbox
+label: 'Video Lightbox'
+targetEntityType: media
+cache: true

@@ -1,0 +1,5 @@
+slac_search:
+  js:
+    js/facet_checkboxes.js: {}
+  dependencies:
+    - core/drupal

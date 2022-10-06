@@ -44,7 +44,7 @@ $message-warning-border-color: gesso-color(ui, warning, border) !default;
 
   a {
     color: gesso-color(text, secondary);
-    font-weight: gesso-font-weight(semibold);
+    font-weight: gesso-font-weight(bold);
     text-decoration: underline;
   }
 }
@@ -67,6 +67,7 @@ $message-warning-border-color: gesso-color(ui, warning, border) !default;
 .c-message--error {
   background-color: $message-error-background-color;
   border-color: $message-error-border-color;
+  color: gesso-color(text, on-dark);
 
   &::before {
     @include svg-background(messages-error);

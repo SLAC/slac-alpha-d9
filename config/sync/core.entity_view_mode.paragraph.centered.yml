@@ -1,0 +1,10 @@
+uuid: 68aa24a2-217b-4b7e-8076-0d816d16b9a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.centered
+label: Centered
+targetEntityType: paragraph
+cache: true

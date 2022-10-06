@@ -1,8 +1,13 @@
 ---
+section_kicker: 'Kicker'
 section_title_element: 'h2'
 section_title: 'Section title'
-section_content: |-
+section_title_url: '#0'
+section_intro: |-
   <p>Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.</p>
 modifier_classes: ''
-has_constrain: false
+has_constrain: true
 constrain_modifier_classes: ''
+section_buttons: |-
+  <a href="#0" class="c-button">Button 1</a>
+  <a href="#1" class="c-button">Button 2</a>

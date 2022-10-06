@@ -1,0 +1,29 @@
+uuid: ee13b5be-7c3d-477d-a186-b5423e66c40e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_research_area
+    - media.type.image
+    - taxonomy.vocabulary.research_area
+id: media.image.field_research_area
+field_name: field_research_area
+entity_type: media
+bundle: image
+label: 'Research Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      research_area: research_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

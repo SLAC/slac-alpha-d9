@@ -1,0 +1,59 @@
+// @file
+// Component: c-topic-grid
+@use '00-config' as *;
+$gutter: clamp(10px, 2%, gesso-get-map(gutter-width));
+
+.c-topic-grid {
+  margin-bottom: gesso-spacing(5);
+
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+.c-topic-grid__item {
+  display: block;
+  float: left;
+
+  .c-overlay-link,
+  img {
+    width: 100%;
+  }
+}
+
+.c-topic-grid__item,
+.c-topic-grid__sizer {
+  width: 100%;
+}
+
+.c-topic-grid__gutter {
+  width: $gutter;
+}
+
+.c-topic-grid__select {
+  margin: 40px 0 60px;
+}
+
+@include breakpoint(gesso-breakpoint(tablet)) {
+  .c-topic-grid__item,
+  .c-topic-grid__sizer {
+    width: 48%;
+  }
+
+  .c-topic-grid__item--width2 {
+    width: 98%;
+  }
+}
+
+@include breakpoint(gesso-breakpoint(desktop)) {
+  .c-topic-grid__item,
+  .c-topic-grid__sizer {
+    width: 32%;
+  }
+
+  .c-topic-grid__item--width2 {
+    width: 66%;
+  }
+}

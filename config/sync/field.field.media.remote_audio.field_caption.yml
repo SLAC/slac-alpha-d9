@@ -1,0 +1,26 @@
+uuid: 1273267b-100d-4253-9de7-6e61ddc7f435
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_caption
+    - media.type.remote_audio
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: media.remote_audio.field_caption
+field_name: field_caption
+entity_type: media
+bundle: remote_audio
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,107 @@
+// @file
+// Component: c-card--small-bio
+@use '00-config' as *;
+
+.c-card.c-card--small-bio {
+  .c-card__media {
+    @include on-dark-variables;
+    aspect-ratio: 1;
+    color: var(--gesso-text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: gesso-spacing(2.5);
+  }
+
+  &:hover,
+  &:focus-within {
+    .c-card__title {
+      color: gesso-color(text, on-dark);
+    }
+  }
+
+  .c-card__title {
+    @include responsive-font-size(4);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .c-icon {
+      color: var(--gesso-accent-color);
+      font-size: rem(gesso-font-size(1));
+      margin-left: rem(gesso-spacing(3));
+      margin-top: 4px;
+    }
+  }
+
+  .c-card__body {
+    font-weight: gesso-font-weight(bold);
+    padding: gesso-spacing(2) gesso-spacing(2.5);
+
+    a:not(.external-link) {
+      @include arrow-link(red);
+    }
+  }
+
+  &,
+  &.c-card--cardinal {
+    .c-card__media {
+      background: gesso-brand(cardinal, base);
+    }
+  }
+
+  &.c-card--stormy {
+    .c-card__media {
+      background: gesso-brand(stormy, dark);
+    }
+  }
+
+  &.c-card--sky {
+    .c-card__media {
+      background: gesso-brand(sky, dark);
+    }
+  }
+
+  &.c-card--palo-alto {
+    .c-card__media {
+      background: gesso-brand(palo-alto, dark);
+    }
+  }
+}
+
+/* stylelint-disable selector-class-pattern */
+.c-card--small-bio__link {
+  span {
+    white-space: nowrap;
+
+    &::after {
+      @include svg-background(chevron-white);
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: inline-block;
+      height: 0.75em;
+      margin-left: 0.5em;
+      margin-top: em(-3px, gesso-base-font-size());
+      transition: transform gesso-duration(shortest) ease-out;
+      vertical-align: middle;
+      width: 1em;
+    }
+  }
+
+  .c-icon {
+    display: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    @media (prefers-reduced-motion: no-preference) {
+      span::after {
+        transform: translateX(em(3px, 16px));
+      }
+    }
+  }
+}

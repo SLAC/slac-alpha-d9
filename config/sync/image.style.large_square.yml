@@ -1,0 +1,15 @@
+uuid: 5f58e970-0b8d-425a-9d80-f57934638ace
+langcode: en
+status: true
+dependencies: {  }
+name: large_square
+label: 'Large Square (800x800)'
+effects:
+  26c54ab1-f07b-4659-9385-e47890692756:
+    uuid: 26c54ab1-f07b-4659-9385-e47890692756
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 800
+      anchor: center-center

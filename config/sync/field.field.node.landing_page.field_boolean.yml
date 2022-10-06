@@ -1,0 +1,23 @@
+uuid: 6ace4e99-a15a-4f75-be56-438a2c4d39d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_boolean
+    - node.type.landing_page
+id: node.landing_page.field_boolean
+field_name: field_boolean
+entity_type: node
+bundle: landing_page
+label: 'Hide title and intro?'
+description: 'If checked, the page title and/or intro field will not be displayed. Use this only when the title and intro content are coming from an embedded view.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

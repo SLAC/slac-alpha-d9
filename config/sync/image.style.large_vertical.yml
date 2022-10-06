@@ -1,0 +1,17 @@
+uuid: 5b9f3055-ab13-4882-b62d-dc150b5116c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: large_vertical
+label: 'Large Vertical (710x940)'
+effects:
+  ced66498-1aa6-4b10-939a-8e6026e8b4f0:
+    uuid: ced66498-1aa6-4b10-939a-8e6026e8b4f0
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 710
+      height: 940
+      crop_type: focal_point

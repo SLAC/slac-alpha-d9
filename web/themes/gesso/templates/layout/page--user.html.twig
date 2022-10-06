@@ -45,7 +45,13 @@
 {% extends "page.html.twig" %}
 
 {% block main_content %}
-  {{ page.preface }}
-  {{ page.content }}
-  {{ page.postscript }}
+  {% embed '@layouts/section/section.twig' with {
+    has_constrain: true
+  } %}
+    {% block content %}
+      {{ page.preface }}
+      {{ page.content }}
+      {{ page.postscript }}
+    {% endblock %}
+  {% endembed %}
 {% endblock %}

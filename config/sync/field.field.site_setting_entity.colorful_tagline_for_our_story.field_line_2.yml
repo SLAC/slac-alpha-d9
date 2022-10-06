@@ -1,0 +1,19 @@
+uuid: ebaaabf4-bc20-47b8-b3d7-637449387f27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_line_2
+    - site_settings.site_setting_entity_type.colorful_tagline_for_our_story
+id: site_setting_entity.colorful_tagline_for_our_story.field_line_2
+field_name: field_line_2
+entity_type: site_setting_entity
+bundle: colorful_tagline_for_our_story
+label: 'Line 2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: fb17f468-1470-47a8-9624-0c0bd24e4f96
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - text
+id: media.field_source_name
+field_name: field_source_name
+entity_type: media
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

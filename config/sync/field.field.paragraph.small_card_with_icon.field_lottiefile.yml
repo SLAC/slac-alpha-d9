@@ -1,0 +1,31 @@
+uuid: b6241d26-4b1a-413f-be7e-7bf330d39033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lottiefile
+    - paragraphs.paragraphs_type.small_card_with_icon
+  module:
+    - lottiefiles_field
+id: paragraph.small_card_with_icon.field_lottiefile
+field_name: field_lottiefile
+entity_type: paragraph
+bundle: small_card_with_icon
+label: Icon
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  autoplay: 0
+  background: transparent
+  controls: 0
+  hover: 0
+  loop: 0
+  mode: normal
+  speed: 1
+  selector: ''
+  width: 0
+field_type: lottiefiles_field

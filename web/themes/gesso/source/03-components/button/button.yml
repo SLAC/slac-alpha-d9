@@ -1,6 +1,8 @@
 ---
 text: 'Button'
 text_demo: 'Link Button'
+chevron_demo: 'Chevron Button'
+download_demo: 'Download Button'
 is_demo: true
 is_button_tag: true
 is_disabled: false

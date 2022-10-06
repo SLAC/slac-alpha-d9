@@ -1,0 +1,93 @@
+uuid: 134075ed-a462-42e6-9435-ea717202ad20
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.news_collection.field_boolean
+    - field.field.node.news_collection.field_hero_paragraph
+    - field.field.node.news_collection.field_long_text
+    - field.field.node.news_collection.field_paragraphs
+    - field.field.node.news_collection.field_paragraphs_1
+    - field.field.node.news_collection.field_tags
+    - field.field.node.news_collection.field_teaser
+    - field.field.node.news_collection.field_teaser_image
+    - field.field.node.news_collection.field_text
+    - node.type.news_collection
+  module:
+    - slac_core
+    - user
+id: node.news_collection.card
+targetEntityType: node
+bundle: news_collection
+mode: card
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_paragraphs:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_teaser:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_boolean: true
+  field_hero_paragraph: true
+  field_long_text: true
+  field_paragraphs_1: true
+  field_tags: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

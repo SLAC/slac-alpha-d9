@@ -1,0 +1,19 @@
+uuid: a0794475-bebf-412c-8e6a-e3070c1d03e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.section
+id: paragraph.section.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: section
+label: Kicker
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

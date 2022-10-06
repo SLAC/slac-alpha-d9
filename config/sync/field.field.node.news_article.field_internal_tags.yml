@@ -1,0 +1,29 @@
+uuid: 18bd67af-7046-4572-b375-8f465d156c8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_internal_tags
+    - node.type.news_article
+    - taxonomy.vocabulary.internal_tags
+id: node.news_article.field_internal_tags
+field_name: field_internal_tags
+entity_type: node
+bundle: news_article
+label: 'Internal Tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      internal_tags: internal_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

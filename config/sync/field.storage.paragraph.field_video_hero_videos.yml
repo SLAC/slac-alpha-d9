@@ -1,0 +1,20 @@
+uuid: 95551347-0bc3-4d90-b06d-5e5005033180
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_video_hero_videos
+field_name: field_video_hero_videos
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 5
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

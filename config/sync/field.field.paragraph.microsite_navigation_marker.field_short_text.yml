@@ -1,0 +1,19 @@
+uuid: 7acfeb63-05d1-4880-ac04-b22f62e932c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_short_text
+    - paragraphs.paragraphs_type.microsite_navigation_marker
+id: paragraph.microsite_navigation_marker.field_short_text
+field_name: field_short_text
+entity_type: paragraph
+bundle: microsite_navigation_marker
+label: Heading
+description: 'Enter a heading to display in the microsite hero navigation. When a user clicks the heading, they will jump to the part of the page where this heading is added. This heading will only be displayed in the microsite hero navigation and will not display in the content column.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

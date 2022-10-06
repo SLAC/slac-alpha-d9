@@ -1,0 +1,22 @@
+uuid: 11f746ce-0c42-4824-b7a8-d91a3bd70302
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gesso
+_core:
+  default_config_hash: PT9SbJiFi5D05mGFOsw95RG6Xf57QSgDIU03hNd3l58
+id: gesso_local_tasks
+theme: gesso
+region: status
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }
