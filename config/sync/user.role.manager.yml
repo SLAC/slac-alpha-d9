@@ -44,7 +44,6 @@ dependencies:
     - path
     - rabbit_hole
     - search_api
-    - search_api_pantheon_admin
     - site_settings
     - sitewide_alert
     - system
@@ -183,7 +182,6 @@ permissions:
   - 'edit webform source'
   - 'edit webform twig'
   - 'edit webform variants'
-  - 'execute pantheon_solr admin task'
   - 'masquerade as author'
   - 'masquerade as content_editor'
   - 'masquerade as reviewer'

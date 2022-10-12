@@ -1,63 +1,19 @@
 uuid: 0ca6487a-dbaf-46f2-aebc-0f6990466ce0
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.media.field_caption
     - field.storage.media.field_long_text
-    - field.storage.node.field_lede
     - field.storage.node.field_long_text
+    - field.storage.node.field_lede
     - field.storage.node.field_name
-    - search_api.server.pantheon_solr8
     - core.entity_view_mode.media.search_index
     - core.entity_view_mode.node.search_index
   module:
-    - search_api_solr
     - media
     - node
     - search_api
-third_party_settings:
-  search_api_solr:
-    finalize: false
-    commit_before_finalize: false
-    commit_after_finalize: false
-    debug_finalize: false
-    highlighter:
-      maxAnalyzedChars: 51200
-      fragmenter: gap
-      usePhraseHighlighter: true
-      highlightMultiTerm: true
-      preserveMulti: false
-      regex:
-        slop: 0.5
-        pattern: blank
-        maxAnalyzedChars: 10000
-      highlight:
-        mergeContiguous: false
-        requireFieldMatch: false
-        snippets: 3
-        fragsize: 0
-    mlt:
-      mintf: 1
-      mindf: 1
-      maxdf: 0
-      maxdfpct: 0
-      minwl: 0
-      maxwl: 0
-      maxqt: 100
-      maxntp: 2000
-      boost: false
-      interestingTerms: none
-    term_modifiers:
-      slop: 3
-      fuzzy: 1
-    advanced:
-      index_prefix: ''
-      collection: ''
-      timezone: America/Los_Angeles
-    multilingual:
-      limit_to_content_language: false
-      include_language_independent: true
 id: content
 name: Content
 description: 'Primary content index for site-wide search. '
@@ -233,25 +189,9 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
-  auto_aggregated_fulltext_field: {  }
-  double_quote_workaround:
-    weights:
-      postprocess_query: 0
-      preprocess_index: -15
-      preprocess_query: -15
-    all_fields: true
-    fields: {  }
-    replacement: '|9999999998|'
   entity_type: {  }
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_boost_more_recent:
-    weights:
-      preprocess_query: 0
-    boosts: {  }
-  solr_date_range:
-    weights:
-      preprocess_index: 0
 tracker_settings:
   default:
     indexing_order: fifo
@@ -259,4 +199,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: pantheon_solr8
+server: null

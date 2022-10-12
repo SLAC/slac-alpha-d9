@@ -66,7 +66,6 @@
     "drupal/redis": "^1.5",
     "drupal/rh_media": "^1.0@beta",
     "drupal/search_api": "^1.21",
-    "drupal/search_api_pantheon": "^8",
     "drupal/selection_sharer": "^1.4",
     "drupal/simple_sitemap": "^3.11",
     "drupal/site_settings": "^1.19",
