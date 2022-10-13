@@ -1,0 +1,136 @@
+uuid: 02bc9091-9a56-4a27-939e-6d0c0c316b78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_paragraph
+    - paragraphs.paragraphs_type.image_embed
+    - taxonomy.vocabulary.event_type
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.event_type.field_paragraph
+field_name: field_paragraph
+entity_type: taxonomy_term
+bundle: event_type
+label: 'Default Image'
+description: 'Choose a default image for this Event Type. This image is displayed on the Event Type detail page if there are no upcoming/featured events.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      image_embed: image_embed
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 37
+        enabled: false
+      accordion_item:
+        weight: 38
+        enabled: false
+      article_hero:
+        weight: 39
+        enabled: false
+      callout_box:
+        weight: 40
+        enabled: false
+      card:
+        weight: 41
+        enabled: false
+      cards_with_show_more:
+        weight: 42
+        enabled: false
+      content_card:
+        weight: 43
+        enabled: false
+      content_embed:
+        weight: 44
+        enabled: false
+      embed_block:
+        weight: 45
+        enabled: false
+      embed_full_html_:
+        weight: 46
+        enabled: false
+      embed_view:
+        weight: 47
+        enabled: false
+      embed_webform:
+        weight: 48
+        enabled: false
+      extra_large_card:
+        weight: 49
+        enabled: false
+      fifty_fifty:
+        weight: 50
+        enabled: false
+      fifty_fifty_staggered:
+        weight: 51
+        enabled: false
+      image_carousel:
+        weight: 52
+        enabled: false
+      image_embed:
+        weight: 53
+        enabled: true
+      image_hero:
+        weight: 54
+        enabled: false
+      media_card:
+        weight: 55
+        enabled: false
+      microsite_hero:
+        weight: 56
+        enabled: false
+      microsite_navigation_marker:
+        weight: 57
+        enabled: false
+      overlap_image:
+        weight: 58
+        enabled: false
+      promo_box:
+        weight: 59
+        enabled: false
+      quote:
+        weight: 60
+        enabled: false
+      section:
+        weight: 61
+        enabled: false
+      small_card_with_icon:
+        weight: 62
+        enabled: false
+      small_card_with_image:
+        weight: 63
+        enabled: false
+      small_card_with_solid_background:
+        weight: 64
+        enabled: false
+      table_of_contents:
+        weight: 65
+        enabled: false
+      text_block:
+        weight: 66
+        enabled: false
+      tout:
+        weight: 67
+        enabled: false
+      two_column_hero:
+        weight: 68
+        enabled: false
+      video_hero:
+        weight: 69
+        enabled: false
+      video_lightbox:
+        weight: 70
+        enabled: false
+      wide_card:
+        weight: 71
+        enabled: false
+      wysiwyg:
+        weight: 72
+        enabled: false
+field_type: entity_reference_revisions

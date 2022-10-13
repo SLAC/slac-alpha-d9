@@ -1,0 +1,10 @@
+uuid: 1a33ff38-549a-4f9f-9b15-c1aae12b9e14
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.large_card
+label: 'Large Card'
+targetEntityType: node
+cache: true

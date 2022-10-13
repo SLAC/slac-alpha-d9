@@ -1,0 +1,34 @@
+uuid: 058281ca-aad2-4552-8658-baa109d2f0e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.animated_icon.field_media_file_1
+    - image.style.medium
+    - media.type.animated_icon
+  module:
+    - image
+id: media.animated_icon.media_library
+targetEntityType: media
+bundle: animated_icon
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_file_1: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

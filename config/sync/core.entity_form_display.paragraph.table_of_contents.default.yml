@@ -1,0 +1,23 @@
+uuid: 8b41baf8-4e70-4aa5-aad9-8edd79054bbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.table_of_contents.field_short_text
+    - paragraphs.paragraphs_type.table_of_contents
+id: paragraph.table_of_contents.default
+targetEntityType: paragraph
+bundle: table_of_contents
+mode: default
+content:
+  field_short_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

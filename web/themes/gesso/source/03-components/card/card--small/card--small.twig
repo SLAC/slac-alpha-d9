@@ -1,0 +1,32 @@
+{% set classes = [
+  'c-card',
+  'c-card--small',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes }) }}>
+  <div class="c-card__body">
+    {% if kicker %}
+      {% include '@components/kicker/kicker.twig' with {
+        kicker_content: kicker
+      } %}
+    {% endif %}
+    {% if title %}
+      <h3 class="c-card__title h5">
+        {% if url %}
+          <a href="{{ url }}" class="c-card__link c-arrow-link">
+            {{- title -}}
+          </a>
+        {% else %}
+          {{- title -}}
+        {% endif %}
+      </h3>
+    {% endif %}
+    {% if description %}
+      <div class="c-card__description">{{ description }}</div>
+    {% endif %}
+    <div class="c-card__media">
+      {{ media }}
+    </div>
+  </div>
+</div>

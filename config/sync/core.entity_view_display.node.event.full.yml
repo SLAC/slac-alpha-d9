@@ -1,0 +1,227 @@
+uuid: fbfb520a-f0f1-4d33-b88e-ddce3ed8de57
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.event.field_bio_related_content
+    - field.field.node.event.field_body
+    - field.field.node.event.field_boolean
+    - field.field.node.event.field_boolean2
+    - field.field.node.event.field_datetime_range
+    - field.field.node.event.field_detail_text
+    - field.field.node.event.field_external_link
+    - field.field.node.event.field_featured
+    - field.field.node.event.field_image
+    - field.field.node.event.field_lede
+    - field.field.node.event.field_link
+    - field.field.node.event.field_link2
+    - field.field.node.event.field_links
+    - field.field.node.event.field_long_text
+    - field.field.node.event.field_name
+    - field.field.node.event.field_override_text
+    - field.field.node.event.field_person_image
+    - field.field.node.event.field_site_setting
+    - field.field.node.event.field_tags
+    - field.field.node.event.field_teaser
+    - field.field.node.event.field_text
+    - field.field.node.event.field_type
+    - field.field.node.event.field_video
+    - node.type.event
+  module:
+    - addtocal
+    - gesso_helper
+    - link
+    - text
+    - user
+id: node.event.full
+targetEntityType: node
+bundle: event
+mode: full
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_boolean2:
+    type: boolean
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_datetime_range:
+    type: addtocal_view
+    label: hidden
+    settings:
+      timezone_override: ''
+      separator: '-'
+      location:
+        value: false
+        tokenized: ''
+      description:
+        value: false
+        tokenized: ''
+      past_events: false
+      date_format: 'Y-m-d\TH:i:s'
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_detail_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_lede:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_link2:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_links:
+    type: gesso_helper_gesso_button
+    label: hidden
+    settings:
+      trim_length: '80'
+      button_size: Standard
+      button_style: Primary
+      button_icon: Chevron
+      url_only: false
+      url_plain: false
+      rel: 0
+      target: 0
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_long_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_override_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_person_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: speaker_bio
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_site_setting:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_tags:
+    type: gesso_tag
+    label: hidden
+    settings:
+      link: '1'
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: video_lightbox
+      link: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_bio_related_content: true
+  field_boolean: true
+  field_external_link: true
+  field_featured: true
+  field_teaser: true
+  langcode: true
+  search_api_excerpt: true

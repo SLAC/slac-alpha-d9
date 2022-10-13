@@ -1,0 +1,14 @@
+uuid: e74bd293-df61-499e-8aaf-0191c5f3ab39
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: wysiwyg
+label: WYSIWYG
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  style_options:
+    enabled: true

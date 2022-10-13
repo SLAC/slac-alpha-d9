@@ -1,0 +1,10 @@
+uuid: f00580fa-72ce-4557-910d-1bcc069f0c5b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.headshot
+label: Headshot
+targetEntityType: media
+cache: true

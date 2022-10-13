@@ -1,0 +1,64 @@
+uuid: cdb7f52a-4f55-4c6e-a7dd-5c0d7d5e7da8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.small_card_with_icon.field_body
+    - field.field.paragraph.small_card_with_icon.field_link
+    - field.field.paragraph.small_card_with_icon.field_lottiefile
+    - field.field.paragraph.small_card_with_icon.field_short_text
+    - field.field.paragraph.small_card_with_icon.field_text
+    - paragraphs.paragraphs_type.small_card_with_icon
+  module:
+    - link
+    - lottiefiles_field
+    - text
+id: paragraph.small_card_with_icon.default
+targetEntityType: paragraph
+bundle: small_card_with_icon
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_lottiefile:
+    type: lottiefiles_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_short_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

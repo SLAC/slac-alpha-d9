@@ -1,0 +1,10 @@
+uuid: c198b724-e7e1-49f8-a2e1-f8bf52e92f0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.image_hero
+label: 'Image Hero'
+targetEntityType: media
+cache: true

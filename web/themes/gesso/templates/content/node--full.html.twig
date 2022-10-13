@@ -66,6 +66,7 @@
  * @see template_preprocess_node()
  */
 #}
+
 {% set classes = [
   node.isPromoted() ? 'is-promoted',
   node.isSticky() ? 'is-sticky',
@@ -84,17 +85,39 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-{% include '@templates/page/page.twig' with {
-  'title': label,
-  'show_admin_info': show_admin_info,
-  'admin_info': admin_info,
-  'show_footer': display_submitted ? true : false,
-  'date': date,
-  'author': author_name,
-  'author_picture': author_picture,
-  'rdf_metadata': metadata,
-  'content': content,
-} %}
+{% if hero_type == 'two_column_hero' %}
+  {{ drupal_block('system_breadcrumb_block') }}
+{% endif %}
 
-{# Uncomment the following if you don’t render the content variable. #}
-{# {% set catch_cache = content|render %} #}
+{% if content.field_hero_paragraph is not empty %}
+  {{ content.field_hero_paragraph }}
+{% endif %}
+
+{% if hero_type != 'two_column_hero' %}
+  {{ drupal_block('system_breadcrumb_block') }}
+{% endif %}
+
+{% if is_microsite %}
+  {% include '@components/article/article.twig' with {
+    'title': null,
+    'show_admin_info': show_admin_info,
+    'admin_info': admin_info,
+    'show_footer': false,
+    'rdf_metadata': metadata,
+    'content': content|without('field_hero_paragraph'),
+  } %}
+{% else %}
+  {% include '@components/article/article.twig' with {
+    'title': hero_type == 'image_hero' or hero_type == 'two_column_hero' ? null : label,
+    'toc_links': toc_list,
+    'author': null,
+    'author_name': null,
+    'date': null,
+    'show_admin_info': show_admin_info,
+    'admin_info': admin_info,
+    'show_footer': false,
+    'rdf_metadata': metadata,
+    'content': content.field_paragraphs,
+  } %}
+{% endif %}
+

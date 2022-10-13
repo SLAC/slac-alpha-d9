@@ -1,10 +1,6 @@
 // @ts-check
 
-const {
-  NaniError,
-  fromArray,
-  iterate
-} = require('nani');
+const { NaniError, fromArray } = require('nani');
 
 const SassValue = require('./SassValue');
 
@@ -13,10 +9,7 @@ const SassValue = require('./SassValue');
  * @return {node is import('yaml').ast.ScalarNode}
  */
 function isScalar(node) {
-  const {
-    tag,
-    type
-  } = node;
+  const { tag, type } = node;
 
   return (
     type === 'BLOCK_FOLDED' ||
@@ -39,8 +32,7 @@ const paletteTransformer = (node, doc, map) => {
   }
 
   // If the value is a quoted string, don't try to look it up anywhere.
-  if (node.type === 'QUOTE_DOUBLE' ||
-    node.type === 'QUOTE_SINGLE') {
+  if (node.type === 'QUOTE_DOUBLE' || node.type === 'QUOTE_SINGLE') {
     return identityTransformer(node);
   }
 
@@ -112,7 +104,7 @@ const fontFamilyTransformer = (node, doc, map) => {
 };
 
 /** @type {import('./types').ScalarTransformer} */
-const identityTransformer = (node) => node.value;
+const identityTransformer = node => node.value;
 
 /**
  * @param {readonly (string | number)[]} path
@@ -158,6 +150,10 @@ function getScalarVisitor(path) {
       return fontFamilyTransformer;
     }
 
+    if (prefix === 'font-feature-settings') {
+      return identityTransformer;
+    }
+
     return (node, doc, map) => {
       const nodeValue = node.value;
       if (nodeValue instanceof SassValue) {
@@ -175,7 +171,7 @@ function getScalarVisitor(path) {
       }
 
       // Push key onto our nested access array.
-      keys.push( /** @type {string | number} */ (key));
+      keys.push(/** @type {string | number} */ (key));
 
       // Perform another lookup
       // @ts-ignore
@@ -212,17 +208,8 @@ function transform(parsed) {
   const data = createDataObject(node, []);
 
   if (errors.length > 0) {
-		const multiError = fromArray(errors);
-		if (typeof multiError === 'object') {
-			for (const err of iterate(multiError)) {
-				// eslint-disable-next-line no-console
-				console.error(err.message);
-			}
-			throw new NaniError('Failed to transform design tokens');
-		} else {
-			throw multiError;
-		}
-	}
+    throw fromArray(errors);
+  }
 
   return {
     ...parsed,
@@ -241,10 +228,8 @@ function transform(parsed) {
       try {
         return visitor(node, parsed.ast, map);
       } catch (error) {
-        if (!errors.some((err) => err.message === error.message)) {
-					errors.push(error);
-				}
-				return node.value;
+        errors.push(error);
+        return node.value;
       }
     }
 

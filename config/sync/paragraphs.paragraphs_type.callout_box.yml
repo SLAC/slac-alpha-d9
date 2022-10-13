@@ -1,0 +1,10 @@
+uuid: f57babd2-8048-4071-bba2-7562f373e5a0
+langcode: en
+status: true
+dependencies: {  }
+id: callout_box
+label: 'Call Out Box'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

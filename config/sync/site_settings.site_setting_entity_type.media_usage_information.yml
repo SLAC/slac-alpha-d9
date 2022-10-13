@@ -1,0 +1,8 @@
+uuid: 6e37d7af-49af-48b2-856d-1e7d61eea1f6
+langcode: en
+status: true
+dependencies: {  }
+id: media_usage_information
+label: 'Media: Usage Information'
+fieldset: 'Media: Usage Information'
+multiple: true

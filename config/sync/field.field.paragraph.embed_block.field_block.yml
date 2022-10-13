@@ -1,0 +1,31 @@
+uuid: baa5d762-a155-454d-a3b4-8d2a8d3ac1a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_block
+    - paragraphs.paragraphs_type.embed_block
+    - site_settings.site_setting_entity_type.colorful_tagline_for_homepage
+    - site_settings.site_setting_entity_type.colorful_tagline_for_our_story
+id: paragraph.embed_block.field_block
+field_name: field_block
+entity_type: paragraph
+bundle: embed_block
+label: Block
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:site_setting_entity'
+  handler_settings:
+    target_bundles:
+      colorful_tagline_for_homepage: colorful_tagline_for_homepage
+      colorful_tagline_for_our_story: colorful_tagline_for_our_story
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: colorful_tagline_for_homepage
+field_type: entity_reference

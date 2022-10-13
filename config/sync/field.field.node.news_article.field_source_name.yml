@@ -1,0 +1,26 @@
+uuid: 80e8cf6b-2a1a-431a-8138-392a63e2a248
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_name
+    - node.type.news_article
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.news_article.field_source_name
+field_name: field_source_name
+entity_type: node
+bundle: news_article
+label: 'Source Name'
+description: 'The name of the source of this News Article. If specified, the Source Name is displayed as the "kicker" instead of the News Source field on cards. Uses the Restricted HTML format.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

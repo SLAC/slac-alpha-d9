@@ -1,0 +1,100 @@
+uuid: ac152f12-406b-42b5-8d20-d97cf7c61e2e
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: m3btXqEmOXhhyVW_4nnDvfaA1nLvGxxvTKrKZ8ZCIAg
+id: upgrade_d7_node_complete_in_the_news
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (In the News)'
+source:
+  plugin: d7_node_complete
+  node_type: in_the_news
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
+      source: node_uid
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_in_the_news/0/status:
+    -
+      plugin: get
+      source: comment
+  field_link:
+    -
+      plugin: field_link
+      source: field_link
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: media_mention
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+  optional: {  }

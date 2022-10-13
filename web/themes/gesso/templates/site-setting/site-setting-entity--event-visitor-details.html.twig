@@ -1,0 +1,32 @@
+{#
+/**
+ * @file site_setting_entity.html.twig
+ * Default theme implementation to present Site Setting data.
+ *
+ * This template is used when viewing Site Setting pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_site_setting_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set section_content %}
+{% include '@components/fifty-fifty/fifty-fifty.twig' with {
+  'col_1': content.field_image,
+  'col_2': content|without('field_image'),
+  'modifier_classes': 'c-fifty-fifty--alt'
+} %}
+{% endset %}
+
+{% include '@layouts/section/section.twig' with {
+  'section_content': section_content,
+  'has_constrain': false
+} %}
+
+{% set catch_cache = content|render %}

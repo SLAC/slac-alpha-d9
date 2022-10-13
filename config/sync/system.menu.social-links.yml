@@ -1,0 +1,8 @@
+uuid: 7b805990-9664-464a-9a5e-7e84e67bf890
+langcode: en
+status: true
+dependencies: {  }
+id: social-links
+label: 'Social links'
+description: 'Manage links to SLAC''s profiles on social media platforms'
+locked: false

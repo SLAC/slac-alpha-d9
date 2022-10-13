@@ -1,0 +1,23 @@
+uuid: 449bd990-b52c-4b26-9aa9-6f2b38ad8ff5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.microsite_navigation_marker.field_short_text
+    - paragraphs.paragraphs_type.microsite_navigation_marker
+id: paragraph.microsite_navigation_marker.default
+targetEntityType: paragraph
+bundle: microsite_navigation_marker
+mode: default
+content:
+  field_short_text:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

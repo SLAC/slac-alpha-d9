@@ -1,53 +1,103 @@
-uuid: 49075e6e-bb98-43c2-8b64-34304ad4f966
+uuid: e3ba7c1c-6615-48a3-a324-22297c09d6dd
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.basic_html
   module:
-    - ckeditor
-_core:
-  default_config_hash: YDLLsjMDd08L1yOEjafHLrdFMWV0HnM9yKtYSDGJErc
+    - ckeditor5
 format: basic_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
+    items:
+      - heading
+      - style
+      - bold
+      - italic
+      - strikethrough
+      - subscript
+      - superscript
+      - link
+      - bulletedList
+      - numberedList
+      - blockQuote
+      - insertTable
+      - horizontalLine
+      - '|'
+      - undo
+      - redo
+      - removeFormat
+      - '|'
+      - drupalMedia
+      - '|'
+      - sourceEditing
+      - '-'
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_style:
+      styles:
         -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
+          label: Lede
+          element: '<p class="c-lede">'
         -
-          name: Linking
-          items:
-            - DrupalLink
-            - DrupalUnlink
+          label: 'Small Paragraph'
+          element: '<p class="c-small-paragraph">'
         -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
+          label: Kicker
+          element: '<p class="c-kicker">'
         -
-          name: Media
-          items:
-            - Blockquote
-            - DrupalImage
+          label: 'Primary Button'
+          element: '<a class="c-button c-button--chevron">'
         -
-          name: 'Block Formatting'
-          items:
-            - Format
+          label: 'Secondary Button'
+          element: '<a class="c-button c-button--secondary c-button--chevron">'
         -
-          name: Tools
-          items:
-            - Source
-  plugins: {  }
+          label: 'Outline Button'
+          element: '<a class="c-button c-button--outline c-button--chevron">'
+        -
+          label: 'Outline Secondary Button'
+          element: '<a class="c-button c-button--outline-secondary c-button--chevron">'
+        -
+          label: 'Red Arrow Link'
+          element: '<a class="c-arrow-link">'
+        -
+          label: 'White Arrow Link'
+          element: '<a class="c-arrow-link--white">'
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<span>'
+        - '<a hreflang>'
+        - '<blockquote cite>'
+        - '<ul type>'
+        - '<ol type>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<img src alt height width data-entity-type data-entity-uuid data-align data-caption>'
+        - '<div class name id>'
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null

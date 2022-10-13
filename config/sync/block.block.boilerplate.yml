@@ -1,0 +1,21 @@
+uuid: dd19759e-4c56-460f-be6a-ec3987602f41
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+  theme:
+    - gesso
+id: boilerplate
+theme: gesso
+region: disabled
+weight: 0
+provider: null
+plugin: single_rendered_site_settings_block
+settings:
+  id: single_rendered_site_settings_block
+  label: 'News Article Boilerplate'
+  label_display: '0'
+  provider: site_settings
+  setting: news_boilerplate
+visibility: {  }

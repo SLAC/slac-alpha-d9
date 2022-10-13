@@ -1,0 +1,8 @@
+uuid: cf3b5f3f-f7c7-42d2-b2f4-2e5a4a3c3d87
+langcode: en
+status: true
+dependencies: {  }
+id: footer-utility
+label: 'Footer utility'
+description: 'Commonly used resource and regulatory links'
+locked: false

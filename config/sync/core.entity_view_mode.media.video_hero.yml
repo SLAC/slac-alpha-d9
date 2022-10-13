@@ -1,0 +1,10 @@
+uuid: 170c6a10-60b2-47e8-8c86-94a477d8743c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_hero
+label: 'Video Hero'
+targetEntityType: media
+cache: true

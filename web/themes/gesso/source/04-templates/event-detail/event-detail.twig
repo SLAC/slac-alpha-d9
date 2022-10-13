@@ -1,0 +1,90 @@
+{% set classes = [
+  'event-detail',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{% if map_iframe %}
+  {% set map_content %}
+    {% include '@components/map/map.twig' %}
+  {% endset %}
+{% endif %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  <div class="l-constrain">
+    {% if show_admin_info %}
+      {% if not admin_info %}
+        {% set admin_info %}
+          {% include '@components/message/message.twig' with {
+            'heading': 'Status message',
+            'messages': ['This is a status message about <em class="placeholder">something</em> that has been updated. <a href="#">This is a link</a>.'],
+          } %}
+          {% include '@components/button-group/button-group.twig' with {
+            'heading': 'Primary tabs',
+            'element': 'nav',
+            'button_modifier_classes': 'c-button--base',
+            'buttons': [
+              {
+                'text': 'View',
+                'active': true,
+              },
+              {
+                'text': 'Edit',
+              },
+              {
+                'text': 'Delete',
+              },
+              {
+                'text': 'Revisions',
+              },
+            ],
+          } %}
+        {% endset %}
+      {% endif %}
+      {% block admin_info %}
+        {{ admin_info }}
+      {% endblock %}
+    {% endif %}
+    {{ title_prefix }}
+    {% embed '@layouts/grid/grid.twig' with { num_of_cols: 2 } %}
+      {% block content %}
+        <div class="event-detail__col">
+          <div class="u-desktop-only">
+            {% include '@components/kicker/kicker.twig' %}
+            {% include '@components/page-title/page-title.twig' %}
+            {% include '@components/lede/lede.twig' %}
+          </div>
+
+          {% include '@components/wysiwyg/wysiwyg.twig' with {
+          'content': event_content,
+          'modifier_classes': 'c-wysiwyg--no-constrain',
+        } %}
+
+          {% include '@components/wysiwyg/wysiwyg.twig' with {
+          'content': author_content,
+          'modifier_classes': 'c-wysiwyg--no-constrain',
+        } %}
+          {{ tags }}
+        </div>
+        <div class="event-detail__col">
+          <div class="u-mobile-only">
+            {% include '@components/kicker/kicker.twig' %}
+            {% include '@components/page-title/page-title.twig' %}
+            {% include '@components/lede/lede.twig' %}
+          </div>
+
+          {{ details }}
+        </div>
+
+      {% endblock %}
+    {% endembed %}
+    {{ title_suffix }}
+  </div>
+  {{ visiting }}
+  {% if map_content %}
+    {% include '@layouts/section/section.twig' with {
+      'no_padding': true,
+      'has_constrain': false,
+      'section_content': map_content
+    } %}
+  {% endif %}
+</div>

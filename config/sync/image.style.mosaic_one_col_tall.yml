@@ -1,0 +1,17 @@
+uuid: 90fd1ac8-7205-4a62-b90b-5b48e8b4a452
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: mosaic_one_col_tall
+label: 'Mosaic One Col Tall (400x580)'
+effects:
+  2a51ce4d-02a9-4f1e-bf66-80eace9f3ca7:
+    uuid: 2a51ce4d-02a9-4f1e-bf66-80eace9f3ca7
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 580
+      crop_type: focal_point

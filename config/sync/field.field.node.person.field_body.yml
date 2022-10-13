@@ -1,0 +1,26 @@
+uuid: 745c4654-304f-4396-b4ee-5aa0ae0d0288
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.person
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.person.field_body
+field_name: field_body
+entity_type: node
+bundle: person
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

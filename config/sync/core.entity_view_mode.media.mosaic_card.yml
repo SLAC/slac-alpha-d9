@@ -1,0 +1,10 @@
+uuid: 60d412d4-415f-470c-aaa2-9f8bd644cd08
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.mosaic_card
+label: 'Mosaic Card'
+targetEntityType: media
+cache: true

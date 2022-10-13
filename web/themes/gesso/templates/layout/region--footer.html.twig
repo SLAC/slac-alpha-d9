@@ -12,14 +12,28 @@
  * @see template_preprocess_region()
  */
 #}
-{% if content %}
-  {% embed '@layouts/footer/footer.twig' with {
-    'has_constrain': true,
-  } %}
+{% embed '@layouts/footer/footer.twig' with {
+  'has_constrain': true,
+} %}
 
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+  {% block footer_contact %}
+    {{ content }}
+  {% endblock %}
 
-  {% endembed %}
-{% endif %}
+  {% block footer_signup %}
+    {{ drupal_entity('block', 'footer_signup', check_access=false) }}
+  {% endblock %}
+
+  {% block footer_tagline %}
+    {{ drupal_entity('block', 'footer_tagline', check_access=false) }}
+  {% endblock %}
+
+  {% block footer_menu %}
+    {{ drupal_entity('block', 'footer_menu', check_access=false) }}
+  {% endblock %}
+
+  {% block footer_utility_menu %}
+    {{ drupal_entity('block', 'footer_utility', check_access=false) }}
+  {% endblock %}
+
+{% endembed %}

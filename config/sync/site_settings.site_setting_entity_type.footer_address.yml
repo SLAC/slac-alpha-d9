@@ -1,0 +1,8 @@
+uuid: 136f0202-94b8-4ed7-8e16-ae49faff3cf7
+langcode: en
+status: true
+dependencies: {  }
+id: footer_address
+label: 'Footer address'
+fieldset: 'Footer Settings'
+multiple: false

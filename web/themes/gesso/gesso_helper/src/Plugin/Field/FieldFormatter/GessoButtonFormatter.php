@@ -100,6 +100,7 @@ class GessoButtonFormatter extends LinkFormatter {
     return [
       'button_size' => 'Standard',
       'button_style' => 'Primary',
+      'button_icon' => 'None',
     ] + parent::defaultSettings();
   }
 
@@ -112,13 +113,18 @@ class GessoButtonFormatter extends LinkFormatter {
     $themeName = $defaultThemeConfig->get('default');
     $sizes = array_values($this->getSizes($themeName));
     $styles = array_values($this->getStyles($themeName));
+    $icons = array_values($this->getIcons($themeName));
     $sizeOptions = [];
     $styleOptions = [];
+    $iconOptions = [];
     foreach ($sizes as $size) {
       $sizeOptions[$size] = $size;
     }
     foreach ($styles as $style) {
       $styleOptions[$style] = $style;
+    }
+    foreach ($icons as $icon) {
+      $iconOptions[$icon] = $icon;
     }
     $elements['button_size'] = [
       '#type' => 'select',
@@ -134,6 +140,13 @@ class GessoButtonFormatter extends LinkFormatter {
       '#options' => $styleOptions,
       '#default_value' => $this->getSetting('button_style'),
     ];
+    $elements['button_icon'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Icon'),
+      '#required' => TRUE,
+      '#options' => $iconOptions,
+      '#default_value' => $this->getSetting('button_icon'),
+    ];
     $themeConfig = $this->configFactory->get($themeName . '.settings');
     $this->renderer->addCacheableDependency($elements, $themeConfig);
     $this->renderer->addCacheableDependency($elements, $defaultThemeConfig);
@@ -146,10 +159,11 @@ class GessoButtonFormatter extends LinkFormatter {
    */
   public function settingsSummary() {
     $summary[] = $this->t(
-      "Size: @size\n Style: @style",
+      "Size: @size\n Style: @style\n Icon: @icon",
       [
         '@size' => $this->getSetting('button_size'),
         '@style' => $this->getSetting('button_style'),
+        '@icon' => $this->getSetting('button_icon'),
       ]
     );
     return $summary;
@@ -164,14 +178,17 @@ class GessoButtonFormatter extends LinkFormatter {
     $themeName = $this->themeManager->getActiveTheme()->getName();
     $sizes = array_flip($this->getSizes($themeName));
     $styles = array_flip($this->getStyles($themeName));
+    $icons = array_flip($this->getIcons($themeName));
 
     foreach ($items as $delta => $item) {
       if (!empty($element[$delta]) &&
         empty($element[$delta]['#plain_text']) &&
         !empty($settings['button_size']) &&
         !empty($settings['button_style']) &&
+        !empty($settings['button_icon']) &&
         !empty($sizes[$settings['button_size']]) &&
-        !empty($styles[$settings['button_style']])
+        !empty($styles[$settings['button_style']]) &&
+        !empty($icons[$settings['button_icon']])
       ) {
         $sizeClasses = explode('.', $sizes[$settings['button_size']]);
         foreach ($sizeClasses as $class) {
@@ -179,6 +196,10 @@ class GessoButtonFormatter extends LinkFormatter {
         }
         $styleClasses = explode('.', $styles[$settings['button_style']]);
         foreach ($styleClasses as $class) {
+          $element[$delta]['#options']['attributes']['class'][] = Html::cleanCssIdentifier($class);
+        }
+        $iconClasses = explode('.', $icons[$settings['button_icon']]);
+        foreach ($iconClasses as $class) {
           $element[$delta]['#options']['attributes']['class'][] = Html::cleanCssIdentifier($class);
         }
       }
@@ -233,6 +254,29 @@ class GessoButtonFormatter extends LinkFormatter {
       }
     }
     return $styles;
+  }
+
+  /**
+   * Get the button icon options from a given theme's settings.
+   *
+   * @param string $theme
+   *   The machine name of the theme.
+   *
+   * @return array
+   *   The set of styles, keyed by CSS classes.
+   */
+  private function getIcons($theme) {
+    $icons = [];
+    $theme_styles = theme_get_setting('button_icon', $theme) ?? "c-button|None";
+    $theme_styles = str_replace(["\r\n", "\r"], "\n", trim($theme_styles));
+    $theme_styles = explode("\n", $theme_styles);
+    foreach ($theme_styles as $theme_style) {
+      $pieces = explode('|', $theme_style);
+      if (count($pieces) == 2) {
+        $icons[trim($pieces[0])] = trim($pieces[1]);
+      }
+    }
+    return $icons;
   }
 
 }

@@ -1,0 +1,8 @@
+uuid: ad1bb21e-c7a0-4bed-814c-c5c060eca125
+langcode: en
+status: true
+dependencies: {  }
+id: colorful_tagline_for_homepage
+label: 'Colorful Tagline for Homepage'
+fieldset: 'Colorful Tagline for Homepage'
+multiple: false

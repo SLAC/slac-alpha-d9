@@ -1,0 +1,8 @@
+uuid: 1f72cd2f-d71c-4250-8b81-83ba88b9ba50
+langcode: en
+status: true
+dependencies: {  }
+name: 'Internal Tags'
+vid: internal_tags
+description: ''
+weight: 0

@@ -1,0 +1,77 @@
+uuid: 87b0c996-5657-4fea-a9c6-78be193d5c15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.microsite_hero.field_image
+    - field.field.paragraph.microsite_hero.field_link
+    - field.field.paragraph.microsite_hero.field_lottiefile
+    - field.field.paragraph.microsite_hero.field_short_text
+    - field.field.paragraph.microsite_hero.field_text
+    - field.field.paragraph.microsite_hero.field_text_color
+    - paragraphs.paragraphs_type.microsite_hero
+  module:
+    - gesso_helper
+    - lottiefiles_field
+    - options
+id: paragraph.microsite_hero.default
+targetEntityType: paragraph
+bundle: microsite_hero
+mode: default
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: image_hero
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: gesso_helper_gesso_button
+    label: hidden
+    settings:
+      trim_length: '80'
+      button_size: Standard
+      button_style: Primary
+      button_icon: Chevron
+      url_only: false
+      url_plain: false
+      rel: 0
+      target: 0
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_lottiefile:
+    type: lottiefiles_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_short_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_text_color:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  search_api_excerpt: true

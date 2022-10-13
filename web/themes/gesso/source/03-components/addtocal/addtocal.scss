@@ -1,0 +1,82 @@
+// CSS class names come from the module.
+// Ridiculous level of nesting follows the module.
+// stylelint-disable selector-class-pattern, max-nesting-depth
+@use '00-config' as *;
+
+.addtocal-container {
+  position: relative;
+
+  .addtocal {
+    @include button($border-width: 1px, $border-radius: 4px);
+    @include focus;
+    background-image: linear-gradient(
+      to right,
+      gesso-color(button, primary, background) 50%,
+      rgba(0, 0, 0, 0) 50%
+    );
+    border-color: gesso-color(button, primary, border);
+    color: gesso-color(button, primary, text-hover);
+    font-size: rem(gesso-font-size(1));
+    padding: rem(gesso-spacing(0.5)) rem(gesso-spacing(1));
+
+    &:visited {
+      color: gesso-color(button, primary, text-hover);
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: gesso-color(button, primary, text);
+    }
+
+    &:active,
+    &.is-active {
+      color: gesso-color(button, primary, text);
+    }
+
+    + div {
+      background: gesso-grayscale(white);
+      border: 1px solid gesso-color(button, primary, border);
+      border-radius: 4px;
+      display: none;
+      list-style-type: none;
+      margin-bottom: 0;
+      margin-left: 0;
+      min-width: rem(150px);
+      padding: gesso-spacing(0.5);
+      position: absolute;
+      z-index: 50;
+
+      .form-type-radio,
+      .js-form-type-radio {
+        color: inherit;
+        display: block;
+        padding: gesso-spacing(0.5);
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible,
+        &:focus-within {
+          background: gesso-color(selection, background);
+          border-radius: 4px;
+          color: gesso-color(selection, text);
+          text-decoration: none;
+        }
+
+        label {
+          display: block;
+          width: 100%;
+        }
+
+        input {
+          @include visually-hidden;
+        }
+      }
+    }
+  }
+}
+
+.addtocal-form {
+  .addtocal-submit {
+    display: none;
+  }
+}

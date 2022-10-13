@@ -1,0 +1,115 @@
+uuid: 69541c56-4fe4-44f5-bbe7-5c08f812abe8
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: _-Gzef3DghlMwpXltr63HY9J8O-KwNjkQeBNoFnDKg4
+id: upgrade_d7_url_alias_node_lecture
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'URL aliases (Lecture)'
+source:
+  plugin: d7_url_alias
+  constants:
+    slash: /
+process:
+  _skip_non_nodes:
+    -
+      plugin: explode
+      source: source
+      delimiter: /
+    -
+      plugin: extract
+      default: INVALID_TYPE
+      index:
+        - 0
+    -
+      plugin: skip_on_value
+      not_equals: true
+      method: row
+      value:
+        - node
+  _skip_non_migrated_nodes:
+    -
+      plugin: explode
+      source: source
+      delimiter: /
+    -
+      plugin: extract
+      default: INVALID_NID
+      index:
+        - 1
+    -
+      plugin: migration_lookup
+      migration:
+        - upgrade_d7_node_complete_lecture
+    -
+      plugin: skip_on_empty
+      method: row
+  id:
+    -
+      plugin: get
+      source: pid
+  _path:
+    -
+      plugin: concat
+      source:
+        - constants/slash
+        - source
+  alias:
+    -
+      plugin: concat
+      source:
+        - constants/slash
+        - alias
+    -
+      plugin: str_replace
+      regex: true
+      search: /\.aspx$/
+      replace: ''
+    -
+      plugin: str_replace
+      regex: true
+      search: /^\/community\/past-lectures\//
+      replace: /events/
+  node_translation:
+    -
+      plugin: explode
+      source: source
+      delimiter: /
+    -
+      plugin: extract
+      default: INVALID_NID
+      index:
+        - 1
+    -
+      plugin: migration_lookup
+      migration:
+        - upgrade_d7_node_complete_lecture
+    -
+      plugin: node_complete_node_translation_lookup
+  langcode:
+    -
+      plugin: null_coalesce
+      source:
+        - '@node_translation/1'
+        - language
+  path:
+    -
+      plugin: path_set_translated
+      source:
+        - '@_path'
+        - '@node_translation'
+destination:
+  plugin: 'entity:path_alias'
+migration_dependencies:
+  required: {  }
+  optional: {  }

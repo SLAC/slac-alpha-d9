@@ -1,0 +1,35 @@
+{% set classes = [
+  'c-carousel',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('gesso/carousel') }}
+
+<div {{ add_attributes({ class: classes }) }}>
+  <div class="c-carousel__slides">
+    {% block slides %}
+      {% for item in carousel_items %}
+      <div class="c-carousel__slide">
+        {% include '@components/figure/figure.twig' with {
+          media: item.image,
+          caption: item.caption,
+          modifier_classes: 'c-carousel__media'
+        } %}
+      </div>
+      {% endfor %}
+    {% endblock %}
+  </div>
+  <div class="c-carousel__nav">
+    <button class="c-carousel__arrow c-carousel__prev" aria-label="{{ 'Previous'|t }}">{% include '@components/icon/icon.twig' with {
+        icon_name: 'angle-left'
+      } %}</button>
+    <div class="c-carousel__pager">
+      {% for item in carousel_items %}
+        <button class="c-carousel__pager-item"></button>
+      {% endfor %}
+    </div>
+    <button class="c-carousel__arrow c-carousel__next" aria-label="{{ 'Next'|t }}">{% include '@components/icon/icon.twig' with {
+        icon_name: 'angle-right'
+      } %}</button>
+  </div>
+</div>

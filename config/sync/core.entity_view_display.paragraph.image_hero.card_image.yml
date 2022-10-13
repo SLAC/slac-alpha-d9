@@ -1,0 +1,32 @@
+uuid: ab7cfef5-3962-404f-acaa-c17f0374e865
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.card_image
+    - field.field.paragraph.image_hero.field_body
+    - field.field.paragraph.image_hero.field_image
+    - field.field.paragraph.image_hero.field_lottiefile
+    - field.field.paragraph.image_hero.field_text
+    - field.field.paragraph.image_hero.field_text_color
+    - paragraphs.paragraphs_type.image_hero
+id: paragraph.image_hero.card_image
+targetEntityType: paragraph
+bundle: image_hero
+mode: card_image
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_body: true
+  field_lottiefile: true
+  field_text: true
+  field_text_color: true
+  search_api_excerpt: true

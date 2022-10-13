@@ -1,0 +1,26 @@
+uuid: 46e546fc-f817-46f5-9463-420482a9dab0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_teaser
+    - media.type.image
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: media.image.field_teaser
+field_name: field_teaser
+entity_type: media
+bundle: image
+label: Teaser
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

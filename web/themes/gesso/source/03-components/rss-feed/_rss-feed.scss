@@ -6,7 +6,19 @@
   display: inline-block;
   margin-top: rem(gesso-spacing(3));
 
+  .c-page-title__title & {
+    margin-top: 0;
+  }
+
   & + & {
     margin-left: rem(gesso-spacing(2));
+  }
+
+  &.external-link {
+    .c-icon {
+      &:not(.c-page-title__icon) {
+        display: none;
+      }
+    }
   }
 }

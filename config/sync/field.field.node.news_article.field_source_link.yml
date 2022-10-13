@@ -1,0 +1,23 @@
+uuid: 4e7b5393-0c62-4371-afd0-03072bb44b70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_link
+    - node.type.news_article
+  module:
+    - link
+id: node.news_article.field_source_link
+field_name: field_source_link
+entity_type: node
+bundle: news_article
+label: 'Source Link'
+description: 'An internal or external link to the source of this News Article if it is not a News Source taxonomy term. If Source Name and Source Link are both specified, cards will redirect to the Source Link instead of the News Article detail page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

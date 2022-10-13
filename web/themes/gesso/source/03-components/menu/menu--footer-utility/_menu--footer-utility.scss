@@ -1,0 +1,21 @@
+// Component: Account Menu
+
+@use '00-config' as *;
+
+.c-menu--footer-utility {
+  @include list-pipeline(gesso-color(ui, generic, border-light));
+
+  .c-menu__link {
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+
+    .c-icon {
+      color: inherit;
+    }
+  }
+}

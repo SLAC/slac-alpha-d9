@@ -1,0 +1,29 @@
+uuid: 12746ab0-1686-496e-aae0-9f8aead2de8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bio
+    - node.type.news_article
+    - node.type.person
+id: node.news_article.field_bio
+field_name: field_bio
+entity_type: node
+bundle: news_article
+label: 'Author (Bio)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

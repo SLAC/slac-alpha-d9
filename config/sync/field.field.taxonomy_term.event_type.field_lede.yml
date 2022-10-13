@@ -1,0 +1,26 @@
+uuid: fb9814b3-24b6-4260-a1a0-5c25cffea48b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_lede
+    - taxonomy.vocabulary.event_type
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: taxonomy_term.event_type.field_lede
+field_name: field_lede
+entity_type: taxonomy_term
+bundle: event_type
+label: Lede
+description: 'Introductory text summarizing the most important aspects of the event series.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: 5b5c78e9-b510-41fb-a4da-fb4a6954c3fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_links
+    - paragraphs.paragraphs_type.promo_box
+  module:
+    - link
+id: paragraph.promo_box.field_links
+field_name: field_links
+entity_type: paragraph
+bundle: promo_box
+label: Links
+description: 'For the best user experience, this should be limited to 5 Links.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

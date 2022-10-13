@@ -5,10 +5,31 @@
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<ul {{ add_attributes({ 'class': classes }) }}>
-  {% for item in items %}
-    <li class="c-tag-list__item">
-      {{ macros.tag(item.url, item.title) }}
-    </li>
-  {% endfor %}
-</ul>
+{% if not label_display %}
+  {% if is_inline %}
+    {% set label_display = 'inline' %}
+  {% endif %}
+{% endif %}
+
+{% set title_classes = [
+  'c-tag-list__label',
+  label_display == 'inline' ? 'is-inline h5' : 'h4',
+  label_display == 'visually_hidden' ? 'u-visually-hidden' : '',
+]|join(' ')|trim %}
+
+<div {{ add_attributes({ 'class': classes }) }}>
+  {% if not hide_label -%}
+    <{{ label_element ?: 'h3' }} {{ add_attributes({ 'class': title_classes },'title_attributes') }}>{{ label }}</{{ label_element ?: 'h3' }}>
+  {%- endif -%}
+  <ul>
+    {% for item in items %}
+      <li class="c-tag-list__item">
+        {% if item.content %}
+          {{ item.content }}
+        {% else %}
+          {{ macros.tag(item.url, item.title) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

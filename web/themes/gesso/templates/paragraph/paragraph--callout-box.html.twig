@@ -1,0 +1,5 @@
+{% include '@components/callout-box/callout-box.twig' with {
+  callout_title: content.field_short_text|field_value,
+  callout_media: content.field_image|field_value,
+  callout_content: content|without('field_short_text', 'field_image')
+} %}

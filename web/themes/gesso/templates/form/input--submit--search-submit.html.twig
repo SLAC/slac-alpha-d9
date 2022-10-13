@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{% set classes = [
+  dropbutton ? 'c-dropbutton__button',
+  is_required ? 'is-required',
+] %}
+
+{% set remove_classes = [
+  'field-add-more-submit',
+  'form-' ~ type|clean_class,
+  'required',
+] %}
+{% set textValue = attributes.value %}
+{% set attributes =  attributes.removeClass(remove_classes).addClass(classes).removeAttribute('value').removeAttribute('name') %}
+
+<button type="submit"{{ attributes }}>
+  {% include '@components/icon/icon.twig' with {
+    'icon_name': 'search',
+    'label': textValue,
+    'attributes': null
+  } %}
+</button>
+{{- children }}

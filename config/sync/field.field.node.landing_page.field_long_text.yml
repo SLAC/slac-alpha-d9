@@ -1,0 +1,26 @@
+uuid: f2a3e683-f9ad-45e1-82f7-c57826f1bb3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_long_text
+    - node.type.landing_page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.landing_page.field_long_text
+field_name: field_long_text
+entity_type: node
+bundle: landing_page
+label: Intro
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,147 @@
+uuid: 95209f66-2705-4ef9-a45f-ba27df73b8b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.news_article.field_bio
+    - field.field.node.news_article.field_bio_related_content
+    - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_estimated_read_time
+    - field.field.node.news_article.field_featured
+    - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_internal_tags
+    - field.field.node.news_article.field_lede
+    - field.field.node.news_article.field_news_source
+    - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_paragraphs_1
+    - field.field.node.news_article.field_research_area
+    - field.field.node.news_article.field_source_link
+    - field.field.node.news_article.field_source_name
+    - field.field.node.news_article.field_tags
+    - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
+    - field.field.node.news_article.field_text
+    - field.field.node.news_article.field_type
+    - node.type.news_article
+  module:
+    - estimated_read_time
+    - link
+    - slac_core
+    - text
+    - user
+id: node.news_article.card
+targetEntityType: node
+bundle: news_article
+mode: card
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_estimated_read_time:
+    type: estimated_read_time_text
+    label: hidden
+    settings:
+      tokenized_string: '@minutes min read'
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_news_source:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_paragraphs:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_source_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_source_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_teaser:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_bio: true
+  field_bio_related_content: true
+  field_boolean: true
+  field_featured: true
+  field_hero_paragraph: true
+  field_internal_tags: true
+  field_lede: true
+  field_paragraphs_1: true
+  field_research_area: true
+  field_tags: true
+  field_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

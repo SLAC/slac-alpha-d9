@@ -1,0 +1,10 @@
+uuid: b3a2b11c-9bab-4ee8-a952-c490c7f96bad
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.centered
+label: Centered
+targetEntityType: media
+cache: true

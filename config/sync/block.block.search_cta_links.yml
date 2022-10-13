@@ -1,0 +1,21 @@
+uuid: aec96b17-dba9-43bd-b505-89b9a7953cf0
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+  theme:
+    - gesso
+id: search_cta_links
+theme: gesso
+region: disabled
+weight: 0
+provider: null
+plugin: single_rendered_site_settings_block
+settings:
+  id: single_rendered_site_settings_block
+  label: 'Search CTA Links'
+  label_display: '0'
+  provider: site_settings
+  setting: global_search_cta_links
+visibility: {  }

@@ -65,33 +65,36 @@
   {%- endblock -%}
 {% endset %}
 
-{% set paragraph_title %}
-  {%- block paragraph_title -%}
-  {%- endblock -%}
-{% endset %}
-
-{% set paragraph_title_element %}
-  {%- block paragraph_title_element -%}
-    h2
-  {%- endblock -%}
-{% endset %}
+{% set paragraph_title_element = 'h2' %}
 
 {% set paragraph_content %}
-  {%- block paragraph_content -%}
-    {{ content }}
-  {%- endblock -%}
+  {{ content|without('field_text', 'field_short_text', 'field_long_text', 'field_button_links', 'field_link', 'field_num_of_cols') }}
 {% endset %}
 
+{% set num_of_cols = content.field_num_of_cols|render|striptags|trim %}
+
 {% embed '@layouts/section/section.twig' with {
+  'has_constrain': true,
   'modifier_classes': paragraph_modifier_classes,
   'constrain_modifier_classes': paragraph_constrain_modifier_classes,
   'has_constrain': paragraph_has_constrain,
-  'section_title': paragraph_title,
+  'section_kicker': content.field_text|field_value,
+  'section_title': content.field_short_text|field_value,
   'section_title_element': paragraph_title_element,
+  'section_intro': content.field_long_text|field_value,
+  'section_title_url': content.field_link|field_value,
+  'section_buttons': content.field_button_links|field_value
 } %}
 
   {% block content %}
-    {{ paragraph_content }}
+    {% if num_of_cols > 1 %}
+      {% include '@layouts/grid/grid.twig' with {
+        grid_content: paragraph_content,
+        num_of_cols: num_of_cols
+      } %}
+    {% else %}
+      {{ paragraph_content }}
+    {% endif %}
   {% endblock %}
 
 {% endembed %}

@@ -1,0 +1,13 @@
+// @file
+// Component: c-lede
+@use '00-config' as *;
+
+.c-lede {
+  @include responsive-font-size(4);
+  @include font-family-primary;
+  line-height: gesso-line-height(loose);
+
+  &:not(:first-child) {
+    margin-top: rem(gesso-spacing(2));
+  }
+}

@@ -15,3 +15,47 @@ sidebar:
   icon_map:
     - [header]
     - [sidebar_first, main, main, sidebar_second]
+
+two_col:
+  label: 'Two Column Grid'
+  category: 'Gesso Paragraph Layouts'
+  template: templates/layout/layout--two-col-grid
+  default_region: grid_content
+  regions:
+    grid_content:
+      label: Grid content
+  icon_map:
+    - [grid_content, grid_content]
+
+three_col:
+  label: 'Three Column Grid'
+  category: 'Gesso Paragraph Layouts'
+  template: templates/layout/layout--three-col-grid
+  default_region: grid_content
+  regions:
+    grid_content:
+      label: Grid content
+  icon_map:
+    - [ grid_content, grid_content, grid_content ]
+
+four_col:
+  label: 'Four Column Grid'
+  category: 'Gesso Paragraph Layouts'
+  template: templates/layout/layout--four-col-grid
+  default_region: grid_content
+  regions:
+    grid_content:
+      label: Grid content
+  icon_map:
+    - [ grid_content, grid_content, grid_content, grid_content ]
+
+two_col_staggered:
+  label: 'Two Column Staggered'
+  category: 'Gesso Paragraph Layouts'
+  template: templates/layout/layout--two-col-staggered
+  default_region: grid_content
+  regions:
+    grid_content:
+      label: Grid content
+  icon_map:
+    - [grid_content, grid_content]

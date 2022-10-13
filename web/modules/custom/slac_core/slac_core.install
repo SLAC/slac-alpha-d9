@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the slac_core module.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site.
+ */
+function slac_core_install() {
+  // Assign user 1 the "administrator" role. This typically happens in the
+  // standard profile installer, but we're using minimal so we can install
+  // from existing configuration.
+  $user = User::load(1);
+  $user->roles[] = 'administrator';
+  $user->save();
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Delete thumbnail references where fid = 10835.
+ */
+function slac_core_update_9001() {
+  $connection = Database::getConnection();
+
+  $query = $connection->delete('media__field_thumbnail')
+    ->condition('field_thumbnail_target_id', 10835)
+    ->execute();
+
+  $query = $connection->delete('media_revision__field_thumbnail')
+    ->condition('field_thumbnail_target_id', 10835)
+    ->execute();
+}

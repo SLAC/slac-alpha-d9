@@ -1,24 +1,22 @@
 // @file
 // Styles for the Mega Menu.
 @use '00-config' as *;
+@use 'sass:math';
 
-// Adjust the selector and colors as needed for your site.
-// If the mega menu is not the top element on the page,
-// the element(s) above it need a background color and
-// z-index in order to cover the mega menu.
-.l-header {
-  background: gesso-color('background', 'site');
-  position: relative;
-  z-index: 2;
+.c-block--mega-menu {
+  @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
+    @include menu;
+    max-width: 813px;
+  }
 }
 
 .c-mega-menu {
-  align-items: center;
-  background: gesso-color('background', 'site');
-  display: flex;
-  margin: 0 0 rem(gesso-spacing(2.5));
+  @include menu;
+  background: gesso-color(background, site);
+  justify-content: space-between;
+  max-width: 813px;
+  padding-left: 0;
   position: relative;
-  width: 100%;
   z-index: 1;
 
   &::after {
@@ -33,29 +31,63 @@
     z-index: gesso-z-index(drawer);
   }
 
+  .has-transparent-nav & {
+    background-color: transparent;
+    transition: background-color gesso-duration(short) gesso-easing(ease-out);
+
+    &::after {
+      background-color: transparent;
+    }
+  }
+
+  .has-open-menu & {
+    background-color: gesso-color(background, site);
+
+    &::after {
+      background-color: gesso-color(background, site);
+    }
+  }
+
+  .c-block--mega-menu & {
+    max-width: none;
+  }
+
+  a {
+    color: inherit;
+  }
+
   > .c-mega-menu__item {
-    border-bottom: 1px solid gesso-grayscale(white);
-    list-style-type: none;
-    padding: 1.25rem 1.8125rem 1.25rem 0.8125rem;
+    @include menu-item;
+    padding: 1.5rem 0 0;
+
+    .has-transparent-nav & {
+      border-bottom-color: transparent;
+    }
+
+    .has-open-menu {
+      border-bottom-color: gesso-color(background, site);
+    }
 
     > .c-mega-menu__link {
-      @include link(gesso-color(text, link), gesso-color(text, link-hover));
-      border-bottom: rem(2px) solid transparent;
-      border-radius: rem(1px);
-      display: block;
-      font-size: rem(gesso-font-size(4));
-      font-weight: gesso-font-weight(regular);
-      padding: rem(4.8px) 0;
-      position: relative;
-      text-align: left;
-      transition: all 0.4s ease;
-      width: auto;
+      @include menu_link;
       z-index: gesso-z-index(drawer) + 1;
+
+      .has-inverse-nav & {
+        color: gesso-color(text, on-dark);
+      }
+
+      .has-open-menu &,
+      .is-sticky & {
+        color: gesso-color(text, link);
+      }
     }
 
     button.c-mega-menu__link {
       @include text-button;
-      font-size: rem(gesso-font-size(4));
+      font-size: rem(gesso-font-size(2));
+      font-weight: gesso-font-weight(bold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
   }
 
@@ -69,31 +101,77 @@
 }
 
 .c-mega-menu__section {
-  background-color: gesso-color(ui, generic, background-dark);
-  color: gesso-color(text, on-dark);
-  left: 0;
+  @include layout-full-bleed;
+  background-color: gesso-color(background, mega-menu);
+  border-top: 1px solid rgba(#2e2929, 0.3);
+  bottom: 100%;
+  box-shadow: gesso-box-shadow(1);
+  color: gesso-color(text, link);
   margin-bottom: 0;
   margin-top: 0;
+  max-height: calc(
+    100vh - var(--gesso-header-current-height) - var(--ginToolbarHeight, 0px)
+  );
+  opacity: 1;
   overflow-wrap: normal;
-  padding: rem(gesso-spacing(7));
-  position: absolute;
-  top: 100%;
-  transform: translate3d(0, 0, 0);
-  transition: transform gesso-duration(long) gesso-easing(ease-in-out);
-  width: 100%;
-  z-index: 0;
+  overflow-y: auto;
+  padding: rem(gesso-spacing(4.5)) 0;
+  position: fixed;
+  transform: translate3d(
+    0,
+    calc(
+      100% + var(--gesso-header-current-height) + var(--ginToolbarHeight, 0px)
+    ),
+    0
+  );
+  transition: opacity gesso-duration(long) gesso-easing(ease-in-out);
+  z-index: gesso-z-index(social-share) + 1;
+
+  .is-sticky & {
+    max-height: calc(
+      100vh - var(--gesso-header-current-height) - var(--ginToolbarHeight, 0px)
+    );
+    transform: translate3d(
+      0,
+      calc(
+        100% + var(--gesso-header-current-height) + var(--ginToolbarHeight, 0px)
+      ),
+      0
+    );
+  }
 
   a,
   button {
     &:focus {
-      @include focus(gesso-color(text, on-dark));
+      @include focus(gesso-color(text, link));
     }
   }
 
   &[hidden] {
+    box-shadow: none;
     display: block;
-    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+    transform: translate3d(
+      0,
+      calc(
+        0 - var(--gesso-header-current-height) - var(--ginToolbarHeight, 0px) -
+          var(--ginToolbarSecondaryHeight, 0px)
+      ),
+      0
+    );
+    transition: opacity gesso-duration(long) gesso-easing(ease-in-out),
+      transform 0s gesso-duration(long);
     z-index: -1;
+
+    .is-sticky & {
+      transform: translate3d(
+        0,
+        calc(
+          0 - var(--gesso-header-current-height) - var(--ginToolbarHeight, 0px)
+        ),
+        0
+      );
+    }
   }
 }
 
@@ -105,16 +183,16 @@
   @include layout-constrain();
   align-items: flex-start;
   display: grid;
-  gap: rem(gesso-spacing(10));
-  grid-template-columns: rem(250px) 1fr 1fr;
+  gap: rem(gesso-spacing(5));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: rem(gesso-spacing(2));
   padding-left: rem(gesso-site-margins(desktop));
   padding-right: rem(gesso-site-margins(desktop));
+  width: 100%;
 }
 
 .c-mega-menu__section-close {
   @include text-button;
-  color: gesso-color(text, on-dark);
   height: rem(50px);
   position: absolute;
   right: rem(10px);
@@ -129,7 +207,7 @@
   }
 
   &:hover {
-    opacity: 0.85;
+    color: gesso-color(text, link-hover);
   }
 }
 
@@ -139,16 +217,34 @@
   font-size: rem(gesso-font-size(9));
 }
 
-.c-mega-menu__icon {
-  transition: margin 0.2s;
-}
-
 .c-mega-menu__subnav {
   @include list-clean;
+  display: grid;
+  font-size: rem(gesso-font-size(1));
+  gap: rem(gesso-spacing(3));
+  grid-auto-rows: min-content;
+  grid-column-start: span 2;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.c-mega-menu__subnav .c-mega-menu__item:not(.has-subnav) {
-  margin-top: rem(gesso-spacing(1));
+.c-mega-menu__item {
+  &.has-icon {
+    display: grid;
+    grid-column-gap: rem(gesso-spacing(1.5));
+    grid-template-columns: 40px 1fr;
+
+    > *:first-child {
+      grid-row-start: span 2;
+    }
+  }
+}
+
+.c-mega-menu__subnav > .c-mega-menu__item:first-child {
+  grid-column-start: span 2;
+}
+
+.c-mega-menu__subnav .c-mega-menu__subnav > .c-mega-menu__item:first-child {
+  font-size: 1em;
 }
 
 .c-mega-menu__subnav .c-mega-menu__item.has-subnav {
@@ -157,6 +253,8 @@
 
 /* stylelint-disable selector-max-compound-selectors */
 .c-mega-menu__subnav .c-mega-menu__subnav {
+  display: block;
+  grid-column-start: initial;
   margin-top: gesso-spacing(1);
 }
 
@@ -167,98 +265,56 @@
 .c-mega-menu__subnav .c-mega-menu__link {
   border-bottom: 0;
   color: inherit;
-  font-size: rem(gesso-font-size(4));
   font-weight: gesso-font-weight(bold);
+  letter-spacing: 1px;
   position: static;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .c-mega-menu__subnav a.c-mega-menu__link {
-  > span {
-    white-space: nowrap;
-
-    &::after {
-      display: inline-block;
-      margin-left: rem(gesso-spacing(1));
-      margin-right: rem(gesso-spacing(0.5));
-      position: relative;
-      transition: margin 0.2s;
-      vertical-align: middle;
-      white-space: nowrap;
-    }
-  }
-
-  // Safari 14 doesn't recognize :focus-visible, so
-  // combining with the above selector causes the entire
-  // styles, including :hover, to be ignored.
-  &:hover {
-    opacity: 0.85;
-
-    > span::after {
-      margin-left: rem(gesso-spacing(1.5));
-      margin-right: 0;
-    }
-  }
-
-  &:focus-visible {
-    opacity: 0.85;
-
-    > span::after {
-      margin-left: rem(gesso-spacing(1.5));
-      margin-right: 0;
-    }
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: gesso-brand(digital-red, base);
+    text-decoration: underline;
   }
 }
 
 .c-mega-menu__subnav .c-mega-menu__subnav .c-mega-menu__link {
-  color: gesso-brand(blue, light-1);
-  font-size: rem(gesso-font-size(2));
-  font-weight: gesso-font-weight(semibold);
+  color: gesso-color(text, link);
+  font-size: rem(gesso-font-size(1));
+  font-weight: gesso-font-weight(regular);
+  letter-spacing: normal;
   line-height: gesso-line-height(tight);
   text-transform: none;
 
-  &:hover {
-    color: gesso-grayscale(white);
-    opacity: 1;
-  }
-
-  &:focus-visible {
-    color: gesso-grayscale(white);
-    opacity: 1;
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: gesso-brand(digital-red, base);
+    text-decoration: underline;
   }
 }
 
-.c-mega-menu__subnav .c-mega-menu__subnav a.c-mega-menu__link {
-  > span::after {
-    content: '';
-    display: none;
+.c-mega-menu__description {
+  @include font-family-secondary;
+  font-size: 1em;
+  line-height: gesso-line-height(loose);
+
+  .c-menu-menu__section--facilities-centers
+    .c-mega-menu__subnav
+    .c-mega-menu__subnav
+    & {
+    @include font-family-primary;
+    font-size: 0.93333333em;
   }
 }
 /* stylelint-enable selector-max-compound-selectors */
 
 @include breakpoint-max(gesso-breakpoint(mobile-menu)) {
-  .c-mega-menu__section {
-    background-color: rgba(gesso-color(ui, generic, background-lighter), 0.98);
-  }
-
   .c-mega-menu__section-title,
   .c-mega-menu__section-close {
     display: none;
-  }
-}
-
-@include breakpoint(gesso-breakpoint(desktop-lg)) {
-  .c-mega-menu {
-    .c-mega-menu__section {
-      padding: rem(gesso-spacing(10)) rem(gesso-spacing(12));
-    }
-
-    .c-mega-menu__section-inner {
-      gap: rem(100px);
-    }
-
-    .c-mega-menu__section .menu__subnav {
-      gap: rem(gesso-spacing(4));
-    }
   }
 }

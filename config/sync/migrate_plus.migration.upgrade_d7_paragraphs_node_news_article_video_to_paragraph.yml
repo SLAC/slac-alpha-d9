@@ -1,0 +1,43 @@
+uuid: 2ae17095-52ec-4f37-9905-3d9e5d2d1f7c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: unquKLwN3gJeKshhd8U48w2Tl-Yrvako6cktvd8SqEg
+id: upgrade_d7_paragraphs_node_news_article_video_to_paragraph
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (News-article) Video to Paragraph'
+source:
+  plugin: d7_node
+  node_type: news_article
+process:
+  type:
+    -
+      plugin: default_value
+      default_value: video_lightbox
+  field_video:
+    -
+      plugin: skip_on_empty
+      source: field_news_video/0/fid
+      method: row
+    -
+      plugin: sub_process
+      source: field_news_video
+      process:
+        target_id: fid
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  translations: true
+  default_bundle: video_lightbox
+migration_dependencies:
+  required: {  }
+  optional: {  }

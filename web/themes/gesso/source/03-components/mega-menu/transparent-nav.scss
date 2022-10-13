@@ -1,0 +1,38 @@
+@use '00-config' as *;
+
+.l-header {
+  background-color: transparent;
+  border-bottom-color: transparent;
+  top: calc(var(--ginToolbarHeight, 0px) + var(--gesso-alert-bar-height, 0px));
+
+  &.is-sticky {
+    background-color: gesso-color(background, site);
+    border-bottom-color: rgba(gesso-grayscale(stanford-black), 0.3);
+    top: calc(var(--ginToolbarHeight, 0px));
+  }
+}
+
+.l-header__brand {
+  background-color: transparent;
+}
+
+// Layout: Site Container
+
+.l-site-container {
+  margin-top: calc(
+    -1 * (var(--gesso-header-initial-height, 0px) + var(--ginToolbarHeight, 0px))
+  );
+}
+
+.c-mega-menu {
+  background-color: transparent;
+  transition: background-color gesso-duration(short) gesso-easing(ease-out);
+
+  &::after {
+    background-color: transparent;
+  }
+
+  > .c-mega-menu__item {
+    border-bottom-color: transparent;
+  }
+}

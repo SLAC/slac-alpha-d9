@@ -1,0 +1,8 @@
+uuid: 8c1313f1-1f54-40e6-b45a-bc91de75dbf9
+langcode: en
+status: true
+dependencies: {  }
+id: footer_copyright_message
+label: 'Footer copyright message'
+fieldset: 'Footer Settings'
+multiple: false

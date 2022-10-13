@@ -1,0 +1,25 @@
+uuid: e1de313f-f2b4-448d-a32a-574947f8387f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fifty_fifty_staggered.field_paragraphs
+    - paragraphs.paragraphs_type.fifty_fifty_staggered
+  module:
+    - entity_reference_revisions
+id: paragraph.fifty_fifty_staggered.default
+targetEntityType: paragraph
+bundle: fifty_fifty_staggered
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

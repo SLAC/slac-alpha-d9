@@ -1,0 +1,8 @@
+uuid: 72ab1563-c1d5-4fb3-91f8-63d5f987f61c
+langcode: en
+status: true
+dependencies: {  }
+id: share_this_page
+label: 'Share This Page'
+fieldset: 'Social Sharing Links'
+multiple: true

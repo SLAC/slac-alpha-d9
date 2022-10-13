@@ -1,0 +1,10 @@
+uuid: da25c5c4-6374-4f1d-984d-1e974d21dc75
+langcode: en
+status: true
+dependencies: {  }
+id: embed_webform
+label: 'Embed Webform'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

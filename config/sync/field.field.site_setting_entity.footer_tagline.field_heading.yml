@@ -1,0 +1,21 @@
+uuid: 2b87f7b2-794e-485d-bf8c-e0f2e86b0a66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_heading
+    - site_settings.site_setting_entity_type.footer_tagline
+id: site_setting_entity.footer_tagline.field_heading
+field_name: field_heading
+entity_type: site_setting_entity
+bundle: footer_tagline
+label: 'Line 1'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Bold People'
+default_value_callback: ''
+settings: {  }
+field_type: string

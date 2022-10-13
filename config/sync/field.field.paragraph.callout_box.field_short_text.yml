@@ -1,0 +1,19 @@
+uuid: 415ab3f8-d08d-4d76-9e55-2ea84b6bae91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_short_text
+    - paragraphs.paragraphs_type.callout_box
+id: paragraph.callout_box.field_short_text
+field_name: field_short_text
+entity_type: paragraph
+bundle: callout_box
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

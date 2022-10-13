@@ -1,0 +1,26 @@
+{% set classes = [
+  'c-event-date',
+  modifier_classes ? modifier_classes : '',
+] %}
+
+{% set is_multiday = end_date.day and end_date.day != start_date.day %}
+{% set is_multimonth = end_date.month and end_date.month != start_date.month %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  {% if start_date %}
+    <div>
+      {% if start_date.month %}<span>{{ start_date.month }}</span>{% endif %}
+      {{ start_date.day ~ (is_multiday and is_multimonth == false ? '–' ~ end_date.day : '' )}}
+    </div>
+  {% endif %}
+
+  {% if is_multimonth %}
+    <div>
+      –
+    </div>
+    <div>
+      <span>{{ end_date.month }}</span>
+      {{ end_date.day }}
+    </div>
+  {% endif %}
+</div>

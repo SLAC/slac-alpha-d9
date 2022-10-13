@@ -1,0 +1,15 @@
+uuid: 09584a16-f052-4bd5-8c43-0d93580c140e
+langcode: en
+status: true
+dependencies: {  }
+name: scale_extra_large
+label: 'Scale Extra Large (1176)'
+effects:
+  0db3cfde-709f-4efe-aa3b-2eb26d719157:
+    uuid: 0db3cfde-709f-4efe-aa3b-2eb26d719157
+    id: image_scale
+    weight: 1
+    data:
+      width: 1176
+      height: null
+      upscale: false

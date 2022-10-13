@@ -1,0 +1,63 @@
+uuid: c87e1f40-3257-4c2f-a77c-2cd8d1148dcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.overlap_image.field_image
+    - field.field.paragraph.overlap_image.field_long_text
+    - field.field.paragraph.overlap_image.field_lottiefile
+    - field.field.paragraph.overlap_image.field_paragraph
+    - field.field.paragraph.overlap_image.field_paragraph_2
+    - paragraphs.paragraphs_type.overlap_image
+  module:
+    - entity_reference_revisions
+    - lottiefiles_field
+    - text
+id: paragraph.overlap_image.default
+targetEntityType: paragraph
+bundle: overlap_image
+mode: default
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_long_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_lottiefile:
+    type: lottiefiles_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_paragraph_2:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

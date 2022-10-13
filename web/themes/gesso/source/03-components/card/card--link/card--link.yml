@@ -1,0 +1,12 @@
+---
+title: 'For Media'
+url: '#0'
+media: |-
+  <img src="https://picsum.photos/id/1015/800/500" alt="">
+card_links:
+  - '<a href="#0" class="c-arrow-link">Latest News</a>'
+  - '<a href="#0" class="c-arrow-link">Media Resources</a>'
+  - '<a href="#0" class="c-arrow-link">SLAC Experts</a>'
+  - '<a href="#0" class="c-arrow-link">Images, Videos & More</a>'
+  - '<a href="#0" class="c-arrow-link">Explore Topics</a>'
+  - '<a href="#0" class="c-arrow-link">Connect With Us</a>'

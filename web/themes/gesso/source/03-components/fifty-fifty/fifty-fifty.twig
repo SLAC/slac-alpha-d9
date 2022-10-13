@@ -1,0 +1,15 @@
+{% set classes = [
+  'c-fifty-fifty',
+  modifier_classes ? modifier_classes : ''
+]|join(' ')|trim %}
+
+{% set content %}
+  <div class="c-fifty-fifty__col{% if fade == "left" %} u-fade-left{% endif %}">{{ col_1 }}</div>
+  <div class="c-fifty-fifty__col{% if fade == "right" %} u-fade-right{% endif %}">{{ col_2 }}</div>
+{% endset %}
+
+{% include '@layouts/grid/grid.twig' with {
+  grid_content: content,
+  num_of_cols: 2,
+  modifier_classes: classes
+} %}

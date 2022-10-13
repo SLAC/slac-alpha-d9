@@ -1,0 +1,6 @@
+{% include '@components/card/card--small-bio/card--small-bio.twig' with {
+  title: content.field_short_text|field_value,
+  title_url: content.field_link|field_value,
+  name: content|without('field_short_text', 'field_link'),
+  name_url: false,
+} %}

@@ -3,10 +3,32 @@
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
-<figure {{ add_attributes({ 'class': classes }) }}{% if caption is defined %} role="group"{% endif %}>
+<figure {{ add_attributes({ 'class': classes }) }} {% if caption is defined %} role="group" {% endif %}>
   {{ title_suffix }}
-  <div class="c-figure__media">{{ media }}</div>
-  {% if caption %}
-    <figcaption class="c-figure__caption">{{ caption }}</figcaption>
+  <div class="c-figure__media">
+    {{ media }}
+
+    {% if is_video %}
+      <div class="c-card__gradient c-figure__gradient"></div>
+      <div class="c-card__icon c-figure__icon">
+        {% include '@components/icon/icon.twig' with {
+            icon_name: 'play',
+            hidden: true,
+            label: 'Video',
+          } %}
+      </div>
+      {% if lightbox_id %}
+        <button class="c-figure__button js-lightbox" type="button" title="{{ video_button_label }}" aria-controls="{{ lightbox_id }}" aria-expanded="false">
+          <span class="visually-hidden">
+            {{ video_button_label }}
+          </span>
+        </button>
+      {% endif %}
+    {% endif %}
+  </div>
+  {% if caption|render|striptags|trim %}
+    <figcaption class="c-figure__caption">
+      {{ caption }}
+    </figcaption>
   {% endif %}
 </figure>

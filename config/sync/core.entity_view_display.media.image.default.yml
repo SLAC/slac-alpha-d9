@@ -1,0 +1,151 @@
+uuid: 7115354a-1454-401c-8487-56b0f163e9b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_body
+    - field.field.media.image.field_boolean
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_credit
+    - field.field.media.image.field_display_style
+    - field.field.media.image.field_internal_tags
+    - field.field.media.image.field_landing_display
+    - field.field.media.image.field_link
+    - field.field.media.image.field_long_text
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_paragraphs
+    - field.field.media.image.field_research_area
+    - field.field.media.image.field_tags
+    - field.field.media.image.field_teaser
+    - field.field.media.image.field_type
+    - image.style.scale_large
+    - media.type.image
+  module:
+    - entity_reference_revisions
+    - gesso_helper
+    - image
+    - text
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_caption:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_credit:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_internal_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_link:
+    type: gesso_helper_gesso_button
+    label: hidden
+    settings:
+      trim_length: '80'
+      button_size: Standard
+      button_style: Primary
+      button_icon: Chevron
+      url_only: ''
+      url_plain: ''
+      rel: 0
+      target: 0
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_long_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: scale_large
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_research_area:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_tags:
+    type: gesso_tag
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_teaser:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  created: true
+  field_boolean: true
+  field_display_style: true
+  field_landing_display: true
+  langcode: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

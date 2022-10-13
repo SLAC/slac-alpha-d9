@@ -1,0 +1,23 @@
+uuid: 505c36d8-70b7-4d6b-9ae5-1a456d94b141
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_boolean
+    - system.menu.main
+id: menu_link_content.main.field_boolean
+field_name: field_boolean
+entity_type: menu_link_content
+bundle: main
+label: 'Display horizontal arrow?'
+description: 'Display a red arrow on this link if it is a sub-link to the Scientific Facilities menu item.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

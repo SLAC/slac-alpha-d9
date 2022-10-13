@@ -1,0 +1,26 @@
+uuid: 2fe9d30b-151f-4f73-9650-abdf02e49721
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_teaser
+    - media.type.remote_video
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: media.remote_video.field_teaser
+field_name: field_teaser
+entity_type: media
+bundle: remote_video
+label: Teaser
+description: 'Leave blank to use trimmed value of full text as the teaser.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

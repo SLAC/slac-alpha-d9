@@ -1,7 +1,9 @@
-.DS_Store
-.idea
-.vscode
-node_modules
+# Add directories containing build assets below.
+# Keep all additions above the "cut" line.
+
+# This distinction is only important when using this
+# repository as a custom upstream. The .gitignore file
+# is not modified in the GitHub PR workflow.
 
 ## Ignore compiled files
 dist/css
@@ -15,3 +17,19 @@ dist/images/sprite.artifact.svg
 source/00-config/_design-tokens.artifact.scss
 source/00-config/_GESSO.es6.js
 storybook
+
+# :::::::::::::::::::::: cut ::::::::::::::::::::::
+
+###
+### Pantheon site .gitignore section
+###
+### Items below the "cut" line are still ignored on
+### the Pantheon site. Items above the "cut" line
+### are ignored in the GitHub repository, but committed
+### to the Pantheon repository.
+###
+
+.DS_Store
+.idea
+.vscode
+node_modules

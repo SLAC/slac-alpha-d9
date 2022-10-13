@@ -1,4 +1,4 @@
-uuid: 35e13bfb-e111-4401-88e9-2a3b9047cee3
+uuid: 83acb564-fa45-4064-8f41-eed1cd774045
 langcode: en
 status: true
 dependencies:
@@ -26,7 +26,7 @@ display:
     display_options:
       fields: {  }
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
           items_per_page: 10
@@ -35,6 +35,8 @@ display:
           tags:
             next: ››
             previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -43,6 +45,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -60,7 +63,20 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p>No related content.</p>'
+            format: basic_html
+          tokenize: false
       sorts:
         sticky:
           id: sticky
@@ -234,20 +250,7 @@ display:
       relationships: {  }
       link_display: page_1
       link_url: ''
-      header:
-        entity_taxonomy_term:
-          id: entity_taxonomy_term
-          table: views
-          field: entity_taxonomy_term
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: entity
-          empty: true
-          target: '{{ raw_arguments.tid }}'
-          view_mode: full
-          tokenize: true
-          bypass_access: false
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -303,6 +306,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      enabled: false
       query:
         type: views_query
         options: {  }

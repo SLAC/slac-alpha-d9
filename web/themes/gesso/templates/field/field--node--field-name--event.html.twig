@@ -1,0 +1,18 @@
+{% set field_items = [] %}
+{% for item in items %}
+  {% set field_items = field_items|merge([{
+    attributes: item.attributes,
+    content: 'About'|t ~ ' ' ~ item.content|render|striptags('<em><a>')
+  }]) %}
+{% endfor %}
+
+{% include '@components/field/field.twig' with {
+  'element': 'h3',
+  'label_display': label_display,
+  'hide_label': label_hidden,
+  'label_element': 'div',
+  'label': label,
+  'hide_content_wrapper': true,
+  'show_separator': false,
+  'field_items': field_items,
+} %}

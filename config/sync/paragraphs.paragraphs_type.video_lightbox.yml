@@ -1,0 +1,10 @@
+uuid: 2e4bdeba-50fe-4d3c-bde7-a2897e020bd1
+langcode: en
+status: true
+dependencies: {  }
+id: video_lightbox
+label: 'Video Lightbox'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

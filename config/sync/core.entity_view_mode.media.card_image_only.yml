@@ -1,0 +1,10 @@
+uuid: c14543ec-6c5b-4898-90ae-bc62727d9cf1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.card_image_only
+label: 'Card (Image Only)'
+targetEntityType: media
+cache: true

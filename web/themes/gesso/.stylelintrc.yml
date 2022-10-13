@@ -5,7 +5,6 @@ extends:
 plugins:
   - stylelint-prettier
   - './lib/stylelintLVHFA.js'
-  - stylelint-order
 rules:
   block-no-empty: null
   color-named:
@@ -21,7 +20,6 @@ rules:
       - declarations
     - unspecified: ignore
       disableFix: true
-  order/properties-alphabetical-order: error
   plugin/selector-pseudo-class-lvhfa: true
   prettier/prettier: true
   property-no-vendor-prefix: null
@@ -35,6 +33,7 @@ rules:
     #   Block                                              Element (optional)                                   Modifier (also optional)
     #   ----------------------------------------------     -----------------------------------------------      -----------------------------------------------
     - '^[a-zA-Z][a-zA-Z0-9]*(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?$'
+  selector-max-compound-selectors: null
   selector-no-qualifying-type:
   string-no-newline: true
   scss/at-import-partial-extension-blacklist:

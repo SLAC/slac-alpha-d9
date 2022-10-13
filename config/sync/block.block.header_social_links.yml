@@ -1,0 +1,25 @@
+uuid: e7044970-65aa-478b-bc8b-3967849812ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social-links
+  module:
+    - system
+  theme:
+    - gesso
+id: header_social_links
+theme: gesso
+region: disabled
+weight: -5
+provider: null
+plugin: 'system_menu_block:social-links'
+settings:
+  id: 'system_menu_block:social-links'
+  label: 'Header Social Links'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

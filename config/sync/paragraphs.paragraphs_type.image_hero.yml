@@ -1,0 +1,10 @@
+uuid: 80aa441b-99ff-4156-a1d1-68f506e1a067
+langcode: en
+status: true
+dependencies: {  }
+id: image_hero
+label: 'Image Hero'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

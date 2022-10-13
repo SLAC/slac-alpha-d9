@@ -1,0 +1,26 @@
+uuid: 2909690c-895d-41e6-bbe8-1b5eb3ff9a9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.page.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: page
+label: Teaser
+description: 'Leave blank to use trimmed value of full text as the teaser.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,21 @@
+uuid: 9c5eaaab-7905-45bf-a7f6-9541bdc00853
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+  theme:
+    - gesso
+id: media_about_slac
+theme: gesso
+region: disabled
+weight: 0
+provider: null
+plugin: single_rendered_site_settings_block
+settings:
+  id: single_rendered_site_settings_block
+  label: 'Media: About SLAC'
+  label_display: '0'
+  provider: site_settings
+  setting: media_about_slac
+visibility: {  }

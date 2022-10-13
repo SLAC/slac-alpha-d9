@@ -1,0 +1,110 @@
+// @file
+// Component: c-carousel
+@use '~tiny-slider/src/tiny-slider.scss';
+@use '00-config' as *;
+
+.c-carousel {
+  position: relative;
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+    @include layout-half-full-bleed;
+  }
+}
+
+.c-carousel__slide {
+  @include focus;
+  width: 80vw;
+
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+    width: initial;
+  }
+}
+
+.c-carousel__media {
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.c-carousel__nav {
+  align-items: center;
+  color: gesso-brand(sky, dark);
+  display: flex;
+  gap: rem(gesso-spacing(3));
+  margin-left: auto;
+  margin-right: auto;
+  max-width: gesso-constrain(md);
+  text-align: right;
+
+  .c-carousel--dark &,
+  .l-section--dark & {
+    color: gesso-brand(illuminating, light);
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+    margin-left: 0;
+    padding-right: rem(gesso-site-margins(desktop));
+  }
+}
+
+.c-carousel__pager {
+  align-items: center;
+  display: flex;
+  gap: rem(gesso-spacing(1));
+}
+
+.c-carousel__pager-item {
+  @include focus();
+  background-color: currentcolor;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: none;
+  color: inherit;
+  cursor: pointer;
+  height: rem(12px);
+  padding: 0;
+  width: rem(12px);
+
+  &.tns-nav-active {
+    color: gesso-grayscale(black);
+    outline: 1px solid currentcolor;
+    outline-offset: 3px;
+
+    &:focus:not(:focus-visible) {
+      outline: 1px solid currentcolor;
+    }
+
+    &:focus-visible {
+      outline-color: gesso-color(ui, generic, focus);
+      outline-width: 3px;
+    }
+
+    .c-carousel--dark &,
+    .l-section--dark & {
+      color: gesso-grayscale(white);
+    }
+  }
+}
+
+.c-carousel__arrow {
+  @include focus();
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.tns-item {
+  .c-figure__caption {
+    opacity: 0;
+    transition: 0.35s opacity 0.15s;
+  }
+}
+
+.tns-slide-active:not(.tns-slide-active + .tns-slide-active) {
+  .c-figure__caption {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,30 @@
+uuid: 555fef63-6e5d-4759-92e7-53071cd60385
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.mega_menu_cards.field_cards
+    - field.field.site_setting_entity.mega_menu_cards.field_menu_link
+    - site_settings.site_setting_entity_type.mega_menu_cards
+  module:
+    - entity_reference_revisions
+id: site_setting_entity.mega_menu_cards.default
+targetEntityType: site_setting_entity
+bundle: mega_menu_cards
+mode: default
+content:
+  field_cards:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_menu_link: true
+  fieldset: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

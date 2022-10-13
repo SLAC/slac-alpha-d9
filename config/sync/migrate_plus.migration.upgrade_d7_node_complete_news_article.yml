@@ -1,0 +1,292 @@
+uuid: 2cd135e8-d52b-47ad-a652-3593cf1da423
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: PVGM4_zhFsclvVGiDAjO-CHDDl7z2xpLqMWEFWMeli0
+id: upgrade_d7_node_complete_news_article
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (News-article)'
+source:
+  plugin: d7_node
+  node_type: news_article
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: entity_lookup
+      entity_type: user
+      value_key: uid
+      source: node_uid
+    -
+      plugin: default_value
+      default_value: 1
+  status:
+    -
+      plugin: get
+      source: status
+    -
+      plugin: skip_on_value
+      method: row
+      not_equals: true
+      value:
+        - 1
+  moderation_state:
+    plugin: static_map
+    source: status
+    default_value: draft
+    map:
+      - draft
+      - published
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_news_article/0/status:
+    -
+      plugin: get
+      source: comment
+  _field_body_paragraph_ids:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_paragraphs_node_news_article_body_to_paragraph
+      source: nid
+  _field_image_paragraph_ids:
+    -
+      plugin: image_embed_paragraphs
+      source: field_image
+  _field_video_paragraph_ids:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_paragraphs_node_news_article_video_to_paragraph
+      source: nid
+  _field_paragraphs_prefix/0/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_body_paragraph_ids/0'
+  _field_paragraphs_prefix/0/target_revision_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_body_paragraph_ids/1'
+  _field_paragraphs_suffix/0/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_video_paragraph_ids/0'
+  _field_paragraphs_suffix/0/target_revision_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_video_paragraph_ids/1'
+  _field_structured_content_ids:
+    -
+      plugin: sub_process
+      source: field_structured_content
+      process:
+        target_id:
+          -
+            plugin: migration_lookup
+            migration:
+              - upgrade_d7_paragraphs_image
+              - upgrade_d7_paragraphs_simple
+              - upgrade_d7_paragraphs_video
+            no_stub: true
+            source: value
+          -
+            plugin: skip_on_empty
+            method: process
+          -
+            plugin: array_shift
+        target_revision_id:
+          -
+            plugin: migration_lookup
+            migration:
+              - upgrade_d7_paragraphs_image
+              - upgrade_d7_paragraphs_simple
+              - upgrade_d7_paragraphs_video
+            no_stub: true
+            source: value
+          -
+            plugin: skip_on_empty
+            method: process
+          -
+            plugin: array_pop
+  field_paragraphs:
+    -
+      plugin: slac_migrate_merge
+      skip_non_array: true
+      source:
+        - '@_field_paragraphs_prefix'
+        - '@_field_structured_content_ids'
+        - '@_field_image_paragraph_ids'
+        - '@_field_paragraphs_suffix'
+    -
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: sub_process
+      process:
+        target_id:
+          -
+            plugin: get
+            source: target_id
+        target_revision_id:
+          -
+            plugin: get
+            source: target_revision_id
+  field_type:
+    -
+      plugin: sub_process
+      source: field_article_type
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_taxonomy_term_article_type
+          source: tid
+          no_stub: true
+  field_text:
+    -
+      plugin: get
+      source: field_page_author
+  field_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      key: '@target_id'
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_taxonomy_term_tags
+          source: tid
+          no_stub: true
+  field_internal_tags:
+    -
+      plugin: sub_process
+      source: field_tags
+      key: '@target_id'
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_taxonomy_term_internal_tags
+          source: tid
+          no_stub: true
+  field_source_link:
+    -
+      plugin: field_link
+      source: field_news_link
+  field_lede/0/value:
+    -
+      plugin: null_coalesce
+      source:
+        - field_subheadline/0/value
+        - field_teaser/0/value
+  field_lede/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
+  field_teaser:
+    -
+      plugin: null_coalesce
+      source:
+        - field_teaser
+        - field_subheadline
+  field_teaser/0/format:
+    -
+      plugin: default_value
+      default_value: restricted_html
+  _field_header_image_paragraph_ids:
+    -
+      plugin: migration_lookup
+      migration: upgrade_d7_paragraphs_node_news_article_header_image_to_paragraph
+      source: nid
+  field_hero_paragraph/0/target_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_header_image_paragraph_ids/0'
+  field_hero_paragraph/0/target_revision_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@_field_header_image_paragraph_ids/1'
+  field_teaser_image:
+    -
+      plugin: media_migration_delta_sort
+      source: field_header_image
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
+  field_news_source:
+    -
+      plugin: sub_process
+      source: field_news_source
+      process:
+        target_id:
+          plugin: migration_lookup
+          migration: upgrade_d7_taxonomy_term_news_article_source
+          source: target_id
+          no_stub: true
+destination:
+  plugin: 'entity:node'
+  translations: true
+  default_bundle: news_article
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+  optional: {  }

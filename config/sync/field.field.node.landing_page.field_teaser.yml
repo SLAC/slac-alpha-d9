@@ -1,0 +1,26 @@
+uuid: 510d6340-d5d2-40a2-a4d5-8bef854524c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.landing_page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.landing_page.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: landing_page
+label: Teaser
+description: 'Leave blank to use trimmed value of full text as the teaser.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

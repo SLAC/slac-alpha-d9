@@ -1,19 +1,10 @@
 ---
 title: 'Card title'
 url: '#0'
-footer: ''
-date: September 28, 2018
-read_more: true
-tags:
-  - url: '#0'
-    title: 'Tag 1'
-  - url: '#0'
-    title: 'Tag 2'
-  - url: '#0'
-    title: 'Tag 3'
-  - url: '#0'
-    title: 'Tag 4'
+kicker: 'via <i>Symmetry</i> Magazine'
+type: 'News brief'
 media: |-
-  <img src="https://picsum.photos/id/1015/800/600">
+  <img src="https://picsum.photos/id/1015/800/500" alt="">
 card_content: |-
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et accumsan augue. Morbi non laoreet lorem.</p>
+footer: 'March 4, 2021 · 10 min read'

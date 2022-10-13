@@ -1,0 +1,18 @@
+// @file
+// Component: c-small-captioned-image
+@use '00-config' as *;
+
+.c-small-captioned-image {
+  display: table;
+  position: relative;
+}
+
+.c-small-captioned-image__inner {
+  bottom: rem(gesso-spacing(2.5));
+  left: 50%;
+  padding: 0 rem(gesso-site-margins(desktop));
+  position: absolute;
+  text-align: right;
+  transform: translateX(-50%);
+  width: 100%;
+}

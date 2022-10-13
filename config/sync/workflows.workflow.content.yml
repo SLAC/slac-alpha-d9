@@ -1,0 +1,61 @@
+uuid: b7d2b68c-e5c0-4458-b78b-e07af8cca101
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.event
+    - node.type.news_article
+    - node.type.news_collection
+    - node.type.page
+  module:
+    - content_moderation
+id: content
+label: Content
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      weight: 0
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 1
+      published: true
+      default_revision: true
+    unpublished:
+      label: Unpublished
+      weight: 2
+      published: false
+      default_revision: true
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+        - unpublished
+      to: draft
+      weight: 0
+    publish:
+      label: Publish
+      from:
+        - draft
+        - published
+        - unpublished
+      to: published
+      weight: 1
+    unpublish:
+      label: Unpublish
+      from:
+        - published
+      to: unpublished
+      weight: 2
+  entity_types:
+    node:
+      - event
+      - news_article
+      - news_collection
+      - page
+  default_moderation_state: draft

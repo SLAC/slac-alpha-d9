@@ -1,0 +1,8 @@
+uuid: ddf07520-2095-458e-8b6a-41618ddbddf8
+langcode: en
+status: true
+dependencies: {  }
+id: global_search_cta_links
+label: 'Global Search: CTA Links'
+fieldset: 'Global Search'
+multiple: false

@@ -1,0 +1,39 @@
+uuid: 1a63d95b-a84e-4708-b539-2fd077174f05
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_display_style
+field_name: field_display_style
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: square
+      label: Square
+    -
+      value: large_square
+      label: 'Large Square'
+    -
+      value: short
+      label: Short
+    -
+      value: wide
+      label: Wide
+    -
+      value: wide_short
+      label: 'Wide and Short'
+    -
+      value: one_col_tall
+      label: 'One Column Tall'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

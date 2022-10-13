@@ -1,0 +1,10 @@
+uuid: a6abbf3e-a2e6-4455-9f6c-04d605245e12
+langcode: en
+status: true
+dependencies: {  }
+id: fifty_fifty_staggered
+label: 'Fifty Fifty Staggered'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

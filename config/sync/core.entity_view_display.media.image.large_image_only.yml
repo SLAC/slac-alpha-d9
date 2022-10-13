@@ -1,0 +1,62 @@
+uuid: cca7c7a6-798e-4906-aac3-9cef8a085ed7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.large_image_only
+    - field.field.media.image.field_body
+    - field.field.media.image.field_boolean
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_credit
+    - field.field.media.image.field_display_style
+    - field.field.media.image.field_internal_tags
+    - field.field.media.image.field_landing_display
+    - field.field.media.image.field_link
+    - field.field.media.image.field_long_text
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_paragraphs
+    - field.field.media.image.field_research_area
+    - field.field.media.image.field_tags
+    - field.field.media.image.field_teaser
+    - field.field.media.image.field_type
+    - image.style.large
+    - media.type.image
+  module:
+    - image
+id: media.image.large_image_only
+targetEntityType: media
+bundle: image
+mode: large_image_only
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_body: true
+  field_boolean: true
+  field_caption: true
+  field_credit: true
+  field_display_style: true
+  field_internal_tags: true
+  field_landing_display: true
+  field_link: true
+  field_long_text: true
+  field_paragraphs: true
+  field_research_area: true
+  field_tags: true
+  field_teaser: true
+  field_type: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

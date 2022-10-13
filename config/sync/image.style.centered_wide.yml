@@ -1,0 +1,15 @@
+uuid: e3d4261b-cf9b-45f3-90e1-7334cdb5dd91
+langcode: en
+status: true
+dependencies: {  }
+name: centered_wide
+label: 'Centered Wide (1240)'
+effects:
+  ace5d986-a1c3-4c78-8186-e8a4f964fc13:
+    uuid: ace5d986-a1c3-4c78-8186-e8a4f964fc13
+    id: image_scale
+    weight: 1
+    data:
+      width: 1240
+      height: null
+      upscale: false

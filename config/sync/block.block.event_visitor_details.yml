@@ -1,0 +1,21 @@
+uuid: 47b0c7b1-d48a-4a03-b5f7-9890079108a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+  theme:
+    - gesso
+id: event_visitor_details
+theme: gesso
+region: disabled
+weight: 0
+provider: null
+plugin: single_rendered_site_settings_block
+settings:
+  id: single_rendered_site_settings_block
+  label: 'Event Visitor Details'
+  label_display: '0'
+  provider: site_settings
+  setting: event_visitor_details
+visibility: {  }

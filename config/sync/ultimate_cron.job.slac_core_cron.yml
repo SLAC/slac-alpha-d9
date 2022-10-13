@@ -1,0 +1,17 @@
+uuid: 5b7b6bcc-1821-459c-a677-a912d4bd2662
+langcode: en
+status: true
+dependencies:
+  module:
+    - slac_core
+title: 'Default cron handler'
+id: slac_core_cron
+weight: 0
+module: slac_core
+callback: slac_core_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

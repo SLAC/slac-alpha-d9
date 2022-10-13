@@ -1,48 +1,156 @@
-uuid: f4eb2cda-d8af-45a1-9769-b42360fced38
+uuid: 37cb2286-1a94-433f-9cdf-05cac8093988
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
+    - filter.format.full_html
+    - media.type.document
+    - media.type.image
+    - media.type.remote_audio
+    - media.type.remote_video
+    - node.type.event
+    - node.type.homepage
+    - node.type.landing_page
+    - node.type.media_mention
+    - node.type.news_article
+    - node.type.news_collection
     - node.type.page
+    - node.type.person
+    - node.type.resource
+    - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
+    - workflows.workflow.content
   module:
     - comment
+    - content_moderation
     - contextual
+    - eu_cookie_compliance
     - file
+    - filter
+    - media
     - node
+    - paragraphs
     - path
+    - rabbit_hole
+    - site_settings
+    - sitewide_alert
     - system
     - taxonomy
     - toolbar
     - tour
+    - webform
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
 label: 'Content editor'
-weight: 2
+weight: -8
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access any webform configuration'
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access media overview'
+  - 'access own webform configuration'
+  - 'access site settings overview'
   - 'access toolbar'
   - 'access tour'
-  - 'administer url aliases'
-  - 'create article content'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'access webform submission user'
+  - 'administer webform element access'
+  - 'create document media'
+  - 'create event content'
+  - 'create image media'
+  - 'create landing_page content'
+  - 'create media'
+  - 'create media_mention content'
+  - 'create news_article content'
+  - 'create news_collection content'
   - 'create page content'
+  - 'create person content'
+  - 'create remote_audio media'
+  - 'create remote_video media'
+  - 'create resource content'
   - 'create terms in tags'
   - 'create url aliases'
-  - 'delete article revisions'
-  - 'delete own article content'
+  - 'create webform'
+  - 'delete any event content'
+  - 'delete any landing_page content'
+  - 'delete any media'
+  - 'delete any media_mention content'
+  - 'delete any news_article content'
+  - 'delete any news_collection content'
+  - 'delete any page content'
+  - 'delete any person content'
+  - 'delete any resource content'
+  - 'delete event revisions'
+  - 'delete homepage revisions'
+  - 'delete landing_page revisions'
+  - 'delete media'
+  - 'delete media_mention revisions'
+  - 'delete news_article revisions'
+  - 'delete news_collection revisions'
+  - 'delete own event content'
+  - 'delete own homepage content'
+  - 'delete own landing_page content'
+  - 'delete own media_mention content'
+  - 'delete own news_article content'
+  - 'delete own news_collection content'
   - 'delete own page content'
+  - 'delete own person content'
+  - 'delete own resource content'
+  - 'delete own webform'
+  - 'delete own webform submission'
   - 'delete page revisions'
-  - 'edit own article content'
+  - 'delete person revisions'
+  - 'delete resource revisions'
+  - 'display eu cookie compliance popup'
+  - 'edit any event content'
+  - 'edit any homepage content'
+  - 'edit any image media'
+  - 'edit any landing_page content'
+  - 'edit any media_mention content'
+  - 'edit any news_article content'
+  - 'edit any news_collection content'
+  - 'edit any page content'
+  - 'edit any person content'
+  - 'edit any remote_video media'
+  - 'edit any resource content'
+  - 'edit any webform'
+  - 'edit behavior plugin settings'
   - 'edit own comments'
+  - 'edit own image media'
   - 'edit own page content'
+  - 'edit own remote_video media'
+  - 'edit own webform'
+  - 'edit own webform submission'
+  - 'edit sitewide alert entities'
+  - 'edit terms in event_type'
+  - 'edit terms in research_area'
   - 'edit terms in tags'
+  - 'rabbit hole bypass media'
   - 'revert all revisions'
+  - 'revert event revisions'
+  - 'revert homepage revisions'
+  - 'revert landing_page revisions'
+  - 'revert media_mention revisions'
+  - 'revert news_article revisions'
+  - 'revert news_collection revisions'
+  - 'revert page revisions'
+  - 'revert person revisions'
+  - 'revert resource revisions'
+  - 'update any media'
+  - 'update media'
+  - 'use content transition create_new_draft'
+  - 'use content transition publish'
+  - 'use text format full_html'
   - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view any webform submission'
+  - 'view latest version'
   - 'view own unpublished content'
+  - 'view own webform submission'
   - 'view the administration theme'

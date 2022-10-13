@@ -1,0 +1,59 @@
+{% set classes = [
+  'c-expandable-grid',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{% if is_demo and not grid_items %}
+  {% import '@global/gesso.macro.twig' as macros %}
+  {% set grid_items = [] %}
+  {% for i in 1..6 %}
+    {% set grid_items = grid_items|merge([macros.sample_content('Grid Item ' ~ i)]) %}
+  {% endfor %}
+{% endif %}
+
+{% set grid_content = grid_items[:3] %}
+{% if grid_items|length > 3 %}
+  {% set additional_content = grid_items[3:] %}
+{% endif %}
+
+{% set collapsed_grid %}
+  {% for content in grid_content %}{{ content|render|raw }}{% endfor %}
+{% endset %}
+
+{% set collapsed_content %}
+  {% include '@layouts/grid/grid.twig' with {
+    grid_content: collapsed_grid,
+    num_of_cols: 3
+  } %}
+{% endset %}
+
+{% set expanded_content %}
+  {% if additional_content %}
+    {% set expanded_grid_array =  grid_content|merge(additional_content) %}
+    {% set expanded_grid %}
+      {% for content in expanded_grid_array %}{{ content|render|raw }}{% endfor %}
+    {% endset %}
+    {% include '@layouts/grid/grid.twig' with {
+      grid_content: expanded_grid,
+      num_of_cols: 3
+    } %}
+  {% else %}
+    {{ collapsed_content }}
+  {% endif %}
+{% endset %}
+
+<div {{ add_attributes({ class: classes }) }}>
+  {% if additional_content %}
+    {% include '@components/drawer/drawer.twig' with {
+      'drawer_content_collapsed': collapsed_content,
+      'drawer_content_expanded': expanded_content,
+      'is_demo': false,
+      'drawer_trigger_label_expanded': 'Show Less'|t,
+      'drawer_trigger_label_collapsed': 'Show More'|t,
+      'modifier_classes': 'c-drawer--grid',
+      'trigger_modifier_classes': is_dark ? 'c-button--outline-secondary' : 'c-button--outline'
+    } %}
+  {% else %}
+    {{ collapsed_content }}
+  {% endif %}
+</div>

@@ -1,0 +1,10 @@
+uuid: fdbca178-e0e2-4db5-b5ab-7e2d92999cd9
+langcode: en
+status: true
+dependencies: {  }
+id: extra_large_card
+label: 'Extra Large Card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

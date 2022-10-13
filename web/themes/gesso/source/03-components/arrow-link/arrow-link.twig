@@ -1,0 +1,6 @@
+{% set classes = [
+  'c-arrow-link',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ link(link_text, link_url, {class: classes}) }}

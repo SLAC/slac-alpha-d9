@@ -1,0 +1,26 @@
+uuid: 3f398f1e-b75d-4163-800b-62d3e0e24dfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_source_name
+    - media.type.remote_video
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: media.remote_video.field_source_name
+field_name: field_source_name
+entity_type: media
+bundle: remote_video
+label: 'Source Name'
+description: 'Uses the Restricted HTML format.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

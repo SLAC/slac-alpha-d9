@@ -1,0 +1,15 @@
+uuid: 0165a152-3062-45ce-b1dd-34984c8c8101
+langcode: en
+status: true
+dependencies: {  }
+name: wide_390
+label: 'Wide (390)'
+effects:
+  795f0056-fc98-4608-ab1d-97728f64a59b:
+    uuid: 795f0056-fc98-4608-ab1d-97728f64a59b
+    id: image_scale
+    weight: 1
+    data:
+      width: 390
+      height: null
+      upscale: false

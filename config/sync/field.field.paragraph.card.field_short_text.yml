@@ -1,0 +1,19 @@
+uuid: c1769851-07a6-4eb0-af96-4ef1d6f05532
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_short_text
+    - paragraphs.paragraphs_type.card
+id: paragraph.card.field_short_text
+field_name: field_short_text
+entity_type: paragraph
+bundle: card
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,54 @@
+uuid: 9622c9b7-5e13-427b-bd24-380736fcb391
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: RWVyFkJuAyNCeCuQrN_yzgowHHOWse9_KOhjuny26Lw
+id: upgrade_d7_paragraphs_node_news_article_header_image_to_paragraph
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (News-article) Header Image to Paragraph'
+source:
+  plugin: d7_node
+  node_type: news_article
+process:
+  type:
+    -
+      plugin: default_value
+      default_value: article_hero
+  field_image:
+    -
+      plugin: skip_on_empty
+      source: field_header_image/0/fid
+      method: row
+    -
+      plugin: media_migration_delta_sort
+      source: field_header_image
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
+  _skip_row:
+    -
+      plugin: skip_on_empty
+      source: field_do_not_display_hero_image/0/value
+      method: process
+    -
+      plugin: skip_on_value
+      value: 1
+      method: row
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  translations: true
+  default_bundle: article_hero
+migration_dependencies:
+  required: {  }
+  optional: {  }

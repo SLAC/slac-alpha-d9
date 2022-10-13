@@ -4,6 +4,6 @@ definitions:
   contact__site_page:
     menu_name: footer
     parent: ''
-    weight: 0
+    weight: -45
     expanded: false
-    enabled: true
+    enabled: false

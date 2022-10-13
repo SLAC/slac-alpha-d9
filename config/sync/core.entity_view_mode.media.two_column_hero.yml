@@ -1,0 +1,10 @@
+uuid: d3af75d2-e6d3-4e69-969b-4a7e13b784f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.two_column_hero
+label: 'Two-Column Hero'
+targetEntityType: media
+cache: true

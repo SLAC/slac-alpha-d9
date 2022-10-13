@@ -1,0 +1,17 @@
+uuid: 159101df-5fd3-4a69-aeaf-3d317c3ea43e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_hero_0_25x
+label: 'Image Hero (0.25x)'
+effects:
+  e3d4b043-24ec-4845-b9ca-3e67ab363a66:
+    uuid: e3d4b043-24ec-4845-b9ca-3e67ab363a66
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 192
+      crop_type: focal_point

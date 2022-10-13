@@ -1,0 +1,26 @@
+uuid: b624e375-d344-45b3-b34b-85c791f16378
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_long_text
+    - media.type.remote_audio
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: media.remote_audio.field_long_text
+field_name: field_long_text
+entity_type: media
+bundle: remote_audio
+label: 'Display name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

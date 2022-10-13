@@ -1,0 +1,26 @@
+uuid: 2f4cdafc-fd2e-434d-ba94-8e56156fdfcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.media_about_slac
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: site_setting_entity.media_about_slac.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: media_about_slac
+label: Body
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

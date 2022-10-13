@@ -1,0 +1,17 @@
+uuid: db5c30ae-af5a-4cea-a563-d1384e1369e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hero_0_25x
+label: 'Hero (.25x)'
+effects:
+  cbcdc31c-0a90-4770-a933-4c34bfcbfed2:
+    uuid: cbcdc31c-0a90-4770-a933-4c34bfcbfed2
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 139
+      crop_type: focal_point

@@ -1,11 +1,11 @@
 ---
 title: 'Email'
-label_display: 'before'
-description_display: 'after'
-placeholder: 'email@example.com'
+label_display: 'invisible'
+description_display: 'invisible'
+placeholder: 'Email'
 is_disabled: false
 is_full_width: false
-is_required: false
+is_required: true
 prefix: ''
 suffix: ''
 description:

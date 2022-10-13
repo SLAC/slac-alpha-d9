@@ -1,0 +1,10 @@
+uuid: 1146bfd1-1a1b-417b-98cd-9b3f3af41c33
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.menu
+label: Menu
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,14 @@
+uuid: fce21fc5-d69c-48b7-94d4-5fd5a20a17d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_audio
+id: media_type_remote_audio
+entity_type_id: media_type
+entity_id: remote_audio
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

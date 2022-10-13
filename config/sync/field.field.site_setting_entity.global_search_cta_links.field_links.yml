@@ -1,0 +1,23 @@
+uuid: 689b38d1-bf03-4f14-88c6-bffc89ac694f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_links
+    - site_settings.site_setting_entity_type.global_search_cta_links
+  module:
+    - link
+id: site_setting_entity.global_search_cta_links.field_links
+field_name: field_links
+entity_type: site_setting_entity
+bundle: global_search_cta_links
+label: 'Global Search CTA Links'
+description: 'Enter links that will be displayed on the Global search overlay.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

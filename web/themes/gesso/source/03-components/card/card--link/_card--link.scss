@@ -1,0 +1,22 @@
+// @file
+// Component: c-card--link
+
+@use '00-config' as *;
+
+.c-card.c-card--link {
+  .c-card__title {
+    &::after {
+      display: none;
+    }
+  }
+
+  .c-card__content {
+    @include font-family-primary;
+    font-weight: gesso-font-weight(bold);
+  }
+}
+
+.c-card__list {
+  @include list-clean;
+  margin-top: rem(gesso-spacing(2));
+}

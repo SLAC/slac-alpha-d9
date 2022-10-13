@@ -1,0 +1,9 @@
+{% set grid_items = [] %}
+
+{% for key in range(0, content.field_paragraphs['#items']|length - 1) %}
+  {% set grid_items = grid_items|merge([content.field_paragraphs[key]]) %}
+{% endfor %}
+
+{% include '@components/expandable-grid/expandable-grid.twig' with {
+  'grid_items': grid_items
+} %}

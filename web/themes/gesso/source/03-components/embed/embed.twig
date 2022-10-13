@@ -1,0 +1,10 @@
+{% set classes = [
+  'c-embed',
+  width ? 'c-embed--' ~ width : '',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('gesso/embed') }}
+<div {{ add_attributes({ class: classes } ) }}>
+  {{ embed_content }}
+</div>

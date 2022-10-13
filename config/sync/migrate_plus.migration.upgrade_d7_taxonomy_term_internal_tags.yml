@@ -1,0 +1,40 @@
+uuid: f035752b-b1b0-48d4-aaaf-230820f8eafa
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: I8SMmCM4M6awiSPvdTMB0bMyJ-A2fidKy29z4e6mD-E
+id: upgrade_d7_taxonomy_term_internal_tags
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Taxonomy terms (Internal Tags)'
+source:
+  plugin: d7_taxonomy_term
+  bundle: tags
+process:
+  tid:
+    -
+      plugin: entity_lookup
+      source: name
+      value_key: name
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: internal_tags
+      ignore_case: true
+    -
+      plugin: skip_on_empty
+      method: row
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: internal_tags
+migration_dependencies:
+  required: {  }
+  optional: {  }

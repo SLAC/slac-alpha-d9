@@ -1,0 +1,10 @@
+uuid: 9f1ab88e-f4fe-4932-8f69-87895c605938
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.one_col_tall
+label: 'One Column Tall'
+targetEntityType: media
+cache: true

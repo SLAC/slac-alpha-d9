@@ -1,0 +1,8 @@
+uuid: 0952759d-dcf9-4972-8fd3-a7123ef2a922
+langcode: en
+status: true
+dependencies: {  }
+id: colorful_tagline_for_our_story
+label: 'Colorful Tagline for Our Story'
+fieldset: 'Colorful Tagline for Our Story'
+multiple: false

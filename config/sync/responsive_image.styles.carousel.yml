@@ -1,0 +1,24 @@
+uuid: 7034d057-1171-4b00-884c-0c0891e94cde
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.carousel_large
+    - image.style.carousel_small
+  theme:
+    - gesso
+id: carousel
+label: Carousel
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_large
+    breakpoint_id: gesso.carousel.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_small
+    breakpoint_id: gesso.carousel.small
+    multiplier: 1x
+breakpoint_group: gesso.carousel
+fallback_image_style: carousel_small

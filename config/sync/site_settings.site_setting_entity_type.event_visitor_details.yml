@@ -1,0 +1,8 @@
+uuid: 85069653-9697-43c4-a61a-76bbd1895b11
+langcode: en
+status: true
+dependencies: {  }
+id: event_visitor_details
+label: 'Event: Visitor Details'
+fieldset: 'Event: Visitor Details'
+multiple: false

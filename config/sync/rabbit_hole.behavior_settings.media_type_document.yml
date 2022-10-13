@@ -1,0 +1,14 @@
+uuid: 35d7be37-8bb6-4461-bb4a-be5dfd7c4b34
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+id: media_type_document
+entity_type_id: media_type
+entity_id: document
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

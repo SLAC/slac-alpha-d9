@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a formatted lottiefiles field.
+ *
+ * Available variables:
+ * - uri: Lottiefiles json url.
+ * - autoplay: Flag for autoplay option, autoplay animation on load.
+ * - background: Background color of the animation.
+ * - controls: Flag for controls option, show controls.
+ * - hover: Flag for hover option, play on mouse hover.
+ * - loop: Flag for loop option, loop the animation.
+ * - mode: play mode.
+ * - speed: Animation speed.
+ * - selector: Unique ID selector.
+ * - width: Width of the animation player in pixel.
+ * - cssselector: Unique css selector.
+ *
+ * @see template_preprocess_lottiefiles_player_formatter()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('gesso/animated_icon') }}
+
+{% set autoplay = autoplay == 1 ? 'autoplay' : '' %}
+{% set background = background != '' ? 'background="' ~ background ~ '"' %}
+{% set controls = controls == 1 ? 'controls' : '' %}
+{% set hover = hover == 1 ? 'hover' : '' %}
+{% set loop = loop == 1 ? 'loop' : '' %}
+{% set mode = 'mode="' ~ mode ~ '"' %}
+{% set speed = 'speed="' ~ speed ~ '"' %}
+{% set style = 'style=width:' ~ width ~ 'px' %}
+<lottie-player {% if width > 0 %}{{ style }}{% endif %} class="c-animated-icon lottiefiles-field-item {{ cssselector }}" id="{{ selector }}" src="{{ uri }}" {{ autoplay }} {{ background|raw }} {{ controls }} {{ hover }} {{ loop }} {{ mode|raw }} {{ speed|raw }}></lottie-player>

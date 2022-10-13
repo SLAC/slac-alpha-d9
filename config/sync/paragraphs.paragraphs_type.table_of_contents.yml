@@ -1,0 +1,10 @@
+uuid: 47cd1b09-58c5-44bf-b925-a565225ca1d2
+langcode: en
+status: true
+dependencies: {  }
+id: table_of_contents
+label: 'Table of Contents Marker'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

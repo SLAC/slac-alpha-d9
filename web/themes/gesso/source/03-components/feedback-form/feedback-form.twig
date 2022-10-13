@@ -1,0 +1,31 @@
+{% set classes = [
+  'c-feedback-form',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<form {{ add_attributes({ class: classes } ) }}>
+  {% include '@components/form-item/form-item.twig' with {
+    label: 'Your name',
+    placeholder: 'Your name',
+    label_display: 'invisible',
+    is_required: false,
+    type: 'textfield',
+  } %}
+
+  {% include '@components/form-item/form-item.twig' with {
+    label: 'Email',
+    placeholder: 'Email',
+    label_display: 'invisible',
+    is_required: true,
+    type: 'email',
+  } %}
+
+  {% include '@components/form-item/form-item--textarea/_textarea.twig' with {
+    label: 'Your message',
+    placeholder: 'Your message',
+    is_required: false,
+    type: 'textarea',
+  } %}
+
+
+</form>

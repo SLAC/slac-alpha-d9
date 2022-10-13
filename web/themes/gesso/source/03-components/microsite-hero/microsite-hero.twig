@@ -1,0 +1,54 @@
+{% set classes = [
+  'c-microsite-hero',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('gesso/microsite_hero') }}
+{{ attach_library('gesso/mobile_menu') }}
+
+{% embed '@layouts/header/header.twig' with {
+    modifier_classes: 'c-microsite-hero__header',
+    has_constrain: true
+  } %}
+  {% block logo %}
+    <div class="l-header__brand c-microsite-hero__brand">
+      <a href="{{ url('<front>') }}">
+        {% include '@layouts/header/_slac-logo.twig' with { modifier_classes: false } %}
+      </a>
+      <h1 class="c-microsite-hero__title">
+        {{ microsite_hero_title }}
+      </h1>
+    </div>
+  {% endblock %}
+  {% block content %}
+    <ul class="c-microsite-hero__menu">
+      {% for menu_link in microsite_hero_links %}
+        <li class="c-microsite-hero__menu-item">
+          {{ link(menu_link.text, menu_link.url, {'class': ['c-microsite-hero__menu-link']}) }}
+        </li>
+      {% endfor %}
+      {% if microsite_hero_button %}
+        <li class="c-microsite-hero__menu-item">
+          {{ microsite_hero_button }}
+        </li>
+      {% endif %}
+    </ul>
+    {% include '@components/search/search.twig' with { modifier_classes: false } %}
+    <h1 class="c-microsite-hero__title c-microsite-hero__title--mobile">
+      {{ microsite_hero_title }}
+    </h1>
+  {% endblock %}
+{% endembed %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  {% embed '@components/hero-bg-image/hero-bg-image.twig' with {
+    'hero_caption': microsite_hero_caption,
+    'hero_kicker': microsite_hero_kicker,
+    'hero_image': microsite_hero_image,
+    'hero_title': microsite_title_overlay,
+    'has_overlay': true,
+    'icon': icon
+  } %}
+    {% block animated_icon %}{{ microsite_lottiefile }}{% endblock %}
+  {% endembed %}
+</div>

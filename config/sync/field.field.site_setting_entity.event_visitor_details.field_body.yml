@@ -1,0 +1,26 @@
+uuid: f6ab39d2-ec30-42c4-9513-f160c8f42a63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.event_visitor_details
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+id: site_setting_entity.event_visitor_details.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: event_visitor_details
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

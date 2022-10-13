@@ -1,0 +1,57 @@
+uuid: c441451f-a94f-4dab-9963-626bc29fd43b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - slac_migrate
+_core:
+  default_config_hash: HBJSkY7NAJK3HwUsJ7Qc2s_mSfy0y0OyuSKMYRb_6I4
+id: upgrade_d7_paragraphs_image
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+  - 'Paragraphs Content'
+migration_group: migrate_drupal_7
+label: 'Paragraphs (Image)'
+source:
+  plugin: d7_paragraphs_item
+  bundle: image
+process:
+  type:
+    -
+      plugin: default_value
+      default_value: image_embed
+  field_image:
+    -
+      plugin: media_migration_delta_sort
+      source: field_pimage
+    -
+      plugin: sub_process
+      process:
+        target_id: fid
+  field_view_mode:
+    -
+      plugin: static_map
+      source: field_width
+      map:
+        large: centered_wide
+        full: two_column_hero
+        'pull-left pull-left-portrait': centered
+        'pull-right pull-right-portrait': centered
+        'pull-left pull-left-narrow': centered
+        'pull-right pull-right-narrow': centered
+        'pull-left pull-left-wide': centered_wide
+        'pull-right pull-right-wide': centered_wide
+    -
+      plugin: default_value
+      default_value: centered
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: image_embed
+migration_dependencies:
+  required: {  }
+  optional: {  }

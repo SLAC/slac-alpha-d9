@@ -45,6 +45,14 @@ function gesso_helper_form_system_theme_settings_alter(&$form, FormStateInterfac
     '#required' => TRUE,
     '#element_validate' => ['gesso_helper_validate_buttons'],
   ];
+  $form['buttons']['button_icon'] = [
+    '#type' => 'textarea',
+    '#title' => t('Button Icon'),
+    '#default_value' => theme_get_setting('button_icon', $theme) ?? "",
+    '#description' => t('Enter one or more classes on each line in the format: classA.classB|Label. Example: c-button--chevron|Chevron'),
+    '#required' => TRUE,
+    '#element_validate' => ['gesso_helper_validate_buttons'],
+  ];
 }
 
 /**

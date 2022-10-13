@@ -1,0 +1,28 @@
+// @file
+// Component: c-facet
+@use '00-config' as *;
+
+.c-facet {
+  @include focus();
+  position: relative;
+
+  &:hover {
+    color: var(--gesso-link-hover-color);
+  }
+
+  &:focus-within {
+    outline-color: gesso-color(ui, generic, focus);
+  }
+
+  label {
+    cursor: pointer;
+  }
+}
+
+.c-facet__input {
+  @include visually-hidden(true);
+}
+
+.c-facet__icon {
+  margin-left: rem(gesso-spacing(1));
+}

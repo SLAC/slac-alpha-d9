@@ -45,8 +45,16 @@
   not paragraph.isPublished() ? 'is-unpublished',
 ] %}
 
-{% block paragraph_content %}
+{% set paragraph_content %}
   <div{{ attributes.addClass(classes) }}>
     {{ content }}
   </div>
-{% endblock %}
+{% endset %}
+
+{% if is_nested %}{{ paragraph_content }}{% else %}
+  {% include '@layouts/section/section.twig' with {
+    section_content: paragraph_content,
+    modifier_classes: 'l-section--no-padding',
+    has_constrain: true
+  } %}
+{% endif %}

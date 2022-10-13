@@ -1,4 +1,21 @@
 {
   "patches": {
+    "drupal/core": {
+      "HTML5 validation is preventing form submit and not fully accessible": "https://www.drupal.org/files/issues/2020-05-05/1797438-165.patch",
+      "Claro's preprocessing of field multiple value form's table header cell removes potential changes by others": "https://www.drupal.org/files/issues/2021-11-25/3099026-32_0.patch",
+      "Add a hook to modify oEmbed resource data": "https://www.drupal.org/files/issues/2022-01-05/3042423-52.patch"
+     },
+    "drupal/components": {
+      "Template is not defined error on node edit / admin pages": "https://www.drupal.org/files/issues/2021-06-24/DRUP86-template_not_defined.patch"
+    },
+    "drupal/media_migration": {
+      "Support Migrate Plus >=4.2": "https://www.drupal.org/files/issues/2022-08-12/media_migration-3269743-18.patch"
+    },
+    "drupal/viewsreference": {
+      "Exposed filters not working for Views in Paragraphs": "https://www.drupal.org/files/issues/2021-12-07/viewsreference-exposed_filters_not_working-3129609-12.patch"
+    },
+    "drupal/entity_reference_revisions": {
+      "InvalidArgumentException: Invalid translation language (und) specified": "patches/3024588-entity_reference_revisions-mr-13.patch"
+    }
   }
 }

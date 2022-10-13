@@ -74,16 +74,25 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
-{% include '@components/teaser/teaser.twig' with {
-  'modifier_classes': '',
-  'title_modifier_classes': '',
-  'title_element': 'h2',
-  'url': url,
+{% set card_content %}
+  {{ title_prefix }}{{ title_suffix }}
+  {% if content.field_teaser|field_value is not empty %}
+    {{ content.field_teaser }}
+  {% else %}
+    {{ content.field_paragraphs }}
+  {% endif %}
+{% endset %}
+
+{% include '@components/card/card.twig' with {
   'title': label,
-  'date': date,
-  'rdf_metadata': metadata,
-  'summary': content,
+  'url': url,
+  'kicker': content.field_text|field_value,
+  'type': content.field_type|field_value is not empty ? content.field_type|field_value : node.bundle|replace({'_': ' '}),
+  'footer': false,
+  'media': content.field_teaser_image|field_value,
+  'card_content': card_content,
+  'modifier_classes': 'c-card--teaser'
 } %}
 
 {# Uncomment the following if you don’t render the content variable. #}
-{# {% set catch_cache = content|render %} #}
+{% set catch_cache = content|render %}

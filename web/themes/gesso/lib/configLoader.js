@@ -15,18 +15,14 @@ const jsComment = `/* eslint-disable */
 
 module.exports = function (source) {
   const callback = this.async();
-  try {
-    readSource(source)
-      .then(transform)
-      .then(transformed => {
-        const sass = sassComment + os.EOL + renderSass(transformed.data);
-        const js = jsComment + os.EOL + renderJs(transformed.data);
-        this.emitFile('../source/00-config/_design-tokens.artifact.scss', sass);
-        this.emitFile('../source/00-config/_GESSO.es6.js', js);
-        callback(null, yaml.stringify(transformed.data));
-      });
-    return source;
-  } catch (err) {
-		return callback(err);
-	}
+  readSource(source)
+    .then(transform)
+    .then(transformed => {
+      const sass = sassComment + os.EOL + renderSass(transformed.data);
+      const js = jsComment + os.EOL + renderJs(transformed.data);
+      this.emitFile('../source/00-config/_design-tokens.artifact.scss', sass);
+      this.emitFile('../source/00-config/_GESSO.es6.js', js);
+      callback(null, yaml.stringify(transformed.data));
+    });
+  return source;
 };

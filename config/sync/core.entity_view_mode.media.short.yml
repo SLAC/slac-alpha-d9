@@ -1,0 +1,10 @@
+uuid: a06b38ed-05ac-405d-9a0d-7ed4ac4212e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.short
+label: Short
+targetEntityType: media
+cache: true
