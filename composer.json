@@ -57,6 +57,7 @@
     "drupal/migrate_manifest": "^3.0",
     "drupal/migrate_tools": "^6.0",
     "drupal/migrate_upgrade": "^4",
+    "drupal/node_revision_delete": "^1.0@RC",
     "drupal/oembed_providers": "^2.0",
     "drupal/pantheon_advanced_page_cache": "^2.0",
     "drupal/paragraphs": "^1.14",
