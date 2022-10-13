@@ -18,7 +18,6 @@ dependencies:
     - node.type.person
     - node.type.resource
     - taxonomy.vocabulary.event_type
-    - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
     - workflows.workflow.content
   module:
@@ -129,7 +128,6 @@ permissions:
   - 'edit own webform submission'
   - 'edit sitewide alert entities'
   - 'edit terms in event_type'
-  - 'edit terms in research_area'
   - 'edit terms in tags'
   - 'rabbit hole bypass media'
   - 'revert all revisions'

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.media.field_internal_tags
     - media.type.remote_video
-    - taxonomy.vocabulary.internal_tags
 id: media.remote_video.field_internal_tags
 field_name: field_internal_tags
 entity_type: media
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      internal_tags: internal_tags
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

@@ -1,8 +1,0 @@
-uuid: 588ed898-64d0-41d1-baab-7ebcb97a1337
-langcode: en
-status: true
-dependencies: {  }
-name: 'Media Type'
-vid: media_type
-description: ''
-weight: 0

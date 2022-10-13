@@ -1,0 +1,11 @@
+uuid: d77c8d2d-a4c2-4eda-9d56-59207282df1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.experience
+id: taxonomy_term.experience
+target_entity_type_id: taxonomy_term
+target_bundle: experience
+default_langcode: site_default
+language_alterable: false

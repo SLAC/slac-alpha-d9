@@ -1,8 +1,0 @@
-uuid: 078da260-895b-48f8-a9b3-90b15fbf421f
-langcode: en
-status: true
-dependencies: {  }
-name: 'Research Area'
-vid: research_area
-description: ''
-weight: 0

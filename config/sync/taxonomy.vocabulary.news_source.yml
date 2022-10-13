@@ -1,8 +1,0 @@
-uuid: 9e832c12-94de-4a2d-b4a4-58ea58bc0acb
-langcode: en
-status: true
-dependencies: {  }
-name: 'News Source'
-vid: news_source
-description: ''
-weight: 0
