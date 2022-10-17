@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.taxonomy_term.field_research_area
-    - taxonomy.vocabulary.research_area
     - taxonomy.vocabulary.tags
 id: taxonomy_term.tags.field_research_area
 field_name: field_research_area
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      research_area: research_area
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.media.field_type
     - media.type.image
-    - taxonomy.vocabulary.media_type
 id: media.image.field_type
 field_name: field_type
 entity_type: media
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      media_type: media_type
+    target_bundles: {  }
     sort:
       field: name
       direction: asc
