@@ -1,29 +1,16 @@
 @use '00-config' as *;
 
+.l-header {
+  @include on-dark-variables;
+
+  &.is-sticky,
+  .has-open-menu & {
+    @include default-variables;
+  }
+}
+
 .l-header__logo {
   filter: brightness(0) invert(1);
-}
-
-.c-mega-menu {
-  > .c-mega-menu__item {
-    > .c-mega-menu__link {
-      @include link(gesso-color(text, on-dark), gesso-color(text, on-dark));
-
-      .has-open-menu &,
-      .is-sticky & {
-        color: gesso-color(text, link);
-      }
-    }
-  }
-}
-
-.c-search__button {
-  color: gesso-color(text, on-dark);
-
-  .has-open-menu &,
-  .is-sticky & {
-    color: gesso-color(text, link);
-  }
 }
 
 .c-hamburger-button {

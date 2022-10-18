@@ -12,7 +12,6 @@
 {% if is_nested %}{{ promo_box }}{% else %}
   {% include '@layouts/section/section.twig' with {
     section_content: promo_box,
-    modifier_classes: 'l-section--no-padding',
     has_constrain: true
   } %}
 {% endif %}

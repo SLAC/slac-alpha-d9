@@ -21,20 +21,27 @@
  * @see template_preprocess_fieldset()
  */
 #}
-{% if type == 'fieldset' %}
-  {% set classes =[
-    'c-fieldset--default',
-  ] %}
+{% if type == 'filter-modal' %}
+<fieldset{{ attributes.addClass(classes) }}>
+  <legend{{ legend.attributes }}>{{ legend.title }}</legend>
+  {{ children }}
+</fieldset>
 {% else %}
-  {% set remove_classes = [
-    'fieldgroup',
-    'form-composite',
-  ] %}
-  {% set classes = [
-    'c-fieldset--' ~ type|clean_class,
-  ] %}
-{% endif %}
+  {% if type == 'fieldset' %}
+    {% set classes =[
+      'c-fieldset--default',
+    ] %}
+  {% else %}
+    {% set remove_classes = [
+      'fieldgroup',
+      'form-composite',
+    ] %}
+    {% set classes = [
+      'c-fieldset--' ~ type|clean_class,
+    ] %}
+  {% endif %}
 
-{% include '@components/fieldset/fieldset.twig' with {
-  modifier_classes: attributes.addClass(classes).removeClass(remove_classes).class|join(' ')|trim,
-} %}
+  {% include '@components/fieldset/fieldset.twig' with {
+    modifier_classes: attributes.addClass(classes).removeClass(remove_classes).class|join(' ')|trim,
+  } %}
+{% endif %}

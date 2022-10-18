@@ -115,7 +115,7 @@ gesso:
       link-hover: brand.digital-red.base
       link-active: brand.digital-red.base
       link-visited: grayscale.stanford-black
-      link-underline: brand.digital-red.base
+      link-underline: grayscale.stanford-black
     background:
       site: grayscale.white
       subfooter: brand.cardinal.base
@@ -398,6 +398,7 @@ gesso:
       outro: 195ms
   z-index:
     social-share: 2
+    toc: 2
     back-to-top: 5
     nav: 500
     drawer: 501

@@ -66,7 +66,6 @@
  * @see template_preprocess_node()
  */
 #}
-
 {% set classes = [
   node.isPromoted() ? 'is-promoted',
   node.isSticky() ? 'is-sticky',
@@ -75,38 +74,25 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
-{% set admin_info %}
-  {{ region_status }}
+{% set card_content %}
+  {{ title_prefix }}{{ title_suffix }}
+  {% if content.field_teaser|field_value is not empty %}
+    {{ content.field_teaser }}
+  {% else %}
+    {{ content.field_paragraphs }}
+  {% endif %}
 {% endset %}
 
-{% set show_admin_info = false %}
-
-{% if admin_info|striptags('<drupal-render-placeholder>')|trim %}
-  {% set show_admin_info = true %}
-{% endif %}
-
-
-{{ drupal_block('system_breadcrumb_block') }}
-
-{% if not node.field_boolean.value == '1' %}
-  {% include '@components/page-title/page-title.twig' with {
-    'page_title': label,
-    'lede': content.field_long_text|field_value,
-    'kicker': content.field_text|field_value,
-    'sidebar_content': ' ',
-    'has_constrain': true,
-  } %}
-{% endif %}
-
-{% include '@components/article/article.twig' with {
-  'title': null,
-  'author': null,
-  'author_name': null,
-  'date': null,
-  'show_admin_info': show_admin_info,
-  'admin_info': admin_info,
-  'show_footer': false,
-  'rdf_metadata': metadata,
-  'content': content.field_paragraphs,
+{% include '@components/card/card.twig' with {
+  'title': label,
+  'url': url,
+  'kicker': false,
+  'type': content.field_text|field_value,
+  'footer': false,
+  'media': content.field_teaser_image|field_value,
+  'card_content': card_content,
+  'modifier_classes': 'c-card--teaser'
 } %}
 
+{# Uncomment the following if you don’t render the content variable. #}
+{% set catch_cache = content|render %}

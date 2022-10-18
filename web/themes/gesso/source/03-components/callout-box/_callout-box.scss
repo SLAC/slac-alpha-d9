@@ -5,6 +5,11 @@
 .c-callout-box {
   margin: 1em auto;
   max-width: gesso-constrain(sm);
+
+  + .l-section .l-section__content {
+    // stylelint-disable-next-line property-no-unknown
+    container-type: initial;
+  }
 }
 
 .c-callout-box__inner {

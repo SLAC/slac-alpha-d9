@@ -8,7 +8,8 @@
   'c-hero-bg-image',
   'c-hero-bg-image--left',
   text_color ? 'c-hero-bg-image--' ~ text_color : '',
-  text_color == 'white' ? 'has-overlay' : '',
+  text_color == 'white' or has_overlay ? 'has-overlay' : '',
+  bottom_overlay_only ? 'has-bottom-overlay' : '',
   modifier_classes ? modifier_classes : ''
 ]|join(' ')|trim %}
 

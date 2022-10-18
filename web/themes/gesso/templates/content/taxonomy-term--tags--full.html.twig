@@ -30,7 +30,7 @@
 {% set attributes = attributes.addClass(classes) %}
 
 {% set admin_info %}
-  {{ region_status }}
+{{ region_status }}
 {% endset %}
 
 {% set show_admin_info = false %}
@@ -39,18 +39,22 @@
   {% set show_admin_info = true %}
 {% endif %}
 
-{{ drupal_block('system_breadcrumb_block') }}
+<div class="c-main__meta">
+  {{ drupal_block('system_breadcrumb_block') }}
+  {{ drupal_block('share_this_page_block') }}
+</div>
 
 {% if content.field_image|field_value is not empty %}
   {% set image_with_caption %}
-    {% set tooltip %}
-      {{- term.field_image.0.entity.field_caption|view -}}
-      {{- term.field_image.0.entity.field_credit|view -}}
-    {% endset %}
+  {% set tooltip %}
+  {{- term.field_image.0.entity.field_caption|view -}}
+  {{- term.field_image.0.entity.field_credit|view -}}
+  {% endset %}
 
-    {% include '@components/small-captioned-image/small-captioned-image.twig' with {
+  {% include '@components/small-captioned-image/small-captioned-image.twig' with {
       image: content.field_image|field_value,
-      caption: tooltip
+      caption: tooltip,
+      modifier_classes: 'u-desktop-only',
     } %}
   {% endset %}
 {% endif %}
@@ -60,18 +64,19 @@
   lede: content.field_lede|field_value,
   kicker: content.field_kicker|field_value,
   rss_url: content.field_rss.0['#url'],
+  has_sidebar: true,
   sidebar_content: image_with_caption ?: null ,
   has_constrain: true,
 } %}
 
 {% set term_content %}
-  {% include '@layouts/section/section.twig' with {
+{% include '@layouts/section/section.twig' with {
     'section_title': null,
     'section_content': drupal_view('landing_page_topic_views', 'topic_content_media_card'),
     'has_constrain': true,
-    'modifier_classes': 'l-section--white',
+    'modifier_classes': 'l-section--white l-section--padding-bottom',
   } %}
-  {{ content.field_paragraphs }}
+{{ content.field_paragraphs }}
 {% endset %}
 
 {% include '@components/article/article.twig' with {

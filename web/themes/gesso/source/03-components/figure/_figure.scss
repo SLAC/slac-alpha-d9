@@ -79,6 +79,7 @@
 .c-figure__caption {
   @include custom-responsive-font-size(rem(12px), rem(16px));
   caption-side: bottom;
+  color: var(--gesso-text-color);
   font-family: gesso-font-family(primary);
   font-style: normal;
   font-weight: gesso-font-weight(regular);

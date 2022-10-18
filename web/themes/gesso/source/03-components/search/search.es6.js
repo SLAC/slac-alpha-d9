@@ -24,11 +24,13 @@ Drupal.behaviors.search = {
         searchInput.setAttribute('name', searchInputName);
         searchForm.setAttribute('action', searchUrl);
       }
-      searchRadios.forEach(radio => {
-        radio.addEventListener('change', handleRadioChange);
-      });
-      searchRadios[0].dispatchEvent(new InputEvent('change'));
-      searchRadios[0].checked = true;
+      if (searchRadios.length) {
+        searchRadios.forEach(radio => {
+          radio.addEventListener('change', handleRadioChange);
+        });
+        searchRadios[0].dispatchEvent(new InputEvent('change'));
+        searchRadios[0].checked = true;
+      }
     });
   },
 };

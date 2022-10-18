@@ -69,7 +69,7 @@
 
 {% set footer %}
   {{ node.getCreatedTime|format_date('custom', 'F j, Y') }}
-  {% if content.field_estimated_read_time|field_value is not empty %}
+  {% if content.field_source_link|field_value is empty and content.field_estimated_read_time|field_value is not empty %}
     &nbsp;·&nbsp;
     {{ content.field_estimated_read_time|field_value }}
   {% endif %}
@@ -92,7 +92,7 @@
 {% endset %}
 
 {% set card_link %}
-  {% if content.field_source_name|field_value is not empty and content.field_source_link|field_value is not empty %}
+  {% if content.field_source_link|field_value is not empty %}
     {{ content.field_source_link.0['#url'] }}
   {% else %}
     {{ url }}

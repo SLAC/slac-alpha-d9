@@ -10,6 +10,6 @@
 .u-desktop-only {
   display: none;
   @include breakpoint(gesso-breakpoint(tablet)) {
-    display: initial;
+    display: revert;
   }
 }

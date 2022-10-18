@@ -10,3 +10,4 @@ lede: |-
 kicker: 'Kicker'
 rss_url: '/taxonomy/term/81/feed'
 has_constrain: true
+has_sidebar: true

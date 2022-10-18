@@ -41,7 +41,8 @@
 
 {% set tooltip %}
   {{- hero_caption -}}
-  {{- hero_credit -}}
+  <p>{{- hero_credit -}}</p>
+  {% if hero_url %}<p><a href="{{ hero_url }}">{{ 'Image details'|t }}</a></p>{% endif %}
 {% endset %}
 
 {% include '@components/article-hero/article-hero.twig' with {

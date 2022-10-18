@@ -74,77 +74,23 @@
 
 {% set attributes = attributes.addClass(classes) %}
 
-{% set is_past_event = node.isPastEvent() %}
-
-{% set admin_info %}
-{{ region_status }}
+{% set card_content %}
+  {% if content.field_teaser|field_value is not empty %}
+    {{ content.field_teaser }}
+  {% else %}
+    {{ content.field_paragraphs }}
+  {% endif %}
 {% endset %}
 
-{% set show_admin_info = false %}
-
-{% if admin_info|striptags('<drupal-render-placeholder>')|trim %}
-  {% set show_admin_info = true %}
-{% endif %}
-
-<div class="c-main__meta">
-  {{ drupal_block('system_breadcrumb_block') }}
-  {{ drupal_block('share_this_page_block') }}
-</div>
-
-{% set additional_links = [] %}
-{% if content.field_link2|field_value %}
-  {% set additional_links = additional_links|merge([content.field_link2|field_value]) %}
-{% endif %}
-{% if site_settings['event:_links'] %}
-  {% for event_link in site_settings['event:_links'].event_links %}
-    {% if event_link.title %}
-      {% set additional_links = additional_links|merge([link(event_link.title, event_link.uri, {'class': ['c-event-details__link']})])%}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-{% set details %}
-{% embed '@components/event-details/event-details.twig' with {
-    'image': content.field_image|field_value,
-    'video': content.field_video|field_value,
-    'event_type': content.field_type|render|striptags|trim,
-    'zoom_details': is_past_event ? false : content.field_detail_text|field_value,
-    'additional_links': additional_links,
-    'calendar_link_text': content.field_override_text|field_value ? content.field_override_text|field_value : content.field_datetime_range,
-    'map_link_text': not is_past_event ? content.field_link|field_value : FALSE,
-    'is_past_event': is_past_event
-  } %}
-  {% block event_ctas %}
-    {{ content.field_links }}
-  {% endblock %}
-{% endembed %}
-{% endset %}
-
-{% set author_content %}
-{% if content.field_name|field_value %}
-  {{ content.field_name }}
-{% endif %}
-{{ content.field_person_image|field_value }}
-{{ content.field_long_text|field_value }}
-{% endset %}
-
-{% set kicker %}
-{{- node.getEventTense() }}
-Event ·
-{{ content.field_text|field_value -}}
-{% endset %}
-
-{% include '@templates/event-detail/event-detail.twig' with {
-  'page_title': label,
-  'kicker': kicker,
-  'lede': content.field_lede|field_value,
-  'show_admin_info': show_admin_info,
-  'admin_info': admin_info,
-  'event_content': content.field_body,
-  'details': details,
-  'map_iframe': node.field_boolean2.value == '1' ? content.field_site_setting : false,
-  'tags': content.field_tags,
-  'visiting': node.field_boolean2.value == '1' ? drupal_entity('block', 'event_visitor_details', check_access=false)
+{% include '@components/card/card.twig' with {
+  'title': label,
+  'url': url,
+  'kicker': false,
+  'type': content.field_text|field_value,
+  'footer': false,
+  'media': content.field_teaser_image|field_value,
+  'card_content': card_content,
 } %}
 
+{# Uncomment the following if you don’t render the content variable. #}
 {% set catch_cache = content|render %}

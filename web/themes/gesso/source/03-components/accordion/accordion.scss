@@ -3,7 +3,7 @@
 
 @use '00-config' as *;
 
-$accordion-item-border-color: gesso-grayscale(gray-2) !default;
+$accordion-item-border-color: var(--gesso-text-color);
 $accordion-item-icon-color: gesso-color(text, primary) !default;
 $accordion-item-icon-size: gesso-font-size(2);
 
@@ -55,8 +55,8 @@ $accordion-item-icon-size: gesso-font-size(2);
     span {
       @include underline;
       color: inherit;
-      text-decoration: underline;
       text-decoration-color: gesso-color(text, link-hover);
+      text-decoration-line: underline;
     }
   }
 

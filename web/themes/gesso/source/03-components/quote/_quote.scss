@@ -9,7 +9,8 @@
   padding-top: rem(gesso-spacing(5));
   position: relative;
 
-  .c-fifty-fifty & {
+  .c-fifty-fifty &,
+  .c-overlap-image & {
     margin-top: 0;
   }
 
@@ -36,6 +37,11 @@
     margin-bottom: rem(gesso-spacing(8));
     margin-top: calc(var(--quote-size) / 2 + #{rem(gesso-spacing(8))});
     padding-top: rem(gesso-spacing(7));
+
+    .c-overlap-image & {
+      margin-block: 0;
+      padding-top: calc(var(--quote-size) / 2);
+    }
   }
 }
 

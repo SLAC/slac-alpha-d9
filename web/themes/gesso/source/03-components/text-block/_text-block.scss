@@ -8,6 +8,14 @@
   }
 }
 
+.l-grid {
+  @include breakpoint-min(gesso-breakpoint(grid-2col)) {
+    .c-text-block + .c-text-block {
+      margin-top: 0;
+    }
+  }
+}
+
 .c-text-block__content {
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     display: flex;

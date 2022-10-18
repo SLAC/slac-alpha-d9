@@ -21,7 +21,8 @@
   </div>
   <div class="c-carousel__nav">
     <button class="c-carousel__arrow c-carousel__prev" aria-label="{{ 'Previous'|t }}">{% include '@components/icon/icon.twig' with {
-        icon_name: 'angle-left'
+        icon_name: 'angle-left',
+        is_hidden: true
       } %}</button>
     <div class="c-carousel__pager">
       {% for item in carousel_items %}
@@ -29,7 +30,8 @@
       {% endfor %}
     </div>
     <button class="c-carousel__arrow c-carousel__next" aria-label="{{ 'Next'|t }}">{% include '@components/icon/icon.twig' with {
-        icon_name: 'angle-right'
+        icon_name: 'angle-right',
+        is_hidden: true
       } %}</button>
   </div>
 </div>

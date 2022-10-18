@@ -1,1 +1,19 @@
-{% extends 'field--media--field-caption.html.twig' %}
+{% set field_items = [] %}
+{% for item in items %}
+  {% set field_items = field_items|merge([{
+    attributes: item.attributes,
+    content: item.content|render|striptags('<em><strong><a><br>')
+  }]) %}
+{% endfor %}
+
+{%- if logged_in -%}
+<span {{ attributes }}>
+  {{- title_suffix.contextual_links }}
+  {%- endif -%}
+
+  {%- for item in field_items -%}
+    {{- item.content|raw -}}
+  {%- endfor -%}
+
+  {%- if logged_in %}</span>{% endif -%}
+

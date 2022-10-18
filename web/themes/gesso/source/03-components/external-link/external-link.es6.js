@@ -57,18 +57,22 @@ Drupal.behaviors.externalLinks = {
 
     externalLinks.forEach(el => {
       if (el.hasAttribute('href') && !el.querySelector('img')) {
-        if (linkIsLocked(el)) {
-          el.insertAdjacentHTML(
-            'beforeend',
-            `<svg class="c-icon" role="img"><title>(requires login)</title><use xlink:href="${drupalSettings.gesso.gessoImagePath}/sprite.artifact.svg#lock-solid"></use></svg>`
-          );
-          el.classList.add('external-link', 'external-link--locked');
-        } else if (linkIsExternal(el)) {
-          el.insertAdjacentHTML(
-            'beforeend',
-            `<svg class="c-icon" role="img"><title>(external link)</title><use xlink:href="${drupalSettings.gesso.gessoImagePath}/sprite.artifact.svg#diagonal-arrow"></use></svg>`
-          );
-          el.classList.add('external-link');
+        const text = el.textContent.trim().split(' ');
+        const lastWord = text.pop();
+        if (lastWord) {
+          let lastWordMarkup = lastWord;
+          if (linkIsLocked(el)) {
+            lastWordMarkup = `<span class="external-link__word">${lastWord}<svg class="c-icon" role="img"><title>(requires login)</title><use xlink:href="${drupalSettings.gesso.gessoImagePath}/sprite.artifact.svg#lock-solid"></use></svg></span>`;
+            el.classList.add('external-link', 'external-link--locked');
+          } else if (linkIsExternal(el)) {
+            lastWordMarkup = `<span class="external-link__word">${lastWord}<svg class="c-icon" role="img"><title>(external link)</title><use xlink:href="${drupalSettings.gesso.gessoImagePath}/sprite.artifact.svg#diagonal-arrow"></use></svg></span>`;
+            el.classList.add('external-link');
+          }
+          const lastIndex = el.innerHTML.lastIndexOf(lastWord);
+          el.innerHTML =
+            el.innerHTML.substring(0, lastIndex) +
+            lastWordMarkup +
+            el.innerHTML.substring(lastIndex + lastWord.length);
         }
       }
     });

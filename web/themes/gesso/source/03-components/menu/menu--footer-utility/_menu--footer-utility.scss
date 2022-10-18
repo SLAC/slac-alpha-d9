@@ -4,6 +4,7 @@
 
 .c-menu--footer-utility {
   @include list-pipeline(gesso-color(ui, generic, border-light));
+  line-height: 2.1;
 
   .c-menu__link {
     text-decoration: none;
@@ -17,5 +18,9 @@
     .c-icon {
       color: inherit;
     }
+  }
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    line-height: gesso-line-height(loose);
   }
 }

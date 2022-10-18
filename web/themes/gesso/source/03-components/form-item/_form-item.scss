@@ -39,6 +39,7 @@ $form-text-size: gesso-font-size(3);
 
 .c-form-item__label {
   @extend %disabled-form-styles;
+  color: var(--gesso-text-color);
   display: block;
 
   .has-error & {
@@ -156,9 +157,15 @@ $form-text-size: gesso-font-size(3);
 .c-form-item__error-message {
   color: gesso-brand(digital-red, base);
   font-size: gesso-font-size(2);
+
+  .l-section--dark & {
+    color: gesso-color(text, on-dark);
+  }
 }
 
-.c-form-item--text.has-error {
+// Some class names set by Webform module.
+// stylelint-disable-next-line selector-class-pattern
+:is(.c-form-item--text, .c-form-item--email, .c-form-item--tel, .c-form-item--date, .c-form-item--webform_time, .c-form-item--number, .c-form-item--textarea, .c-form-item--select).has-error {
   .c-form-item__label {
     font-size: 12px;
     margin: 6px 0 0 30px;

@@ -42,8 +42,17 @@
   'c-carousel__slide'
 ] %}
 
-{% block paragraph_content %}
-  <div{{ attributes.addClass(classes) }}>
-    {{ content }}
-  </div>
-{% endblock %}
+{% set image_caption %}
+  {{- caption -}}
+  {{- credit -}}
+{% endset %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% include '@components/figure/figure.twig' with {
+    modifier_classes: 'c-carousel__media',
+    media: content.field_image|field_value,
+    caption: image_caption,
+  } %}
+</div>
+
+{% set catch_cache = content|render %}

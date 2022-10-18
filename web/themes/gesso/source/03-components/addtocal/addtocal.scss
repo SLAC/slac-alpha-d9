@@ -6,6 +6,10 @@
 .addtocal-container {
   position: relative;
 
+  .is-past-event & {
+    @include hidden-important;
+  }
+
   .addtocal {
     @include button($border-width: 1px, $border-radius: 4px);
     @include focus;

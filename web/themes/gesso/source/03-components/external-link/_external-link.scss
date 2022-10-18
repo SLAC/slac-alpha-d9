@@ -13,6 +13,8 @@
 .external-link:hover .c-icon,
 .external-link:focus .c-icon,
 .external-link:active .c-icon {
+  color: var(--gesso-link-hover-color);
+
   @media (prefers-reduced-motion: no-preference) {
     transform: translate(rem(3px), rem(-3px));
   }
@@ -26,4 +28,8 @@
       transform: none;
     }
   }
+}
+
+.external-link__word {
+  white-space: nowrap;
 }

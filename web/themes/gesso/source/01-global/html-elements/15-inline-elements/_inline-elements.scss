@@ -20,10 +20,12 @@
     &:hover,
     &:focus {
       color: var(--gesso-link-hover-color);
+      text-decoration-color: var(--gesso-link-hover-color);
     }
 
     &:active {
       color: var(--gesso-link-active-color);
+      text-decoration-color: var(--gesso-link-hover-color);
     }
 
     @media print {

@@ -72,24 +72,25 @@ function gesso_preprocess_paragraph__image_embed(&$vars) {
   } else {
     // Retrieve the paragraph and the image entity from the paragraph. Note that image field is a required field.
     $paragraph = $vars['elements']['#paragraph'];
-    $image_field = $paragraph->get('field_image')->first()->getValue();
-    /** @var \Drupal\media\Entity\Media $media */
-    $image = Drupal\media\Entity\Media::load($image_field['target_id']);
+    if ($paragraph->get('field_image')->first()) {
+      $image_field = $paragraph->get('field_image')->first()->getValue();
+      /** @var \Drupal\media\Entity\Media $media */
+      $image = Drupal\media\Entity\Media::load($image_field['target_id']);
 
-    // If a caption override is selected and the override text field is populated,
-    // write the override caption into a template variable.
-    if ($paragraph->field_boolean->value) {
-      // Assign the paragraph's caption field into the caption field.
-      // If there's no override caption, empty out the media's caption field.
-      $vars['caption'] = ($paragraph->field_long_text->value) ? $paragraph->field_long_text->view() : NULL;
-    }
-    else {
-      // Paragraph is not overriding the caption, so assign the image's caption to the template variable
-      $vars['caption'] = $image->field_caption->view();
-    }
+      // If a caption override is selected and the override text field is populated,
+      // write the override caption into a template variable.
+      if ($paragraph->field_boolean->value) {
+        // Assign the paragraph's caption field into the caption field.
+        // If there's no override caption, empty out the media's caption field.
+        $vars['caption'] = ($paragraph->field_long_text->value) ? $paragraph->field_long_text->view() : NULL;
+      } else {
+        // Paragraph is not overriding the caption, so assign the image's caption to the template variable
+        $vars['caption'] = $image->field_caption->view();
+      }
 
-    // Always use the credit from the image, assign to a template variable.
-    $vars['credit'] = $image->field_credit->view();
+      // Always use the credit from the image, assign to a template variable.
+      $vars['credit'] = $image->field_credit->view();
+    }
   }
 }
 
@@ -122,6 +123,8 @@ function gesso_preprocess_paragraph__video_hero(&$vars) {
     $hero_videos[] = [
       'embed' => $media->field_media_oembed_video->view('video_hero'),
       'caption' => $media->field_caption->view('video_hero'),
+      'credit' => $media->field_credit->view('video_hero'),
+      'url' => $media->field_boolean->value ? $media->toUrl()->toString() : NULL,
       'fallback_image' => $media->field_thumbnail->view('video_hero')
     ];
   }
@@ -142,21 +145,21 @@ function _gesso_set_hero_caption(&$vars) {
   // into the template as the caption of the hero.
   switch ($paragraph->bundle()) {
     case 'article_hero':
-      $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body[0]->view() : NULL;
-      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
+      $paragraph_caption = !empty($paragraph->field_body[0]) ? $paragraph->field_body->view('tooltip') : NULL;
+      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view('tooltip') : NULL);
       break;
     // See template field--paragraph--field-long-text--image-embed.html.twig for caption processing.
     case 'image_embed':
-      $paragraph_caption = !empty($paragraph->field_long_text[0]) && $paragraph->field_boolean->value ? $paragraph->field_long_text[0]->view('two_column_hero') : NULL;
-      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
+      $paragraph_caption = !empty($paragraph->field_long_text[0]) && $paragraph->field_boolean->value ? $paragraph->field_long_text->view('two_column_hero') : NULL;
+      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view($vars['view_mode'] == 'two_column_hero' ? 'tooltip' : 'default') : NULL);
       break;
     // See template field--paragraph--field-long-text--overlap-image.html.twig for caption processing.
     case 'overlap_image':
-      $paragraph_caption = !empty($paragraph->field_long_text[0]) ? $paragraph->field_long_text->view() : NULL;
-      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view() : NULL);
+      $paragraph_caption = !empty($paragraph->field_long_text[0]) ? $paragraph->field_long_text->view('tooltip') : NULL;
+      $vars['hero_caption'] = $paragraph_caption ?: (!empty($image->field_caption[0]) ? $image->field_caption->view('tooltip') : NULL);
       break;
     default:
-      $vars['hero_caption'] = !empty($image->field_caption[0]) ? $image->field_caption->view() : NULL;
+      $vars['hero_caption'] = !empty($image->field_caption[0]) ? $image->field_caption->view(in_array($paragraph->bundle(), ['image_hero', 'microsite_hero', 'extra_large_card']) ? 'tooltip' : 'default') : NULL;
   }
 
   // Assign the credit, always using the image entity's field.
@@ -170,6 +173,9 @@ function _gesso_set_hero_caption(&$vars) {
     }
     $vars['hero_credit'] = !empty($image->field_credit[0]) ? $image->get('field_credit')->view($credit_view_mode) : NULL;
   }
+
+  // Assign the link to the image detail page, if present.
+  $vars['hero_url'] = $image->field_boolean->value ? $image->toUrl()->toString() : NULL;
 }
 
 /**

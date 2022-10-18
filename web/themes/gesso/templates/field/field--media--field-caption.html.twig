@@ -41,7 +41,7 @@
 {% for item in items %}
   {% set field_items = field_items|merge([{
     attributes: item.attributes,
-    content: item.content|render|striptags('<em><strong><a>')
+    content: item.content|render|striptags('<em><strong><a><br>')
   }]) %}
 {% endfor %}
 

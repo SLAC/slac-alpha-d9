@@ -41,7 +41,8 @@
 
 {% set tooltip %}
   {{- hero_caption -}}
-  {{- hero_credit -}}
+  {% if hero_credit|field_value %}<p>{{- hero_credit -}}</p>{% endif %}
+  {% if hero_url %}<p><a href="{{ hero_url }}">{{ 'Image details'|t }}</a></p>{% endif %}
 {% endset %}
 
 {% set overlap_image %}

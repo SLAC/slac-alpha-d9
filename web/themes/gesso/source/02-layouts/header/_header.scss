@@ -101,7 +101,7 @@
 
 .l-header__logo {
   display: block;
-  height: 34px;
+  height: 32px;
   width: auto;
 
   .has-inverse-nav & {
@@ -110,6 +110,10 @@
 
   .is-sticky & {
     filter: initial;
+  }
+
+  @include breakpoint(375px) {
+    height: 34px;
   }
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {

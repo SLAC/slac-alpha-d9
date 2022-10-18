@@ -1,6 +1,7 @@
 {% set classes = [
   'c-card',
   'c-card--small',
+  not url ? 'c-card--no-link' : '',
   modifier_classes ? modifier_classes : ''
 ] %}
 

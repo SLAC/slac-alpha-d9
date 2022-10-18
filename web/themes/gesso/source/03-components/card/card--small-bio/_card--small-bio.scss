@@ -21,7 +21,7 @@
   }
 
   .c-card__title {
-    @include responsive-font-size(4);
+    font-size: rem(24px);
 
     a {
       color: inherit;
@@ -34,10 +34,19 @@
       margin-left: rem(gesso-spacing(3));
       margin-top: 4px;
     }
+
+    @include breakpoint-min(760px) {
+      font-size: rem(gesso-font-size(3));
+    }
+
+    @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
+      font-size: rem(24px);
+    }
   }
 
   .c-card__body {
     font-weight: gesso-font-weight(bold);
+    line-height: gesso-line-height(base);
     padding: gesso-spacing(2) gesso-spacing(2.5);
 
     a:not(.external-link) {

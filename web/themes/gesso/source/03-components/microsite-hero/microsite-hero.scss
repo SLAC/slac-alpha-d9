@@ -64,6 +64,9 @@ $microsite-logo-small: 102px;
   font-weight: gesso-font-weight(bold);
   line-height: gesso-line-height(tight);
   margin: 0 0 rem(gesso-spacing(1.5));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 100%;
 
   .l-header__brand & {
@@ -74,7 +77,10 @@ $microsite-logo-small: 102px;
     border-left: 1px solid currentColor;
     display: none;
     margin-bottom: 0;
+    overflow: revert;
     padding-left: rem(gesso-spacing(2.5));
+    text-overflow: revert;
+    white-space: revert;
     width: auto;
 
     .l-header__brand & {
@@ -100,13 +106,16 @@ $microsite-logo-small: 102px;
 
 .c-microsite-hero__brand {
   // transition: 0.25s margin;
-  flex-basis: auto;
-  min-width: $microsite-logo-large;
   transition: gesso-duration(short) gesso-easing(ease-out) flex-basis;
 
   a {
     max-width: 250px;
     transition: gesso-duration(short) gesso-easing(ease-out) max-width;
+  }
+
+  @include breakpoint(gesso-breakpoint(mobile-lg)) {
+    flex-basis: auto;
+    min-width: $microsite-logo-large;
   }
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {

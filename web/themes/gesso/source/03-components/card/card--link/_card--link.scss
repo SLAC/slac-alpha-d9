@@ -9,14 +9,11 @@
       display: none;
     }
   }
-
-  .c-card__content {
-    @include font-family-primary;
-    font-weight: gesso-font-weight(bold);
-  }
 }
 
 .c-card__list {
+  @include font-family-primary;
   @include list-clean;
+  font-weight: gesso-font-weight(bold);
   margin-top: rem(gesso-spacing(2));
 }

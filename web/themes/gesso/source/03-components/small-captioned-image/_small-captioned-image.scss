@@ -5,6 +5,10 @@
 .c-small-captioned-image {
   display: table;
   position: relative;
+
+  img {
+    display: block;
+  }
 }
 
 .c-small-captioned-image__inner {
