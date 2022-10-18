@@ -88,7 +88,7 @@ function gesso_preprocess_media(array &$variables) {
       // Set the URL to the detail page only if the editor hasn't hidden
       // the detail page from the public.
       if ($video_media->hasField('field_boolean') &&
-        !$video_media->field_boolean->value == '1'
+        $video_media->field_boolean->value == '1'
       ) {
         $variables['detail_page_url'] = $video_media->toUrl()->toString();
       }

@@ -34,6 +34,8 @@ alert_bar:
   css:
     theme:
       dist/css/alert-bar.css: {}
+  js:
+    dist/js/alert-bar.es6.js: {}
 
 animated_icon:
   css:

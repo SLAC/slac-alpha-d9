@@ -21,7 +21,8 @@
 }
 
 .c-embed--full {
-  width: 100%;
+  @include layout-full-bleed;
+  max-width: none;
 }
 
 .c-embed__wrapper {

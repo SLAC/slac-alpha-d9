@@ -26,15 +26,13 @@
   <div class="c-event-details__section">
     {% if calendar_link_text %}
       <div class="c-event-details__when">
-        {% if not is_past_event %}
-          {% include '@components/icon/icon.twig' with {
-            hidden: true,
-            label: 'Date',
-            icon_name: 'calendar',
-          } %}
-        {% endif %}
-        <span>
-          {% if calendar_link_url %}
+        {% include '@components/icon/icon.twig' with {
+          hidden: true,
+          label: 'Date',
+          icon_name: 'calendar',
+        } %}
+        <span{% if is_past_event %} class="is-past-event"{% endif %}>
+          {% if calendar_link_url and not is_past_event %}
             <a class="href="{{ calendar_link_url }}" title="{{ 'Add to calendar'|t }}">
               {{ calendar_link_text|raw }}
             </a>

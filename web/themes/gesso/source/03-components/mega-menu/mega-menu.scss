@@ -71,15 +71,6 @@
     > .c-mega-menu__link {
       @include menu_link;
       z-index: gesso-z-index(drawer) + 1;
-
-      .has-inverse-nav & {
-        color: gesso-color(text, on-dark);
-      }
-
-      .has-open-menu &,
-      .is-sticky & {
-        color: gesso-color(text, link);
-      }
     }
 
     button.c-mega-menu__link {

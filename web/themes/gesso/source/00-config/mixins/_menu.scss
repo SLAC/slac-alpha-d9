@@ -16,7 +16,7 @@
 }
 
 @mixin menu-link {
-  @include link(gesso-color(text, link), gesso-color(text, link));
+  @include link(var(--gesso-link-color), var(--gesso-link-color));
   display: block;
   font-size: rem(gesso-font-size(3));
   font-weight: gesso-font-weight(regular);

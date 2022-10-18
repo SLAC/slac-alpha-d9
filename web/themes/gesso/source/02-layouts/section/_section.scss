@@ -44,6 +44,15 @@
   }
 }
 
+.l-section--padding-bottom,
+.l-section.l-section--padding-bottom {
+  padding-top: 0;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    padding-top: 0;
+  }
+}
+
 .l-section__title {
   @include responsive-font-size(11);
   color: var(--gesso-text-color);
@@ -57,7 +66,7 @@
   }
 
   a {
-    text-decoration-thickness: em(2px, 42px);
+    text-decoration-thickness: 1px;
   }
 }
 
@@ -68,6 +77,16 @@
     @include breakpoint-min(gesso-breakpoint(desktop)) {
       margin-top: rem(gesso-spacing(7));
     }
+  }
+}
+
+.l-section__content {
+  // stylelint-disable-next-line property-no-unknown
+  container-type: inline-size;
+
+  .has-open-lightbox & {
+    // stylelint-disable-next-line property-no-unknown
+    container-type: initial;
   }
 }
 

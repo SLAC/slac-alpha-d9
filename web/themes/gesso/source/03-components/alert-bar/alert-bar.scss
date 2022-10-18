@@ -3,7 +3,9 @@
 @use '00-config' as *;
 
 :root {
-  --gesso-alert-bar-height: 2.125rem;
+  // Have to use a unit with 0 when using it with calc().
+  // stylelint-disable-next-line length-zero-no-unit
+  --gesso-alert-bar-height: 0px;
 }
 
 .c-alert-bar {

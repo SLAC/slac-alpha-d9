@@ -10,7 +10,7 @@
 {% endif %}
 
 <div {{ add_attributes({ class: classes } ) }}>
-  <div class="l-constrain">
+  {% set events_content %}
     {% if show_admin_info %}
       {% if not admin_info %}
         {% set admin_info %}
@@ -78,7 +78,12 @@
       {% endblock %}
     {% endembed %}
     {{ title_suffix }}
-  </div>
+  {% endset %}
+  {% include '@layouts/section/section.twig' with {
+    'section_content': events_content,
+    'has_constrain': true,
+    'modifier_classes': visiting or map_content ? 'l-section--no-padding' : 'l-section--padding-bottom'
+  } %}
   {{ visiting }}
   {% if map_content %}
     {% include '@layouts/section/section.twig' with {

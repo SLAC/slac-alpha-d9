@@ -11,6 +11,11 @@ use Drupal\slac_core\Services\MicrositeUtilities;
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function gesso_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name == 'entity.node.canonical' && !in_array('page__node', $suggestions)) {
+    $suggestions[] = 'page__node';
+  }
+
   /** @var MicrositeUtilities $microsite_utilities */
   $microsite_utilities = \Drupal::service('slac_core.microsite_utilities');
 

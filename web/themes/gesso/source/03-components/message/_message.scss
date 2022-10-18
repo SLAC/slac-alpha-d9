@@ -79,6 +79,10 @@ $message-warning-border-color: gesso-color(ui, warning, border) !default;
       font-weight: gesso-font-weight(bold);
     }
   }
+
+  a {
+    color: gesso-color(text, on-dark);
+  }
 }
 
 .c-message--warning {

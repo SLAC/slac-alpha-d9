@@ -1,16 +1,17 @@
-import Drupal from 'drupal';
+document.documentElement.addEventListener('sitewide-alert-rendered', () => {
+  const alertBar = document.querySelector('.c-alert-bar');
+  if (alertBar) {
+    alertBar.style.height = 'auto';
+    setTimeout(() => {
+      document.documentElement.style.setProperty(
+        '--gesso-alert-bar-height',
+        `${alertBar.offsetHeight}px`
+      );
+      alertBar.style.height = null;
+    }, 0);
+  }
+});
 
-Drupal.behaviors.alertBar = {
-  attach(context) {
-    const alertBars = context.querySelectorAll('.c-alert-bar');
-    alertBars.forEach(alertBar => {
-      const alertBarButton = alertBar.querySelector('.c-alert-bar__button');
-      if (alertBarButton) {
-        alertBarButton.addEventListener('click', event => {
-          event.preventDefault();
-          alertBar.hidden = true;
-        });
-      }
-    });
-  },
-};
+document.documentElement.addEventListener('sitewide-alert-removed', () => {
+  document.documentElement.style.setProperty('--gesso-alert-bar-height', '0px');
+});

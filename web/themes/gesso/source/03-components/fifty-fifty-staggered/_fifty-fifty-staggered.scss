@@ -8,8 +8,11 @@
     padding-top: rem(gesso-spacing(12));
   }
 
+  .c-fifty-fifty-staggered__col:nth-child(even) {
+    margin-top: rem(gesso-spacing(12)) * -1;
+  }
+
   .c-fifty-fifty-staggered__col:nth-child(odd) {
     grid-column-start: 2;
-    margin-top: rem(gesso-spacing(12)) * -1;
   }
 }

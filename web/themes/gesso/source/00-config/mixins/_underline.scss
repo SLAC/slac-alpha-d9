@@ -2,7 +2,7 @@
 
 @mixin underline() {
   text-decoration-skip: objects;
-  text-decoration-thickness: 0.09em;
+  text-decoration-thickness: 1px;
   text-underline-offset: 1px;
   text-underline-position: under;
 }

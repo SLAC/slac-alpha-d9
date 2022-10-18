@@ -29,6 +29,16 @@
     transform: translateX(0);
   }
 
+  &.external-link {
+    .c-icon {
+      color: inherit;
+
+      &:not(.c-social-share__icon) {
+        display: none;
+      }
+    }
+  }
+
   @include breakpoint-min(gesso-breakpoint(desktop)) {
     display: block;
     height: auto;

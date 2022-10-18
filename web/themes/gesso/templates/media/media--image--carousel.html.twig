@@ -32,9 +32,4 @@
  */
 #}
 
-{% set attributes = attributes.addClass('c-carousel__media') %}
-
-{% include '@components/figure/figure.twig' with {
-  'media': content.field_media_image,
-  'caption': content|without('field_media_image'),
-} %}
+{{ content|without('field_caption', 'field_credit') }}

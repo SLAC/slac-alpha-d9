@@ -1,4 +1,4 @@
-{#
+  {#
 /**
  * @file
  * Theme override to display a taxonomy term.
@@ -30,7 +30,7 @@
 {% set attributes = attributes.addClass(classes) %}
 
 {% set admin_info %}
-  {{ region_status }}
+{{ region_status }}
 {% endset %}
 
 {% set show_admin_info = false %}
@@ -40,23 +40,27 @@
 {% endif %}
 
 {% set title %}
-  <div class="c-page-title">
-    <h1>{{ content.field_display_name|field_value is not empty ? content.field_display_name|field_value : name }}</h1>
-    <p class="c-lede"> {{ content.field_lede|field_value }}</p>
-  </div>
+<div class="c-page-title">
+  <h1>
+    {{ content.field_display_name|field_value is not empty ? content.field_display_name|field_value : name }}
+  </h1>
+  <p class="c-lede">
+    {{ content.field_lede|field_value }}
+  </p>
+</div>
 {% endset %}
 
 {% set featured %}
-  {% set view = drupal_view_result('event_type_taxonomy_term', 'next_event_large_card', term.tid.value)|length %}
-  {% if view > 0 %}
-    {{ drupal_view('event_type_taxonomy_term', 'next_event_large_card', term.tid.value) }}
-  {% else %}
-    {{ content.field_paragraph }}
-  {% endif %}
+{% set view = drupal_view_result('event_type_taxonomy_term', 'next_event_large_card', term.tid.value)|length %}
+{% if view > 0 %}
+  {{ drupal_view('event_type_taxonomy_term', 'next_event_large_card', term.tid.value) }}
+{% else %}
+  {{ content.field_paragraph }}
+{% endif %}
 {% endset %}
 
 {% set title_grid %}
-  {% include '@components/grid-with-featured/grid-with-featured.twig' with {
+{% include '@components/grid-with-featured/grid-with-featured.twig' with {
     'header': title,
     'featured': featured,
     'first_row': drupal_view('event_type_taxonomy_term', 'second_next_event_card', term.tid.value),
@@ -65,15 +69,18 @@
 {% endset %}
 
 {% set term_content %}
-  {% include '@layouts/section/section.twig' with {
+{% include '@layouts/section/section.twig' with {
     'has_constrain': true,
     'modifier_classes': 'l-section--gray-gradient l-section--no-padding',
     'section_content': title_grid,
   } %}
-  {{ content.field_content }}
+{{ content.field_content }}
 {% endset %}
 
-{{ drupal_block('system_breadcrumb_block') }}
+<div class="c-main__meta">
+  {{ drupal_block('system_breadcrumb_block') }}
+  {{ drupal_block('share_this_page_block') }}
+</div>
 
 {% include '@components/article/article.twig' with {
   'title': null,

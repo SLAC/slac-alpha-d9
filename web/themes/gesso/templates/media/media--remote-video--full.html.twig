@@ -34,7 +34,7 @@
 {{ attach_library('gesso/media_detail') }}
 
 {% set admin_info %}
-  {{ region_status }}
+{{ region_status }}
 {% endset %}
 
 {% set show_admin_info = false %}
@@ -43,8 +43,14 @@
   {% set show_admin_info = true %}
 {% endif %}
 
+{% set media_caption = content.field_body|field_value %}
+{% if media_caption is empty %}
+  {% set media_caption = content.field_caption|field_value %}
+{% endif %}
+
 <div class="c-main__meta">
   {{ drupal_block('system_breadcrumb_block') }}
+  {{ drupal_block('share_this_page_block') }}
 </div>
 
 {% include '@templates/media-detail/media-detail.twig' with {
@@ -52,7 +58,7 @@
   'page_title': content.field_long_text|field_value ? content.field_long_text : content.name,
   'media': content.field_media_oembed_video|field_value,
   'media_cta': content.field_link|field_value,
-  'media_caption': content.field_body|field_value,
+  'media_caption': media_caption,
   'media_credit': content.field_credit|field_value,
   'tags': content.field_tags,
   'media_use': drupal_entity('block', 'media_media_use', check_access=false),

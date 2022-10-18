@@ -43,7 +43,9 @@
 {% for video in hero_videos %}
   {% set hero_videos_rendered = hero_videos_rendered|merge([{
     embed: video.embed|field_value,
+    credit: video.credit,
     caption: video.caption,
+    url: video.url,
     fallback_image: video.fallback_image|render|striptags|trim
   }]) %}
 {% endfor %}

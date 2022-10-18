@@ -5,6 +5,7 @@
 }
 
 .c-main__meta {
+  position: relative;
   @include breakpoint-max(gesso-breakpoint(desktop), true) {
     align-items: center;
     display: flex;

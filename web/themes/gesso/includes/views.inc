@@ -19,7 +19,8 @@ function gesso_preprocess_views_view(array &$variables) {
     ? is_array($variables['view_array']['#is_dark'])
       ? $variables['view_array']['#is_dark']['content']
       : $variables['view_array']['#is_dark']
-    : $variables['id'] == 'related_content_for_detail_pages' && $variables['display_id'] == 'news_article_related_stories';
+    : ($variables['id'] == 'related_content_for_detail_pages' && $variables['display_id'] == 'news_article_related_stories') ||
+      ($variables['id'] == 'related_content_for_media_pages' && $variables['display_id'] == 'related_images_videos');
   if (!empty($variables['rows']) && !empty($variables['rows'][0])) {
     $variables['rows'][0]['#rows']['#is_dark'] = $variables['is_dark'];
   }

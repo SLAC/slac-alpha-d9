@@ -36,6 +36,7 @@ function gesso_preprocess_fieldset(array &$variables) {
   // We specifically want the "Sort By" radios on the search page.
   if (!empty($variables['element']['#name']) && $variables['element']['#name'] == 'sort_by') {
     $variables['legend']['attributes']->addClass(['c-form-item__legend', 'c-kicker', 'c-kicker--big']);
+    $variables['type'] = 'filter-modal';
   }
 }
 

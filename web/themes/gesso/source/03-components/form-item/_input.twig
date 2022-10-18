@@ -33,6 +33,10 @@
   {% set attributes_to_add = attributes_to_add|merge({
     'size': size ~ '',
   }) %}
+{% elseif type and type in ['text', 'email', 'tel', 'number', 'date'] %}
+  {% set attributes_to_add = attributes_to_add|merge({
+    'size': '60',
+  }) %}
 {% endif %}
 
 {# Max Length #}

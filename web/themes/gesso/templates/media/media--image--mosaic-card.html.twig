@@ -35,7 +35,7 @@
     'label': content.field_type|field_value is not empty ? content.field_type|field_value :'Image'|t,
     'kicker': content.field_type|field_value is not empty ? content.field_type|field_value : 'Image'|t,
     'title': content.field_long_text|field_value is not empty ? content.field_long_text : name,
-    'link': content.field_boolean['#items'].value == 0 ? url : null,
+    'link': content.field_boolean['#items'].value == 1 ? url : null,
     'attributes': false
   } %}
 </div>

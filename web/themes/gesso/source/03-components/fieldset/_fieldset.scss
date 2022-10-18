@@ -9,6 +9,7 @@ $fieldset-legend-offset: rem(
 
 .c-fieldset {
   margin-bottom: rem(gesso-spacing(3)) + $fieldset-legend-offset;
+  min-width: 0;
   padding: 0;
   position: relative;
   top: $fieldset-legend-offset; // Offsets the negative margin of legends.

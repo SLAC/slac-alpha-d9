@@ -53,6 +53,7 @@ Drupal.behaviors.lightbox = {
           triggerUsed.focus();
           triggerUsed = null;
         }
+        document.documentElement.classList.add('has-open-lightbox');
         lightbox.dispatchEvent(new Event('lightbox-close', { bubbles: true }));
         window.removeEventListener('keydown', handleKeydown);
       }
@@ -66,6 +67,7 @@ Drupal.behaviors.lightbox = {
         closeButton.focus();
         triggerUsed = event.target;
         window.addEventListener('keydown', handleKeydown);
+        document.documentElement.classList.add('has-open-lightbox');
         lightbox.dispatchEvent(new Event('lightbox-open', { bubbles: true }));
       }
 

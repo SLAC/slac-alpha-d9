@@ -10,7 +10,12 @@
     $wrap: nowrap
   );
   @include responsive-font-size(1);
+  line-height: gesso-line-height(loose);
   margin-bottom: rem(gesso-spacing(2));
+
+  .c-menu__item {
+    margin-bottom: gesso-spacing(1);
+  }
 
   .c-menu__link {
     color: inherit;
@@ -25,6 +30,14 @@
 
     .c-icon {
       color: inherit;
+    }
+  }
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    line-height: gesso-line-height(base);
+
+    .c-menu__item {
+      margin-bottom: 0;
     }
   }
 }

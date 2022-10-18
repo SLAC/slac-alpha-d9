@@ -182,6 +182,9 @@ class MobileMenu extends OverlayMenu {
       link.classList.remove(`${this.options.classPrefix}__link`);
       link.classList.remove(`${this.options.classPrefix}-link`);
       link.classList.add('c-mobile-menu__link');
+      if (link.classList.contains('c-arrow-link')) {
+        link.classList.add('c-arrow-link--white');
+      }
     });
 
     // Swap classes on mobile menu descriptions.

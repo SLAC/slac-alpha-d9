@@ -79,7 +79,7 @@
   $direction: 'right'
 ) {
   @if $direction == 'left' {
-    margin-left: 0;
+    margin-left: calc(1240px - 100vw);
     margin-right: auto;
   } @else {
     margin-left: auto;

@@ -22,12 +22,13 @@ $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
 }
 
 .c-tooltip__tooltip {
+  @include on-dark-variables;
   background: gesso-grayscale(black);
   border: solid $tooltip-border-color;
   border-radius: 4px;
   border-width: 0 0 rem(gesso-spacing(1));
   bottom: calc(100% + #{$tooltip-arrow-height} + #{rem(gesso-spacing(1))});
-  color: gesso-color(text, on-dark);
+  color: var(--gesso-text-color);
   font-size: rem(gesso-font-size(1));
   padding: rem(gesso-spacing(2.5)) rem(gesso-spacing(2.5))
     rem(gesso-spacing(1.5));
@@ -35,12 +36,6 @@ $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
   right: 0;
   text-align: left;
   width: rem(280px);
-
-  a {
-    color: inherit;
-    text-decoration-color: currentColor;
-    text-decoration-thickness: 1px;
-  }
 
   p:last-child {
     margin-bottom: 0;
@@ -83,8 +78,4 @@ $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
       }
     }
   }
-}
-
-.c-tooltip__credit {
-  display: block;
 }

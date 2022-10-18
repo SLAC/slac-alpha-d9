@@ -1,12 +1,12 @@
 {% set classes = [
   'c-page-title',
-  sidebar_content ? 'c-page-title--sidebar' : '',
+  has_sidebar ? 'c-page-title--sidebar' : '',
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
 {% set constrain_classes = [
   'l-constrain',
-  not sidebar_content ? 'l-constrain--small' : '',
+  not has_sidebar ? 'l-constrain--small' : '',
 ]|join(' ')|trim %}
 
 <header {{ add_attributes({ 'class': classes })}}>
@@ -34,7 +34,7 @@
         <p>{{ 'By'|t }} {{ byline }}</p>
       {% endif %}
     </div>
-    {% if sidebar_content %}
+    {% if sidebar_content or has_sidebar %}
       <div class="c-page-title__sidebar">
         {{ sidebar_content }}
           {% if hero_caption %}
