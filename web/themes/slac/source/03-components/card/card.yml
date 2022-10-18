@@ -1,0 +1,10 @@
+---
+title: 'Card title'
+url: '#0'
+kicker: 'via <i>Symmetry</i> Magazine'
+type: 'News brief'
+media: |-
+  <img src="https://picsum.photos/id/1015/800/500" alt="">
+card_content: |-
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et accumsan augue. Morbi non laoreet lorem.</p>
+footer: 'March 4, 2021 · 10 min read'

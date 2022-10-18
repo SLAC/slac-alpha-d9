@@ -1,0 +1,62 @@
+// Mixins: Link
+@use '../functions/unit-convert' as *;
+@use './svg-background' as *;
+@use '../functions/gesso' as *;
+
+@mixin link($link, $hover: $link, $active: $hover, $visit: $link) {
+  color: $link;
+
+  &:visited {
+    color: $visit;
+  }
+
+  &:hover,
+  &:focus {
+    color: $hover;
+  }
+
+  &:active {
+    color: $active;
+  }
+}
+
+@mixin arrow-link($color) {
+  text-decoration-line: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration-color: currentColor;
+    text-decoration-line: underline;
+  }
+
+  &:not(.external-link) {
+    .c-arrow-link__word {
+      white-space: nowrap;
+
+      &::after {
+        @include svg-background(arrow-#{$color});
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        display: inline-block;
+        height: 0.75em;
+        margin-left: 0.25em;
+        margin-top: em(-3px, gesso-base-font-size());
+        transition: transform gesso-duration(shortest) ease-out;
+        vertical-align: middle;
+        width: 1em;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      @media (prefers-reduced-motion: no-preference) {
+        .c-arrow-link__word::after {
+          transform: translateX(em(6px, 16px));
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+uuid: 34d484f4-3e96-4a7a-9200-aa169828bb3f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - slac
+_core:
+  default_config_hash: nJFdGWj6zdQI2mPhmeiqvp90fg2EOl5IBGl33kPfo0g
+id: slac_page_title
+theme: slac
+region: disabled
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

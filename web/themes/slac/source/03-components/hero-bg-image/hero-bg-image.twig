@@ -1,0 +1,67 @@
+{{ attach_library('slac/hero_bg_image') }}
+
+{% if modifier_classes == 'transparent_nav' %}
+  {{ attach_library('slac/transparent_nav') }}
+{% endif %}
+
+{% set classes = [
+  'c-hero-bg-image',
+  'c-hero-bg-image--left',
+  text_color ? 'c-hero-bg-image--' ~ text_color : '',
+  text_color == 'white' or has_overlay ? 'has-overlay' : '',
+  bottom_overlay_only ? 'has-bottom-overlay' : '',
+  modifier_classes ? modifier_classes : ''
+]|join(' ')|trim %}
+
+{% set caption_id = 'caption'|unique_id %}
+
+{% set hero_attributes = {
+  class: classes
+} %}
+{% if hero_caption %}
+  {% set hero_attributes = hero_attributes|merge({
+    'aria-describedby': caption_id
+  }) %}
+{% endif %}
+
+<div {{ add_attributes(hero_attributes) }}>
+  {{ hero_image }}
+  <div class="c-hero-bg-image__content">
+    <div class="l-constrain">
+      {% block animated_icon %}
+        {% if icon %}
+          {% include '@components/animated-icon/animated-icon.twig' with {
+            modifier_classes: 'c-hero-bg-image__icon c-animated-icon--small',
+            animation: icon,
+            color: 'white',
+          } %}
+        {% endif %}
+      {% endblock %}
+      {% if hero_kicker %}
+        {% include '@components/kicker/kicker.twig' with {
+          kicker_content: hero_kicker,
+          modifier_classes: 'c-kicker--big'
+        } %}
+      {% endif %}
+      {% if hero_title %}
+        <h1 class="c-hero-bg-image__title">{{ hero_title }}</h1>
+      {% endif %}
+      {% if hero_summary %}
+        <div class="c-hero-bg-image__summary">{{ hero_summary }}</div>
+      {% endif %}
+      {% include '@components/icon/icon.twig' with {
+        is_hidden: true,
+        modifier_classes: 'c-hero-bg-image__arrow',
+        icon_name: 'angle-down'
+      } %}
+    </div>
+  </div>
+  {% if hero_caption %}
+    <div class="l-constrain c-hero-bg-image__caption">
+      {% include '@components/tooltip/tooltip.twig' with {
+        tooltip_content: hero_caption,
+        tooltip_id: caption_id
+      } %}
+    </div>
+  {% endif %}
+</div>

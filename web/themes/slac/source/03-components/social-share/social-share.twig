@@ -1,0 +1,49 @@
+{% set classes = [
+  'c-social-share',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('slac/social_share') }}
+
+<div {{ add_attributes({ class: classes }) }}>
+  {% if facebook %}
+    <a href="{{ facebook }}" class="c-social-share__link c-social-share__facebook">
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'facebook',
+        'label': 'Facebook',
+        'modifier_classes': 'c-social-share__icon'
+      } %}
+      {{ 'Share'|t }}
+    </a>
+  {% endif %}
+  {% if twitter %}
+    <a href="{{ twitter }}" class="c-social-share__link c-social-share__twitter">
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'twitter',
+        'label': 'Twitter',
+        'modifier_classes': 'c-social-share__icon'
+      } %}
+      {{ 'Tweet'|t }}
+    </a>
+  {% endif %}
+  {% if linkedin %}
+    <a href="{{ linkedin }}" class="c-social-share__link c-social-share__linkedin">
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'linkedin',
+        'label': 'LinkedIn',
+        'modifier_classes': 'c-social-share__icon'
+      } %}
+      {{ 'Share'|t }}
+    </a>
+  {% endif %}
+  {% if email %}
+    <a href="{{ email }}" class="c-social-share__link c-social-share__email">
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'mail',
+        'label': 'Email',
+        'modifier_classes': 'c-social-share__icon'
+      } %}
+      {{ 'Send'|t }}
+    </a>
+  {% endif %}
+</div>

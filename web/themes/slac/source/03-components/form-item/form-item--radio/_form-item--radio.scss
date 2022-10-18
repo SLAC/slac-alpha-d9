@@ -1,0 +1,59 @@
+// Component: Radio Form Item
+
+@use '00-config' as *;
+@use '../form-item' as *;
+
+.c-form-item--radio {
+  line-height: 30px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .c-form-item__radio {
+    appearance: none;
+    background-color: gesso-color(form, background-unchecked);
+    border: 6px solid gesso-color(form, background-unchecked);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px gesso-grayscale(black);
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 2px;
+    margin-right: 8px;
+    position: relative;
+    transition-duration: gesso-duration(short);
+    transition-property: background-color;
+    transition-timing-function: gesso-easing(ease-in-out);
+    vertical-align: middle;
+    width: 30px;
+
+    &:checked {
+      background-color: gesso-grayscale(black);
+      border: 6px solid gesso-color(form, background-unchecked);
+      box-shadow: 0 0 0 1px gesso-grayscale(black);
+    }
+
+    &:focus {
+      outline: 2px solid gesso-color(ui, generic, focus);
+      outline-offset: 4px;
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: $form-disabled-opacity;
+    }
+
+    + .c-form-item__label {
+      cursor: pointer;
+      display: inline;
+      font-weight: gesso-font-weight(regular);
+    }
+
+    &:disabled + .c-form-item__label {
+      cursor: default;
+      opacity: $form-disabled-opacity;
+    }
+  }
+}

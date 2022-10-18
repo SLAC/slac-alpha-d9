@@ -1,0 +1,35 @@
+{% set classes = [
+  'c-promo-box',
+  slide_in ? 'u-slide-left' : '',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes }) }}>
+  <div class="c-promo-box__col">
+    {% if promo_box_kicker %}
+      {% include '@components/kicker/kicker.twig' with {
+        kicker_content: promo_box_kicker
+      } %}
+    {% endif %}
+    <h2 class="c-promo-box__title">
+      {% if promo_box_url %}<a href="{{ promo_box_url }}" class="c-arrow-link">{% endif %}
+      {{ promo_box_title }}
+      {% if promo_box_url %}</a>{% endif %}
+    </h2>
+    {% if promo_box_button %}
+      {{ promo_box_button }}
+    {% endif %}
+  </div>
+  {% if promo_box_image %}
+  <div class="c-promo-box__col c-promo-box__col--image">
+    {% if promo_box_url %}<a href="{{ promo_box_url }}">{% endif %}
+      {{ promo_box_image }}
+    {% if promo_box_url %}</a>{% endif %}
+  </div>
+  {% endif %}
+  {% if promo_box_content %}
+    <div class="c-promo-box__col c-promo-box__content">
+      {{ promo_box_content }}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,17 @@
+{% set classes = [
+  'c-lightbox',
+  'u-hidden',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('slac/lightbox') }}
+<div {{ add_attributes({ class: classes, id: lightbox_id, role: 'dialog' } ) }}>
+  <button class="js-lightbox__close" type="button">
+    Close
+    {% include '@components/icon/icon.twig' with {
+        'icon_name': 'close',
+        'hidden': true
+      } %}
+  </button>
+  {{ lightbox_content }}
+</div>

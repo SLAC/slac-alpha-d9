@@ -1,0 +1,9 @@
+{% set classes = [
+  'c-wysiwyg',
+  has_background ? 'c-wysiwyg--with-background c-wysiwyg--no-constrain' : '',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<div {{ add_attributes({ 'class': classes })}}>
+  {{ content }}
+</div>

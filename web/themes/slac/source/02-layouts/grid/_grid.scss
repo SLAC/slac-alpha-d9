@@ -1,0 +1,159 @@
+// Layout: Grid
+
+@use '00-config' as *;
+
+$grid-gutter: gesso-get-map(gutter-width);
+$nested-grid-gutter: gesso-spacing(2);
+
+.l-grid {
+  @include flex-grid(1, $grid-gutter, 0);
+  // stylelint-disable-next-line property-no-unknown
+  container-type: inline-size;
+
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
+    align-items: flex-start;
+  }
+
+  .has-open-lightbox & {
+    // stylelint-disable-next-line property-no-unknown
+    container-type: initial;
+  }
+}
+
+.l-grid--2-col {
+  @include flex-grid(1, $grid-gutter, 0);
+
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
+  }
+
+  @include breakpoint(gesso-breakpoint(grid-2col)) {
+    > * {
+      @include set-flex-column(2, $grid-gutter, 275px);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(2, $grid-gutter, true);
+    }
+  }
+}
+
+.l-grid--3-col {
+  @include flex-grid(1, $grid-gutter, 0);
+
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
+  }
+
+  @include breakpoint(760px) {
+    > * {
+      @include set-flex-column(3, $grid-gutter, 275px);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(3, $grid-gutter, true);
+    }
+
+    @supports (container-type: inline-size) {
+      // stylelint-disable-next-line scss/at-rule-no-unknown
+      @container (max-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .l-grid & {
+      @supports (display: grid) {
+        gap: $nested-grid-gutter;
+      }
+    }
+  }
+
+  @supports not (container-type: inline-size) {
+    @include breakpoint-min-max(760px, gesso-breakpoint(desktop-lg)) {
+      .l-grid & {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+.l-grid--4-col {
+  @include flex-grid(1, $grid-gutter, 0);
+
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
+  }
+
+  @include breakpoint-min-max(gesso-breakpoint(grid-2col), 800px) {
+    > * {
+      @include set-flex-column(2, $grid-gutter, 275px);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(2, $grid-gutter, true);
+    }
+
+    .l-grid & {
+      @supports (display: grid) {
+        gap: $nested-grid-gutter;
+      }
+    }
+  }
+
+  @include breakpoint(801px) {
+    > * {
+      @include set-flex-column(4, $grid-gutter, 0);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(4, $grid-gutter, true);
+    }
+
+    .l-grid & {
+      @supports (display: grid) {
+        gap: $nested-grid-gutter;
+      }
+    }
+  }
+}
+
+.l-grid--6-col {
+  @include flex-grid(1, $grid-gutter, 0);
+
+  @supports (display: grid) {
+    @include css-fixed-grid(1);
+  }
+
+  @include breakpoint-min-max(gesso-breakpoint(grid-2col), 999px) {
+    > * {
+      @include set-flex-column(3, $grid-gutter, 0);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(3, $grid-gutter, true);
+    }
+
+    .l-grid & {
+      @supports (display: grid) {
+        gap: $nested-grid-gutter;
+      }
+    }
+  }
+
+  @include breakpoint(1000px) {
+    > * {
+      @include set-flex-column(6, $grid-gutter, 0);
+    }
+
+    @supports (display: grid) {
+      @include set-css-fixed-columns(6, $grid-gutter, true);
+    }
+
+    .l-grid & {
+      @supports (display: grid) {
+        gap: $nested-grid-gutter;
+      }
+    }
+  }
+}

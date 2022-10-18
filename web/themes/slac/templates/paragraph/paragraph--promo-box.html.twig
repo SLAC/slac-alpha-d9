@@ -1,0 +1,17 @@
+{% set promo_box %}
+{% include '@components/promo-box/promo-box.twig' with {
+  promo_box_kicker: content.field_text|field_value,
+  promo_box_url: content.field_link[0]['#url'],
+  promo_box_title: content.field_link[0]['#title'],
+  promo_box_button: content.field_button_link|field_value,
+  promo_box_content: content.field_links|field_value,
+  promo_box_image: content.field_image|field_value,
+} %}
+{% endset %}
+
+{% if is_nested %}{{ promo_box }}{% else %}
+  {% include '@layouts/section/section.twig' with {
+    section_content: promo_box,
+    has_constrain: true
+  } %}
+{% endif %}

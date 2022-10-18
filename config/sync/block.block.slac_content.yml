@@ -1,0 +1,22 @@
+uuid: 59099cbb-f9b1-4e3a-96dd-abfe7e80f346
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - slac
+_core:
+  default_config_hash: Gd6NC7vD0KHUn6-TQfOKN52BxD9g1YSof_Xnqh_I3vE
+id: slac_content
+theme: slac
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

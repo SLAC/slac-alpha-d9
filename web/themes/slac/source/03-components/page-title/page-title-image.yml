@@ -1,0 +1,6 @@
+---
+lede: |-
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique placerat arcu. </p>
+kicker: 'Kicker'
+has_constrain: true
+has_sidebar: true

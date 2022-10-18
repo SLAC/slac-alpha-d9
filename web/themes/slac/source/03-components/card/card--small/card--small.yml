@@ -1,0 +1,8 @@
+---
+title: 'Card title'
+url: '#0'
+kicker: 'Kicker'
+media: |-
+  <img src="https://picsum.photos/id/1015/120/120">
+description: |-
+  <p>A short optional card description.</p>

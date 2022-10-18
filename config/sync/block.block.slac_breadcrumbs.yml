@@ -1,0 +1,22 @@
+uuid: 5f1087bc-3a59-4a94-bf6a-52833f258301
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - slac
+_core:
+  default_config_hash: VVNy0jqnpbu50jrMI0svRARDouHpah37G30j-cjaQek
+id: slac_breadcrumbs
+theme: slac
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

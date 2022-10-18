@@ -1,0 +1,17 @@
+{% set classes = [
+  'c-toc',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('slac/toc') }}
+
+<div {{ add_attributes({ class: classes }) }}>
+  <h2 class="c-toc__title">{{ 'Table of Contents'|t }}</h2>
+  {% block content %}
+    <ol class="c-toc__links">
+    {% for link in toc_links %}
+      <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+    {% endfor %}
+    </ol>
+  {% endblock %}
+</div>

@@ -1,0 +1,6 @@
+services:
+  slac_helper.commands:
+    class: \Drupal\slac_helper\Commands\SlacHelperCommands
+    arguments: ['@theme_handler']
+    tags:
+      - { name: drush.command }

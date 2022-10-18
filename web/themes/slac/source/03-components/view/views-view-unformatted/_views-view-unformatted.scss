@@ -1,0 +1,9 @@
+// Component: Unformatted Views-view
+
+@use '00-config' as *;
+
+.c-views-view-unformatted {
+  .c-view__row + .c-view__row {
+    margin-top: rem(gesso-get-map(gutter-width));
+  }
+}

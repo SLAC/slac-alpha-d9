@@ -1,0 +1,36 @@
+// @file
+// Component: c-text-block
+@use '00-config' as *;
+
+.c-text-block {
+  & + & {
+    margin-top: gesso-get-map(gutter-width);
+  }
+}
+
+.l-grid {
+  @include breakpoint-min(gesso-breakpoint(grid-2col)) {
+    .c-text-block + .c-text-block {
+      margin-top: 0;
+    }
+  }
+}
+
+.c-text-block__content {
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    display: flex;
+    gap: rem(gesso-get-map(gutter-width));
+  }
+}
+
+.c-text-block__media {
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    flex-basis: 50%;
+  }
+}
+
+.c-text-block__text {
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    flex: 1 50%;
+  }
+}

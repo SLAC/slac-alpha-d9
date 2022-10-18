@@ -1,0 +1,316 @@
+global:
+  css:
+    theme:
+      //fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap: { type: external }
+      dist/css/styles.css: {}
+  js:
+    dist/js/arrow-link.es6.js: {}
+    dist/js/external-link.es6.js: {}
+    dist/js/header.es6.js: {}
+    dist/js/transitions.es6.js: {}
+    dist/js/embed.es6.js: {}
+    dist/js/search.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+    - core/drupalSettings
+
+accordion:
+  header: true
+  css:
+    theme:
+      dist/css/accordion.css: {}
+  js:
+    dist/js/accordion.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
+addtocal_a11y:
+  js:
+    dist/js/addtocal-a11y.es6.js: {}
+
+alert_bar:
+  css:
+    theme:
+      dist/css/alert-bar.css: {}
+  js:
+    dist/js/alert-bar.es6.js: {}
+
+animated_icon:
+  css:
+    theme:
+      dist/css/animated-icon.css: {}
+  dependencies:
+    - lottiefiles_field/lottiefiles
+
+back_to_top:
+  css:
+    theme:
+      dist/css/back-to-top.css: {}
+  js:
+    dist/js/back-to-top.es6.js: {}
+
+bio_page:
+  css:
+    theme:
+      dist/css/bio-page.css: {}
+
+carousel:
+  css:
+    theme:
+      dist/css/carousel.css: {}
+  js:
+    dist/js/carousel.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
+checkbox_widget:
+  js:
+    dist/js/checkbox-widget.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+    - facets/widget
+    - core/once
+
+drawer:
+  css:
+    theme:
+      dist/css/drawer.css: {}
+  js:
+    dist/js/drawer.es6.js: {}
+  dependencies:
+    - slac/common
+
+dropbutton:
+  js:
+    dist/js/dropbutton.es6.js: {}
+  css:
+    component:
+      dist/css/dropbutton.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+
+dropdown_menu:
+  css:
+    theme:
+      dist/css/dropdown-menu.css: {}
+  js:
+    dist/js/dropdown-menu.es6.js: {}
+  dependencies:
+    - slac/common
+    - slac/mobile_menu
+
+event_details:
+  css:
+    theme:
+      dist/css/event-details.css: {}
+
+filter_modal:
+  css:
+    theme:
+      dist/css/filter-modal.css: {}
+  js:
+    dist/js/filter-modal.es6.js: {}
+  dependencies:
+    - slac/lightbox
+
+grid_with_featured:
+  css:
+    theme:
+      dist/css/grid-with-featured.css: {}
+  js:
+    dist/js/grid-with-featured.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
+hamburger_button:
+  css:
+    theme:
+      dist/css/hamburger-button.css: {}
+
+hero_bg_image:
+  css:
+    theme:
+      dist/css/hero-bg-image.css: {}
+  js:
+    dist/js/hero-bg-image.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
+hero_inline_image:
+  css:
+    theme:
+      dist/css/hero-inline-image.css: {}
+
+icon_card:
+  css:
+    theme:
+      dist/css/icon-card.css: {}
+  js:
+    dist/js/icon-card.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
+inverse_nav:
+  css:
+    theme:
+      dist/css/inverse-nav.css: {}
+  dependencies:
+    - slac/transparent_nav
+
+lightbox:
+  js:
+    dist/js/lightbox.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
+mega_menu:
+  css:
+    theme:
+      dist/css/mega-menu.css: {}
+  js:
+    dist/js/mega-menu.es6.js: {}
+  dependencies:
+    - slac/common
+    - slac/mobile_menu
+    - core/drupal
+    - core/drupalSettings
+
+media_detail:
+  css:
+    theme:
+      dist/css/media-detail.css: {}
+
+microsite_hero:
+  css:
+    theme:
+      dist/css/microsite-hero.css: {}
+  js:
+    dist/js/microsite-hero.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
+mobile_menu:
+  css:
+    theme:
+      dist/css/mobile-menu.css: {}
+  dependencies:
+    - slac/hamburger_button
+
+overlay_menu:
+  css:
+    theme:
+      dist/css/overlay-menu.css: {}
+  js:
+    dist/js/overlay-menu.es6.js: {}
+  dependencies:
+    - slac/common
+    - slac/hamburger_button
+
+search:
+  css:
+    theme:
+      dist/css/views-view-search.css: {}
+  dependencies:
+    - slac/lightbox
+
+social_share:
+  css:
+    theme:
+      dist/css/social-share.css: {}
+  js:
+    dist/js/social-share.es6.js: {}
+  dependencies:
+    - slac/common
+
+side_menu:
+  css:
+    theme:
+      dist/css/side-menu.css: { }
+  js:
+    dist/js/side-menu.es6.js: { }
+  dependencies:
+    - slac/common
+    - slac/hamburger_button
+
+tagline_long:
+  css:
+    theme:
+      dist/css/tagline--long.css: {}
+  js:
+    dist/js/tagline--long.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
+toc:
+  css:
+    theme:
+      dist/css/toc.css: {}
+  js:
+    dist/js/toc.es6.js: {}
+  dependencies:
+    - slac/common
+
+topic_grid:
+  css:
+    theme:
+      dist/css/topic-grid.css: {}
+  js:
+    dist/js/topic-grid.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
+tooltip:
+  css:
+    theme:
+      dist/css/tooltip.css: {}
+  js:
+    dist/js/tooltip.es6.js: {}
+  dependencies:
+    - slac/common
+
+transparent_nav:
+  css:
+    theme:
+      dist/css/transparent-nav.css: {}
+  dependencies:
+    - slac/mega_menu
+
+video_hero:
+  css:
+    theme:
+      dist/css/video-hero.css: {}
+  js:
+    dist/js/video-hero.es6.js: {}
+  dependencies:
+    - slac/common
+
+video_lightbox:
+  css:
+    theme:
+      dist/css/video-lightbox.css: {}
+  dependencies:
+    - slac/lightbox
+
+views-toggle:
+  css:
+    theme:
+      dist/css/views-view--toggle.css: {}
+  js:
+    dist/js/views-view--toggle.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal

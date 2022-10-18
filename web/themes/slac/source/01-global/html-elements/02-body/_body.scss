@@ -1,0 +1,33 @@
+// HTML Element: Body
+
+@use '00-config' as *;
+
+// Overflow-x and width properties ensure elements using full bleed techniques
+// (e.g., the layout-full-bleed mixin) do not create horizontal scroll bars.
+@if not $wysiwyg {
+  body {
+    background-color: gesso-color(background, site);
+    color: var(--gesso-text-color);
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+    word-wrap: break-word;
+
+    &.has-open-menu {
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    &.gin--horizontal-toolbar {
+      overflow-anchor: none;
+    }
+  }
+}
+
+// Tweak styling in WYSIWYG editor.
+@if $wysiwyg {
+  .ck-content {
+    padding: 0 rem(gesso-site-margins(desktop));
+  }
+}

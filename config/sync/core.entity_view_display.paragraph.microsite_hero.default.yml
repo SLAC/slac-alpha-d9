@@ -11,7 +11,7 @@ dependencies:
     - field.field.paragraph.microsite_hero.field_text_color
     - paragraphs.paragraphs_type.microsite_hero
   module:
-    - gesso_helper
+    - link
     - lottiefiles_field
     - options
 id: paragraph.microsite_hero.default
@@ -29,19 +29,16 @@ content:
     weight: 1
     region: content
   field_link:
-    type: gesso_helper_gesso_button
-    label: hidden
+    type: link
+    label: above
     settings:
-      trim_length: '80'
-      button_size: Standard
-      button_style: Primary
-      button_icon: Chevron
+      trim_length: 80
       url_only: false
       url_plain: false
-      rel: 0
-      target: 0
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 6
     region: content
   field_lottiefile:
     type: lottiefiles_field

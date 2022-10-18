@@ -1,0 +1,36 @@
+{% set classes = [
+  'c-tagline--long',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('slac/tagline_long') }}
+
+<div {{ add_attributes({ class: classes }) }}>
+  <div class="c-tagline__section">
+    {{ tagline1_image }}
+    <div class="c-tagline__box">
+      <h2 class="c-tagline__heading">
+        <span>{{ tagline1 }}</span>
+      </h2>
+      {% if tagline1_content %}{{ tagline1_content }}{% endif %}
+    </div>
+  </div>
+  <div class="c-tagline__section">
+    {{ tagline2_image }}
+    <div class="c-tagline__box">
+      <h2 class="c-tagline__heading">
+        <span>{{ tagline2 }}</span>
+      </h2>
+      {% if tagline2_content %}{{ tagline2_content }}{% endif %}
+    </div>
+  </div>
+  <div class="c-tagline__section">
+    {{ tagline3_image }}
+    <div class="c-tagline__box">
+      <h2 class="c-tagline__heading">
+        <span>{{ tagline3 }}</span>
+      </h2>
+      {% if tagline3_content %}{{ tagline3_content }}{% endif %}
+    </div>
+  </div>
+</div>

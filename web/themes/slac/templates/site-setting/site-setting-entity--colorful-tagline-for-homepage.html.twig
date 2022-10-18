@@ -1,0 +1,32 @@
+{#
+/**
+ * @file site_setting_entity.html.twig
+ * Default theme implementation to present Site Setting data.
+ *
+ * This template is used when viewing Site Setting pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_site_setting_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set tagline %}
+  {% include '@components/tagline/tagline.twig' with {
+    'modifier_classes': 'c-tagline--colorful',
+    'tagline1': content.field_heading|field_value,
+    'tagline2': content.field_line_2|field_value,
+    'tagline3': content.field_line_3|field_value,
+  } %}
+{% endset %}
+
+{% include '@components/fifty-fifty/fifty-fifty.twig' with {
+  col_1: tagline,
+  col_2: content.field_body|field_value
+} %}
+
+{% set catch_cache = content|render %}

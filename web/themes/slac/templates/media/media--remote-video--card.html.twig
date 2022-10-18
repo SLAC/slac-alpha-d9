@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ * - url: aliased URL of media entity in string format
+ *
+ * @see template_preprocess_media()
+ */
+#}
+
+{% set content_type %}
+  {{ "Video"|t }}
+{% endset %}
+
+{% set footer %}
+  {{ media.created.value|format_date('custom', 'F j, Y') }}
+  {% if content.field_duration|field_value is not empty %}
+    &nbsp;·&nbsp;{{- content.field_duration|field_value -}}&nbsp;{{ "runtime"|t }}
+  {% endif %}
+{% endset %}
+
+{% set card_content %}
+  {% if content.field_teaser|field_value is not empty %}
+    {{ content.field_teaser }}
+  {% else %}
+    {{ content.field_body }}
+  {% endif %}
+{% endset %}
+
+{% include '@components/card/card.twig' with {
+  'is_video': true,
+  'url': content.field_boolean['#items'].value == 0 ? url : null,
+  'title': content.field_long_text|field_value ? content.field_long_text : content.name,
+  'kicker': null,
+  'type': content_type,
+  'footer': footer,
+  'media': content.field_thumbnail|field_value ? content.field_thumbnail|field_value : content.thumbnail|field_value,
+  'card_content': card_content,
+} %}
+
+{% set catch_cache = content|render %}

@@ -1,0 +1,61 @@
+// @file
+// Component: c-overlay-link
+@use '00-config' as *;
+
+.c-overlay-link {
+  display: table;
+  position: relative;
+  z-index: 0;
+
+  img {
+    display: block;
+  }
+}
+
+.c-overlay-link__content {
+  background: rgba(0, 0, 0, 0.8);
+  color: gesso-grayscale(white);
+  display: flex;
+  flex-direction: column;
+  inset: 0;
+  justify-content: flex-end;
+  opacity: 0;
+  padding: 30px;
+  position: absolute;
+  transition: gesso-duration(standard) opacity;
+  z-index: 2;
+
+  .c-overlay-link:hover &,
+  .c-overlay-link:focus &,
+  .c-overlay-link:active & {
+    opacity: 1;
+  }
+
+  .c-kicker {
+    color: inherit;
+  }
+}
+
+.c-overlay-link__title {
+  @include responsive-font-size(5);
+  word-wrap: break-word;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  span::after {
+    transform: none !important;
+  }
+}
+
+.c-overlay-link__label {
+  @include custom-responsive-font-size(rem(12px), rem(gesso-font-size(1)));
+  background: gesso-grayscale(white);
+  bottom: 0;
+  left: 0;
+  max-width: 70%;
+  padding: 10px 20px;
+  position: absolute;
+}

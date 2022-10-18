@@ -1,0 +1,8 @@
+gesso.carousel.small:
+  label: Small
+  mediaQuery: ''
+  group: gesso.carousel
+gesso.carousel.large:
+  label: Large
+  mediaQuery: '(min-width: 600px)'
+  group: gesso.carousel

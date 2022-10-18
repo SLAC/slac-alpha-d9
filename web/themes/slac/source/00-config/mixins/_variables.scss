@@ -1,0 +1,31 @@
+@use '../functions/gesso' as *;
+
+@mixin on-dark-variables {
+  --gesso-text-color: #{gesso-color(text, on-dark)};
+  --gesso-link-color: #{gesso-color(text, on-dark)};
+  --gesso-link-visited-color: #{gesso-color(text, on-dark)};
+  --gesso-link-hover-color: #{gesso-color(text, on-dark)};
+  --gesso-link-active-color: #{gesso-color(text, on-dark)};
+  --gesso-link-underline-color: #{gesso-color(text, on-dark)};
+  --gesso-accent-color: #{gesso-color(text, on-dark)};
+}
+
+@mixin on-light-variables {
+  --gesso-text-color: #{gesso-color(text, on-light)};
+  --gesso-link-color: #{gesso-color(text, on-light)};
+  --gesso-link-visited-color: #{gesso-color(text, on-light)};
+  --gesso-link-hover-color: #{gesso-color(text, on-light)};
+  --gesso-link-active-color: #{gesso-color(text, on-light)};
+  --gesso-link-underline-color: #{gesso-color(text, on-light)};
+  --gesso-accent-color: #{gesso-color(ui, generic, accent)};
+}
+
+@mixin default-variables {
+  --gesso-text-color: #{gesso-color(text, primary)};
+  --gesso-link-color: #{gesso-color(text, link)};
+  --gesso-link-visited-color: #{gesso-color(text, link-visited)};
+  --gesso-link-hover-color: #{gesso-color(text, link-hover)};
+  --gesso-link-active-color: #{gesso-color(text, link-active)};
+  --gesso-link-underline-color: #{gesso-color(text, link-underline)};
+  --gesso-accent-color: #{gesso-color(ui, generic, accent)};
+}

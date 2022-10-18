@@ -1,0 +1,10 @@
+---
+text: 'Button'
+text_demo: 'Link Button'
+chevron_demo: 'Chevron Button'
+download_demo: 'Download Button'
+is_demo: true
+is_button_tag: true
+is_disabled: false
+url: '#0'
+button_type: 'submit'

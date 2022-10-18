@@ -1,0 +1,66 @@
+// @file
+// Component: c-alert-bar
+@use '00-config' as *;
+
+:root {
+  // Have to use a unit with 0 when using it with calc().
+  // stylelint-disable-next-line length-zero-no-unit
+  --gesso-alert-bar-height: 0px;
+}
+
+.c-alert-bar {
+  background-color: gesso-brand(cardinal, dark);
+  color: gesso-grayscale(white);
+  font-size: rem(13px);
+  height: var(--gesso-alert-bar-height);
+  padding: gesso-spacing(1) 0;
+  width: 100%;
+
+  a {
+    color: inherit;
+    display: inline-block;
+    padding: 0 0.5em;
+    text-decoration-color: transparent;
+    vertical-align: baseline;
+
+    &:hover,
+    &:focus {
+      text-decoration-color: currentColor;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.c-alert-bar__inner {
+  display: flex;
+  gap: gesso-spacing(2);
+  justify-content: space-between;
+}
+
+.c-alert-bar b,
+.c-alert-bar strong,
+.c-alert-bar__button {
+  font-weight: gesso-font-weight(bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.c-alert-bar__button {
+  @include text-button;
+  @include underline;
+  color: inherit;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    text-decoration-line: underline;
+  }
+
+  .c-icon {
+    color: currentColor;
+    margin-left: gesso-spacing(0.5);
+  }
+}

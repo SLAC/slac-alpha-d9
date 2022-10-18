@@ -1,0 +1,22 @@
+uuid: 84cbfa01-1b2f-475d-9e25-74a8494c8023
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - slac
+_core:
+  default_config_hash: Gt0uj-FlMm2J85M45AdtfV4loACJYSuvEAPzx44ZKdM
+id: slac_help
+theme: slac
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

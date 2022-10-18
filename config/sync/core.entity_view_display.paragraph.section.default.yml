@@ -13,7 +13,6 @@ dependencies:
     - paragraphs.paragraphs_type.section
   module:
     - entity_reference_revisions
-    - gesso_helper
     - link
     - text
 id: paragraph.section.default
@@ -22,19 +21,16 @@ bundle: section
 mode: default
 content:
   field_button_links:
-    type: gesso_helper_gesso_button
-    label: hidden
+    type: link
+    label: above
     settings:
-      trim_length: '80'
-      button_size: Standard
-      button_style: Primary
-      button_icon: Chevron
+      trim_length: 80
       url_only: false
       url_plain: false
-      rel: 0
-      target: 0
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 7
     region: content
   field_link:
     type: link

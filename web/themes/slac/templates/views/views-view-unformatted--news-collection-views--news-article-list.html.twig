@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{% set row_classes = [
+  default_row_class ? 'c-view__row' : '',
+]|join(' ')|trim %}
+
+{% set list_items = [] %}
+
+{% for row in rows %}
+  {% set row_content %}
+    <div {{ row_classes ? add_attributes({ 'class': row_classes }, 'row.attributes') : '' }}>{{- row.content -}}</div>
+  {% endset %}
+  {% set list_items = list_items|merge([row_content]) %}
+{% endfor %}
+
+{% include '@components/expandable-list/expandable-list.twig' with {
+  'modifier_classes': 'c-views-view-unformatted',
+  'list_items': list_items,
+  'show_more_length': 5,
+} %}

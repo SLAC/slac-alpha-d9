@@ -1,0 +1,79 @@
+{% set classes = [
+  'c-social-links',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<ul {{ add_attributes({ class: classes }) }}>
+  {% if facebook %}
+    <li class="c-social-links__facebook">
+      <a href="{{ facebook }}" target="_blank" rel="noopener">
+        {% include '@components/icon/icon.twig' with {
+          'icon_name': 'facebook',
+          'label': 'Facebook',
+          'modifier_classes': 'c-social-links__icon c-social-links__icon--facebook',
+          'is_demo': false
+        } %}
+      </a>
+    </li>
+  {% endif %}
+  {% if twitter %}
+  <li class="c-social-links__twitter">
+    <a href="{{ twitter }}" target="_blank" rel="noopener">
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'twitter',
+        'label': 'Twitter',
+        'modifier_classes': 'c-social-links__icon c-social-links__icon--twitter',
+        'is_demo': false
+      } %}
+    </a>
+  </li>
+  {% endif %}
+  {% if instagram %}
+    <li class="c-social-links__instagram">
+      <a href="{{ instagram }}" target="_blank" rel="noopener">
+        {% include '@components/icon/icon.twig' with {
+          'icon_name': 'instagram',
+          'label': 'Instagram',
+          'modifier_classes': 'c-social-links__icon c-social-links__icon--instagram',
+          'is_demo': false
+        } %}
+      </a>
+    </li>
+  {% endif %}
+  {% if flickr %}
+    <li class="c-social-links__flickr">
+      <a href="{{ flickr }}" target="_blank" rel="noopener">
+        {% include '@components/icon/icon.twig' with {
+          'icon_name': 'flickr',
+          'label': 'Flickr',
+          'modifier_classes': 'c-social-links__icon c-social-links__icon--flickr',
+          'is_demo': false
+        } %}
+      </a>
+    </li>
+  {% endif %}
+  {% if youtube %}
+    <li class="c-social-links__youtube">
+      <a href="{{ youtube }}" target="_blank" rel="noopener">
+        {% include '@components/icon/icon.twig' with {
+          'icon_name': 'youtube',
+          'label': 'YouTube',
+          'modifier_classes': 'c-social-links__icon c-social-links__icon--youtube',
+          'is_demo': false
+        } %}
+      </a>
+    </li>
+  {% endif %}
+  {% if youtube %}
+    <li class="c-social-links__linkedin">
+      <a href="{{ flickr }}" target="_blank" rel="noopener">
+        {% include '@components/icon/icon.twig' with {
+          'icon_name': 'linkedin',
+          'label': 'LinkedIn',
+          'modifier_classes': 'c-social-links__icon c-social-links__icon--linkedin',
+          'is_demo': false
+        } %}
+      </a>
+    </li>
+  {% endif %}
+</ul>

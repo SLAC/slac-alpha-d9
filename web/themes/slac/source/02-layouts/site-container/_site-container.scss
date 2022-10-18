@@ -1,0 +1,7 @@
+// Layout: Site Container
+
+.l-site-container {
+  .has-transparent-nav & {
+    margin-top: calc(-1 * var(--gesso-header-initial-height, 0));
+  }
+}

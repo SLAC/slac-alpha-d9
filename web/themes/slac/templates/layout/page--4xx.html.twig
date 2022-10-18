@@ -1,0 +1,20 @@
+{% extends "page.html.twig" %}
+
+{% block main_content %}
+  {% embed '@layouts/section/section.twig' with {
+    has_constrain: true
+  } %}
+    {% block content %}
+      {{ page.preface }}
+      {% include '@components/page-title/page-title.twig' with {
+        'attributes': '',
+        'page_title': page['#title'],
+      } %}
+      {{ page.status }}
+      {% include '@components/wysiwyg/wysiwyg.twig' with {
+        content: page.content
+      } %}
+      {{ page.postscript }}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

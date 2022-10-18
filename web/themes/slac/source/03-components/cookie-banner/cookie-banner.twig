@@ -1,0 +1,21 @@
+{% set classes = [
+  'c-cookie-banner',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes, role: 'alertdialog' } ) }}>
+  <div class="l-constrain c-cookie-banner__inner">
+    <p>
+      {{ cookie_banner_text }}
+
+      {% if more_info_button %}
+        <button class="find-more-button button--inline" type="button">
+          {{ more_info_button }}
+        </button>
+      {% endif %}
+    </p>
+    <button type="button" class="agree-button c-cookie-banner__button">
+      {{ cookie_button_text|default('Accept and Close')|t }}
+    </button>
+  </div>
+</div>

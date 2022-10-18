@@ -1,0 +1,16 @@
+{% set lightbox_id = 'filter-modal'|unique_id %}
+
+{% embed '@components/filter-modal/filter-modal.twig' with {
+  'lightbox_id': lightbox_id,
+  'results': results_text,
+  'total_results': num_results,
+} %}
+  {% block modal_content %}
+    {{ drupal_block('facet_block:research_area_grid') }}
+    {{ drupal_block('facet_block:research_area_list') }}
+    {{ drupal_block('facet_block:entity_type_grid') }}
+    {{ drupal_block('facet_block:entity_type_list') }}
+    {{ drupal_entity('block', 'exposedformsearchsearch_grid') }}
+    {{ drupal_entity('block', 'exposedformsearchsearch_list') }}
+  {% endblock %}
+{% endembed %}

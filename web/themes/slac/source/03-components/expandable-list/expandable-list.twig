@@ -1,0 +1,48 @@
+{% set classes = [
+  'c-expandable-list',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{% if is_demo and not list_items %}
+  {% import '@global/gesso.macro.twig' as macros %}
+  {% set list_items = [] %}
+  {% for i in 1..10 %}
+    {% set list_items = list_items|merge([macros.sample_content('List Item ' ~ i)]) %}
+  {% endfor %}
+{% endif %}
+
+{% set show_more_length = show_more_length|default(5) %}
+
+{% set list_content = list_items|slice(0, show_more_length) %}
+{% if list_items|length > show_more_length %}
+  {% set additional_content = list_items|slice(show_more_length, list_items|length) %}
+{% endif %}
+
+{% set collapsed_content %}
+  {% for content in list_content %}{{ content|render|raw }}{% endfor %}
+{% endset %}
+
+{% set expanded_content %}
+  {% if additional_content %}
+    {% set expanded_list_array =  list_items %}
+    {% for content in expanded_list_array %}{{ content|render|raw }}{% endfor %}
+  {% else %}
+    {{ collapsed_content }}
+  {% endif %}
+{% endset %}
+
+<div {{ add_attributes({ class: classes }) }}>
+  {% if additional_content %}
+    {% include '@components/drawer/drawer.twig' with {
+      'drawer_content_collapsed': collapsed_content,
+      'drawer_content_expanded': expanded_content,
+      'is_demo': false,
+      'drawer_trigger_label_expanded': 'Show Less'|t,
+      'drawer_trigger_label_collapsed': 'Show More'|t,
+      'modifier_classes': 'c-drawer--grid',
+      'trigger_modifier_classes': is_dark ? 'c-button--outline-secondary' : 'c-button--outline'
+    } %}
+  {% else %}
+    {{ collapsed_content }}
+  {% endif %}
+</div>

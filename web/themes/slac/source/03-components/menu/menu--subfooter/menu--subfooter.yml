@@ -1,0 +1,24 @@
+---
+menu_name: 'subfooter'
+items:
+  - title: 'SLAC Home'
+    url: '#0'
+    original_link:
+      options:
+        attributes:
+          class: 'is-locked'
+    in_active_trail: false
+  - title: 'Maps & Directions'
+    url: '#0'
+    original_link:
+      options:
+        attributes:
+          class: ''
+    in_active_trail: false
+  - title: 'Emergency Info'
+    url: '#0'
+    original_link:
+      options:
+        attributes:
+          class: ''
+    in_active_trail: false

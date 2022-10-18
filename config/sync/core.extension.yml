@@ -46,7 +46,6 @@ module:
   file: 0
   filter: 0
   focal_point: 0
-  gesso_helper: 0
   gin_toolbar: 0
   google_tag: 0
   help: 0
@@ -102,6 +101,7 @@ module:
   site_settings: 0
   sitewide_alert: 0
   slac_core: 0
+  slac_helper: 0
   smart_sql_idmap: 0
   smart_trim: 0
   style_options: 0
@@ -144,4 +144,5 @@ theme:
   gin: 0
   gesso: 0
   olivero: 0
+  slac: 0
 profile: minimal

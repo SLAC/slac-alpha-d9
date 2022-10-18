@@ -1,0 +1,13 @@
+---
+promo_box_kicker: 'Kicker'
+promo_box_title: 'Promo Box Title'
+promo_box_url: '#0'
+promo_box_button: '<a href="#0" class="c-button c-button--outline">Button</a>'
+promo_box_image: '<img src="https://picsum.photos/240" alt="Placeholder Image" />'
+promo_box_content: |-
+  <a href="#0">Link One</a>
+  <a href="#0">Link Two</a>
+  <a href="#0">Link Three</a>
+  <a href="#0">Link Four</a>
+  <a href="#0">Link Five</a>
+slide_in: true

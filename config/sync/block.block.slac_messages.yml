@@ -1,0 +1,22 @@
+uuid: 15150c85-fdd8-497a-8b62-39e6469c7ef5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - slac
+_core:
+  default_config_hash: yydYSJTTL67R6WSXRrQIe8f-9K0bSTHPSIe2heNhFRk
+id: slac_messages
+theme: slac
+region: status
+weight: -1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

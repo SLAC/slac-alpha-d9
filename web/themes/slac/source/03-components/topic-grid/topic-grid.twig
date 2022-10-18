@@ -1,0 +1,39 @@
+{% set classes = [
+  'c-topic-grid',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('slac/topic_grid') }}
+{% set filter_id = 'filter-by-research-area'|unique_id %}
+
+<div class="c-form-item--select">
+  <label class="u-visually-hidden" for="{{ filter_id }}">{{ 'Filter by Research Area'|t }}</label>
+  <select class="c-topic-grid__select c-form-item__select" id="{{ filter_id }}">
+    <option value="*">
+      Filter by Research Area
+    </option>
+    {% for item in research_areas %}
+      <option value="{{ '.js-filter-' ~ item.id }}">
+        {{ item.label }}
+      </option>
+    {% endfor %}
+  </select>
+</div>
+
+<div {{ add_attributes({ class: classes } ) }}>
+  <div class="c-topic-grid__sizer"></div>
+  <div class="c-topic-grid__gutter"></div>
+  {% block rows %}
+    {% for item in items %}
+      <div class="c-topic-grid__item c-topic-grid__item--width{{ item.width }} js-filter-{{ item.filter }}">
+        {% include '@components/overlay-link/overlay-link.twig' with {
+          image: item.image,
+          label: item.title,
+          kicker: 'Tagged in',
+          title: item.title,
+          link: item.link,
+        } %}
+      </div>
+    {% endfor %}
+  {% endblock %}
+</div>

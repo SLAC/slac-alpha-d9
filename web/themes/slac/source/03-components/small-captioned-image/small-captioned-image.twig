@@ -1,0 +1,27 @@
+{% set classes = [
+  'c-small-captioned-image',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{% set caption_id = 'caption'|unique_id %}
+
+{% set image_attributes = {
+  class: classes
+} %}
+{% if caption %}
+  {% set hero_attributes = image_attributes|merge({
+    'aria-describedby': caption_id
+  }) %}
+{% endif %}
+
+<div {{ add_attributes(image_attributes) }}>
+  {{ image }}
+  {% if caption %}
+    <div class="c-small-captioned-image__inner">
+      {% include '@components/tooltip/tooltip.twig' with {
+        tooltip_content: caption,
+        tooltip_id: caption_id
+      } %}
+    </div>
+  {% endif %}
+</div>

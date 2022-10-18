@@ -1,0 +1,80 @@
+{% set classes = [
+  'l-footer',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+{% set constrain_classes = [
+  'l-constrain',
+  constrain_modifier_classes ? constrain_modifier_classes : '',
+]|join(' ')|trim %}
+
+<footer {{ add_attributes({
+  'class': classes,
+  'role': 'contentinfo'
+}) }}>
+  {% if has_constrain %}
+    <div {{ add_attributes({ 'class': constrain_classes }) }}>
+  {% endif %}
+      <div class="l-footer__contact">
+  {% block footer_contact %}
+    <div>
+      <strong>SLAC National Accelerator Laboratory</strong>
+      <address>
+        Sand Hill Road<br>
+        Menlo Park, CA 94025-7015<br>
+        650.926.3300
+      </address>
+    </div>
+    <ul class="l-footer__contact-links">
+      <li><a href="#0" class="c-arrow-link--white">Contact Us</a></li>
+      <li><a href="#0" class="c-arrow-link--white">Coming to SLAC</a></li>
+      <li><a href="#0" class="c-arrow-link--white">Connect With Us</a></li>
+    </ul>
+    {% include '@components/social-links/social-links.twig' with {
+      'facebook': '#',
+      'twitter': '#',
+      'instagram': '#',
+      'flickr': '#',
+      'youtube': '#',
+      'linkedin': '#',
+    } %}
+  {% endblock %}
+      </div>
+      <div class="l-footer__signup">
+        {% block footer_signup %}
+          <h3 class="h6 l-footer__signup-title">Sign up for our email</h3>
+          <p>Monthly newsletter for cutting edge science, SLAC milestones and events.</p>
+          <form action="#" class="l-footer__signup-form is-inline">
+            {% set form_input %}
+              {% include '@components/form-item/_input.twig' with {
+                'type': 'email',
+                'placeholder': 'email address',
+              }  %}
+            {% endset %}
+            {% include '@components/form-item/form-item.twig' with {
+              'children': form_input,
+            } %}
+            <button type="submit" class="c-button c-button--outline-secondary">Sign up</button>
+          </form>
+        {% endblock %}
+      </div>
+      <div class="l-footer__tagline">
+        {% block footer_tagline %}
+          {{ tagline }}
+        {% endblock %}
+      </div>
+      <div class="l-footer__menu">
+        {% block footer_menu %}
+          {{ menu }}
+        {% endblock %}
+      </div>
+      <div></div>
+      <div class="l-footer__utility">
+        {% block footer_utility_menu %}
+          {{ utility_menu }}
+        {% endblock %}
+      </div>
+  {% if has_constrain %}
+    </div>
+  {% endif %}
+</footer>

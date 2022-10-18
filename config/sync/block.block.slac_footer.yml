@@ -1,0 +1,27 @@
+uuid: b5fae8b7-e1d6-4987-b9e4-ead3978972cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - slac
+_core:
+  default_config_hash: EPz-aLZhU8zYU0rBYQk04NiJ4gB4zc512DZoAuLDmBc
+id: slac_footer
+theme: slac
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

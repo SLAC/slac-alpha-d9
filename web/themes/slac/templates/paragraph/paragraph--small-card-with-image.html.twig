@@ -1,0 +1,7 @@
+{% include '@components/card/card--small/card--small.twig' with {
+  title: content.field_short_text|field_value,
+  url: content.field_link|field_value,
+  kicker: content.field_text|field_value,
+  media: content.field_image,
+  description: content|without('field_short_text', 'field_link', 'field_text', 'field_image')
+} %}

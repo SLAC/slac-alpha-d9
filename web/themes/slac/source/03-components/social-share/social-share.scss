@@ -1,0 +1,71 @@
+// @file
+// Component: c-social-share
+@use '00-config' as *;
+
+.c-social-share {
+  font-size: rem(gesso-font-size(1));
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    position: absolute;
+    right: 8px;
+    top: rem(gesso-spacing(7));
+    z-index: gesso-z-index(social-share);
+  }
+}
+
+.c-social-share__link {
+  background: gesso-grayscale(white);
+  display: inline-block;
+  height: rem(34px);
+  margin-bottom: rem(gesso-spacing(0.5));
+  overflow: hidden;
+  padding: rem(10px);
+  text-decoration: none;
+  width: rem(34px);
+
+  &:hover,
+  &:focus-visible {
+    color: gesso-color(text, primary);
+    transform: translateX(0);
+  }
+
+  &.external-link {
+    .c-icon {
+      color: inherit;
+
+      &:not(.c-social-share__icon) {
+        display: none;
+      }
+    }
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    display: block;
+    height: auto;
+    transform: translateX(60px);
+    transition: all gesso-duration(standard) gesso-easing(ease-out);
+    width: rem(94px);
+  }
+}
+
+.c-social-share__icon {
+  height: rem(18px);
+  margin-right: rem(12px);
+  width: rem(18px);
+
+  .c-social-share__facebook:hover & {
+    color: #3b5998;
+  }
+
+  .c-social-share__twitter:hover & {
+    color: #1da1f2;
+  }
+
+  .c-social-share__linkedin:hover & {
+    color: #0a66c2;
+  }
+
+  .c-social-share__email:hover & {
+    color: gesso-color(text, link-hover);
+  }
+}
