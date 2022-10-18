@@ -7,9 +7,9 @@ services:
     expose:
       - 6006
     volumes:
-      - ./../web/themes/gesso:/var/www/html/web/themes/gesso:cached
+      - ./../web/themes/slac:/var/www/html/web/themes/slac:cached
       - ".:/mnt/ddev_config"
-    working_dir: /var/www/html/web/themes/gesso
+    working_dir: /var/www/html/web/themes/slac
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: $DDEV_APPROOT
@@ -20,4 +20,4 @@ services:
     networks: [default, ddev_default]
   web:
     links:
-      - gesso:gesso
+      - slac:slac
