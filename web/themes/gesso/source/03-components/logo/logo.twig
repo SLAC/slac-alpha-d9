@@ -1,8 +1,0 @@
-{% set classes = [
-  'c-logo',
-  modifier_classes ? modifier_classes : '',
-]|join(' ')|trim %}
-
-<a {{ add_attributes({ 'class': classes })}} href="{{ url }}" title="{{ title }}" rel="home">
-  <img class="c-logo__image" src="{{ logo }}" alt="{{ title }}" />
-</a>
