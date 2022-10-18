@@ -3,14 +3,15 @@ langcode: en
 status: true
 dependencies:
   module:
+    - node
     - system
   theme:
     - slac
 _core:
-  default_config_hash: VVNy0jqnpbu50jrMI0svRARDouHpah37G30j-cjaQek
+  default_config_hash: KAZy34I5p9GBQBYyHlEqifF8VveQ5p30aHHsDs459as
 id: slac_breadcrumbs
 theme: slac
-region: breadcrumb
+region: disabled
 weight: 0
 provider: null
 plugin: system_breadcrumb_block
@@ -19,4 +20,15 @@ settings:
   label: Breadcrumbs
   label_display: '0'
   provider: system
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      event: event
+      media_mention: media_mention
+      news_article: news_article
+      page: page
+      person: person

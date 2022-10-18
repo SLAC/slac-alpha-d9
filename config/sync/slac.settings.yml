@@ -1,15 +1,19 @@
 _core:
   default_config_hash: 0LS6KiWDpzSx7lj-jcDW2kpN3bdP_7OzandLbf9Ax9s
-features:
-  node_user_picture: false
-  comment_user_picture: true
-  comment_user_verification: true
-  favicon: false
-logo:
-  use_default: false
 favicon:
   use_default: true
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: false
+logo:
+  path: ''
+  use_default: false
 include_back_to_top: 1
 threshold: '200'
 smooth_scroll: 1
 include_current_page_in_breadcrumb: 1
+button_sizes: "c-button|Standard\r\nc-button.c-button--small|Small\r\nc-button.c-button--large|Large"
+button_styles: "c-button.c-button--primary|Primary\r\nc-button.c-button--secondary|Secondary\r\nc-button.c-button--outline|Outline\r\nc-button.c-button--outline-secondary|Outline Secondary"
+button_icon: "c-button|None\r\nc-button--chevron|Chevron\r\nc-button--download|Download"

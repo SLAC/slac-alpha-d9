@@ -5,9 +5,9 @@ dependencies:
   module:
     - site_settings
   theme:
-    - gesso
+    - slac
 id: search_cta_links
-theme: gesso
+theme: slac
 region: disabled
 weight: 0
 provider: null

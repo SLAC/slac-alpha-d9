@@ -7,9 +7,9 @@ dependencies:
   module:
     - system
   theme:
-    - gesso
+    - slac
 id: footer_utility
-theme: gesso
+theme: slac
 region: disabled
 weight: -6
 provider: null

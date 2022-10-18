@@ -5,9 +5,9 @@ dependencies:
   module:
     - site_settings
   theme:
-    - gesso
+    - slac
 id: media_about_slac
-theme: gesso
+theme: slac
 region: disabled
 weight: 0
 provider: null

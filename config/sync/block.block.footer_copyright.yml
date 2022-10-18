@@ -5,9 +5,9 @@ dependencies:
   module:
     - site_settings
   theme:
-    - gesso
+    - slac
 id: footer_copyright
-theme: gesso
+theme: slac
 region: subfooter
 weight: -8
 provider: null

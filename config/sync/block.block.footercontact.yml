@@ -7,9 +7,9 @@ dependencies:
   module:
     - system
   theme:
-    - gesso
+    - slac
 id: footercontact
-theme: gesso
+theme: slac
 region: footer
 weight: -5
 provider: null

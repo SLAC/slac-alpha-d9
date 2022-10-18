@@ -7,9 +7,9 @@ dependencies:
   module:
     - system
   theme:
-    - gesso
+    - slac
 id: subfooter
-theme: gesso
+theme: slac
 region: subfooter
 weight: -9
 provider: null

@@ -9,11 +9,11 @@ dependencies:
   theme:
     - slac
 _core:
-  default_config_hash: VhOkYXerInFZV2XI1YQq0fJXxa-WLHOi9QX7nRTeEhU
+  default_config_hash: '-dwo3LTuaghPat2KF0FnMMLvXM_DgFB6mQWXU2phI8M'
 id: slac_tools
 theme: slac
 region: disabled
-weight: 0
+weight: -1
 provider: null
 plugin: 'system_menu_block:tools'
 settings:

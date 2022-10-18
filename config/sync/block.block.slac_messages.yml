@@ -7,7 +7,7 @@ dependencies:
   theme:
     - slac
 _core:
-  default_config_hash: yydYSJTTL67R6WSXRrQIe8f-9K0bSTHPSIe2heNhFRk
+  default_config_hash: iCVXXZL_LicpCsu0wD1VJCu3VsXV0HqRLPkXsVyAQyM
 id: slac_messages
 theme: slac
 region: status

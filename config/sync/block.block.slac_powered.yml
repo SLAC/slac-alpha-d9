@@ -7,11 +7,11 @@ dependencies:
   theme:
     - slac
 _core:
-  default_config_hash: Pe60x0wBLYk4zz6ePeKRj1uvE5Aa0WVkBhEcQ-22bzA
+  default_config_hash: p56rPKUKPgnduw7t54T2KaojWBGGgLX3NUBl9dL32Jc
 id: slac_powered
 theme: slac
 region: disabled
-weight: 0
+weight: -3
 provider: null
 plugin: system_powered_by_block
 settings:

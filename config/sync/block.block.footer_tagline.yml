@@ -5,9 +5,9 @@ dependencies:
   module:
     - site_settings
   theme:
-    - gesso
+    - slac
 id: footer_tagline
-theme: gesso
+theme: slac
 region: disabled
 weight: -7
 provider: null

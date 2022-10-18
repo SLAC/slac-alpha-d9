@@ -7,7 +7,7 @@ dependencies:
   theme:
     - slac
 _core:
-  default_config_hash: Gt0uj-FlMm2J85M45AdtfV4loACJYSuvEAPzx44ZKdM
+  default_config_hash: MTtOTi0daIhHPdrnwFewkKQdt21ySkblZ4Vgn3cKJHA
 id: slac_help
 theme: slac
 region: help

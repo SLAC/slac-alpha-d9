@@ -7,9 +7,9 @@ dependencies:
   module:
     - system
   theme:
-    - gesso
+    - slac
 id: header_social_links
-theme: gesso
+theme: slac
 region: disabled
 weight: -5
 provider: null

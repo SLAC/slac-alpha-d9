@@ -5,11 +5,11 @@ dependencies:
   theme:
     - slac
 _core:
-  default_config_hash: nJFdGWj6zdQI2mPhmeiqvp90fg2EOl5IBGl33kPfo0g
+  default_config_hash: Vr2AHeIRlyZknuYoBIj5feCctSax50AhsuhHt-eQwcM
 id: slac_page_title
 theme: slac
 region: disabled
-weight: 0
+weight: -4
 provider: null
 plugin: page_title_block
 settings:

@@ -1,6 +1,6 @@
 uuid: c12e97e2-e9af-445b-a4a4-ebf10539f9a1
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.main
@@ -9,11 +9,11 @@ dependencies:
   theme:
     - slac
 _core:
-  default_config_hash: XBcPkS1rAEPI8C1ewzWNXNyKp53w247cjCdn4VC4TaQ
+  default_config_hash: iGJatYRbJXpid7LCSEVXj83eDN6uMdhl1-DLbRYKSRE
 id: slac_main_menu
 theme: slac
 region: header
-weight: 0
+weight: -8
 provider: null
 plugin: 'system_menu_block:main'
 settings:
