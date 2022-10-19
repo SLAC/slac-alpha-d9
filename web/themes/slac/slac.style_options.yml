@@ -6,26 +6,14 @@ options:
       -
         label: White
       -
-        label: 'Background Image'
-        class: 'l-section--dark l-section--bg-image'
-      -
         label: 'Purple-Black Gradient'
         class: 'l-section--dark l-section--purple-black'
       -
         label: 'Blue-Green Gradient'
         class: 'l-section--dark l-section--blue-green'
       -
-        label: 'Cutout'
-        class: 'l-section--dark l-section--cutout'
-      -
-        label: 'Pattern'
-        class: 'l-section--pattern'
-      -
         label: 'Yellow'
         class: 'l-section--yellow'
-      -
-        label: 'White-Gray Gradient'
-        class: 'l-section--gray-gradient'
       -
         label: 'Purple'
         class: 'l-section--dark l-section--purple'
