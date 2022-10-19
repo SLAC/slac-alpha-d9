@@ -118,31 +118,6 @@
   }
 }
 
-.l-section--bg-image {
-  background-blend-mode: multiply;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(gesso-grayscale(black), 0.93),
-      rgba(0, 0, 0, 0) 407px
-    ),
-    url('images/backgrounds/mask-background-mobile.jpg');
-  background-position: bottom center;
-  background-size: cover;
-
-  @include breakpoint-min(gesso-breakpoint(tablet)) {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(gesso-grayscale(black), 0.93),
-        rgba(0, 0, 0, 0) 407px
-      ),
-      url('images/backgrounds/Mask-Background.jpg');
-  }
-
-  @include breakpoint-min(gesso-breakpoint(desktop)) {
-    margin-bottom: 120px;
-  }
-}
-
 .l-section--purple-black {
   background-image: linear-gradient(
     to bottom,
@@ -155,39 +130,9 @@
 .l-section--blue-green {
   background-image: linear-gradient(
     to bottom,
-    gesso-brand(sky, dark),
-    gesso-brand(palo-verde, dark)
+    gesso-brand(stormy, dark),
+    gesso-brand(sky, dark)
   );
-}
-
-.l-section--cutout {
-  background-image: url('images/backgrounds/graphene_03_reverse.svg'),
-    linear-gradient(
-      to bottom,
-      gesso-brand(sky, dark),
-      gesso-brand(palo-verde, dark)
-    );
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: 100% auto, cover;
-
-  @include breakpoint-min(gesso-breakpoint(tablet)) {
-    background-image: url('images/backgrounds/graphene_02_reverse.svg'),
-      linear-gradient(
-        to bottom,
-        gesso-brand(sky, dark),
-        gesso-brand(palo-verde, dark)
-      );
-    background-position: top right, top 11px right 0;
-    background-size: auto, cover;
-  }
-}
-
-.l-section--pattern {
-  background-image: url('images/backgrounds/g271.svg');
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .l-section--yellow {
@@ -204,20 +149,12 @@
   }
 }
 
-.l-section--gray-gradient {
-  background-image: linear-gradient(
-    to bottom,
-    gesso-grayscale(white),
-    gesso-grayscale(gray-1)
-  );
-}
-
 .l-section--purple {
   background-color: gesso-brand(purple, dark);
 }
 
 .l-section--blue {
-  background-color: gesso-brand(lagunita, dark);
+  background-color: gesso-brand(sky, dark);
 }
 
 .l-section--divider {
