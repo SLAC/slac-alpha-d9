@@ -28,5 +28,23 @@ const Embed = args =>
   );
 Embed.args = { ...data };
 
+const EmbedWide = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-embed--wide'
+    })
+  );
+EmbedWide.args = { ...data };
+
+const EmbedFull = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-embed--full'
+    })
+  );
+EmbedFull.args = { ...data };
+
 export default settings;
-export { Embed };
+export { Embed, EmbedWide, EmbedFull };
