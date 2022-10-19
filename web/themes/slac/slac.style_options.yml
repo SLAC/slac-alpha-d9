@@ -52,9 +52,9 @@ options:
     label: 'Accordion Size'
     options:
       -
-        label: 'Default'
+        label: 'Narrow'
       -
-        label: 'Large'
+        label: 'Wide'
         class: 'c-accordion--large'
   small_card_with_solid_background_bg:
     plugin: css_class
