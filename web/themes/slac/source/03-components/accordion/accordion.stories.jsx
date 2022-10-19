@@ -16,27 +16,27 @@ const settings = {
   title: 'Components/Accordion',
 };
 
-const Accordion = args =>
+const NarrowAccordion = args =>
   parse(
     accordionTemplate({
       accordion_items: accordions,
       ...args,
     })
   );
-Accordion.args = { ...globalData, ...data };
+NarrowAccordion.args = { ...globalData, ...data };
 
-const LargeAccordion = args =>
+const WideAccordion = args =>
   parse(
     accordionTemplate({
       accordion_items: accordions,
       ...args,
     })
   );
-LargeAccordion.args = {
+WideAccordion.args = {
   ...globalData,
   ...data,
   modifier_classes: 'c-accordion--large',
 };
 
 export default settings;
-export { Accordion, LargeAccordion };
+export { NarrowAccordion, WideAccordion };
