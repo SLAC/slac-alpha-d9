@@ -22,8 +22,8 @@ dependencies:
     - media.type.image
   module:
     - entity_reference_revisions
-    - gesso_helper
     - image
+    - link
     - text
 id: media.image.default
 targetEntityType: media
@@ -60,19 +60,16 @@ content:
     weight: 11
     region: content
   field_link:
-    type: gesso_helper_gesso_button
-    label: hidden
+    type: link
+    label: above
     settings:
-      trim_length: '80'
-      button_size: Standard
-      button_style: Primary
-      button_icon: Chevron
-      url_only: ''
-      url_plain: ''
-      rel: 0
-      target: 0
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 13
     region: content
   field_long_text:
     type: text_default
@@ -110,12 +107,12 @@ content:
     weight: 10
     region: content
   field_tags:
-    type: gesso_tag
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 14
     region: content
   field_teaser:
     type: text_default

@@ -5,9 +5,9 @@ dependencies:
   module:
     - site_settings
   theme:
-    - gesso
+    - slac
 id: renderedsitesettingsblock
-theme: gesso
+theme: slac
 region: footer
 weight: -6
 provider: null

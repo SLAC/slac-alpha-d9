@@ -7,9 +7,9 @@ dependencies:
   module:
     - menu_block
   theme:
-    - gesso
+    - slac
 id: footer_social_links
-theme: gesso
+theme: slac
 region: footer
 weight: 0
 provider: null

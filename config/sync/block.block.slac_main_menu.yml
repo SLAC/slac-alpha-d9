@@ -1,0 +1,27 @@
+uuid: c12e97e2-e9af-445b-a4a4-ebf10539f9a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - slac
+_core:
+  default_config_hash: iGJatYRbJXpid7LCSEVXj83eDN6uMdhl1-DLbRYKSRE
+id: slac_main_menu
+theme: slac
+region: header
+weight: -8
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 3
+  expand_all_items: true
+visibility: {  }

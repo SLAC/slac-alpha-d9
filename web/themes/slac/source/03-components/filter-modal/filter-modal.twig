@@ -1,0 +1,65 @@
+{% set classes = [
+'c-filter-modal',
+not is_demo ? 'u-hidden' : '',
+modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('slac/filter_modal') }}
+
+<button class="js-lightbox c-kicker c-kicker--big c-filter-modal__trigger" type="button" aria-controls="{{ lightbox_id }}">
+  {{ results }}
+</button>
+<div {{ add_attributes({ class: classes, id: lightbox_id, role: 'dialog' } ) }}>
+  <form class="c-filter-modal__inner">
+    <button class="js-lightbox__close c-filter-modal__close" type="button">
+      Close
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'close',
+        'hidden': true,
+        'is_demo': false
+      } %}
+    </button>
+    <div
+      class="c-filter-modal__content">
+      {% block modal_content %}
+        {# Filter by research area #}
+        <fieldset class="c-filter-modal__col">
+          <legend class="c-form-item__legend c-kicker c-kicker--big">
+            {{ 'Filter by Research Area'|t }}
+          </legend>
+          {{ filter_by_area }}
+        </fieldset>
+
+        {# Filter by content type #}
+        <fieldset class="c-filter-modal__col">
+          <legend class="c-form-item__legend c-kicker c-kicker--big">
+            {{ 'Filter by Type'|t }}
+          </legend>
+          {{ filter_by_type }}
+        </fieldset>
+
+        {# Sorting #}
+        <fieldset class="c-filter-modal__col">
+          <legend class="c-form-item__legend c-kicker c-kicker--big">
+            {{ 'Sort by'|t }}
+          </legend>
+          {{ sort_by }}
+        </fieldset>
+      {% endblock %}
+    </div>
+
+    <div class="c-filter-modal__footer">
+      <div class="c-filter-modal__actions">
+        <span class="c-filter-modal__count">
+          {{ total_results ~ ' ' ~ (total_results == 1 ? 'result' : 'results')|t }}
+        </span>
+        <button class="c-filter-modal__clear" type="button">
+          {{ 'Clear all'|t }}
+        </button>
+        <button class="c-button c-filter-modal__apply" type="button">
+          {{ 'Apply and Close'|t }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

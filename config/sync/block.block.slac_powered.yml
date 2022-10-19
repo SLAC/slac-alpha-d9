@@ -1,0 +1,22 @@
+uuid: 1747941d-3428-47be-8b46-bbb6a2b39135
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - slac
+_core:
+  default_config_hash: p56rPKUKPgnduw7t54T2KaojWBGGgLX3NUBl9dL32Jc
+id: slac_powered
+theme: slac
+region: disabled
+weight: -3
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

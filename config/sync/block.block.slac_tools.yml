@@ -1,0 +1,27 @@
+uuid: 21491acd-c3fd-46ec-a6dd-057bd2a81349
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - slac
+_core:
+  default_config_hash: '-dwo3LTuaghPat2KF0FnMMLvXM_DgFB6mQWXU2phI8M'
+id: slac_tools
+theme: slac
+region: disabled
+weight: -1
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

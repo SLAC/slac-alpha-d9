@@ -1,13 +1,12 @@
-uuid: dd19759e-4c56-460f-be6a-ec3987602f41
 langcode: en
 status: true
 dependencies:
   module:
     - site_settings
   theme:
-    - gesso
+    - slac
 id: boilerplate
-theme: gesso
+theme: slac
 region: disabled
 weight: 0
 provider: null

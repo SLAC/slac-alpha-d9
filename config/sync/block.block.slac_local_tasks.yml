@@ -1,0 +1,22 @@
+uuid: 23fe1142-b827-4a70-adb3-f19de6f18714
+langcode: en
+status: true
+dependencies:
+  theme:
+    - slac
+_core:
+  default_config_hash: PT9SbJiFi5D05mGFOsw95RG6Xf57QSgDIU03hNd3l58
+id: slac_local_tasks
+theme: slac
+region: status
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }
