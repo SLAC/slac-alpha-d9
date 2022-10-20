@@ -30,7 +30,8 @@ include __DIR__ . "/settings.pantheon.php";
  */
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   $secrets_file = $_ENV['HOME'] . '/files/private/secrets.json';
-} else {
+}
+else {
   $secrets_file = __DIR__ . '/secrets.json';
 }
 
@@ -89,35 +90,43 @@ if (defined('PANTHEON_ENVIRONMENT')) {
 * see: https://pantheon.io/docs/guides/environment-configuration/environment-indicator
 */
 $conf['environment_indicator_overwrite'] = TRUE;
-$conf['environment_indicator_overwritten_position'] = 'top';
-$conf['environment_indicator_overwritten_fixed'] = FALSE;
+  $conf['environment_indicator_overwritten_position'] = 'top';
+  $conf['environment_indicator_overwritten_fixed'] = FALSE;
 
-// Pantheon Env Specific Config
-if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
-  switch ($_ENV['PANTHEON_ENVIRONMENT']) {
-    case 'dev':
-      $config['environment_indicator.indicator']['name'] = 'Dev';
-      $config['environment_indicator.indicator']['bg_color'] = '#307b24';
-      $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-      break;
-    case 'test':
-      $config['environment_indicator.indicator']['name'] = 'Test';
-      $config['environment_indicator.indicator']['bg_color'] = '#b85c00';
-      $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-      break;
-    case 'live':
-      $config['environment_indicator.indicator']['name'] = 'Live!';
-      $config['environment_indicator.indicator']['bg_color'] = '#e7131a';
-      $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-      break;
-    default:
-      //Multidev catchall
-      $config['environment_indicator.indicator']['name'] = 'Multidev';
-      $config['environment_indicator.indicator']['bg_color'] = '#e7131a';
-      $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
-      break;
+  // Pantheon Env Specific Config
+  if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
+      switch ($_ENV['PANTHEON_ENVIRONMENT']) {
+        case 'dev':
+          $config['environment_indicator.indicator']['name'] = 'Dev';
+          $config['environment_indicator.indicator']['bg_color'] = '#307b24';
+          $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
+          $config['config_split.config_split.local']['status'] = TRUE;
+          $config['config_split.config_split.prod']['status'] = FALSE;
+          break;
+        case 'test':
+          $config['environment_indicator.indicator']['name'] = 'Test';
+          $config['environment_indicator.indicator']['bg_color'] = '#b85c00';
+          $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
+          $config['config_split.config_split.local']['status'] = TRUE;
+          $config['config_split.config_split.prod']['status'] = FALSE;
+          break;
+        case 'live':
+          $config['environment_indicator.indicator']['name'] = 'Live!';
+          $config['environment_indicator.indicator']['bg_color'] = '#e7131a';
+          $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
+          $config['config_split.config_split.local']['status'] = FALSE;
+          $config['config_split.config_split.prod']['status'] = TRUE;
+          break;
+        default:
+          //Multidev catchall
+          $config['environment_indicator.indicator']['name'] = 'Multidev';
+          $config['environment_indicator.indicator']['bg_color'] = '#e7131a';
+          $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
+          $config['config_split.config_split.local']['status'] = TRUE;
+          $config['config_split.config_split.prod']['status'] = FALSE;
+          break;
+      }
   }
-}
 
 /**
  * If there is a local settings file, then include it
@@ -140,3 +149,4 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
 if ((file_exists(__DIR__ . '/settings.ddev.redis.php') && getenv('IS_DDEV_PROJECT') == 'true')) {
   include __DIR__ . '/settings.ddev.redis.php';
 }
+
