@@ -30,8 +30,25 @@ const Footer = args =>
       menu: ReactDOMServer.renderToStaticMarkup(
         <>{FooterMenu(FooterMenu.args)}</>
       ),
-      utility_menu: ReactDOMServer.renderToStaticMarkup(
+      global_menu: ReactDOMServer.renderToStaticMarkup(
         <>{FooterUtilityMenu(FooterUtilityMenu.args)}</>
+      ),
+      utility_menu: ReactDOMServer.renderToStaticMarkup(
+        <>
+          {FooterUtilityMenu({
+            menu_name: 'footer-utility',
+            items: [
+              {
+                title: 'A-Z Index',
+                url: '#0',
+              },
+              {
+                title: 'Website Feedback',
+                url: '#0',
+              },
+            ],
+          })}
+        </>
       ),
     })
   );

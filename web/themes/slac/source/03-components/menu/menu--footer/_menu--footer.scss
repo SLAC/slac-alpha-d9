@@ -40,17 +40,14 @@
 
   @include breakpoint(gesso-breakpoint(tablet)) {
     display: grid;
-    grid-auto-flow: column dense;
-    grid-column-gap: rem(gesso-spacing(5));
-    grid-template: repeat(3, min-content) / repeat(2, max-content);
+    gap: 40px 30px;
+    grid-template-columns: repeat(auto-fit, 190px);
+    justify-content: flex-end;
 
     > .c-menu__item {
       display: block;
+      margin-bottom: 0;
       width: auto;
     }
-  }
-
-  @include breakpoint(gesso-breakpoint(widescreen)) {
-    grid-template: repeat(2, min-content) / repeat(3, max-content);
   }
 }

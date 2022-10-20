@@ -4,32 +4,19 @@
 
 .l-footer {
   @include responsive-font-size(1);
-  @include on-dark-variables;
-  background: linear-gradient(
-      to bottom,
-      rgba(45, 45, 41, 0) 0%,
-      rgba(0, 0, 0, 0.88) 88%,
-      #0d0000 100%
-    ),
-    url('images/backgrounds/footer-bg.jpg') no-repeat top center/cover;
-  color: gesso-color(text, on-dark);
-  margin-top: calc(var(--gesso-footer-overlap) * -1);
-  mask: url('images/backgrounds/graphene_01_reverse.svg') no-repeat top -250px right -699px,
-    linear-gradient(
-        187deg,
-        rgba(0, 0, 0, 0) 0,
-        rgba(0, 0, 0, 0) var(--gesso-footer-overlap),
-        #000 var(--gesso-footer-overlap)
-      )
-      top right;
-  padding: var(--gesso-footer-overlap) 0 rem(gesso-spacing(3));
+  background-image: linear-gradient(
+    to right,
+    gesso-grayscale(white) 0%,
+    gesso-brand(fog, light) 30%,
+    gesso-grayscale(gray-1) 100%
+  );
+  padding: rem(gesso-spacing(3)) 0;
 
   a {
     color: inherit;
   }
 
   @include breakpoint(gesso-breakpoint(tablet)) {
-    mask-position: top -240px right -669px, 0% 0%;
     padding: rem(82px) 0 rem(gesso-spacing(3));
   }
 
@@ -41,17 +28,29 @@
 .l-footer > .l-constrain {
   display: grid;
   gap: rem(gesso-spacing(3));
-  grid-template-columns: 100%;
+  grid-template:
+    'address'
+    'social'
+    'menu'
+    'utility';
 
   @include breakpoint(gesso-breakpoint(tablet)) {
-    display: grid;
+    align-items: flex-end;
     gap: rem(gesso-spacing(8));
-    grid-template-columns: minmax(min-content, 390px) auto;
+    grid-template: auto / minmax(min-content, 280px) 1fr;
     justify-content: space-between;
   }
 
   @include breakpoint(gesso-breakpoint(desktop-lg)) {
     gap: rem(gesso-spacing(8)) rem(gesso-spacing(12));
+  }
+}
+
+.l-footer__contact {
+  grid-area: address;
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    grid-area: auto;
   }
 }
 
@@ -66,7 +65,8 @@
   }
 
   a {
-    @include arrow-link(white);
+    @include arrow-link(red);
+    font-weight: gesso-font-weight(bold);
   }
 
   @include breakpoint(gesso-breakpoint(tablet)) {
@@ -74,48 +74,35 @@
 
     li {
       margin-bottom: rem(gesso-spacing(0.5));
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 }
 
-.l-footer__signup {
-  h3 {
-    font-size: 18px;
-  }
+.l-footer__social {
+  align-self: flex-start;
+  grid-area: social;
 
-  > p {
-    font-size: 15px;
-    line-height: gesso-line-height(base);
-    max-width: rem(280px);
-  }
-
-  input {
-    font-weight: gesso-font-weight(bold);
-    height: auto;
-    line-height: 1;
-    padding-bottom: 14px;
-    padding-top: 12px;
-    width: 100%;
-  }
-
-  ::placeholder {
-    opacity: 0.8;
-  }
-
-  @media (min-width: 20.625em) {
-    width: auto;
-  }
-
-  @include breakpoint(gesso-breakpoint(desktop)) {
-    input {
-      width: rem(280px);
-    }
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    grid-area: auto;
   }
 }
 
-.l-footer__signup-form.is-inline {
-  @media (min-width: 20.625em) {
-    display: flex;
-    gap: rem(gesso-spacing(1));
+.l-footer__menu {
+  grid-area: menu;
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    grid-area: auto;
+  }
+}
+
+.l-footer__utility {
+  grid-area: utility;
+
+  @include breakpoint(gesso-breakpoint(tablet)) {
+    grid-area: auto;
   }
 }

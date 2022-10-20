@@ -1,7 +1,7 @@
 ---
 menu_name: 'footer'
 items:
-  - title: 'About'
+  - title: 'Lorem Ips 1'
     url: '#0'
     original_link:
       options:
@@ -9,31 +9,49 @@ items:
           class: ''
     in_active_trail: false
     below:
-      - title: 'Our Story'
+      - title: 'Lorem Ipsum Dolor'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Consectetur Adipiscing'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Adipiscing Elit Amet'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Our People'
+      - title: 'Urna Dui Amet Facilisis'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Resources'
-        url: '#0'
+      - title: 'Pretium Diam Auctor'
+        url: 'https://example.com'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Lab Overview'
-        url: '#0'
+      - title: 'Volutpat Sitorbi Nulls'
+        url: 'https://example.com'
         original_link:
           options:
             attributes:
               class: ''
-  - title: 'Research'
+      - title: 'Semper Diam Ultrices'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+  - title: 'Lorem Ips 2'
     url: '#0'
     original_link:
       options:
@@ -41,49 +59,49 @@ items:
           class: ''
     in_active_trail: false
     below:
-      - title: 'X-ray & Ultrafast Science'
+      - title: 'Lorem Ipsum Dolor'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Consectetur Adipiscing'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Adipiscing Elit Amet'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Advanced Accelerators'
+      - title: 'Urna Dui Amet Facilisis'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Emerging Technologies'
-        url: '#0'
+      - title: 'Pretium Diam Auctor'
+        url: 'https://example.com'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Physics of the Universe'
-        url: '#0'
+      - title: 'Volutpat Sitorbi Nulls'
+        url: 'https://example.com'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Science of Life'
-        url: '#0'
+      - title: 'Semper Diam Ultrices'
+        url: 'https://example.com'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Energy Science'
-        url: '#0'
-        original_link:
-          options:
-            attributes:
-              class: ''
-      - title: 'SLAC Science Explained'
-        url: '#0'
-        original_link:
-          options:
-            attributes:
-              class: ''
-  - title: 'Facilities & Centers'
+  - title: 'Lorem Ips 3'
     url: '#0'
     original_link:
       options:
@@ -91,19 +109,49 @@ items:
           class: ''
     in_active_trail: false
     below:
-      - title: 'Scientific Facilities'
+      - title: 'Lorem Ipsum Dolor'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Consectetur Adipiscing'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Adipiscing Elit Amet'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Joint Institutes & Centers'
+      - title: 'Urna Dui Amet Facilisis'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-  - title: 'Work with Us'
+      - title: 'Pretium Diam Auctor'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Volutpat Sitorbi Nulls'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Semper Diam Ultrices'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+  - title: 'Lorem Ips 4'
     url: '#0'
     original_link:
       options:
@@ -111,31 +159,49 @@ items:
           class: ''
     in_active_trail: false
     below:
-      - title: 'Partner with us'
+      - title: 'Lorem Ipsum Dolor'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Consectetur Adipiscing'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Adipiscing Elit Amet'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Use our facilities'
+      - title: 'Urna Dui Amet Facilisis'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Become a supplier'
-        url: '#0'
+      - title: 'Pretium Diam Auctor'
+        url: 'https://example.com'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Careers at SLAC'
-        url: '#0'
+      - title: 'Volutpat Sitorbi Nulls'
+        url: 'https://example.com'
         original_link:
           options:
             attributes:
               class: ''
-  - title: 'News & Events'
+      - title: 'Semper Diam Ultrices'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+  - title: 'Lorem Ips 5'
     url: '#0'
     original_link:
       options:
@@ -143,32 +209,94 @@ items:
           class: ''
     in_active_trail: false
     below:
-      - title: 'News Center'
+      - title: 'Lorem Ipsum Dolor'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Consectetur Adipiscing'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Adipiscing Elit Amet'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Symmetry Magazine'
-        url: 'https://www.symmetrymagazine.org'
-        original_link:
-          options:
-            attributes:
-              class: ''
-      - title: 'Media Resources'
+      - title: 'Urna Dui Amet Facilisis'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'SLAC Events'
+      - title: 'Pretium Diam Auctor'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Volutpat Sitorbi Nulls'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Semper Diam Ultrices'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+  - title: 'Lorem Ips 6'
+    url: '#0'
+    original_link:
+      options:
+        attributes:
+          class: ''
+    in_active_trail: false
+    below:
+      - title: 'Lorem Ipsum Dolor'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Consectetur Adipiscing'
+        url: 'https://internal.slac.stanford.edu'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Adipiscing Elit Amet'
         url: '#0'
         original_link:
           options:
             attributes:
               class: ''
-      - title: 'Educational Programs'
+      - title: 'Urna Dui Amet Facilisis'
         url: '#0'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Pretium Diam Auctor'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Volutpat Sitorbi Nulls'
+        url: 'https://example.com'
+        original_link:
+          options:
+            attributes:
+              class: ''
+      - title: 'Semper Diam Ultrices'
+        url: 'https://example.com'
         original_link:
           options:
             attributes:

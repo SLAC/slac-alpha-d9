@@ -21,6 +21,7 @@
   }
 
   @include breakpoint(gesso-breakpoint(tablet)) {
+    justify-content: flex-end;
     line-height: gesso-line-height(loose);
   }
 }

@@ -6,7 +6,6 @@
   @include list-inline;
   font-size: 16px;
   gap: rem(gesso-spacing(2));
-  margin-top: 1rem;
 
   a {
     color: inherit;
@@ -35,9 +34,4 @@
 
 .c-social-links__linkedin:hover {
   color: #0a66c2;
-}
-
-// No hover colors in the footer due to low contrast
-.l-footer .c-social-links li:hover {
-  color: gesso-grayscale(white);
 }
