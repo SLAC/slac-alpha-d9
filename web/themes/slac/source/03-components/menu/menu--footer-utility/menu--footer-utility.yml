@@ -1,5 +1,5 @@
 ---
-menu_name: 'footer-utility'
+menu_name: 'footer-global'
 items:
   - title: 'Staff Portal'
     url: 'https://intranet.slac.stanford.edu/'
@@ -8,14 +8,7 @@ items:
         attributes:
           class: ''
     in_active_trail: false
-  - title: 'A-Z Index'
-    url: '#0'
-    original_link:
-      options:
-        attributes:
-          class: ''
-    in_active_trail: false
-  - title: 'Terms of Use'
+  - title: 'Privacy Policy'
     url: '#0'
     original_link:
       options:
@@ -29,7 +22,7 @@ items:
         attributes:
           class: ''
     in_active_trail: false
-  - title: 'Website Feedback'
+  - title: 'Vulnerability Disclosure'
     url: '#0'
     original_link:
       options:

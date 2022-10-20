@@ -93,7 +93,7 @@ gesso:
     sm: 600px
     images: 812px
     teaser: 1026px
-    md: 1240px
+    md: 1304px
     lg: 2200px
   breakpoints:
     mobile: 320px

@@ -6,41 +6,9 @@
   padding-bottom: rem(gesso-spacing(5));
   padding-top: rem(gesso-spacing(5));
 
-  &:last-child {
-    padding-bottom: calc(
-      #{rem(gesso-spacing(5))} + var(--gesso-footer-overlap)
-    );
-  }
-
   @include breakpoint-min(gesso-breakpoint(desktop)) {
     padding-bottom: rem(gesso-spacing(10));
     padding-top: rem(gesso-spacing(10));
-
-    &:last-child {
-      padding-bottom: calc(
-        #{rem(gesso-spacing(10))} + var(--gesso-footer-overlap)
-      );
-    }
-  }
-}
-
-.l-section--no-padding {
-  &:last-child {
-    padding-bottom: calc(var(--gesso-footer-overlap));
-
-    .l-section & {
-      padding-bottom: 0;
-    }
-  }
-
-  @include breakpoint-min(gesso-breakpoint(desktop)) {
-    &:last-child {
-      padding-bottom: calc(var(--gesso-footer-overlap));
-
-      .l-section & {
-        padding-bottom: 0;
-      }
-    }
   }
 }
 
