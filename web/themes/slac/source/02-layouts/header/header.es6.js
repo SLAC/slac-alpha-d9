@@ -5,6 +5,19 @@ Drupal.behaviors.header = {
   attach(context) {
     const header = context.querySelector('.l-header');
     if (header) {
+      const updateHeaderCurrentHeight = () => {
+        let headerHeight = header.getBoundingClientRect().height;
+        const globalHeader = document.querySelector('.l-global-header');
+        if (globalHeader && !header.classList.contains('is-sticky')) {
+          headerHeight += globalHeader.getBoundingClientRect().height;
+        }
+        setTimeout(() => {
+          document.documentElement.style.setProperty(
+            '--gesso-header-current-height',
+            `${headerHeight}px`
+          );
+        }, 0);
+      };
       const changeOnScroll = throttle(() => {
         const ginToolbarSecondaryHeight = getComputedStyle(
           document.documentElement
@@ -28,7 +41,9 @@ Drupal.behaviors.header = {
         header.style.setProperty('--slac-scroll-progress', `${scrolledAmt}%`);
       }, 16);
       window.addEventListener('scroll', changeOnScroll);
+      header.addEventListener('transitionend', updateHeaderCurrentHeight);
       window.addEventListener('scroll', updateScrollProgress);
+      updateHeaderCurrentHeight();
     }
   },
 };

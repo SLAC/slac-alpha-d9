@@ -17,7 +17,7 @@
       'is_hidden': true
     } %}
   </button>
-  <form class="c-search__form c-mega-menu__section" id="{{ search_form_id }}" hidden>
+  <form class="c-search__form" id="{{ search_form_id }}" hidden>
     <div class="l-constrain l-constrain--small">
       <div class="c-search__inner">
        {% include '@components/search/_search-input.twig' %}
@@ -54,7 +54,7 @@
       </div>
       {% endif %}
     </div>
-    <button aria-label="{{ 'Close menu'|t }}" class="c-mega-menu__section-close c-menu__section-close">
+    <button aria-label="{{ 'Close menu'|t }}" class="c-search__form-close">
       {% include '@components/icon/icon.twig' with {
         icon_name: 'close',
         modifier_classes: 'c-menu__close-icon',

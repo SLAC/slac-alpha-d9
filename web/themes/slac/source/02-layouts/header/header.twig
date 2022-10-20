@@ -25,8 +25,10 @@
       url: '#'
     } %}
   {% endblock %}
+  {% block freeform %}
+    {{ header_freeform }}
+  {% endblock %}
   {% block content %}
-    <div>You can put whatever you want here and it'll be awesome!</div>
     {{ header_content }}
   {% endblock %}
   {% if has_constrain %}

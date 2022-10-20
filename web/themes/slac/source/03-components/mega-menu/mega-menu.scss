@@ -6,7 +6,7 @@
 .c-block--mega-menu {
   @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
     @include menu;
-    max-width: 813px;
+    width: 100%;
   }
 }
 
@@ -14,9 +14,9 @@
   @include menu;
   background: gesso-color(background, site);
   justify-content: space-between;
-  max-width: 813px;
   padding-left: 0;
   position: relative;
+  width: 100%;
   z-index: 1;
 
   &::after {
