@@ -1,0 +1,12 @@
+{% set classes = [
+  'l-global-header',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<div {{ add_attributes({class: classes}) }}>
+  <div class="l-constrain">
+    <a href="{{ slac_url }}">
+      {% include "@layouts/global-header/_slac-logo.twig" %}
+    </a>
+  </div>
+</div>

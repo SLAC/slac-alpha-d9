@@ -1,41 +1,21 @@
 // Layout: Header
 @use '00-config' as *;
 
-:root {
-  --gesso-header-initial-height: 68px;
-}
-
-@include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
-  :root {
-    --gesso-header-initial-height: 111px;
-  }
-}
-
 .l-header {
   --gesso-scroll-progress: 0%;
   background: gesso-color(background, site);
   border-bottom: 1px solid rgba(gesso-grayscale(stanford-black), 0.3);
-  height: var(--gesso-header-initial-height);
   left: 0;
   position: sticky;
   top: calc(var(--ginToolbarHeight, 0px));
   width: 100%;
   z-index: gesso-z-index(nav);
 
-  .has-transparent-nav & {
-    background-color: transparent;
-    border-bottom-color: transparent;
-  }
-
   &.is-sticky {
     .has-transparent-nav & {
       background-color: gesso-color(background, site);
       border-bottom-color: rgba(gesso-grayscale(stanford-black), 0.3);
     }
-  }
-
-  &.c-microsite-hero__header {
-    --gesso-header-initial-height: 112px;
   }
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
@@ -51,10 +31,6 @@
     &.is-sticky {
       height: auto;
       padding: 1rem 0 1.25rem;
-    }
-
-    &.c-microsite-hero__header {
-      --gesso-header-initial-height: 172px;
     }
   }
 }
@@ -75,10 +51,6 @@
   background-color: gesso-color(background, site);
   flex: 1;
   z-index: gesso-z-index(nav) + 1;
-
-  .has-transparent-nav & {
-    background-color: transparent;
-  }
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     align-items: center;
@@ -103,10 +75,6 @@
   display: block;
   height: 32px;
   width: auto;
-
-  .has-inverse-nav & {
-    filter: brightness(0) invert(1);
-  }
 
   .is-sticky & {
     filter: initial;
@@ -139,8 +107,8 @@
   background: linear-gradient(
     to right,
     gesso-brand(cardinal, base) 0%,
-    gesso-brand(cardinal, base) var(--gesso-scroll-progress),
-    rgba(255, 255, 255, 0) var(--gesso-scroll-progress)
+    gesso-brand(cardinal, base) var(--slac-scroll-progress),
+    rgba(255, 255, 255, 0) var(--slac-scroll-progress)
   );
   bottom: -1px;
   height: 4px;
