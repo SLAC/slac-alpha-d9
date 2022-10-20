@@ -3,6 +3,7 @@ import parse from 'html-react-parser';
 import ReactDOMServer from 'react-dom/server';
 import React from 'react';
 import twigTemplate from './header.twig';
+import globalData from '../../00-config/storybook.global-data.yml';
 import data from './header.yml';
 import { MegaMenu } from '../../03-components/mega-menu/mega-menu.stories';
 import './header.es6';
@@ -31,7 +32,7 @@ const Header = args =>
       ),
     })
   );
-Header.args = { ...data };
+Header.args = { ...globalData, ...data };
 
 export default settings;
 export { Header };

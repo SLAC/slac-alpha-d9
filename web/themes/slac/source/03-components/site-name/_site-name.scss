@@ -3,10 +3,55 @@
 @use '00-config' as *;
 
 .c-site-name {
+  @include custom-responsive-font-size(rem(24px), rem(42px));
   display: inline-block;
+  font-weight: gesso-font-weight(bold);
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--gesso-text-color);
+  }
+}
+
+.c-site-name--logo {
+  --gesso-text-color: #{gesso-brand(stone, dark)};
+}
+
+.c-site-name__acronym {
+  border-right: 1px solid var(--gesso-text-color);
+  display: inline-block;
+  line-height: 1;
+  margin-right: 1ch;
+  padding-right: 1ch;
+
+  .c-site-name--logo & {
+    @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
+      color: var(--gesso-accent-color);
+      font-size: rem(54px);
+      font-weight: gesso-font-weight(black);
+      margin-right: gesso-spacing(0.5);
+      padding-right: gesso-spacing(0.5);
+      vertical-align: middle;
+    }
+  }
 }
 
 .c-site-name__text {
-  @include display-text-style(h1);
-  margin-bottom: rem(gesso-spacing(2));
+  color: var(--gesso-text-color);
+
+  .c-site-name--logo & {
+    @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
+      display: inline-block;
+      font-size: rem(22px);
+      font-weight: gesso-font-weight(regular);
+      line-height: 1.05;
+      vertical-align: middle;
+
+      span {
+        display: block;
+      }
+    }
+  }
 }

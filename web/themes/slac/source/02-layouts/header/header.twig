@@ -20,12 +20,13 @@
   {% if has_constrain %}
     <div {{ add_attributes({ 'class': constrain_classes }) }}>
   {% endif %}
-  {% block logo %}
-    <a href="{{ url('<front>') }}" class="l-header__brand">
-      LOGO TK
-    </a>
+  {% block site_branding %}
+    {% include '@components/site-name/site-name.twig' with {
+      url: '#'
+    } %}
   {% endblock %}
   {% block content %}
+    <div>You can put whatever you want here and it'll be awesome!</div>
     {{ header_content }}
   {% endblock %}
   {% if has_constrain %}
