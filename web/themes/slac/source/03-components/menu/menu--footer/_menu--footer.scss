@@ -40,13 +40,13 @@
 
   @include breakpoint(gesso-breakpoint(tablet)) {
     display: grid;
-    grid-column-gap: 30px;
+    gap: 40px 30px;
     grid-template-columns: repeat(auto-fit, 190px);
     justify-content: flex-end;
-    margin-bottom: rem(0 - gesso-spacing(2.5));
 
     > .c-menu__item {
       display: block;
+      margin-bottom: 0;
       width: auto;
     }
   }
