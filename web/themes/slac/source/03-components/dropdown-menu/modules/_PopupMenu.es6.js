@@ -94,7 +94,7 @@ class PopupMenu extends Menu {
     } else {
       const rightEdge =
         rect.x + parseFloat(getComputedStyle(this.domNode).width);
-      const screenWidth = window.screen.availWidth;
+      const screenWidth = window.innerWidth;
       if (rightEdge > screenWidth) {
         this.domNode.style.right = '0';
         this.domNode.style.left = 'auto';
@@ -103,9 +103,9 @@ class PopupMenu extends Menu {
       this.domNode.style.position = 'absolute';
       this.domNode.style.top = `${rect.height}px`;
       this.domNode.style.zIndex = Z_INDEX.drawer.toString();
-      setTimeout(() => {
+      window.requestAnimationFrame(() => {
         this.domNode.classList.add('is-open');
-      }, 0);
+      });
     }
     this.controller.setExpanded(true);
   }
