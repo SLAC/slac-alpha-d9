@@ -29,16 +29,25 @@ class MenuItem {
     this.domNode.addEventListener('keydown', this.handleKeydown);
     this.domNode.addEventListener('focus', this.handleFocus);
     this.domNode.addEventListener('blur', this.handleBlur);
-    this.domNode.addEventListener('mouseover', this.handleMouseover);
-    this.domNode.addEventListener('mouseout', this.handleMouseout);
+    this.domNode.parentNode.addEventListener(
+      'mouseenter',
+      this.handleMouseover
+    );
+    this.domNode.parentNode.addEventListener('mouseleave', this.handleMouseout);
   }
 
   destroy() {
     this.domNode.removeEventListener('keydown', this.handleKeydown);
     this.domNode.removeEventListener('focus', this.handleFocus);
     this.domNode.removeEventListener('blur', this.handleBlur);
-    this.domNode.removeEventListener('mouseover', this.handleMouseover);
-    this.domNode.removeEventListener('mouseout', this.handleMouseout);
+    this.domNode.parentNode.removeEventListener(
+      'mouseenter',
+      this.handleMouseover
+    );
+    this.domNode.parentNode.removeEventListener(
+      'mouseleave',
+      this.handleMouseout
+    );
   }
 
   /**
@@ -115,7 +124,7 @@ class MenuItem {
     if (this.popupMenu && this.menu.options.displayMenuOnHover) {
       // Hide the submenu if the outer menu is configured to display menus on hover.
       this.popupMenu.setHover(false);
-      setTimeout(this.popupMenu.close.bind(this.popupMenu, false), 300);
+      this.popupMenu.close();
     }
   }
 

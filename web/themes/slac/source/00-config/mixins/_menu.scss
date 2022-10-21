@@ -10,29 +10,29 @@
 }
 
 @mixin menu-item {
-  border-bottom: 1px solid gesso-color(background, site);
   list-style-type: none;
 }
 
 @mixin menu-link {
   @include link(var(--gesso-link-color), var(--gesso-link-color));
   display: block;
-  font-size: rem(gesso-font-size(3));
-  font-weight: gesso-font-weight(regular);
-  padding: rem(4.8px) 0;
+  font-size: rem(gesso-font-size(1));
+  font-weight: gesso-font-weight(bold);
+  letter-spacing: 0.08em;
+  padding: 0 0 24px;
   position: relative;
   text-align: left;
   transition: all 0.4s ease;
   width: auto;
 
-  &::after {
+  &::before {
     background: currentColor;
+    bottom: 4px;
     content: '';
-    height: rem(4px);
+    height: 4px;
     left: 0;
-    margin-top: rem(gesso-spacing(1.5));
+    pointer-events: none;
     position: absolute;
-    top: calc(100% + 4px);
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform gesso-duration(long) cubic-bezier(0.23, 1, 0.32, 1),
@@ -42,7 +42,7 @@
   }
 
   &.is-active-trail {
-    &::after {
+    &::before {
       max-width: rem(40px);
       transform: scaleX(0.5);
     }
@@ -50,14 +50,14 @@
 
   &:hover,
   &[aria-expanded='true'] {
-    &::after {
+    &::before {
       transform: scaleX(1);
       transform-origin: right center;
     }
 
     // stylelint-disable max-nesting-depth
     &.is-active-trail {
-      &::after {
+      &::before {
         max-width: none;
         transform-origin: left center;
       }

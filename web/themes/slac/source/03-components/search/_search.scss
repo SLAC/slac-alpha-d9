@@ -40,7 +40,7 @@
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     --gesso-search-font-size: #{rem(gesso-font-size(9))};
-    background-color: gesso-color(background, mega-menu);
+    background-color: gesso-color(background, dropdown-menu);
 
     .c-search--dropdown & {
       @include layout-full-bleed;

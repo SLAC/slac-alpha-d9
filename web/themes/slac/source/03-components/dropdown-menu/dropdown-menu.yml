@@ -23,28 +23,6 @@ items:
             attributes:
               class: ''
         in_active_trail: false
-        below:
-          - title: 'Submenu item one'
-            url: '#0'
-            original_link:
-              options:
-                attributes:
-                  class: ''
-            in_active_trail: false
-          - title: 'Submenu item two'
-            url: '#0'
-            original_link:
-              options:
-                attributes:
-                  class: ''
-            in_active_trail: false
-          - title: 'Submenu item three'
-            url: '#0'
-            original_link:
-              options:
-                attributes:
-                  class: ''
-            in_active_trail: false
       - title: 'Submenu item two'
         url: '#0'
         original_link:
@@ -88,3 +66,18 @@ items:
         attributes:
           class: ''
     in_active_trail: false
+    below:
+      - title: 'Submenu item one'
+        url: '#0'
+        original_link:
+          options:
+            attributes:
+              class: ''
+        in_active_trail: false
+      - title: 'Submenu item two'
+        url: '#0'
+        original_link:
+          options:
+            attributes:
+              class: ''
+        in_active_trail: false

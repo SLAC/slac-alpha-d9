@@ -93,7 +93,7 @@
 
 .c-mega-menu__section {
   @include layout-full-bleed;
-  background-color: gesso-color(background, mega-menu);
+  background-color: gesso-color(background, dropdown-menu);
   border-top: 1px solid rgba(#2e2929, 0.3);
   bottom: 100%;
   box-shadow: gesso-box-shadow(1);

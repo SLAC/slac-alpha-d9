@@ -5,9 +5,9 @@ import React from 'react';
 import twigTemplate from './header.twig';
 import globalData from '../../00-config/storybook.global-data.yml';
 import data from './header.yml';
-import { MegaMenu } from '../../03-components/mega-menu/mega-menu.stories';
 import './header.es6';
 import { Search } from '../../03-components/search/search.stories';
+import { DropdownMenu } from '../../03-components/dropdown-menu/dropdown-menu.stories';
 
 const settings = {
   title: 'Layouts/Header',
@@ -26,7 +26,7 @@ const Header = args =>
       ...args,
       header_content: ReactDOMServer.renderToStaticMarkup(
         <>
-          {MegaMenu(MegaMenu.args)}
+          {DropdownMenu(DropdownMenu.args)}
           {Search(Search.args)}
         </>
       ),
