@@ -11,10 +11,6 @@
   padding-left: 0;
   position: relative;
 
-  .is-sticky & {
-    width: calc(100% - #{rem(109px)});
-  }
-
   > .c-dropdown-menu__item {
     @include menu-item;
     position: relative;
@@ -49,6 +45,10 @@
       @include text-button;
       @include link(gesso-color(text, link), gesso-color(text, link-hover));
     }
+  }
+
+  .is-sticky & {
+    margin-top: gesso-spacing(3);
   }
 }
 

@@ -58,3 +58,9 @@
     display: none;
   }
 }
+
+.l-header__freeform {
+  .is-sticky & {
+    display: none;
+  }
+}

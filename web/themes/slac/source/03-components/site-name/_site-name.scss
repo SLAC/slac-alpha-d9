@@ -13,10 +13,20 @@
   &:active {
     color: var(--gesso-text-color);
   }
+
+  .is-sticky & {
+    @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
+      font-size: rem(26px);
+    }
+  }
 }
 
 .c-site-name--logo {
   --gesso-text-color: #{gesso-brand(stone, dark)};
+
+  .is-sticky & {
+    --gesso-text-color: #{gesso-color(text, primary)};
+  }
 }
 
 .c-site-name__acronym {
@@ -36,6 +46,16 @@
       vertical-align: middle;
     }
   }
+
+  .is-sticky .c-site-name--logo & {
+    @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
+      color: var(--gesso-text-color);
+      font-size: inherit;
+      font-weight: inherit;
+      margin-right: 1ch;
+      padding-right: 1ch;
+    }
+  }
 }
 
 .c-site-name__text {
@@ -51,6 +71,18 @@
 
       span {
         display: block;
+      }
+    }
+  }
+
+  .is-sticky .c-site-name--logo & {
+    @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+
+      span {
+        display: inline;
       }
     }
   }

@@ -8,6 +8,10 @@
   @include breakpoint-max(gesso-breakpoint(mobile-menu)) {
     display: none;
   }
+
+  .is-sticky & {
+    display: none;
+  }
 }
 
 .c-logo__image {

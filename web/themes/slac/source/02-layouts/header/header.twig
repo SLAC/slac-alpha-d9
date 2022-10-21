@@ -22,12 +22,15 @@
   {% endif %}
   {% block site_branding %}
     {% include '@components/site-name/site-name.twig' with {
-      url: '#'
+      url: '#',
+      has_logo: true
     } %}
   {% endblock %}
-  {% block freeform %}
-    {{ header_freeform }}
-  {% endblock %}
+  <div class="l-header__freeform">
+    {% block freeform %}
+      {{ header_freeform }}
+    {% endblock %}
+  </div>
   {% block content %}
     {{ header_content }}
   {% endblock %}

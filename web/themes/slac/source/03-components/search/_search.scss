@@ -10,8 +10,7 @@
   z-index: 1;
 
   .is-sticky & {
-    margin-left: rem(gesso-spacing(2));
-    position: static;
+    top: 0;
   }
 
   .contextual-region & {

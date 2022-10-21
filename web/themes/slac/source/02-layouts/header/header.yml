@@ -1,7 +1,7 @@
 ---
 is_demo: true
 header_content: ''
-header_freeform: 'Placeholder text to represent the freeform area'
+header_freeform: 'Placeholder text to represent the optional freeform area'
 modifier_classes: ''
 has_constrain: true
 constrain_modifier_classes: ''
