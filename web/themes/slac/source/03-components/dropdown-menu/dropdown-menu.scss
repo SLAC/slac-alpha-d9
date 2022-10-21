@@ -83,6 +83,10 @@
   display: none;
   left: 0;
   margin: 0;
+  max-height: calc(
+    100vh - var(--gesso-header-current-height) - var(--ginToolbarHeight, 0px)
+  );
+  overflow-y: auto;
   padding: 0;
   position: absolute;
   top: 0;
@@ -96,6 +100,7 @@
   }
 
   .c-dropdown-menu__link {
+    --gesso-accent-color: var(--gesso-link-color);
     display: block;
     font-size: rem(gesso-font-size(3));
     line-height: gesso-line-height(base);
@@ -105,23 +110,12 @@
 
     &:hover,
     &:focus-visible {
+      --gesso-accent-color: var(--gesso-link-hover-color);
       text-decoration-line: underline;
-    }
-
-    &.has-subnav::after {
-      @include image-replace(16px, 16px);
-      @include svg-background(menu-arrow-right);
-      background-size: 16px 16px;
-      content: '';
-      display: block;
-      position: absolute;
-      right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
     }
   }
 
   .c-dropdown-menu__subnav {
-    margin: 0;
+    @include hidden-important;
   }
 }

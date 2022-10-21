@@ -25,6 +25,7 @@ class MobileMenu extends OverlayMenu {
       searchBlockClass = '.c-search',
       utilityNavClass = '.c-menu--utility',
       logoClass = '.l-header__logo',
+      titleClass = '.c-site-name',
       toggleSubnav = true,
       mobileMenuBreakpoint = `(max-width: ${BREAKPOINTS['mobile-menu']})`,
       classPrefix = '',
@@ -44,6 +45,7 @@ class MobileMenu extends OverlayMenu {
       ? context.querySelectorAll(otherBlockClass)
       : null;
     this.logo = logoClass ? context.querySelector(logoClass) : null;
+    this.siteTitle = titleClass ? context.querySelector(titleClass) : null;
     this.options = {
       toggleSubnav,
       mobileMenuBreakpoint,
@@ -239,16 +241,15 @@ class MobileMenu extends OverlayMenu {
     );
     if (subMenus.length) {
       subMenus.forEach((submenu, index) => {
-        let link = submenu
-          .closest('.c-mobile-menu__item')
-          .querySelector('.c-mobile-menu__link');
+        const item = submenu.closest('.c-mobile-menu__item');
+        let link = item.querySelector('.c-mobile-menu__link');
         // Swap submenu classes and ID.
         submenu.classList.add('c-mobile-menu__subnav');
         submenu.classList.remove(`${this.options.classPrefix}__subnav`);
         submenu.id = cleanString(
           `mobile-menu-${link.innerText.trim()}${index || ''}`
         );
-        if (this.options.toggleSubnav) {
+        if (this.options.toggleSubnav && item.parentElement === menuClone) {
           if (link.tagName === 'BUTTON') {
             const linkParent = link.parentElement;
             const newItem = linkParent.querySelector('.c-mobile-menu__item');
@@ -372,6 +373,14 @@ class MobileMenu extends OverlayMenu {
       );
       overlayHeader.insertAdjacentElement('beforeend', this.closeButton);
       this.overlay.insertAdjacentElement('afterbegin', overlayHeader);
+    }
+    if (this.siteTitle) {
+      const newSiteTitle = this.cloneBlock(
+        this.siteTitle,
+        'c-mobile-menu__site-name'
+      );
+      newSiteTitle.hidden = false;
+      this.overlay.appendChild(newSiteTitle);
     }
     if (this.searchBlock) {
       const newSearchBlock = this.cloneBlock(

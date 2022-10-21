@@ -22,10 +22,12 @@
 }
 
 .c-site-name--logo {
-  --gesso-text-color: #{gesso-brand(stone, dark)};
+  @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
+    --gesso-text-color: #{gesso-brand(stone, dark)};
 
-  .is-sticky & {
-    --gesso-text-color: #{gesso-color(text, primary)};
+    .is-sticky & {
+      --gesso-text-color: #{gesso-color(text, primary)};
+    }
   }
 }
 

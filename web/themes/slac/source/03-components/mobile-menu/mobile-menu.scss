@@ -9,11 +9,8 @@ $mobile-menu-bg-color: linear-gradient(
   gesso-brand(sky, dark),
   gesso-brand(palo-verde, dark)
 );
-$mobile-menu-link-color: gesso-color(text, on-dark);
-$mobile-menu-link-hover-color: gesso-color(text, on-dark);
+
 $mobile-menu-submenu-bg-color: transparent;
-$mobile-menu-submenu-link-color: inherit;
-$mobile-menu-submenu-link-hover-color: inherit;
 $mobile-menu-button-height: 50px;
 $mobile-menu-button-width: 48px;
 $mobile-menu-font-size: gesso-font-size(3);
@@ -21,8 +18,9 @@ $mobile-menu-line-height: gesso-line-height(tight);
 $mobile-menu-border-color: gesso-brand(sky, base);
 
 .c-mobile-menu {
+  @include on-dark-variables;
   background: $mobile-menu-bg-color;
-  color: $mobile-menu-link-color;
+  color: var(--gesso-text-color);
   display: none;
   font-size: rem($mobile-menu-font-size);
   height: 100vh;
@@ -110,7 +108,6 @@ $mobile-menu-border-color: gesso-brand(sky, base);
   background-color: transparent;
   border: solid transparent;
   border-width: 0 0 0 5px;
-  color: $mobile-menu-link-color;
   display: block;
   flex: 1;
   letter-spacing: 1px;
@@ -131,11 +128,8 @@ $mobile-menu-border-color: gesso-brand(sky, base);
   width: auto;
   z-index: 3;
 
-  &:hover,
-  &:focus,
-  &:active,
   &.is-active {
-    color: $mobile-menu-link-hover-color;
+    color: var(--gesso-link-hover-color);
   }
 
   &.has-subnav {
@@ -170,14 +164,12 @@ button.c-mobile-menu__link {
 
   .c-mobile-menu__link {
     border-left-width: 0;
-    color: $mobile-menu-submenu-link-color;
     padding-left: gesso-spacing(3);
     text-transform: none;
 
     &:hover,
     &:focus-visible,
     &:active {
-      color: $mobile-menu-submenu-link-hover-color;
       text-decoration: underline;
     }
 
@@ -192,16 +184,17 @@ button.c-mobile-menu__link {
 }
 
 .c-mobile-menu__subnav .c-mobile-menu__subnav {
+  @include hidden;
+
   .c-mobile-menu__link {
     letter-spacing: normal;
     padding-left: gesso-spacing(6);
     text-transform: none;
-
-    .c-menu-menu__section--facilities-centers & {
-      @include arrow-link(white);
-      padding-bottom: 0;
-    }
   }
+}
+
+.c-mobile-menu__subnav a.is-active-trail + .c-mobile-menu__subnav {
+  display: block;
 }
 
 .c-mobile-menu__subnav-toggle {
@@ -229,4 +222,9 @@ button.c-mobile-menu__link {
   .is-open & {
     color: inherit;
   }
+}
+
+.c-mobile-menu__site-name {
+  margin-bottom: gesso-spacing(5);
+  max-width: calc(100% - #{rem(75px)});
 }

@@ -160,7 +160,6 @@
 }
 
 .c-search__submit {
-  color: var(--gesso-text-color);
   font-size: calc(var(--gesso-search-font-size));
   margin-bottom: 0;
   position: absolute;
@@ -245,12 +244,11 @@
   transition: opacity gesso-duration(short) gesso-easing(ease-in);
   width: rem(50px);
 
-  .c-mega-menu__close-icon {
-    height: rem(22px);
-    width: rem(32px);
-  }
-
   &:hover {
     color: gesso-color(text, link-hover);
+  }
+
+  @include breakpoint-max(gesso-breakpoint(mobile-menu)) {
+    display: none;
   }
 }

@@ -15,6 +15,7 @@ Drupal.behaviors.dropdownMenu = {
           searchBlockClass: '.c-search__form',
           otherBlockClass: '.l-header__freeform',
           imagePath: settings.gesso.gessoImagePath,
+          logoClass: '.l-global-header__logo',
         });
         mobileMenu.init();
       });
