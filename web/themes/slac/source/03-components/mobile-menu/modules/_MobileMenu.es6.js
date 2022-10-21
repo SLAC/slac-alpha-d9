@@ -233,15 +233,6 @@ class MobileMenu extends OverlayMenu {
       socialLink.classList.add('c-mobile-menu__social');
     });
 
-    // Add class to cards
-    const cards = menuClone.querySelectorAll('.c-card');
-    cards.forEach(card => {
-      card.classList.add('c-card--on-dark');
-      card.querySelectorAll('.c-arrow-link').forEach(arrow => {
-        arrow.classList.add('c-arrow-link--white');
-      });
-    });
-
     // Prep sub-menus, if applicable.
     const subMenus = menuClone.querySelectorAll(
       `.${this.options.classPrefix}__subnav`
@@ -257,12 +248,7 @@ class MobileMenu extends OverlayMenu {
         submenu.id = cleanString(
           `mobile-menu-${link.innerText.trim()}${index || ''}`
         );
-        if (
-          this.options.toggleSubnav &&
-          submenu.parentElement.classList.contains(
-            'c-mobile-menu__section-inner'
-          )
-        ) {
+        if (this.options.toggleSubnav) {
           if (link.tagName === 'BUTTON') {
             const linkParent = link.parentElement;
             const newItem = linkParent.querySelector('.c-mobile-menu__item');
@@ -295,6 +281,11 @@ class MobileMenu extends OverlayMenu {
       if (this.utilityNav) {
         this.utilityNav.style.display = 'none';
       }
+      if (this.otherBlocks) {
+        this.otherBlocks.forEach(block => {
+          block.style.display = 'none';
+        });
+      }
       this.closeMenu();
     } else {
       this.closeMenu();
@@ -305,6 +296,11 @@ class MobileMenu extends OverlayMenu {
       this.menu.style.display = '';
       if (this.utilityNav) {
         this.utilityNav.style.display = '';
+      }
+      if (this.otherBlocks) {
+        this.otherBlocks.forEach(block => {
+          block.style.display = '';
+        });
       }
     }
   }
@@ -383,7 +379,6 @@ class MobileMenu extends OverlayMenu {
         'c-mobile-menu__search'
       );
       newSearchBlock.hidden = false;
-      newSearchBlock.classList.remove('c-mega-menu__section');
       this.overlay.appendChild(newSearchBlock);
     }
     if (this.otherBlocks) {

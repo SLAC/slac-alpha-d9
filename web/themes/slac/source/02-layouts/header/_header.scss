@@ -60,7 +60,9 @@
 }
 
 .l-header__freeform {
-  .is-sticky & {
-    display: none;
+  @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
+    .is-sticky & {
+      display: none;
+    }
   }
 }
