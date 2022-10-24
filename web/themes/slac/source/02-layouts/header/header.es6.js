@@ -11,6 +11,10 @@ Drupal.behaviors.header = {
         if (globalHeader && !header.classList.contains('is-sticky')) {
           headerHeight += globalHeader.getBoundingClientRect().height;
         }
+        const internalHeader = document.querySelector('.l-internal-header');
+        if (internalHeader && !header.classList.contains('is-sticky')) {
+          headerHeight += internalHeader.getBoundingClientRect().height;
+        }
         setTimeout(() => {
           document.documentElement.style.setProperty(
             '--gesso-header-current-height',
@@ -28,8 +32,9 @@ Drupal.behaviors.header = {
         header.style.setProperty('--slac-scroll-progress', `${scrolledAmt}%`);
       }, 16);
       const observer = new IntersectionObserver(
-        ([e]) =>
-          e.target.classList.toggle('is-sticky', e.intersectionRatio < 1),
+        ([e]) => {
+          e.target.classList.toggle('is-sticky', e.intersectionRatio < 1);
+        },
         { threshold: [1], rootMargin: '-1px 0px 0px 0px' }
       );
       observer.observe(header);

@@ -4,5 +4,5 @@
 ]|join(' ')|trim %}
 
 <span {{ add_attributes({class: classes}) }}>
-  <img class="c-logo__image" src="{{ logo }}" alt="{{ title }}" />
+  <img class="c-logo__image" src="{{ logo }}" alt="{{ title }}" loading="{{ loading|default("lazy") }}" width="{{ width }}" height="{{ height }}" />
 </span>

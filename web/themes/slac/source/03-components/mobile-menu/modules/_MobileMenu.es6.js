@@ -399,9 +399,20 @@ class MobileMenu extends OverlayMenu {
     }
     this.overlay.appendChild(this.cloneMenu(this.menu, 'c-mobile-menu__menu'));
     if (this.utilityNav) {
-      this.overlay.appendChild(
-        this.cloneMenu(this.utilityNav, 'c-mobile-menu__menu')
+      const utilityNav = this.cloneBlock(
+        this.utilityNav,
+        'c-mobile-menu__internal-header'
       );
+      utilityNav.querySelectorAll('a').forEach(link => {
+        link.classList.remove('external-link');
+        link.classList.remove('c-arrow-link');
+        link.classList.add(
+          'c-button',
+          'c-button--outline-secondary',
+          'c-button--chevron'
+        );
+      });
+      this.overlay.appendChild(utilityNav);
     }
     this.toggleMenuDisplay();
     let resizeTimeout = false;

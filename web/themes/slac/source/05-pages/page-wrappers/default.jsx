@@ -12,6 +12,7 @@ import { Header } from '../../02-layouts/header/header.stories';
 import { SocialShare } from '../../03-components/social-share/social-share.stories';
 import { CookieBanner } from '../../03-components/cookie-banner/cookie-banner.stories';
 import { GlobalHeader } from '../../02-layouts/global-header/global-header.stories';
+import { InternalHeader } from '../../02-layouts/internal-header/internal-header.stories';
 
 const PageWrapper = props => {
   // eslint-disable-next-line react/prop-types
@@ -21,6 +22,7 @@ const PageWrapper = props => {
     <div className={bodyClasses}>
       {parse(SkiplinksTwig())}
       {GlobalHeader(GlobalHeader.args)}
+      {InternalHeader(InternalHeader.args)}
       {Header(Header.args)}
       <div className="l-site-container">
         {hero}

@@ -21,6 +21,10 @@
   }
 }
 
+.c-arrow-link--black {
+  @include arrow-link(black);
+}
+
 .c-arrow-link--white {
   @include arrow-link(white);
 }

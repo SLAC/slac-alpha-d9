@@ -11,7 +11,7 @@ Drupal.behaviors.dropdownMenu = {
         dropdownMenu.init();
         const mobileMenu = new MobileMenu(menuNode, context, {
           classPrefix: 'c-dropdown-menu',
-          utilityNavClass: false,
+          utilityNavClass: '.l-internal-header',
           searchBlockClass: '.c-search__form',
           otherBlockClass: '.l-header__freeform',
           imagePath: settings.gesso.gessoImagePath,
