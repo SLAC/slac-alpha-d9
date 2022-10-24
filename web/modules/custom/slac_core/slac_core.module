@@ -20,6 +20,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * Implements hook_form_FORM_ID_alter() for the search_block_form form.
+ *
  */
 function slac_core_form_slac_search_form_alter(&$form, FormStateInterface $form_state) {
   // Since the exposed search form is a GET form, do not send the form tokens.
@@ -60,6 +61,10 @@ function slac_core_theme($existing, $type, $theme, $path) {
  * Implements hook_oembed_resource_data_alter().
  */
 function slac_core_oembed_resource_data_alter(array &$data, $url) {
+  if (!isset($data['thumbnail_url'])) {
+    return;
+  }
+
   $client = \Drupal::httpClient();
   if (strpos($url, 'youtube.com/oembed') !== FALSE) {
     $default = 'hqdefault';
@@ -139,8 +144,7 @@ function slac_core_views_query_alter(ViewExecutable $view, QueryPluginBase $quer
  * Implements hook_media_view().
  */
 function slac_core_media_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
-  $displayId = $display->id();
-  if ($displayId === 'media.image.default' || $displayId === 'media.remote_video.default') {
+  if ($build['#view_mode'] == 'full') {
     if ($entity->field_boolean->first()->getValue()["value"] == 0) {
       $roles = \Drupal::currentUser()->getRoles();
       if (in_array('anonymous', $roles, TRUE)) {

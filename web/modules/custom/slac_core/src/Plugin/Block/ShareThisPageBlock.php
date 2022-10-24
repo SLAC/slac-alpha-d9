@@ -1,7 +1,8 @@
 <?php
 
-namespace Drupal\nrdc_core\Plugin\Block;
+namespace Drupal\slac_core\Plugin\Block;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormStateInterface;
@@ -16,7 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @Block(
  *  id = "share_this_page_block",
  *  admin_label = @Translation("Share this page block"),
- *  category = @Translation("NRDC")
+ *  category = @Translation("SLAC")
  * )
  */
 class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInterface {
@@ -100,7 +101,7 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
 
     if ($share_this_page_settings) {
       foreach ($share_this_page_settings as $setting) {
-        if (is_array($setting) && isset($setting['field_url']) && isset($setting['field_text_list'])) {
+        if (is_array($setting) && isset($setting['field_link']) && isset($setting['field_text_list'])) {
           $page_url = Url::fromRoute('<current>', [], [
             'absolute' => 'true',
           ])->toString();
@@ -121,7 +122,31 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
       }
     }
 
-    $build = ['links' => $links];
+    // Always include the email link. We assume the 'mailto:' protocol won't
+    // be changing or need any configuration.
+    // Get the page title
+    $request = \Drupal::request();
+    if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+      $title = \Drupal::service('title_resolver')->getTitle($request, $route); 
+    }
+
+    if (is_array($title) && !empty($title['#markup'])) {
+      $title = $title['#markup'];
+    }
+
+    $links['#email'] = [
+      'url' => 'mailto:' . '?subject=' . $title . '&body=' . Url::fromRoute('<current>', [], ['absolute' => 'true'])->toString(),
+      'title' => $this->t('Email'),
+      'icon_name' => 'email',
+    ];
+
+    $build = [
+      'links' => $links,
+    ];
+
+    if (isset($this->configuration['hero_type'])) {
+      $build['hero_type'] = Html::cleanCssIdentifier($this->configuration['hero_type']);
+    }
 
     return $build;
   }

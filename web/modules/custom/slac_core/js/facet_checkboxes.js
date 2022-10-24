@@ -53,20 +53,12 @@
           return removeFacetParams(facetQueryKey);
         }
 
-        // we are only watching for label clicks - this is to prevent duplicate events
-        if (target.tagName !== "LABEL") {
-          return false;
-        }
-
         const labelText = (function (e) {
           if (e === null) {
             return "";
           }
           return e.textContent.trim();
         })(labelElement);
-
-        const checked = !input.checked;
-        input.checked = checked;
 
         // Add active to the label. Could be useful.
         labelElement.classList.add("active");
@@ -75,7 +67,7 @@
         const facetValue = input.getAttribute("facet-value");
 
         setQueryParams(
-          checked,
+          input.checked,
           labelText,
           facetQueryKey,
           facetQuery,
@@ -126,7 +118,11 @@
         }
       }
 
-      checklist.addEventListener("click", clickHandler);
+      checklist.addEventListener("change", clickHandler);
+      const resetLink = document.getElementById("facet-list-reset-link");
+      if (resetLink) {
+        resetLink.addEventListener("click", clickHandler);
+      }
     },
   };
 })(Drupal);
