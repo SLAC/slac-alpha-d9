@@ -41,7 +41,6 @@ module:
   facets: 0
   field: 0
   field_group: 0
-  field_group_migrate: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -63,21 +62,10 @@ module:
   masquerade: 0
   media: 0
   media_library: 0
-  media_migration: 0
   menu_block: 0
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
-  migmag: 0
-  migmag_process: 0
-  migrate: 0
-  migrate_devel: 0
-  migrate_drupal: 0
-  migrate_drupal_ui: 0
-  migrate_manifest: 0
-  migrate_plus: 0
-  migrate_tools: 0
-  migrate_upgrade: 0
   mysql: 0
   node: 0
   node_revision_delete: 0
@@ -102,7 +90,6 @@ module:
   sitewide_alert: 0
   slac_core: 0
   slac_helper: 0
-  smart_sql_idmap: 0
   smart_trim: 0
   style_options: 0
   svg_image_field: 0
@@ -131,7 +118,6 @@ module:
   webform_templates: 0
   webform_ui: 0
   workflows: 0
-  yaml_content: 0
   pathauto: 1
   views: 10
   paragraphs: 11
