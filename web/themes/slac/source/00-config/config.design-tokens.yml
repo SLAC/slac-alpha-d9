@@ -119,7 +119,7 @@ gesso:
     background:
       site: grayscale.white
       subfooter: brand.cardinal.base
-      mega-menu: grayscale.white
+      dropdown-menu: grayscale.white
     button:
       primary:
         background: grayscale.black

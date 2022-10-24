@@ -2,11 +2,19 @@
 @use '00-config' as *;
 
 .c-logo {
-  color: inherit;
   display: inline-block;
-  margin-bottom: rem(gesso-spacing(1.5));
+  vertical-align: middle;
 
-  @include breakpoint(gesso-breakpoint(tablet)) {
-    margin-bottom: 0;
+  @include breakpoint-max(gesso-breakpoint(mobile-menu)) {
+    display: none;
   }
+
+  .is-sticky & {
+    display: none;
+  }
+}
+
+.c-logo__image {
+  height: 62px;
+  width: auto;
 }

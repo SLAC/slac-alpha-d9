@@ -308,7 +308,7 @@ const Homepage = args => (
 );
 Homepage.args = {
   ...globalData,
-  bodyClasses: 'has-transparent-nav',
+  bodyClasses: 'homepage',
   hideBreadcrumbs: true,
   hideSocialLinks: true,
 };

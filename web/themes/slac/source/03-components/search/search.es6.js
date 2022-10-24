@@ -1,9 +1,15 @@
 import Drupal from 'drupal';
+import SearchFlyout from './modules/SearchFlyout.es6';
 
 Drupal.behaviors.search = {
   attach(context) {
-    const search = context.querySelectorAll('.c-search__form');
-    search.forEach(searchForm => {
+    const search = context.querySelectorAll('.c-search--dropdown');
+    search.forEach(searchElem => {
+      const searchFlyout = new SearchFlyout(searchElem);
+      searchFlyout.init();
+    });
+    const searchForms = context.querySelectorAll('.c-search__form');
+    searchForms.forEach(searchForm => {
       const searchInput = searchForm.querySelector('.c-search__input');
       const searchRadios = searchForm.querySelectorAll(
         'input[name="search_type"]'

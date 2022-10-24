@@ -17,19 +17,27 @@
   'class': classes,
   'role': 'banner'
 }) }}>
-  {% if has_constrain %}
-    <div {{ add_attributes({ 'class': constrain_classes }) }}>
-  {% endif %}
-  {% block logo %}
-    <a href="{{ url('<front>') }}" class="l-header__brand">
-      {% include '@layouts/header/_slac-logo.twig' %}
-    </a>
-  {% endblock %}
-  {% block content %}
-    {{ header_content }}
-  {% endblock %}
-  {% if has_constrain %}
+  <div class="l-header__inner">
+    {% if has_constrain %}
+      <div {{ add_attributes({ 'class': constrain_classes }) }}>
+    {% endif %}
+    {% block site_branding %}
+      {% include '@components/site-name/site-name.twig' with {
+        url: '#',
+        has_logo: true
+      } %}
+    {% endblock %}
+    <div class="l-header__freeform">
+      {% block freeform %}
+        {{ header_freeform }}
+      {% endblock %}
     </div>
-  {% endif %}
-  <div class="l-header__progress" aria-hidden="true"></div>
+    {% block content %}
+      {{ header_content }}
+    {% endblock %}
+    {% if has_constrain %}
+      </div>
+    {% endif %}
+    <div class="l-header__progress" aria-hidden="true"></div>
+  </div>
 </header>

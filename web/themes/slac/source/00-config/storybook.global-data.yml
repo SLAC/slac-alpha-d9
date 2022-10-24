@@ -2,8 +2,9 @@
 storybook: true
 body_class: ''
 html_class: ''
-site_name: 'Site Name'
-logo: 'http://fpoimg.com/250x100?text=Logo'
+site_acronym: 'XYZ'
+site_name: 'The Full Site Name'
+logo: 'http://fpoimg.com/62'
 site_slogan: 'This is the site slogan.'
 section: 'Section'
 page_title: 'Page Title'

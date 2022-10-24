@@ -92,10 +92,20 @@ class PopupMenu extends Menu {
       this.domNode.style.left = `${rect.width}px`;
       this.domNode.style.zIndex = Z_INDEX.drawer.toString();
     } else {
+      const rightEdge =
+        rect.x + parseFloat(getComputedStyle(this.domNode).width);
+      const screenWidth = window.innerWidth;
+      if (rightEdge > screenWidth) {
+        this.domNode.style.right = '0';
+        this.domNode.style.left = 'auto';
+      }
       this.domNode.style.display = 'block';
       this.domNode.style.position = 'absolute';
-      this.domNode.style.top = `${rect.height - 1}px`;
+      this.domNode.style.top = `${rect.height}px`;
       this.domNode.style.zIndex = Z_INDEX.drawer.toString();
+      window.requestAnimationFrame(() => {
+        this.domNode.classList.add('is-open');
+      });
     }
     this.controller.setExpanded(true);
   }
@@ -121,9 +131,12 @@ class PopupMenu extends Menu {
     }
 
     if (force || (!hasFocus && !this.hasHover && !controllerHasHover)) {
+      this.domNode.classList.remove('is-open');
       this.domNode.style.display = 'none';
       this.domNode.style.zIndex = '0';
       this.controller.setExpanded(false);
+      this.domNode.style.right = null;
+      this.domNode.style.left = null;
     }
   }
 

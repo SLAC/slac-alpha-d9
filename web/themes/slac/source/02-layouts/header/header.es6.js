@@ -7,9 +7,13 @@ Drupal.behaviors.header = {
     if (header) {
       const updateHeaderCurrentHeight = () => {
         let headerHeight = header.getBoundingClientRect().height;
-        const alert = document.querySelector('.c-alert-bar');
-        if (alert && !header.classList.contains('is-sticky')) {
-          headerHeight += alert.getBoundingClientRect().height;
+        const globalHeader = document.querySelector('.l-global-header');
+        if (globalHeader && !header.classList.contains('is-sticky')) {
+          headerHeight += globalHeader.getBoundingClientRect().height;
+        }
+        const internalHeader = document.querySelector('.l-internal-header');
+        if (internalHeader && !header.classList.contains('is-sticky')) {
+          headerHeight += internalHeader.getBoundingClientRect().height;
         }
         setTimeout(() => {
           document.documentElement.style.setProperty(
@@ -18,19 +22,6 @@ Drupal.behaviors.header = {
           );
         }, 0);
       };
-      const changeOnScroll = throttle(() => {
-        const ginToolbarSecondaryHeight = getComputedStyle(
-          document.documentElement
-        ).getPropertyValue('--ginToolbarSecondaryHeight');
-        const stickyTop = ginToolbarSecondaryHeight
-          ? parseFloat(ginToolbarSecondaryHeight)
-          : 0;
-        if (window.scrollY <= stickyTop) {
-          header.classList.remove('is-sticky');
-        } else if (!header.classList.contains('is-sticky')) {
-          header.classList.add('is-sticky');
-        }
-      }, 16);
       const updateScrollProgress = throttle(() => {
         const scrollTop =
           document.body.scrollTop || document.documentElement.scrollTop;
@@ -38,9 +29,15 @@ Drupal.behaviors.header = {
           document.documentElement.scrollHeight -
           document.documentElement.clientHeight;
         const scrolledAmt = Math.round((scrollTop / height) * 100);
-        header.style.setProperty('--gesso-scroll-progress', `${scrolledAmt}%`);
+        header.style.setProperty('--slac-scroll-progress', `${scrolledAmt}%`);
       }, 16);
-      window.addEventListener('scroll', changeOnScroll);
+      const observer = new IntersectionObserver(
+        ([e]) => {
+          e.target.classList.toggle('is-sticky', e.intersectionRatio < 1);
+        },
+        { threshold: [1], rootMargin: '-1px 0px 0px 0px' }
+      );
+      observer.observe(header);
       header.addEventListener('transitionend', updateHeaderCurrentHeight);
       window.addEventListener('scroll', updateScrollProgress);
       updateHeaderCurrentHeight();
