@@ -8,19 +8,8 @@
   max-width: rem(1240px);
   position: relative;
 
-  &.c-overlap-image--top-left,
-  &.c-overlap-image--top-right,
-  &.c-overlap-image--dual {
-    padding-top: 14.4vw;
-
-    @include breakpoint-min(gesso-breakpoint(tablet)) {
-      padding-top: 200px;
-    }
-  }
-
   &.c-overlap-image--bottom-left,
-  &.c-overlap-image--bottom-right,
-  &.c-overlap-image--dual {
+  &.c-overlap-image--bottom-right {
     padding-bottom: 0;
 
     @include breakpoint-min(gesso-breakpoint(tablet)) {
@@ -40,57 +29,33 @@
     width: 100%;
 
     @include breakpoint-min(gesso-breakpoint(desktop)) {
+      aspect-ratio: 1127/768;
       background-attachment: fixed;
       background-size: 100% auto;
+      height: auto;
     }
   }
 
-  .c-overlap-image--purple &,
-  .c-overlap-image--red &,
-  .c-overlap-image--teal & {
+  .c-overlap-image--purple & {
     @include breakpoint-min(gesso-breakpoint(tablet)) {
       width: min(1127px, 81vw);
 
       img {
         display: block;
-        max-width: none;
       }
-    }
-
-    @include breakpoint-min(gesso-breakpoint(desktop)) {
-      background-size: min(1127px, 81vw) auto;
     }
   }
 
-  .c-overlap-image--top-left &,
-  .c-overlap-image--center-left &,
   .c-overlap-image--bottom-left & {
-    background-position-x: 100%;
-
-    img {
+    @include breakpoint-min(gesso-breakpoint(tablet)) {
+      background-position-x: left;
       margin-left: auto;
     }
   }
 
-  .c-overlap-image--top-right &,
-  .c-overlap-image--center-right &,
   .c-overlap-image--bottom-right & {
-    background-position-x: 0;
-  }
-}
-
-:is(.c-overlap-image--top-left, .c-overlap-image--center-left, .c-overlap-image--bottom-left):is(.c-overlap-image--purple, .c-overlap-image--red, .c-overlap-image--teal) {
-  .c-overlap-image__image {
-    @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
-      @include layout-half-full-bleed($direction: 'right');
-    }
-  }
-}
-
-:is(.c-overlap-image--top-right, .c-overlap-image--center-right, .c-overlap-image--bottom-right):is(.c-overlap-image--purple, .c-overlap-image--red, .c-overlap-image--teal) {
-  .c-overlap-image__image {
-    @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
-      @include layout-half-full-bleed($direction: 'left');
+    @include breakpoint-min(gesso-breakpoint(tablet)) {
+      background-position-x: right;
     }
   }
 }
@@ -114,8 +79,7 @@
   }
 
   .c-overlap-image--bottom-left &,
-  .c-overlap-image--bottom-right &,
-  .c-overlap-image--dual &:last-of-type {
+  .c-overlap-image--bottom-right & {
     left: 0;
     position: relative;
 
@@ -126,39 +90,6 @@
     }
   }
 
-  .c-overlap-image--top-left &,
-  .c-overlap-image--top-right &,
-  .c-overlap-image--dual &:first-of-type {
-    background-color: gesso-grayscale(white);
-    background-image: none;
-    position: relative;
-
-    @include breakpoint-min(gesso-breakpoint(tablet)) {
-      background-color: transparent;
-      background-image: linear-gradient(
-        to top,
-        rgba(gesso-grayscale(white), 0.51) 0%,
-        gesso-grayscale(white) 51.6%
-      );
-      bottom: auto;
-      position: absolute;
-      top: 0;
-      z-index: 2;
-    }
-  }
-
-  .c-overlap-image--top-left &,
-  .c-overlap-image--center-left & {
-    left: 0;
-  }
-
-  .c-overlap-image--top-right &,
-  .c-overlap-image--center-right &,
-  .c-overlap-image--dual &:last-of-type {
-    left: auto;
-    right: 0;
-  }
-
   .c-overlap-image--bottom-right & {
     @include breakpoint-min(gesso-breakpoint(tablet)) {
       left: 50%;
@@ -166,42 +97,9 @@
     }
   }
 
-  .c-overlap-image--center-left &,
-  .c-overlap-image--center-right & {
-    position: relative;
-
-    @include breakpoint-min(gesso-breakpoint(tablet)) {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-
   .c-overlap-image--purple & {
     @include on-dark-variables;
     background: gesso-brand(purple, dark);
-  }
-
-  .c-overlap-image--purple.c-overlap-image--dual &:first-of-type {
-    background: gesso-brand(purple, dark);
-  }
-
-  .c-overlap-image--red & {
-    @include on-dark-variables;
-    background: gesso-brand(cardinal, base);
-  }
-
-  .c-overlap-image--red.c-overlap-image--dual &:first-of-type {
-    background: gesso-brand(cardinal, base);
-  }
-
-  .c-overlap-image--teal & {
-    @include on-dark-variables;
-    background: gesso-brand(stormy, dark);
-  }
-
-  .c-overlap-image--teal.c-overlap-image--dual &:first-of-type {
-    background: gesso-brand(stormy, dark);
   }
 }
 
@@ -215,15 +113,9 @@
     transform: translateX(-50%);
     width: 100%;
 
-    .c-overlap-image--top-left &,
-    .c-overlap-image--center-left &,
     .c-overlap-image--bottom-left & {
       left: calc(50% - #{rem(gesso-site-margins(desktop))});
       text-align: right;
     }
   }
-}
-
-.c-overlap-image__icon {
-  margin-bottom: rem(gesso-spacing(2));
 }
