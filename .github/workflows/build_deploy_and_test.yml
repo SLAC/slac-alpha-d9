@@ -125,15 +125,15 @@ jobs:
         with:
           node-version: 14
       - run: |
-          cd web/themes/gesso
+          cd web/themes/slac
           npm ci
           npm run build-storybook
       - uses: actions/upload-artifact@v3
         with:
           name: gesso-dist-files
           path: |
-            web/themes/gesso/dist
-            web/themes/gesso/storybook
+            web/themes/slac/dist
+            web/themes/slac/storybook
 
   deploy_to_pantheon:
     container:
@@ -150,11 +150,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: gesso-dist-files
-          path: web/themes/gesso
+          path: web/themes/slac
 
       - name: Display structure of downloaded files
         run: ls -R
-        working-directory: web/themes/gesso
+        working-directory: web/themes/slac
 
       - name: Set bash_env env var
         run: echo BASH_ENV=${RUNNER_TEMP}/bash_env.txt >> $GITHUB_ENV

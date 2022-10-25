@@ -9,7 +9,7 @@ set -eo pipefail
 #
 
 # Cut gesso gitignore at the cut mark.
-cd web/themes/gesso
+cd web/themes/slac
 terminus build:gitignore:cut
 cd ../../../
 

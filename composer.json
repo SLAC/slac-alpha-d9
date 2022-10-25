@@ -140,7 +140,7 @@
     "build-assets": [
       "composer install --optimize-autoloader --no-dev"
     ],
-    "lint": "find web/modules/custom web/themes/gesso -name '*.php' -exec php -l {} \\;",
+    "lint": "find web/modules/custom web/themes/slac -name '*.php' -exec php -l {} \\;",
     "phpmd": [
       "phpmd . json phpmd.xml.dist --exclude \"web/private/*,modules/contrib/*,drush/*,vendor/*,web/core*,web/private/*,scripts/*\""
     ],
