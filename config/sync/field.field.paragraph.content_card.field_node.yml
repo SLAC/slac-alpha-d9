@@ -7,10 +7,8 @@ dependencies:
     - node.type.event
     - node.type.landing_page
     - node.type.news_article
-    - node.type.news_collection
     - node.type.page
     - node.type.person
-    - node.type.resource
     - paragraphs.paragraphs_type.content_card
 id: paragraph.content_card.field_node
 field_name: field_node
@@ -30,9 +28,7 @@ settings:
       event: event
       landing_page: landing_page
       news_article: news_article
-      news_collection: news_collection
       person: person
-      resource: resource
     sort:
       field: _none
       direction: ASC
