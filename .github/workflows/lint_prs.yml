@@ -1,0 +1,33 @@
+name: Lint pull request
+on:
+  pull_request:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  static_tests:
+    name: PHP Static Tests
+    container:
+      image: quay.io/pantheon-public/build-tools-ci:8.x-php8.0
+      options: --user root
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache composer cache
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-composer-cache
+        with:
+          path: ~/.composer/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: run static tests
+        run: |
+          ./.ci/test/static/run

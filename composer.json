@@ -140,7 +140,7 @@
     "build-assets": [
       "composer install --optimize-autoloader --no-dev"
     ],
-    "lint": "find web/modules/custom web/themes/gesso -name '*.php' -exec php -l {} \\;",
+    "lint": "find web/modules/custom web/themes/slac -name '*.php' -exec php -l {} \\;",
     "phpmd": [
       "phpmd . json phpmd.xml.dist --exclude \"web/private/*,modules/contrib/*,drush/*,vendor/*,web/core*,web/private/*,scripts/*\""
     ],
@@ -149,9 +149,9 @@
     ],
     "code-sniff": [
       "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
-      "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/themes/gesso",
+      "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/themes/slac",
       "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
-      "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/themes/gesso"
+      "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/themes/slac"
     ],
     "unit-test": "echo 'No unit test step defined.'",
     "pre-install-cmd": [
