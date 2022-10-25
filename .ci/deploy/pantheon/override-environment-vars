@@ -1,0 +1,53 @@
+#!/bin/bash
+set -eo pipefail
+
+# Override the environment variable logic so that we only deploy to existing
+# multidev environments:
+#   - integration (integration branch)
+#   - stage (main branch)
+#
+# Additionally, the live branch from GitHub maps to the master branch on
+# Pantheon.
+#
+# This script is based on: https://raw.githubusercontent.com/pantheon-systems/docker-build-tools-ci/6.x/scripts/set-environment
+#
+
+# Set up BASH_ENV if it was not set for us.
+BASH_ENV=${BASH_ENV:-$HOME/.bashrc}
+
+# Set CI_BRANCH based on the branch we are currently on.
+# Example syntax:
+# $ GITHUB_REF=refs/heads/feature-branch-1
+# $ echo ${GITHUB_REF##*/}
+# feature-branch-1
+
+CI_BRANCH=${GITHUB_REF##*/}
+
+# If we are on the default branch.
+if [[ ${CI_BRANCH} == "live" ]] ; then
+  # Use dev as the environment.
+	DEFAULT_ENV=dev
+elif [[ ${CI_BRANCH} == "integration" ]] ; then
+  # Use the integration multidev for the integration branch..
+	DEFAULT_ENV=integration
+elif [[ ${CI_BRANCH} == "main" ]] ; then
+  # Use the stage environment for the main branch.
+  DEFAULT_ENV=stage
+fi
+
+TERMINUS_ENV=$DEFAULT_ENV
+
+#=====================================================================================================================
+# EXPORT needed environment variables
+#=====================================================================================================================
+(
+  echo "export DEFAULT_ENV='$DEFAULT_ENV'"
+  echo "export CI_BRANCH='$CI_BRANCH'"
+  echo "export TERMINUS_ENV='$TERMINUS_ENV'"
+) >> $BASH_ENV
+
+source $BASH_ENV
+
+echo 'Overriden contents of BASH_ENV:'
+cat $BASH_ENV
+echo
