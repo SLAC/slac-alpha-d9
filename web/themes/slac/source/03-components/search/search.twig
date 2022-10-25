@@ -17,10 +17,11 @@
       'is_hidden': true
     } %}
   </button>
-  <form class="c-search__form" id="{{ search_form_id }}" hidden>
+  <form class="c-search__form" id="{{ search_form_id }}" method="get" hidden>
     <div class="l-constrain l-constrain--small">
       <div class="c-search__inner">
-       {% include '@components/search/_search-input.twig' %}
+        <div class="c-search__hidden"></div>
+        {% include '@components/search/_search-input.twig' %}
         <fieldset class="c-search__fieldset">
           <div>
             <input type="radio" name="search_type" value="site" id="{{ site_search_id }}" checked/>

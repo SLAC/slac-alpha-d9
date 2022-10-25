@@ -5,8 +5,9 @@ Drupal.behaviors.header = {
   attach(context) {
     const header = context.querySelector('.l-header');
     if (header) {
+      const headerInner = header.querySelector('.l-header__inner');
       const updateHeaderCurrentHeight = () => {
-        let headerHeight = header.getBoundingClientRect().height;
+        let headerHeight = headerInner.getBoundingClientRect().height;
         const globalHeader = document.querySelector('.l-global-header');
         if (globalHeader && !header.classList.contains('is-sticky')) {
           headerHeight += globalHeader.getBoundingClientRect().height;

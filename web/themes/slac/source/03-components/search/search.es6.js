@@ -14,18 +14,28 @@ Drupal.behaviors.search = {
       const searchRadios = searchForm.querySelectorAll(
         'input[name="search_type"]'
       );
+      const searchHidden = searchForm.querySelector('.c-search__hidden');
       function handleRadioChange() {
         const selectedSearch = this.value;
         let searchUrl = '/search';
         let searchInputName = 'keywords';
+        searchHidden.innerHTML = '';
         if (selectedSearch === 'slac_web') {
           searchUrl =
-            'https://www-psearch.slac.stanford.edu/SLACSearch/app/slac/index?style=mainSite';
+            'https://www-psearch.slac.stanford.edu/SLACSearch/app/slac/index';
           searchInputName = 'qt';
+          searchHidden.insertAdjacentHTML(
+            'beforeend',
+            `<input type="hidden" name="style" value="mainSite" />`
+          );
         } else if (selectedSearch === 'people') {
           searchUrl =
-            'https://www-public.slac.stanford.edu/phonebook/dirsearch.aspx?lf=1&url=&gone=active';
+            'https://www-public.slac.stanford.edu/phonebook/dirsearch.aspx';
           searchInputName = 'NAME';
+          searchHidden.insertAdjacentHTML(
+            'beforeend',
+            `<input type="hidden" name="lf" value="1" /><input type="hidden" name="url" value="" /><input type="hidden" name="gone" value="active" />`
+          );
         }
         searchInput.setAttribute('name', searchInputName);
         searchForm.setAttribute('action', searchUrl);

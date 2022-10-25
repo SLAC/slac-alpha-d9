@@ -11,10 +11,6 @@
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     height: 186px;
-
-    .l-internal-header + & {
-      height: 186px - gesso-spacing(2.5);
-    }
   }
 }
 
@@ -27,15 +23,9 @@
     padding: 35px 0 0;
     transition: padding gesso-duration(short) gesso-easing(ease-out);
 
-    &.is-sticky {
+    .is-sticky & {
       padding-top: 20px;
     }
-  }
-}
-
-.l-internal-header + .l-header .l-header__inner {
-  @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
-    padding-top: 35px - gesso-spacing(2.5);
   }
 }
 
