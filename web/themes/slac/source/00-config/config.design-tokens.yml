@@ -400,6 +400,8 @@ gesso:
     social-share: 2
     toc: 2
     back-to-top: 5
+    cookie-banner: 8
+    overlay: 10
     nav: 500
     drawer: 501
     modal: 1300

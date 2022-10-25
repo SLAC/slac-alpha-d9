@@ -14,7 +14,7 @@
   display: inline-block;
   font-size: rem(gesso-font-size(1));
   margin: 0;
-  padding: gesso-spacing(3) gesso-spacing(1);
+  padding: gesso-spacing(3) 0;
   position: relative;
   text-decoration: none;
 
@@ -24,10 +24,6 @@
 
   .is-sticky & {
     color: inherit;
-  }
-
-  @include breakpoint(375px) {
-    padding: gesso-spacing(3) gesso-spacing(2);
   }
 }
 

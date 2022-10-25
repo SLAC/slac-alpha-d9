@@ -18,6 +18,9 @@ Drupal.behaviors.dropdownMenu = {
           logoClass: '.l-global-header__logo',
         });
         mobileMenu.init();
+        if (Drupal.behaviors.search) {
+          Drupal.behaviors.search.attach(mobileMenu.overlay);
+        }
       });
     }
   },

@@ -107,11 +107,13 @@ class MenuItem {
    * @return {void}
    */
   handleMouseover() {
-    this.hasHover = true;
-    // Show the submenu if the outer menu is configured to display menus on hover.
-    if (this.popupMenu && this.menu.options.displayMenuOnHover) {
-      this.popupMenu.setHover(true);
-      this.popupMenu.open();
+    if (!document.body.classList.contains('has-open-menu')) {
+      this.hasHover = true;
+      // Show the submenu if the outer menu is configured to display menus on hover.
+      if (this.popupMenu && this.menu.options.displayMenuOnHover) {
+        this.popupMenu.setHover(true);
+        this.popupMenu.open();
+      }
     }
   }
 

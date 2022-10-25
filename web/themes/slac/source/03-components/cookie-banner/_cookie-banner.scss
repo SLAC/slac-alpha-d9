@@ -11,7 +11,7 @@
   padding: gesso-spacing(3) 0 gesso-spacing(4);
   position: sticky;
   width: 100%;
-  z-index: 8;
+  z-index: gesso-z-index(cookie-banner);
 
   a,
   button {

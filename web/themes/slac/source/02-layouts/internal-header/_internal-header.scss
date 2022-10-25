@@ -2,7 +2,7 @@
 
 .l-internal-header {
   line-height: gesso-line-height(loose);
-  padding-block: gesso-spacing(2.5);
+  padding-top: gesso-spacing(2.5);
   text-align: right;
 
   @include breakpoint-max(gesso-breakpoint(mobile-menu)) {

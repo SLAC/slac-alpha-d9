@@ -1,7 +1,21 @@
 // Layout: Site Container
+@use '00-config' as *;
 
 .l-site-container {
-  .has-transparent-nav & {
-    margin-top: calc(-1 * var(--gesso-header-initial-height, 0));
+  @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
+    .has-open-menu & {
+      &::after {
+        backdrop-filter: blur(4px);
+        background-color: rgba(gesso-grayscale(black), 0.6);
+        content: '';
+        display: block;
+        height: calc(100vh - var(--gesso-header-current-height));
+        left: 0;
+        position: fixed;
+        top: var(--gesso-header-current-height);
+        width: 100%;
+        z-index: gesso-z-index(overlay);
+      }
+    }
   }
 }
