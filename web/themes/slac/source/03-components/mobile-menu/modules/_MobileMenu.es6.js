@@ -272,8 +272,8 @@ class MobileMenu extends OverlayMenu {
    * Hide the original or mobile menu, depending on screen size.
    * @return void
    */
-  toggleMenuDisplay() {
-    if (window.matchMedia(this.options.mobileMenuBreakpoint).matches) {
+  toggleMenuDisplay(event) {
+    if (event.matches) {
       this.menuButton.style.display = 'block';
       if (this.searchBlock) {
         this.searchBlock.style.display = 'none';
@@ -304,6 +304,7 @@ class MobileMenu extends OverlayMenu {
         });
       }
     }
+    this.menu.dispatchEvent(new Event('toggle-mobile-menu', { bubbles: true }));
   }
 
   /**
@@ -414,21 +415,9 @@ class MobileMenu extends OverlayMenu {
       });
       this.overlay.appendChild(utilityNav);
     }
-    this.toggleMenuDisplay();
-    let resizeTimeout = false;
-    let lastWindowWidth = window.innerWidth;
-    window.addEventListener('resize', () => {
-      const currWindowWidth = window.innerWidth;
-
-      if (lastWindowWidth !== currWindowWidth) {
-        if (resizeTimeout !== false) {
-          clearTimeout(resizeTimeout);
-        }
-
-        resizeTimeout = setTimeout(this.toggleMenuDisplay, 200);
-        lastWindowWidth = currWindowWidth;
-      }
-    });
+    const mediaQuery = window.matchMedia(this.options.mobileMenuBreakpoint);
+    mediaQuery.addEventListener('change', this.toggleMenuDisplay.bind(this));
+    this.toggleMenuDisplay(mediaQuery);
   }
 }
 

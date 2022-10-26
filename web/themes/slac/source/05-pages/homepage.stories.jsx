@@ -6,7 +6,6 @@ import globalData from '../00-config/storybook.global-data.yml';
 import sectionTwigTemplate from '../02-layouts/section/section.twig';
 import gridTwigTemplate from '../02-layouts/grid/grid.twig';
 import PageWrapper from './page-wrappers/default.jsx';
-import { VideoHero } from '../03-components/video-hero/video-hero.stories';
 import { FiftyFifty } from '../03-components/fifty-fifty/fifty-fifty.stories';
 import { ColorfulTagline } from '../03-components/tagline/tagline.stories';
 import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
@@ -21,6 +20,7 @@ import { SmallCard } from '../03-components/card/card--small/card--small.stories
 import { VerticalLinkCard } from '../03-components/card/card--link/card--link.stories';
 import { Quote } from '../03-components/quote/quote.stories';
 import { FigureWithVideo } from '../03-components/figure/figure.stories';
+import { HeroWithChevron } from '../03-components/hero-bg-image/hero-bg-image.stories';
 
 export default {
   title: 'Pages/Homepage',
@@ -33,7 +33,7 @@ export default {
 
 const Homepage = args => (
   <PageWrapper {...args}>
-    {VideoHero(VideoHero.args)}
+    {HeroWithChevron(HeroWithChevron.args)}
     {parse(
       sectionTwigTemplate({
         has_constrain: true,

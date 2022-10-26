@@ -139,11 +139,6 @@ hero_bg_image:
   css:
     theme:
       dist/css/hero-bg-image.css: {}
-  js:
-    dist/js/hero-bg-image.es6.js: {}
-  dependencies:
-    - slac/common
-    - core/drupal
 
 hero_inline_image:
   css:
