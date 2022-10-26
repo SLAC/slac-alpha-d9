@@ -27,7 +27,11 @@
 }
 
 :root {
+  /* stylelint-disable length-zero-no-unit */
   @include default-variables;
-  --gesso-header-initial-height: 1px;
+  --gesso-header-initial-height: 186px;
   --gesso-header-current-height: 1px;
+  --gesso-internal-header-height: 0px;
+  --gesso-global-header-height: 0px;
+  /* stylelint-enable length-zero-no-unit */
 }
