@@ -2,10 +2,7 @@ import parse from 'html-react-parser';
 
 import twigTemplate from './page-title.twig';
 import globalData from '../../00-config/storybook.global-data.yml';
-import pageTitleSidebarData from './page-title-sidebar.yml';
-import pageTitleSidebarImage from './page-title-image.yml';
-import ReactDOMServer from 'react-dom/server';
-import { SmallCaptionedImage } from '../small-captioned-image/small-captioned-image.stories';
+import data from './page-title.yml';
 
 const settings = {
   title: 'Components/Page Title',
@@ -22,7 +19,7 @@ const settings = {
   },
   parameters: {
     controls: {
-      include: ['page_title', 'modifier_classes'],
+      include: ['page_title', 'kicker', 'lede', 'byline'],
     },
   },
 };
@@ -33,29 +30,7 @@ const PageTitle = args =>
       ...args,
     })
   );
-PageTitle.args = { ...globalData };
-
-const PageTitleWithText = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-PageTitleWithText.args = { ...globalData, ...pageTitleSidebarData };
-
-const PageTitleWithImage = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-PageTitleWithImage.args = {
-  ...globalData,
-  ...pageTitleSidebarImage,
-  sidebar_content: ReactDOMServer.renderToStaticMarkup(
-    SmallCaptionedImage(SmallCaptionedImage.args)
-  ),
-};
+PageTitle.args = { ...globalData, ...data };
 
 export default settings;
-export { PageTitle, PageTitleWithText, PageTitleWithImage };
+export { PageTitle };

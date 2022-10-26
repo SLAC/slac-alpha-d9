@@ -418,21 +418,6 @@ class MobileMenu extends OverlayMenu {
     const mediaQuery = window.matchMedia(this.options.mobileMenuBreakpoint);
     mediaQuery.addEventListener('change', this.toggleMenuDisplay.bind(this));
     this.toggleMenuDisplay(mediaQuery);
-    // this.toggleMenuDisplay();
-    // let resizeTimeout = false;
-    // let lastWindowWidth = window.innerWidth;
-    // window.addEventListener('resize', () => {
-    //   const currWindowWidth = window.innerWidth;
-    //
-    //   if (lastWindowWidth !== currWindowWidth) {
-    //     if (resizeTimeout !== false) {
-    //       clearTimeout(resizeTimeout);
-    //     }
-    //
-    //     resizeTimeout = setTimeout(this.toggleMenuDisplay, 200);
-    //     lastWindowWidth = currWindowWidth;
-    //   }
-    // });
   }
 }
 

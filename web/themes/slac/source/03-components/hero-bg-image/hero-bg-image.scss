@@ -17,7 +17,6 @@
 }
 
 .c-hero-bg-image {
-  --hero-bg-image-height: 333px;
   color: var(--gesso-text-color);
   overflow: hidden;
   padding: 0;
@@ -63,10 +62,6 @@
     color: var(--gesso-text-color);
     display: table;
     margin-bottom: rem(gesso-spacing(1));
-  }
-
-  @include breakpoint-min(gesso-breakpoint(tablet)) {
-    --hero-bg-image-height: 420px;
   }
 }
 

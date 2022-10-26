@@ -1,12 +1,11 @@
 {% set classes = [
   'c-page-title',
-  has_sidebar ? 'c-page-title--sidebar' : '',
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
 {% set constrain_classes = [
   'l-constrain',
-  not has_sidebar ? 'l-constrain--small' : '',
+  'l-constrain--small',
 ]|join(' ')|trim %}
 
 <header {{ add_attributes({ 'class': classes })}}>
@@ -34,18 +33,5 @@
         <p>{{ 'By'|t }} {{ byline }}</p>
       {% endif %}
     </div>
-    {% if sidebar_content or has_sidebar %}
-      <div class="c-page-title__sidebar">
-        {{ sidebar_content }}
-          {% if hero_caption %}
-            {# <div class="l-constrain c-article-hero__inner"> #}
-              {% include '@components/tooltip/tooltip.twig' with {
-                tooltip_content: hero_caption,
-                tooltip_id: caption_id
-              } %}
-            {# </div> #}
-        {% endif %}
-      </div>
-    {% endif %}
     {% if has_constrain %}</div>{% endif %}
 </header>
