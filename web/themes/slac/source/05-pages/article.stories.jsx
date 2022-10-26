@@ -7,7 +7,10 @@ import PageWrapper from './page-wrappers/default.jsx';
 import twigTemplate from '../04-templates/page/page.twig';
 import sectionTwigTemplate from '../02-layouts/section/section.twig';
 import expandableContentTemplate from '../03-components/expandable-grid/expandable-grid.twig';
-import { ArticleHero } from '../03-components/article-hero/article-hero.stories';
+import {
+  ArticleHero,
+  HeroWithoutOverlay,
+} from '../03-components/article-hero/article-hero.stories';
 import { Quote } from '../03-components/quote/quote.stories';
 import {
   FiftyFiftyLeftFadeIn,
@@ -161,7 +164,12 @@ const articleContent = args =>
   });
 
 const Article = args => (
-  <PageWrapper hero={ArticleHero(ArticleHero.args)}>
+  <PageWrapper
+    hero={HeroWithoutOverlay({
+      ...HeroWithoutOverlay.args,
+      showPageTitle: false,
+    })}
+  >
     {parse(articleContent(args))}
     {PromoBox(PromoBox.args)}
     {parse(

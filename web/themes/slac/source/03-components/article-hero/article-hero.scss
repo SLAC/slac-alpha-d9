@@ -10,9 +10,14 @@ $tooltip-arrow-height: 21px;
   width: 100%;
 
   img {
-    min-height: rem(258px);
+    height: var(--hero-bg-image-height);
     object-fit: cover;
     width: 100%;
+  }
+
+  + .c-page-title,
+  + .c-two-column-hero {
+    padding-top: calc(2.5rem + 32px);
   }
 }
 
