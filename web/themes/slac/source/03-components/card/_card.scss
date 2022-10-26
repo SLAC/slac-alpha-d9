@@ -75,15 +75,6 @@ $card-padding: rem(gesso-spacing(4));
   text-decoration-line: none;
 }
 
-.c-card__link::after {
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
 .c-card__body {
   --gesso-text-color: #{gesso-color(text, primary)};
   background: gesso-color(background, site);
