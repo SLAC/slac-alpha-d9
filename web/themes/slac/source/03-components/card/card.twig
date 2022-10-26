@@ -64,14 +64,14 @@
           </div>
         {% endif %}
 
-        {% if event_location %}
+        {% if is_virtual or event_location %}
           <div class="c-card__location">
             {% include '@components/icon/icon.twig' with {
-            'icon_name': 'location',
+            'icon_name': is_virtual ? 'virtual' : 'location',
             'hidden': true,
             'label': 'Location',
           } %}
-            {{ event_location }}
+            {{ is_virtual ? 'Virtual event' : event_location }}
           </div>
         {% endif %}
 
