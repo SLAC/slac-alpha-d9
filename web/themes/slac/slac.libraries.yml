@@ -186,16 +186,6 @@ media_detail:
     theme:
       dist/css/media-detail.css: {}
 
-microsite_hero:
-  css:
-    theme:
-      dist/css/microsite-hero.css: {}
-  js:
-    dist/js/microsite-hero.es6.js: {}
-  dependencies:
-    - slac/common
-    - core/drupal
-
 mobile_menu:
   css:
     theme:
@@ -283,6 +273,11 @@ transparent_nav:
       dist/css/transparent-nav.css: {}
   dependencies:
     - slac/mega_menu
+
+two_column_hero:
+  css:
+    theme:
+      dist/css/two-column-hero.css: {}
 
 video_hero:
   css:

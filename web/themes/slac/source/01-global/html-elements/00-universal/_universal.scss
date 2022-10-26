@@ -33,5 +33,10 @@
   --gesso-header-current-height: 1px;
   --gesso-internal-header-height: 0px;
   --gesso-global-header-height: 0px;
+  --hero-bg-image-height: 333px;
   /* stylelint-enable length-zero-no-unit */
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    --hero-bg-image-height: 420px;
+  }
 }
