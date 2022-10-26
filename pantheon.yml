@@ -1,17 +1,4 @@
+# Put overrides to your pantheon.upstream.yml file here.
+# For more information, see: https://pantheon.io/docs/pantheon-yml/
 api_version: 1
-web_docroot: true
-php_version: 7.4
-drush_version: 10
-build_step: false
-database:
-  version: 10.4
-enforce_https: full+subdomains
-workflows:
-  sync_code:
-    after:
-      - type: webphp
-        description: Run db updates
-        script: private/scripts/quicksilver/drush_updb/drush_updb.php
-      - type: webphp
-        description: Import configuration from .yml files and clear cache
-        script: private/scripts/quicksilver/drush_config_import/drush_config_import.php
+php_version: 8.0
