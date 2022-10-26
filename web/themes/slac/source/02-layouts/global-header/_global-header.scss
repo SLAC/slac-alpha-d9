@@ -3,6 +3,8 @@
 .l-global-header {
   background-color: gesso-grayscale(white);
   padding-block: 18px 12px;
+  position: relative;
+  z-index: gesso-z-index(nav);
 
   .homepage & {
     background-color: rgba(gesso-grayscale(white), 0.96);

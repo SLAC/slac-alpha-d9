@@ -17,16 +17,46 @@
 }
 
 .c-hero-bg-image {
+  --hero-bg-image-height: 333px;
   color: var(--gesso-text-color);
   overflow: hidden;
   padding: 0;
   position: relative;
-  text-align: center;
 
   > img {
-    height: 74.362819vh;
+    height: var(--hero-bg-image-height);
     object-fit: cover;
     width: 100%;
+  }
+
+  .homepage & {
+    margin-top: calc(
+      0px - var(--gesso-header-initial-height) -
+        var(--gesso-global-header-height)
+    );
+
+    > img {
+      height: calc(
+        var(--hero-bg-image-height) + var(--gesso-header-initial-height) +
+          var(--gesso-global-header-height)
+      );
+    }
+
+    @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
+      margin-top: calc(
+        0px - var(--gesso-header-initial-height) -
+          var(--gesso-internal-header-height) -
+          var(--gesso-global-header-height)
+      );
+
+      > img {
+        height: calc(
+          var(--hero-bg-image-height) + var(--gesso-header-initial-height) +
+            var(--gesso-internal-header-height) +
+            var(--gesso-global-header-height)
+        );
+      }
+    }
   }
 
   .c-kicker {
@@ -35,114 +65,78 @@
     margin-bottom: rem(gesso-spacing(1));
   }
 
-  &.has-overlay {
-    &::after {
-      background: linear-gradient(
-        gesso-grayscale(stanford-black) 0%,
-        gesso-grayscale(white) 50.52%,
-        gesso-grayscale(white) 59%,
-        gesso-grayscale(stanford-black) 100%
-      );
-      bottom: 0;
-      content: '';
-      left: 0;
-      mix-blend-mode: multiply;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 1;
-    }
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    --hero-bg-image-height: 420px;
   }
-
-  &.has-bottom-overlay {
-    &::after {
-      background-image: linear-gradient(
-        gesso-grayscale(white) 0%,
-        gesso-grayscale(white) 50.52%,
-        gesso-grayscale(white) 59%,
-        gesso-grayscale(stanford-black) 100%
-      );
-    }
-  }
-
-  @media (min-height: 768px) {
-    > img {
-      aspect-ratio: initial;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-    height: 768px;
-  }
-}
-
-.c-hero-bg-image--white {
-  @include on-dark-variables;
-}
-
-.c-hero-bg-image--black {
-  @include on-light-variables;
 }
 
 .c-hero-bg-image__content {
-  bottom: rem(gesso-spacing(5));
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  width: 100%;
-  z-index: 2;
+  position: relative;
+  top: -120px;
 
-  @media (min-height: 768px) {
-    bottom: rem(gesso-spacing(10));
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    top: auto;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 2;
+
+    > .l-constrain {
+      display: flex;
+
+      .c-hero-bg-image--left & {
+        justify-content: flex-start;
+      }
+
+      .c-hero-bg-image--right & {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+.c-hero-bg-image__overlay {
+  background: linear-gradient(
+    180deg,
+    gesso-grayscale(white) -45.6%,
+    rgba(gesso-grayscale(white), 0.51) -27.4%,
+    gesso-grayscale(white) 25.2%
+  );
+  border-top: 8px solid gesso-brand(poppy, light);
+  padding: gesso-site-margins(mobile);
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    max-width: 493px;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    padding: 20px 30px;
   }
 }
 
 .c-hero-bg-image__title {
-  @include display-text-style(display);
+  @include display-text-style(h2);
   color: inherit;
-
-  @include breakpoint-min(gesso-breakpoint(tablet)) {
-    max-width: 80%;
-  }
-
-  @include breakpoint-min(gesso-breakpoint(desktop)) {
-    max-width: 70%;
-  }
-
-  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
-    max-width: 60%;
-  }
-
-  @media (max-height: 767px) {
-    font-size: rem(gesso-font-size(8));
-    max-width: 60%;
-  }
+  text-align: left;
 }
 
 .c-hero-bg-image__summary {
-  @include display-text-style(body-large);
+  @include display-text-style(body);
   color: inherit;
 
-  @media (max-height: 767px) {
-    font-size: rem(gesso-font-size(3));
-  }
-
-  a {
-    color: inherit;
-    text-decoration-color: currentColor;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: inherit;
-    }
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 
-.c-hero-bg-image--left {
-  text-align: left;
+.c-hero-bg-image__button {
+  margin: 1rem 0 0;
+
+  .c-button {
+    margin-bottom: 0;
+  }
 }
 
 .c-hero-bg-image__arrow {
@@ -161,17 +155,30 @@
   bottom: rem(gesso-spacing(2.5));
   left: 50%;
   position: absolute;
-  text-align: right;
   transform: translateX(-50%);
   width: 100%;
   z-index: 3;
-}
 
-.c-hero-bg-image__icon,
-.c-hero-bg-image .c-animated-icon {
-  margin-bottom: rem(gesso-spacing(3));
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    .c-hero-bg-image--left & {
+      left: calc(50% - #{rem(gesso-site-margins(mobile))});
+      text-align: right;
+    }
 
-  + h1 {
-    margin-top: 0;
+    .c-hero-bg-image--right & {
+      left: calc(50% + #{rem(gesso-site-margins(mobile))});
+      text-align: left;
+      transform: translateX(-50%);
+    }
+  }
+
+  @include breakpoint(gesso-breakpoint(desktop)) {
+    .c-hero-bg-image--left & {
+      left: calc(50% - #{rem(gesso-site-margins(desktop))});
+    }
+
+    .c-hero-bg-image--right & {
+      left: calc(50% + #{rem(gesso-site-margins(desktop))});
+    }
   }
 }

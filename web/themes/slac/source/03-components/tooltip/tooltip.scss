@@ -64,7 +64,7 @@ $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
       right: auto;
 
       &::after {
-        left: rem(gesso-site-margins(mobile));
+        left: rem(gesso-site-margins(mobile)) + $tooltip-button-size;
         right: auto;
       }
     }
@@ -73,7 +73,7 @@ $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
       left: 0 - math.div(rem(gesso-site-margins(desktop)), 2);
 
       &::after {
-        left: rem(gesso-site-margins(desktop));
+        left: rem(gesso-site-margins(desktop)) + $tooltip-button-size;
         right: auto;
       }
     }

@@ -10,7 +10,7 @@
   z-index: gesso-z-index(nav);
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
-    height: 186px;
+    height: var(--gesso-header-initial-height);
   }
 }
 
