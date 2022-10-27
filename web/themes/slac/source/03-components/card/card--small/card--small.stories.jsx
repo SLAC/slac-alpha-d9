@@ -15,5 +15,18 @@ const SmallCard = args =>
   );
 SmallCard.args = { ...data };
 
+const SmallCardWithIcon = args =>
+parse(
+  twigTemplate({
+    ...args,
+  })
+);
+SmallCardWithIcon.args = {
+  ...data,
+  media: false,
+  icon: '<img src="https://picsum.photos/id/1015/120/120">'
+};
+
+
 export default settings;
-export { SmallCard };
+export { SmallCard, SmallCardWithIcon };
