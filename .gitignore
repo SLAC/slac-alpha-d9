@@ -28,3 +28,4 @@
 /.editorconfig
 /.gitattributes
 /.drush-lock-update
+.vscode
