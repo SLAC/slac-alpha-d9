@@ -1,15 +1,9 @@
 _core:
-  default_config_hash: dbTmQpZpbWBaYBWZq7Wi3_z2sNJThyHQOpH_StY12g8
-langcode: en
-publish:
-  state:
-    published: published
-unpublish:
-  state:
-    archived: archived
-    draft: draft
-archive:
-  state:
-    archived: archived
+  default_config_hash: Lo6hh-PzySPqJrjgJ0-hvD0v0glj2BhkMpXhaICzFCQ
 enable_dialog_node_edit_form: true
 enable_dialog_admin_content: true
+current_translation_only: 0
+workflow: editorial
+workflow_state_draft: draft
+workflow_state_unpublished: archived
+workflow_state_published: published
