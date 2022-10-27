@@ -332,6 +332,7 @@ $card-padding: rem(gesso-spacing(4));
   }
 }
 
+// Bio card
 .c-card--bio {
   .c-card__media {
     aspect-ratio: 1/1;
@@ -340,15 +341,35 @@ $card-padding: rem(gesso-spacing(4));
   .c-figure {
     width: 100%;
   }
-}
 
-.c-card--bio-large {
+  .c-card__header {
+    padding: 0;
+  }
+
   .c-card__title {
-    @include responsive-font-size(10);
+    line-height: gesso-line-height(base);
   }
 
   .c-card__metadata {
-    @include responsive-font-size(4);
+    font-size: gesso-font-size(3);
+    font-weight: gesso-font-weight(bold);
+    margin-top: gesso-spacing(1);
+  }
+
+  .c-card__content {
+    @include font-family-primary;
+    font-size: gesso-font-size(2);
+  }
+
+  .c-card__body {
+    padding: 20px;
+  }
+
+  .c-card__placeholder {
+    background: no-repeat url('images/backgrounds/placeholder-logo.svg')
+      center/contain;
+    background-origin: content-box;
+    padding: 40px 40px 10px;
   }
 }
 
