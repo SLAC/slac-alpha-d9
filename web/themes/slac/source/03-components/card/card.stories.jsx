@@ -9,7 +9,7 @@ import multidayEventCardData from './card-multiday-event.yml';
 import virtualEventCardData from './card-virtual-event.yml';
 // import eventFallbackCardData from './card-event-fallback.yml';
 // import largeEventCardData from './card-event-large.yml';
-// import bioCardData from './card-bio.yml';
+import bioCardData from './card-bio.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
 
 const settings = {
@@ -139,13 +139,25 @@ EventVirtual.args = { ...globalData, ...virtualEventCardData };
 //   alignment: 'left',
 // };
 
-// const BioCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//     })
-//   );
-// BioCard.args = { ...globalData, ...bioCardData };
+const BioCard = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+BioCard.args = { ...globalData, ...bioCardData };
+
+const BioCardWithFallback = args =>
+parse(
+  twigTemplate({
+    ...args,
+  })
+);
+BioCardWithFallback.args = {
+  ...globalData,
+  ...bioCardData,
+  media: false,
+};
 
 // const LargeBioCard = args =>
 //   parse(
@@ -176,6 +188,7 @@ export {
   // EventTeaserCard,
   // ExtraLargeCardWithRightText,
   // ExtraLargeCardWithLeftText,
-  // BioCard,
+  BioCard,
+  BioCardWithFallback,
   // LargeBioCard,
 };
