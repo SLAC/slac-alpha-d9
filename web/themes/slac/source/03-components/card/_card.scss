@@ -44,6 +44,7 @@ $card-padding: rem(gesso-spacing(4));
 
 .c-card__title {
   @include responsive-font-size(5);
+  line-height: gesso-line-height(base);
   margin: 0;
 
   &::after {
@@ -188,15 +189,6 @@ $card-padding: rem(gesso-spacing(4));
   inset: 0;
   mix-blend-mode: multiply;
   position: absolute;
-}
-
-.c-card__icon {
-  font-size: 38px;
-  left: 45px;
-  line-height: 1;
-  position: absolute;
-  top: 45px;
-  z-index: 1;
 }
 
 // Variants
