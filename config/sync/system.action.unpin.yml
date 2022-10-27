@@ -1,0 +1,13 @@
+uuid: c36436b9-e614-44cc-951f-14ec3414bde3
+langcode: en
+status: true
+dependencies:
+  module:
+    - moderated_content_bulk_publish
+_core:
+  default_config_hash: sFpIxHZdOZoEcFNDtqadtwnwRkdJdSjxcz8oOyrPL_o
+id: unpin
+label: 'Unpin content'
+type: node
+plugin: unpin_content_action
+configuration: {  }
