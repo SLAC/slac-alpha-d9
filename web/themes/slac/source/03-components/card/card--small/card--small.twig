@@ -5,7 +5,7 @@
   modifier_classes ? modifier_classes : ''
 ] %}
 
-<div {{ add_attributes({ class: classes }) }}>
+<div {{ add_attributes({ class: classes } ) }}>
   <div class="c-card__body">
     {% if kicker %}
       {% include '@components/kicker/kicker.twig' with {
@@ -23,11 +23,14 @@
         {% endif %}
       </h3>
     {% endif %}
-    {% if description %}
-      <div class="c-card__description">{{ description }}</div>
+    {% if media %}
+      <div class="c-card__media">
+        {{ media }}
+      </div>
+    {% elseif icon %}
+      <div class="c-card__media c-card__icon">
+        {{ icon }}
+      </div>
     {% endif %}
-    <div class="c-card__media">
-      {{ media }}
-    </div>
   </div>
 </div>
