@@ -4,7 +4,6 @@ import ReactDOMServer from 'react-dom/server';
 
 import twigTemplate from './two-column-hero.twig';
 import data from './two-column-hero.yml';
-import './two-column-hero.scss';
 import { PageTitle } from '../page-title/page-title.stories';
 import { LargeCard } from '../card/card.stories';
 import { HeroWithoutOverlay } from '../article-hero/article-hero.stories';
