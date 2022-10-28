@@ -1,6 +1,7 @@
 // Component: Figure
 
 @use '00-config' as *;
+@use 'sass:math';
 
 .c-figure {
   display: table;
@@ -137,7 +138,13 @@
 }
 
 .c-figure__icon {
+  font-size: 38px;
+  left: min(45px, #{math.percentage(math.div(45, 812))});
+  line-height: 1;
   pointer-events: none;
+  position: absolute;
+  top: min(45px, #{math.percentage(math.div(45, 812))});
+  z-index: 1;
 }
 
 .c-figure .c-figure__gradient {
