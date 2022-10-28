@@ -1,9 +1,9 @@
 // @file
-// Component: c-video-lightbox
+// Component: c-media-lightbox
 
 @use '00-config' as *;
 
-.c-video-lightbox {
+.c-media-lightbox {
   @include on-dark-variables;
   background: rgba(gesso-grayscale(black), 0.92);
   color: var(--gesso-text-color);
@@ -18,16 +18,12 @@
   z-index: gesso-z-index(modal);
 }
 
-.c-video-lightbox__inner {
-  display: grid;
-  min-height: 100%;
-  place-items: center;
+.c-media-lightbox__inner {
   position: relative;
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
     column-gap: gesso-get-map(gutter-width);
     grid-template-columns: 1fr 167px;
-    grid-template-rows: auto;
     place-items: initial;
 
     .l-constrain & {
@@ -35,68 +31,106 @@
       padding-right: rem(gesso-site-margins(desktop));
     }
   }
-}
 
-.c-video-lightbox__title {
-  display: none;
+  .c-media-lightbox--video & {
+    display: grid;
+    place-items: center;
+    min-height: 100%;
 
-  @include breakpoint-min(gesso-breakpoint(desktop)) {
-    display: block;
-    grid-column-start: span 2;
-    margin: 0;
+    @include breakpoint-min(gesso-breakpoint(desktop)) {
+      grid-template-rows: auto;
+    }
   }
-}
 
-.c-video-lightbox__date {
-  display: none;
-
-  @include breakpoint-min(gesso-breakpoint(desktop)) {
-    display: block;
-    grid-column-start: span 2;
-  }
-}
-
-.c-video-lightbox__embed {
-  aspect-ratio: 16/9;
-  max-height: calc(100% - #{rem(gesso-font-size(3))});
-  width: 100%;
-
-  iframe {
-    display: block;
+  .c-media-lightbox--image & {
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    object-fit: contain;
-    width: 100%;
-  }
 
-  @media (orientation: portrait) {
-    height: auto;
-    max-height: none;
-    width: 100%;
+    @include breakpoint-min(gesso-breakpoint(desktop)) {
+      display: grid;
+      row-gap: 30px;
+      grid-template-rows: auto auto 1fr auto auto;
+    }
   }
+}
+
+.c-media-lightbox__title {
+  @include responsive-font-size(5);
+  display: none;
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
-    aspect-ratio: initial;
+    display: block;
+    margin: 0;
+    max-width: rem(814px);
+  }
+}
+
+.c-media-lightbox__date {
+  display: none;
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    display: block;
+    grid-column-start: span 2;
+  }
+}
+
+.c-media-lightbox__embed {
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
     grid-row-start: span 3;
+  }
+
+  .c-media-lightbox--video & {
+    aspect-ratio: 16/9;
+    max-height: calc(100% - #{rem(gesso-font-size(3))});
     width: 100%;
 
     iframe {
-      aspect-ratio: 16/9;
+      display: block;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+      width: 100%;
+    }
+
+    @media (orientation: portrait) {
       height: auto;
-      margin: 0;
+      max-height: none;
+      width: 100%;
+    }
+
+    @include breakpoint-min(gesso-breakpoint(desktop)) {
+      aspect-ratio: initial;
+      max-height: calc(100% - #{rem(gesso-font-size(3))});
+      width: 100%;
+
+      iframe {
+        aspect-ratio: 16/9;
+        height: auto;
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .c-media-lightbox--image & {
+    height: 100%;
+
+    img {
+      display: block;
+      height: 100%;
+      object-fit: scale-down;
       width: 100%;
     }
   }
 }
 
-.c-video-lightbox__description,
-.c-video-lightbox__credit,
-.c-video-lightbox__button {
+.c-media-lightbox__description,
+.c-media-lightbox__credit,
+.c-media-lightbox__button {
   grid-column-start: 2;
 }
 
-.c-video-lightbox__description {
+.c-media-lightbox__description {
   display: none;
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
@@ -106,7 +140,7 @@
   }
 }
 
-.c-video-lightbox__credit {
+.c-media-lightbox__credit {
   display: none;
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
@@ -117,14 +151,14 @@
       text-decoration-thickness: 1px;
     }
 
-    .c-video-lightbox__description + & {
+    .c-media-lightbox__description + & {
       border-top: 1px solid currentcolor;
       padding-top: gesso-get-map(gutter-width);
     }
   }
 }
 
-.c-video-lightbox__close {
+.c-media-lightbox__close {
   @include focus;
   appearance: none;
   background: transparent;
@@ -144,7 +178,7 @@
   }
 }
 
-.c-video-lightbox__button {
+.c-media-lightbox__button {
   display: none;
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {

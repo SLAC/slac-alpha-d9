@@ -3,4 +3,4 @@ media: '<img src="https://picsum.photos/600/450?image=237" alt="dog photo">'
 is_video: true
 video_button_label: 'Play video: Video Title'
 caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper vel metus at cursus.'
-lightbox_id: 'video-lightbox'
+lightbox_id: 'media-lightbox'

@@ -5,8 +5,8 @@ import twigTemplate from './figure.twig';
 import data from './figure.yml';
 import videoData from './figure--iframe.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
-import videoLightboxTemplate from '../video-lightbox/video-lightbox.twig';
-import videoLightboxData from '../video-lightbox/video-lightbox.yml';
+import videoLightboxTemplate from '../media-lightbox/media-lightbox.twig';
+import videoLightboxData from '../media-lightbox/video-lightbox.yml';
 
 const settings = {
   title: 'Components/Figure',

@@ -283,10 +283,10 @@ video_hero:
   dependencies:
     - slac/common
 
-video_lightbox:
+media_lightbox:
   css:
     theme:
-      dist/css/video-lightbox.css: {}
+      dist/css/media-lightbox.css: {}
   dependencies:
     - slac/lightbox
 

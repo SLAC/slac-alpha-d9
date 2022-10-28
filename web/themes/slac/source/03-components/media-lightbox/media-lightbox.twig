@@ -1,0 +1,46 @@
+{% set classes = [
+  'c-media-lightbox',
+  'c-media-lightbox--' ~ media_type,
+  'u-hidden',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ attach_library('slac/media_lightbox') }}
+
+<div {{ add_attributes({ class: classes, id: lightbox_id, role: 'dialog' } ) }}>
+  <div class="l-constrain c-media-lightbox__inner" role="document">
+    <button type="button" class="js-lightbox__close c-media-lightbox__close">
+      Close
+      {% include '@components/icon/icon.twig' with {
+        'icon_name': 'close',
+        'hidden': true
+      } %}
+    </button>
+    <h2 class="c-media-lightbox__title">
+      {{ media_title }}
+    </h2>
+    {% if media_date %}
+      <div class="c-media-lightbox__date">
+        {{ media_date }}
+      </div>
+    {% endif %}
+    <div class="c-media-lightbox__embed">
+      {{ media_embed }}
+    </div>
+    {% if media_description %}
+      <div class="c-media-lightbox__description">
+        {{ media_description }}
+      </div>
+    {% endif %}
+    {% if media_credit %}
+      <div class="c-media-lightbox__credit">
+        {{ media_credit }}
+      </div>
+    {% endif %}
+    {% if media_details_url %}
+      <a class="c-media-lightbox__button c-button c-button--chevron c-button--outline-secondary" href="{{ media_details_url }}">
+        {{ media_type == 'video' ? 'Video details'|t : 'Image details'|t }}
+      </a>
+    {% endif %}
+  </div>
+</div>

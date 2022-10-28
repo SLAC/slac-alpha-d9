@@ -39,7 +39,7 @@
     {{ content.thumbnail }}
   {% endif %}
   {{ title_suffix }}
-  {% include '@components/video-lightbox/video-lightbox.twig' with {
+  {% include '@components/media-lightbox/media-lightbox.twig' with {
     'video_title': content.field_long_text|field_value ? content.field_long_text : name,
     'video_date': created|date('F j, Y'),
     'video_embed': content.field_media_oembed_video,
