@@ -10,6 +10,11 @@ import videoLightboxData from '../video-lightbox/video-lightbox.yml';
 
 const settings = {
   title: 'Components/Figure',
+  parameters: {
+    controls: {
+      include: ['media', 'caption'],
+    },
+  },
 };
 
 const Default = args =>
@@ -18,7 +23,7 @@ const Default = args =>
       ...args,
     })
   );
-Default.args = { ...data };
+Default.args = { ...data, caption: false };
 
 const FigureCentered = args =>
   parse(
@@ -38,24 +43,6 @@ const FigureCenteredWide = args =>
   );
 FigureCenteredWide.args = { ...data };
 
-const FigureLeftAligned = args =>
-  parse(
-    twigTemplate({
-      ...args,
-      modifier_classes: 'u-align-left',
-    })
-  );
-FigureLeftAligned.args = { ...data };
-
-const FigureRightAligned = args =>
-  parse(
-    twigTemplate({
-      ...args,
-      modifier_classes: 'u-align-right',
-    })
-  );
-FigureRightAligned.args = { ...data };
-
 const FigureWithVideo = args => (
   <>
     {parse(
@@ -63,10 +50,15 @@ const FigureWithVideo = args => (
         ...args,
       })
     )}
-    {parse(videoLightboxTemplate({ ...globalData, ...videoLightboxData }))}
+    {parse(
+      videoLightboxTemplate({
+        ...globalData,
+        ...videoLightboxData,
+      })
+    )}
   </>
 );
-FigureWithVideo.args = { ...videoData, ...globalData };
+FigureWithVideo.args = { ...videoData, ...globalData, caption: false };
 
 const FigureWithVideoCentered = args => (
   <>
@@ -81,41 +73,11 @@ const FigureWithVideoCentered = args => (
 );
 FigureWithVideoCentered.args = { ...videoData, ...globalData };
 
-const FigureWithVideoLeftAligned = args => (
-  <>
-    {parse(
-      twigTemplate({
-        ...args,
-        modifier_classes: 'u-align-left',
-      })
-    )}
-    {parse(videoLightboxTemplate({ ...globalData, ...videoLightboxData }))}
-  </>
-);
-FigureWithVideoLeftAligned.args = { ...videoData, ...globalData };
-
-const FigureWithVideoRightAligned = args => (
-  <>
-    {parse(
-      twigTemplate({
-        ...args,
-        modifier_classes: 'u-align-right',
-      })
-    )}
-    {parse(videoLightboxTemplate({ ...globalData, ...videoLightboxData }))}
-  </>
-);
-FigureWithVideoRightAligned.args = { ...videoData, ...globalData };
-
 export default settings;
 export {
   Default,
   FigureCentered,
   FigureCenteredWide,
-  FigureLeftAligned,
-  FigureRightAligned,
   FigureWithVideo,
   FigureWithVideoCentered,
-  FigureWithVideoLeftAligned,
-  FigureWithVideoRightAligned,
 };

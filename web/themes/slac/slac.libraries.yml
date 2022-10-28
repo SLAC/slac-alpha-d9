@@ -274,11 +274,6 @@ transparent_nav:
   dependencies:
     - slac/mega_menu
 
-two_column_hero:
-  css:
-    theme:
-      dist/css/two-column-hero.css: {}
-
 video_hero:
   css:
     theme:
