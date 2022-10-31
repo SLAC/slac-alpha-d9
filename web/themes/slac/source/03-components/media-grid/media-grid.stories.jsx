@@ -10,6 +10,8 @@ import {
 } from '../figure/figure.stories';
 import { SectionWrapper } from '../../06-utility/storybookHelper.jsx';
 
+import './media-grid.es6';
+
 const settings = {
   title: 'Components/Media Grid',
 };

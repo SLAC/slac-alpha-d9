@@ -18,6 +18,10 @@
   top: 0;
   width: 100vw;
   z-index: gesso-z-index(modal);
+
+  @media (max-height: 450px) {
+    padding-top: rem(gesso-spacing(8));
+  }
 }
 
 .c-media-lightbox__inner {
@@ -45,6 +49,8 @@
   }
 
   .c-media-lightbox--image & {
+    display: flex;
+    flex-direction: column;
     height: 100%;
 
     @include breakpoint-min(gesso-breakpoint(desktop)) {
@@ -115,13 +121,17 @@
   }
 
   .c-media-lightbox--image & {
-    height: 100%;
+    flex: 1;
 
     img {
       display: block;
       height: 100%;
       object-fit: scale-down;
       width: 100%;
+    }
+
+    @include breakpoint-min(gesso-breakpoint(desktop)) {
+      height: 100%;
     }
   }
 }
@@ -178,6 +188,10 @@
   .c-icon {
     margin-left: rem(gesso-spacing(1));
   }
+
+  @media (max-height: 450px) and (max-width: #{gesso-breakpoint(desktop) - 1px}) {
+    top: -2rem;
+  }
 }
 
 .c-media-lightbox__button {
@@ -187,4 +201,80 @@
     align-self: flex-end;
     display: inline-block;
   }
+}
+
+.c-media-lightbox__controls {
+  display: grid;
+  gap: gesso-spacing(2);
+  grid-template-columns: 100%;
+  padding-inline: gesso-site-margins(mobile);
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    padding-inline: 0;
+  }
+}
+
+.c-media-lightbox__download .c-button {
+  margin-bottom: 0;
+}
+
+.c-media-lightbox__count {
+  font-size: rem(gesso-font-size(3));
+  font-weight: gesso-font-weight(bold);
+  text-align: center;
+
+  &[aria-hidden='true'] {
+    visibility: hidden;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(tablet)) {
+    text-align: right;
+  }
+}
+
+.c-media-lightbox__nav {
+  align-items: center;
+  display: flex;
+  gap: gesso-spacing(2);
+  justify-content: center;
+  text-align: center;
+
+  &[aria-hidden='true'] {
+    visibility: hidden;
+  }
+}
+
+.c-media-lightbox__prev,
+.c-media-lightbox__next {
+  @include focus();
+  appearance: none;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  box-shadow: none;
+  color: inherit;
+  cursor: pointer;
+  line-height: 34px;
+  transition: all gesso-duration(standard) gesso-easing(ease-out);
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    background-color: gesso-color(button, secondary, background);
+    color: gesso-color(button, secondary, text);
+  }
+}
+
+.c-media-lightbox__prev {
+  padding: 0 10px 0 8px;
+}
+
+.c-media-lightbox__next {
+  padding: 0 8px 0 10px;
 }

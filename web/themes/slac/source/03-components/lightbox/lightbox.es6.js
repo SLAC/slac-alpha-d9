@@ -72,7 +72,9 @@ Drupal.behaviors.lightbox = {
       }
 
       closeButton.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('close-lightbox', closeLightbox);
       trigger.addEventListener('click', openLightbox);
+      lightbox.addEventListener('open-lightbox', openLightbox);
     });
   },
 };

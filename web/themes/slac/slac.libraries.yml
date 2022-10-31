@@ -186,6 +186,20 @@ media_detail:
     theme:
       dist/css/media-detail.css: {}
 
+media_grid:
+  js:
+    dist/js/media-lightbox.es6: { }
+  dependencies:
+    - slac/common
+    - drupal/core
+
+media_lightbox:
+  css:
+    theme:
+      dist/css/media-lightbox.css: {}
+  dependencies:
+    - slac/lightbox
+
 mobile_menu:
   css:
     theme:
@@ -282,13 +296,6 @@ video_hero:
     dist/js/video-hero.es6.js: {}
   dependencies:
     - slac/common
-
-media_lightbox:
-  css:
-    theme:
-      dist/css/media-lightbox.css: {}
-  dependencies:
-    - slac/lightbox
 
 views-toggle:
   css:

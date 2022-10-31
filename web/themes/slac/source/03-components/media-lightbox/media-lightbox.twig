@@ -42,5 +42,32 @@
         {{ media_type == 'video' ? 'Video details'|t : 'Image details'|t }}
       </a>
     {% endif %}
+    <div class="c-media-lightbox__controls">
+      <div class="c-media-lightbox__download">
+      {% if media_download_url %}
+        <a href="{{ media_download_url }}" download class="c-button c-button--outline-secondary c-button--download">{{ 'Download' }}</a>
+      {% endif %}
+      </div>
+      <div class="c-media-lightbox__nav" aria-hidden="true">
+        <button aria-label="{{ 'Previous'|t }}" tabindex="-1" class="c-media-lightbox__prev">
+          {% include '@components/icon/icon.twig' with {
+            'icon_name': 'angle-left',
+            'is_hidden': true
+          } %}
+        </button>
+        <button aria-label="{{ 'Next'|t }}" tabindex="-1" class="c-media-lightbox__next">
+          {% include '@components/icon/icon.twig' with {
+            'icon_name': 'angle-right',
+            'is_hidden': true
+          } %}
+        </button>
+      </div>
+      <div class="c-media-lightbox__count" aria-hidden="true">
+        {% include '@components/icon/icon.twig' with {
+          'icon_name': 'photos',
+          'label': 'Number of Slides'|t
+        } %}
+      </div>
+    </div>
   </div>
 </div>
