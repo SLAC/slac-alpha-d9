@@ -4,18 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
-    - field.field.node.news_article.field_bio
-    - field.field.node.news_article.field_bio_related_content
-    - field.field.node.news_article.field_boolean
-    - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
-    - field.field.node.news_article.field_internal_tags
-    - field.field.node.news_article.field_lede
-    - field.field.node.news_article.field_news_source
+    - field.field.node.news_article.field_link
     - field.field.node.news_article.field_paragraphs
     - field.field.node.news_article.field_paragraphs_1
-    - field.field.node.news_article.field_research_area
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
@@ -26,6 +19,7 @@ dependencies:
     - node.type.news_article
   module:
     - entity_reference_revisions
+    - link
     - user
 id: node.news_article.search_index
 targetEntityType: node
@@ -35,23 +29,19 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
-  field_bio:
-    type: entity_reference_label
+  field_link:
+    type: link
     label: hidden
     settings:
-      link: false
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_bio_related_content:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -60,7 +50,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_text:
     type: string
@@ -71,15 +61,9 @@ content:
     weight: 3
     region: content
 hidden:
-  field_boolean: true
-  field_estimated_read_time: true
   field_featured: true
   field_hero_paragraph: true
-  field_internal_tags: true
-  field_lede: true
-  field_news_source: true
   field_paragraphs_1: true
-  field_research_area: true
   field_source_link: true
   field_source_name: true
   field_tags: true
