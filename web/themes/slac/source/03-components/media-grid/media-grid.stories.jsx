@@ -14,12 +14,20 @@ const settings = {
   title: 'Components/Media Grid',
 };
 
-const getArgs = () => {
+let lightboxCounter = 1;
+
+const getArgs = isImage => {
   const imageId = Math.floor(Math.random() * 29);
-  return {
+  const args = {
     caption: false,
     media: `<img src="https://picsum.photos/600/450?image=${imageId}" alt="Placeholder image" loading="lazy" width="600" height="450">`,
+    lightbox_id: `gallery-lightbox-${lightboxCounter}`,
   };
+  if (isImage) {
+    args.media_embed = `<img src="https://picsum.photos/1600/900?image=${imageId}" loading="lazy" width="1600" height="900" alt="Large placeholder image" />`;
+  }
+  lightboxCounter += 1;
+  return args;
 };
 
 const MediaGrid = args => (
@@ -29,34 +37,34 @@ const MediaGrid = args => (
         ...args,
         media_content: ReactDOMServer.renderToStaticMarkup(
           <>
-            {Image(getArgs())}
-            {Image(getArgs())}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
             {Video({ ...Video.args, ...getArgs() })}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Video({ ...Video.args, ...getArgs() })}
-            {Video({ ...Video.args, ...getArgs() })}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Video({ ...Video.args, ...getArgs() })}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
             {Video({ ...Video.args, ...getArgs() })}
             {Video({ ...Video.args, ...getArgs() })}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
-            {Image(getArgs())}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Video({ ...Video.args, ...getArgs() })}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Video({ ...Video.args, ...getArgs() })}
+            {Video({ ...Video.args, ...getArgs() })}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
+            {Image(getArgs(true))}
           </>
         ),
       })

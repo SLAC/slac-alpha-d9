@@ -5,8 +5,9 @@ import twigTemplate from './figure.twig';
 import data from './figure.yml';
 import videoData from './figure--iframe.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
-import videoLightboxTemplate from '../media-lightbox/media-lightbox.twig';
+import mediaLightboxTemplate from '../media-lightbox/media-lightbox.twig';
 import videoLightboxData from '../media-lightbox/video-lightbox.yml';
+import imageLightboxData from '../media-lightbox/image-lightbox.yml';
 
 const settings = {
   title: 'Components/Figure',
@@ -17,13 +18,26 @@ const settings = {
   },
 };
 
-const Default = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-Default.args = { ...data, caption: false };
+const Default = args => (
+  <>
+    {parse(
+      twigTemplate({
+        ...args,
+      })
+    )}
+    {parse(
+      mediaLightboxTemplate({
+        ...globalData,
+        ...imageLightboxData,
+        // eslint-disable-next-line react/destructuring-assignment
+        media_embed: args.media_embed || imageLightboxData.media_embed,
+        // eslint-disable-next-line react/destructuring-assignment
+        lightbox_id: args.lightbox_id || imageLightboxData.lightbox_id,
+      })
+    )}
+  </>
+);
+Default.args = { ...data, caption: false, lightbox_id: 'image-lightbox' };
 
 const FigureCentered = args =>
   parse(
@@ -51,9 +65,11 @@ const FigureWithVideo = args => (
       })
     )}
     {parse(
-      videoLightboxTemplate({
+      mediaLightboxTemplate({
         ...globalData,
         ...videoLightboxData,
+        // eslint-disable-next-line react/destructuring-assignment
+        lightbox_id: args.lightbox_id || videoLightboxData.lightbox_id,
       })
     )}
   </>
@@ -68,7 +84,7 @@ const FigureWithVideoCentered = args => (
         modifier_classes: 'u-align-center',
       })
     )}
-    {parse(videoLightboxTemplate({ ...globalData, ...videoLightboxData }))}
+    {parse(mediaLightboxTemplate({ ...globalData, ...videoLightboxData }))}
   </>
 );
 FigureWithVideoCentered.args = { ...videoData, ...globalData };

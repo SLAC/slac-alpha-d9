@@ -7,6 +7,8 @@
   @include on-dark-variables;
   background: rgba(gesso-grayscale(black), 0.92);
   color: var(--gesso-text-color);
+  contain-intrinsic-size: 100vw;
+  content-visibility: auto;
   height: 100vh;
   left: 0;
   overflow-y: auto;
@@ -24,7 +26,6 @@
   @include breakpoint-min(gesso-breakpoint(desktop)) {
     column-gap: gesso-get-map(gutter-width);
     grid-template-columns: 1fr 167px;
-    place-items: initial;
 
     .l-constrain & {
       padding-left: rem(gesso-site-margins(desktop));
@@ -34,11 +35,12 @@
 
   .c-media-lightbox--video & {
     display: grid;
-    place-items: center;
     min-height: 100%;
+    place-items: center;
 
     @include breakpoint-min(gesso-breakpoint(desktop)) {
       grid-template-rows: auto;
+      place-items: initial;
     }
   }
 
@@ -47,8 +49,8 @@
 
     @include breakpoint-min(gesso-breakpoint(desktop)) {
       display: grid;
-      row-gap: 30px;
       grid-template-rows: auto auto 1fr auto auto;
+      row-gap: 30px;
     }
   }
 }
