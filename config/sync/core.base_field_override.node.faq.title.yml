@@ -1,19 +1,18 @@
-uuid: e3d5f210-8ee9-4357-a903-f12336ac0fc4
+uuid: 0c7f6561-ea75-4d68-a869-5b84a47dc4c3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_question
     - node.type.faq
-id: node.faq.field_question
-field_name: field_question
+id: node.faq.title
+field_name: title
 entity_type: node
 bundle: faq
 label: Question
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: string

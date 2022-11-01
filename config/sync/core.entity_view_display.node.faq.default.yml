@@ -5,10 +5,9 @@ dependencies:
   config:
     - field.field.node.faq.field_answer
     - field.field.node.faq.field_category
-    - field.field.node.faq.field_question
     - node.type.faq
   module:
-    - text
+    - entity_reference_revisions
     - user
 id: node.faq.default
 targetEntityType: node
@@ -16,11 +15,13 @@ bundle: faq
 mode: default
 content:
   field_answer:
-    type: text_default
+    type: entity_reference_revisions_entity_view
     label: hidden
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 104
     region: content
   field_category:
     type: entity_reference_label
@@ -29,13 +30,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 103
-    region: content
-  field_question:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
     region: content
   links:
     settings: {  }
