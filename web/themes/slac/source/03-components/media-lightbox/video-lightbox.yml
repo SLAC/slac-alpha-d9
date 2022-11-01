@@ -1,0 +1,12 @@
+---
+lightbox_id: 'video-lightbox'
+media_type: 'video'
+media_title: 'Battery Dynamics'
+media_date: 'March 5, 2021'
+media_embed: |-
+  <iframe width="560" height="315" data-src="https://www.youtube.com/embed/tu1Lk9-N_cU" title="YouTube media player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+media_description: |-
+  <p>Lorem ipsum <a href="https://example.com">donec mollis hendrerit risus</a>. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Aliquam erat volutpat. Praesent venenatis metus at tortor pulvinar varius.</p>
+media_credit: |-
+  <p><a href="#0">Olivier Bonin</a>/SLAC National Accelerator Laboratory</p>
+media_details_url: '#0'

@@ -17,13 +17,13 @@
             label: 'Video',
           } %}
       </div>
-      {% if lightbox_id %}
-        <button class="c-figure__button js-lightbox" type="button" title="{{ video_button_label }}" aria-controls="{{ lightbox_id }}" aria-expanded="false">
-          <span class="visually-hidden">
-            {{ video_button_label }}
-          </span>
-        </button>
-      {% endif %}
+    {% endif %}
+    {% if lightbox_id %}
+      <button class="c-figure__button js-lightbox" type="button" title="{{ video_button_label }}" aria-controls="{{ lightbox_id }}" aria-expanded="false">
+        <span class="visually-hidden">
+          {{ video_button_label }}
+        </span>
+      </button>
     {% endif %}
   </div>
   {% if caption|render|striptags|trim %}
