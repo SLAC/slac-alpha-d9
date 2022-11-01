@@ -1,0 +1,22 @@
+uuid: 68040830-2c8d-43f8-822c-44b2d00bf2a2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_revision_delete
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  node_revision_delete:
+    minimum_revisions_to_keep: 30
+    minimum_age_to_delete: 6
+    when_to_delete: 1
+name: FAQ
+type: faq
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
