@@ -19,7 +19,7 @@ const settings = {
 let lightboxCounter = 1;
 
 const getArgs = isImage => {
-  const imageId = Math.floor(Math.random() * 29);
+  const imageId = Math.floor(Math.random() * 62);
   const args = {
     caption: false,
     media: `<img src="https://picsum.photos/600/450?image=${imageId}" alt="Placeholder image" loading="lazy" width="600" height="450">`,
