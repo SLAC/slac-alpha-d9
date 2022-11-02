@@ -1,6 +1,6 @@
 ---
 is_event: true
-type: 'Upcoming Event'
+type: false
 start_date:
   month: 'Aug'
   day: '8'
