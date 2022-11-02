@@ -88,6 +88,10 @@ $card-padding: rem(gesso-spacing(4));
   .c-card--on-dark & {
     background: transparent;
   }
+
+  .c-card--teaser & {
+    padding: 20px 40px;
+  }
 }
 
 .c-card__header {
