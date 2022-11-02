@@ -1,12 +1,12 @@
 ---
 is_event: true
-type: 'Upcoming Event'
+type: false
 start_date:
   month: 'Apr'
   day: '20'
 end_date: null
 kicker: 'Public Lecture'
-event_date: 'Thursday, April 20, 2022<br>1:00 &ndash; 3:00 p.m. PT'
+event_date: 'Thursday, April 20, 2022, 1:00 &ndash; 3:00 p.m. PT'
 event_location: ''
 is_virtual: true
 footer: ''
