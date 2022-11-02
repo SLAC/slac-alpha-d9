@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news_article.field_bio
     - field.field.node.news_article.field_bio_related_content
     - field.field.node.news_article.field_boolean
+    - field.field.node.news_article.field_editorial_group
     - field.field.node.news_article.field_estimated_read_time
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
@@ -40,7 +41,7 @@ third_party_settings:
       label: 'Page Content'
       parent_name: ''
       region: content
-      weight: 0
+      weight: 1
       format_type: tabs
       format_settings:
         classes: ''
@@ -95,7 +96,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_bio:
     type: entity_reference_label
@@ -139,7 +140,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 13
+    weight: 7
     region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
@@ -156,14 +157,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 14
+    weight: 8
     region: content
   field_lede:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 3
     region: content
   field_news_source:
     type: entity_reference_label
@@ -189,7 +190,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 12
+    weight: 4
     region: content
   field_research_area:
     type: entity_reference_label
@@ -197,7 +198,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 12
+    weight: 5
     region: content
   field_source_link:
     type: link
@@ -240,7 +241,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 12
+    weight: 6
     region: content
   field_text:
     type: string
@@ -261,8 +262,9 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 2
     region: content
 hidden:
+  field_editorial_group: true
   langcode: true
   search_api_excerpt: true
