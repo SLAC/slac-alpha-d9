@@ -52,15 +52,6 @@ Default.args = { ...globalData, ...data };
 //   );
 // TeaserCard.args = { ...globalData, ...data };
 
-// const EventTeaserCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//       modifier_classes: 'c-card--teaser',
-//       event_date: 'Thursday, April 20, 2022 · 1:00 - 3:00 p.m. PT',
-//     })
-//   );
-// EventTeaserCard.args = { ...globalData, ...eventCardData };
 
 // const VideoCard = args =>
 //   parse(
@@ -96,6 +87,16 @@ const EventVirtual = args =>
     })
   );
 EventVirtual.args = { ...globalData, ...virtualEventCardData };
+
+const EventTeaserCard = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-card--teaser',
+      event_date: 'Thursday, April 20, 2022 · 1:00 - 3:00 p.m. PT',
+    })
+  );
+EventTeaserCard.args = { ...globalData, ...virtualEventCardData };
 
 // const EventFallbackCard = args =>
 //   parse(
@@ -185,7 +186,7 @@ export {
   // EventFallbackCard,
   // LargeEventCard,
   // TeaserCard,
-  // EventTeaserCard,
+  EventTeaserCard,
   // ExtraLargeCardWithRightText,
   // ExtraLargeCardWithLeftText,
   BioCard,
