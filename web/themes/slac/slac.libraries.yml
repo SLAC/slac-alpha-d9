@@ -243,6 +243,16 @@ side_menu:
     - slac/common
     - slac/hamburger_button
 
+tabs:
+  css:
+    theme:
+      dist/css/tabs.css: {}
+  js:
+    dist/js/tabs.es6.js: {}
+  dependencies:
+    - slac/common
+    - core/drupal
+
 tagline_long:
   css:
     theme:
