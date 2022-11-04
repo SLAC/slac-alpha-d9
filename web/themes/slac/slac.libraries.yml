@@ -233,16 +233,6 @@ social_share:
   dependencies:
     - slac/common
 
-side_menu:
-  css:
-    theme:
-      dist/css/side-menu.css: { }
-  js:
-    dist/js/side-menu.es6.js: { }
-  dependencies:
-    - slac/common
-    - slac/hamburger_button
-
 tabs:
   css:
     theme:
