@@ -224,6 +224,11 @@ search:
   dependencies:
     - slac/lightbox
 
+side_menu:
+  css:
+    theme:
+      dist/css/menu--side.css: {}
+
 social_share:
   css:
     theme:
