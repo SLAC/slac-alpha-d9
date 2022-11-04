@@ -1,8 +1,22 @@
+{% set page_content %}
 {% include '@components/article/article.twig' with {
   'title': title,
   'show_admin_info': show_admin_info,
   'admin_info': admin_info,
   'author_name': author_name,
   'content': content,
-  'toc_links': toc_links
+  'has_constrain': sidebar is empty
 } %}
+{% endset %}
+
+{% if sidebar %}
+  {% include '@layouts/sidebar/sidebar.twig' with {
+    'sidebar_first_content': sidebar,
+    'sidebar_main_content': page_content,
+    'has_constrain': true
+  } %}
+{% else %}
+  <div class="l-constrain">
+    {{ page_content }}
+  </div>
+{% endif %}
