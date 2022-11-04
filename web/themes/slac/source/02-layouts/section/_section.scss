@@ -6,9 +6,37 @@
   padding-bottom: rem(gesso-spacing(5));
   padding-top: rem(gesso-spacing(5));
 
+  &:last-child {
+    padding-bottom: gesso-spacing(9);
+  }
+
   @include breakpoint-min(gesso-breakpoint(desktop)) {
-    padding-bottom: rem(gesso-spacing(10));
-    padding-top: rem(gesso-spacing(10));
+    padding-bottom: rem(gesso-spacing(9));
+    padding-top: rem(gesso-spacing(9));
+
+    &:last-child {
+      padding-bottom: 126px;
+    }
+  }
+}
+
+.l-section--no-padding {
+  &:last-child {
+    padding-bottom: gesso-spacing(9);
+
+    .l-section & {
+      padding-bottom: 0;
+    }
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    &:last-child {
+      padding-bottom: 126px;
+
+      .l-section & {
+        padding-bottom: 0;
+      }
+    }
   }
 }
 

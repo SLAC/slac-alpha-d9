@@ -5,11 +5,11 @@
   'admin_info': admin_info,
   'author_name': author_name,
   'content': content,
-  'has_constrain': sidebar is empty
+  'has_constrain': not has_sidebar
 } %}
 {% endset %}
 
-{% if sidebar %}
+{% if has_sidebar %}
   {% include '@layouts/sidebar/sidebar.twig' with {
     'sidebar_first_content': sidebar,
     'sidebar_main_content': page_content,

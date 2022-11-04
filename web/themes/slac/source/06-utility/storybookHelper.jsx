@@ -13,6 +13,15 @@ const SectionWrapper = ({ children }) =>
     })
   );
 
+const SectionWithPaddingWrapper = ({ children }) =>
+  parse(
+    sectionTwigTemplate({
+      section_content: ReactDOMServer.renderToStaticMarkup(children),
+      modifier_classes: 'l-section',
+      has_constrain: true,
+    })
+  );
+
 const GridWrapper = ({ children, numCols = 3 }) =>
   parse(
     gridTwigTemplate({
@@ -21,4 +30,4 @@ const GridWrapper = ({ children, numCols = 3 }) =>
     })
   );
 
-export { SectionWrapper, GridWrapper };
+export { SectionWrapper, GridWrapper, SectionWithPaddingWrapper };
