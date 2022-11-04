@@ -11,18 +11,7 @@ const settings = {
   title: 'Templates/Page',
   parameters: {
     controls: {
-      include: [
-        'title',
-        'show_admin_info',
-        'show_footer',
-        'author_name',
-        'date_format',
-        'year',
-        'month',
-        'day',
-        'hour',
-        'minute',
-      ],
+      include: ['title', 'show_admin_info'],
     },
   },
 };
