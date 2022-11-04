@@ -4,7 +4,7 @@
 ]|join(' ')|trim %}
 
 <article {{ add_attributes({ 'class': classes }) }}>
-  <div class="l-constrain">
+  {% if has_constrain %}<div class="l-constrain">{% endif %}
     {{ title_prefix }}
     {% if not date and date_format %}
       {% set date %}
@@ -48,9 +48,9 @@
         {% endif %}
 
         {% block admin_info %}
-          <div class="l-constrain l-constrain--small">
+          {% if has_constrain %}<div class="l-constrain l-constrain--small">{% endif %}
             {{ admin_info }}
-          </div>
+          {% if has_constrain %}</div>{% endif %}
         {% endblock %}
       {% endif %}
       {% include '@components/page-title/page-title.twig' with {
@@ -58,22 +58,11 @@
         'kicker': date,
         'lede': lede,
         'byline': author,
-        'has_constrain': true,
+        'has_constrain': has_constrain,
       } %}
     {% endblock %}
     {{ title_suffix }}
-
-    {% block toc %}
-      {% if toc_links %}
-        <div class="l-constrain l-constrain--small">
-        {% include '@components/toc/toc.twig' with {
-          'toc_links': toc_links,
-          'modifier_classes': 'c-article__toc',
-        } %}
-        </div>
-      {% endif %}
-    {% endblock %}
-  </div>
+  {% if has_constrain %}</div>{% endif %}
   {% block content %}
     {{ content }}
   {% endblock %}

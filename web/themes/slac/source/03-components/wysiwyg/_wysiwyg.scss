@@ -19,7 +19,8 @@
 }
 
 .c-wysiwyg--no-constrain,
-.ck-content {
+.ck-content,
+.l-sidebar__main .c-wysiwyg {
   margin-left: 0;
   margin-right: 0;
   max-width: none;
