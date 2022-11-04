@@ -31,22 +31,14 @@
   &.u-align-left {
     @include breakpoint(gesso-breakpoint(tablet)) {
       margin-right: rem(gesso-spacing(4));
-      max-width: calc(50% - #{rem(gesso-spacing(2))});
+      max-width: min(calc(50% - #{rem(gesso-spacing(2))}), 300px);
     }
   }
 
   &.u-align-right {
     @include breakpoint(gesso-breakpoint(tablet)) {
       margin-left: rem(gesso-spacing(4));
-      max-width: calc(50% - #{rem(gesso-spacing(2))});
-    }
-
-    @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
-      margin-right: calc(-50% - #{rem(gesso-spacing(4))});
-    }
-
-    .c-wysiwyg & {
-      margin-right: 0;
+      max-width: min(calc(50% - #{rem(gesso-spacing(2))}), 300px);
     }
   }
 
@@ -90,7 +82,7 @@
   font-weight: gesso-font-weight(regular);
   line-height: gesso-line-height(tight);
   margin-top: rem(gesso-spacing(2.5));
-  max-width: 940px;
+  max-width: 920px;
   width: 100%;
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
@@ -106,12 +98,16 @@
   }
 
   .u-align-wide & {
-    max-width: none;
     padding: 0 rem(gesso-spacing(2.5));
 
     @include breakpoint(1280px) {
       padding: 0;
     }
+  }
+
+  .u-align-right &,
+  .u-align-left & {
+    font-size: rem(gesso-font-size(1));
   }
 }
 
