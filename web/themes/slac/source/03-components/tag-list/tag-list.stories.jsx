@@ -8,9 +8,13 @@ const settings = {
 };
 
 const TagList = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
+  <div className="l-constrain l-constrain--small">
+    {parse(
+      twigTemplate({
+        ...args,
+      })
+    )}
+  </div>
 );
 TagList.args = { ...data };
 
