@@ -3,6 +3,11 @@
 @use '00-config' as *;
 
 @mixin table-style {
+  .table-wrapper {
+    max-width: 100%;
+    overflow-y: auto;
+  }
+
   caption {
     margin-bottom: rem(gesso-spacing(0.5));
   }
@@ -20,31 +25,19 @@
 
   // tbody {}
 
-  td {
-    background-color: gesso-color(table, background);
-    border: 1px solid gesso-color(table, border);
-    padding: rem(gesso-spacing(2));
-  }
-
-  tfoot {
-    td,
-    th {
-      background-color: gesso-color(table, background-foot);
-    }
-  }
-
+  td,
   th {
-    background-color: gesso-color(table, background);
-    border: 1px solid gesso-color(table, border);
-    padding: rem(gesso-spacing(2));
+    background-color: transparent;
+    border: 0;
+    font-weight: gesso-font-weight(regular);
+    padding: 14px 20px;
     text-align: left;
+    white-space: nowrap;
   }
 
+  tfoot,
   thead {
-    td,
-    th {
-      background-color: gesso-color(table, background-head);
-    }
+    background-color: rgba(gesso-brand(palo-verde, light), 0.25);
 
     @media print {
       display: table-header-group;
@@ -52,6 +45,10 @@
   }
 
   tr {
+    &:nth-child(even) {
+      background-color: rgba(gesso-brand(palo-verde, light), 0.05);
+    }
+
     @media print {
       page-break-inside: avoid;
     }
