@@ -8,6 +8,7 @@ import data from './fifty-fifty.yml';
 import { Default as Figure } from '../figure/figure.stories';
 
 import '../../06-utility/transitions.es6';
+import { SectionWrapper } from '../../06-utility/storybookHelper';
 
 const settings = {
   title: 'Components/Fifty Fifty',
@@ -33,12 +34,15 @@ FiftyFifty.args = {
   col_2: ReactDOMServer.renderToStaticMarkup(<>{Figure(Figure.args)}</>),
 };
 
-const FiftyFiftyLeftFadeIn = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
+const FiftyFiftyLeftFadeIn = args => (
+  <SectionWrapper>
+    {parse(
+      twigTemplate({
+        ...args,
+      })
+    )}
+  </SectionWrapper>
+);
 FiftyFiftyLeftFadeIn.args = {
   ...data,
   col_2: wysiwygColumn,
@@ -46,12 +50,15 @@ FiftyFiftyLeftFadeIn.args = {
   fade: 'left',
 };
 
-const FiftyFiftyRightFadeIn = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
+const FiftyFiftyRightFadeIn = args => (
+  <SectionWrapper>
+    {parse(
+      twigTemplate({
+        ...args,
+      })
+    )}
+  </SectionWrapper>
+);
 FiftyFiftyRightFadeIn.args = {
   ...data,
   col_1: wysiwygColumn,

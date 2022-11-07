@@ -1,246 +1,383 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import parse from 'html-react-parser';
 
 import globalData from '../00-config/storybook.global-data.yml';
+
 import PageWrapper from './page-wrappers/default.jsx';
-import twigTemplate from '../04-templates/page/page.twig';
-import sectionTwigTemplate from '../02-layouts/section/section.twig';
-import expandableContentTemplate from '../03-components/expandable-grid/expandable-grid.twig';
+import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
 import {
-  ArticleHero,
-  HeroWithoutOverlay,
-} from '../03-components/article-hero/article-hero.stories';
-import { Quote } from '../03-components/quote/quote.stories';
+  FigureCenteredWide,
+  FigureRight,
+  FigureWithVideoCentered,
+} from '../03-components/figure/figure.stories';
 import {
   FiftyFiftyLeftFadeIn,
   FiftyFiftyRightFadeIn,
 } from '../03-components/fifty-fifty/fifty-fifty.stories';
-import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
-import { SectionWithBlueGreenGradient } from '../02-layouts/section/section.stories';
-import { PromoBox } from '../03-components/promo-box/promo-box.stories';
-import { Default as Card } from '../03-components/card/card.stories';
 import {
-  FigureCenteredWide,
-  FigureWithVideo,
-  FigureWithVideoCentered,
-} from '../03-components/figure/figure.stories';
-import { Carousel } from '../03-components/carousel/carousel.stories';
-import { CalloutBox } from '../03-components/callout-box/callout-box.stories';
+  GridWrapper,
+  SectionWithPaddingWrapper,
+  SectionWrapper,
+} from '../06-utility/storybookHelper';
+import { NewsArticle } from '../04-templates/news-article-detail/news-article-detail.stories';
+import { HeroWithoutOverlay } from '../03-components/article-hero/article-hero.stories';
+import { Quote } from '../03-components/quote/quote.stories';
 import { TagList } from '../03-components/tag-list/tag-list.stories';
+import { SectionWithBlueGreenGradient } from '../02-layouts/section/section.stories';
+import { Default as Card } from '../03-components/card/card.stories';
 
 export default {
-  title: 'Pages/Article',
+  title: 'Pages/News Article Detail',
   parameters: {
     controls: {
-      include: ['show_admin_info'],
+      include: ['show_admin_info', 'has_sidebar'],
     },
   },
 };
 
-// For an example of reusing the same content as the Article component,
-// see Page page.
-const articleDemoContent = `
-  ${ReactDOMServer.renderToStaticMarkup(
-    WYSIWYG({
-      content: `<p>Scientists have taken a major step forward in harnessing machine learning to accelerate the design for better batteries: Instead of using it just to speed up scientific analysis by looking for patterns in data, as researchers generally do, they combined it with knowledge gained from experiments and equations guided by physics to discover and explain a process that shortens the lifetimes of fast-charging lithium-ion batteries.</p>
-  <p>It was the first time this approach, known as “scientific machine learning,” has been applied to battery cycling, said Will Chueh, an associate professor at Stanford University and investigator with the Department of Energy’s SLAC National Accelerator Laboratory who led the study. </p>`,
-    })
-  )}
-  ${ReactDOMServer.renderToStaticMarkup(
-    FigureWithVideoCentered(FigureWithVideoCentered.args)
-  )}
-  ${ReactDOMServer.renderToStaticMarkup(
-    WYSIWYG({
-      content: `<p>The research, reported today in Nature Materials, is the latest result from a collaboration between Stanford, SLAC, the Massachusetts Institute of Technology and Toyota Research Institute (TRI). The goal is to bring together foundational research and industry know-how to develop a long-lived electric vehicle battery that can be charged in 10 minutes.</p>`,
-    })
-  )}
-  ${ReactDOMServer.renderToStaticMarkup(Quote(Quote.args))}
-  ${ReactDOMServer.renderToStaticMarkup(
-    WYSIWYG({
-      content: `<p>“Battery technology is important for any type of electric powertrain," said Patrick Herring, senior research scientist for Toyota Research Institute. “By understanding the fundamental reactions that occur within the battery we can extend its life, enable faster charging and ultimately design better battery materials. We look forward to building on this work through future experiments to achieve lower-cost, better-performing batteries.”</p>`,
-    })
-  )}
-  ${ReactDOMServer.renderToStaticMarkup(
-    FigureCenteredWide(FigureCenteredWide.args)
-  )}
-  ${ReactDOMServer.renderToStaticMarkup(
-    WYSIWYG({
-      content: `<h2>A trio of advances</h2>
-<p>The new study builds on two previous advances where the group used more conventional forms of machine learning to dramatically accelerate both battery testing and the process of winnowing down many possible charging methods to find the ones that work best.</p>
-  ${ReactDOMServer.renderToStaticMarkup(CalloutBox(CalloutBox.args))}
-    <p>While these studies allowed researchers to make much faster progress – reducing the time needed to determine battery lifetimes by 98%, for instance – they didn’t reveal the underlying physics or chemistry that made some batteries last longer than others, as the latest study did.</p>
-  <h3>Combining all three approaches</h3>
-  <p>Combining all three approaches could potentially slash the time needed to bring a new battery technology from the lab bench to the consumer by as much as two-thirds, Chueh said.</p>
-  <p>“In this case, we are teaching the machine how to learn the physics of a new type of failure mechanism that could help us design better and safer fast-charging batteries,” Chueh said. “Fast charging is incredibly stressful and damaging to batteries, and solving this problem is key to expanding the nation’s fleet of electric vehicles as part of the overall strategy for fighting climate change.”</p>
-  <p>The new combined approach can also be applied to developing the grid-scale battery systems needed for a greater deployment of wind and solar electricity, which will become even more urgent as the nation pursues recently announced Biden Administration goals of eliminating fossil fuels from electric power generation by 2035 and achieving net-zero carbon emissions by 2050.</p>`,
-    })
-  )}
-    ${sectionTwigTemplate({
-      section_content: ReactDOMServer.renderToStaticMarkup(
-        FiftyFiftyLeftFadeIn({
-          ...FiftyFiftyLeftFadeIn.args,
-          has_constrain: true,
-        })
-      ),
-    })}
-    ${ReactDOMServer.renderToStaticMarkup(
-      WYSIWYG({
-        content: `<p>quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed. To look at this process in more detail, the team observed the behavior of cathode particles made of nickel, manganese and cobalt, a combination known as NMC that’s one of the most widely used materials in electric vehicle batteries. These particles absorb lithium ions when the battery discharges and release them when it charges.</p>`,
-      })
-    )}
-    ${sectionTwigTemplate({
-      section_content: ReactDOMServer.renderToStaticMarkup(
-        FiftyFiftyRightFadeIn({
-          ...FiftyFiftyRightFadeIn.args,
-          has_constrain: true,
-        })
-      ),
-    })}
-    ${ReactDOMServer.renderToStaticMarkup(
-      WYSIWYG({
-        content: `<p>quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed. To look at this process in more detail, the team observed the behavior of cathode particles made of nickel, manganese and cobalt, a combination known as NMC that’s one of the most widely used materials in electric vehicle batteries. These particles absorb lithium ions when the battery discharges and release them when it charges.</p>`,
-      })
-    )}
-    ${sectionTwigTemplate({
-      section_content: ReactDOMServer.renderToStaticMarkup(
-        FiftyFiftyLeftFadeIn({
-          ...FiftyFiftyLeftFadeIn.args,
-          has_constrain: true,
-          col_1: ReactDOMServer.renderToStaticMarkup(Quote(Quote.args)),
-          col_2: ReactDOMServer.renderToStaticMarkup(
-            FigureWithVideo(FigureWithVideo.args)
-          ),
-        })
-      ),
-    })}
-    ${ReactDOMServer.renderToStaticMarkup(
-      WYSIWYG({
-        content: `<h2>The rich-get-richer effect</h2>
-<p>Until now, scientists had assumed that the differences between particles were insignificant and that their ability to store and release ions was limited by how fast lithium could move inside the particles, Kang said. In this way of seeing things, lithium ions flow in and out of all the particles at the same time and at roughly the same speed.</p>
-<p>But the new approach revealed that the particles themselves control how fast lithium ions move out of cathode particles when a battery charges, he said. Some particles immediately release a lot of their ions while others release very few or none at all. And the quick-to-release particles go on releasing ions at a faster rate than their neighbors ­– a positive feedback, or “rich get richer,” effect that had not been identified before.</p>`,
-      })
-    )}
-`;
-
-// For an example of customizing the content block on a demo page,
-// see Page.
-const articleContent = args =>
-  twigTemplate({
-    ...args,
-    title:
-      'In a leap for battery research, machine learning gets scientific smarts',
-    date_format: 'medium-date',
-    year: {
-      long: '2021',
-    },
-    month: {
-      long: 'March',
-    },
-    day: {
-      short: '8',
-    },
-    author_name: 'Glennda Chui',
-    content: articleDemoContent,
-    lede: '<p>The latest advance from a research collaboration with industry could dramatically accelerate the development of sturdier batteries for fast-charging electric vehicles.</p>',
-    toc_links: [
-      {
-        url: '#0',
-        title: 'A trio of advances',
-      },
-      {
-        url: '#1',
-        title: 'Zooming in for closeups',
-      },
-      {
-        url: '#2',
-        title: 'The-rich-get-richer effect',
-      },
-      {
-        url: '#3',
-        title: 'Image Gallery',
-      },
-    ],
-  });
-
-const Article = args => (
+const NewsArticleDetail = args => (
   <PageWrapper
     hero={HeroWithoutOverlay({
       ...HeroWithoutOverlay.args,
       showPageTitle: false,
     })}
   >
-    {parse(articleContent(args))}
-    {PromoBox(PromoBox.args)}
-    {parse(
-      sectionTwigTemplate({
-        section_content: ReactDOMServer.renderToStaticMarkup(
-          WYSIWYG({
-            content: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio. </p>
-  <p>Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed</p>
-  <p>Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed</p>`,
-          })
-        ),
-        modifier_classes: 'l-section--white',
-      })
-    )}
-    {parse(
-      sectionTwigTemplate({
-        has_constrain: true,
-        section_content: ReactDOMServer.renderToStaticMarkup(
-          Carousel(Carousel.args)
-        ),
-        modifier_classes: 'l-section--white',
-        section_kicker: 'Image Gallery',
-        section_title: 'Arrillaga Science Center Batter Research',
-        section_buttons:
-          '<a href="https://flickr.com" class="c-button c-button--outline">See Flickr Album</a>',
-      })
-    )}
-    {parse(
-      sectionTwigTemplate({
-        has_constrain: true,
-        modifier_classes: 'l-section--white',
-        constrain_modifier_classes: 'l-constrain--small',
-        section_content: ReactDOMServer.renderToStaticMarkup(
-          <>
+    {NewsArticle({
+      ...args,
+      title:
+        'Gravitational lenses could hold the key to better estimates of the expansion of the universe',
+      date: 'November 16, 2020',
+      lede: 'SLAC cosmologists are using multiple images of the same quasars, produced by massive galaxies’ gravitational pull, to calibrate cosmic distances. Their work may help resolve long-standing debates about how quickly the universe is expanding.',
+      author: '<a href="#0">Nathan Collins</a>',
+      content: ReactDOMServer.renderToStaticMarkup(
+        <>
+          <SectionWrapper>
             {WYSIWYG({
-              content: `<hr /><p class="c-small-paragraph">Editor's note: This story is based on a <a href="#0">press release</a> from Fermilab.</p>
-<p class="c-small-paragraph">This research was funded by Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien eleifend vitae mattis viverra ut scelerisque proin. Risus proin dignissim amet ac. Diam nisi, pretium non sem sed vel nam. Ut eu egestas mauris in aenean. Sit ornare pretium, donec elit.</p>
-<h5>Citation</h5>
-<p class="c-small-paragraph">Jungjin Park et al., Nature Materials, 8 March 2021 [10.1038/s41563-021-00936-1]</p>
-<h5>Contact</h5>
-<p class="c-small-paragraph">For questions or comments, contact the SLAC Lorem ipsum dolor sit amet at <a href="mailto:name@slac.stanford.edu">name@slac.stanford.edu</a>.</p>
-<hr />
-<p class="c-small-paragraph"><i>SLAC is a vibrant multiprogram laboratory that explores how the universe works at the biggest, smallest and fastest scales and invents powerful tools used by scientists around the globe. With research spanning particle physics, astrophysics and cosmology, materials, chemistry, bio- and energy sciences and scientific computing, we help solve real-world problems and advance the interests of the nation.</i></p> 
-<p class="c-small-paragraph"><i>SLAC is operated by Stanford University for the U.S. Department of Energy’s Office of Science. The Office of Science is the single largest supporter of basic research in the physical sciences in the United States and is working to address some of the most pressing challenges of our time.</i></p>`,
+              content: ReactDOMServer.renderToStaticMarkup(
+                <>
+                  <p>
+                    The universe is expanding but astrophysicists aren’t sure
+                    exactly how fast that expansion is happening – not because
+                    there aren’t answers, but rather because the answers they
+                    could give don’t agree.
+                  </p>
+                  <p>
+                    Now, Simon Birrer, a postdoctoral fellow at Stanford
+                    University and the Kavli Institute for Particle Physics and
+                    Astrophysics at the Department of Energy’s SLAC National
+                    Accelerator Laboratory, and an international team of
+                    researchers have a new answer that may, once refined with
+                    more data, help resolve the debate.{' '}
+                  </p>
+                </>
+              ),
             })}
-            {TagList(TagList.args)}
-          </>
-        ),
-      })
-    )}
-    {SectionWithBlueGreenGradient({
-      ...SectionWithBlueGreenGradient.args,
-      section_content: expandableContentTemplate({
-        ...globalData,
-        grid_items: [
-          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
-          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
-          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
-          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
-          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
-          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
-          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
-          ReactDOMServer.renderToStaticMarkup(<>{Card(Card.args)}</>),
-        ],
-      }),
-      section_buttons: false,
+          </SectionWrapper>
+          {FigureWithVideoCentered(FigureWithVideoCentered.args)}
+          <SectionWrapper>
+            {WYSIWYG({
+              content: ReactDOMServer.renderToStaticMarkup(
+                <>
+                  <p>
+                    That new answer is the result of revisiting a decades-old
+                    method called time-delay cosmography with new assumptions
+                    and additional data to derive a new estimate of the Hubble
+                    constant, a measure of the expansion of the Universe. Birrer
+                    and colleagues published their results November 20 in the
+                    journal{' '}
+                    <a href="https://www.aanda.org/">
+                      <i>Astronomy and Astrophysics</i>
+                    </a>
+                    .
+                  </p>
+                  <p>
+                    “It’s a continuation of a large and successful decade-long
+                    effort by a large team, with a reset in certain key aspects
+                    of our analysis,” Birrer said, and a reminder that “we
+                    should always reconsider our assumptions. Our recent work is
+                    exactly in this spirit.”
+                  </p>
+                </>
+              ),
+            })}
+          </SectionWrapper>
+          <SectionWithPaddingWrapper>
+            {FiftyFiftyLeftFadeIn({
+              ...FiftyFiftyLeftFadeIn.args,
+              col_2: ReactDOMServer.renderToStaticMarkup(
+                WYSIWYG({
+                  content: ReactDOMServer.renderToStaticMarkup(
+                    <>
+                      <h3>Distance, speed and sound</h3>
+                      <p>
+                        Cosmologists have known for nearly a century that the
+                        cosmos is expanding, and in that time they have settled
+                        on two main ways to measure that expansion. One method
+                        is the cosmic distance ladder, a series of steps that
+                        help estimate the distance to far-away supernovae. By
+                        examining the spectrum of light from these supernovae,
+                        scientists can calculate how quickly they’re receding
+                        from us, then divide by distance to estimate the Hubble
+                        constant. (The Hubble constant is usually measured in
+                        kilometers per second per megaparsec, reflecting the
+                        fact that space itself is growing, so that more distant
+                        objects recede from us faster than nearer objects.)
+                      </p>
+                    </>
+                  ),
+                })
+              ),
+            })}
+          </SectionWithPaddingWrapper>
+          <SectionWrapper>
+            {WYSIWYG({
+              content: ReactDOMServer.renderToStaticMarkup(
+                <>
+                  <p>
+                    Astrophysicists can also estimate the constant from ripples
+                    in the cosmic microwave background radiation, or CMB. Those
+                    ripples result from sound waves traveling through plasma in
+                    the early universe. By measuring the ripples’ size they can
+                    infer how long ago and how far away the CMB light we see
+                    today was created.
+                  </p>
+                  <p>
+                    Both approaches, however, have drawbacks. Sound-wave methods
+                    rely heavily on how sound travelled in the early universe,
+                    which depends in turn on the particular mix of types of
+                    matter at the time, on how long sound waves travelled before
+                    leaving their imprint on the CMB, and on assumptions about
+                    the expansion of the universe since that time. Meanwhile,
+                    cosmic distance ladder methods chain together a series of
+                    estimates, starting with radar estimates of the distance to
+                    the sun and parallax estimates of the distance to pulsating
+                    stars called cepheids. That introduces a chain of
+                    calibrations and measurements, each of which needs to be
+                    precise and accurate enough to ensure a reliable estimate of
+                    the Hubble constant.
+                  </p>
+                  <h3>A lens from the past</h3>
+                  <p>
+                    But there is a way to measure distances more directly, based
+                    on what are called strong gravitational lenses. Gravity
+                    bends spacetime itself and with it the path light takes
+                    through the cosmos. One special case is when a very massive
+                    object, such as a galaxy, bends the light of a distant
+                    object around such that light reaches us along multiple
+                    different paths, effectively creating multiple images of the
+                    same background object.
+                  </p>
+                </>
+              ),
+            })}
+          </SectionWrapper>
+          <SectionWithPaddingWrapper>
+            {FiftyFiftyRightFadeIn({
+              ...FiftyFiftyRightFadeIn.args,
+              col_1: ReactDOMServer.renderToStaticMarkup(
+                WYSIWYG({
+                  content: ReactDOMServer.renderToStaticMarkup(
+                    <>
+                      <p>
+                        This phenomenon is more than just pretty. Back in the
+                        1960s, students of Einstein’s theory of gravity, general
+                        relativity, showed they could use strong gravitational
+                        lenses and the light they bend to more directly measure
+                        cosmic distances – if they could measure the relative
+                        timing along each path precisely enough and if they knew
+                        how matter in the lensing galaxy was distributed.
+                      </p>
+                      <p>
+                        Over the last decade, Birrer said, measurements became
+                        precise enough to take this method, time-delay
+                        cosmography, from idea to reality. Successive
+                        measurements and a dedicated effort by the H0LiCOW,
+                        COSMOGRAIL, STRIDES, and SHARP teams, now under the
+                        joint umbrella organization TDCOSMO, culminated in a
+                        precise Hubble constant measurement at around 73
+                        kilometers per second per megaparsec with a precision of
+                        2%.
+                      </p>
+                    </>
+                  ),
+                })
+              ),
+            })}
+          </SectionWithPaddingWrapper>
+          <SectionWrapper>
+            {WYSIWYG({
+              content: ReactDOMServer.renderToStaticMarkup(
+                <>
+                  <p>
+                    That's in agreement with estimates made with the local
+                    distance ladder method, but in tension with the cosmic
+                    microwave background measurements under the standard
+                    cosmological model assumptions.
+                  </p>
+                  <h3>Galaxy mass distribution assumptions</h3>
+                  <p>
+                    But something didn’t sit right with Birrer: The models of
+                    galaxy structure previous studies relied on might not have
+                    been accurate enough to conclude that the Hubble constant
+                    was different from estimates based on the cosmic microwave
+                    background. “I went to my colleagues and said, ‘I want to
+                    conduct a study that does not rely on those assumptions,’”
+                    Birrer said.
+                  </p>
+                </>
+              ),
+            })}
+          </SectionWrapper>
+          {FigureCenteredWide(FigureCenteredWide.args)}
+          <SectionWrapper>
+            {WYSIWYG({
+              content: ReactDOMServer.renderToStaticMarkup(
+                <>
+                  {FigureRight({
+                    ...FigureRight.args,
+                    caption:
+                      '<i>(Firstname Lastname/SLAC National Accelerator Laboratory)</i>',
+                  })}
+                  <p>
+                    In their place, Birrer proposed to investigate a range of
+                    additional gravitational lenses to make more observationally
+                    grounded estimate of the mass and structure of the lensing
+                    galaxies to replace previous assumptions. The new avenue
+                    Birrer and the team, TDCOSMO, were undertaking was
+                    deliberately held blind – meaning the entire analysis was
+                    performed without knowing the resulting outcome on the
+                    Hubble constant – to avoid experimenter bias, a procedure
+                    established already in the previous analyses of the team and
+                    an integral part in moving forward, Birrer said.
+                  </p>
+                  <p>
+                    Based on this new analysis with significantly fewer
+                    assumptions applied to the seven lensing galaxies with time
+                    delays the team has analyzed in previous studies, the team
+                    arrived at a higher value of the Hubble constant, around 74
+                    kilometers per second per megaparsec, but with greater
+                    uncertainty – enough so that their value was consistent with
+                    both high and low estimates of the Hubble constant.
+                  </p>
+                  <p>
+                    However, when Birrer and TDCOSMO added 33 additional lenses
+                    with similar properties – but without a variable source to
+                    work for time-delay cosmography directly – used to estimate
+                    galactic structure, the Hubble constant estimate went down
+                    to about 67 kilometers per second per megaparsec, with a 5%
+                    uncertainty, in good agreement with sound-wave estimates
+                    such as that from the CMB, but also statistically consistent
+                    with the previous determinations, given the uncertainties.
+                  </p>
+                </>
+              ),
+            })}
+          </SectionWrapper>
+          <SectionWrapper>
+            {Quote({
+              ...globalData,
+              has_constrain: true,
+              quote_content:
+                'While our new analysis does not statistically invalidate the mass profile assumptions of our previous work, it demonstrates the importance of understanding the mass distribution within galaxies',
+              quote_author: 'Simon Birrer',
+              quote_author_desc:
+                'Postdoctoral fellow at Stanford University and the Kavli Institute for Particle Physics and Astrophysics at the Department of Energy’s SLAC National Accelerator Laboratory',
+            })}
+          </SectionWrapper>
+          <SectionWrapper>
+            {WYSIWYG({
+              content: ReactDOMServer.renderToStaticMarkup(
+                <>
+                  <p>
+                    “We are collecting now the data that will allow us to gain
+                    back most of the precision we previously had achieved based
+                    on stronger assumptions. Looking further ahead we’ll also
+                    have images from a lot more lensing galaxies from the Rubin
+                    Observatory Legacy Survey of Space and Time to draw on to
+                    improve our estimates. Our current analysis is only the
+                    first step and paves the way to utilizing these upcoming
+                    data sets to provide a definite conclusion on the remaining
+                    problem.”
+                  </p>
+                  <p>
+                    <a href="#0" className="c-button c-button--chevron">
+                      Optional Button
+                    </a>
+                    <a href="#0" className="c-button c-button--chevron">
+                      Button
+                    </a>
+                  </p>
+                  <hr />
+                  <p className="c-small-paragraph">
+                    The research was supported by grants from the National
+                    Science Foundation, the National Aeronautics and Space
+                    Administration, the Packard Foundation, the Kavli
+                    Foundation, the Danish Council for Independent Research, the
+                    Villum Foundation, the Royal Astronomical Society, the
+                    European Research Council, the Hintze Family Charitable
+                    Foundation, the Max Planck Society, the World Premier
+                    International Research Center Initiative and the Japan
+                    Society for the Promotion of Science.
+                  </p>
+                  <p className="c-small-paragraph">
+                    Citation: Simon Birrer et al., 20 November 2020, Astronomy &
+                    Astrophysics (DOI: 10.1051/0004-6361/202038861).
+                  </p>
+                  <p className="c-small-paragraph">
+                    For questions or comments, contact the SLAC Office of
+                    Communications at communications@slac.stanford.edu.
+                  </p>
+                </>
+              ),
+            })}
+          </SectionWrapper>
+          <SectionWrapper>
+            {WYSIWYG({
+              content: ReactDOMServer.renderToStaticMarkup(
+                <>
+                  <hr />
+                  <p className="c-small-paragraph">
+                    SLAC is a vibrant multiprogram laboratory that explores how
+                    the universe works at the biggest, smallest and fastest
+                    scales and invents powerful tools used by scientists around
+                    the globe. With research spanning particle physics,
+                    astrophysics and cosmology, materials, chemistry, bio- and
+                    energy sciences and scientific computing, we help solve
+                    real-world problems and advance the interests of the nation.
+                  </p>
+                  <p className="c-small-paragraph">
+                    SLAC is operated by Stanford University for the U.S.
+                    Department of Energy’s Office of Science. The Office of
+                    Science is the single largest supporter of basic research in
+                    the physical sciences in the United States and is working to
+                    address some of the most pressing challenges of our time.
+                  </p>
+                </>
+              ),
+            })}
+          </SectionWrapper>
+          <SectionWrapper>{TagList(TagList.args)}</SectionWrapper>
+          {SectionWithBlueGreenGradient({
+            ...SectionWithBlueGreenGradient.args,
+            section_kicker: 'Dig Deeper',
+            section_title: 'Related Stories',
+            section_intro: false,
+            section_buttons: false,
+            section_content: ReactDOMServer.renderToStaticMarkup(
+              <GridWrapper numCols={3}>
+                {Card(Card.args)}
+                {Card(Card.args)}
+                {Card(Card.args)}
+              </GridWrapper>
+            ),
+          })}
+        </>
+      ),
     })}
   </PageWrapper>
 );
-Article.args = {
+NewsArticleDetail.args = {
   ...globalData,
+  ...NewsArticle.args,
 };
-
-export { Article };
+export { NewsArticleDetail };

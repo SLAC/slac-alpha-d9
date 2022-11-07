@@ -53,9 +53,14 @@
           {% if has_constrain %}</div>{% endif %}
         {% endblock %}
       {% endif %}
+      {% set kicker = date %}
+      {% if kicker and type %}
+        {% set kicker = date ~ ' · ' %}
+      {% endif %}
+      {% set kicker = kicker ~ type %}
       {% include '@components/page-title/page-title.twig' with {
         'page_title': title,
-        'kicker': date,
+        'kicker': kicker,
         'lede': lede,
         'byline': author,
         'has_constrain': has_constrain,
