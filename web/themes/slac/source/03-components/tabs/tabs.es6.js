@@ -20,7 +20,7 @@ Drupal.behaviors.slacTabs = {
          * @param {HTMLAnchorElement} newTab
          * @param {HTMLAnchorElement} [oldTab]
          */
-        const switchTab = (newTab, oldTab) => {
+        const switchTab = (newTab, oldTab, setFocus = false) => {
           if (oldTab) {
             const oldTabIndex = tabs.indexOf(oldTab);
             oldTab.removeAttribute('aria-selected');
@@ -28,7 +28,9 @@ Drupal.behaviors.slacTabs = {
             tabPanels[oldTabIndex].hidden = true;
           }
           const newTabIndex = tabs.indexOf(newTab);
-          newTab.focus();
+          if (setFocus) {
+            newTab.focus();
+          }
           newTab.removeAttribute('tabindex');
           newTab.setAttribute('aria-selected', 'true');
           tabPanels[newTabIndex].hidden = false;
@@ -42,7 +44,7 @@ Drupal.behaviors.slacTabs = {
           evt.preventDefault();
           const currentTab = tabList.querySelector('[aria-selected]');
           if (currentTarget !== currentTab) {
-            switchTab(currentTarget, currentTab);
+            switchTab(currentTarget, currentTab, true);
           }
         };
         /**
@@ -78,7 +80,7 @@ Drupal.behaviors.slacTabs = {
                 newTabIndex = 0;
               }
             }
-            switchTab(tabs[newTabIndex], currentTarget);
+            switchTab(tabs[newTabIndex], currentTarget, true);
           }
         };
         tabList.setAttribute('role', 'tablist');
