@@ -1,24 +1,31 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import parse from 'html-react-parser';
 
-import PageWrapper from './page-wrappers/default.jsx';
 import { Page as PageTemplate } from '../04-templates/page/page.stories';
 import { SideMenu } from '../03-components/menu/menu--side/menu--side.stories';
 import { WYSIWYG } from '../03-components/wysiwyg/wysiwyg.stories';
 import {
-  FigureCenteredWide,
-  FigureRight,
+  FigureCentered,
   FigureWithVideoCentered,
 } from '../03-components/figure/figure.stories';
 import {
-  FiftyFiftyLeftFadeIn,
-  FiftyFiftyRightFadeIn,
-} from '../03-components/fifty-fifty/fifty-fifty.stories';
-import { PromoBox } from '../03-components/promo-box/promo-box.stories';
-import { SectionWrapper } from '../06-utility/storybookHelper';
+  GridWrapper,
+  SectionWithPaddingWrapper,
+  SectionWrapper,
+} from '../06-utility/storybookHelper';
+import { Section } from '../02-layouts/section/section.stories';
+import tabsTwigTemplate from '../03-components/tabs/tabs.twig';
+import { Default as Card } from '../03-components/card/card.stories';
+
+import PageWrapper from './page-wrappers/default.jsx';
+import {
+  NarrowAccordion,
+  WideAccordion,
+} from '../03-components/accordion/accordion.stories';
 
 export default {
-  title: 'Pages/Page',
+  title: 'Pages/Basic Page/Basic Page 1',
   parameters: {
     controls: {
       include: ['show_admin_info', 'has_sidebar'],
@@ -26,31 +33,34 @@ export default {
   },
 };
 
-const Page = args => (
+const BasicPage1 = args => (
   <PageWrapper>
     {PageTemplate({
       ...args,
-      title: 'About',
+      title: 'Basic Page Example',
+      lede: 'Description teaser is informative, intriguing, and compelling to your target audiences. Keep it friendly and approachable with a brief well-written overview of your business and services. Tell just enough of your story, make it enticing that the reader begs for more.',
       content: ReactDOMServer.renderToStaticMarkup(
         <>
           <SectionWrapper>
             {WYSIWYG({
               content: ReactDOMServer.renderToStaticMarkup(
                 <>
-                  <p className="c-lede">
-                    Description teaser is informative, intriguing, and
-                    compelling to your target audiences. Keep it friendly and
-                    approachable with a brief well-written overview of your
-                    business and services. Tell just enough of your story, make
-                    it enticing that the reader begs for more.{' '}
+                  <p>
+                    <a href="#0" className="c-button c-button--chevron">
+                      Optional Button
+                    </a>
+                    <a
+                      href="#0"
+                      className="c-button c-button--outline c-button--chevron"
+                    >
+                      Optional
+                    </a>
                   </p>
                   <p>
-                    The universe is expanding but astrophysicists aren’t sure
-                    exactly how fast that expansion is happening. In a paper
-                    published on the cover of{' '}
-                    <a href="#">Physical Review Letters in May</a>, researchers
-                    from the Department of Energy’s SLAC National Accelerator
-                    Laboratory.
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 35-word count paragraph example. Lorem
+                    ipsum dolor sit amet lectus magna.
                   </p>
                 </>
               ),
@@ -61,183 +71,611 @@ const Page = args => (
             {WYSIWYG({
               content: ReactDOMServer.renderToStaticMarkup(
                 <>
+                  <h2>Optional Heading</h2>
                   <p>
-                    Over the course of six years, DES surveyed 5,000 square
-                    degrees – almost one-eighth of the entire sky – in 758
-                    nights of observation, cataloguing hundreds of millions of
-                    objects. The results announced today draw on data from the
-                    first three years – 226 million galaxies observed over 345
-                    nights.
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 35-word count paragraph example. Lorem
+                    ipsum dolor sit amet lectus magna.
                   </p>
-                  <h3>New limits and intriguing hints</h3>
                   <p>
-                    To test cosmologists’ current model of the universe, DES
-                    scientists compared their results with measurements from the
-                    European Space Agency’s orbiting Planck observatory. Planck
-                    used light signals known as the cosmic microwave background
-                    to peer back to the early universe, just 400,000 years after
-                    the Big Bang.
+                    <a href="#1" className="c-cta-link">
+                      Big CTA Link
+                    </a>
+                    <a href="#1" className="c-cta-link">
+                      Big CTA Link
+                    </a>
                   </p>
                 </>
               ),
             })}
           </SectionWrapper>
-          {FiftyFiftyLeftFadeIn({
-            ...FiftyFiftyLeftFadeIn.args,
-            col_2: ReactDOMServer.renderToStaticMarkup(
-              WYSIWYG({
-                content: ReactDOMServer.renderToStaticMarkup(
-                  <>
-                    <h3>Distance, speed and sound</h3>
-                    <p>
-                      Cosmologists have known for nearly a century that the
-                      cosmos is expanding, and in that time they have settled on
-                      two main ways to measure that expansion. One method is the
-                      cosmic distance ladder, a series of steps that help
-                      estimate the distance to far-away supernovae. By examining
-                      the spectrum of light from these supernovae, scientists
-                      can calculate how quickly they’re receding from us, then
-                      divide by distance to estimate the Hubble constant. (The
-                      Hubble constant is usually measured in kilometers per
-                      second per megaparsec, reflecting the fact that space
-                      itself is growing, so that more distant
-                    </p>
-                  </>
-                ),
-              })
+          <SectionWithPaddingWrapper>
+            <GridWrapper numCols={2}>
+              <SectionWrapper>
+                {WYSIWYG({
+                  content: ReactDOMServer.renderToStaticMarkup(
+                    <>
+                      <h2>Title that grabs attention and describes a topic</h2>
+                      <p>
+                        Description provides an informative glimpse of the topic
+                        and excites site visitors to learn more. Nice to be
+                        short and simple. This is a 35-word count paragraph
+                        example. Lorem ipsum dolor sit amet lectus magna.
+                      </p>
+                      <h3>
+                        Optional Heading to indicate what the next section is
+                        about lorem ipsum
+                      </h3>
+                    </>
+                  ),
+                })}
+                {FigureCentered(FigureCentered.args)}
+                {WYSIWYG({
+                  content: ReactDOMServer.renderToStaticMarkup(
+                    <>
+                      <p>
+                        Description provides an informative glimpse of the topic
+                        and excites site visitors to learn more. Nice to be
+                        short and simple. This is a 35-word count paragraph
+                        example. Lorem ipsum dolor sit amet lectus magna.
+                      </p>
+                      <p>
+                        Description provides an informative glimpse of the topic
+                        and excites site visitors to learn more. Nice to be
+                        short and simple. This is a 26-word count.
+                      </p>
+                      <p>
+                        <a href="#0" className="c-button c-button--chevron">
+                          Optional Button
+                        </a>
+                        <a
+                          href="#0"
+                          className="c-button c-button--outline c-button--chevron"
+                        >
+                          Optional
+                        </a>
+                      </p>
+                    </>
+                  ),
+                })}
+              </SectionWrapper>
+              <SectionWrapper>
+                {WYSIWYG({
+                  content: ReactDOMServer.renderToStaticMarkup(
+                    <>
+                      <h2>Title that grabs attention and describes a topic</h2>
+                      <p>
+                        Description provides an informative glimpse of the topic
+                        and excites site visitors to learn more. Nice to be
+                        short and simple. This is a 35-word count paragraph
+                        example. Lorem ipsum dolor sit amet lectus magna.
+                      </p>
+                      <h3>
+                        Optional Heading to indicate what the next section is
+                        about lorem ipsum
+                      </h3>
+                    </>
+                  ),
+                })}
+                {FigureWithVideoCentered(FigureWithVideoCentered.args)}
+                {WYSIWYG({
+                  content: ReactDOMServer.renderToStaticMarkup(
+                    <>
+                      <p>
+                        Description provides an informative glimpse of the topic
+                        and excites site visitors to learn more. Nice to be
+                        short and simple. This is a 35-word count paragraph
+                        example. Lorem ipsum dolor sit amet lectus magna.
+                      </p>
+                      <p>
+                        <a href="#0" className="c-cta-link">
+                          Big CTA Link
+                        </a>
+                      </p>
+                      <p>
+                        <a href="#0" className="c-cta-link">
+                          Big CTA Link
+                        </a>
+                      </p>
+                      <p>
+                        <a href="#0" className="c-cta-link">
+                          Big CTA Link
+                        </a>
+                      </p>
+                    </>
+                  ),
+                })}
+              </SectionWrapper>
+            </GridWrapper>
+          </SectionWithPaddingWrapper>
+          <SectionWithPaddingWrapper>
+            <GridWrapper numCols={3}>
+              <SectionWrapper>
+                {FigureCentered({
+                  ...FigureCentered.args,
+                  caption:
+                    '<i>(Firstname Lastname/SLAC National Accelerator Laboratory)</i>',
+                })}
+                {WYSIWYG({
+                  content: ReactDOMServer.renderToStaticMarkup(
+                    <>
+                      <h2>Title that grabs and describes a topic</h2>
+                      <p>
+                        Description provides an informative glimpse of the topic
+                        and excites site visitors to learn more. Nice to be
+                        short and simple. This is a 26-word count.
+                      </p>
+                      <p>
+                        <a href="#0" className="c-button c-button--chevron">
+                          Optional Button
+                        </a>
+                      </p>
+                      <p>
+                        <a
+                          href="#0"
+                          className="c-button c-button--outline c-button--chevron"
+                        >
+                          Optional
+                        </a>
+                      </p>
+                    </>
+                  ),
+                })}
+              </SectionWrapper>
+              <SectionWrapper>
+                {FigureCentered({
+                  ...FigureCentered.args,
+                  caption:
+                    '<i>(Firstname Lastname/SLAC National Accelerator Laboratory)</i>',
+                })}
+                {WYSIWYG({
+                  content: ReactDOMServer.renderToStaticMarkup(
+                    <>
+                      <h2>Title that grabs and describes a topic</h2>
+                      <p>
+                        Description provides an informative glimpse of the topic
+                        and excites site visitors to learn more. Nice to be
+                        short and simple. This is a 26-word count.
+                      </p>
+                      <p>
+                        <a href="#0" className="c-button c-button--chevron">
+                          Optional Button
+                        </a>
+                      </p>
+                      <p>
+                        <a
+                          href="#0"
+                          className="c-button c-button--outline c-button--chevron"
+                        >
+                          Optional
+                        </a>
+                      </p>
+                    </>
+                  ),
+                })}
+              </SectionWrapper>
+              <SectionWrapper>
+                {FigureWithVideoCentered({
+                  ...FigureWithVideoCentered.args,
+                  caption:
+                    '<i>(Firstname Lastname/SLAC National Accelerator Laboratory)</i>',
+                })}
+                {WYSIWYG({
+                  content: ReactDOMServer.renderToStaticMarkup(
+                    <>
+                      <h2>Title that grabs and describes a topic</h2>
+                      <p>
+                        Description provides an informative glimpse of the topic
+                        and excites site visitors to learn more. Nice to be
+                        short and simple. This is a 26-word count.
+                      </p>
+                      <p>
+                        <a href="#0" className="c-cta-link">
+                          Big CTA Link
+                        </a>
+                      </p>
+                      <p>
+                        <a href="#0" className="c-cta-link">
+                          Big CTA Link
+                        </a>
+                      </p>
+                      <p>
+                        <a href="#0" className="c-cta-link">
+                          Big CTA Link
+                        </a>
+                      </p>
+                    </>
+                  ),
+                })}
+              </SectionWrapper>
+            </GridWrapper>
+          </SectionWithPaddingWrapper>
+          {Section({
+            ...Section.args,
+            section_title: 'Tabs lorem ipsum dolor',
+            section_buttons: false,
+            section_content: ReactDOMServer.renderToStaticMarkup(
+              parse(
+                tabsTwigTemplate({
+                  tabs: [
+                    {
+                      tab_id: 'tab-one',
+                      tab_title: 'Tab One Lorem',
+                      tab_content: ReactDOMServer.renderToStaticMarkup(
+                        <SectionWrapper>
+                          <GridWrapper numCols={2}>
+                            <SectionWrapper>
+                              {WYSIWYG({
+                                content: ReactDOMServer.renderToStaticMarkup(
+                                  <>
+                                    <h2>Tab title for unordered list</h2>
+                                    <p>
+                                      Description provides an informative
+                                      glimpse of the topic and excites site
+                                      visitors to learn more. Nice to be short
+                                      and simple. This is a 35-word count
+                                      paragraph example. Lorem ipsum dolor sit
+                                      amet lectus magna.
+                                    </p>
+                                    <h3>
+                                      Optional Heading to indicate what the next
+                                      section is about lorem ipsum
+                                    </h3>
+                                    <ul>
+                                      <li>
+                                        {' '}
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                    </ul>
+                                  </>
+                                ),
+                              })}
+                            </SectionWrapper>
+                            <SectionWrapper>
+                              {WYSIWYG({
+                                content: ReactDOMServer.renderToStaticMarkup(
+                                  <>
+                                    <h2>Tab title for unordered list</h2>
+                                    <p>
+                                      Description provides an informative
+                                      glimpse of the topic and excites site
+                                      visitors to learn more. Nice to be short
+                                      and simple. This is a 35-word count
+                                      paragraph example. Lorem ipsum dolor sit
+                                      amet lectus magna.
+                                    </p>
+                                    <h3>
+                                      Optional Heading to indicate what the next
+                                      section is about lorem ipsum
+                                    </h3>
+                                    <ul>
+                                      <li>
+                                        {' '}
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                    </ul>
+                                  </>
+                                ),
+                              })}
+                            </SectionWrapper>
+                          </GridWrapper>
+                        </SectionWrapper>
+                      ),
+                    },
+                    {
+                      tab_id: 'tab-two',
+                      tab_title: 'Tab Two Lorem',
+                      tab_content: ReactDOMServer.renderToStaticMarkup(
+                        <SectionWrapper>
+                          <GridWrapper numCols={2}>
+                            <SectionWrapper>
+                              {WYSIWYG({
+                                content: ReactDOMServer.renderToStaticMarkup(
+                                  <>
+                                    <h2>Tab title for unordered list</h2>
+                                    <p>
+                                      Description provides an informative
+                                      glimpse of the topic and excites site
+                                      visitors to learn more. Nice to be short
+                                      and simple. This is a 35-word count
+                                      paragraph example. Lorem ipsum dolor sit
+                                      amet lectus magna.
+                                    </p>
+                                    <h3>
+                                      Optional Heading to indicate what the next
+                                      section is about lorem ipsum
+                                    </h3>
+                                    <ul>
+                                      <li>
+                                        {' '}
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                    </ul>
+                                  </>
+                                ),
+                              })}
+                            </SectionWrapper>
+                            <SectionWrapper>
+                              {WYSIWYG({
+                                content: ReactDOMServer.renderToStaticMarkup(
+                                  <>
+                                    <h2>Tab title for unordered list</h2>
+                                    <p>
+                                      Description provides an informative
+                                      glimpse of the topic and excites site
+                                      visitors to learn more. Nice to be short
+                                      and simple. This is a 35-word count
+                                      paragraph example. Lorem ipsum dolor sit
+                                      amet lectus magna.
+                                    </p>
+                                    <h3>
+                                      Optional Heading to indicate what the next
+                                      section is about lorem ipsum
+                                    </h3>
+                                    <ul>
+                                      <li>
+                                        {' '}
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                    </ul>
+                                  </>
+                                ),
+                              })}
+                            </SectionWrapper>
+                          </GridWrapper>
+                        </SectionWrapper>
+                      ),
+                    },
+                    {
+                      tab_id: 'tab-three',
+                      tab_title: 'Tab Three Lorem',
+                      tab_content: ReactDOMServer.renderToStaticMarkup(
+                        <SectionWrapper>
+                          <GridWrapper numCols={2}>
+                            <SectionWrapper>
+                              {WYSIWYG({
+                                content: ReactDOMServer.renderToStaticMarkup(
+                                  <>
+                                    <h2>
+                                      Title that grabs attention and accurately
+                                      describes topic
+                                    </h2>
+                                    <p>
+                                      Description provides an informative
+                                      glimpse of the topic and excites site
+                                      visitors to learn more. Nice to be short
+                                      and simple. This is a 35-word count
+                                      paragraph example. Lorem ipsum dolor sit
+                                      amet lectus magna.
+                                    </p>
+                                    <h3>
+                                      Optional Heading to indicate what the next
+                                      section is about lorem ipsum
+                                    </h3>
+                                    <ol>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                    </ol>
+                                  </>
+                                ),
+                              })}
+                            </SectionWrapper>
+                            <SectionWrapper>
+                              {WYSIWYG({
+                                content: ReactDOMServer.renderToStaticMarkup(
+                                  <>
+                                    <h2>
+                                      Title that grabs attention and accurately
+                                      describes topic
+                                    </h2>
+                                    <p>
+                                      Description provides an informative
+                                      glimpse of the topic and excites site
+                                      visitors to learn more. Nice to be short
+                                      and simple. This is a 35-word count
+                                      paragraph example. Lorem ipsum dolor sit
+                                      amet lectus magna.
+                                    </p>
+                                    <h3>
+                                      Optional Heading to indicate what the next
+                                      section is about lorem ipsum
+                                    </h3>
+                                    <ol>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                      <li>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Tincidunt non sit
+                                        facilisi ac ipsum.
+                                      </li>
+                                    </ol>
+                                  </>
+                                ),
+                              })}
+                            </SectionWrapper>
+                          </GridWrapper>
+                        </SectionWrapper>
+                      ),
+                    },
+                    {
+                      tab_id: 'tab-four',
+                      tab_title: 'Tab Four Ipsum',
+                      tab_content: ReactDOMServer.renderToStaticMarkup(
+                        <SectionWrapper>
+                          <GridWrapper numCols={3}>
+                            {Card(Card.args)}
+                            {Card(Card.args)}
+                            {Card(Card.args)}
+                          </GridWrapper>
+                        </SectionWrapper>
+                      ),
+                    },
+                  ],
+                })
+              )
             ),
           })}
-          <SectionWrapper>
-            {WYSIWYG({
-              content: ReactDOMServer.renderToStaticMarkup(
-                <>
-                  <p>
-                    objects recede from us faster than nearer objects.)
-                    Astrophysicists can also estimate the constant from ripples
-                    in the cosmic microwave background radiation, or CMB. Those
-                    ripples result from sound waves traveling through plasma in
-                    the early universe. By measuring the ripples’ size they can
-                    infer how long ago and how far away the CMB light we see
-                    today was created.
-                  </p>
-                  <h3>A lens from the past</h3>
-                  <p>
-                    But there is a way to measure distances more directly, based
-                    on what are called strong gravitational lenses. Gravity
-                    bends spacetime itself and with it the path light takes
-                    through the cosmos. One special case is when a very massive
-                    object, such as a galaxy, bends the light of a distant
-                    object around such that light reaches us along multiple
-                    different paths, effectively creating multiple images of the
-                    same background object.
-                  </p>
-                </>
-              ),
-            })}
-          </SectionWrapper>
-          {FiftyFiftyRightFadeIn({
-            ...FiftyFiftyRightFadeIn.args,
-            col_1: ReactDOMServer.renderToStaticMarkup(
-              WYSIWYG({
-                content: ReactDOMServer.renderToStaticMarkup(
-                  <>
-                    <h3>The deep field</h3>
-                    <p>
-                      Ten regions of the sky were chosen as “deep fields” that
-                      the Dark Energy Camera imaged repeatedly throughout the
-                      survey. Stacking those images together allowed the
-                      scientists to glimpse more distant galaxies. The team then
-                      used the redshift information from the deep fields to
-                      calibrate measurements of redshift in the rest of the
-                      survey region. This and other advancements in measurements
-                      and modeling, coupled with a threefold increase in data
-                      compared to the first year, enabled the team to pin down
-                      the density and clumpiness of the universe with
-                      unprecedented precision. Along with the analysis of the
-                      weak-measurement at
-                    </p>
-                  </>
-                ),
-              })
+          {Section({
+            ...Section.args,
+            section_title: 'Accordion',
+            section_buttons: false,
+            section_content: ReactDOMServer.renderToStaticMarkup(
+              WideAccordion(WideAccordion.args)
             ),
           })}
-          <SectionWrapper>
-            {WYSIWYG({
-              content: ReactDOMServer.renderToStaticMarkup(
-                <>
-                  <p>
-                    around 73 kilometers per second per megaparsec with a
-                    precision of 2%. That's in agreement with estimates made
-                    with the local distance ladder method, but in tension with
-                    the cosmic microwave background measurements under the
-                    standard cosmological model assumptions.
-                  </p>
-                  <h3>Galaxy mass distribution assumptions</h3>
-                  <p>
-                    But something didn’t sit right with Birrer: The models of
-                    galaxy structure previous studies relied on might not have
-                    been accurate enough to conclude that the Hubble constant
-                    was different from estimates based on the cosmic microwave
-                    background. “I went to my colleagues and said, ‘I want to
-                    conduct a study that does not rely on those assumptions,’”
-                    Birrer said.
-                  </p>
-                </>
-              ),
-            })}
-          </SectionWrapper>
-          {FigureCenteredWide(FigureCenteredWide.args)}
-          <SectionWrapper>
-            {WYSIWYG({
-              content: ReactDOMServer.renderToStaticMarkup(
-                <>
-                  {FigureRight({
-                    ...FigureRight.args,
-                    caption:
-                      '<i>(Firstname Lastname/SLAC National Accelerator Laboratory)</i>',
+          {Section({
+            ...Section.args,
+            section_title: 'Accordion',
+            section_buttons: false,
+            section_content: ReactDOMServer.renderToStaticMarkup(
+              <>
+                <GridWrapper numCols={2}>
+                  {NarrowAccordion({
+                    ...NarrowAccordion.args,
+                    accordion_title: 'Lorem ipsum dolor sit ame',
+                    title_tag: 'h3',
                   })}
+                  {WYSIWYG({
+                    content: ReactDOMServer.renderToStaticMarkup(
+                      <>
+                        <h3>Lorem ipsum dolor sit ame</h3>
+                        <p>
+                          Optional paragraph text to help describe lorem ipsum
+                          dolor sit amet, consectetur adipiscing elit. Porttitor
+                          egestas est rhoncus placerat est urna, vitae egestas.
+                          Elementum adipiscing amet turpis faucibus lorem sit et
+                          faucibus.
+                        </p>
+                        <h4>
+                          Optional Header to help describe lorem psum dolor sit{' '}
+                        </h4>
+                        <p>
+                          Optional paragraph text to help describe lorem ipsum
+                          sit et faucibus. Sit eget augue magna ultrices non
+                          dictumst.
+                        </p>
+                      </>
+                    ),
+                  })}
+                </GridWrapper>
+                <SectionWrapper>
+                  <GridWrapper numCols={2}>
+                    <SectionWrapper>
+                      {FigureCentered(FigureCentered.args)}
+                    </SectionWrapper>
+                    <SectionWrapper>
+                      {NarrowAccordion({
+                        ...NarrowAccordion.args,
+                        accordion_title: 'Lorem ipsum dolor sit ame',
+                        title_tag: 'h3',
+                      })}
+                    </SectionWrapper>
+                  </GridWrapper>
+                </SectionWrapper>
+              </>
+            ),
+          })}
+          <SectionWithPaddingWrapper>
+            {WYSIWYG({
+              content: ReactDOMServer.renderToStaticMarkup(
+                <>
+                  <h3>Accordion 1 text block</h3>
                   <p>
-                    In their place, Birrer proposed to investigate a range of
-                    additional gravitational lenses to make more observationally
-                    grounded estimate of the mass and structure of the lensing
-                    galaxies to replace previous assumptions. The new avenue
-                    Birrer and the team, TDCOSMO, were undertaking was
-                    deliberately held blind – meaning the entire analysis was
-                    performed without knowing the resulting outcome on the
-                    Hubble constant – to avoid experimenter bias, a procedure
-                    established already in the previous analyses of the team and
-                    an integral part in moving forward, Birrer said.
+                    Optional paragraph text to help describe lorem ipsum dolor
+                    sit amet, consectetur adipiscing elit. Porttitor egestas est
+                    rhoncus placerat est urna, vitae egestas. Elementum
+                    adipiscing amet turpis faucibus lorem sit et faucibus.
                   </p>
+                  <h4>
+                    Optional Header to help describe lorem psum dolor sit{' '}
+                  </h4>
                   <p>
-                    Based on this new analysis with significantly fewer
-                    assumptions applied to the seven lensing galaxies with time
-                    delays the team has analyzed in previous studies, the team
-                    arrived at a higher value of the Hubble constant, around 74
-                    kilometers per second per megaparsec, but with greater
-                    uncertainty – enough so that their value was consistent with
-                    both high and low estimates of the Hubble constant.
-                  </p>
-                  <p>
-                    <a href="#0" className="c-button c-button--chevron">
-                      Optional Button
-                    </a>
-                    <a href="#0" className="c-button c-button--chevron">
-                      Button
-                    </a>
+                    Optional paragraph text to help describe lorem ipsum sit et
+                    faucibus. Sit eget augue magna ultrices non dictumst.
                   </p>
                 </>
               ),
             })}
-          </SectionWrapper>
-          {/* {PromoBox(PromoBox.args)} */}
+            {NarrowAccordion(NarrowAccordion.args)}
+          </SectionWithPaddingWrapper>
         </>
       ),
     })}
   </PageWrapper>
 );
-Page.args = {
+BasicPage1.args = {
   ...PageTemplate.args,
   has_sidebar: true,
   sidebar: ReactDOMServer.renderToStaticMarkup(SideMenu(SideMenu.args)),
 };
-export { Page };
+export { BasicPage1 };
