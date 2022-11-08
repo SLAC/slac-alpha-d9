@@ -3,6 +3,7 @@ import ReactDOMServer from 'react-dom/server';
 
 import sectionTwigTemplate from '../02-layouts/section/section.twig';
 import gridTwigTemplate from '../02-layouts/grid/grid.twig';
+import wysiwygTwigTemplate from '../03-components/wysiwyg/wysiwyg.twig';
 
 const SectionWrapper = ({ children }) =>
   parse(
@@ -30,4 +31,16 @@ const GridWrapper = ({ children, numCols = 3 }) =>
     })
   );
 
-export { SectionWrapper, GridWrapper, SectionWithPaddingWrapper };
+const WysiwygWrapper = ({ children }) =>
+  parse(
+    wysiwygTwigTemplate({
+      content: ReactDOMServer.renderToStaticMarkup(children),
+    })
+  );
+
+export {
+  SectionWrapper,
+  GridWrapper,
+  SectionWithPaddingWrapper,
+  WysiwygWrapper,
+};

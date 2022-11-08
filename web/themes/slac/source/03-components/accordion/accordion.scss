@@ -7,6 +7,20 @@ $accordion-item-border-color: var(--gesso-text-color);
 $accordion-item-icon-color: gesso-color(text, primary) !default;
 $accordion-item-icon-size: gesso-font-size(2);
 
+.c-accordion:not(.c-accordion--large) {
+  @include layout-constrain(gesso-constrain(sm));
+
+  .l-constrain & {
+    padding-inline: 0;
+  }
+
+  .l-sidebar__main & {
+    margin-inline: 0;
+    max-width: none;
+    padding-inline: 0;
+  }
+}
+
 .c-accordion-item {
   border-bottom: solid 1px $accordion-item-border-color;
 

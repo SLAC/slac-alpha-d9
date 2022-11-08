@@ -3,7 +3,7 @@
 @use '00-config' as *;
 $l-sidebar-bp: gesso-breakpoint(mobile-menu) - 1px;
 $l-sidebar-width: 280px;
-$l-sidebar-gutter: 147px;
+$l-sidebar-gutter: 107px;
 
 .l-sidebar > .l-constrain {
   @include breakpoint($l-sidebar-bp) {
