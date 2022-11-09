@@ -1,8 +1,0 @@
-uuid: 93c35448-8da2-4b4b-bd27-165c1830c572
-langcode: en
-status: true
-dependencies: {  }
-id: mega_menu_cards
-label: 'Mega menu cards'
-fieldset: 'Mega menu cards'
-multiple: true
