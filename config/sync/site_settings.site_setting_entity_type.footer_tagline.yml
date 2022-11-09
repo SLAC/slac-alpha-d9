@@ -1,8 +1,0 @@
-uuid: 578c3ea7-a4ef-4afa-a9c8-544fcc0b4957
-langcode: en
-status: true
-dependencies: {  }
-id: footer_tagline
-label: 'Footer tagline'
-fieldset: 'Footer Settings'
-multiple: false
