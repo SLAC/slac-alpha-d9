@@ -8,11 +8,7 @@
 {% set is_teaser = 'c-card--teaser' in modifier_classes %}
 {% if is_teaser %}
   {% if kicker and type %}
-    {% set kicker %}
-    {{ type }}
-    ·
-    {{ kicker }}
-    {% endset %}
+    {% set kicker = type ~ ' . ' ~ kicker %}
   {% elseif type and not kicker %}
     {% set kicker = type %}
   {% endif %}
@@ -26,6 +22,11 @@
       </div>
     {% endif %}
     <div class="c-card__header">
+      {% if icon %}
+        <div class="c-card__icon">
+          {{ icon }}
+        </div>
+      {% endif %}
       {% if kicker %}
         <div class="c-kicker">
           {{ kicker }}
@@ -50,6 +51,19 @@
     </div>
     <div class="c-card__content">
       {{ card_content }}
+      {% if link_type == 'button' %}
+        {% include '@components/button/button.twig' with {
+        button_tag: false,
+        is_demo: false,
+        text: link_text,
+        url: link_url
+      } %}
+      {% elseif link_type == 'cta' %}
+        {% include '@components/cta-link/cta-link.twig' with {
+        link_text: link_text,
+        link_url: link_url
+      } %}
+      {% endif %}
     </div>
     {% if footer or event_date or event_location %}
       <div class="c-card__footer">
