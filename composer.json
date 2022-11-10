@@ -33,6 +33,8 @@
     "drupal/diff": "^1.0",
     "drupal/duration_field": "^2.0",
     "drupal/easy_breadcrumb": "^2.0",
+    "drupal/eca": "^1.0",
+    "drupal/eca_cm": "^1.0",
     "drupal/entity_clone": "^1.0@beta",
     "drupal/entity_reference_revisions": "^1.9",
     "drupal/environment_indicator": "^4.0",
