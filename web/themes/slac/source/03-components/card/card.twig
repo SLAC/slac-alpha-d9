@@ -8,7 +8,7 @@
 {% set is_teaser = 'c-card--teaser' in modifier_classes %}
 {% if is_teaser %}
   {% if kicker and type %}
-    {% set kicker = type ~ ' . ' ~ kicker %}
+    {% set kicker = type ~ ' · ' ~ kicker %}
   {% elseif type and not kicker %}
     {% set kicker = type %}
   {% endif %}
