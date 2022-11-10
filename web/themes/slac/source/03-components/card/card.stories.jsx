@@ -24,14 +24,27 @@ const Default = args =>
   );
 Default.args = { ...globalData, ...data };
 
-// const LargeCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//       modifier_classes: 'c-card--large',
-//     })
-//   );
-// LargeCard.args = { ...globalData, ...data };
+const CardWithIcon = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      media: false,
+      icon: '<img src="https://picsum.photos/id/1015/100/100" alt="">',
+      link_type: 'cta',
+      link_text: 'Big CTA Link',
+    })
+  );
+CardWithIcon.args = { ...globalData, ...data };
+
+const CardNoImage = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      media: false,
+      icon: false,
+    })
+  );
+CardNoImage.args = { ...globalData, ...data };
 
 // const MenuCard = args =>
 //   parse(
@@ -175,6 +188,8 @@ BioCardWithFallback.args = {
 export default settings;
 export {
   Default,
+  CardWithIcon,
+  CardNoImage,
   Event,
   EventMultiday,
   EventVirtual,
