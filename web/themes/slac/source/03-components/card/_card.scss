@@ -117,6 +117,12 @@ $card-padding: 30px;
     inset: auto 0 0 0;
     position: absolute;
   }
+
+  .c-card--teaser & {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .c-card__footer {

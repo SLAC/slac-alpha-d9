@@ -55,6 +55,17 @@ const News = args =>
   );
 News.args = { ...globalData, ...newsCardData };
 
+const NewsTeaser = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-card--teaser',
+      type: false,
+      kicker: 'News article teaser',
+    })
+  );
+NewsTeaser.args = { ...globalData, ...newsCardData };
+
 // const MenuCard = args =>
 //   parse(
 //     twigTemplate({
@@ -200,6 +211,7 @@ export {
   CardWithIcon,
   CardNoImage,
   News,
+  NewsTeaser,
   Event,
   EventMultiday,
   EventVirtual,
