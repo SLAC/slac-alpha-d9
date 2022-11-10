@@ -7,6 +7,7 @@ import data from './card.yml';
 import eventCardData from './card-event.yml';
 import multidayEventCardData from './card-multiday-event.yml';
 import virtualEventCardData from './card-virtual-event.yml';
+import newsCardData from './card-news.yml';
 // import eventFallbackCardData from './card-event-fallback.yml';
 // import largeEventCardData from './card-event-large.yml';
 import bioCardData from './card-bio.yml';
@@ -45,6 +46,14 @@ const CardNoImage = args =>
     })
   );
 CardNoImage.args = { ...globalData, ...data };
+
+const News = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+News.args = { ...globalData, ...newsCardData };
 
 // const MenuCard = args =>
 //   parse(
@@ -190,6 +199,7 @@ export {
   Default,
   CardWithIcon,
   CardNoImage,
+  News,
   Event,
   EventMultiday,
   EventVirtual,

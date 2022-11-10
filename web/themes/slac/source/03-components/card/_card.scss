@@ -99,6 +99,26 @@ $card-padding: 30px;
   }
 }
 
+.c-card__content--trimmed {
+  p:last-child {
+    margin: 0;
+  }
+
+  position: relative;
+
+  &::after {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.58) 0%,
+      #fff 58.33%
+    );
+    content: '';
+    height: 60px;
+    inset: auto 0 0 0;
+    position: absolute;
+  }
+}
+
 .c-card__footer {
   font-size: rem(14px);
 }
