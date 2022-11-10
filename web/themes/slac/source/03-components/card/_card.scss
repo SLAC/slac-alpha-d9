@@ -10,7 +10,7 @@ $card-accent-border-color: gesso-color(ui, generic, accent) !default;
 $card-link-color: inherit;
 $card-link-color-hover: var(--gesso-link-hover-color);
 $card-meta-color: inherit;
-$card-padding: rem(gesso-spacing(4));
+$card-padding: 30px;
 
 .c-card {
   @include default-variables;
@@ -18,23 +18,10 @@ $card-padding: rem(gesso-spacing(4));
   flex-direction: column;
   line-height: gesso-line-height(loose);
   position: relative;
-  transition: box-shadow gesso-duration(short) gesso-easing(ease-in-out);
-
-  &:hover,
-  &:focus-within {
-    box-shadow: gesso-box-shadow(1);
-  }
 
   .c-kicker {
     color: $card-meta-color;
-    margin-bottom: rem(gesso-spacing(1.5));
-  }
-}
-
-.c-card--no-link {
-  &:hover,
-  &:focus-within {
-    box-shadow: initial;
+    margin-bottom: rem(gesso-spacing(1));
   }
 }
 
@@ -49,22 +36,6 @@ $card-padding: rem(gesso-spacing(4));
 
   &::after {
     margin-top: -8px;
-  }
-
-  .c-card:not(.c-card--no-link):hover &,
-  .c-card:not(.c-card--no-link):focus-within & {
-    color: $card-link-color-hover;
-
-    @media (prefers-reduced-motion: no-preference) {
-      &::after {
-        transform: translateX(rem(6px));
-      }
-    }
-  }
-
-  .c-card--on-dark:hover &,
-  .c-card--on-dark:focus-within & {
-    color: gesso-color(text, on-dark);
   }
 
   .c-card--large & {
@@ -122,6 +93,10 @@ $card-padding: rem(gesso-spacing(4));
   &:not(:last-child) {
     padding-bottom: rem(30px);
   }
+
+  .c-button {
+    margin-top: gesso-spacing(2);
+  }
 }
 
 .c-card__footer {
@@ -137,27 +112,16 @@ $card-padding: rem(gesso-spacing(4));
     object-fit: cover;
     width: 100%;
   }
+}
 
-  @media (prefers-reduced-motion: no-preference) {
-    overflow: hidden;
+.c-card__icon {
+  height: 84px;
+  margin-bottom: 30px;
+  margin-top: -10px; // slightly reduced padding above
 
-    img {
-      transition: transform gesso-duration(shortest) gesso-easing(ease-out);
-    }
-
-    .c-card:hover &,
-    .c-card:focus-within & {
-      img {
-        transform: scale(1.075);
-      }
-    }
-
-    .c-card--no-link:hover &,
-    .c-card--no-link:focus-within & {
-      img {
-        transform: none;
-      }
-    }
+  img {
+    height: 100%;
+    width: auto;
   }
 }
 
