@@ -8,6 +8,7 @@ media: |-
 icon: false
 card_content: |-
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et accumsan augue. Morbi non laoreet lorem.</p>
+is_truncated: false
 link_type: 'button'
 link_text: 'Button'
 link_url: '#'
