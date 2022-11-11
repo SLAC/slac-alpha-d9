@@ -23,6 +23,7 @@ import {
   NarrowAccordion,
   WideAccordion,
 } from '../03-components/accordion/accordion.stories';
+import { Default as Table } from '../01-global/html-elements/24-table/table.stories';
 
 export default {
   title: 'Pages/Basic Page/Basic Page 1',
@@ -303,88 +304,7 @@ const BasicPage1 = args => (
                       tab_id: 'tab-one',
                       tab_title: 'Tab One Lorem',
                       tab_content: ReactDOMServer.renderToStaticMarkup(
-                        <SectionWrapper>
-                          <GridWrapper numCols={2}>
-                            <SectionWrapper>
-                              {WYSIWYG({
-                                content: ReactDOMServer.renderToStaticMarkup(
-                                  <>
-                                    <h2>Tab title for unordered list</h2>
-                                    <p>
-                                      Description provides an informative
-                                      glimpse of the topic and excites site
-                                      visitors to learn more. Nice to be short
-                                      and simple. This is a 35-word count
-                                      paragraph example. Lorem ipsum dolor sit
-                                      amet lectus magna.
-                                    </p>
-                                    <h3>
-                                      Optional Heading to indicate what the next
-                                      section is about lorem ipsum
-                                    </h3>
-                                    <ul>
-                                      <li>
-                                        {' '}
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt non sit
-                                        facilisi ac ipsum.
-                                      </li>
-                                      <li>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt non sit
-                                        facilisi ac ipsum.
-                                      </li>
-                                      <li>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt non sit
-                                        facilisi ac ipsum.
-                                      </li>
-                                    </ul>
-                                  </>
-                                ),
-                              })}
-                            </SectionWrapper>
-                            <SectionWrapper>
-                              {WYSIWYG({
-                                content: ReactDOMServer.renderToStaticMarkup(
-                                  <>
-                                    <h2>Tab title for unordered list</h2>
-                                    <p>
-                                      Description provides an informative
-                                      glimpse of the topic and excites site
-                                      visitors to learn more. Nice to be short
-                                      and simple. This is a 35-word count
-                                      paragraph example. Lorem ipsum dolor sit
-                                      amet lectus magna.
-                                    </p>
-                                    <h3>
-                                      Optional Heading to indicate what the next
-                                      section is about lorem ipsum
-                                    </h3>
-                                    <ul>
-                                      <li>
-                                        {' '}
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt non sit
-                                        facilisi ac ipsum.
-                                      </li>
-                                      <li>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt non sit
-                                        facilisi ac ipsum.
-                                      </li>
-                                      <li>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Tincidunt non sit
-                                        facilisi ac ipsum.
-                                      </li>
-                                    </ul>
-                                  </>
-                                ),
-                              })}
-                            </SectionWrapper>
-                          </GridWrapper>
-                        </SectionWrapper>
+                        <SectionWrapper>{Table(Table.args)}</SectionWrapper>
                       ),
                     },
                     {

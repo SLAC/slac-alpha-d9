@@ -40,7 +40,8 @@
     .l-grid--2-col &,
     .l-grid--3-col &,
     .l-grid--4-col &,
-    .l-grid--6-col & {
+    .l-grid--6-col &,
+    .c-fifty-fifty__col & {
       padding-block: gesso-spacing(4);
 
       &:first-child {
@@ -185,6 +186,14 @@
 
 .l-section--blue {
   background-color: gesso-brand(sky, dark);
+}
+
+.l-section--gray-white {
+  background-image: linear-gradient(
+    to bottom,
+    gesso-brand(fog, light),
+    gesso-grayscale(white)
+  );
 }
 
 .l-section--divider {

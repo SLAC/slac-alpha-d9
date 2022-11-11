@@ -24,7 +24,7 @@ import { HeroWithoutOverlay } from '../03-components/article-hero/article-hero.s
 import { Quote } from '../03-components/quote/quote.stories';
 import { TagList } from '../03-components/tag-list/tag-list.stories';
 import { SectionWithBlueGreenGradient } from '../02-layouts/section/section.stories';
-import { Default as Card } from '../03-components/card/card.stories';
+import { News } from '../03-components/card/card.stories';
 
 export default {
   title: 'Pages/News Article Detail',
@@ -365,9 +365,9 @@ const NewsArticleDetail = args => (
             section_buttons: false,
             section_content: ReactDOMServer.renderToStaticMarkup(
               <GridWrapper numCols={3}>
-                {Card(Card.args)}
-                {Card(Card.args)}
-                {Card(Card.args)}
+                {News(News.args)}
+                {News(News.args)}
+                {News(News.args)}
               </GridWrapper>
             ),
           })}
