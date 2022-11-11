@@ -35,6 +35,12 @@ module:
   duration_field: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
+  eca: 0
+  eca_base: 0
+  eca_cm: 0
+  eca_content: 0
+  eca_ui: 0
+  eca_views: 0
   editor: 0
   entity_clone: 0
   entity_reference_revisions: 0
@@ -107,7 +113,6 @@ module:
   tour: 0
   twig_field_value: 0
   twig_tweak: 0
-  ultimate_cron: 0
   update: 0
   user: 0
   view_mode_select_by_token: 0
