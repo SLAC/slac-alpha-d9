@@ -10,19 +10,57 @@ import './accordion.scss';
 import './accordion.es6';
 import {
   GridWrapper,
+  SectionWithPaddingWrapper,
   SectionWrapper,
   WysiwygWrapper,
 } from '../../06-utility/storybookHelper';
 
 const accordionData = data.accordions;
 
+const decorators = [
+  (Story, context) =>
+    context.args.num_cols && context.args.num_cols > 1 ? (
+      <GridWrapper numCols={context.args.num_cols}>{Story()}</GridWrapper>
+    ) : (
+      <>{Story()}</>
+    ),
+  (Story, context) => (
+    <SectionWithPaddingWrapper modifierClasses={context.args.section_type}>
+      {Story()}
+    </SectionWithPaddingWrapper>
+  ),
+];
+
 const settings = {
   title: 'Components/Accordion',
   parameters: {
     controls: {
-      include: ['accordion_title', 'title_tag', 'allow_multiple', 'accordions'],
+      include: [
+        'accordion_title',
+        'title_tag',
+        'accordions',
+        'num_cols',
+        'section_type',
+      ],
     },
   },
+  argTypes: {
+    num_cols: {
+      control: 'select',
+      options: [1, 2],
+    },
+    section_type: {
+      options: ['l-section--white', 'l-section--purple-black l-section--dark'],
+      control: {
+        type: 'select',
+        labels: {
+          'l-section--white': 'Default',
+          'l-section--purple-black l-section--dark': 'Purple-Black',
+        },
+      },
+    },
+  },
+  decorators,
 };
 
 const NarrowAccordion = args =>

@@ -14,11 +14,11 @@ const SectionWrapper = ({ children }) =>
     })
   );
 
-const SectionWithPaddingWrapper = ({ children }) =>
+const SectionWithPaddingWrapper = ({ children, modifierClasses = '' }) =>
   parse(
     sectionTwigTemplate({
       section_content: ReactDOMServer.renderToStaticMarkup(children),
-      modifier_classes: 'l-section',
+      modifier_classes: modifierClasses,
       has_constrain: true,
     })
   );
