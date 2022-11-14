@@ -3,6 +3,7 @@
 @use '00-config' as *;
 
 .l-section:not(.l-section--no-padding) {
+  background-color: var(--gesso-background-color);
   padding-bottom: rem(gesso-spacing(5));
   padding-top: rem(gesso-spacing(5));
 
@@ -150,6 +151,7 @@
 }
 
 .l-section--purple-black {
+  --gesso-background-color: #{gesso-brand(purple, dark)};
   background-image: linear-gradient(
     to bottom,
     gesso-brand(purple, dark),
@@ -159,6 +161,7 @@
 }
 
 .l-section--blue-green {
+  --gesso-background-color: #{gesso-brand(stormy, dark)};
   background-image: linear-gradient(
     to bottom,
     gesso-brand(stormy, dark),
@@ -167,7 +170,7 @@
 }
 
 .l-section--yellow {
-  background-color: gesso-brand(illuminating, base);
+  --gesso-background-color: #{gesso-brand(illuminating, base)};
 
   .l-section__title .c-arrow-link {
     @include arrow-link(black);
@@ -181,14 +184,15 @@
 }
 
 .l-section--purple {
-  background-color: gesso-brand(purple, dark);
+  --gesso-background-color: #{gesso-brand(purple, dark)};
 }
 
 .l-section--blue {
-  background-color: gesso-brand(sky, dark);
+  --gesso-background-color: #{gesso-brand(sky, dark)};
 }
 
 .l-section--gray-white {
+  --gesso-background-color: #{gesso-brand(fog, light)};
   background-image: linear-gradient(
     to bottom,
     gesso-brand(fog, light),

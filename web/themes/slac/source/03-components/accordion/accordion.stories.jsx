@@ -9,30 +9,17 @@ import data from './accordion.yml';
 import './accordion.scss';
 import './accordion.es6';
 import {
+  decorators,
   GridWrapper,
-  SectionWithPaddingWrapper,
+  sectionTypeArg,
   SectionWrapper,
   WysiwygWrapper,
 } from '../../06-utility/storybookHelper';
 
 const accordionData = data.accordions;
 
-const decorators = [
-  (Story, context) =>
-    context.args.num_cols && context.args.num_cols > 1 ? (
-      <GridWrapper numCols={context.args.num_cols}>{Story()}</GridWrapper>
-    ) : (
-      <>{Story()}</>
-    ),
-  (Story, context) => (
-    <SectionWithPaddingWrapper modifierClasses={context.args.section_type}>
-      {Story()}
-    </SectionWithPaddingWrapper>
-  ),
-];
-
 const settings = {
-  title: 'Components/Accordion',
+  title: 'Paragraphs/Accordion',
   parameters: {
     controls: {
       include: [
@@ -45,20 +32,7 @@ const settings = {
     },
   },
   argTypes: {
-    num_cols: {
-      control: 'select',
-      options: [1, 2],
-    },
-    section_type: {
-      options: ['l-section--white', 'l-section--purple-black l-section--dark'],
-      control: {
-        type: 'select',
-        labels: {
-          'l-section--white': 'Default',
-          'l-section--purple-black l-section--dark': 'Purple-Black',
-        },
-      },
-    },
+    section_type: sectionTypeArg,
   },
   decorators,
 };
@@ -85,6 +59,12 @@ const NarrowAccordion = args =>
     })
   );
 NarrowAccordion.args = { ...globalData, ...data };
+NarrowAccordion.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [1, 2],
+  },
+};
 
 const WideAccordion = args =>
   parse(
@@ -126,6 +106,9 @@ WideAccordion.args = {
   ...globalData,
   ...data,
   modifier_classes: 'c-accordion--large',
+};
+WideAccordion.parameters = {
+  controls: { exclude: ['num_cols'] },
 };
 
 export default settings;

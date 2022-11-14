@@ -5,6 +5,7 @@
 .c-wide-card {
   @include font-family-secondary;
   @include layout-constrain(rem(gesso-constrain(teaser)), 0, 0);
+  color: var(--gesso-text-color);
   font-size: gesso-font-size(2);
   line-height: gesso-line-height(loose);
 

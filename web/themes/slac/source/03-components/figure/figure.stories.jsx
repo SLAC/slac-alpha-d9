@@ -8,15 +8,23 @@ import globalData from '../../00-config/storybook.global-data.yml';
 import mediaLightboxTemplate from '../media-lightbox/media-lightbox.twig';
 import videoLightboxData from '../media-lightbox/video-lightbox.yml';
 import imageLightboxData from '../media-lightbox/image-lightbox.yml';
-import { SectionWithPaddingWrapper } from '../../06-utility/storybookHelper';
+import {
+  decorators,
+  sectionTypeArg,
+  SectionWithPaddingWrapper,
+} from '../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Figure',
+  title: 'Paragraphs/Figure',
   parameters: {
     controls: {
-      include: ['media', 'caption'],
+      include: ['media', 'caption', 'section_type', 'num_cols'],
     },
   },
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const Default = args => (
@@ -38,31 +46,39 @@ const Default = args => (
     )}
   </>
 );
-Default.args = { ...data, caption: false, lightbox_id: 'image-lightbox' };
+Default.args = {
+  ...data,
+  caption: '',
+  lightbox_id: 'image-lightbox',
+  num_cols: 4,
+};
 
-const FigureCentered = args => (
-  <SectionWithPaddingWrapper>
-    {parse(
-      twigTemplate({
-        ...args,
-        modifier_classes: 'u-align-center',
-      })
-    )}
-  </SectionWithPaddingWrapper>
-);
+const FigureCentered = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'u-align-center',
+    })
+  );
 FigureCentered.args = { ...data };
+FigureCentered.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [1, 2, 3, 4],
+  },
+};
 
-const FigureCenteredWide = args => (
-  <SectionWithPaddingWrapper>
-    {parse(
-      twigTemplate({
-        ...args,
-        modifier_classes: 'u-align-center u-align-wide',
-      })
-    )}
-  </SectionWithPaddingWrapper>
-);
+const FigureCenteredWide = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'u-align-center u-align-wide',
+    })
+  );
 FigureCenteredWide.args = { ...data };
+FigureCenteredWide.argTypes = {
+  ...FigureCentered.argTypes,
+};
 
 const FigureRight = args =>
   parse(
@@ -107,10 +123,15 @@ const FigureWithVideo = args => (
     )}
   </>
 );
-FigureWithVideo.args = { ...videoData, ...globalData, caption: false };
+FigureWithVideo.args = {
+  ...videoData,
+  ...globalData,
+  caption: '',
+  num_cols: 4,
+};
 
 const FigureWithVideoCentered = args => (
-  <SectionWithPaddingWrapper>
+  <>
     {parse(
       twigTemplate({
         ...args,
@@ -118,9 +139,15 @@ const FigureWithVideoCentered = args => (
       })
     )}
     {parse(mediaLightboxTemplate({ ...globalData, ...videoLightboxData }))}
-  </SectionWithPaddingWrapper>
+  </>
 );
 FigureWithVideoCentered.args = { ...videoData, ...globalData };
+FigureWithVideoCentered.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [1, 2, 3, 4],
+  },
+};
 
 export default settings;
 export {

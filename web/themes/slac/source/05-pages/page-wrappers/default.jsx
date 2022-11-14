@@ -3,7 +3,6 @@ import ReactDOMServer from 'react-dom/server';
 import parse from 'html-react-parser';
 
 import SkiplinksTwig from '../../03-components/skiplinks/skiplinks.twig';
-import BreadcrumbTwig from '../../02-layouts/breadcrumb/breadcrumb.twig';
 import ContentTwig from '../../02-layouts/content/content.twig';
 import { Breadcrumb } from '../../03-components/breadcrumb/breadcrumb.stories.jsx';
 import { Footer } from '../../02-layouts/footer/footer.stories.jsx';
@@ -28,15 +27,7 @@ const PageWrapper = props => {
         {hero}
         <main id="main" className="c-main" role="main" tabIndex="-1">
           <div className="c-main__meta">
-            {!hideBreadcrumbs &&
-              parse(
-                BreadcrumbTwig({
-                  has_constrain: false,
-                  breadcrumb_content: ReactDOMServer.renderToStaticMarkup(
-                    <>{Breadcrumb(Breadcrumb.args)}</>
-                  ),
-                })
-              )}
+            {!hideBreadcrumbs && Breadcrumb(Breadcrumb.args)}
             {!hideSocialLinks && SocialShare(SocialShare.args)}
           </div>
           {parse(

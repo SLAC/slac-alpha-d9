@@ -13,6 +13,7 @@ import {
   GridWrapper,
   SectionWithPaddingWrapper,
   SectionWrapper,
+  WysiwygWrapper,
 } from '../06-utility/storybookHelper';
 import { Section } from '../02-layouts/section/section.stories';
 import tabsTwigTemplate from '../03-components/tabs/tabs.twig';
@@ -43,9 +44,79 @@ const BasicPage1 = args => (
       content: ReactDOMServer.renderToStaticMarkup(
         <>
           <SectionWrapper>
-            {WYSIWYG({
-              content: ReactDOMServer.renderToStaticMarkup(
-                <>
+            <WysiwygWrapper>
+              <p>
+                <a href="#0" className="c-button c-button--chevron">
+                  Optional Button
+                </a>
+                <a
+                  href="#0"
+                  className="c-button c-button--outline c-button--chevron"
+                >
+                  Optional
+                </a>
+              </p>
+              <p>
+                Description provides an informative glimpse of the topic and
+                excites site visitors to learn more. Nice to be short and
+                simple. This is a 35-word count paragraph example. Lorem ipsum
+                dolor sit amet lectus magna.
+              </p>
+            </WysiwygWrapper>
+          </SectionWrapper>
+          <SectionWithPaddingWrapper>
+            {FigureWithVideoCentered(FigureWithVideoCentered.args)}
+          </SectionWithPaddingWrapper>
+          <SectionWrapper>
+            <WysiwygWrapper>
+              <h2>Optional Heading</h2>
+              <p>
+                Description provides an informative glimpse of the topic and
+                excites site visitors to learn more. Nice to be short and
+                simple. This is a 35-word count paragraph example. Lorem ipsum
+                dolor sit amet lectus magna.
+              </p>
+              <p>
+                <a href="#1" className="c-cta-link">
+                  Big CTA Link
+                </a>
+                <a href="#1" className="c-cta-link">
+                  Big CTA Link
+                </a>
+              </p>
+            </WysiwygWrapper>
+          </SectionWrapper>
+          <SectionWithPaddingWrapper>
+            <GridWrapper numCols={2}>
+              <SectionWrapper>
+                <WysiwygWrapper>
+                  <h2>Title that grabs attention and describes a topic</h2>
+                  <p>
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 35-word count paragraph example. Lorem
+                    ipsum dolor sit amet lectus magna.
+                  </p>
+                  <h3>
+                    Optional Heading to indicate what the next section is about
+                    lorem ipsum
+                  </h3>
+                </WysiwygWrapper>
+                <SectionWithPaddingWrapper>
+                  {FigureCentered(FigureCentered.args)}
+                </SectionWithPaddingWrapper>
+                <WysiwygWrapper>
+                  <p>
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 35-word count paragraph example. Lorem
+                    ipsum dolor sit amet lectus magna.
+                  </p>
+                  <p>
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 26-word count.
+                  </p>
                   <p>
                     <a href="#0" className="c-button c-button--chevron">
                       Optional Button
@@ -57,136 +128,48 @@ const BasicPage1 = args => (
                       Optional
                     </a>
                   </p>
-                  <p>
-                    Description provides an informative glimpse of the topic and
-                    excites site visitors to learn more. Nice to be short and
-                    simple. This is a 35-word count paragraph example. Lorem
-                    ipsum dolor sit amet lectus magna.
-                  </p>
-                </>
-              ),
-            })}
-          </SectionWrapper>
-          {FigureWithVideoCentered(FigureWithVideoCentered.args)}
-          <SectionWrapper>
-            {WYSIWYG({
-              content: ReactDOMServer.renderToStaticMarkup(
-                <>
-                  <h2>Optional Heading</h2>
-                  <p>
-                    Description provides an informative glimpse of the topic and
-                    excites site visitors to learn more. Nice to be short and
-                    simple. This is a 35-word count paragraph example. Lorem
-                    ipsum dolor sit amet lectus magna.
-                  </p>
-                  <p>
-                    <a href="#1" className="c-cta-link">
-                      Big CTA Link
-                    </a>
-                    <a href="#1" className="c-cta-link">
-                      Big CTA Link
-                    </a>
-                  </p>
-                </>
-              ),
-            })}
-          </SectionWrapper>
-          <SectionWithPaddingWrapper>
-            <GridWrapper numCols={2}>
-              <SectionWrapper>
-                {WYSIWYG({
-                  content: ReactDOMServer.renderToStaticMarkup(
-                    <>
-                      <h2>Title that grabs attention and describes a topic</h2>
-                      <p>
-                        Description provides an informative glimpse of the topic
-                        and excites site visitors to learn more. Nice to be
-                        short and simple. This is a 35-word count paragraph
-                        example. Lorem ipsum dolor sit amet lectus magna.
-                      </p>
-                      <h3>
-                        Optional Heading to indicate what the next section is
-                        about lorem ipsum
-                      </h3>
-                    </>
-                  ),
-                })}
-                {FigureCentered(FigureCentered.args)}
-                {WYSIWYG({
-                  content: ReactDOMServer.renderToStaticMarkup(
-                    <>
-                      <p>
-                        Description provides an informative glimpse of the topic
-                        and excites site visitors to learn more. Nice to be
-                        short and simple. This is a 35-word count paragraph
-                        example. Lorem ipsum dolor sit amet lectus magna.
-                      </p>
-                      <p>
-                        Description provides an informative glimpse of the topic
-                        and excites site visitors to learn more. Nice to be
-                        short and simple. This is a 26-word count.
-                      </p>
-                      <p>
-                        <a href="#0" className="c-button c-button--chevron">
-                          Optional Button
-                        </a>
-                        <a
-                          href="#0"
-                          className="c-button c-button--outline c-button--chevron"
-                        >
-                          Optional
-                        </a>
-                      </p>
-                    </>
-                  ),
-                })}
+                </WysiwygWrapper>
               </SectionWrapper>
               <SectionWrapper>
-                {WYSIWYG({
-                  content: ReactDOMServer.renderToStaticMarkup(
-                    <>
-                      <h2>Title that grabs attention and describes a topic</h2>
-                      <p>
-                        Description provides an informative glimpse of the topic
-                        and excites site visitors to learn more. Nice to be
-                        short and simple. This is a 35-word count paragraph
-                        example. Lorem ipsum dolor sit amet lectus magna.
-                      </p>
-                      <h3>
-                        Optional Heading to indicate what the next section is
-                        about lorem ipsum
-                      </h3>
-                    </>
-                  ),
-                })}
-                {FigureWithVideoCentered(FigureWithVideoCentered.args)}
-                {WYSIWYG({
-                  content: ReactDOMServer.renderToStaticMarkup(
-                    <>
-                      <p>
-                        Description provides an informative glimpse of the topic
-                        and excites site visitors to learn more. Nice to be
-                        short and simple. This is a 35-word count paragraph
-                        example. Lorem ipsum dolor sit amet lectus magna.
-                      </p>
-                      <p>
-                        <a href="#0" className="c-cta-link">
-                          Big CTA Link
-                        </a>
-                      </p>
-                      <p>
-                        <a href="#0" className="c-cta-link">
-                          Big CTA Link
-                        </a>
-                      </p>
-                      <p>
-                        <a href="#0" className="c-cta-link">
-                          Big CTA Link
-                        </a>
-                      </p>
-                    </>
-                  ),
-                })}
+                <WysiwygWrapper>
+                  <h2>Title that grabs attention and describes a topic</h2>
+                  <p>
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 35-word count paragraph example. Lorem
+                    ipsum dolor sit amet lectus magna.
+                  </p>
+                  <h3>
+                    Optional Heading to indicate what the next section is about
+                    lorem ipsum
+                  </h3>
+                </WysiwygWrapper>
+                <SectionWithPaddingWrapper>
+                  {FigureWithVideoCentered(FigureWithVideoCentered.args)}
+                </SectionWithPaddingWrapper>
+                <WysiwygWrapper>
+                  <p>
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 35-word count paragraph example. Lorem
+                    ipsum dolor sit amet lectus magna.
+                  </p>
+                  <p>
+                    <a href="#0" className="c-cta-link">
+                      Big CTA Link
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#0" className="c-cta-link">
+                      Big CTA Link
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#0" className="c-cta-link">
+                      Big CTA Link
+                    </a>
+                  </p>
+                </WysiwygWrapper>
               </SectionWrapper>
             </GridWrapper>
           </SectionWithPaddingWrapper>
@@ -198,31 +181,27 @@ const BasicPage1 = args => (
                   caption:
                     '<i>(Firstname Lastname/SLAC National Accelerator Laboratory)</i>',
                 })}
-                {WYSIWYG({
-                  content: ReactDOMServer.renderToStaticMarkup(
-                    <>
-                      <h2>Title that grabs and describes a topic</h2>
-                      <p>
-                        Description provides an informative glimpse of the topic
-                        and excites site visitors to learn more. Nice to be
-                        short and simple. This is a 26-word count.
-                      </p>
-                      <p>
-                        <a href="#0" className="c-button c-button--chevron">
-                          Optional Button
-                        </a>
-                      </p>
-                      <p>
-                        <a
-                          href="#0"
-                          className="c-button c-button--outline c-button--chevron"
-                        >
-                          Optional
-                        </a>
-                      </p>
-                    </>
-                  ),
-                })}
+                <WysiwygWrapper>
+                  <h2>Title that grabs and describes a topic</h2>
+                  <p>
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 26-word count.
+                  </p>
+                  <p>
+                    <a href="#0" className="c-button c-button--chevron">
+                      Optional Button
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="#0"
+                      className="c-button c-button--outline c-button--chevron"
+                    >
+                      Optional
+                    </a>
+                  </p>
+                </WysiwygWrapper>
               </SectionWrapper>
               <SectionWrapper>
                 {FigureCentered({
@@ -230,31 +209,27 @@ const BasicPage1 = args => (
                   caption:
                     '<i>(Firstname Lastname/SLAC National Accelerator Laboratory)</i>',
                 })}
-                {WYSIWYG({
-                  content: ReactDOMServer.renderToStaticMarkup(
-                    <>
-                      <h2>Title that grabs and describes a topic</h2>
-                      <p>
-                        Description provides an informative glimpse of the topic
-                        and excites site visitors to learn more. Nice to be
-                        short and simple. This is a 26-word count.
-                      </p>
-                      <p>
-                        <a href="#0" className="c-button c-button--chevron">
-                          Optional Button
-                        </a>
-                      </p>
-                      <p>
-                        <a
-                          href="#0"
-                          className="c-button c-button--outline c-button--chevron"
-                        >
-                          Optional
-                        </a>
-                      </p>
-                    </>
-                  ),
-                })}
+                <WysiwygWrapper>
+                  <h2>Title that grabs and describes a topic</h2>
+                  <p>
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 26-word count.
+                  </p>
+                  <p>
+                    <a href="#0" className="c-button c-button--chevron">
+                      Optional Button
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="#0"
+                      className="c-button c-button--outline c-button--chevron"
+                    >
+                      Optional
+                    </a>
+                  </p>
+                </WysiwygWrapper>
               </SectionWrapper>
               <SectionWrapper>
                 {FigureWithVideoCentered({
@@ -262,33 +237,29 @@ const BasicPage1 = args => (
                   caption:
                     '<i>(Firstname Lastname/SLAC National Accelerator Laboratory)</i>',
                 })}
-                {WYSIWYG({
-                  content: ReactDOMServer.renderToStaticMarkup(
-                    <>
-                      <h2>Title that grabs and describes a topic</h2>
-                      <p>
-                        Description provides an informative glimpse of the topic
-                        and excites site visitors to learn more. Nice to be
-                        short and simple. This is a 26-word count.
-                      </p>
-                      <p>
-                        <a href="#0" className="c-cta-link">
-                          Big CTA Link
-                        </a>
-                      </p>
-                      <p>
-                        <a href="#0" className="c-cta-link">
-                          Big CTA Link
-                        </a>
-                      </p>
-                      <p>
-                        <a href="#0" className="c-cta-link">
-                          Big CTA Link
-                        </a>
-                      </p>
-                    </>
-                  ),
-                })}
+                <WysiwygWrapper>
+                  <h2>Title that grabs and describes a topic</h2>
+                  <p>
+                    Description provides an informative glimpse of the topic and
+                    excites site visitors to learn more. Nice to be short and
+                    simple. This is a 26-word count.
+                  </p>
+                  <p>
+                    <a href="#0" className="c-cta-link">
+                      Big CTA Link
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#0" className="c-cta-link">
+                      Big CTA Link
+                    </a>
+                  </p>
+                  <p>
+                    <a href="#0" className="c-cta-link">
+                      Big CTA Link
+                    </a>
+                  </p>
+                </WysiwygWrapper>
               </SectionWrapper>
             </GridWrapper>
           </SectionWithPaddingWrapper>
@@ -332,7 +303,6 @@ const BasicPage1 = args => (
                                     </h3>
                                     <ul>
                                       <li>
-                                        {' '}
                                         Lorem ipsum dolor sit amet, consectetur
                                         adipiscing elit. Tincidunt non sit
                                         facilisi ac ipsum.
@@ -371,7 +341,6 @@ const BasicPage1 = args => (
                                     </h3>
                                     <ul>
                                       <li>
-                                        {' '}
                                         Lorem ipsum dolor sit amet, consectetur
                                         adipiscing elit. Tincidunt non sit
                                         facilisi ac ipsum.
