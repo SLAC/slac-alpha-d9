@@ -3,13 +3,13 @@ import parse from 'html-react-parser';
 import twigTemplate from './card.twig';
 
 import data from './card.yml';
-
+import largeCardData from './card-large.yml';
 import eventCardData from './card-event.yml';
 import multidayEventCardData from './card-multiday-event.yml';
 import virtualEventCardData from './card-virtual-event.yml';
 import newsCardData from './card-news.yml';
 // import eventFallbackCardData from './card-event-fallback.yml';
-// import largeEventCardData from './card-event-large.yml';
+import largeEventCardData from './card-event-large.yml';
 import bioCardData from './card-bio.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
 import { decorators, sectionTypeArg } from '../../06-utility/storybookHelper';
@@ -70,6 +70,10 @@ CardNoImage.argTypes = {
   ...Default.argTypes,
 };
 
+const LargeCard = args =>
+  parse(twigTemplate({ ...args, modifier_classes: 'c-card--large' }));
+LargeCard.args = { ...globalData, ...largeCardData, num_cols: 2 };
+
 const News = args => parse(twigTemplate(args));
 News.args = { ...globalData, ...newsCardData, num_cols: 3 };
 News.argTypes = {
@@ -91,16 +95,6 @@ NewsTeaser.args = {
   ...newsCardData,
   kicker: 'News article teaser',
 };
-
-// const MenuCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//       footer: false,
-//       modifier_classes: 'c-card--menu',
-//     })
-//   );
-// MenuCard.args = { ...globalData, ...data };
 
 // const TeaserCard = args =>
 //   parse(
@@ -176,28 +170,31 @@ EventTeaserCard.args = { ...globalData, ...virtualEventCardData };
 //   );
 // EventFallbackCard.args = { ...globalData, ...eventFallbackCardData };
 
-// const LargeEventCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//     })
-//   );
-// LargeEventCard.args = { ...globalData, ...largeEventCardData };
-
-// const ExtraLargeCardWithRightText = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//     })
-//   );
-// ExtraLargeCardWithRightText.args = {
-//   ...globalData,
-//   ...data,
-//   alignment: 'right',
-//   modifier_classes: 'c-card--xlarge',
-//   media: '<img src="https://picsum.photos/id/944/1340/600" alt="">',
-//   kicker: false,
-// };
+const LargeEventCard = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+LargeEventCard.args = { ...globalData, ...largeEventCardData, num_cols: 2 };
+LargeEventCard.parameters = {
+  controls: {
+    include: [
+      'title',
+      'url',
+      'kicker',
+      'card_content',
+      'link_type',
+      'link_text',
+      'link_url',
+      'section_type',
+      'start_date',
+      'event_date',
+      'event_location',
+      'is_virtual',
+    ],
+  },
+};
 
 // const ExtraLargeCardWithLeftText = args =>
 //   parse(
@@ -255,22 +252,18 @@ export {
   Default,
   CardWithIcon,
   CardNoImage,
+  LargeCard,
   News,
   NewsTeaser,
   Event,
   EventMultiday,
   EventVirtual,
   // LargeCard,
-  // MenuCard,
   // VideoCard,
-  // EventCard,
-  // EventMultidayCard,
   // EventFallbackCard,
-  // LargeEventCard,
+  LargeEventCard,
   // TeaserCard,
   EventTeaserCard,
-  // ExtraLargeCardWithRightText,
-  // ExtraLargeCardWithLeftText,
   BioCard,
   BioCardWithFallback,
   // LargeBioCard,
