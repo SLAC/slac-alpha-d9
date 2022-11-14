@@ -25,10 +25,12 @@ const PageWrapper = props => {
       <div className="l-site-container">
         {hero}
         <main id="main" className="c-main" role="main" tabIndex="-1">
-          <div className="c-main__meta">
-            {!hideBreadcrumbs && Breadcrumb(Breadcrumb.args)}
-            {!hideSocialLinks && SocialShare(SocialShare.args)}
-          </div>
+          {(!hideBreadcrumbs || !hideSocialLinks) && (
+            <div className="c-main__meta">
+              {!hideBreadcrumbs && Breadcrumb(Breadcrumb.args)}
+              {!hideSocialLinks && SocialShare(SocialShare.args)}
+            </div>
+          )}
           {parse(
             ContentTwig({
               has_constrain: false,
