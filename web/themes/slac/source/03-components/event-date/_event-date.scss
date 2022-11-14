@@ -7,9 +7,9 @@
   align-items: flex-end;
   color: gesso-grayscale(white);
   display: flex;
-  font-size: rem(60px);
+  font-size: rem(40px);
   font-weight: gesso-font-weight(black);
-  inset: 30px auto auto 30px;
+  inset: 15px auto auto 30px;
   line-height: 0.9;
   position: absolute;
   z-index: 1;
@@ -17,7 +17,7 @@
   span {
     @include font-family-primary;
     display: table;
-    font-size: em(26px, 60px);
+    font-size: em(26px, 40px);
     text-transform: uppercase;
   }
 

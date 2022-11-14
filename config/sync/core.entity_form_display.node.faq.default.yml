@@ -1,10 +1,10 @@
-uuid: 1ae47cf7-66c9-4967-ab76-042bb1876cba
+uuid: ef32be38-bca1-448d-a454-7a9ab27eb728
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.faq.field_answer
-    - field.field.node.faq.field_category
+    - field.field.node.faq.field_faq_category
     - node.type.faq
   module:
     - content_moderation
@@ -24,7 +24,7 @@ third_party_settings:
       format_type: tabs
       format_settings:
         classes: ''
-        show_empty_fields: true
+        show_empty_fields: false
         id: ''
         direction: horizontal
         width_breakpoint: 640
@@ -35,22 +35,22 @@ third_party_settings:
       label: 'Main Content'
       region: content
       parent_name: group_tabs
-      weight: 14
+      weight: 13
       format_type: tab
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        formatter: open
+        formatter: closed
         description: ''
         required_fields: true
     group_metadata:
       children:
-        - field_category
+        - field_faq_category
       label: Metadata
       region: content
       parent_name: group_tabs
-      weight: 15
+      weight: 14
       format_type: tab
       format_settings:
         classes: ''
@@ -88,9 +88,9 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_category:
+  field_faq_category:
     type: options_select
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,11 +1,11 @@
-uuid: 37b19d2c-3f5e-45c5-9369-af0addbe6ec7
+uuid: 60e53d93-8f49-4c6e-b78d-55eca433b30c
 langcode: en
 status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.faq.field_answer
-    - field.field.node.faq.field_category
+    - field.field.node.faq.field_faq_category
     - node.type.faq
   module:
     - user
@@ -21,6 +21,6 @@ content:
     region: content
 hidden:
   field_answer: true
-  field_category: true
+  field_faq_category: true
   langcode: true
   search_api_excerpt: true

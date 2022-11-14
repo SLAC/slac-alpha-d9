@@ -1,10 +1,10 @@
-uuid: 7388cf90-2e7c-4805-a72f-5fd49cac4643
+uuid: 96cf8386-16ba-458e-a6d9-46441f434963
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.faq.field_answer
-    - field.field.node.faq.field_category
+    - field.field.node.faq.field_faq_category
     - node.type.faq
   module:
     - entity_reference_revisions
@@ -21,21 +21,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 104
-    region: content
-  field_category:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 103
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_faq_category: true
   langcode: true
   search_api_excerpt: true
