@@ -8,18 +8,19 @@ const settings = {
   argTypes: {
     is_demo: {
       table: {
-        disable: true
-      }
-    }
+        disable: true,
+      },
+    },
   },
 };
 
-const InlineForm = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const InlineForm = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 InlineForm.args = { ...data };
 
 export default settings;
-export { InlineForm };
+// export { InlineForm };

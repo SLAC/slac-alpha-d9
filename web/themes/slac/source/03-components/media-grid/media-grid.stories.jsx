@@ -8,12 +8,21 @@ import {
   Default as Image,
   FigureWithVideo as Video,
 } from '../figure/figure.stories';
-import { SectionWrapper } from '../../06-utility/storybookHelper.jsx';
 
 import './media-grid.es6';
+import { sectionTypeArg, decorators } from '../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Media Grid',
+  title: 'Paragraphs/Media Grid',
+  parameters: {
+    controls: {
+      include: ['section_type'],
+    },
+  },
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 let lightboxCounter = 1;
@@ -32,47 +41,44 @@ const getArgs = isImage => {
   return args;
 };
 
-const MediaGrid = args => (
-  <SectionWrapper>
-    {parse(
-      twigTemplate({
-        ...args,
-        media_content: ReactDOMServer.renderToStaticMarkup(
-          <>
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Video({ ...Video.args, ...getArgs() })}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Video({ ...Video.args, ...getArgs() })}
-            {Video({ ...Video.args, ...getArgs() })}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Video({ ...Video.args, ...getArgs() })}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Video({ ...Video.args, ...getArgs() })}
-            {Video({ ...Video.args, ...getArgs() })}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-            {Image(getArgs(true))}
-          </>
-        ),
-      })
-    )}
-  </SectionWrapper>
-);
+const MediaGrid = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      media_content: ReactDOMServer.renderToStaticMarkup(
+        <>
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Video({ ...Video.args, ...getArgs() })}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Video({ ...Video.args, ...getArgs() })}
+          {Video({ ...Video.args, ...getArgs() })}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Video({ ...Video.args, ...getArgs() })}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Video({ ...Video.args, ...getArgs() })}
+          {Video({ ...Video.args, ...getArgs() })}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+          {Image(getArgs(true))}
+        </>
+      ),
+    })
+  );
 MediaGrid.args = { ...data };
 
 export default settings;

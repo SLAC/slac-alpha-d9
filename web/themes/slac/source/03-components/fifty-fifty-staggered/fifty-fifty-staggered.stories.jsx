@@ -4,9 +4,19 @@ import ReactDOMServer from 'react-dom/server';
 import cardTemplate from '../card/card.twig';
 import twigTemplate from './fifty-fifty-staggered.twig';
 import data from './fifty-fifty-staggered.yml';
+import { decorators, sectionTypeArg } from '../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Fifty Fifty Staggered',
+  title: 'Paragraphs/Fifty Fifty Staggered',
+  parameters: {
+    controls: {
+      include: ['section_type'],
+    },
+  },
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const FiftyFiftyStaggered = args => (

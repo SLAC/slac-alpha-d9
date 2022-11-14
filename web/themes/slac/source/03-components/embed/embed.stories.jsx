@@ -3,21 +3,20 @@ import parse from 'html-react-parser';
 import './embed.es6';
 import twigTemplate from './embed.twig';
 import data from './embed.yml';
+import { decorators, sectionTypeArg } from '../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Embed',
+  title: 'Paragraphs/Embed',
   argTypes: {
     width: {
-      options: [
-        'content',
-        'wide',
-        'full',
-      ],
+      options: ['content', 'wide', 'full'],
       control: {
         type: 'select',
       },
     },
-  }
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const Embed = args =>
@@ -32,7 +31,7 @@ const EmbedWide = args =>
   parse(
     twigTemplate({
       ...args,
-      modifier_classes: 'c-embed--wide'
+      modifier_classes: 'c-embed--wide',
     })
   );
 EmbedWide.args = { ...data };
@@ -41,7 +40,7 @@ const EmbedFull = args =>
   parse(
     twigTemplate({
       ...args,
-      modifier_classes: 'c-embed--full'
+      modifier_classes: 'c-embed--full',
     })
   );
 EmbedFull.args = { ...data };

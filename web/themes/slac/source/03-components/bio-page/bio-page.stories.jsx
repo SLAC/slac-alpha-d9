@@ -45,4 +45,4 @@ BioPageWithLongBio.args = {
 };
 
 export default settings;
-export { BioPage, BioPageWithoutImage, BioPageWithLongBio };
+// export { BioPage, BioPageWithoutImage, BioPageWithLongBio };
