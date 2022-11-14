@@ -9,7 +9,6 @@ import { Footer } from '../../02-layouts/footer/footer.stories.jsx';
 import { Subfooter } from '../../02-layouts/subfooter/subfooter.stories';
 import { Header } from '../../02-layouts/header/header.stories';
 import { SocialShare } from '../../03-components/social-share/social-share.stories';
-import { CookieBanner } from '../../03-components/cookie-banner/cookie-banner.stories';
 import { GlobalHeader } from '../../02-layouts/global-header/global-header.stories';
 import { InternalHeader } from '../../02-layouts/internal-header/internal-header.stories';
 
@@ -41,7 +40,6 @@ const PageWrapper = props => {
         </main>
         {Footer(Footer.args)}
         {Subfooter(Subfooter.args)}
-        {CookieBanner(CookieBanner.args)}
       </div>
     </div>
   );
