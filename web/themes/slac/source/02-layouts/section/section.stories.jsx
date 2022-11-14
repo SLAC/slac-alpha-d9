@@ -26,6 +26,9 @@ const SectionContent = gridTemplate({
       {Card(Card.args)}
       {Card(Card.args)}
       {Card(Card.args)}
+      {Card(Card.args)}
+      {Card(Card.args)}
+      {Card(Card.args)}
     </>
   ),
   num_of_cols: 3,
@@ -88,6 +91,12 @@ SectionWithBlueBackground.args = {
   `,
 };
 
+const SectionWithGrayWhiteGradient = Template.bind({});
+SectionWithGrayWhiteGradient.args = {
+  ...data,
+  modifier_classes: 'l-section--gray-white',
+};
+
 const SectionHorizontal = Template.bind({});
 SectionHorizontal.args = {
   ...data,
@@ -119,6 +128,7 @@ export {
   SectionWithYellowBackground,
   SectionWithPurpleBackground,
   SectionWithBlueBackground,
+  SectionWithGrayWhiteGradient,
   SectionHorizontal,
   SectionWithRSS,
 };

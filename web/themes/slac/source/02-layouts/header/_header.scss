@@ -11,6 +11,7 @@
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     height: var(--gesso-header-initial-height);
+    pointer-events: none;
   }
 }
 
@@ -21,6 +22,7 @@
 
   @include breakpoint(gesso-breakpoint(mobile-menu) + 1px) {
     padding: 35px 0 0;
+    pointer-events: visible;
     transition: padding gesso-duration(short) gesso-easing(ease-out);
 
     .is-sticky & {

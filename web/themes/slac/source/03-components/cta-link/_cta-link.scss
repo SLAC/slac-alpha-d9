@@ -1,0 +1,13 @@
+// @file
+// Component: c-cta-link
+@use '00-config' as *;
+
+.c-cta-link {
+  @include arrow-link(red);
+  font-family: gesso-font-family(primary);
+  font-weight: gesso-font-weight(bold);
+
+  & + & {
+    margin-inline-start: rem(gesso-spacing(3));
+  }
+}

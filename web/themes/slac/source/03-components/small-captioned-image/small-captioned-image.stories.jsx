@@ -17,4 +17,4 @@ const SmallCaptionedImage = args =>
 SmallCaptionedImage.args = { ...globalData, ...data };
 
 export default settings;
-export { SmallCaptionedImage };
+// export { SmallCaptionedImage };

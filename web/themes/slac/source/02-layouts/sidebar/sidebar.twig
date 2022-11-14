@@ -35,11 +35,6 @@
   {% set sidebar_main_content = macros.sample_content('Main Content') %}
 {% endif %}
 
-{% if is_demo and not sidebar_second_content %}
-  {% import '@global/gesso.macro.twig' as macros %}
-  {% set sidebar_second_content = macros.sample_content('Optional Sidebar Content') %}
-{% endif %}
-
 <div {{ add_attributes({ 'class': classes }) }}>
   {% if has_constrain %}<div class="l-constrain">{% endif %}
     {% if sidebar_header_content %}
@@ -58,12 +53,6 @@
       <div {{ add_attributes({ 'class': sidebar_main_classes }, 'region_attributes.main') }}>
         {{ sidebar_main_content }}
       </div>
-    {% endif %}
-
-    {% if sidebar_second_content %}
-      <aside {{ add_attributes({ 'class': sidebar_second_classes }, 'region_attributes.sidebar_second') }}>
-        {{ sidebar_second_content }}
-      </aside>
     {% endif %}
   {% if has_constrain%}</div>{% endif%}
 </div>

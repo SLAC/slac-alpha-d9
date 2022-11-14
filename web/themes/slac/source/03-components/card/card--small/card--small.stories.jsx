@@ -2,9 +2,17 @@ import parse from 'html-react-parser';
 
 import twigTemplate from './card--small.twig';
 import data from './card--small.yml';
+import {
+  decorators,
+  sectionTypeArg,
+} from '../../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Card/Small Card',
+  title: 'Paragraphs/Card/Small Card',
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const SmallCard = args =>
@@ -13,20 +21,19 @@ const SmallCard = args =>
       ...args,
     })
   );
-SmallCard.args = { ...data };
+SmallCard.args = { ...data, num_cols: 4 };
 
 const SmallCardWithIcon = args =>
-parse(
-  twigTemplate({
-    ...args,
-  })
-);
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 SmallCardWithIcon.args = {
-  ...data,
+  ...SmallCard.args,
   media: false,
-  icon: '<img src="https://picsum.photos/id/1015/120/120">'
+  icon: '<img src="https://picsum.photos/id/1015/120/120">',
 };
-
 
 export default settings;
 export { SmallCard, SmallCardWithIcon };

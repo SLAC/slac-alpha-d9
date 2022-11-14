@@ -7,13 +7,35 @@ import data from './card.yml';
 import eventCardData from './card-event.yml';
 import multidayEventCardData from './card-multiday-event.yml';
 import virtualEventCardData from './card-virtual-event.yml';
+import newsCardData from './card-news.yml';
 // import eventFallbackCardData from './card-event-fallback.yml';
 // import largeEventCardData from './card-event-large.yml';
 import bioCardData from './card-bio.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
+import { decorators, sectionTypeArg } from '../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Card',
+  title: 'Paragraphs/Card',
+  parameters: {
+    controls: {
+      include: [
+        'title',
+        'url',
+        'kicker',
+        'card_content',
+        'is_truncated',
+        'link_type',
+        'link_text',
+        'link_url',
+        'section_type',
+        'num_cols',
+      ],
+    },
+  },
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const Default = args =>
@@ -22,16 +44,53 @@ const Default = args =>
       ...args,
     })
   );
-Default.args = { ...globalData, ...data };
+Default.args = { ...globalData, ...data, num_cols: 3 };
+Default.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [1, 2, 3, 4],
+  },
+};
 
-// const LargeCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//       modifier_classes: 'c-card--large',
-//     })
-//   );
-// LargeCard.args = { ...globalData, ...data };
+const CardWithIcon = args => parse(twigTemplate(args));
+CardWithIcon.args = {
+  ...Default.args,
+  media: false,
+  icon: '<img src="https://picsum.photos/id/1015/100/100" alt="">',
+  link_type: 'cta',
+  link_text: 'Big CTA Link',
+};
+CardWithIcon.argTypes = {
+  ...Default.argTypes,
+};
+
+const CardNoImage = args => parse(twigTemplate(args));
+CardNoImage.args = { ...Default.args, media: false, icon: false };
+CardNoImage.argTypes = {
+  ...Default.argTypes,
+};
+
+const News = args => parse(twigTemplate(args));
+News.args = { ...globalData, ...newsCardData, num_cols: 3 };
+News.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [2, 3],
+  },
+};
+
+const NewsTeaser = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-card--teaser',
+    })
+  );
+NewsTeaser.args = {
+  ...globalData,
+  ...newsCardData,
+  kicker: 'News article teaser',
+};
 
 // const MenuCard = args =>
 //   parse(
@@ -52,7 +111,6 @@ Default.args = { ...globalData, ...data };
 //   );
 // TeaserCard.args = { ...globalData, ...data };
 
-
 // const VideoCard = args =>
 //   parse(
 //     twigTemplate({
@@ -70,7 +128,13 @@ const Event = args =>
       ...args,
     })
   );
-Event.args = { ...globalData, ...eventCardData };
+Event.args = { ...globalData, ...eventCardData, num_cols: 3 };
+Event.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [2, 3],
+  },
+};
 
 const EventMultiday = args =>
   parse(
@@ -78,7 +142,10 @@ const EventMultiday = args =>
       ...args,
     })
   );
-EventMultiday.args = { ...globalData, ...multidayEventCardData };
+EventMultiday.args = { ...globalData, ...multidayEventCardData, num_cols: 3 };
+EventMultiday.argTypes = {
+  ...Event.argTypes,
+};
 
 const EventVirtual = args =>
   parse(
@@ -86,7 +153,10 @@ const EventVirtual = args =>
       ...args,
     })
   );
-EventVirtual.args = { ...globalData, ...virtualEventCardData };
+EventVirtual.args = { ...globalData, ...virtualEventCardData, num_cols: 3 };
+EventVirtual.argTypes = {
+  ...Event.argTypes,
+};
 
 const EventTeaserCard = args =>
   parse(
@@ -146,18 +216,26 @@ const BioCard = args =>
       ...args,
     })
   );
-BioCard.args = { ...globalData, ...bioCardData };
+BioCard.args = { ...globalData, ...bioCardData, num_cols: 3 };
+BioCard.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [2, 3],
+  },
+};
 
 const BioCardWithFallback = args =>
-parse(
-  twigTemplate({
-    ...args,
-  })
-);
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 BioCardWithFallback.args = {
-  ...globalData,
-  ...bioCardData,
+  ...BioCard.args,
   media: false,
+};
+BioCardWithFallback.argTypes = {
+  ...BioCard.argTypes,
 };
 
 // const LargeBioCard = args =>
@@ -175,6 +253,10 @@ BioCardWithFallback.args = {
 export default settings;
 export {
   Default,
+  CardWithIcon,
+  CardNoImage,
+  News,
+  NewsTeaser,
   Event,
   EventMultiday,
   EventVirtual,

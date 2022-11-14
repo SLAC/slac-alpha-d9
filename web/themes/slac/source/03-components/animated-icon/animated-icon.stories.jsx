@@ -50,13 +50,13 @@ const Xray = Template.bind({});
 Xray.args = { ...globalData, ...data, animation: 'xray' };
 
 export default settings;
-export {
-  Accelerator1,
-  Accelerator2,
-  Cryo1,
-  Laser1,
-  Laser2,
-  Space1,
-  Space2,
-  Xray,
-};
+// export {
+//   Accelerator1,
+//   Accelerator2,
+//   Cryo1,
+//   Laser1,
+//   Laser2,
+//   Space1,
+//   Space2,
+//   Xray,
+// };

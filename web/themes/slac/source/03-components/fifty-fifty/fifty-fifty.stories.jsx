@@ -8,9 +8,19 @@ import data from './fifty-fifty.yml';
 import { Default as Figure } from '../figure/figure.stories';
 
 import '../../06-utility/transitions.es6';
+import { sectionTypeArg, decorators } from '../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Fifty Fifty',
+  title: 'Paragraphs/Fifty Fifty',
+  parameters: {
+    controls: {
+      include: ['section_type'],
+    },
+  },
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const text = `

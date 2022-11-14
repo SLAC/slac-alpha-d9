@@ -3,10 +3,10 @@
 @use '00-config' as *;
 
 .c-tag-list {
-  margin: rem(gesso-spacing(9)) 0 0;
+  margin: gesso-spacing(9) 0;
 
   + * {
-    margin-top: rem(gesso-spacing(9));
+    margin-top: 0;
   }
 
   ul {
@@ -18,5 +18,8 @@
 
   li {
     margin: 0;
+  }
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    margin-block: 126px;
   }
 }

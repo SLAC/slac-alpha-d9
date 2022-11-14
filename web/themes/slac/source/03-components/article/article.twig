@@ -6,13 +6,6 @@
 <article {{ add_attributes({ 'class': classes }) }}>
   {% if has_constrain %}<div class="l-constrain">{% endif %}
     {{ title_prefix }}
-    {% if not date and date_format %}
-      {% set date %}
-        {% include '@components/date/date.twig' with {
-          'date_format': date_format,
-        } %}
-      {% endset %}
-    {% endif %}
     {% if not author and author_name %}
       {% set author = author_name %}
     {% endif %}
@@ -53,9 +46,14 @@
           {% if has_constrain %}</div>{% endif %}
         {% endblock %}
       {% endif %}
+      {% set kicker = date %}
+      {% if kicker and type %}
+        {% set kicker = date ~ ' · ' %}
+      {% endif %}
+      {% set kicker = kicker ~ type %}
       {% include '@components/page-title/page-title.twig' with {
         'page_title': title,
-        'kicker': date,
+        'kicker': kicker,
         'lede': lede,
         'byline': author,
         'has_constrain': has_constrain,
