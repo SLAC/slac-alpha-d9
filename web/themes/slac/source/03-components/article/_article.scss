@@ -9,12 +9,3 @@
 .c-article > .l-constrain {
   position: relative;
 }
-
-.c-article__toc {
-  @include breakpoint-min(gesso-breakpoint(desktop)) {
-    left: 0;
-    position: absolute;
-    top: 0;
-    z-index: gesso-z-index(toc);
-  }
-}

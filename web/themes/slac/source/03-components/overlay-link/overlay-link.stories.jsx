@@ -9,13 +9,7 @@ const settings = {
   title: 'Components/Overlay Link',
   parameters: {
     controls: {
-      include: [
-        'modifier_classes',
-        'image',
-        'label',
-        'kicker',
-        'title',
-      ],
+      include: ['modifier_classes', 'image', 'label', 'kicker', 'title'],
     },
   },
 };
@@ -32,7 +26,8 @@ const Poster = args =>
   parse(
     twigTemplate({
       ...args,
-      image: '<img src="https://picsum.photos/390/600?image=237" width="390" height="600" loading="lazy">',
+      image:
+        '<img src="https://picsum.photos/390/600?image=237" width="390" height="600" loading="lazy">',
       label: '',
       kicker: 'Poster Details',
       title: 'Arianna Gleason lecture',
@@ -44,7 +39,8 @@ const Topic = args =>
   parse(
     twigTemplate({
       ...args,
-      image: '<img src="https://picsum.photos/400/400?image=237" width="400" height="400" loading="lazy">',
+      image:
+        '<img src="https://picsum.photos/400/400?image=237" width="400" height="400" loading="lazy">',
       label: 'Dark Energy',
       kicker: 'Tagged in',
       title: 'Dark Energy',
@@ -53,4 +49,4 @@ const Topic = args =>
 Topic.args = { ...data, ...globalData };
 
 export default settings;
-export { OverlayLink, Poster, Topic };
+// export { OverlayLink, Poster, Topic };

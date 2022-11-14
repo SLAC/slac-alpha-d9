@@ -9,7 +9,9 @@ import data from './accordion.yml';
 import './accordion.scss';
 import './accordion.es6';
 import {
+  decorators,
   GridWrapper,
+  sectionTypeArg,
   SectionWrapper,
   WysiwygWrapper,
 } from '../../06-utility/storybookHelper';
@@ -17,12 +19,22 @@ import {
 const accordionData = data.accordions;
 
 const settings = {
-  title: 'Components/Accordion',
+  title: 'Paragraphs/Accordion',
   parameters: {
     controls: {
-      include: ['accordion_title', 'title_tag', 'allow_multiple', 'accordions'],
+      include: [
+        'accordion_title',
+        'title_tag',
+        'accordions',
+        'num_cols',
+        'section_type',
+      ],
     },
   },
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const NarrowAccordion = args =>
@@ -47,6 +59,12 @@ const NarrowAccordion = args =>
     })
   );
 NarrowAccordion.args = { ...globalData, ...data };
+NarrowAccordion.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [1, 2],
+  },
+};
 
 const WideAccordion = args =>
   parse(
@@ -88,6 +106,9 @@ WideAccordion.args = {
   ...globalData,
   ...data,
   modifier_classes: 'c-accordion--large',
+};
+WideAccordion.parameters = {
+  controls: { exclude: ['num_cols'] },
 };
 
 export default settings;
