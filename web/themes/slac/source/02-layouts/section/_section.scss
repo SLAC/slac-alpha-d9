@@ -20,9 +20,7 @@
     }
   }
 
-  // stylelint-disable-next-line property-no-unknown
   @supports (container-type: inline-size) {
-    // stylelint-disable-next-line scss/at-rule-no-unknown
     @container (max-width: 600px) {
       padding-block: gesso-spacing(4);
 
