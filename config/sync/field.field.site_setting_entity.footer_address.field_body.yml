@@ -17,7 +17,7 @@ field_name: field_body
 entity_type: site_setting_entity
 bundle: footer_address
 label: WYSIWYG
-description: ''
+description: 'Content entered here will be injected into the footer address on Line 2. This setting should be used for Mailstop or other identifying text that should be added to this department''s address.'
 required: false
 translatable: true
 default_value: {  }
