@@ -9,16 +9,13 @@
   display: flex;
   font-size: rem(40px);
   font-weight: gesso-font-weight(black);
-  inset: 15px auto auto 30px;
+  inset: gesso-spacing(2) auto auto 30px;
   line-height: 0.9;
   position: absolute;
   z-index: 1;
 
-  span {
-    @include font-family-primary;
-    display: table;
-    font-size: em(26px, 40px);
-    text-transform: uppercase;
+  span:not([class]) {
+    font-weight: 400;
   }
 
   @include breakpoint-min-max(
@@ -28,4 +25,11 @@
   ) {
     font-size: rem(40px);
   }
+}
+
+.c-event-date__month {
+  @include font-family-primary;
+  display: table;
+  font-size: em(26px, 40px);
+  text-transform: uppercase;
 }

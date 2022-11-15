@@ -9,18 +9,18 @@
 <div {{ add_attributes({ class: classes } ) }}>
   {% if start_date %}
     <div>
-      {% if start_date.month %}<span>{{ start_date.month }}</span>{% endif %}
-      {{ start_date.day ~ (is_multiday and is_multimonth == false ? '–' ~ end_date.day : '' )}}
+      {% if start_date.month %}<span class="c-event-date__month">{{ start_date.month }}</span>{% endif %}
+      {{- start_date.day ~ (is_multiday and is_multimonth == false ? '<span>&ndash;</span>' ~ end_date.day : '' ) -}}
     </div>
   {% endif %}
 
-  {% if is_multimonth %}
+  {% if is_multimonth %}{% spaceless %}
     <div>
       –
     </div>
     <div>
-      <span>{{ end_date.month }}</span>
-      {{ end_date.day }}
+      <span class="c-event-date__month">{{ end_date.month }}</span>
+      {{- end_date.day -}}
     </div>
-  {% endif %}
+  {% endspaceless %}{% endif %}
 </div>
