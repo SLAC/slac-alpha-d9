@@ -1,7 +1,6 @@
 import Drupal from 'drupal';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { animateIcon } from '../03-components/animated-icon/animated-icon.es6';
 import { BREAKPOINTS } from '../00-config/_GESSO.es6';
 
 gsap.registerPlugin(ScrollTrigger);
