@@ -5,6 +5,7 @@
 .c-promo-box {
   @include layout-full-bleed;
   background-color: rgba(gesso-brand(stormy, dark), 0.1);
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   gap: gesso-spacing(5);
@@ -13,12 +14,19 @@
   padding: gesso-spacing(3);
 
   @include breakpoint-min(gesso-breakpoint(mobile-lg)) {
-    max-width: min(100vw, 1061px);
-    width: max-content;
+    width: min(100vw, 1061px);
   }
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
     flex-direction: row;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(mobile-menu) - 1px) {
+    .l-sidebar__main & {
+      @include layout-undo-full-bleed;
+      margin-left: -107px;
+      max-width: 741px;
+    }
   }
 
   @include breakpoint-min(gesso-breakpoint(desktop)) {
@@ -40,8 +48,19 @@
     display: table;
     margin-bottom: 14px;
   }
+  @supports (container-type: inline-size) {
+    @container (min-width: 742px) {
+      columns: 2;
+    }
+  }
 
-  @include breakpoint-min(gesso-breakpoint(tablet)) {
-    columns: 2;
+  @supports not (container-type: inline-size) {
+    @include breakpoint-min(gesso-breakpoint(tablet)) {
+      columns: 2;
+
+      .l-sidebar__main & {
+        columns: 1;
+      }
+    }
   }
 }
