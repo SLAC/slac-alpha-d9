@@ -1,24 +1,29 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import parse from 'html-react-parser';
 
-import { Page as PageTemplate } from '../04-templates/page/page.stories';
-import { SideMenu } from '../03-components/menu/menu--side/menu--side.stories';
-import PageWrapper from './page-wrappers/default';
-import { BasicPage1 } from './page.stories';
-import { HeroWithChevron } from '../03-components/hero-bg-image/hero-bg-image.stories';
-import { SectionWithGrayWhiteGradient } from '../02-layouts/section/section.stories';
-import { Default as Card } from '../03-components/card/card.stories';
+import { Page as PageTemplate } from '../04-templates/page/page.stories.jsx';
+import { SideMenu } from '../03-components/menu/menu--side/menu--side.stories.jsx';
+import PageWrapper from './page-wrappers/default.jsx';
+import { HeroWithChevron } from '../03-components/hero-bg-image/hero-bg-image.stories.jsx';
+import {
+  SectionWithGrayWhiteGradient,
+  SectionWithYellowBackground,
+} from '../02-layouts/section/section.stories.jsx';
+import { Default as Card } from '../03-components/card/card.stories.jsx';
 import {
   GridWrapper,
   SectionWithPaddingWrapper,
   SectionWrapper,
   WysiwygWrapper,
-} from '../06-utility/storybookHelper';
-import { FigureWithVideoCentered } from '../03-components/figure/figure.stories';
-import { FiftyFifty } from '../03-components/fifty-fifty/fifty-fifty.stories';
-import { Quote } from '../03-components/quote/quote.stories';
-import { OverlapImage } from '../03-components/overlap-image/overlap-image.stories';
+} from '../06-utility/storybookHelper.jsx';
+import { FigureWithVideoCentered } from '../03-components/figure/figure.stories.jsx';
+import { FiftyFifty } from '../03-components/fifty-fifty/fifty-fifty.stories.jsx';
+import { Quote } from '../03-components/quote/quote.stories.jsx';
+import { OverlapImage } from '../03-components/overlap-image/overlap-image.stories.jsx';
+import { MediaGrid } from '../03-components/media-grid/media-grid.stories.jsx';
+import { SmallCardWithIcon } from '../03-components/card/card--small/card--small.stories.jsx';
+import { PromoBox } from '../03-components/promo-box/promo-box.stories.jsx';
+import { VerticalLinkCard } from '../03-components/card/card--link/card--link.stories.jsx';
 
 export default {
   title: 'Pages/Basic Page/Basic Page 2',
@@ -98,8 +103,53 @@ const BasicPage2 = args => (
             {OverlapImage(OverlapImage.args)}
           </SectionWithPaddingWrapper>
           <SectionWithPaddingWrapper>
-            {OverlapImage(OverlapImage.args)}
+            {OverlapImage({ ...OverlapImage.args, position: 'bottom-right' })}
           </SectionWithPaddingWrapper>
+          <SectionWithPaddingWrapper>
+            <WysiwygWrapper>
+              <hr />
+              <h2>Lorem Ipsum Image Gallery Grid</h2>
+              <p>
+                Description text image gallery. We are hoping that a 30-maximum
+                image gallery or media gallery can have both images and video.
+                Description text image gallery. We are hoping that a 30-maximum
+                image gallery or media gallery can have both images and video.{' '}
+              </p>
+            </WysiwygWrapper>
+            {MediaGrid(MediaGrid.args)}
+          </SectionWithPaddingWrapper>
+          {SectionWithYellowBackground({
+            ...SectionWithYellowBackground.args,
+            section_kicker: 'Kicker Lorem Ipsum',
+            section_intro: false,
+            section_buttons: false,
+            section_content: ReactDOMServer.renderToStaticMarkup(
+              <GridWrapper numCols={4}>
+                {SmallCardWithIcon(SmallCardWithIcon.args)}
+                {SmallCardWithIcon(SmallCardWithIcon.args)}
+                {SmallCardWithIcon(SmallCardWithIcon.args)}
+                {SmallCardWithIcon(SmallCardWithIcon.args)}
+              </GridWrapper>
+            ),
+          })}
+          {PromoBox(PromoBox.args)}
+          {SectionWithGrayWhiteGradient({
+            ...SectionWithGrayWhiteGradient.args,
+            section_kicker: 'Quick Links',
+            section_title: 'Resources',
+            section_intro: false,
+            section_buttons: false,
+            section_content: ReactDOMServer.renderToStaticMarkup(
+              <GridWrapper numCols={3}>
+                {VerticalLinkCard(VerticalLinkCard.args)}
+                {VerticalLinkCard(VerticalLinkCard.args)}
+                {VerticalLinkCard(VerticalLinkCard.args)}
+                {VerticalLinkCard(VerticalLinkCard.args)}
+                {VerticalLinkCard(VerticalLinkCard.args)}
+                {VerticalLinkCard(VerticalLinkCard.args)}
+              </GridWrapper>
+            ),
+          })}
         </>
       ),
     })}
