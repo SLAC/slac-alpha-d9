@@ -1,0 +1,47 @@
+uuid: ed020f6d-bb09-4b0c-9ceb-9e62fddc081a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.header_freeform_text.field_body
+    - site_settings.site_setting_entity_type.header_freeform_text
+  module:
+    - text
+    - user
+id: site_setting_entity.header_freeform_text.default
+targetEntityType: site_setting_entity
+bundle: header_freeform_text
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  fieldset:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  user_id:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

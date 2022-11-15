@@ -1,0 +1,8 @@
+uuid: 9a00a948-5e58-4107-beea-d32b88b672e0
+langcode: en
+status: true
+dependencies: {  }
+id: header_freeform_text
+label: 'Header freeform text'
+fieldset: 'Header freeform text'
+multiple: false
