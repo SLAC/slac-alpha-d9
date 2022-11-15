@@ -1,0 +1,26 @@
+uuid: de33b92e-1389-4c89-94a2-db8c099368a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.event_default_motif_image.field_motif_image
+    - site_settings.site_setting_entity_type.event_default_motif_image
+id: site_setting_entity.event_default_motif_image.default
+targetEntityType: site_setting_entity
+bundle: event_default_motif_image
+mode: default
+content:
+  field_motif_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  fieldset: true
+  name: true
+  search_api_excerpt: true
+  user_id: true
