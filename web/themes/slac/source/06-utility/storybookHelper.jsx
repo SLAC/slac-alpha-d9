@@ -46,11 +46,16 @@ const decorators = [
     ) : (
       <>{Story()}</>
     ),
-  (Story, context) => (
-    <SectionWithPaddingWrapper modifierClasses={context.args.section_type}>
-      {Story()}
-    </SectionWithPaddingWrapper>
-  ),
+  (Story, context) => {
+    context.args.is_dark =
+      context.args.section_type &&
+      context.args.section_type.includes('l-section--dark');
+    return (
+      <SectionWithPaddingWrapper modifierClasses={context.args.section_type}>
+        {Story()}
+      </SectionWithPaddingWrapper>
+    );
+  },
 ];
 
 const sectionTypeArg = {
