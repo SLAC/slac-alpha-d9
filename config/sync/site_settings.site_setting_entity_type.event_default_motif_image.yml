@@ -1,0 +1,8 @@
+uuid: cd81d33d-0a64-4d55-80ba-4ef824203db4
+langcode: en
+status: true
+dependencies: {  }
+id: event_default_motif_image
+label: 'Event default (motif) image'
+fieldset: 'Event default (motif) image'
+multiple: false
