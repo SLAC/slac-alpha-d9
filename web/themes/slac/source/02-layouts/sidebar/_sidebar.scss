@@ -17,6 +17,34 @@ $l-sidebar-gutter: 107px;
         grid-column: span 2;
       }
     }
+
+    .l-sidebar__main .l-section {
+      margin-inline: -1 * gesso-site-margins(desktop);
+      padding-inline: gesso-site-margins(desktop);
+
+      .l-section {
+        margin-inline: 0;
+        padding-inline: 0;
+      }
+    }
+  }
+
+  @include breakpoint-min(gesso-constrain(md)) {
+    .l-sidebar__main .l-section {
+      margin-inline: -107px
+        calc(
+          (#{gesso-constrain(md)} - 100vw) / 2 - #{gesso-site-margins(desktop)}
+        );
+      padding-inline: 107px
+        calc(
+          (#{gesso-constrain(md)} - 100vw) / -2 + #{gesso-site-margins(desktop)}
+        );
+
+      .l-section {
+        margin-inline: 0;
+        padding-inline: 0;
+      }
+    }
   }
 }
 

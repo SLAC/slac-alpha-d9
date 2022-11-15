@@ -63,8 +63,10 @@ Drupal.behaviors.gessoTransitions = {
       // Slide In from Left
       const slideIns = gsap.utils.toArray('.u-slide-left', context);
       slideIns.forEach(item => {
+        const sidebarMain = item.closest('.l-sidebar__main');
         gsap.set(item, {
           x: '-100%',
+          autoAlpha: sidebarMain ? 0 : 1,
         });
         ScrollTrigger.create({
           trigger: item,
@@ -73,21 +75,9 @@ Drupal.behaviors.gessoTransitions = {
           onEnter: () => {
             gsap.to(item, {
               x: 0,
+              autoAlpha: 1,
               ease: 'power3.out',
             });
-          },
-        });
-      });
-
-      // Animate Icon on Page Load
-      const icons = gsap.utils.toArray('.u-animate-icon', context);
-      icons.forEach(item => {
-        ScrollTrigger.create({
-          trigger: item,
-          start: 'top 50%',
-          once: true,
-          onEnter: () => {
-            animateIcon(item);
           },
         });
       });
