@@ -40,6 +40,7 @@ class SearchFlyout {
     } else {
       section.hidden = !section.hidden;
     }
+    section.setAttribute('tabindex', section.hidden ? '-1' : '0');
     const focusable = section.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]'
     );
