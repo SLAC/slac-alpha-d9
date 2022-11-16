@@ -24,18 +24,28 @@ import { MediaGrid } from '../03-components/media-grid/media-grid.stories.jsx';
 import { SmallCardWithIcon } from '../03-components/card/card--small/card--small.stories.jsx';
 import { PromoBox } from '../03-components/promo-box/promo-box.stories.jsx';
 import { VerticalLinkCard } from '../03-components/card/card--link/card--link.stories.jsx';
+import { Header } from '../02-layouts/header/header.stories';
 
 export default {
   title: 'Pages/Basic Page/Basic Page 2',
   parameters: {
     controls: {
-      include: ['show_admin_info', 'has_sidebar'],
+      include: [
+        'show_admin_info',
+        'has_sidebar',
+        'hideInternalHeader',
+        'site_name',
+        'has_logo',
+        'header_freeform',
+      ],
     },
   },
 };
 
-const BasicPage2 = args => (
-  <PageWrapper hero={HeroWithChevron(HeroWithChevron.args)}>
+// eslint-disable-next-line camelcase
+const BasicPage2 = ({ has_sidebar, sidebar, ...args }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <PageWrapper hero={HeroWithChevron(HeroWithChevron.args)} {...args}>
     {PageTemplate({
       ...args,
       title: 'Basic Page Example',
@@ -158,6 +168,8 @@ const BasicPage2 = args => (
 
 BasicPage2.args = {
   ...PageTemplate.args,
+  ...Header.args,
+  hideInternalHeader: false,
   has_sidebar: false,
   sidebar: ReactDOMServer.renderToStaticMarkup(SideMenu(SideMenu.args)),
 };
