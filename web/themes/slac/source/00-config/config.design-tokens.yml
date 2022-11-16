@@ -19,6 +19,8 @@ gesso:
         slac: '#0099cc'
         light: '#67afd2'
         dark: '#016895'
+      digital-blue:
+        base: '#006CB8'
       stormy:
         dark: '#013948'
       palo-verde:
@@ -31,6 +33,8 @@ gesso:
         dark: '#014240'
       teal:
         base: '#00505c'
+      digital-green:
+        base: '#008566'
       bay:
         base: '#6fa287'
         light: '#8ab8a7'

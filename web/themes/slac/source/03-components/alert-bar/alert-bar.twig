@@ -1,5 +1,6 @@
 {% set classes = [
   'c-alert-bar',
+  'c-alert-bar--' ~ alert_type,
   modifier_classes ? modifier_classes : ''
 ] %}
 
@@ -7,21 +8,29 @@
   <div class="l-constrain">
     <div class="c-alert-bar__inner">
 
+      <div class="c-alert-bar__header">
+        {% include '@components/icon/icon.twig' with {
+          'icon_name': 'alert-' ~ alert_type,
+          'label': alert_type,
+        } %}
+        <span class="c-kicker">
+          {{ alert_kicker }}
+        </span>
+      </div>
+
       <div class="c-alert-bar__content">
         {{ alert_content }}
       </div>
 
-      {% if is_dismissible %}
-        <button class="c-alert-bar__button js-dismiss-button" type="button">
-          {{- 'Dismiss'|t -}}
-          {% include '@components/icon/icon.twig' with {
-        'icon_name': 'close-inverted',
-        'label': 'Close',
-        'is_demo': false,
-        'hidden': true
-      } %}
-        </button>
-      {% endif %}
+      <button class="c-alert-bar__button js-dismiss-button" type="button">
+        {{- 'Dismiss'|t -}}
+        {% include '@components/icon/icon.twig' with {
+          'icon_name': 'close-inverted',
+          'label': 'Close',
+          'is_demo': false,
+          'hidden': true
+        } %}
+      </button>
     </div>
   </div>
 </div>
