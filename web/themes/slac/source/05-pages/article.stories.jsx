@@ -326,21 +326,6 @@ const NewsArticleDetail = args => (
               </p>
             </WysiwygWrapper>
           </SectionWrapper>
-          <SectionWrapper>{TagList(TagList.args)}</SectionWrapper>
-          {SectionWithBlueGreenGradient({
-            ...SectionWithBlueGreenGradient.args,
-            section_kicker: 'Dig Deeper',
-            section_title: 'Related Stories',
-            section_intro: false,
-            section_buttons: false,
-            section_content: ReactDOMServer.renderToStaticMarkup(
-              <GridWrapper numCols={3}>
-                {News(News.args)}
-                {News(News.args)}
-                {News(News.args)}
-              </GridWrapper>
-            ),
-          })}
         </>
       ),
     })}
