@@ -96,14 +96,14 @@ NewsTeaser.args = {
   kicker: 'News article teaser',
 };
 
-// const TeaserCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//       modifier_classes: 'c-card--teaser',
-//     })
-//   );
-// TeaserCard.args = { ...globalData, ...data };
+const TeaserCard = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-card--teaser',
+    })
+  );
+TeaserCard.args = { ...globalData, ...data };
 
 // const VideoCard = args =>
 //   parse(
@@ -235,17 +235,19 @@ BioCardWithFallback.argTypes = {
   ...BioCard.argTypes,
 };
 
-// const LargeBioCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//     })
-//   );
-// LargeBioCard.args = {
-//   ...globalData,
-//   ...bioCardData,
-//   modifier_classes: 'c-card--bio c-card--bio-large',
-// };
+
+const BioCardTeaser = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-card--teaser',
+    })
+  );
+BioCardTeaser.args = {
+  ...BioCard.args,
+  num_cols: 1
+};
+
 
 export default settings;
 export {
@@ -262,9 +264,9 @@ export {
   // VideoCard,
   // EventFallbackCard,
   LargeEventCard,
-  // TeaserCard,
+  TeaserCard,
   EventTeaserCard,
   BioCard,
   BioCardWithFallback,
-  // LargeBioCard,
+  BioCardTeaser,
 };
