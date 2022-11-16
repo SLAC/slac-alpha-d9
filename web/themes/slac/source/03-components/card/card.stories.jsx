@@ -96,14 +96,14 @@ NewsTeaser.args = {
   kicker: 'News article teaser',
 };
 
-const TeaserCard = args =>
+const Teaser = args =>
   parse(
     twigTemplate({
       ...args,
       modifier_classes: 'c-card--teaser',
     })
   );
-TeaserCard.args = { ...globalData, ...data };
+Teaser.args = { ...globalData, ...data };
 
 // const VideoCard = args =>
 //   parse(
@@ -152,7 +152,7 @@ EventVirtual.argTypes = {
   ...Event.argTypes,
 };
 
-const EventTeaserCard = args =>
+const EventTeaser = args =>
   parse(
     twigTemplate({
       ...args,
@@ -160,7 +160,7 @@ const EventTeaserCard = args =>
       event_date: 'Thursday, April 20, 2022 · 1:00 - 3:00 p.m. PT',
     })
   );
-EventTeaserCard.args = { ...globalData, ...virtualEventCardData };
+EventTeaser.args = { ...globalData, ...virtualEventCardData };
 
 // const EventFallbackCard = args =>
 //   parse(
@@ -236,14 +236,14 @@ BioCardWithFallback.argTypes = {
 };
 
 
-const BioCardTeaser = args =>
+const BioTeaser = args =>
   parse(
     twigTemplate({
       ...args,
       modifier_classes: 'c-card--teaser',
     })
   );
-BioCardTeaser.args = {
+BioTeaser.args = {
   ...BioCard.args,
   num_cols: 1
 };
@@ -255,18 +255,18 @@ export {
   CardWithIcon,
   CardNoImage,
   LargeCard,
+  Teaser,
   News,
   NewsTeaser,
   Event,
   EventMultiday,
   EventVirtual,
+  // EventFallbackCard,
   // LargeCard,
   // VideoCard,
-  // EventFallbackCard,
   LargeEventCard,
-  TeaserCard,
-  EventTeaserCard,
+  EventTeaser,
   BioCard,
   BioCardWithFallback,
-  BioCardTeaser,
+  BioTeaser,
 };
