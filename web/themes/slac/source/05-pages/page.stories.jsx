@@ -25,20 +25,31 @@ import {
   WideAccordion,
 } from '../03-components/accordion/accordion.stories';
 import { Default as Table } from '../01-global/html-elements/24-table/table.stories';
+import { Header } from '../02-layouts/header/header.stories';
 
 export default {
   title: 'Pages/Basic Page/Basic Page 1',
   parameters: {
     controls: {
-      include: ['show_admin_info', 'has_sidebar'],
+      include: [
+        'show_admin_info',
+        'has_sidebar',
+        'hideInternalHeader',
+        'site_name',
+        'has_logo',
+        'header_freeform',
+      ],
     },
   },
 };
 
-const BasicPage1 = args => (
-  <PageWrapper>
+// eslint-disable-next-line camelcase
+const BasicPage1 = ({ has_sidebar, sidebar, ...args }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <PageWrapper {...args}>
     {PageTemplate({
-      ...args,
+      has_sidebar,
+      sidebar,
       title: 'Basic Page Example',
       lede: 'Description teaser is informative, intriguing, and compelling to your target audiences. Keep it friendly and approachable with a brief well-written overview of your business and services. Tell just enough of your story, make it enticing that the reader begs for more.',
       content: ReactDOMServer.renderToStaticMarkup(
@@ -564,6 +575,8 @@ const BasicPage1 = args => (
 );
 BasicPage1.args = {
   ...PageTemplate.args,
+  ...Header.args,
+  hideInternalHeader: false,
   has_sidebar: true,
   sidebar: ReactDOMServer.renderToStaticMarkup(SideMenu(SideMenu.args)),
 };
