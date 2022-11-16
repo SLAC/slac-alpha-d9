@@ -9,35 +9,41 @@
 }
 
 .c-alert-bar {
-  background-color: gesso-brand(cardinal, dark);
-  color: gesso-grayscale(white);
-  font-size: rem(13px);
-  height: var(--gesso-alert-bar-height);
-  padding: gesso-spacing(1) 0;
+  background: gesso-grayscale(gray-1);
+  color: gesso-color(text, primary);
+  font-size: rem(15px);
+  min-height: var(--gesso-alert-bar-height);
+  padding: gesso-spacing(3) 0;
   width: 100%;
 
   a {
     color: inherit;
-    display: inline-block;
-    padding: 0 0.5em;
-    text-decoration-color: transparent;
-    vertical-align: baseline;
-
-    &:hover,
-    &:focus {
-      text-decoration-color: currentColor;
-    }
+    text-decoration-color: currentColor;
   }
 
-  p {
+  p:last-child {
     margin-bottom: 0;
+  }
+
+  .c-kicker {
+    color: inherit;
+  }
+
+  .c-icon {
+    font-size: 20px;
+    margin-right: 0.25em;
+  }
+
+  .c-kicker,
+  .c-button {
+    font-size: 13px;
   }
 }
 
 .c-alert-bar__inner {
   display: flex;
-  gap: gesso-spacing(2);
-  justify-content: space-between;
+  flex-direction: column;
+  gap: gesso-spacing(1.5);
 }
 
 .c-alert-bar b,
@@ -51,7 +57,9 @@
 .c-alert-bar__button {
   @include text-button;
   @include underline;
+  align-self: flex-end;
   color: inherit;
+  font-size: 13px;
   white-space: nowrap;
 
   &:hover,
@@ -63,4 +71,50 @@
     color: currentColor;
     margin-left: gesso-spacing(0.5);
   }
+}
+
+@include breakpoint(gesso-breakpoint(tablet)) {
+  .c-alert-bar__inner {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: gesso-spacing(5);
+    justify-content: space-between;
+  }
+
+  .c-alert-bar__button {
+    align-self: flex-start;
+  }
+}
+
+.c-alert-bar__content {
+  flex: 1;
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 80ch;
+}
+
+// Color variations.
+.c-alert-bar--emergency {
+  background: gesso-brand(digital-red, base);
+  color: gesso-grayscale(white);
+}
+
+.c-alert-bar--announcement {
+  background: gesso-grayscale(gray-1);
+  color: gesso-color(text, primary);
+}
+
+.c-alert-bar--information {
+  background: gesso-brand(digital-blue, base);
+  color: gesso-grayscale(white);
+}
+
+.c-alert-bar--success {
+  background: gesso-brand(digital-green, base);
+  color: gesso-grayscale(white);
+}
+
+.c-alert-bar--warning {
+  background: gesso-brand(illuminating, dark);
+  color: gesso-color(text, primary);
 }
