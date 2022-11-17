@@ -1,0 +1,14 @@
+diff --git a/src/Plugin/Field/FieldWidget/ParagraphsWidget.php b/src/Plugin/Field/FieldWidget/ParagraphsWidget.php
+index 5e31eed..5ff0483 100644
+--- a/src/Plugin/Field/FieldWidget/ParagraphsWidget.php
++++ b/src/Plugin/Field/FieldWidget/ParagraphsWidget.php
+@@ -1061,7 +1061,7 @@ class ParagraphsWidget extends WidgetBase {
+     $field_prefix = strtr($this->fieldIdPrefix, '_', '-');
+     if (count($this->fieldParents) == 0) {
+       if ($items->getEntity()->getEntityTypeId() != 'paragraph') {
+-        $tabs = '<ul class="paragraphs-tabs tabs primary tabs--secondary paragraphs-tabs-hide clearfix"><li class="tabs__tab paragraphs_content_tab"><a href="#' . $field_prefix . '-values" class="tabs__link">' . $this->t('Content', [], ['context' => 'paragraphs']) . '</a></li><li class="tabs__tab paragraphs_behavior_tab"><a href="#' . $field_prefix . '-values" class="tabs__link">' . $this->t('Behavior', [], ['context' => 'paragraphs']) . '</a></li></ul>';
++        $tabs = '<ul class="paragraphs-tabs tabs primary tabs--secondary paragraphs-tabs-hide clearfix"><li class="tabs__tab paragraphs_content_tab"><a href="#' . $field_prefix . '-values" class="tabs__link">' . $this->t('Content', [], ['context' => 'paragraphs']) . '</a></li><li class="tabs__tab paragraphs_behavior_tab"><a href="#' . $field_prefix . '-values" class="tabs__link">' . $this->t('Style Options', [], ['context' => 'paragraphs']) . '</a></li></ul>';
+       }
+     }
+     if (count($this->fieldParents) > 0) {
+
