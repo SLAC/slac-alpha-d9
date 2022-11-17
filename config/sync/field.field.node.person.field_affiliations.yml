@@ -1,20 +1,20 @@
-uuid: cee5241f-e4d6-4f5f-ae6b-f6c961bdcf02
+uuid: 18ea76bb-df7c-4b60-8a26-b828ade36b36
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_links
+    - field.storage.node.field_affiliations
     - node.type.person
   module:
     - link
-id: node.person.field_links
-field_name: field_links
+id: node.person.field_affiliations
+field_name: field_affiliations
 entity_type: node
 bundle: person
-label: Links
+label: 'SLAC/DOE/Stanford Affiliations'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

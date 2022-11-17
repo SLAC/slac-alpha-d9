@@ -4,18 +4,30 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.person.field_address
+    - field.field.node.person.field_affiliations
+    - field.field.node.person.field_areas_of_interestareas
+    - field.field.node.person.field_awardshonors
     - field.field.node.person.field_body
-    - field.field.node.person.field_boolean
+    - field.field.node.person.field_education
+    - field.field.node.person.field_email
+    - field.field.node.person.field_fax
+    - field.field.node.person.field_first_name
     - field.field.node.person.field_image
-    - field.field.node.person.field_link
+    - field.field.node.person.field_last_name
     - field.field.node.person.field_links
-    - field.field.node.person.field_long_text
-    - field.field.node.person.field_teaser
-    - field.field.node.person.field_text
-    - field.field.node.person.field_text_title
+    - field.field.node.person.field_location
+    - field.field.node.person.field_mail_code
+    - field.field.node.person.field_map
+    - field.field.node.person.field_mobile
+    - field.field.node.person.field_paragraphs
+    - field.field.node.person.field_position
+    - field.field.node.person.field_profile_link
+    - field.field.node.person.field_telephone
+    - field.field.node.person.field_text_title_full
+    - field.field.node.person.field_text_title_short
     - node.type.person
   module:
-    - link
     - slac_core
     - user
 id: node.person.teaser
@@ -51,57 +63,27 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_link:
-    type: link_separate
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_teaser:
-    type: trimmed_first_wysiwyg_paragraph
-    label: hidden
-    settings:
-      trim_length: '40'
-      trim_type: words
-      trim_suffix: ...
-      trim_options:
-        heading_remove: heading_remove
-        retain_formatting: retain_formatting
-      wrap_output: 0
-      wrap_class: trimmed
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_text:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_text_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
-  field_boolean: true
+  field_address: true
+  field_affiliations: true
+  field_areas_of_interestareas: true
+  field_awardshonors: true
+  field_education: true
+  field_email: true
+  field_fax: true
+  field_first_name: true
+  field_last_name: true
   field_links: true
-  field_long_text: true
+  field_location: true
+  field_mail_code: true
+  field_map: true
+  field_mobile: true
+  field_paragraphs: true
+  field_position: true
+  field_profile_link: true
+  field_telephone: true
+  field_text_title_full: true
+  field_text_title_short: true
   langcode: true
   links: true
   search_api_excerpt: true

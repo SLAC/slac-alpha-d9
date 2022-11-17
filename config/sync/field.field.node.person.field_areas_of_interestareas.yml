@@ -1,9 +1,9 @@
-uuid: b2d35c31-4fbb-4787-8232-9c07b87620e8
+uuid: e998c26d-1f84-432a-98d1-920cd6569dc8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_long_text
+    - field.storage.node.field_areas_of_interestareas
     - node.type.person
   module:
     - allowed_formats
@@ -12,14 +12,14 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - restricted_html
-id: node.person.field_long_text
-field_name: field_long_text
+id: node.person.field_areas_of_interestareas
+field_name: field_areas_of_interestareas
 entity_type: node
 bundle: person
-label: Quote
+label: 'Areas of Interest and Research'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

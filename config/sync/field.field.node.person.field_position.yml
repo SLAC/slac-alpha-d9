@@ -1,29 +1,29 @@
-uuid: b6534f6a-1c9e-4b81-931a-85b632125c8c
+uuid: 3f3a557c-0dea-4c27-b78f-4405f930d8a3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
-    - media.type.image
+    - field.storage.node.field_position
     - node.type.person
-id: node.person.field_image
-field_name: field_image
+    - taxonomy.vocabulary.position
+id: node.person.field_position
+field_name: field_position
 entity_type: node
 bundle: person
-label: 'Profile Image'
+label: Position
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      image: image
+      position: position
     sort:
-      field: _none
-      direction: ASC
+      field: name
+      direction: asc
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference
