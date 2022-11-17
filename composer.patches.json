@@ -16,6 +16,9 @@
     },
     "drupal/entity_reference_revisions": {
       "InvalidArgumentException: Invalid translation language (und) specified": "patches/3024588-entity_reference_revisions-mr-13.patch"
+    },
+    "drupal/paragraphs": {
+      "Change Behavior tab to Style Options": "patches/change-behavior-tab-in-paragraphs.patch"
     }
   }
 }
