@@ -51,11 +51,6 @@ back_to_top:
   js:
     dist/js/back-to-top.es6.js: {}
 
-bio_page:
-  css:
-    theme:
-      dist/css/bio-page.css: {}
-
 carousel:
   css:
     theme:
@@ -221,6 +216,11 @@ overlay_menu:
   dependencies:
     - slac/common
     - slac/hamburger_button
+
+people_profile:
+  css:
+    theme:
+      dist/css/people-profile.css: {}
 
 search:
   css:
