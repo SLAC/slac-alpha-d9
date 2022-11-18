@@ -1,5 +1,7 @@
 {% set classes = [
   'publication-detail',
+  'l-section',
+  'l-section--padding-bottom',
   modifier_classes ? modifier_classes : ''
 ] %}
 
@@ -9,6 +11,7 @@
     'page_title': publication_title
   } %}
   {{ content }}
+  {{ tags }}
 {% endset %}
 
 {% set sidebar_content %}
