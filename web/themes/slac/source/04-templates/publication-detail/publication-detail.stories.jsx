@@ -2,7 +2,6 @@ import parse from 'html-react-parser';
 
 import twigTemplate from './publication-detail.twig';
 import data from './publication-detail.yml';
-import './publication-detail.scss';
 
 const settings = {
   title: 'Templates/Publication Detail',
