@@ -44,7 +44,6 @@
   text-align: center;
 
   > * + * {
-    border-left: 1px solid currentColor;
     margin-left: rem(gesso-spacing(1.5));
     padding-left: rem(gesso-spacing(1.5));
   }

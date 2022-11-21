@@ -2,14 +2,14 @@
 title: 'Card title'
 url: '#0'
 kicker: 'Basic card'
-type: false
+type: ''
 media: |-
   <img src="https://picsum.photos/id/1015/800/500" alt="">
-icon: false
+icon: ''
 card_content: |-
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et accumsan augue. Morbi non laoreet lorem.</p>
 is_truncated: false
 link_type: 'button'
 link_text: 'Button'
 link_url: '#'
-footer: false
+footer: ''

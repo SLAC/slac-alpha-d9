@@ -21,6 +21,9 @@ module:
   components: 0
   conditional_fields: 0
   config: 0
+  config_filter: 0
+  config_ignore: 0
+  config_split: 0
   contact: 0
   content_moderation: 0
   contextual: 0
@@ -72,6 +75,7 @@ module:
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
+  moderated_content_bulk_publish: 0
   mysql: 0
   node: 0
   node_revision_delete: 0
@@ -114,6 +118,7 @@ module:
   view_mode_select_by_token: 0
   view_mode_switch: 0
   view_modes_display: 0
+  views_bulk_operations: 0
   views_display_switch: 0
   views_ui: 0
   views_year_filter: 0
@@ -122,6 +127,7 @@ module:
   webform: 0
   webform_templates: 0
   webform_ui: 0
+  workbench_access: 0
   workflows: 0
   pathauto: 1
   views: 10

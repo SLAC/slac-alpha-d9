@@ -5,7 +5,7 @@ import ReactDOMServer from 'react-dom/server';
 import twigTemplate from './two-column-hero.twig';
 import data from './two-column-hero.yml';
 import { PageTitle } from '../page-title/page-title.stories';
-import { LargeCard } from '../card/card.stories';
+import { LargeCard, LargeEventCard } from '../card/card.stories';
 import { HeroWithoutOverlay } from '../article-hero/article-hero.stories';
 
 const settings = {
@@ -25,7 +25,7 @@ const WithFeaturedContent = args =>
         })
       ),
       featured_content: ReactDOMServer.renderToStaticMarkup(
-        LargeCard(LargeCard.args)
+        LargeEventCard(LargeEventCard.args)
       ),
     })
   );

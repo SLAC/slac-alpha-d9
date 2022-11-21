@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.page.body
+    - field.field.node.page.field_editorial_group
     - field.field.node.page.field_hero_paragraph
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_review_date
@@ -85,6 +86,7 @@ content:
     region: content
 hidden:
   body: true
+  field_editorial_group: true
   field_hero_paragraph: true
   field_review_date: true
   field_tags: true

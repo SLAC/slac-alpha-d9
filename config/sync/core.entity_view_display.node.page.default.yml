@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_editorial_group
     - field.field.node.page.field_hero_paragraph
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_review_date
@@ -84,6 +85,7 @@ content:
     region: content
 hidden:
   body: true
+  field_editorial_group: true
   field_review_date: true
   langcode: true
   search_api_excerpt: true

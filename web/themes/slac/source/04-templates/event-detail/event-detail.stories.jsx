@@ -3,6 +3,7 @@ import React from 'react';
 import parse from 'html-react-parser';
 
 import twigTemplate from './event-detail.twig';
+import globalData from '../../00-config/storybook.global-data.yml';
 import data from './event-detail.yml';
 import tagData from '../../03-components/tag-list/tag-list.yml';
 import mapData from '../../03-components/map/map.yml';
@@ -12,6 +13,11 @@ import { Default as Figure } from '../../03-components/figure/figure.stories';
 import { Primary } from '../../03-components/button/button.stories';
 import sectionTwigTemplate from '../../02-layouts/section/section.twig';
 import { TagList } from '../../03-components/tag-list/tag-list.stories';
+import { GridWrapper, WysiwygWrapper } from '../../06-utility/storybookHelper';
+
+import './event-detail.scss';
+import { SectionWithPurpleBlackGradient } from '../../02-layouts/section/section.stories';
+import { Event as EventCard } from '../../03-components/card/card.stories';
 
 const visitingText = `
   <p class="c-kicker">Attending a public event</p>
@@ -64,22 +70,43 @@ const FiftyFiftyargs = {
 
 const settings = {
   title: 'Templates/Event Detail',
+  parameters: {
+    controls: {
+      include: [
+        'image',
+        'page_title',
+        'event_type',
+        'speaker_info',
+        'start_date',
+        'calendar_link_text',
+        'map_link_text',
+        'zoom_url',
+        'event_content',
+        'speaker_content',
+      ],
+    },
+  },
 };
 
 const EventDetail = args =>
   parse(
     twigTemplate({
       ...args,
+      event_content: ReactDOMServer.renderToStaticMarkup(
+        <WysiwygWrapper>{parse(args.event_content)}</WysiwygWrapper>
+      ),
+      speaker_content: ReactDOMServer.renderToStaticMarkup(
+        <WysiwygWrapper>{parse(args.speaker_content)}</WysiwygWrapper>
+      ),
     })
   );
 
 EventDetail.args = {
+  ...globalData,
+  ...EventDetails.args,
   ...data,
   map_iframe: mapData.map_iframe,
   related_topics: tagData.items,
-  details: ReactDOMServer.renderToStaticMarkup(
-    <>{EventDetails(EventDetails.args)}</>
-  ),
   visiting: sectionTwigTemplate({
     has_constrain: false,
     section_content: ReactDOMServer.renderToStaticMarkup(
@@ -87,6 +114,22 @@ EventDetail.args = {
     ),
   }),
   tags: ReactDOMServer.renderToStaticMarkup(TagList(TagList.args)),
+  related_content: ReactDOMServer.renderToStaticMarkup(
+    SectionWithPurpleBlackGradient({
+      ...SectionWithPurpleBlackGradient.args,
+      section_kicker: "In Case You're Interested",
+      section_title: 'Upcoming events',
+      section_intro: false,
+      section_buttons: false,
+      section_content: ReactDOMServer.renderToStaticMarkup(
+        <GridWrapper numCols={3}>
+          {EventCard(EventCard.args)}
+          {EventCard(EventCard.args)}
+          {EventCard(EventCard.args)}
+        </GridWrapper>
+      ),
+    })
+  ),
 };
 
 export default settings;

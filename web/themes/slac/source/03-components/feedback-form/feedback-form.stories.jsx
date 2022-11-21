@@ -4,7 +4,7 @@ import twigTemplate from './feedback-form.twig';
 import data from './feedback-form.yml';
 
 const settings = {
-  title: 'Components/Feedback Form'
+  title: 'Components/Feedback Form',
 };
 
 const FeedbackForm = args =>
@@ -16,4 +16,4 @@ const FeedbackForm = args =>
 FeedbackForm.args = { ...data };
 
 export default settings;
-export { FeedbackForm };
+// export { FeedbackForm };

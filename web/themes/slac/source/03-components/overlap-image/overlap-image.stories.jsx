@@ -5,7 +5,7 @@ import data from './overlap-image.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
 
 const settings = {
-  title: 'Components/Overlap Image',
+  title: 'Paragraphs/Overlap Image',
   argTypes: {
     position: {
       options: ['bottom-left', 'bottom-right'],

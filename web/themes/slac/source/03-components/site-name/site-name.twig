@@ -17,7 +17,9 @@
   'rel': 'home'
 }) }}>
   {% if has_logo %}
-    {% include '@components/logo/logo.twig' %}
+    {% include '@components/logo/logo.twig' with {
+      modifier_classes: 'c-logo--header'
+    } %}
   {% endif %}
   {%- if site_acronym -%}<span class="c-site-name__acronym">{{ site_acronym }}</span>{%- endif -%}
   <span class="c-site-name__text"><span>{{ site_name_first }}</span> <span>{{ site_name_second }}</span></span>
