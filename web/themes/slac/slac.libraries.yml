@@ -51,11 +51,6 @@ back_to_top:
   js:
     dist/js/back-to-top.es6.js: {}
 
-bio_page:
-  css:
-    theme:
-      dist/css/bio-page.css: {}
-
 carousel:
   css:
     theme:
@@ -65,15 +60,6 @@ carousel:
   dependencies:
     - slac/common
     - core/drupal
-
-checkbox_widget:
-  js:
-    dist/js/checkbox-widget.es6.js: {}
-  dependencies:
-    - slac/common
-    - core/drupal
-    - facets/widget
-    - core/once
 
 drawer:
   css:
@@ -120,8 +106,6 @@ filter_modal:
   css:
     theme:
       dist/css/filter-modal.css: {}
-  js:
-    dist/js/filter-modal.es6.js: {}
   dependencies:
     - slac/lightbox
 
@@ -221,6 +205,11 @@ overlay_menu:
   dependencies:
     - slac/common
     - slac/hamburger_button
+
+people_profile:
+  css:
+    theme:
+      dist/css/people-profile.css: {}
 
 search:
   css:

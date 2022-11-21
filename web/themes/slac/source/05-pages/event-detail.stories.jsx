@@ -3,6 +3,7 @@ import React from 'react';
 import PageWrapper from './page-wrappers/default.jsx';
 import { EventDetail as PageTemplate } from '../04-templates/event-detail/event-detail.stories.jsx';
 import { Header } from '../02-layouts/header/header.stories.jsx';
+
 export default {
   title: 'Pages/Event Detail Page',
   parameters: {

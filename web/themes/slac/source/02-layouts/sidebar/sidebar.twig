@@ -1,6 +1,5 @@
 {% set classes = [
   'l-sidebar',
-  has_multiple_sidebar ? ' l-sidebar--multi-2' : '',
   modifier_classes ? modifier_classes : '',
 ]|join(' ')|trim %}
 
@@ -14,10 +13,6 @@
 
 {% set sidebar_main_classes = [
   'l-sidebar__main',
-]|join(' ')|trim %}
-
-{% set sidebar_second_classes = [
-  'l-sidebar__sidebar',
 ]|join(' ')|trim %}
 
 {% if is_demo and not sidebar_header_content %}
@@ -36,7 +31,7 @@
 {% endif %}
 
 <div {{ add_attributes({ 'class': classes }) }}>
-  {% if has_constrain %}<div class="l-constrain">{% endif %}
+  <div class="l-constrain">
     {% if sidebar_header_content %}
       <div {{ add_attributes({ 'class': sidebar_header_classes }, 'region_attributes.header') }}>
         {{ sidebar_header_content }}
@@ -54,5 +49,5 @@
         {{ sidebar_main_content }}
       </div>
     {% endif %}
-  {% if has_constrain%}</div>{% endif%}
+  </div>
 </div>
