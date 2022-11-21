@@ -8,7 +8,6 @@ libraries:
   - slac/global
 libraries-override:
   core/drupal.dropbutton: slac/dropbutton
-  facets/drupal.facets.checkbox-widget: slac/checkbox_widget
   addtocal/addtocal:
     css:
       theme:

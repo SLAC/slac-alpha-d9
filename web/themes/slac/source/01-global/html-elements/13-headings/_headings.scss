@@ -36,6 +36,23 @@
   .h2 {
     @extend %hN;
     @include display-text-style(h2);
+
+    // stylelint-disable-next-line property-no-unknown
+    @supports (container-type: inline-size) {
+      // stylelint-disable-next-line scss/at-rule-no-unknown
+      @container (max-width: 387px) {
+        @include responsive-font-size(5);
+      }
+    }
+
+    // stylelint-disable-next-line property-no-unknown
+    @supports not (container-type: inline-size) {
+      .l-grid--3-col &,
+      .l-grid--4-col &,
+      .l-grid--6-col & {
+        @include responsive-font-size(5);
+      }
+    }
   }
 
   :where(h3),

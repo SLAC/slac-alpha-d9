@@ -1,0 +1,6 @@
+{% set classes = [
+  'c-cta-link',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{{ link(link_text, link_url, {class: classes}) }}

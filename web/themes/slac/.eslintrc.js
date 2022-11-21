@@ -18,6 +18,8 @@ module.exports = {
   rules: {
     'class-methods-use-this': 'off', // Too many false positives
     'react/no-danger': 'off', // Necessary for Storybook
+    'react/prop-types': 'off', // React is only being used for Storybook
+    'react/jsx-props-no-spreading': 'off',
     'no-param-reassign': [
       // Allow modifying props, esp. for DOM Nodes
       'error',

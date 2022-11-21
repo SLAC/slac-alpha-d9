@@ -3,176 +3,69 @@
 @use '00-config' as *;
 
 .c-filter-modal {
-  background: rgba(0, 0, 0, 0.5);
-  inset: 0;
-  position: fixed;
-  z-index: gesso-z-index(modal);
-
-  .c-kicker {
-    margin-bottom: rem(gesso-spacing(2));
-  }
+  position: relative;
 }
 
 .c-filter-modal__inner {
-  background: gesso-grayscale(white);
-  height: 100%;
-  overflow: hidden;
-  padding: 50px gesso-site-margins(mobile) 30px;
-  position: relative;
-  width: 100%;
+  background-color: gesso-color(background, dropdown-menu);
+  border: 1px solid gesso-grayscale(gray-1);
+  box-shadow: gesso-box-shadow(1);
+  left: 0;
+  padding: gesso-spacing(2) gesso-spacing(2.5) gesso-spacing(9);
+  position: absolute;
+  top: 0;
+  width: min(100vw, 375px);
+  z-index: gesso-z-index(modal);
 }
 
-.c-filter-modal__content {
-  height: calc(100% - 170px);
-  overflow-y: auto;
-}
-
-.c-filter-modal__col {
-  margin-bottom: 50px;
-  text-indent: 4px; // avoids focus outline cutoffs
-
-  &:last-child {
-    margin-bottom: 10px;
-  }
-}
-
-.c-filter-modal__close,
-.c-filter-modal__clear {
+.c-filter-modal__close {
   @include focus;
   appearance: none;
   background: transparent;
   border: 0;
   border-radius: 0;
   cursor: pointer;
+  font-size: 13px;
+  font-weight: gesso-font-weight(black);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  position: absolute;
+  right: gesso-spacing(2.5);
+  top: 2em;
 }
 
 .c-filter-modal__close {
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  position: absolute;
-  right: rem(gesso-site-margins(mobile));
   text-transform: uppercase;
-  top: 20px;
 
   .c-icon {
-    margin-left: rem(gesso-spacing(1));
+    margin-left: gesso-spacing(1);
   }
 }
 
-.c-filter-modal__footer {
-  background: gesso-grayscale(white);
-  border-top: 1px solid currentColor;
-  bottom: 0;
-  font-size: gesso-font-size(3);
-  left: 0;
-  padding: gesso-site-margins(mobile);
-  position: fixed;
-  right: 0;
+.c-filter-modal__title {
+  display: block;
+  font-size: rem(gesso-font-size(4));
+  font-weight: gesso-font-weight(bold);
+  padding-right: rem(79px);
+}
+
+.c-filter-modal__content {
+  margin-top: 36px;
 }
 
 .c-filter-modal__actions {
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
+  gap: 35px 10px;
   height: 100%;
-  justify-content: space-between;
   margin: auto;
-  row-gap: 35px;
-}
-
-.c-filter-modal__apply {
-  align-self: flex-end;
-  flex: 0 0 100%;
-  margin: auto auto 10px;
-  width: 100%;
-}
-
-.c-filter-modal__clear {
-  border-bottom: 1px solid;
-  padding: 0;
-}
-
-.c-filter-modal__trigger {
-  @include text-button;
-  border-bottom: 1px solid currentColor;
 }
 
 .c-filter-modal__list {
   @include list-clean;
 }
 
-@include breakpoint(gesso-breakpoint(tablet-lg)) {
-  .c-filter-modal {
-    align-items: center;
-    display: flex;
-    justify-items: center;
-  }
-
-  .c-filter-modal__inner {
-    border: 1px solid gesso-grayscale(gray-1);
-    height: auto;
-    margin: auto;
-    max-height: 100%;
-    overflow: auto;
-    padding: 60px 120px 20px 60px;
-    width: auto;
-  }
-
-  .c-filter-modal__content {
-    display: flex;
-    gap: 50px;
-    height: auto;
-    overflow: visible;
-  }
-
-  .c-filter-modal__col {
-    flex: 1 0 auto;
-    margin-bottom: 0;
-  }
-
-  .c-filter-modal__footer {
-    border: 0;
-    margin-top: 48px;
-    padding-bottom: 0;
-    position: relative;
-
-    &::before {
-      border-top: 1px solid currentColor;
-      content: '';
-      left: -60px;
-      position: absolute;
-      right: -120px;
-      top: 0;
-    }
-  }
-
-  .c-filter-modal__actions {
-    max-width: 330px;
-    transform: translateX(30px);
-  }
-
-  .c-filter-modal__close {
-    right: 30px;
-  }
-}
-
-@include breakpoint(gesso-breakpoint(desktop)) {
-  .c-filter-modal__inner {
-    padding-right: 150px;
-  }
-
-  .c-filter-modal__content {
-    gap: 90px;
-  }
-
-  .c-filter-modal__footer {
-    &::before {
-      right: -150px;
-    }
-  }
-
-  .c-filter-modal__actions {
-    transform: translateX(45px);
-  }
+.c-filter-modal__footer {
+  margin-top: gesso-spacing(5);
 }

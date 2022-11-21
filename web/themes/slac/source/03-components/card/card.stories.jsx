@@ -3,17 +3,39 @@ import parse from 'html-react-parser';
 import twigTemplate from './card.twig';
 
 import data from './card.yml';
-
+import largeCardData from './card-large.yml';
 import eventCardData from './card-event.yml';
 import multidayEventCardData from './card-multiday-event.yml';
 import virtualEventCardData from './card-virtual-event.yml';
+import newsCardData from './card-news.yml';
 // import eventFallbackCardData from './card-event-fallback.yml';
-// import largeEventCardData from './card-event-large.yml';
+import largeEventCardData from './card-event-large.yml';
 import bioCardData from './card-bio.yml';
 import globalData from '../../00-config/storybook.global-data.yml';
+import { decorators, sectionTypeArg } from '../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Card',
+  title: 'Paragraphs/Card',
+  parameters: {
+    controls: {
+      include: [
+        'title',
+        'url',
+        'kicker',
+        'card_content',
+        'is_truncated',
+        'link_type',
+        'link_text',
+        'link_url',
+        'section_type',
+        'num_cols',
+      ],
+    },
+  },
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const Default = args =>
@@ -22,45 +44,66 @@ const Default = args =>
       ...args,
     })
   );
-Default.args = { ...globalData, ...data };
+Default.args = { ...globalData, ...data, num_cols: 3 };
+Default.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [1, 2, 3, 4],
+  },
+};
 
-// const LargeCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//       modifier_classes: 'c-card--large',
-//     })
-//   );
-// LargeCard.args = { ...globalData, ...data };
+const CardWithIcon = args => parse(twigTemplate(args));
+CardWithIcon.args = {
+  ...Default.args,
+  media: false,
+  icon: '<img src="https://picsum.photos/id/1015/100/100" alt="">',
+  link_type: 'cta',
+  link_text: 'Big CTA Link',
+};
+CardWithIcon.argTypes = {
+  ...Default.argTypes,
+};
 
-// const MenuCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//       footer: false,
-//       modifier_classes: 'c-card--menu',
-//     })
-//   );
-// MenuCard.args = { ...globalData, ...data };
+const CardNoImage = args => parse(twigTemplate(args));
+CardNoImage.args = { ...Default.args, media: false, icon: false };
+CardNoImage.argTypes = {
+  ...Default.argTypes,
+};
 
-// const TeaserCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//       modifier_classes: 'c-card--teaser',
-//     })
-//   );
-// TeaserCard.args = { ...globalData, ...data };
+const LargeCard = args =>
+  parse(twigTemplate({ ...args, modifier_classes: 'c-card--large' }));
+LargeCard.args = { ...globalData, ...largeCardData, num_cols: 2 };
 
-// const EventTeaserCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//       modifier_classes: 'c-card--teaser',
-//       event_date: 'Thursday, April 20, 2022 · 1:00 - 3:00 p.m. PT',
-//     })
-//   );
-// EventTeaserCard.args = { ...globalData, ...eventCardData };
+const News = args => parse(twigTemplate(args));
+News.args = { ...globalData, ...newsCardData, num_cols: 3 };
+News.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [2, 3],
+  },
+};
+
+const NewsTeaser = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-card--teaser',
+    })
+  );
+NewsTeaser.args = {
+  ...globalData,
+  ...newsCardData,
+  kicker: 'News article teaser',
+};
+
+const Teaser = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-card--teaser',
+    })
+  );
+Teaser.args = { ...globalData, ...data };
 
 // const VideoCard = args =>
 //   parse(
@@ -79,7 +122,13 @@ const Event = args =>
       ...args,
     })
   );
-Event.args = { ...globalData, ...eventCardData };
+Event.args = { ...globalData, ...eventCardData, num_cols: 3 };
+Event.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [2, 3],
+  },
+};
 
 const EventMultiday = args =>
   parse(
@@ -87,7 +136,10 @@ const EventMultiday = args =>
       ...args,
     })
   );
-EventMultiday.args = { ...globalData, ...multidayEventCardData };
+EventMultiday.args = { ...globalData, ...multidayEventCardData, num_cols: 3 };
+EventMultiday.argTypes = {
+  ...Event.argTypes,
+};
 
 const EventVirtual = args =>
   parse(
@@ -95,7 +147,20 @@ const EventVirtual = args =>
       ...args,
     })
   );
-EventVirtual.args = { ...globalData, ...virtualEventCardData };
+EventVirtual.args = { ...globalData, ...virtualEventCardData, num_cols: 3 };
+EventVirtual.argTypes = {
+  ...Event.argTypes,
+};
+
+const EventTeaser = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-card--teaser',
+      event_date: 'Thursday, April 20, 2022 · 1:00 - 3:00 p.m. PT',
+    })
+  );
+EventTeaser.args = { ...globalData, ...virtualEventCardData };
 
 // const EventFallbackCard = args =>
 //   parse(
@@ -105,28 +170,31 @@ EventVirtual.args = { ...globalData, ...virtualEventCardData };
 //   );
 // EventFallbackCard.args = { ...globalData, ...eventFallbackCardData };
 
-// const LargeEventCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//     })
-//   );
-// LargeEventCard.args = { ...globalData, ...largeEventCardData };
-
-// const ExtraLargeCardWithRightText = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//     })
-//   );
-// ExtraLargeCardWithRightText.args = {
-//   ...globalData,
-//   ...data,
-//   alignment: 'right',
-//   modifier_classes: 'c-card--xlarge',
-//   media: '<img src="https://picsum.photos/id/944/1340/600" alt="">',
-//   kicker: false,
-// };
+const LargeEventCard = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+LargeEventCard.args = { ...globalData, ...largeEventCardData, num_cols: 2 };
+LargeEventCard.parameters = {
+  controls: {
+    include: [
+      'title',
+      'url',
+      'kicker',
+      'card_content',
+      'link_type',
+      'link_text',
+      'link_url',
+      'section_type',
+      'start_date',
+      'event_date',
+      'event_location',
+      'is_virtual',
+    ],
+  },
+};
 
 // const ExtraLargeCardWithLeftText = args =>
 //   parse(
@@ -145,50 +213,60 @@ const BioCard = args =>
       ...args,
     })
   );
-BioCard.args = { ...globalData, ...bioCardData };
-
-const BioCardWithFallback = args =>
-parse(
-  twigTemplate({
-    ...args,
-  })
-);
-BioCardWithFallback.args = {
-  ...globalData,
-  ...bioCardData,
-  media: false,
+BioCard.args = { ...globalData, ...bioCardData, num_cols: 3 };
+BioCard.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [2, 3],
+  },
 };
 
-// const LargeBioCard = args =>
-//   parse(
-//     twigTemplate({
-//       ...args,
-//     })
-//   );
-// LargeBioCard.args = {
-//   ...globalData,
-//   ...bioCardData,
-//   modifier_classes: 'c-card--bio c-card--bio-large',
-// };
+const BioCardWithFallback = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
+BioCardWithFallback.args = {
+  ...BioCard.args,
+  media: false,
+};
+BioCardWithFallback.argTypes = {
+  ...BioCard.argTypes,
+};
+
+
+const BioTeaser = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-card--teaser',
+    })
+  );
+BioTeaser.args = {
+  ...BioCard.args,
+  num_cols: 1
+};
+
 
 export default settings;
 export {
   Default,
+  CardWithIcon,
+  CardNoImage,
+  LargeCard,
+  Teaser,
+  News,
+  NewsTeaser,
   Event,
   EventMultiday,
   EventVirtual,
-  // LargeCard,
-  // MenuCard,
-  // VideoCard,
-  // EventCard,
-  // EventMultidayCard,
   // EventFallbackCard,
-  // LargeEventCard,
-  // TeaserCard,
-  // EventTeaserCard,
-  // ExtraLargeCardWithRightText,
-  // ExtraLargeCardWithLeftText,
+  // LargeCard,
+  // VideoCard,
+  LargeEventCard,
+  EventTeaser,
   BioCard,
   BioCardWithFallback,
-  // LargeBioCard,
+  BioTeaser,
 };

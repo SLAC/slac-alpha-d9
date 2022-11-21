@@ -1,4 +1,4 @@
-uuid: a8b3f89e-b0c7-4626-9b8a-fa0137ce8912
+uuid: 4637f974-667d-4b46-b1d6-de698d6a9c3c
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_featured
 entity_type: node
 bundle: news_article
 label: 'Is featured news article?'
-description: 'If this news article is featured, it will be eligible for display in the featured news article space on the news and events listing page.'
+description: 'Toggle this on to display this article as a ''featured card'' on the news landing page when it is the newest featured article.'
 required: false
 translatable: true
 default_value:

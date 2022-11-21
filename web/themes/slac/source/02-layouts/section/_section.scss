@@ -3,12 +3,64 @@
 @use '00-config' as *;
 
 .l-section:not(.l-section--no-padding) {
+  background-color: var(--gesso-background-color);
   padding-bottom: rem(gesso-spacing(5));
   padding-top: rem(gesso-spacing(5));
 
+  &:last-child {
+    padding-bottom: gesso-spacing(9);
+  }
+
   @include breakpoint-min(gesso-breakpoint(desktop)) {
-    padding-bottom: rem(gesso-spacing(10));
-    padding-top: rem(gesso-spacing(10));
+    padding-bottom: rem(gesso-spacing(9));
+    padding-top: rem(gesso-spacing(9));
+
+    &:last-child {
+      padding-bottom: 126px;
+    }
+  }
+
+  @supports (container-type: inline-size) {
+    @container (max-width: 600px) {
+      padding-block: gesso-spacing(4);
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  // stylelint-disable-next-line property-no-unknown
+  @supports not (container-type: inline-size) {
+    .l-grid--2-col &,
+    .l-grid--3-col &,
+    .l-grid--4-col &,
+    .l-grid--6-col &,
+    .c-fifty-fifty__col & {
+      padding-block: gesso-spacing(4);
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.l-section--no-padding {
+  &:last-child {
+    padding-bottom: 0;
+
+    .l-section & {
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -87,6 +139,7 @@
 }
 
 .l-section--purple-black {
+  --gesso-background-color: #{gesso-brand(purple, dark)};
   background-image: linear-gradient(
     to bottom,
     gesso-brand(purple, dark),
@@ -96,6 +149,7 @@
 }
 
 .l-section--blue-green {
+  --gesso-background-color: #{gesso-brand(stormy, dark)};
   background-image: linear-gradient(
     to bottom,
     gesso-brand(stormy, dark),
@@ -104,7 +158,7 @@
 }
 
 .l-section--yellow {
-  background-color: gesso-brand(illuminating, base);
+  --gesso-background-color: #{gesso-brand(illuminating, base)};
 
   .l-section__title .c-arrow-link {
     @include arrow-link(black);
@@ -118,11 +172,20 @@
 }
 
 .l-section--purple {
-  background-color: gesso-brand(purple, dark);
+  --gesso-background-color: #{gesso-brand(purple, dark)};
 }
 
 .l-section--blue {
-  background-color: gesso-brand(sky, dark);
+  --gesso-background-color: #{gesso-brand(sky, dark)};
+}
+
+.l-section--gray-white {
+  --gesso-background-color: #{gesso-brand(fog, light)};
+  background-image: linear-gradient(
+    to bottom,
+    gesso-brand(fog, light),
+    gesso-grayscale(white)
+  );
 }
 
 .l-section--divider {

@@ -51,11 +51,6 @@ back_to_top:
   js:
     dist/js/back-to-top.es6.js: {}
 
-bio_page:
-  css:
-    theme:
-      dist/css/bio-page.css: {}
-
 carousel:
   css:
     theme:
@@ -65,15 +60,6 @@ carousel:
   dependencies:
     - slac/common
     - core/drupal
-
-checkbox_widget:
-  js:
-    dist/js/checkbox-widget.es6.js: {}
-  dependencies:
-    - slac/common
-    - core/drupal
-    - facets/widget
-    - core/once
 
 drawer:
   css:
@@ -106,6 +92,11 @@ dropdown_menu:
     - slac/common
     - slac/mobile_menu
 
+event_detail_template:
+  css:
+    theme:
+      dist/css/event-detail.css: {}
+
 event_details:
   css:
     theme:
@@ -115,8 +106,6 @@ filter_modal:
   css:
     theme:
       dist/css/filter-modal.css: {}
-  js:
-    dist/js/filter-modal.es6.js: {}
   dependencies:
     - slac/lightbox
 
@@ -217,12 +206,22 @@ overlay_menu:
     - slac/common
     - slac/hamburger_button
 
+people_profile:
+  css:
+    theme:
+      dist/css/people-profile.css: {}
+
 search:
   css:
     theme:
       dist/css/views-view-search.css: {}
   dependencies:
     - slac/lightbox
+
+side_menu:
+  css:
+    theme:
+      dist/css/menu--side.css: {}
 
 social_share:
   css:
@@ -233,15 +232,15 @@ social_share:
   dependencies:
     - slac/common
 
-side_menu:
+tabs:
   css:
     theme:
-      dist/css/side-menu.css: { }
+      dist/css/tabs.css: {}
   js:
-    dist/js/side-menu.es6.js: { }
+    dist/js/tabs.es6.js: {}
   dependencies:
     - slac/common
-    - slac/hamburger_button
+    - core/drupal
 
 tagline_long:
   css:

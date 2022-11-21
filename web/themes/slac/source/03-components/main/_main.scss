@@ -6,9 +6,14 @@
 
 .c-main__meta {
   position: relative;
+
   @include breakpoint-max(gesso-breakpoint(desktop), true) {
     align-items: center;
     display: flex;
     justify-content: space-between;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    min-height: 100px;
   }
 }

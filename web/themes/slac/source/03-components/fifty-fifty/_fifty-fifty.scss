@@ -54,3 +54,11 @@
     padding-left: 0;
   }
 }
+
+// stylelint-disable-next-line property-no-unknown
+@supports (container-type: inline-size) {
+  .c-fifty-fifty__col {
+    // stylelint-disable-next-line property-no-unknown
+    container-type: inline-size;
+  }
+}

@@ -8,14 +8,23 @@ import globalData from '../../00-config/storybook.global-data.yml';
 import mediaLightboxTemplate from '../media-lightbox/media-lightbox.twig';
 import videoLightboxData from '../media-lightbox/video-lightbox.yml';
 import imageLightboxData from '../media-lightbox/image-lightbox.yml';
+import {
+  decorators,
+  sectionTypeArg,
+  SectionWithPaddingWrapper,
+} from '../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Figure',
+  title: 'Paragraphs/Figure',
   parameters: {
     controls: {
-      include: ['media', 'caption'],
+      include: ['media', 'caption', 'section_type', 'num_cols'],
     },
   },
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const Default = args => (
@@ -37,7 +46,12 @@ const Default = args => (
     )}
   </>
 );
-Default.args = { ...data, caption: false, lightbox_id: 'image-lightbox' };
+Default.args = {
+  ...data,
+  caption: '',
+  lightbox_id: 'image-lightbox',
+  num_cols: 4,
+};
 
 const FigureCentered = args =>
   parse(
@@ -47,6 +61,12 @@ const FigureCentered = args =>
     })
   );
 FigureCentered.args = { ...data };
+FigureCentered.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [1, 2, 3, 4],
+  },
+};
 
 const FigureCenteredWide = args =>
   parse(
@@ -56,6 +76,35 @@ const FigureCenteredWide = args =>
     })
   );
 FigureCenteredWide.args = { ...data };
+FigureCenteredWide.argTypes = {
+  ...FigureCentered.argTypes,
+};
+
+const FigureRight = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'u-align-right',
+    })
+  );
+FigureRight.args = {
+  ...data,
+  media:
+    '<img src="https://picsum.photos/300?image=237" alt="dog photo" loading="lazy" width="300" height="300">',
+};
+
+const FigureLeft = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'u-align-left',
+    })
+  );
+FigureLeft.args = {
+  ...data,
+  media:
+    '<img src="https://picsum.photos/300?image=237" alt="dog photo" loading="lazy" width="300" height="300">',
+};
 
 const FigureWithVideo = args => (
   <>
@@ -74,7 +123,12 @@ const FigureWithVideo = args => (
     )}
   </>
 );
-FigureWithVideo.args = { ...videoData, ...globalData, caption: false };
+FigureWithVideo.args = {
+  ...videoData,
+  ...globalData,
+  caption: '',
+  num_cols: 4,
+};
 
 const FigureWithVideoCentered = args => (
   <>
@@ -88,12 +142,20 @@ const FigureWithVideoCentered = args => (
   </>
 );
 FigureWithVideoCentered.args = { ...videoData, ...globalData };
+FigureWithVideoCentered.argTypes = {
+  num_cols: {
+    control: 'select',
+    options: [1, 2, 3, 4],
+  },
+};
 
 export default settings;
 export {
   Default,
   FigureCentered,
   FigureCenteredWide,
+  FigureRight,
+  FigureLeft,
   FigureWithVideo,
   FigureWithVideoCentered,
 };

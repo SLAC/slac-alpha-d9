@@ -1,5 +1,6 @@
 ---
 is_event: true
+is_virtual: false
 type: 'Upcoming Event'
 start_date:
   month: 'Apr'

@@ -27,6 +27,10 @@ Drupal.behaviors.header = {
             '--gesso-header-current-height',
             `${headerHeight}px`
           );
+          document.body.classList.toggle(
+            'has-sticky-header',
+            header.classList.contains('is-sticky')
+          );
         });
       };
       const setInitialHeights = () => {
