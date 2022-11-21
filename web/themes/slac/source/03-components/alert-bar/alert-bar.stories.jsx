@@ -36,7 +36,6 @@ AlertBar.play = async ({ canvasElement }) => {
   const closeEvent = new Event('sitewide-alert-removed');
 
   canvasElement.dispatchEvent(readyEvent);
-  console.log(canvasElement);
 }
 
 export default settings;
