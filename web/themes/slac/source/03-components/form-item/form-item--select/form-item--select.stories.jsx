@@ -46,5 +46,16 @@ const WithGroups = args =>
   );
 WithGroups.args = { ...withGroupsData };
 
+const WithinFilter = args =>
+  parse(
+    twigTemplate({
+      ...args,
+      modifier_classes: 'c-form-item--select-filters',
+      label: label(args),
+      children: select({ ...args }),
+    })
+  );
+WithinFilter.args = { ...data };
+
 export default settings;
-export { Default, WithGroups };
+export { Default, WithGroups, WithinFilter };

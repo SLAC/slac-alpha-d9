@@ -61,15 +61,6 @@ carousel:
     - slac/common
     - core/drupal
 
-checkbox_widget:
-  js:
-    dist/js/checkbox-widget.es6.js: {}
-  dependencies:
-    - slac/common
-    - core/drupal
-    - facets/widget
-    - core/once
-
 drawer:
   css:
     theme:
@@ -115,8 +106,6 @@ filter_modal:
   css:
     theme:
       dist/css/filter-modal.css: {}
-  js:
-    dist/js/filter-modal.es6.js: {}
   dependencies:
     - slac/lightbox
 
