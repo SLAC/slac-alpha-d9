@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_boolean
+    - field.field.node.landing_page.field_editorial_group
     - field.field.node.landing_page.field_long_text
     - field.field.node.landing_page.field_paragraphs
     - field.field.node.landing_page.field_teaser
@@ -59,6 +60,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_editorial_group: true
   field_teaser: true
   field_teaser_image: true
   langcode: true

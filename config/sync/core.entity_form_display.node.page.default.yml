@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.page.body
+    - field.field.node.page.field_editorial_group
     - field.field.node.page.field_hero_paragraph
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_review_date
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser
     - field.field.node.page.field_teaser_image
@@ -13,6 +16,7 @@ dependencies:
     - workflows.workflow.content
   module:
     - content_moderation
+    - datetime
     - field_group
     - media_library
     - paragraphs
@@ -70,6 +74,36 @@ third_party_settings:
         formatter: open
         description: ''
         required_fields: true
+    group_review_date:
+      children:
+        - field_review_date
+      label: 'Review Date'
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+    group_restrict_editorial_access:
+      children:
+        - field_editorial_group
+      label: 'Editorial Access'
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: false
+        description: 'Select the group that may edit this page.'
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: SfpLhPExzvR0MgFp0Wp7CrmgEnhcqQ-fXIWFhbf4ue0
 id: node.page.default
@@ -79,9 +113,19 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_editorial_group:
+    type: entity_reference_autocomplete
+    weight: 12
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_hero_paragraph:
     type: paragraphs
@@ -119,6 +163,12 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_review_date:
+    type: datetime_default
+    weight: 9
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_tags:
     type: term_reference_tree
@@ -163,33 +213,33 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -204,7 +254,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -213,7 +263,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }

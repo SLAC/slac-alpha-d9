@@ -3,6 +3,7 @@ import parse from 'html-react-parser';
 import twigTemplate from './page-title.twig';
 import globalData from '../../00-config/storybook.global-data.yml';
 import data from './page-title.yml';
+import { Author } from '../author/author.stories';
 
 const settings = {
   title: 'Components/Page Title',
@@ -30,7 +31,7 @@ const PageTitle = args =>
       ...args,
     })
   );
-PageTitle.args = { ...globalData, ...data };
+PageTitle.args = { ...globalData, ...Author.args, ...data };
 
 export default settings;
 export { PageTitle };

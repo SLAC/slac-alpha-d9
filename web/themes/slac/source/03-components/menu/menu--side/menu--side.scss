@@ -28,11 +28,11 @@
     }
   }
 
-  .c-menu__subnav .c-menu__subnav {
+  .c-menu__subnav {
     padding-left: 20px;
   }
 
-  .c-menu__subnav .c-menu__item:not(.is-active-trail) .c-menu__subnav {
+  .c-menu__item:not(.is-active-trail) .c-menu__subnav {
     display: none;
   }
 

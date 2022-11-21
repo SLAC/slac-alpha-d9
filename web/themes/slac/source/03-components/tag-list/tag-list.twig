@@ -18,6 +18,7 @@
 ]|join(' ')|trim %}
 
 <div {{ add_attributes({ 'class': classes }) }}>
+  {% if has_constrain %}<div class="l-constrain l-constrain--small">{% endif %}
   {% if not hide_label -%}
     <{{ label_element ?: 'h3' }} {{ add_attributes({ 'class': title_classes },'title_attributes') }}>{{ label }}</{{ label_element ?: 'h3' }}>
   {%- endif -%}
@@ -32,4 +33,5 @@
       </li>
     {% endfor %}
   </ul>
+  {% if has_constrain %}</div>{% endif %}
 </div>

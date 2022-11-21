@@ -45,6 +45,7 @@ $accordion-item-icon-size: gesso-font-size(2);
   align-items: center;
   background-color: transparent;
   border: 0;
+  color: var(--gesso-link-color);
   cursor: pointer;
   display: flex;
   font-weight: inherit;
@@ -64,12 +65,11 @@ $accordion-item-icon-size: gesso-font-size(2);
 
   &:hover,
   &:focus-visible {
-    color: gesso-color(text, link-hover);
+    color: var(--gesso-link-hover-color);
 
     span {
       @include underline;
       color: inherit;
-      text-decoration-color: gesso-color(text, link-hover);
       text-decoration-line: underline;
     }
   }
@@ -79,11 +79,6 @@ $accordion-item-icon-size: gesso-font-size(2);
       padding: rem(gesso-spacing(4));
     }
   }
-}
-
-.c-accordion-item__drawer {
-  background: gesso-grayscale(white);
-  // display: none;
 }
 
 .c-accordion-item__drawer-inner {

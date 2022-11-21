@@ -17,7 +17,7 @@ field_name: field_teaser
 entity_type: node
 bundle: news_article
 label: Teaser
-description: 'Leave blank to use trimmed value of full text as the teaser.'
+description: 'Populate the teaser to display on a card or teaser view mode, and when the article is shared in social media. If no teaser is added, the Dek will be used.'
 required: false
 translatable: true
 default_value: {  }

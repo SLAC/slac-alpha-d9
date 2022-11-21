@@ -4,7 +4,7 @@ import twigTemplate from './promo-box.twig';
 import data from './promo-box.yml';
 
 const settings = {
-  title: 'Components/Promo Box'
+  title: 'Paragraphs/Promo Box',
 };
 
 const PromoBox = args =>

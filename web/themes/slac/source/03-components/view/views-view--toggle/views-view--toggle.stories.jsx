@@ -11,7 +11,7 @@ import gridViewsTemplate from '../views-view-grid/views-view-grid.twig';
 import globalData from '../../../00-config/storybook.global-data.yml';
 import './views-view--toggle.scss';
 import './views-view--toggle.es6';
-import { Default as Card, TeaserCard } from '../../card/card.stories';
+import { Default as Card, Teaser } from '../../card/card.stories';
 
 const settings = {
   title: 'Components/Views/Toggleable View',
@@ -28,32 +28,32 @@ const ToggleableView = args =>
         rows: [
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
         ],
