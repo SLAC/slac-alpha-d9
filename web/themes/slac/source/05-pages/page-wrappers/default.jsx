@@ -4,6 +4,7 @@ import parse from 'html-react-parser';
 
 import SkiplinksTwig from '../../03-components/skiplinks/skiplinks.twig';
 import ContentTwig from '../../02-layouts/content/content.twig';
+import { AlertBar, alertBarPlayFn } from '../../03-components/alert-bar/alert-bar.stories';
 import { Breadcrumb } from '../../03-components/breadcrumb/breadcrumb.stories.jsx';
 import { Footer } from '../../02-layouts/footer/footer.stories.jsx';
 import { Subfooter } from '../../02-layouts/subfooter/subfooter.stories.jsx';
@@ -25,6 +26,7 @@ const PageWrapper = props => {
   return (
     <div className={bodyClasses}>
       {parse(SkiplinksTwig())}
+      {AlertBar(AlertBar.args)}
       {GlobalHeader(GlobalHeader.args)}
       {!hideInternalHeader && InternalHeader(InternalHeader.args)}
       {Header({ ...Header.args, ...args })}

@@ -18,7 +18,7 @@ Drupal.behaviors.socialShare = {
     const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINTS.desktop})`);
     socialLinks.forEach(socialLink => {
       let trigger;
-      const links = socialLink.querySelectorAll('a:not[href^=mailto]');
+      const links = socialLink.querySelectorAll('a:not([href^=mailto])');
       links.forEach(link => {
         link.addEventListener('click', event => {
           event.preventDefault();
