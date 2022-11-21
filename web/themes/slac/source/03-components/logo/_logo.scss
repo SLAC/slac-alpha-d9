@@ -4,7 +4,9 @@
 .c-logo {
   display: inline-block;
   vertical-align: middle;
+}
 
+.c-logo--header {
   @include breakpoint-max(gesso-breakpoint(mobile-menu)) {
     display: none;
   }
@@ -12,9 +14,9 @@
   .is-sticky & {
     display: none;
   }
-}
 
-.c-logo__image {
-  height: 62px;
-  width: auto;
+  .c-logo__image {
+    height: 62px;
+    width: auto;
+  }
 }

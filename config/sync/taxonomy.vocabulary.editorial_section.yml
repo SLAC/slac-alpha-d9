@@ -1,0 +1,8 @@
+uuid: 699c1f4a-ea74-4865-a472-0593c1123965
+langcode: en
+status: true
+dependencies: {  }
+name: 'Editorial Section'
+vid: editorial_section
+description: 'Sections or groups that have restricted editorial permissions via Workbench Access.'
+weight: 0

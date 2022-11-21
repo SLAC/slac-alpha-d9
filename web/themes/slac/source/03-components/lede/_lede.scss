@@ -5,6 +5,7 @@
 .c-lede {
   @include responsive-font-size(4);
   @include font-family-primary;
+  color: var(--gesso-text-color);
   line-height: gesso-line-height(loose);
 
   &:not(:first-child) {

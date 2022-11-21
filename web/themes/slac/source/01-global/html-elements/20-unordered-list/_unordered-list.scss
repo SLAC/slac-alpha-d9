@@ -24,6 +24,6 @@ ul {
   }
 
   li::marker {
-    color: gesso-color(ui, generic, accent-light);
+    color: var(--gesso-link-hover-color);
   }
 }

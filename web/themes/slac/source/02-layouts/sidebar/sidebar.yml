@@ -3,6 +3,6 @@ is_demo: true
 sidebar_header_content: ''
 sidebar_first_content: ''
 sidebar_main_content: ''
-sidebar_second_content: ''
-has_multiple_sidebar: true
+has_multiple_sidebar: false
 modifier_classes: ''
+has_constrain: true

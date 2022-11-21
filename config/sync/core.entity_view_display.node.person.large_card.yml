@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.large_card
     - field.field.node.person.field_body
     - field.field.node.person.field_boolean
+    - field.field.node.person.field_editorial_group
     - field.field.node.person.field_image
     - field.field.node.person.field_link
     - field.field.node.person.field_links
@@ -87,6 +88,7 @@ content:
     region: content
 hidden:
   field_boolean: true
+  field_editorial_group: true
   field_link: true
   field_links: true
   field_long_text: true

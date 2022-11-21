@@ -94,36 +94,4 @@ content: |-
   </ol>
   <h6>Heading Level 6</h6>
   <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
-  <table>
-    <caption>Table caption</caption>
-    <thead>
-      <tr>
-        <th>Table Heading A</th>
-        <th>Table Heading B</th>
-        <th>Table Heading C</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Table Cell A1</td>
-        <td>Table Cell B1</td>
-        <td>Table Cell C1</td>
-      </tr>
-      <tr>
-        <td>Table Cell A2</td>
-        <td>Table Cell B2</td>
-        <td>Table Cell C2</td>
-      </tr>
-      <tr>
-        <td>Table Cell A3</td>
-        <td>Table Cell B3</td>
-        <td>Table Cell C3</td>
-      </tr>
-      <tr>
-        <td>Table Cell A4</td>
-        <td>Table Cell B4</td>
-        <td>Table Cell C4</td>
-      </tr>
-    </tbody>
-  </table>
   <p>A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>

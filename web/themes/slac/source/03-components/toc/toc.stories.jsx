@@ -18,4 +18,4 @@ const TableOfContents = args =>
 TableOfContents.args = { ...data };
 
 export default settings;
-export { TableOfContents };
+// export { TableOfContents };

@@ -3,7 +3,7 @@ import Drupal from 'drupal';
 Drupal.behaviors.arrowLink = {
   attach(context) {
     const arrowLinks = context.querySelectorAll(
-      '.c-arrow-link, .c-arrow-link--white, .c-card--small-bio a'
+      '.c-arrow-link, .c-arrow-link--white, .c-card--small-bio a, .c-cta-link'
     );
     arrowLinks.forEach(link => {
       const text = link.textContent.trim().split(' ');

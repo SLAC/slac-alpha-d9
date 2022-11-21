@@ -10,31 +10,19 @@ $card-accent-border-color: gesso-color(ui, generic, accent) !default;
 $card-link-color: inherit;
 $card-link-color-hover: var(--gesso-link-hover-color);
 $card-meta-color: inherit;
-$card-padding: rem(gesso-spacing(4));
+$card-padding: 30px;
 
 .c-card {
   @include default-variables;
+  @include layout-constrain(rem(gesso-constrain(images)), 0, 0);
   display: flex;
   flex-direction: column;
   line-height: gesso-line-height(loose);
   position: relative;
-  transition: box-shadow gesso-duration(short) gesso-easing(ease-in-out);
-
-  &:hover,
-  &:focus-within {
-    box-shadow: gesso-box-shadow(1);
-  }
 
   .c-kicker {
     color: $card-meta-color;
-    margin-bottom: rem(gesso-spacing(1.5));
-  }
-}
-
-.c-card--no-link {
-  &:hover,
-  &:focus-within {
-    box-shadow: initial;
+    margin-bottom: rem(gesso-spacing(1));
   }
 }
 
@@ -49,22 +37,6 @@ $card-padding: rem(gesso-spacing(4));
 
   &::after {
     margin-top: -8px;
-  }
-
-  .c-card:not(.c-card--no-link):hover &,
-  .c-card:not(.c-card--no-link):focus-within & {
-    color: $card-link-color-hover;
-
-    @media (prefers-reduced-motion: no-preference) {
-      &::after {
-        transform: translateX(rem(6px));
-      }
-    }
-  }
-
-  .c-card--on-dark:hover &,
-  .c-card--on-dark:focus-within & {
-    color: gesso-color(text, on-dark);
   }
 
   .c-card--large & {
@@ -122,6 +94,36 @@ $card-padding: rem(gesso-spacing(4));
   &:not(:last-child) {
     padding-bottom: rem(30px);
   }
+
+  .c-button {
+    margin-top: gesso-spacing(2);
+  }
+}
+
+.c-card__content--trimmed {
+  p:last-child {
+    margin: 0;
+  }
+
+  position: relative;
+
+  &::after {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.58) 0%,
+      #fff 58.33%
+    );
+    content: '';
+    height: 60px;
+    inset: auto 0 0 0;
+    position: absolute;
+  }
+
+  .c-card--teaser & {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .c-card__footer {
@@ -137,27 +139,16 @@ $card-padding: rem(gesso-spacing(4));
     object-fit: cover;
     width: 100%;
   }
+}
 
-  @media (prefers-reduced-motion: no-preference) {
-    overflow: hidden;
+.c-card__icon {
+  height: 84px;
+  margin-bottom: 30px;
+  margin-top: -10px; // slightly reduced padding above
 
-    img {
-      transition: transform gesso-duration(shortest) gesso-easing(ease-out);
-    }
-
-    .c-card:hover &,
-    .c-card:focus-within & {
-      img {
-        transform: scale(1.075);
-      }
-    }
-
-    .c-card--no-link:hover &,
-    .c-card--no-link:focus-within & {
-      img {
-        transform: none;
-      }
-    }
+  img {
+    height: 100%;
+    width: auto;
   }
 }
 
@@ -250,84 +241,6 @@ $card-padding: rem(gesso-spacing(4));
   }
 }
 
-.c-card--xlarge {
-  + * {
-    margin-top: rem(gesso-get-map(gutter-width));
-  }
-
-  .c-card__media {
-    img {
-      height: 100%;
-    }
-  }
-
-  @include breakpoint-min(gesso-breakpoint(desktop)) {
-    .c-card__media {
-      aspect-ratio: 1340/600;
-    }
-
-    .c-card__type {
-      margin: 0;
-      padding: 0;
-      position: static;
-    }
-
-    .c-card__body {
-      @include layout-constrain(
-        gesso-constrain(md) - gesso-site-margins(desktop)
-      );
-      background: transparent;
-      bottom: rem(gesso-spacing(5));
-      padding-bottom: 0;
-      padding-top: 0;
-      position: absolute;
-      width: 100%;
-
-      > *:first-child {
-        padding-top: $card-padding;
-      }
-
-      > *:last-child {
-        padding-bottom: $card-padding;
-      }
-    }
-
-    .c-card__type,
-    .c-card__header,
-    .c-card__content,
-    .c-card__footer {
-      background: #fff;
-      padding-left: $card-padding;
-      padding-right: $card-padding;
-      width: calc(
-        #{percentage(1/3)} - #{math.div(gesso-get-map(gutter-width), 2)}
-      );
-    }
-
-    + * {
-      margin-top: rem(gesso-spacing(9));
-    }
-  }
-
-  &.c-card--align-right {
-    @include breakpoint-min(gesso-breakpoint(desktop)) {
-      .c-card__body {
-        align-items: flex-end;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .c-card__type {
-        align-self: flex-end;
-      }
-    }
-  }
-
-  @include breakpoint-min(gesso-breakpoint(desktop-lg)) {
-    @include layout-half-full-bleed;
-  }
-}
-
 // Bio card
 .c-card--bio {
   .c-card__media {
@@ -369,30 +282,9 @@ $card-padding: rem(gesso-spacing(4));
   }
 }
 
-.c-card--menu {
-  &:hover,
-  &:focus-within {
-    box-shadow: none;
-  }
-
-  .c-card__body {
-    padding: rem(gesso-spacing(2)) 0;
-  }
-
-  @include breakpoint-min(gesso-breakpoint(mobile-menu) + 1px) {
-    .c-card__body {
-      padding-bottom: 0;
-    }
-
-    .c-card__content p:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
 .c-card--large {
   .c-card__media {
-    aspect-ratio: 1/1;
+    aspect-ratio: 2/1;
     position: relative;
   }
 
@@ -400,11 +292,11 @@ $card-padding: rem(gesso-spacing(4));
     width: 100%;
   }
 
-  .c-event-hat {
-    order: -2;
-  }
-
   .c-card__title {
     @include responsive-font-size(11);
+  }
+
+  .c-card__gradient {
+    background-size: auto 100%;
   }
 }

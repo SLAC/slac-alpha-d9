@@ -6,6 +6,7 @@ dependencies:
     - content_moderation
     - system
     - toolbar
+    - workbench_access
 id: reviewer
 label: Reviewer
 weight: -7
@@ -13,6 +14,7 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access toolbar'
+  - 'use workbench access'
   - 'view any unpublished content'
   - 'view latest version'
   - 'view the administration theme'
