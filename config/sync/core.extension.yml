@@ -115,6 +115,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  vapn: 0
   view_mode_select_by_token: 0
   view_mode_switch: 0
   view_modes_display: 0
