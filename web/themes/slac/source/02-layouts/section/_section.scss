@@ -188,6 +188,15 @@
   );
 }
 
+.l-section--white-gray {
+  --gesso-background-color: #{gesso-grayscale(white)};
+  background-image: linear-gradient(
+    to top,
+    gesso-brand(fog, light),
+    gesso-grayscale(white)
+  );
+}
+
 .l-section--divider {
   border-top: 1px solid;
 }

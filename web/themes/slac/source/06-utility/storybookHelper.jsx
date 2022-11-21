@@ -6,11 +6,11 @@ import sectionTwigTemplate from '../02-layouts/section/section.twig';
 import gridTwigTemplate from '../02-layouts/grid/grid.twig';
 import wysiwygTwigTemplate from '../03-components/wysiwyg/wysiwyg.twig';
 
-const SectionWrapper = ({ children }) =>
+const SectionWrapper = ({ children, modifierClasses }) =>
   parse(
     sectionTwigTemplate({
       section_content: ReactDOMServer.renderToStaticMarkup(children),
-      modifier_classes: 'l-section--no-padding',
+      modifier_classes: `l-section--no-padding ${modifierClasses}`.trim(),
       has_constrain: true,
     })
   );
