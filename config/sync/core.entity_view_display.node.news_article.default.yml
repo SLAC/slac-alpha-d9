@@ -34,7 +34,7 @@ third_party_settings:
       label: 'Page Content'
       parent_name: ''
       region: content
-      weight: 0
+      weight: 1
       format_type: tabs
       format_settings:
         classes: ''
@@ -85,7 +85,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_date:
     type: datetime_default
@@ -184,7 +184,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 12
+    weight: 6
     region: content
   field_text:
     type: string
@@ -205,8 +205,9 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 2
     region: content
 hidden:
+  field_editorial_group: true
   langcode: true
   search_api_excerpt: true

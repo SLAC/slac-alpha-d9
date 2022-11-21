@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news_article.field_date
     - field.field.node.news_article.field_dek
+    - field.field.node.news_article.field_editorial_group
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_link
@@ -86,6 +87,22 @@ third_party_settings:
         id: ''
         direction: horizontal
         width_breakpoint: 640
+    group_ed:
+      children:
+        - field_editorial_group
+      label: 'Editorial Access'
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: 'Select the group that may edit this page.'
+        required_fields: true
+        weight: 0
 id: node.news_article.default
 targetEntityType: node
 bundle: news_article
@@ -93,7 +110,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -108,6 +125,16 @@ content:
     weight: 5
     region: content
     settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_editorial_group:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
@@ -274,7 +301,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS

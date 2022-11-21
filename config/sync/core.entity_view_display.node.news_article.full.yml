@@ -79,6 +79,7 @@ content:
 hidden:
   field_date: true
   field_dek: true
+  field_editorial_group: true
   field_featured: true
   field_source_link: true
   field_source_name: true

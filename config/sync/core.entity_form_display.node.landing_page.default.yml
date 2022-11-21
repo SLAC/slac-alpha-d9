@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_boolean
+    - field.field.node.landing_page.field_editorial_group
     - field.field.node.landing_page.field_long_text
     - field.field.node.landing_page.field_paragraphs
     - field.field.node.landing_page.field_teaser
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.landing_page.field_text
     - node.type.landing_page
   module:
+    - content_moderation
     - field_group
     - media_library
     - paragraphs
@@ -25,7 +27,7 @@ third_party_settings:
       label: 'Page Content'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 6
       format_type: tabs
       format_settings:
         classes: ''
@@ -67,6 +69,22 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_editorial_access:
+      children:
+        - field_editorial_group
+      label: 'Editorial Access'
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: false
+        description: 'Select the group that may edit this page.'
+        required_fields: true
+        weight: 0
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
@@ -74,7 +92,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -84,6 +102,16 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_editorial_group:
+    type: entity_reference_autocomplete
+    weight: 12
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_long_text:
     type: text_textarea
@@ -143,7 +171,7 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -155,7 +183,7 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 3
+    weight: 4
     region: content
     settings:
       display_label: true
@@ -169,7 +197,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -193,7 +221,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
