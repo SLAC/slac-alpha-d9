@@ -1,5 +1,5 @@
 ---
 lightbox_id: 'filter-modal'
-total_results: '109'
-results: "Filter (109 results)"
+button_text: "Filter"
 is_demo: true
+filter_title: 'News Filter'

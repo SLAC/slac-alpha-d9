@@ -43,3 +43,21 @@ $form-select-arrow-size: 24px !default;
       rem(gesso-spacing(1.5));
   }
 }
+
+.c-form-item--select-filters {
+  .c-form-item__label,
+  .c-form-item__description {
+    font-size: rem(12px);
+  }
+
+  .c-form-item__select {
+    border-radius: 0;
+    border-width: 0 0 1px;
+    font-size: rem(gesso-font-size(1));
+    font-weight: gesso-font-weight(bold);
+    height: auto;
+    padding: 0 0 10px;
+    padding-inline-end: $form-select-arrow-size * 2;
+    width: 100%;
+  }
+}
