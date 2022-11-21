@@ -1,9 +1,9 @@
-uuid: b570c784-81ee-4de6-b902-c1627e4f65c3
+uuid: 40ef1a2e-39e5-4170-b679-e4981d87b37f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_lede
+    - field.storage.node.field_dek
     - node.type.news_article
   module:
     - allowed_formats
@@ -12,15 +12,15 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - restricted_html
-id: node.news_article.field_lede
-field_name: field_lede
+id: node.news_article.field_dek
+field_name: field_dek
 entity_type: node
 bundle: news_article
-label: Lede
-description: 'Plain text field summarizing the most important aspects of the news article.'
+label: Dek
+description: 'A "dek" is a brief summary that appears below the headline - in smaller font - on the list page and on the article page.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text_long
+field_type: text

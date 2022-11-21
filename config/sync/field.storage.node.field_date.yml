@@ -1,17 +1,17 @@
-uuid: 008e5a9f-16b6-4091-bca6-07655c6d67f4
+uuid: d036f8cc-5da3-45c2-9e84-498967af92d0
 langcode: en
 status: true
 dependencies:
   module:
+    - datetime
     - node
-    - taxonomy
-id: node.field_news_source
-field_name: field_news_source
+id: node.field_date
+field_name: field_date
 entity_type: node
-type: entity_reference
+type: datetime
 settings:
-  target_type: taxonomy_term
-module: core
+  datetime_type: date
+module: datetime
 locked: false
 cardinality: 1
 translatable: true

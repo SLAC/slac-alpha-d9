@@ -4,18 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - field.field.node.news_article.field_bio
-    - field.field.node.news_article.field_bio_related_content
-    - field.field.node.news_article.field_boolean
-    - field.field.node.news_article.field_estimated_read_time
+    - field.field.node.news_article.field_date
+    - field.field.node.news_article.field_dek
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
-    - field.field.node.news_article.field_internal_tags
-    - field.field.node.news_article.field_lede
-    - field.field.node.news_article.field_news_source
+    - field.field.node.news_article.field_link
     - field.field.node.news_article.field_paragraphs
-    - field.field.node.news_article.field_paragraphs_1
-    - field.field.node.news_article.field_research_area
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
@@ -25,7 +19,6 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
-    - estimated_read_time
     - link
     - slac_core
     - text
@@ -39,22 +32,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_estimated_read_time:
-    type: estimated_read_time_text
-    label: hidden
-    settings:
-      tokenized_string: '@minutes min read'
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_news_source:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 4
     region: content
   field_paragraphs:
     type: trimmed_first_wysiwyg_paragraph
@@ -131,15 +108,11 @@ content:
     weight: 1
     region: content
 hidden:
-  field_bio: true
-  field_bio_related_content: true
-  field_boolean: true
+  field_date: true
+  field_dek: true
   field_featured: true
   field_hero_paragraph: true
-  field_internal_tags: true
-  field_lede: true
-  field_paragraphs_1: true
-  field_research_area: true
+  field_link: true
   field_tags: true
   field_text: true
   langcode: true

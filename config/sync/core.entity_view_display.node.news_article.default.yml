@@ -3,18 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.news_article.field_bio
-    - field.field.node.news_article.field_bio_related_content
-    - field.field.node.news_article.field_boolean
-    - field.field.node.news_article.field_estimated_read_time
+    - field.field.node.news_article.field_date
+    - field.field.node.news_article.field_dek
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
-    - field.field.node.news_article.field_internal_tags
-    - field.field.node.news_article.field_lede
-    - field.field.node.news_article.field_news_source
+    - field.field.node.news_article.field_link
     - field.field.node.news_article.field_paragraphs
-    - field.field.node.news_article.field_paragraphs_1
-    - field.field.node.news_article.field_research_area
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
@@ -24,8 +18,8 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
+    - datetime
     - entity_reference_revisions
-    - estimated_read_time
     - field_group
     - layout_paragraphs
     - link
@@ -51,12 +45,10 @@ third_party_settings:
     group_metadata:
       children:
         - field_teaser
-        - field_tags
         - field_source_link
         - field_source_name
-        - field_news_source
-        - field_bio_related_content
-        - field_text
+        - field_type
+        - field_tags
       label: Metadata
       parent_name: group_page_content
       region: content
@@ -71,11 +63,9 @@ third_party_settings:
     group_main_content:
       children:
         - field_hero_paragraph
-        - field_type
-        - field_bio
+        - field_link
+        - field_text
         - field_paragraphs
-        - field_boolean
-        - field_estimated_read_time
       label: 'Main Content'
       parent_name: group_page_content
       region: content
@@ -97,39 +87,21 @@ content:
     third_party_settings: {  }
     weight: -20
     region: content
-  field_bio:
-    type: entity_reference_label
+  field_date:
+    type: datetime_default
     label: above
     settings:
-      link: true
+      timezone_override: ''
+      format_type: medium
     third_party_settings: {  }
-    weight: 4
+    weight: 18
     region: content
-  field_bio_related_content:
-    type: entity_reference_label
+  field_dek:
+    type: text_default
     label: above
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
-    weight: 9
-    region: content
-  field_boolean:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_estimated_read_time:
-    type: estimated_read_time_text
-    label: above
-    settings:
-      tokenized_string: '@minutes min read'
-    third_party_settings: {  }
-    weight: 7
+    weight: 19
     region: content
   field_featured:
     type: boolean
@@ -139,39 +111,28 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 13
+    weight: 17
     region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     weight: 2
     region: content
-  field_internal_tags:
-    type: entity_reference_label
-    label: above
+  field_link:
+    type: link
+    label: hidden
     settings:
-      link: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 14
-    region: content
-  field_lede:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  field_news_source:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 8
+    weight: 3
     region: content
   field_paragraphs:
     type: layout_paragraphs
@@ -180,24 +141,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
-    region: content
-  field_paragraphs_1:
-    type: entity_reference_revisions_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_research_area:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 12
+    weight: 6
     region: content
   field_source_link:
     type: link
@@ -209,14 +153,14 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_source_name:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_tags:
     type: entity_reference_label
@@ -224,7 +168,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 8
     region: content
   field_teaser:
     type: text_default
@@ -244,11 +188,11 @@ content:
     region: content
   field_text:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 10
+    weight: 4
     region: content
   field_type:
     type: entity_reference_label
@@ -256,7 +200,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 7
     region: content
   links:
     settings: {  }

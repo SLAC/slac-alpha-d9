@@ -1,16 +1,17 @@
-uuid: b0d0ac83-940f-4090-9c08-1751f7f81d89
+uuid: a72a34c9-3d00-4589-92e9-43e2cd7bf315
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_bio
-field_name: field_bio
+    - text
+id: node.field_dek
+field_name: field_dek
 entity_type: node
-type: entity_reference
+type: text
 settings:
-  target_type: node
-module: core
+  max_length: 255
+module: text
 locked: false
 cardinality: 1
 translatable: true

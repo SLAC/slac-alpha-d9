@@ -1,4 +1,4 @@
-uuid: ef161e64-7de6-4d5c-a6b3-8a8876a445ec
+uuid: 5a622561-4b95-4b52-b77b-a539bb0fa0f6
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ id: node.news_article.field_tags
 field_name: field_tags
 entity_type: node
 bundle: news_article
-label: 'Related Topics'
+label: Tags
 description: ''
 required: false
 translatable: true
