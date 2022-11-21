@@ -24,9 +24,9 @@ gateways: {  }
 actions:
   action_send_email_action:
     plugin: action_send_email_action
-    label: 'Send email'
+    label: 'Send stale content notification email'
     configuration:
-      recipient: lhaas@forumone.com
+      recipient: '[node:author:mail], [site:mail]'
       subject: '[site:name] - Stale content notice'
       message: 'Please review your stale content at: [site:url]admin/content/stale'
       replace_tokens: false
