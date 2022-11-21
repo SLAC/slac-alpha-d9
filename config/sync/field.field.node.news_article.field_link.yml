@@ -12,7 +12,7 @@ field_name: field_link
 entity_type: node
 bundle: news_article
 label: 'Author Link'
-description: ''
+description: 'If you enter an author name, the name will be linked with this URL. If you leave the Author Name blank and link to a Person, the Author''s name will be automatically populated.'
 required: false
 translatable: true
 default_value: {  }

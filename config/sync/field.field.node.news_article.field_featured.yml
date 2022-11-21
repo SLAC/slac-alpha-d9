@@ -10,7 +10,7 @@ field_name: field_featured
 entity_type: node
 bundle: news_article
 label: 'Is featured news article?'
-description: ''
+description: 'Toggle this on to display this article as a ''featured card'' on the news landing page when it is the newest featured article.'
 required: false
 translatable: true
 default_value:

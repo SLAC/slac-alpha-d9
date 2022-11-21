@@ -1,19 +1,19 @@
-uuid: 36da6508-19f0-4f08-b113-0008391231ae
+uuid: 17c64bd5-6556-45f0-a14c-ef7f8fc0b499
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_teaser_image
     - media.type.image
-    - node.type.news_article
-id: node.news_article.field_teaser_image
+    - node.type.blog
+id: node.blog.field_teaser_image
 field_name: field_teaser_image
 entity_type: node
-bundle: news_article
+bundle: blog
 label: 'Teaser Image'
 description: 'Populate the teaser image to display on a card or teaser view mode, and when the article is shared in social media. If no teaser image is added, the Hero image will be used.'
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
