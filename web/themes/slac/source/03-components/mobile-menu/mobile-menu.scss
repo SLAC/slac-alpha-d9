@@ -184,17 +184,11 @@ button.c-mobile-menu__link {
 }
 
 .c-mobile-menu__subnav .c-mobile-menu__subnav {
-  @include hidden;
-
   .c-mobile-menu__link {
     letter-spacing: normal;
     padding-left: gesso-spacing(6);
     text-transform: none;
   }
-}
-
-.c-mobile-menu__subnav a.is-active-trail + .c-mobile-menu__subnav {
-  display: block;
 }
 
 .c-mobile-menu__subnav-toggle {
