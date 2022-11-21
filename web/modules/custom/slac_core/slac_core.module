@@ -153,3 +153,52 @@ function slac_core_media_view(array &$build, EntityInterface $entity, EntityView
     }
   }
 }
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function slac_core_field_widget_paragraphs_form_alter(&$element, FormStateInterface $form_state, $context) {
+  /** @var \Drupal\field\Entity\FieldConfig $field_definition */
+  $field_definition = $context['items']->getFieldDefinition();
+  $paragraph_entity_reference_field_name = $field_definition->getName();
+
+  if ($paragraph_entity_reference_field_name == 'field_paragraphs') {
+    /** @see \Drupal\paragraphs\Plugin\Field\FieldWidget\ParagraphsWidget::formElement() */
+    $widget_state = \Drupal\Core\Field\WidgetBase::getWidgetState($element['#field_parents'], $paragraph_entity_reference_field_name, $form_state);
+
+    /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+    $paragraph_instance = $widget_state['paragraphs'][$element['#delta']]['entity'];
+    $paragraph_type = $paragraph_instance->bundle();
+
+    // Determine which paragraph type is being embedded.
+    if ($paragraph_type == 'section') {
+      $dependee_field_name = 'field_num_of_cols';
+      $selector = sprintf('select[name="%s[%d][subform][%s]"]', $paragraph_entity_reference_field_name, $element['#delta'], $dependee_field_name);
+
+      // Dependent fields.
+      $element['subform']['field_paragraphs_1']['#states'] = [
+        'visible' => [
+          $selector => ['value' => 1],
+        ],
+      ];
+
+      $element['subform']['field_paragraphs_2']['#states'] = [
+        'visible' => [
+          $selector => ['value' => 2],
+        ],
+      ];
+
+      $element['subform']['field_paragraphs_3']['#states'] = [
+        'visible' => [
+          $selector => ['value' => 3],
+        ],
+      ];
+
+      $element['subform']['field_paragraphs_4']['#states'] = [
+        'visible' => [
+          $selector => ['value' => 4],
+        ],
+      ];
+    }
+  }
+}

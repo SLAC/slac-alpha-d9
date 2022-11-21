@@ -15,7 +15,6 @@ import {
   FiftyFiftyRightFadeIn,
 } from '../03-components/fifty-fifty/fifty-fifty.stories';
 import {
-  GridWrapper,
   SectionWithPaddingWrapper,
   SectionWrapper,
   WysiwygWrapper,
@@ -23,25 +22,32 @@ import {
 import { NewsArticle } from '../04-templates/news-article-detail/news-article-detail.stories';
 import { HeroWithoutOverlay } from '../03-components/article-hero/article-hero.stories';
 import { Quote } from '../03-components/quote/quote.stories';
-import { TagList } from '../03-components/tag-list/tag-list.stories';
-import { SectionWithBlueGreenGradient } from '../02-layouts/section/section.stories';
-import { News } from '../03-components/card/card.stories';
+import { Header } from '../02-layouts/header/header.stories';
 
 export default {
   title: 'Pages/News Article Detail',
   parameters: {
     controls: {
-      include: ['show_admin_info', 'has_sidebar'],
+      include: [
+        'show_admin_info',
+        'has_sidebar',
+        'hideInternalHeader',
+        'site_name',
+        'has_logo',
+        'header_freeform',
+      ],
     },
   },
 };
 
-const NewsArticleDetail = args => (
+// eslint-disable-next-line camelcase
+const NewsArticleDetail = ({ show_admin_info, ...args }) => (
   <PageWrapper
     hero={HeroWithoutOverlay({
       ...HeroWithoutOverlay.args,
       showPageTitle: false,
     })}
+    {...args}
   >
     {NewsArticle({
       ...args,
@@ -326,21 +332,6 @@ const NewsArticleDetail = args => (
               </p>
             </WysiwygWrapper>
           </SectionWrapper>
-          <SectionWrapper>{TagList(TagList.args)}</SectionWrapper>
-          {SectionWithBlueGreenGradient({
-            ...SectionWithBlueGreenGradient.args,
-            section_kicker: 'Dig Deeper',
-            section_title: 'Related Stories',
-            section_intro: false,
-            section_buttons: false,
-            section_content: ReactDOMServer.renderToStaticMarkup(
-              <GridWrapper numCols={3}>
-                {News(News.args)}
-                {News(News.args)}
-                {News(News.args)}
-              </GridWrapper>
-            ),
-          })}
         </>
       ),
     })}
@@ -348,6 +339,8 @@ const NewsArticleDetail = args => (
 );
 NewsArticleDetail.args = {
   ...globalData,
+  ...Header.args,
+  hideInternalHeader: false,
   ...NewsArticle.args,
 };
 export { NewsArticleDetail };

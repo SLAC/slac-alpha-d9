@@ -1,3 +1,5 @@
+{{ attach_library('slac/event_detail_template') }}
+
 {% set classes = [
   'event-detail',
   modifier_classes ? modifier_classes : ''
@@ -11,6 +13,7 @@
 
 <div {{ add_attributes({ class: classes } ) }}>
   {% set events_content %}
+    <div class="l-constrain l-constrain--small">
     {% if show_admin_info %}
       {% if not admin_info %}
         {% set admin_info %}
@@ -45,45 +48,38 @@
       {% endblock %}
     {% endif %}
     {{ title_prefix }}
-    {% embed '@layouts/grid/grid.twig' with { num_of_cols: 2 } %}
-      {% block content %}
-        <div class="event-detail__col">
-          <div class="u-desktop-only">
-            {% include '@components/kicker/kicker.twig' %}
-            {% include '@components/page-title/page-title.twig' %}
-            {% include '@components/lede/lede.twig' %}
-          </div>
-
-          {% include '@components/wysiwyg/wysiwyg.twig' with {
-          'content': event_content,
-          'modifier_classes': 'c-wysiwyg--no-constrain',
-        } %}
-
-          {% include '@components/wysiwyg/wysiwyg.twig' with {
-          'content': author_content,
-          'modifier_classes': 'c-wysiwyg--no-constrain',
-        } %}
-          {{ tags }}
-        </div>
-        <div class="event-detail__col">
-          <div class="u-mobile-only">
-            {% include '@components/kicker/kicker.twig' %}
-            {% include '@components/page-title/page-title.twig' %}
-            {% include '@components/lede/lede.twig' %}
-          </div>
-
-          {{ details }}
-        </div>
-
-      {% endblock %}
-    {% endembed %}
+      {% include '@components/event-details/event-details.twig' %}
     {{ title_suffix }}
+      <div class="event-detail__content">
+      {{ event_content }}
+      </div>
+      {% if speaker_content %}
+        <div class="event-detail__speaker">
+          {{ speaker_content }}
+        </div>
+      {% endif %}
+      {% if event_sponsor or event_audience or event_contact %}
+        {% set event_info %}
+          <div class="event-detail__info c-small-paragraph">
+            {% if event_sponsor %}
+              <p><strong>Event Sponsor:</strong>
+              {{ event_sponsor }}</p>
+            {% endif %}
+          </div>
+        {% endset %}
+        {% include '@layouts/section/section.twig' with {
+          section_content: event_info
+        } %}
+      {% endif %}
+      {{ tags }}
+    </div>
   {% endset %}
   {% include '@layouts/section/section.twig' with {
     'section_content': events_content,
     'has_constrain': true,
-    'modifier_classes': visiting or map_content ? 'l-section--no-padding' : 'l-section--padding-bottom'
+    'modifier_classes': 'l-section--padding-bottom'
   } %}
+  {{ related_content }}
   {{ visiting }}
   {% if map_content %}
     {% include '@layouts/section/section.twig' with {

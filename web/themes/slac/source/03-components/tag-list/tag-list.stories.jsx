@@ -7,15 +7,12 @@ const settings = {
   title: 'Components/Tag List',
 };
 
-const TagList = args => (
-  <div className="l-constrain l-constrain--small">
-    {parse(
-      twigTemplate({
-        ...args,
-      })
-    )}
-  </div>
-);
+const TagList = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 TagList.args = { ...data };
 
 export default settings;

@@ -27,6 +27,7 @@ dependencies:
     - system
     - toolbar
     - view_modes_display
+    - workbench_access
 _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
 id: authenticated
@@ -53,6 +54,7 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'use text format restricted_html'
+  - 'use workbench access'
   - 'view event revisions'
   - 'view homepage revisions'
   - 'view landing_page revisions'

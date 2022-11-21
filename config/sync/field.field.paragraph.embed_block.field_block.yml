@@ -5,8 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_block
     - paragraphs.paragraphs_type.embed_block
-    - site_settings.site_setting_entity_type.colorful_tagline_for_homepage
-    - site_settings.site_setting_entity_type.colorful_tagline_for_our_story
 id: paragraph.embed_block.field_block
 field_name: field_block
 entity_type: paragraph
@@ -20,12 +18,10 @@ default_value_callback: ''
 settings:
   handler: 'default:site_setting_entity'
   handler_settings:
-    target_bundles:
-      colorful_tagline_for_homepage: colorful_tagline_for_homepage
-      colorful_tagline_for_our_story: colorful_tagline_for_our_story
+    target_bundles: {  }
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: colorful_tagline_for_homepage
+    auto_create_bundle: null
 field_type: entity_reference

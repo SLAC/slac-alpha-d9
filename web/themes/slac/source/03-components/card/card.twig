@@ -15,6 +15,7 @@
 {% endif %}
 
 <div {{ add_attributes({ 'class': classes } ) }}>
+  {% set modifier_classes = '' %}
   <div class="c-card__body{% if alignment %} u-fade-{{ alignment }}-desktop{% endif %}">
     {% if type and not is_teaser %}
       <div class="c-kicker c-card__type">
@@ -57,7 +58,7 @@
         button_tag: false,
         is_demo: false,
         text: link_text,
-        url: link_url
+        url: link_url,
       } %}
       {% elseif link_type == 'cta' %}
         {% include '@components/cta-link/cta-link.twig' with {
