@@ -9,7 +9,7 @@
   constrain_modifier_classes ? constrain_modifier_classes : '',
 ]|join(' ')|trim %}
 
-<footer {{ add_attributes({ class: classes }) }}>
+<div {{ add_attributes({ class: classes, 'aria-label': 'Global footer', role: 'region'  }) }}>
   {% if has_constrain %}
   <div {{ add_attributes({ 'class': constrain_classes }) }}>
   {% endif %}
@@ -59,4 +59,4 @@
     text: 'Top',
     top_element: 'top'
   } %}
-</footer>
+</div>

@@ -16,17 +16,7 @@
       {{ promo_box_title }}
       {% if promo_box_url %}</a>{% endif %}
     </h2>
-    {% if promo_box_button %}
-      {{ promo_box_button }}
-    {% endif %}
   </div>
-  {% if promo_box_image %}
-  <div class="c-promo-box__col c-promo-box__col--image">
-    {% if promo_box_url %}<a href="{{ promo_box_url }}">{% endif %}
-      {{ promo_box_image }}
-    {% if promo_box_url %}</a>{% endif %}
-  </div>
-  {% endif %}
   {% if promo_box_content %}
     <div class="c-promo-box__col c-promo-box__content">
       {{ promo_box_content }}

@@ -18,4 +18,4 @@ const IconCard = args =>
 IconCard.args = { ...data };
 
 export default settings;
-export { IconCard };
+// export { IconCard };

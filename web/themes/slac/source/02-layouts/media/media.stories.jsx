@@ -7,12 +7,13 @@ const settings = {
   title: 'Layouts/Media',
 };
 
-const Media = args => (
-  parse(twigTemplate({
-    ...args,
-  }))
-);
+const Media = args =>
+  parse(
+    twigTemplate({
+      ...args,
+    })
+  );
 Media.args = { ...data };
 
 export default settings;
-export { Media };
+// export { Media };

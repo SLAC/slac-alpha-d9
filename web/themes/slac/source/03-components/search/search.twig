@@ -17,7 +17,7 @@
       'is_hidden': true
     } %}
   </button>
-  <form class="c-search__form" id="{{ search_form_id }}" method="get" hidden>
+  <form class="c-search__form" id="{{ search_form_id }}" method="get" hidden tabindex="-1">
     <div class="l-constrain l-constrain--small">
       <div class="c-search__inner">
         <div class="c-search__hidden"></div>
@@ -45,7 +45,7 @@
         <button type="submit" class="c-search__submit">
           {% include '@components/icon/icon.twig' with {
             'icon_name': 'search',
-            'label': 'Submit'|t
+            'label': 'Submit search'|t
           } %}
         </button>
       </div>

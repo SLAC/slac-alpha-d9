@@ -11,13 +11,13 @@ id: node.news_article.field_source_link
 field_name: field_source_link
 entity_type: node
 bundle: news_article
-label: 'Source Link'
-description: 'An internal or external link to the source of this News Article if it is not a News Source taxonomy term. If Source Name and Source Link are both specified, cards will redirect to the Source Link instead of the News Article detail page.'
+label: 'External Source URL'
+description: 'Enter a URL to an external source for this news item such as https://science.com/. By adding an external source URL all listings of this news article will link to the external source instead of a page on this website.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   title: 0
-  link_type: 17
+  link_type: 16
 field_type: link

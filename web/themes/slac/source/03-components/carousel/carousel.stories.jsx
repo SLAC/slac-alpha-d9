@@ -5,9 +5,19 @@ import globalData from '../../00-config/storybook.global-data.yml';
 import data from './carousel.yml';
 import './carousel.scss';
 import './carousel.es6';
+import { decorators, sectionTypeArg } from '../../06-utility/storybookHelper';
 
 const settings = {
-  title: 'Components/Carousel',
+  title: 'Paragraphs/Carousel',
+  parameters: {
+    controls: {
+      include: ['carousel_items', 'section_type'],
+    },
+  },
+  argTypes: {
+    section_type: sectionTypeArg,
+  },
+  decorators,
 };
 
 const Carousel = args =>
@@ -17,17 +27,6 @@ const Carousel = args =>
     })
   );
 Carousel.args = { ...globalData, ...data };
-const OnDark = args =>
-  parse(
-    twigTemplate({
-      ...args,
-    })
-  );
-OnDark.args = {
-  ...globalData,
-  ...data,
-  modifier_classes: 'c-carousel--dark',
-};
 
 export default settings;
-export { Carousel, OnDark };
+export { Carousel };

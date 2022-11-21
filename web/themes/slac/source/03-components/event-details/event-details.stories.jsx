@@ -1,3 +1,4 @@
+import React from 'react';
 import parse from 'html-react-parser';
 
 import twigTemplate from './event-details.twig';
@@ -15,13 +16,19 @@ const settings = {
         'end_date',
         'image_url',
         'map_link_text',
+        'zoom_url',
+        'is_past_event',
         'calendar_link_text',
-        'ctas',
-        'zoom_details',
-        'additional_links',
       ],
     },
   },
+  decorators: [
+    Story => (
+      <div className="l-constrain l-constrain--small l-constrain--no-padding">
+        {Story()}
+      </div>
+    ),
+  ],
 };
 
 const EventDetails = args =>
@@ -41,6 +48,10 @@ const EventDetailsMultiday = args =>
 EventDetailsMultiday.args = {
   ...globalData,
   ...data,
+  start_date: {
+    month: 'Apr',
+    day: '19',
+  },
   end_date: {
     month: 'Apr',
     day: '22',

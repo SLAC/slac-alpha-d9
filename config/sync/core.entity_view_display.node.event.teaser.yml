@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.event.field_boolean2
     - field.field.node.event.field_datetime_range
     - field.field.node.event.field_detail_text
+    - field.field.node.event.field_editorial_group
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
@@ -162,6 +163,7 @@ hidden:
   field_bio_related_content: true
   field_boolean2: true
   field_detail_text: true
+  field_editorial_group: true
   field_featured: true
   field_lede: true
   field_link2: true

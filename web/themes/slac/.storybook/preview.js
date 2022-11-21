@@ -40,6 +40,7 @@ export const parameters = {
         ['Color Palette', '*'],
         'Layouts',
         'Components',
+        'Paragraphs',
         'Templates',
         'Pages',
       ],

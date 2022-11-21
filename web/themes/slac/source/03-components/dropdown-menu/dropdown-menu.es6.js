@@ -12,7 +12,7 @@ Drupal.behaviors.dropdownMenu = {
         const mobileMenu = new MobileMenu(menuNode, context, {
           classPrefix: 'c-dropdown-menu',
           utilityNavClass: '.l-internal-header',
-          searchBlockClass: '.c-search__form',
+          searchBlockClass: '.c-search .c-search__form',
           otherBlockClass: '.l-header__freeform',
           imagePath: settings.gesso.gessoImagePath,
           logoClass: '.l-global-header__logo',
