@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 import twigTemplate from './page-title.twig';
 import globalData from '../../00-config/storybook.global-data.yml';
 import data from './page-title.yml';
-import { Author } from '../author/author.stories';
+import { Author } from '../author/author.stories.jsx';
 
 const settings = {
   title: 'Components/Page Title',

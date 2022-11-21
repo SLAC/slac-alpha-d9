@@ -12,7 +12,8 @@ $pager-link-focus-outline-color: gesso-color(ui, generic, border-dark) !default;
 $pager-bp: 540px;
 
 .c-pager {
-  margin: 70px auto;
+  margin: 0 auto;
+  padding: gesso-spacing(9);
   text-align: center;
 
   &::before {
