@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.field_editorial_group
     - field.field.node.page.field_hero_paragraph
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_review_date
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser
     - field.field.node.page.field_teaser_image
@@ -15,6 +16,7 @@ dependencies:
     - workflows.workflow.content
   module:
     - content_moderation
+    - datetime
     - field_group
     - media_library
     - paragraphs
@@ -72,6 +74,20 @@ third_party_settings:
         formatter: open
         description: ''
         required_fields: true
+    group_review_date:
+      children:
+        - field_review_date
+      label: 'Review Date'
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
     group_restrict_editorial_access:
       children:
         - field_editorial_group
@@ -147,6 +163,12 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_review_date:
+    type: datetime_default
+    weight: 9
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_tags:
     type: term_reference_tree

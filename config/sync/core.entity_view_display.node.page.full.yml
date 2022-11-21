@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_editorial_group
     - field.field.node.page.field_hero_paragraph
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_review_date
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser
     - field.field.node.page.field_teaser_image
@@ -57,6 +58,7 @@ content:
 hidden:
   body: true
   field_editorial_group: true
+  field_review_date: true
   field_tags: true
   field_teaser: true
   field_teaser_image: true

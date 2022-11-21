@@ -1,15 +1,15 @@
 _core:
-  default_config_hash: i_1DaVQSHJ538r-pJAvYQ8eNesT-cY4lcy9jX1qZ_vM
+  default_config_hash: i76EDs9aAKdrR4nZfe_woXsD0yihn4avDej8uClXES8
 applies_admin_routes: true
 include_invalid_paths: false
 excluded_paths: ''
 replaced_titles: ''
-custom_paths: "regex!/news/([^/]*) :: News and Events|/news-and-events :: News|/news-and-events/news-center\r\nregex!/events/([^/]*) :: News and Events|/news-and-events :: Events|/news-and-events/events"
+custom_paths: ''
 include_home_segment: true
 alternative_title_field: field_breadcrumb_title
 home_segment_title: Home
 home_segment_keep: false
-include_title_segment: false
+include_title_segment: true
 title_from_page_when_available: true
 title_segment_as_link: false
 use_menu_title_as_fallback: false
@@ -38,5 +38,6 @@ follow_redirects: true
 limit_segment_display: false
 segment_display_limit: 0
 truncator_mode: false
-truncator_length: 5
+truncator_length: 100
 truncator_dots: true
+menu_title_preferred_menu: ''
