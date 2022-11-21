@@ -1,0 +1,29 @@
+uuid: 36a97480-256c-4af6-b3f9-abb9ec2de98e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_image
+    - media.type.image
+    - site_settings.site_setting_entity_type.event_visitor_details
+id: site_setting_entity.event_visitor_details.field_image
+field_name: field_image
+entity_type: site_setting_entity
+bundle: event_visitor_details
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
