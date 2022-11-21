@@ -3,11 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.news_article.field_date
+    - field.field.node.news_article.field_dek
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_link
     - field.field.node.news_article.field_paragraphs
-    - field.field.node.news_article.field_paragraphs_1
     - field.field.node.news_article.field_source_link
     - field.field.node.news_article.field_source_name
     - field.field.node.news_article.field_tags
@@ -17,6 +18,7 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
+    - datetime
     - entity_reference_revisions
     - field_group
     - layout_paragraphs
@@ -85,6 +87,22 @@ content:
     third_party_settings: {  }
     weight: -20
     region: content
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_dek:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
   field_featured:
     type: boolean
     label: above
@@ -124,15 +142,6 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 6
-    region: content
-  field_paragraphs_1:
-    type: entity_reference_revisions_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 12
     region: content
   field_source_link:
     type: link

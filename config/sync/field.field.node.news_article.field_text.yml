@@ -9,7 +9,7 @@ id: node.news_article.field_text
 field_name: field_text
 entity_type: node
 bundle: news_article
-label: 'Author (Text)'
+label: 'Author Name'
 description: ''
 required: false
 translatable: true
