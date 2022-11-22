@@ -1,4 +1,4 @@
-uuid: a187bef1-b8bf-4c2a-9141-c6a28cc490fc
+uuid: 4a69cc96-2d8e-4cfb-a509-933a0c08ed3e
 langcode: en
 status: true
 dependencies:
@@ -46,17 +46,17 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 100
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   su_cap_org_code:
+    type: string_textfield
     weight: 101
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden: {  }

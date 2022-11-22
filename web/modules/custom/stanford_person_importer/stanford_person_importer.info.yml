@@ -7,6 +7,7 @@ version: 9.x-0.1-dev
 dependencies:
   - 'config_pages:config_pages'
   - 'drupal:migrate'
+  - 'drupal:telephone'
   - 'encrypt:encrypt'
   - 'field_encrypt:field_encrypt'
   - 'key:key'

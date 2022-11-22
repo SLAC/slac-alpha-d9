@@ -1,19 +1,19 @@
-uuid: 4e2b453d-1052-431f-8783-77e8232856ae
+uuid: 1ca79a57-7a70-4025-a748-df75d872e576
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_text
+    - field.storage.node.field_email
     - node.type.person
-id: node.person.field_text
-field_name: field_text
+id: node.person.field_email
+field_name: field_email
 entity_type: node
 bundle: person
-label: Kicker
+label: Email
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: email

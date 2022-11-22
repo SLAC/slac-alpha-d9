@@ -6,6 +6,7 @@ _core:
   default_config_hash: 7J3HPbKiIvClfr4EQ22MaIRk97tSYY7FbqmZvwtYems
 id: stanford_person_importer
 label: 'Person Importer'
+token: null
 context:
   show_warning: true
   group:
@@ -16,4 +17,3 @@ menu:
   path: /admin/config/importers/person-importer
   weight: 0
   description: ''
-token: null

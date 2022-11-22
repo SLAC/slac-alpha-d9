@@ -1,19 +1,21 @@
-uuid: 7348864d-a29e-49b0-92d5-08c0557673e4
+uuid: 8a13a7a3-029d-4c02-aa9e-a70a5f45908f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_text_title
+    - field.storage.node.field_fax
     - node.type.person
-id: node.person.field_text_title
-field_name: field_text_title
+  module:
+    - telephone
+id: node.person.field_fax
+field_name: field_fax
 entity_type: node
 bundle: person
-label: 'Job title'
+label: Fax
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: telephone

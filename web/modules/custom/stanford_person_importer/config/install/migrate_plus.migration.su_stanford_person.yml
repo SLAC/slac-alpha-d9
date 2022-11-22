@@ -1,4 +1,3 @@
-uuid: 6576483f-aa64-443f-9ed7-bf661ae01272
 langcode: en
 status: true
 dependencies: {  }
@@ -135,7 +134,8 @@ process:
     default_value: person
   field_first_name: first_name
   field_last_name: last_name
-  field_text_title_full: long_title
+  field_text_title_full/format: constants/restricted_html
+  field_text_title_full/value: long_title
   field_text_title_short: short_title
   field_email: email
   field_telephone: phone

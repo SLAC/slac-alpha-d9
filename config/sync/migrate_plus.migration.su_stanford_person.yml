@@ -2,8 +2,6 @@ uuid: 6576483f-aa64-443f-9ed7-bf661ae01272
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: '-JdjjZm_TzYn1jYsKDAD6Ddqu0pK0zkrJESPKhkgZ5Q'
 id: su_stanford_person
 class: null
 field_plugin_method: null
@@ -137,7 +135,7 @@ process:
     default_value: person
   field_first_name: first_name
   field_last_name: last_name
-  field_text_title_long: long_title
+  field_text_title_full: long_title
   field_text_title_short: short_title
   field_email: email
   field_telephone: phone

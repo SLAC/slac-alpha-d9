@@ -16,7 +16,7 @@ id: node.person.field_body
 field_name: field_body
 entity_type: node
 bundle: person
-label: Content
+label: Bio
 description: ''
 required: false
 translatable: true
