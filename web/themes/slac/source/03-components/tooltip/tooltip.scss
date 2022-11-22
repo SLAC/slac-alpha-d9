@@ -7,6 +7,14 @@ $tooltip-arrow-height: 14px;
 $tooltip-border-color: gesso-brand(digital-red, base);
 $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
 
+.c-tooltip {
+  text-align: right;
+}
+
+.c-tooltip--align-left {
+  text-align: left;
+}
+
 .c-tooltip__button {
   background: gesso-grayscale(white);
   border: 0;
@@ -59,6 +67,15 @@ $tooltip-button-size: rem(gesso-font-size(4) * gesso-line-height(base));
   }
 
   .c-tooltip--align-left & {
+    left: 0;
+    right: auto;
+
+    &::after {
+      left: rem(gesso-site-margins(mobile)) +
+        (math.div($tooltip-button-size, 2));
+      right: auto;
+    }
+
     @include breakpoint-min(gesso-breakpoint(tablet)) {
       left: 0 - math.div(rem(gesso-site-margins(mobile)), 2);
       right: auto;
