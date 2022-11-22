@@ -9,7 +9,7 @@
 {% set caption_id = 'overlap-image'|unique_id %}
 
 <div {{ add_attributes({ class: classes }) }}>
-  <div class="c-overlap-image__image"{% if has_parallax %}style="background-image: url({{ image_url }})" role="img" aria-label="{{ image_alt }}"{% endif %}{% if image_caption %} aria-describedby="{{ caption_id }}" {% endif %}>
+  <div class="c-overlap-image__image"{% if has_parallax %}style="background-image: url({{ image_url }})" aria-label="{{ image_alt }}"{% endif %}{% if image_caption %} aria-describedby="{{ caption_id }}" {% endif %}>
     {% if not has_parallax %}<img src="{{ image_url }}" alt="{{ image_alt }}" />{% endif %}
     {% if image_caption %}
       <div class="l-constrain c-overlap-image__caption">
