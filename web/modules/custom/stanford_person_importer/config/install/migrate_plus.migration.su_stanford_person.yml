@@ -135,7 +135,7 @@ process:
     default_value: person
   field_first_name: first_name
   field_last_name: last_name
-  field_text_title_long: long_title
+  field_text_title_full: long_title
   field_text_title_short: short_title
   field_email: email
   field_telephone: phone
