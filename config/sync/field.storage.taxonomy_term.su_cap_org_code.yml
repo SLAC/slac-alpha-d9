@@ -1,0 +1,23 @@
+uuid: efc5ee92-0321-4028-9490-742222f25109
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+_core:
+  default_config_hash: I3WOxdR2kvHjpWsBRWJ9mtRr3Tto4r3lY3YZnR0jpJM
+id: taxonomy_term.su_cap_org_code
+field_name: su_cap_org_code
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 4
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 921e7e36-2852-4511-bfde-6f98aa943ed3
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.stanford_person_importer
+    - field.storage.config_pages.su_person_cap_username
+_core:
+  default_config_hash: lED8rE9GIVxfY4OMLPho-nKtumkYIgvB_vAz0x2kt6E
+id: config_pages.stanford_person_importer.su_person_cap_username
+field_name: su_person_cap_username
+entity_type: config_pages
+bundle: stanford_person_importer
+label: 'CAP Username'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 58024d90-6679-43b8-9038-14987ebc45ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+_core:
+  default_config_hash: 61a-YcGGDIKgn7EyJ7SrAgK5sYqQysDvypZpGpXf2HE
+id: config_pages.su_person_sunetid
+field_name: su_person_sunetid
+entity_type: config_pages
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

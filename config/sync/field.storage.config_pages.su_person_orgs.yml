@@ -1,0 +1,22 @@
+uuid: 6105f4e0-fc7c-49e7-8ea2-0398683bf669
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - taxonomy
+_core:
+  default_config_hash: XfR2_Ku9MECTKwtPipdoDIku3uN_cCeeI405P6ev-Ac
+id: config_pages.su_person_orgs
+field_name: su_person_orgs
+entity_type: config_pages
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 448af1ee-8f26-42fe-851a-fa0b1b2c31d6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7J3HPbKiIvClfr4EQ22MaIRk97tSYY7FbqmZvwtYems
+id: stanford_person_importer
+label: 'Person Importer'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/importers/person-importer
+  weight: 0
+  description: ''
+token: null

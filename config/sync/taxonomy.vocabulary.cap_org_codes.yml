@@ -1,0 +1,10 @@
+uuid: e17669db-7b37-48cc-915c-794b28c9c002
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sTQNdPaZBbxILINcrJphEwtu_GLdraxb7Ty4N-xHQHk
+name: 'CAP Org Codes'
+vid: cap_org_codes
+description: ''
+weight: 0

@@ -1,0 +1,20 @@
+uuid: f50aaed1-40fc-409f-bf5d-0e4b382b46bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+_core:
+  default_config_hash: 4fyIcD-3S1AvaNDnEJTAV5UNoc2NQInw5igMeDtR7ZI
+id: config_pages.su_person_child_orgs
+field_name: su_person_child_orgs
+entity_type: config_pages
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
