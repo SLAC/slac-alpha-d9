@@ -81,13 +81,6 @@ options:
       -
         label: 'Slide in'
         class: 'u-slide-left'
-  wysiwyg_bg:
-    plugin: css_class
-    label: 'Background color'
-    options:
-      - label: 'Transparent'
-      - label: 'White'
-        class: 'c-wysiwyg--with-background'
   fifty_fifty_slide:
     plugin: css_class
     label: 'Slide in'
@@ -159,9 +152,6 @@ contexts:
     promo_box:
       options:
         promo_box_transition: true
-    wysiwyg:
-      options:
-        wysiwyg_bg: true
     fifty_fifty:
       options:
         fifty_fifty_slide: true
