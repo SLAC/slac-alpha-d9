@@ -143,7 +143,6 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
-<<<<<<< HEAD
   field_paragraphs_1:
     type: entity_reference_revisions_entity_view
     label: above
@@ -153,8 +152,6 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-=======
->>>>>>> SLACDP22-102-bed-create-blog-content-type
   field_source_link:
     type: link
     label: above

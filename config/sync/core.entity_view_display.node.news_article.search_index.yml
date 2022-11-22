@@ -62,12 +62,9 @@ content:
     weight: 3
     region: content
 hidden:
-<<<<<<< HEAD
-=======
   field_date: true
   field_dek: true
   field_editorial_group: true
->>>>>>> SLACDP22-102-bed-create-blog-content-type
   field_featured: true
   field_hero_paragraph: true
   field_source_link: true
