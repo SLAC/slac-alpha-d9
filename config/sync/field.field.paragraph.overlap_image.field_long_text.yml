@@ -16,7 +16,7 @@ id: paragraph.overlap_image.field_long_text
 field_name: field_long_text
 entity_type: paragraph
 bundle: overlap_image
-label: Caption
+label: Description
 description: ''
 required: false
 translatable: false
