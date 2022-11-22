@@ -1,0 +1,19 @@
+uuid: 3fbb4517-4f5f-4ef3-9c24-8169479c484f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_awardshonors
+    - node.type.person
+id: node.person.field_awardshonors
+field_name: field_awardshonors
+entity_type: node
+bundle: person
+label: 'Awards and Honors'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

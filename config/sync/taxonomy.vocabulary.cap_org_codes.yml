@@ -1,0 +1,10 @@
+uuid: da706e3c-0ad2-41ab-ad53-5bdd7299bedc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sTQNdPaZBbxILINcrJphEwtu_GLdraxb7Ty4N-xHQHk
+name: 'CAP Org Codes'
+vid: cap_org_codes
+description: ''
+weight: 0

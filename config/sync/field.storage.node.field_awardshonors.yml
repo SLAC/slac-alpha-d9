@@ -1,0 +1,19 @@
+uuid: 2133f862-b73c-4d51-ac7b-0c26f4ca968e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_awardshonors
+field_name: field_awardshonors
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

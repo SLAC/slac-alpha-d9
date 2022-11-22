@@ -1,0 +1,29 @@
+uuid: 60c6d872-3e50-4150-bf30-5a5e25bde762
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+    - field_encrypt
+third_party_settings:
+  field_encrypt:
+    encrypt: true
+    properties:
+      value: value
+_core:
+  default_config_hash: 3ukSqbD4wTsUKTrdUMipn9oaGeymBBGiRk-PuW0B7qQ
+id: config_pages.su_person_cap_username
+field_name: su_person_cap_username
+entity_type: config_pages
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

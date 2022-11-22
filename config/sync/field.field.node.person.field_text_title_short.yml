@@ -1,0 +1,19 @@
+uuid: 057f9705-3248-4777-8695-b02e0b066472
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_title_short
+    - node.type.person
+id: node.person.field_text_title_short
+field_name: field_text_title_short
+entity_type: node
+bundle: person
+label: 'Short Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,15 @@
+uuid: cd9e6170-81d0-4b95-8c41-c3659c2729cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.stanford_encryption
+  module:
+    - real_aes
+_core:
+  default_config_hash: nHcFvtkCZvKfZZc3xrsdku_fXn1Xey_xTNJp9wsYNX0
+id: stanford_real_aes
+label: 'Real AES'
+encryption_method: real_aes
+encryption_method_configuration: {  }
+encryption_key: stanford_encryption
