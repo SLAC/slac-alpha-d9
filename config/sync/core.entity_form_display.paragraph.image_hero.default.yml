@@ -4,14 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.image_hero.field_body
+    - field.field.paragraph.image_hero.field_boolean
+    - field.field.paragraph.image_hero.field_button_link
     - field.field.paragraph.image_hero.field_image
-    - field.field.paragraph.image_hero.field_lottiefile
+    - field.field.paragraph.image_hero.field_long_text
+    - field.field.paragraph.image_hero.field_short_text
     - field.field.paragraph.image_hero.field_text
-    - field.field.paragraph.image_hero.field_text_color
     - paragraphs.paragraphs_type.image_hero
   module:
-    - allowed_formats
-    - lottiefiles_field
+    - link
     - media_library
     - text
 id: paragraph.image_hero.default
@@ -30,30 +31,51 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+      maxlength:
+        maxlength_js: 188
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+  field_boolean:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_button_link:
+    type: link_default
+    weight: 8
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_image:
     type: media_library_widget
-    weight: 2
+    weight: 1
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-  field_lottiefile:
-    type: lottiefiles_field
-    weight: 4
+  field_long_text:
+    type: text_textarea
+    weight: 7
     region: content
     settings:
-      autoplay: 0
-      background: transparent
-      controls: 0
-      hover: 0
-      loop: 0
-      mode: Normal
-      speed: 1
-      selector: ''
-      width: 0
-      placeholder_url: ''
-      placeholder_title: ''
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
+  field_short_text:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 109
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   field_text:
     type: string_textfield
     weight: 0
@@ -61,12 +83,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_text_color:
-    type: options_select
-    weight: 5
-    region: content
-    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

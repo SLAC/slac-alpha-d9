@@ -1,0 +1,19 @@
+uuid: 5aef2845-3e01-4889-bcd3-9532f46bd636
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_short_text
+    - paragraphs.paragraphs_type.image_hero
+id: paragraph.image_hero.field_short_text
+field_name: field_short_text
+entity_type: paragraph
+bundle: image_hero
+label: Title
+description: 'Title and Summary are required.  If you want to use a Hero without a title and summary, use the Hero without Overlay paragraph.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
