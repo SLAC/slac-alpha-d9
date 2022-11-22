@@ -70,6 +70,7 @@ module:
   link: 0
   lottiefiles_field: 0
   masquerade: 0
+  maxlength: 0
   media: 0
   media_library: 0
   menu_block: 0
