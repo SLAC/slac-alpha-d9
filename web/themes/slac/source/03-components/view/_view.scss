@@ -54,6 +54,7 @@
 }
 
 .c-view__toggle {
+  @include focus;
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -61,6 +62,7 @@
   cursor: pointer;
   display: none;
   font-size: rem(gesso-font-size(6));
+  line-height: 1;
   padding: 0;
 
   &[aria-expanded='true'],

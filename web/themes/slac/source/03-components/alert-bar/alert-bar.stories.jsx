@@ -33,7 +33,6 @@ AlertBar.argTypes = {
 /* eslint-disable */
 AlertBar.play = async ({ canvasElement }) => {
   const readyEvent = new Event('sitewide-alert-rendered');
-
   canvasElement.dispatchEvent(readyEvent);
 }
 
