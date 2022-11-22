@@ -1,0 +1,51 @@
+uuid: 28a7577d-cb11-48cb-bd45-7cca24ea7ecd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.sitewide_alert.sitewide_alert.field_icon
+    - field.field.sitewide_alert.sitewide_alert.field_kicker
+  module:
+    - datetime_range
+    - sitewide_alert
+    - svg_image_field
+    - text
+id: sitewide_alert.sitewide_alert.default
+targetEntityType: sitewide_alert
+bundle: sitewide_alert
+mode: default
+content:
+  field_icon:
+    type: svg_image_field_widget
+    weight: 27
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_max_width: 300
+      preview_image_max_height: 300
+    third_party_settings: {  }
+  field_kicker:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  message:
+    type: text_textarea
+    weight: -13
+    region: content
+    settings:
+      rows: 4
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true
