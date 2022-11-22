@@ -13,7 +13,7 @@ $pager-bp: 540px;
 
 .c-pager {
   margin: 0 auto;
-  padding: gesso-spacing(9);
+  padding: gesso-spacing(9) gesso-site-margins(mobile);
   text-align: center;
 
   &::before {
@@ -21,8 +21,20 @@ $pager-bp: 540px;
     content: '';
     display: block;
     margin: auto;
-    max-width: 600px;
+    max-width: gesso-constrain(sm);
     width: calc(100% - 40px);
+  }
+
+  .l-constrain & {
+    padding-inline: 0;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    padding-inline: gesso-site-margins(desktop);
   }
 }
 
