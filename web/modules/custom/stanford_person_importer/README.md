@@ -23,7 +23,9 @@ Description
 Installation
 ---
 
-Installation is dependent on the Person content type and assumed that is complete
+Installation is dependent on 
+- Person content type 
+- public://media/person needs to exist and be writable by the web server
 
 1. The following Drupal modules and libraries are dependencies and need to be installed:
   - composer require drupal/config_pages
