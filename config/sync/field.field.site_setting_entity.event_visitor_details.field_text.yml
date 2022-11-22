@@ -1,0 +1,19 @@
+uuid: 5de91495-1d17-463c-92f0-52d384f2dbc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_text
+    - site_settings.site_setting_entity_type.event_visitor_details
+id: site_setting_entity.event_visitor_details.field_text
+field_name: field_text
+entity_type: site_setting_entity
+bundle: event_visitor_details
+label: Kicker
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

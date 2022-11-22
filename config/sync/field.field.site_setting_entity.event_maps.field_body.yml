@@ -1,0 +1,26 @@
+uuid: be17fdef-37e5-4c43-afc8-e20aad79c3f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.event_maps
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+id: site_setting_entity.event_maps.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: event_maps
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
