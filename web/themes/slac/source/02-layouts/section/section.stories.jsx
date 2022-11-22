@@ -97,10 +97,16 @@ SectionWithGrayWhiteGradient.args = {
   modifier_classes: 'l-section--gray-white',
 };
 
+const SectionWithWhiteGrayGradient = Template.bind({});
+SectionWithWhiteGrayGradient.args = {
+  ...data,
+  modifier_classes: 'l-section--white-gray',
+};
+
 const SectionHorizontal = Template.bind({});
 SectionHorizontal.args = {
   ...data,
-  modifier_classes: 'l-section--gray-gradient l-section--horizontal',
+  modifier_classes: 'l-section--gray-white l-section--horizontal',
   section_content: gridTemplate({
     grid_content: ReactDOMServer.renderToStaticMarkup(
       <>
@@ -129,6 +135,7 @@ export {
   SectionWithPurpleBackground,
   SectionWithBlueBackground,
   SectionWithGrayWhiteGradient,
+  SectionWithWhiteGrayGradient,
   SectionHorizontal,
   SectionWithRSS,
 };

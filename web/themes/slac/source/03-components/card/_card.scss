@@ -131,10 +131,10 @@ $card-padding: 30px;
 }
 
 .c-card__media {
-  aspect-ratio: 387 / 246;
   order: -1;
 
   img {
+    aspect-ratio: 2 / 1;
     height: 100%;
     object-fit: cover;
     width: 100%;
