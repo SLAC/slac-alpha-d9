@@ -4,5 +4,5 @@
   </label>
 {% endblock %}
 {% block search_input %}
-  <input type="search" placeholder="{{ 'Search'|t }}" id="{{ search_id }}" class="c-search__input"/>
+  <input type="search" placeholder="{{ search_placeholder|default('Search'|t) }}" id="{{ search_id }}" class="c-search__input"/>
 {% endblock %}

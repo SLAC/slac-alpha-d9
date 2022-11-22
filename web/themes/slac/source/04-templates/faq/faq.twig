@@ -1,0 +1,10 @@
+{% set classes = [
+  'faq',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+{% include '@components/accordion/accordion-item.twig' with {
+  attributes: attributes.addClass(classes),
+  accordion_title: title,
+  accordion_content: content
+} %}

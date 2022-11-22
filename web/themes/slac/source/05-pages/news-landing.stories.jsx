@@ -9,7 +9,8 @@ import { LargeCard } from '../03-components/card/card.stories.jsx';
 import { SectionWrapper } from '../06-utility/storybookHelper.jsx';
 import { ToggleableView } from '../03-components/view/views-view--toggle/views-view--toggle.stories.jsx';
 import { FilterModal } from '../03-components/filter-modal/filter-modal.stories.jsx';
-import { PromoBox } from '../03-components/promo-box/promo-box.stories';
+import { PromoBox } from '../03-components/promo-box/promo-box.stories.jsx';
+import { Header } from '../02-layouts/header/header.stories.jsx';
 
 export default {
   title: 'Pages/News Landing Page',
@@ -66,5 +67,10 @@ const NewsLandingPage = ({ show_admin_info, ...args }) => (
     {PromoBox(PromoBox.args)}
   </PageWrapper>
 );
+
+NewsLandingPage.args = {
+  ...Header.args,
+  hideInternalHeader: false,
+};
 
 export { NewsLandingPage };
