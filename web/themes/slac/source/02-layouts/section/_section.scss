@@ -201,38 +201,6 @@
   border-top: 1px solid;
 }
 
-.l-section--horizontal {
-  @include breakpoint-min(gesso-breakpoint(tablet-lg)) {
-    > .l-constrain {
-      align-items: flex-start;
-      column-gap: rem(gesso-get-map(gutter-width));
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: min-content min-content 1fr;
-    }
-
-    .l-section__kicker,
-    .l-section__title,
-    .l-section__intro {
-      grid-column-start: 1;
-
-      + .l-section__content {
-        margin-top: 0;
-      }
-    }
-
-    .l-section__content {
-      align-self: flex-start;
-      grid-column: 2 / span 2;
-      grid-row: 1 / span 3;
-    }
-
-    .l-section__buttons {
-      grid-column-start: span 3;
-    }
-  }
-}
-
 .l-section--rss {
   .l-section__title {
     a {

@@ -20,6 +20,12 @@ options:
       -
         label: 'Blue'
         class: 'l-section--dark l-section--blue'
+      -
+        label: 'Gray-White Gradient'
+        class: 'l-section--gray-white'
+      -
+        label: 'White-Gray Gradient'
+        class: 'l-section--white-gray'
   section_padding:
     plugin: css_class
     label: 'Section Padding'
@@ -29,15 +35,6 @@ options:
       -
         label: 'No Padding'
         class: 'l-section--no-padding'
-  section_layout:
-    plugin: css_class
-    label: 'Section Layout'
-    options:
-      -
-        label: 'Vertical'
-      -
-        label: 'Horizontal'
-        class: 'l-section--horizontal'
   section_title_style:
     plugin: css_class
     label: 'Section Title'
@@ -141,7 +138,6 @@ contexts:
       options:
         section_bg: true
         section_padding: true
-        section_layout: true
         section_title_style: true
     accordion:
       options:
