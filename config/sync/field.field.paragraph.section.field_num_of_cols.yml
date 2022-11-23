@@ -11,8 +11,8 @@ id: paragraph.section.field_num_of_cols
 field_name: field_num_of_cols
 entity_type: paragraph
 bundle: section
-label: 'Number of Columns'
-description: ''
+label: Columns
+description: 'Select how many columns you''d like this section to have.'
 required: true
 translatable: false
 default_value: {  }

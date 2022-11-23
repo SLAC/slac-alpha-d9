@@ -9,9 +9,9 @@ id: paragraph.section.field_short_text
 field_name: field_short_text
 entity_type: paragraph
 bundle: section
-label: Heading
+label: Title
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
