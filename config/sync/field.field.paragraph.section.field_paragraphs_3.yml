@@ -25,7 +25,6 @@ settings:
   handler_settings:
     target_bundles:
       image_embed: image_embed
-      video_lightbox: video_lightbox
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:

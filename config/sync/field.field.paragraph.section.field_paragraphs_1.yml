@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraphs_1
-    - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.quote
@@ -27,17 +26,15 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      accordion: accordion
       fifty_fifty: fifty_fifty
       image_embed: image_embed
       quote: quote
-      video_lightbox: video_lightbox
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 36
-        enabled: true
+        enabled: false
       accordion_item:
         weight: 37
         enabled: false

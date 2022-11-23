@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraphs_2
-    - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
@@ -26,10 +25,8 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      accordion: accordion
       image_embed: image_embed
       quote: quote
-      video_lightbox: video_lightbox
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
