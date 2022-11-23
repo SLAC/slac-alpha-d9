@@ -1,0 +1,91 @@
+// @file
+// Component: c-section-search
+@use '00-config' as *;
+@use 'sass:math';
+
+.c-section-search {
+  background: gesso-brand(purple, dark);
+  color: gesso-grayscale(white);
+  padding: gesso-spacing(9) gesso-site-margins(mobile);
+}
+
+.c-section-search__form {
+  margin: auto;
+  max-width: 800px;
+}
+
+.c-section-search__label {
+  display: table;
+  font-size: gesso-font-size(5);
+  font-weight: gesso-font-weight(bold);
+  margin-bottom: gesso-spacing(1);
+}
+
+.c-section-search__field {
+  position: relative;
+}
+
+.c-section-search__input {
+  border: 0;
+  border-radius: 4px;
+  font-size: gesso-font-size(3);
+  font-weight: gesso-font-weight(light);
+  line-height: math.div(25, 18);
+  padding: 8px 60px 8px 16px;
+  width: 100%;
+}
+
+.c-section-search__input::placeholder {
+  font-size: gesso-font-size(3);
+  font-weight: gesso-font-weight(light);
+  line-height: math.div(25, 18);
+}
+
+.c-section-search__button {
+  // @include svg-background('search');
+  // background-color: gesso-grayscale(white);
+  background-color: gesso-color(text, primary);
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  mask-image: url('images/backgrounds/search.svg');
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 18px;
+  outline: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+
+  &:hover,
+  &:focus {
+    background-color: gesso-brand(digital-red, base);
+  }
+}
+
+@include breakpoint(gesso-breakpoint(desktop)) {
+  .c-section-search {
+    padding: gesso-spacing(9) gesso-site-margins(desktop) gesso-spacing(15);
+  }
+
+  .c-section-search__label,
+  .c-section-search__input,
+  .c-section-search__input::placeholder {
+    font-size: gesso-font-size(9);
+  }
+
+  .c-section-search__input {
+    padding-left: gesso-spacing(3);
+    padding-right: gesso-spacing(10);
+  }
+
+  .c-section-search__button {
+    mask-size: 30px;
+    padding-right: gesso-spacing(10);
+  }
+
+  .c-section-search__label {
+    margin-bottom: gesso-spacing(4);
+  }
+}

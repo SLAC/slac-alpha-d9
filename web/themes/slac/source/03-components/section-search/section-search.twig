@@ -1,0 +1,20 @@
+{% set classes = [
+  'c-section-search',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  <form class="c-section-search__form">
+    <label for="section-search" class="c-section-search__label">
+      {{ label }}
+    </label>
+    <div class="c-section-search__field">
+      <input id="section-search" type="search" class="c-section-search__input" placeholder="{{ placeholder }}">
+      <button type="submit" class="c-section-search__button">
+        <span class="u-visually-hidden">
+          Search
+        </span>
+      </button>
+    </div>
+  </form>
+</div>
