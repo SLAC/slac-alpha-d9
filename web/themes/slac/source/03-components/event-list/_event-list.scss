@@ -12,6 +12,10 @@
   .c-card--teaser {
     border-bottom: 1px solid gesso-grayscale(gray-2);
     margin-top: 0;
+
+    &:first-child {
+      border-top: 1px solid gesso-grayscale(gray-2);
+    }
   }
 
   .c-card__body {

@@ -19,6 +19,7 @@ import {
 import { LargeEventCard, News } from '../03-components/card/card.stories.jsx';
 import { PromoBox } from '../03-components/promo-box/promo-box.stories.jsx';
 import { SmallCard } from '../03-components/card/card--small/card--small.stories';
+import { EventList } from '../03-components/event-list/event-list.stories';
 
 export default {
   title: 'Pages/Homepage',
@@ -93,7 +94,7 @@ const Homepage = args => (
         '<a href="#0" class="c-button c-button--chevron">View all Events</a>',
       section_content: ReactDOMServer.renderToStaticMarkup(
         <GridWrapper numCols={2}>
-          <div>TK</div>
+          {EventList(EventList.args)}
           {LargeEventCard(LargeEventCard.args)}
         </GridWrapper>
       ),
