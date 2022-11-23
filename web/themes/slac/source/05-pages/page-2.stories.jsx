@@ -43,7 +43,7 @@ export default {
 };
 
 // eslint-disable-next-line camelcase
-const BasicPage2 = ({ has_sidebar, sidebar, ...args }) => (
+const BasicPage2 = ({ has_sidebar, sidebar, is_demo, ...args }) => (
   // eslint-disable-next-line react/jsx-props-no-spreading
   <PageWrapper hero={HeroWithChevron(HeroWithChevron.args)} {...args}>
     {PageTemplate({
@@ -162,6 +162,8 @@ const BasicPage2 = ({ has_sidebar, sidebar, ...args }) => (
           })}
         </>
       ),
+      has_sidebar,
+      sidebar,
     })}
   </PageWrapper>
 );
