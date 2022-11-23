@@ -11,8 +11,7 @@ import imageLightboxData from '../media-lightbox/image-lightbox.yml';
 import {
   decorators,
   sectionTypeArg,
-  SectionWithPaddingWrapper,
-} from '../../06-utility/storybookHelper';
+} from '../../06-utility/storybookHelper.jsx';
 
 const settings = {
   title: 'Paragraphs/Figure',
