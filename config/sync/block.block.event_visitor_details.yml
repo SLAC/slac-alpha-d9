@@ -9,7 +9,7 @@ dependencies:
 id: event_visitor_details
 theme: slac
 region: disabled
-weight: 0
+weight: -1
 provider: null
 plugin: single_rendered_site_settings_block
 settings:

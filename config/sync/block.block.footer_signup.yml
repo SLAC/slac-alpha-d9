@@ -9,7 +9,7 @@ dependencies:
 id: footer_signup
 theme: slac
 region: disabled
-weight: -8
+weight: -10
 provider: null
 plugin: single_rendered_site_settings_block
 settings:

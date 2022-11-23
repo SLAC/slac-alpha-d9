@@ -11,7 +11,7 @@ dependencies:
 id: footercontact
 theme: slac
 region: footer
-weight: -5
+weight: -12
 provider: null
 plugin: 'system_menu_block:footer-contact'
 settings:
