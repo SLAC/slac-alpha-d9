@@ -1,0 +1,10 @@
+uuid: e1584ba7-d34c-408c-a797-94faee095b6d
+langcode: en
+status: true
+dependencies: {  }
+id: media_grid
+label: 'Media Grid'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
