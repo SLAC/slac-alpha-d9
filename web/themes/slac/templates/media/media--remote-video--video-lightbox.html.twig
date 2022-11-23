@@ -40,12 +40,13 @@
   {% endif %}
   {{ title_suffix }}
   {% include '@components/media-lightbox/media-lightbox.twig' with {
-    'video_title': content.field_long_text|field_value ? content.field_long_text : name,
-    'video_date': created|date('F j, Y'),
-    'video_embed': content.field_media_oembed_video,
-    'video_description': content.field_caption|field_value,
-    'video_credit': content.field_credit|field_value,
-    'video_details_url': detail_page_url
+    'media_title': content.field_long_text|field_value ? content.field_long_text : name,
+    'media_date': created|date('F j, Y'),
+    'media_embed': content.field_media_oembed_video,
+    'media_description': content.field_caption|field_value,
+    'media_credit': content.field_credit|field_value,
+    'media_details_url': detail_page_url,
+    'media_type': 'video'
   } %}
   {% set catch_cache = content|render %}
 </div>
