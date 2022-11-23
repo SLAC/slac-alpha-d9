@@ -10,8 +10,8 @@ dependencies:
     - slac
 id: footer_social_links
 theme: slac
-region: footer
-weight: 0
+region: disabled
+weight: -12
 provider: null
 plugin: 'menu_block:social-links'
 settings:
@@ -26,6 +26,6 @@ settings:
   level: 1
   depth: 0
   expand_all_items: false
-  parent: 'social-links:menu_link_content:6cf19938-0ec3-4e4b-932b-52f97ec86c05'
+  parent: 'social-links:'
   suggestion: social_links
 visibility: {  }

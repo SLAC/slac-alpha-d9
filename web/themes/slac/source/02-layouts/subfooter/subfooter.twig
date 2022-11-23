@@ -27,8 +27,12 @@
     </div>
     <div class="l-subfooter__content">
     {% block subfooter_content %}
-      {{ subfooter_menu }}
-      <p>&copy; 2022 SLAC National Accelerator Laboratory is operated by Stanford University for the U.S. Department of Energy Office of Science.</p>
+      {% if subfooter_menu_items %}
+        {% include '@components/menu/menu--subfooter/menu--subfooter.twig' with {
+          'items': subfooter_menu_items
+        } %}
+      {% endif %}
+      <p>&copy; {{ 'now'|date('Y') }} SLAC National Accelerator Laboratory is operated by Stanford University for the U.S. Department of Energy Office of Science.</p>
     {% endblock %}
     </div>
     <div class="l-subfooter__logos">
