@@ -48,7 +48,7 @@
 {% if is_nested %}{{ paragraph_content }}{% else %}
   {% include '@layouts/section/section.twig' with {
     'section_content': paragraph_content,
-    'modifier_classes': 'l-section--no-padding',
+    'modifier_classes': 'l-section',
     'has_constrain': true
   } %}
 {% endif %}
