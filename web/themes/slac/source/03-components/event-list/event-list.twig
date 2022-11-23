@@ -1,0 +1,22 @@
+{% set classes = [
+  'c-event-list',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes } ) }}>
+  {% set modifier_classes = '' %}
+  {% for event in events %}
+    {% include '@components/card/card.twig' with {
+      modifier_classes: 'c-card--teaser',
+      is_event_list_card: true,
+      is_event: true,
+      start_date: event.start_date,
+      end_date: event.end_date,
+      event_date: event.event_date,
+      kicker: event.kicker,
+      event_location: event.event_location,
+      title: event.title,
+      url: event.url,
+    } %}
+  {% endfor %}
+</div>

@@ -4,8 +4,9 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraphs_3
-    - paragraphs.paragraphs_type.media_card
+    - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.video_lightbox
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -23,7 +24,8 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      media_card: media_card
+      image_embed: image_embed
+      video_lightbox: video_lightbox
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
@@ -77,13 +79,13 @@ settings:
         enabled: false
       image_embed:
         weight: 52
-        enabled: false
+        enabled: true
       image_hero:
         weight: 53
         enabled: false
       media_card:
         weight: 54
-        enabled: true
+        enabled: false
       microsite_hero:
         weight: 55
         enabled: false
@@ -125,7 +127,7 @@ settings:
         enabled: false
       video_lightbox:
         weight: 68
-        enabled: false
+        enabled: true
       wide_card:
         weight: 69
         enabled: false
