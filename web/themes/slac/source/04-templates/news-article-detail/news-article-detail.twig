@@ -1,6 +1,6 @@
 {% set article_content %}
   {{ content }}
-  {% if tags %}
+  {% if tags|field_value %}
     {% include '@layouts/section/section.twig' with {
       section_content: tags,
       has_constrain: true
