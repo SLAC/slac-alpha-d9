@@ -11,11 +11,13 @@
 @use 'card/card';
 @use 'cookie-banner/cookie-banner';
 @use 'copyright/copyright';
+@use 'cta-link/cta-link';
 @use 'details/details';
 @use 'embed/embed';
 @use 'external-link/external-link';
 @use 'event-date/event-date';
 @use 'event-hat/event-hat';
+@use 'event-list/event-list';
 @use 'facet/facet';
 @use 'facet-list/facet-list';
 @use 'field/field--list/field--list';
@@ -33,7 +35,6 @@
 @use 'form-item/form-item--select/form-item--select';
 @use 'icon/icon';
 @use 'icon/icon--pager';
-@use 'image-teaser/image-teaser';
 @use 'kicker/kicker';
 @use 'large-link/large-link';
 @use 'lede/lede';
@@ -56,6 +57,7 @@
 @use 'readmore-link/readmore-link';
 @use 'rss-feed/rss-feed';
 @use 'search/search';
+@use 'section-search/section-search';
 @use 'social-links/social-links';
 @use 'site-name/site-name';
 @use 'site-slogan/site-slogan';

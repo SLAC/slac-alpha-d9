@@ -11,10 +11,14 @@ import gridViewsTemplate from '../views-view-grid/views-view-grid.twig';
 import globalData from '../../../00-config/storybook.global-data.yml';
 import './views-view--toggle.scss';
 import './views-view--toggle.es6';
-import { Default as Card, TeaserCard } from '../../card/card.stories';
+import { Default as Card, Teaser } from '../../card/card.stories.jsx';
+import { SectionWithPaddingWrapper } from '../../../06-utility/storybookHelper.jsx';
 
 const settings = {
   title: 'Components/Views/Toggleable View',
+  decorators: [
+    Story => <SectionWithPaddingWrapper>{Story()}</SectionWithPaddingWrapper>,
+  ],
 };
 
 const ToggleableView = args =>
@@ -28,32 +32,32 @@ const ToggleableView = args =>
         rows: [
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
           {
             content: ReactDOMServer.renderToStaticMarkup(
-              <>{TeaserCard(TeaserCard.args)}</>
+              <>{Teaser(Teaser.args)}</>
             ),
           },
         ],

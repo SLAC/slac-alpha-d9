@@ -4,9 +4,9 @@ import ReactDOMServer from 'react-dom/server';
 
 import twigTemplate from './two-column-hero.twig';
 import data from './two-column-hero.yml';
-import { PageTitle } from '../page-title/page-title.stories';
-import { LargeCard } from '../card/card.stories';
-import { HeroWithoutOverlay } from '../article-hero/article-hero.stories';
+import { PageTitle } from '../page-title/page-title.stories.jsx';
+import { LargeCard, LargeEventCard } from '../card/card.stories.jsx';
+import { HeroWithoutOverlay } from '../article-hero/article-hero.stories.jsx';
 
 const settings = {
   title: 'Components/Hero/Two-Column Hero',
@@ -16,36 +16,40 @@ const WithFeaturedContent = args =>
   parse(
     twigTemplate({
       ...args,
-      page_title: ReactDOMServer.renderToStaticMarkup(
-        PageTitle({
-          ...PageTitle.args,
-          byline: false,
-          kicker: false,
-          has_constrain: false,
-        })
-      ),
-      featured_content: ReactDOMServer.renderToStaticMarkup(
-        LargeCard(LargeCard.args)
-      ),
     })
   );
-WithFeaturedContent.args = { ...data };
+WithFeaturedContent.args = {
+  ...data,
+  page_title: ReactDOMServer.renderToStaticMarkup(
+    PageTitle({
+      ...PageTitle.args,
+      byline: false,
+      kicker: false,
+      has_constrain: false,
+    })
+  ),
+  featured_content: ReactDOMServer.renderToStaticMarkup(
+    LargeEventCard(LargeEventCard.args)
+  ),
+};
 
 const WithoutFeaturedContent = args =>
   parse(
     twigTemplate({
       ...args,
-      page_title: ReactDOMServer.renderToStaticMarkup(
-        PageTitle({
-          ...PageTitle.args,
-          byline: false,
-          kicker: false,
-          has_constrain: false,
-        })
-      ),
     })
   );
-WithoutFeaturedContent.args = { ...data };
+WithoutFeaturedContent.args = {
+  ...data,
+  page_title: ReactDOMServer.renderToStaticMarkup(
+    PageTitle({
+      ...PageTitle.args,
+      byline: false,
+      kicker: false,
+      has_constrain: false,
+    })
+  ),
+};
 
 const WithImage = args => (
   <>
@@ -53,22 +57,24 @@ const WithImage = args => (
     {parse(
       twigTemplate({
         ...args,
-        page_title: ReactDOMServer.renderToStaticMarkup(
-          PageTitle({
-            ...PageTitle.args,
-            byline: false,
-            kicker: false,
-            has_constrain: false,
-          })
-        ),
-        featured_content: ReactDOMServer.renderToStaticMarkup(
-          LargeCard(LargeCard.args)
-        ),
       })
     )}
   </>
 );
-WithImage.args = { ...data };
+WithImage.args = {
+  ...data,
+  page_title: ReactDOMServer.renderToStaticMarkup(
+    PageTitle({
+      ...PageTitle.args,
+      byline: false,
+      kicker: false,
+      has_constrain: false,
+    })
+  ),
+  featured_content: ReactDOMServer.renderToStaticMarkup(
+    LargeCard(LargeCard.args)
+  ),
+};
 
 export default settings;
 export { WithFeaturedContent, WithoutFeaturedContent, WithImage };

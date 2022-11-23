@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.landing_page.field_boolean
+    - field.field.node.landing_page.field_editorial_group
     - field.field.node.landing_page.field_long_text
     - field.field.node.landing_page.field_paragraphs
     - field.field.node.landing_page.field_teaser
@@ -76,6 +77,7 @@ content:
     region: content
 hidden:
   field_boolean: true
+  field_editorial_group: true
   field_long_text: true
   langcode: true
   links: true

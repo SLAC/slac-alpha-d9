@@ -18,6 +18,7 @@ dependencies:
     - entity_reference_revisions
     - link
     - options
+    - slac_helper
     - text
 id: paragraph.section.default
 targetEntityType: paragraph
@@ -25,14 +26,17 @@ bundle: section
 mode: default
 content:
   field_button_links:
-    type: link
-    label: above
+    type: slac_helper_slac_button
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: '80'
+      button_size: Standard
+      button_style: Primary
+      button_icon: Chevron
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: 0
+      target: 0
     third_party_settings: {  }
     weight: 6
     region: content

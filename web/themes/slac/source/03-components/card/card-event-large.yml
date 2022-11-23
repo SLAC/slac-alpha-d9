@@ -7,11 +7,12 @@ start_date:
   day: '20'
 end_date: null
 kicker: 'Public Lecture'
-event_date: 'Thursday, April 20, 2022<br>1:00 &ndash; 3:00 p.m. PT'
+event_date: 'Thursday, April 20, 2022 1:00 &ndash; 3:00 p.m. PT'
+is_virtual: false
 event_location: '123 Fastest Way, Menlo Park, CA 94025'
 footer: ''
 title: 'Card title'
 media: |-
-  <img src="http://fpoimg.com/600x600?text=" alt="Close-up shot of a telescope lens">
+  <img src="http://fpoimg.com/600x300?text=" alt="Close-up shot of a telescope lens">
 card_content: |-
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et accumsan augue. Morbi non laoreet lorem.</p>

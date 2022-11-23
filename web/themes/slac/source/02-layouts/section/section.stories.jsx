@@ -6,8 +6,7 @@ import twigTemplate from './section.twig';
 import gridTemplate from '../grid/grid.twig';
 import globalData from '../../00-config/storybook.global-data.yml';
 import data from './section.yml';
-import { Default as Card } from '../../03-components/card/card.stories';
-import { WYSIWYG } from '../../03-components/wysiwyg/wysiwyg.stories';
+import { Default as Card } from '../../03-components/card/card.stories.jsx';
 
 const settings = {
   title: 'Layouts/Section',
@@ -23,6 +22,9 @@ const settings = {
 const SectionContent = gridTemplate({
   grid_content: ReactDOMServer.renderToStaticMarkup(
     <>
+      {Card(Card.args)}
+      {Card(Card.args)}
+      {Card(Card.args)}
       {Card(Card.args)}
       {Card(Card.args)}
       {Card(Card.args)}
@@ -88,19 +90,16 @@ SectionWithBlueBackground.args = {
   `,
 };
 
-const SectionHorizontal = Template.bind({});
-SectionHorizontal.args = {
+const SectionWithGrayWhiteGradient = Template.bind({});
+SectionWithGrayWhiteGradient.args = {
   ...data,
-  modifier_classes: 'l-section--gray-gradient l-section--horizontal',
-  section_content: gridTemplate({
-    grid_content: ReactDOMServer.renderToStaticMarkup(
-      <>
-        {WYSIWYG({ ...WYSIWYG.args, has_background: true })}
-        {WYSIWYG({ ...WYSIWYG.args, has_background: true })}
-      </>
-    ),
-    num_of_cols: 2,
-  }),
+  modifier_classes: 'l-section--gray-white',
+};
+
+const SectionWithWhiteGrayGradient = Template.bind({});
+SectionWithWhiteGrayGradient.args = {
+  ...data,
+  modifier_classes: 'l-section--white-gray',
 };
 
 const SectionWithRSS = Template.bind({});
@@ -119,6 +118,7 @@ export {
   SectionWithYellowBackground,
   SectionWithPurpleBackground,
   SectionWithBlueBackground,
-  SectionHorizontal,
+  SectionWithGrayWhiteGradient,
+  SectionWithWhiteGrayGradient,
   SectionWithRSS,
 };

@@ -8,6 +8,7 @@ import data from './header.yml';
 import './header.es6';
 import { Search } from '../../03-components/search/search.stories';
 import { DropdownMenu } from '../../03-components/dropdown-menu/dropdown-menu.stories';
+import { SiteName } from '../../03-components/site-name/site-name.stories';
 
 const settings = {
   title: 'Layouts/Header',
@@ -16,6 +17,11 @@ const settings = {
       table: {
         disable: true,
       },
+    },
+  },
+  parameters: {
+    controls: {
+      include: ['url', 'site_name', 'has_logo', 'header_freeform'],
     },
   },
 };
@@ -30,9 +36,10 @@ const Header = args =>
           {Search(Search.args)}
         </>
       ),
+      site_branding: ReactDOMServer.renderToStaticMarkup(SiteName(args)),
     })
   );
-Header.args = { ...globalData, ...data };
+Header.args = { ...globalData, ...SiteName.args, ...data };
 
 export default settings;
 export { Header };

@@ -8,24 +8,30 @@
 {% set is_teaser = 'c-card--teaser' in modifier_classes %}
 {% if is_teaser %}
   {% if kicker and type %}
-    {% set kicker %}
-    {{ type }}
-    ·
-    {{ kicker }}
-    {% endset %}
+    {% set kicker = type ~ ' · ' ~ kicker %}
   {% elseif type and not kicker %}
     {% set kicker = type %}
   {% endif %}
 {% endif %}
 
 <div {{ add_attributes({ 'class': classes } ) }}>
+  {% set modifier_classes = '' %}
   <div class="c-card__body{% if alignment %} u-fade-{{ alignment }}-desktop{% endif %}">
+    {% if is_event_list_card %}
+      {% include '@components/event-date/event-date.twig' %}
+    {% endif %}
+
     {% if type and not is_teaser %}
       <div class="c-kicker c-card__type">
         {{ type }}
       </div>
     {% endif %}
     <div class="c-card__header">
+      {% if icon %}
+        <div class="c-card__icon">
+          {{ icon }}
+        </div>
+      {% endif %}
       {% if kicker %}
         <div class="c-kicker">
           {{ kicker }}
@@ -48,9 +54,25 @@
         </div>
       {% endif %}
     </div>
-    <div class="c-card__content">
-      {{ card_content }}
-    </div>
+    {% set content_class = is_truncated ? 'c-card__content c-card__content--trimmed' : 'c-card__content' %}
+    {% if card_content %}
+      <div class="{{ content_class }}">
+        {{ card_content }}
+        {% if link_type == 'button' %}
+          {% include '@components/button/button.twig' with {
+        button_tag: false,
+        is_demo: false,
+        text: link_text,
+        url: link_url,
+      } %}
+        {% elseif link_type == 'cta' %}
+          {% include '@components/cta-link/cta-link.twig' with {
+        link_text: link_text,
+        link_url: link_url
+      } %}
+        {% endif %}
+      </div>
+    {% endif %}
     {% if footer or event_date or event_location %}
       <div class="c-card__footer">
         {{ footer }}
@@ -80,10 +102,7 @@
       </div>
     {% endif %}
   </div>
-  {% if media %}
-    {% if event_type %}
-      {% include '@components/event-hat/event-hat.twig' %}
-    {% endif %}
+  {% if media and not is_event_list_card %}
     <div class="c-card__media">
       {{ media }}
 

@@ -20,16 +20,35 @@
     {{ content }}
   {% endblock %}
 
-  {% block footer_signup %}
-    {{ drupal_entity('block', 'footer_signup', check_access=false) }}
-  {% endblock %}
-
-  {% block footer_tagline %}
-    {{ drupal_entity('block', 'footer_tagline', check_access=false) }}
+  {% block footer_social %}
+    {{ drupal_entity('block', 'footer_social_links', check_access=false) }}
   {% endblock %}
 
   {% block footer_menu %}
     {{ drupal_entity('block', 'footer_menu', check_access=false) }}
+  {% endblock %}
+
+  {% block footer_global_menu %}
+    {% include '@components/menu/menu--footer-utility/menu--footer-utility.twig' with {
+      'items': [
+        {
+          'title': 'Staff portal'|t,
+          'url': 'https://intranet.slac.stanford.edu/'
+        },
+        {
+          'title': 'Privacy policy'|t,
+          'url': 'https://www6.slac.stanford.edu/privacy-policy'
+        },
+        {
+          'title': 'Accessibility'|t,
+          'url': 'https://www.stanford.edu/site/accessibility/'
+        },
+        {
+          'title': 'Vulnerability disclosure'|t,
+          'url': 'https://doe.responsibledisclosure.com/hc/en-us'
+        }
+      ]
+    } %}
   {% endblock %}
 
   {% block footer_utility_menu %}

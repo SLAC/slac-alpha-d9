@@ -10,7 +10,7 @@ const settings = {
   title: 'Components/Alert Bar',
   parameters: {
     controls: {
-      include: ['alert_content'],
+      include: ['alert_type', 'kicker', 'alert_content'],
     },
   },
 };
@@ -21,7 +21,20 @@ const AlertBar = args =>
       ...args,
     })
   );
+
 AlertBar.args = { ...globalData, ...data };
+AlertBar.argTypes = {
+  alert_type: {
+    options: ['announcement', 'emergency', 'information', 'success', 'warning'],
+    control: { type: 'select' },
+  }
+};
+
+/* eslint-disable */
+AlertBar.play = async ({ canvasElement }) => {
+  const readyEvent = new Event('sitewide-alert-rendered');
+  canvasElement.dispatchEvent(readyEvent);
+}
 
 export default settings;
 export { AlertBar };

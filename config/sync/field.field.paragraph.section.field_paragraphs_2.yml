@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.video_lightbox
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -31,7 +32,7 @@ settings:
     target_bundles_drag_drop:
       accordion:
         weight: 36
-        enabled: false
+        enabled: true
       accordion_item:
         weight: 37
         enabled: false
@@ -127,7 +128,7 @@ settings:
         enabled: false
       video_lightbox:
         weight: 68
-        enabled: false
+        enabled: true
       wide_card:
         weight: 69
         enabled: false

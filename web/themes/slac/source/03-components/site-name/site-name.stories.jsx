@@ -51,7 +51,7 @@ const SiteName = args =>
       ...args,
     })
   );
-SiteName.args = { ...globalData };
+SiteName.args = { ...globalData, has_logo: true };
 
 export default settings;
 export { SiteName };

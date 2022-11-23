@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.centered
     - core.entity_view_mode.paragraph.centered_wide
-    - core.entity_view_mode.paragraph.two_column_hero
     - field.storage.paragraph.field_view_mode
     - paragraphs.paragraphs_type.image_embed
   module:
@@ -26,5 +25,4 @@ settings:
   allowed_view_modes:
     centered: centered
     centered_wide: centered_wide
-    two_column_hero: two_column_hero
 field_type: view_mode_switch

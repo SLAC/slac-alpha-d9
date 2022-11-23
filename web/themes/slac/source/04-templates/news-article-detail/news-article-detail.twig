@@ -1,8 +1,19 @@
+{% set article_content %}
+  {{ content }}
+  {% if tags|field_value %}
+    {% include '@layouts/section/section.twig' with {
+      section_content: tags,
+      has_constrain: true
+    } %}
+  {% endif %}
+{% endset %}
+
 {% include '@components/article/article.twig' with {
   'title': title,
   'show_admin_info': show_admin_info,
   'admin_info': admin_info,
   'author_name': author_name,
-  'content': content,
+  'content': article_content,
   'has_constrain': true
 } %}
+{{ related_content }}

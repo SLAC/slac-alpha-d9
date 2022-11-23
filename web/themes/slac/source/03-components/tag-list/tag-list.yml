@@ -17,3 +17,4 @@ items:
     title: 'Lorem ipsum dolor'
 modifier_classes: ''
 label: 'Related Topics'
+has_constrain: true

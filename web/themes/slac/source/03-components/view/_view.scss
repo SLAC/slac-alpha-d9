@@ -35,12 +35,6 @@
   }
 
   @include breakpoint-min(gesso-breakpoint(tablet)) {
-    form {
-      align-items: flex-end;
-      display: flex;
-      gap: gesso-spacing(2.5);
-    }
-
     .c-button,
     .c-form-item,
     .c-form-item__select {
@@ -60,6 +54,7 @@
 }
 
 .c-view__toggle {
+  @include focus;
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -67,6 +62,7 @@
   cursor: pointer;
   display: none;
   font-size: rem(gesso-font-size(6));
+  line-height: 1;
   padding: 0;
 
   &[aria-expanded='true'],

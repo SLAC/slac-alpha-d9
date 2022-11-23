@@ -10,7 +10,7 @@
 
 <footer {{ add_attributes({
   'class': classes,
-  'role': 'contentinfo'
+  'aria-label': 'Site-specific footer'
 }) }}>
   {% if has_constrain %}
     <div {{ add_attributes({ 'class': constrain_classes }) }}>
@@ -38,14 +38,16 @@
         {% endblock %}
       </div>
       <div class="l-footer__social">
-        {% include '@components/social-links/social-links.twig' with {
-          'facebook': '#',
-          'twitter': '#',
-          'instagram': '#',
-          'flickr': '#',
-          'youtube': '#',
-          'linkedin': '#',
-        } %}
+        {% block footer_social %}
+          {% include '@components/social-links/social-links.twig' with {
+            'facebook': '#',
+            'twitter': '#',
+            'instagram': '#',
+            'flickr': '#',
+            'youtube': '#',
+            'linkedin': '#',
+          } %}
+        {% endblock %}
       </div>
       <div class="l-footer__utility">
         {% block footer_global_menu %}

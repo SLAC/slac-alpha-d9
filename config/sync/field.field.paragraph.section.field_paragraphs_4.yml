@@ -125,7 +125,7 @@ settings:
         enabled: false
       video_lightbox:
         weight: 68
-        enabled: false
+        enabled: true
       wide_card:
         weight: 69
         enabled: false
