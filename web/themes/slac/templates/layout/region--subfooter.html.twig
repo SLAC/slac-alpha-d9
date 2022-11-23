@@ -12,11 +12,20 @@
  * @see template_preprocess_region()
  */
 #}
-{% embed '@layouts/subfooter/subfooter.twig' with {
+{% include '@layouts/subfooter/subfooter.twig' with {
   'has_constrain': true,
+  'subfooter_menu_items': [
+    {
+      'title': 'SLAC home'|t,
+      'url': 'https://www6.slac.stanford.edu/'
+    },
+    {
+      'title': 'Maps & directions'|t,
+      'url': 'https://vue.slac.stanford.edu/maps-and-directions'
+    },
+    {
+      'title': 'Emergency info'|t,
+      'url': 'https://emergency.slac.stanford.edu/'
+    }
+  ]
 } %}
-  {% block subfooter_content %}
-    {{ content }}
-  {% endblock %}
-
-{% endembed %}
