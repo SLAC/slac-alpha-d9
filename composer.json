@@ -169,6 +169,7 @@
     "build-assets": [
       "composer install --optimize-autoloader --no-dev"
     ],
+    "lint": "find web/modules/custom -name '*.php' -exec php -l {} \\;",
     "phpmd": [
       "phpmd . json phpmd.xml.dist --exclude \"web/private/*,modules/contrib/*,drush/*,vendor/*,web/core*,web/private/*,scripts/*\""
     ],
