@@ -94,33 +94,60 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
    * {@inheritdoc}
    */
   public function build() {
-    $share_this_page_settings = $this->siteSettingsLoader->loadByFieldset('social_sharing_links');
-    $share_this_page_settings = is_array($share_this_page_settings['share_this_page']) ? $share_this_page_settings['share_this_page'] : NULL;
+//    $share_this_page_settings = $this->siteSettingsLoader->loadByFieldset('social_sharing_links');
+//    $share_this_page_settings = is_array($share_this_page_settings['share_this_page']) ? $share_this_page_settings['share_this_page'] : NULL;
+//
+//    $links = [];
+//
+//    if ($share_this_page_settings) {
+//      foreach ($share_this_page_settings as $setting) {
+//        if (is_array($setting) && isset($setting['field_link']) && isset($setting['field_text_list'])) {
+//          $page_url = Url::fromRoute('<current>', [], [
+//            'absolute' => 'true',
+//          ])->toString();
+//
+//          $share_url = Url::fromUri(
+//            $setting['field_link']['uri'] .
+//            $page_url
+//          )->toString();
+//
+//          $share_method_name = $setting['field_link']['title'];
+//
+//          $links['#' . strtolower($share_method_name)] = [
+//            'url' => $share_url,
+//            'title' => $share_method_name,
+//            'icon_name' => $setting['field_text_list'],
+//          ];
+//        }
+//      }
+//    }
 
-    $links = [];
-
-    if ($share_this_page_settings) {
-      foreach ($share_this_page_settings as $setting) {
-        if (is_array($setting) && isset($setting['field_link']) && isset($setting['field_text_list'])) {
-          $page_url = Url::fromRoute('<current>', [], [
-            'absolute' => 'true',
-          ])->toString();
-
-          $share_url = Url::fromUri(
-            $setting['field_link']['uri'] .
-            $page_url
-          )->toString();
-
-          $share_method_name = $setting['field_link']['title'];
-
-          $links['#' . strtolower($share_method_name)] = [
-            'url' => $share_url,
-            'title' => $share_method_name,
-            'icon_name' => $setting['field_text_list'],
-          ];
-        }
-      }
-    }
+    // Hard-code the share URLs so that, if necessary, they can updated with
+    // a single module update.
+    $page_url = Url::fromRoute('<current>', [], [
+      'absolute' => 'true',
+    ])->toString();
+    $links['#facebook'] = [
+      'url' => Url::fromUri('https://www.facebook.com/sharer/sharer.php')->setOption('query', [
+        'u' => $page_url,
+        ])->toString(),
+      'title' => 'Facebook',
+      'icon_name' => 'facebook',
+    ];
+    $links['#twitter'] = [
+      'url' => Url::fromUri('https://www.twitter.com/share')->setOption('query', [
+        'url' => $page_url,
+      ])->toString(),
+      'title' => 'Twitter',
+      'icon_name' => 'twitter',
+    ];
+    $links['#linkedin'] = [
+      'url' => Url::fromUri('https://www.linkedin.com/sharing/share-offsite/')->setOption('query', [
+        'url' => $page_url,
+      ])->toString(),
+      'title' => 'LinkedIn',
+      'icon_name' => 'linkedin',
+    ];
 
     // Always include the email link. We assume the 'mailto:' protocol won't
     // be changing or need any configuration.
