@@ -94,34 +94,6 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
    * {@inheritdoc}
    */
   public function build() {
-//    $share_this_page_settings = $this->siteSettingsLoader->loadByFieldset('social_sharing_links');
-//    $share_this_page_settings = is_array($share_this_page_settings['share_this_page']) ? $share_this_page_settings['share_this_page'] : NULL;
-//
-//    $links = [];
-//
-//    if ($share_this_page_settings) {
-//      foreach ($share_this_page_settings as $setting) {
-//        if (is_array($setting) && isset($setting['field_link']) && isset($setting['field_text_list'])) {
-//          $page_url = Url::fromRoute('<current>', [], [
-//            'absolute' => 'true',
-//          ])->toString();
-//
-//          $share_url = Url::fromUri(
-//            $setting['field_link']['uri'] .
-//            $page_url
-//          )->toString();
-//
-//          $share_method_name = $setting['field_link']['title'];
-//
-//          $links['#' . strtolower($share_method_name)] = [
-//            'url' => $share_url,
-//            'title' => $share_method_name,
-//            'icon_name' => $setting['field_text_list'],
-//          ];
-//        }
-//      }
-//    }
-
     // Hard-code the share URLs so that, if necessary, they can updated with
     // a single module update.
     $page_url = Url::fromRoute('<current>', [], [
