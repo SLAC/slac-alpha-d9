@@ -140,7 +140,7 @@ jobs:
       image: pantheonpublic/build-tools-ci@sha256:15b244fdfeb225541a5eef4801a4abdebd2d4b8146cd472329d75226b10a87e5
       options: --user root
     runs-on: ubuntu-latest
-    needs: [configure_env_vars, static_tests, build_gesso]
+    needs: [configure_env_vars, static_tests]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
