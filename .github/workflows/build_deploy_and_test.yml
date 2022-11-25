@@ -147,14 +147,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: gesso-dist-files
-          path: web/themes/slac
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: gesso-dist-files
+#          path: web/themes/slac
 
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: web/themes/slac
+#      - name: Display structure of downloaded files
+#        run: ls -R
+#        working-directory: web/themes/slac
 
       - name: Set bash_env env var
         run: echo BASH_ENV=${RUNNER_TEMP}/bash_env.txt >> $GITHUB_ENV
