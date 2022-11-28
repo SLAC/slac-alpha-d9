@@ -1,0 +1,83 @@
+uuid: a817e989-5ffb-4e4a-b8d5-86abe0f7e845
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.organization_details.field_acronym
+    - field.field.site_setting_entity.organization_details.field_address
+    - field.field.site_setting_entity.organization_details.field_logo
+    - field.field.site_setting_entity.organization_details.field_organization_name
+    - site_settings.site_setting_entity_type.organization_details
+  module:
+    - address
+    - svg_image_field
+id: site_setting_entity.organization_details.default
+targetEntityType: site_setting_entity
+bundle: organization_details
+mode: default
+content:
+  field_acronym:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_address:
+    type: address_default
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_logo:
+    type: svg_image_field_widget
+    weight: 14
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_max_width: 300
+      preview_image_max_height: 300
+    third_party_settings: {  }
+  field_organization_name:
+    type: string_textfield
+    weight: 11
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  fieldset:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 10
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

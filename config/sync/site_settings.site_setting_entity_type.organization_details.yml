@@ -1,0 +1,8 @@
+uuid: 31f4ed92-e6b7-4dad-b674-17edd71d4919
+langcode: en
+status: true
+dependencies: {  }
+id: organization_details
+label: 'Organization Details'
+fieldset: 'Organization Details'
+multiple: false

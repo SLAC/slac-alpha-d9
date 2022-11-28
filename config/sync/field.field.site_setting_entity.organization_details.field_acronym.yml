@@ -1,0 +1,19 @@
+uuid: db80f31b-4bf8-4c1d-a536-187acadf77f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_acronym
+    - site_settings.site_setting_entity_type.organization_details
+id: site_setting_entity.organization_details.field_acronym
+field_name: field_acronym
+entity_type: site_setting_entity
+bundle: organization_details
+label: Acronym
+description: 'The organization''s acronym, to be used in the header and footer.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
