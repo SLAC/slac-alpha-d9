@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.homepage.field_editorial_group
     - field.field.node.homepage.field_hero_paragraph
     - field.field.node.homepage.field_paragraphs
     - node.type.homepage
@@ -33,6 +34,7 @@ content:
     weight: 1
     region: content
 hidden:
+  field_editorial_group: true
   langcode: true
   links: true
   search_api_excerpt: true

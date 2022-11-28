@@ -22,6 +22,9 @@ module:
   components: 0
   conditional_fields: 0
   config: 0
+  config_filter: 0
+  config_ignore: 0
+  config_split: 0
   contact: 0
   content_moderation: 0
   contextual: 0
@@ -33,6 +36,12 @@ module:
   duration_field: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
+  eca: 0
+  eca_base: 0
+  eca_cm: 0
+  eca_content: 0
+  eca_ui: 0
+  eca_views: 0
   editor: 0
   entity_clone: 0
   entity_reference_revisions: 0
@@ -67,6 +76,7 @@ module:
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
+  moderated_content_bulk_publish: 0
   mysql: 0
   node: 0
   node_revision_delete: 0
@@ -104,12 +114,13 @@ module:
   tour: 0
   twig_field_value: 0
   twig_tweak: 0
-  ultimate_cron: 0
   update: 0
   user: 0
+  vapn: 0
   view_mode_select_by_token: 0
   view_mode_switch: 0
   view_modes_display: 0
+  views_bulk_operations: 0
   views_display_switch: 0
   views_ui: 0
   views_year_filter: 0
@@ -118,6 +129,7 @@ module:
   webform: 0
   webform_templates: 0
   webform_ui: 0
+  workbench_access: 0
   workflows: 0
   pathauto: 1
   views: 10

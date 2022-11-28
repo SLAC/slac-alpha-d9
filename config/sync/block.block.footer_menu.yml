@@ -11,7 +11,7 @@ dependencies:
 id: footer_menu
 theme: slac
 region: disabled
-weight: -9
+weight: -11
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

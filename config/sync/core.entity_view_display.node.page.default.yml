@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.page.body
+    - field.field.node.page.field_editorial_group
     - field.field.node.page.field_hero_paragraph
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_review_date
     - field.field.node.page.field_tags
     - field.field.node.page.field_teaser
     - field.field.node.page.field_teaser_image
@@ -24,7 +27,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
@@ -33,7 +36,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -42,7 +45,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_tags:
     type: entity_reference_label
@@ -50,14 +53,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 106
+    weight: 6
     region: content
   field_teaser:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   field_teaser_image:
     type: entity_reference_label
@@ -65,7 +68,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 107
+    weight: 7
     region: content
   field_text:
     type: string
@@ -73,14 +76,16 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
 hidden:
   body: true
+  field_editorial_group: true
+  field_review_date: true
   langcode: true
   search_api_excerpt: true

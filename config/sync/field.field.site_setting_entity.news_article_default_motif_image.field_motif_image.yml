@@ -1,0 +1,29 @@
+uuid: 4431f6d7-30d8-422f-9048-2dfa6b8d3878
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_motif_image
+    - media.type.image
+    - site_settings.site_setting_entity_type.news_article_default_motif_image
+id: site_setting_entity.news_article_default_motif_image.field_motif_image
+field_name: field_motif_image
+entity_type: site_setting_entity
+bundle: news_article_default_motif_image
+label: 'Motif Image'
+description: 'If a news article does not have a hero or teaser image, the motif image will be used as a fallback.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

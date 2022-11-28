@@ -1,0 +1,8 @@
+uuid: 455e1e7a-27ed-430b-a821-a45d894ce2f5
+langcode: en
+status: true
+dependencies: {  }
+id: news_article_default_motif_image
+label: 'News article default (motif) image'
+fieldset: 'News article default (motif) image'
+multiple: false

@@ -112,49 +112,49 @@ jobs:
         run: |
           ./.ci/test/static/run
 
-  # If needed, frontend assets compilation or similar steps
-  # could be added here.
-
-  build_gesso:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14
-      - run: |
-          cd web/themes/slac
-          npm ci
-          npm run build-storybook
-      - uses: actions/upload-artifact@v3
-        with:
-          name: gesso-dist-files
-          path: |
-            web/themes/slac/dist
-            web/themes/slac/storybook
+#  # If needed, frontend assets compilation or similar steps
+#  # could be added here.
+#
+#  build_gesso:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#      - name: Setup node
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: 14
+#      - run: |
+#          cd web/themes/slac
+#          npm ci
+#          npm run build-storybook
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: gesso-dist-files
+#          path: |
+#            web/themes/slac/dist
+#            web/themes/slac/storybook
 
   deploy_to_pantheon:
     container:
       image: pantheonpublic/build-tools-ci@sha256:15b244fdfeb225541a5eef4801a4abdebd2d4b8146cd472329d75226b10a87e5
       options: --user root
     runs-on: ubuntu-latest
-    needs: [configure_env_vars, static_tests, build_gesso]
+    needs: [configure_env_vars, static_tests]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: gesso-dist-files
-          path: web/themes/slac
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: gesso-dist-files
+#          path: web/themes/slac
 
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: web/themes/slac
+#      - name: Display structure of downloaded files
+#        run: ls -R
+#        working-directory: web/themes/slac
 
       - name: Set bash_env env var
         run: echo BASH_ENV=${RUNNER_TEMP}/bash_env.txt >> $GITHUB_ENV

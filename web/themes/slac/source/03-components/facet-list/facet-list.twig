@@ -1,9 +1,0 @@
-{% set classes = [
-  'c-facet-list',
-  modifier_classes ? modifier_classes : ''
-] %}
-
-<div {{ add_attributes({ class: classes }) }}>
-  {{ facets }}
-  {% if clear_all_url %}<a href="{{ clear_all_url }}" class="c-facet-list__clear-all">{{ 'Clear all'|t }}</a>{% endif %}
-</div>

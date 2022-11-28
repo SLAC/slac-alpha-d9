@@ -1,0 +1,15 @@
+uuid: ac141500-eeb5-4dbe-bde5-e9cf7bd09c77
+langcode: en
+status: false
+dependencies: {  }
+id: dev_test
+label: 'Dev / Test'
+description: 'Configuration settings for dev and test environments.'
+weight: 0
+folder: ../config/splits/dev
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
