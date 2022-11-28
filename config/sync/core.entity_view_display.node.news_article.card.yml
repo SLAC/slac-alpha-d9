@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.card
     - field.field.node.news_article.field_date
     - field.field.node.news_article.field_dek
+    - field.field.node.news_article.field_editorial_group
     - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_link

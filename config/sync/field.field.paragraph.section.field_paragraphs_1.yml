@@ -49,7 +49,7 @@ settings:
         enabled: false
       cards_with_show_more:
         weight: 41
-        enabled: false
+        enabled: true
       content_card:
         weight: 42
         enabled: false
@@ -86,8 +86,14 @@ settings:
       image_hero:
         weight: 53
         enabled: false
+      image_lightbox:
+        weight: 58
+        enabled: false
       media_card:
         weight: 54
+        enabled: false
+      media_grid:
+        weight: 60
         enabled: false
       microsite_hero:
         weight: 55
@@ -116,8 +122,14 @@ settings:
       small_card_with_solid_background:
         weight: 63
         enabled: false
+      tab_item:
+        weight: 72
+        enabled: false
       table_of_contents:
         weight: 64
+        enabled: false
+      tabs:
+        weight: 71
         enabled: false
       tout:
         weight: 65

@@ -38,25 +38,6 @@ targetEntityType: node
 bundle: person
 mode: card
 content:
-  field_body:
-    type: trimmed_first_wysiwyg_paragraph
-    label: hidden
-    settings:
-      trim_length: '24'
-      trim_type: words
-      trim_suffix: ...
-      trim_options:
-        heading_remove: heading_remove
-        retain_formatting: retain_formatting
-      wrap_output: 0
-      wrap_class: trimmed
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
