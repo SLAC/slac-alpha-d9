@@ -37,8 +37,8 @@ content:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden
     settings:
-      trim_length: '40'
-      trim_type: words
+      trim_length: '480'
+      trim_type: chars
       trim_suffix: ...
       trim_options:
         heading_remove: heading_remove
@@ -48,6 +48,7 @@ content:
       more_link: 0
       more_class: more-link
       more_text: More
+      more_aria_label: 'Read more about [node:title]'
       summary_handler: full
     third_party_settings: {  }
     weight: 7
@@ -75,8 +76,8 @@ content:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden
     settings:
-      trim_length: '40'
-      trim_type: words
+      trim_length: '480'
+      trim_type: chars
       trim_suffix: ...
       trim_options:
         heading_remove: heading_remove
@@ -86,6 +87,7 @@ content:
       more_link: 0
       more_class: more-link
       more_text: More
+      more_aria_label: 'Read more about [node:title]'
       summary_handler: full
     third_party_settings: {  }
     weight: 2
