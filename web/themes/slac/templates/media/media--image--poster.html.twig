@@ -1,9 +1,0 @@
-{% include '@components/overlay-link/overlay-link.twig' with {
-  'image': content.field_media_image|field_value,
-  'link': content.field_boolean['#items'].value == '1' ? url : null,
-  'title': content.field_long_text|field_value ? content.field_long_text : name,
-  'kicker': 'Poster Details'|t,
-  'label': false,
-} %}
-
-{% set catch_cache = content|render %}
