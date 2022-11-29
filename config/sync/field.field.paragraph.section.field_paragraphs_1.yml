@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.tabs
     - paragraphs.paragraphs_type.video_lightbox
     - paragraphs.paragraphs_type.wysiwyg
   module:
@@ -30,6 +31,7 @@ settings:
       image_embed: image_embed
       quote: quote
       wysiwyg: wysiwyg
+      tabs: tabs
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -95,6 +97,9 @@ settings:
       media_grid:
         weight: 60
         enabled: false
+      media_grid:
+        weight: 60
+        enabled: false
       microsite_hero:
         weight: 55
         enabled: false
@@ -131,6 +136,9 @@ settings:
       tabs:
         weight: 71
         enabled: false
+      tabs:
+        weight: 71
+        enabled: true
       tout:
         weight: 65
         enabled: false
