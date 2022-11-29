@@ -102,9 +102,6 @@ settings:
       media_grid:
         weight: 60
         enabled: false
-      media_grid:
-        weight: 60
-        enabled: false
       microsite_hero:
         weight: 55
         enabled: false
@@ -141,9 +138,6 @@ settings:
       tabs:
         weight: 71
         enabled: false
-      tabs:
-        weight: 71
-        enabled: true
       tout:
         weight: 65
         enabled: false
