@@ -20,10 +20,12 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
+    - datetime
     - entity_reference_revisions
     - layout_paragraphs
     - link
     - slac_helper
+    - text
     - user
 id: node.news_article.full
 targetEntityType: node
@@ -35,6 +37,22 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_dek:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -42,7 +60,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_link:
     type: link
@@ -54,7 +72,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 6
     region: content
   field_paragraphs:
     type: layout_paragraphs
@@ -63,7 +81,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 8
     region: content
   field_tags:
     type: slac_tag
@@ -71,7 +89,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 9
     region: content
   field_text:
     type: string
@@ -79,7 +97,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 7
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   links:
     settings: {  }
@@ -87,14 +113,11 @@ content:
     weight: 1
     region: content
 hidden:
-  field_date: true
-  field_dek: true
   field_editorial_group: true
   field_featured: true
   field_source_link: true
   field_source_name: true
   field_teaser: true
   field_teaser_image: true
-  field_type: true
   langcode: true
   search_api_excerpt: true
