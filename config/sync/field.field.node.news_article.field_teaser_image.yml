@@ -12,7 +12,7 @@ entity_type: node
 bundle: news_article
 label: 'Teaser Image'
 description: 'Populate the teaser image to display on a card or teaser view mode, and when the article is shared in social media. If no teaser image is added, the Hero image will be used.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
