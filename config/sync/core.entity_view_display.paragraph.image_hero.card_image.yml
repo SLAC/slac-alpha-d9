@@ -5,10 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.card_image
     - field.field.paragraph.image_hero.field_body
+    - field.field.paragraph.image_hero.field_boolean
+    - field.field.paragraph.image_hero.field_button_link
     - field.field.paragraph.image_hero.field_image
-    - field.field.paragraph.image_hero.field_lottiefile
+    - field.field.paragraph.image_hero.field_long_text
+    - field.field.paragraph.image_hero.field_short_text
     - field.field.paragraph.image_hero.field_text
-    - field.field.paragraph.image_hero.field_text_color
     - paragraphs.paragraphs_type.image_hero
 id: paragraph.image_hero.card_image
 targetEntityType: paragraph
@@ -26,7 +28,9 @@ content:
     region: content
 hidden:
   field_body: true
-  field_lottiefile: true
+  field_boolean: true
+  field_button_link: true
+  field_long_text: true
+  field_short_text: true
   field_text: true
-  field_text_color: true
   search_api_excerpt: true
