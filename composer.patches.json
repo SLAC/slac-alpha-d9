@@ -19,6 +19,9 @@
     },
     "drupal/paragraphs": {
       "Change Behavior tab to Style Options": "patches/change-behavior-tab-in-paragraphs.patch"
+    },
+    "drupal/site_settings": {
+      "Support SVG Image Field": "patches/3195017-site_settings-mr-2.patch"
     }
   }
 }
