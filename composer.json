@@ -60,6 +60,7 @@
     "drupal/field_encrypt": "^3.0",
     "drupal/field_group": "^3.2",
     "drupal/focal_point": "^1.5",
+    "drupal/fontawesome": "^2.24",
     "drupal/gin": "^3.0@beta",
     "drupal/gin_toolbar": "^1.0@beta",
     "drupal/google_tag": "^1.5",
