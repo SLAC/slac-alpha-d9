@@ -16,6 +16,9 @@
     },
     "drupal/entity_reference_revisions": {
       "InvalidArgumentException: Invalid translation language (und) specified": "patches/3024588-entity_reference_revisions-mr-13.patch"
+    },
+    "drupal/site_settings": {
+      "Support SVG Image Field": "patches/3195017-site_settings-mr-2.patch"
     }
   }
 }
