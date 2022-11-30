@@ -12,7 +12,7 @@ dependencies:
     - field.field.paragraph.image_hero.field_text
     - paragraphs.paragraphs_type.image_hero
   module:
-    - link
+    - slac_helper
     - text
 id: paragraph.image_hero.default
 targetEntityType: paragraph
@@ -24,29 +24,22 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
-    region: content
-  field_boolean:
-    type: boolean
-    label: hidden
-    settings:
-      format: true-false
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
   field_button_link:
-    type: link
+    type: slac_helper_slac_button
     label: hidden
     settings:
-      trim_length: 80
+      trim_length: '80'
+      button_size: Standard
+      button_style: Primary
+      button_icon: Chevron
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: 0
+      target: 0
     third_party_settings: {  }
-    weight: 7
+    weight: 4
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -55,14 +48,14 @@ content:
       view_mode: image_hero
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_long_text:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_short_text:
     type: string
@@ -70,7 +63,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_text:
     type: string
@@ -81,4 +74,5 @@ content:
     weight: 2
     region: content
 hidden:
+  field_boolean: true
   search_api_excerpt: true
