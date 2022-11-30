@@ -1,0 +1,19 @@
+uuid: 3c0bbff7-7f9a-48dd-a737-db73ed065901
+langcode: en
+status: true
+dependencies:
+  module:
+    - name
+    - node
+id: node.field_authors
+field_name: field_authors
+entity_type: node
+type: name
+settings: {  }
+module: name
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

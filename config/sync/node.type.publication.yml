@@ -1,0 +1,23 @@
+uuid: 92c81255-c201-4605-8f62-8bf168791617
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_revision_delete
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  node_revision_delete:
+    minimum_revisions_to_keep: 30
+    minimum_age_to_delete: 6
+    when_to_delete: 1
+name: Publication
+type: publication
+description: 'Publications can list books, journal articles, news and magazine articles, and thesis dissertations using APA citation style. '
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
