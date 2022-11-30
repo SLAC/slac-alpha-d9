@@ -1,17 +1,17 @@
-uuid: 4fee6a4b-c562-4379-9589-7af0ba900f2e
+uuid: ec972841-e6d7-41b7-8030-7bf38a4a2bed
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text
-    - paragraphs.paragraphs_type.two_column_hero
-id: paragraph.two_column_hero.field_text
+    - paragraphs.paragraphs_type.overlap_image
+id: paragraph.overlap_image.field_text
 field_name: field_text
 entity_type: paragraph
-bundle: two_column_hero
-label: Kicker
+bundle: overlap_image
+label: Title
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

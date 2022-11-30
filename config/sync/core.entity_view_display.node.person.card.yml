@@ -50,13 +50,16 @@ content:
     weight: 1
     region: content
 hidden:
-  field_boolean: true
   field_address: true
   field_affiliations: true
   field_awardshonors: true
   field_body: true
-  field_long_text: true
+  field_boolean: true
+  field_editorial_group: true
+  field_link: true
+  field_links: true
   field_location: true
+  field_long_text: true
   field_mail_code: true
   field_map: true
   field_mobile: true
@@ -65,6 +68,8 @@ hidden:
   field_profile_link: true
   field_teaser: true
   field_telephone: true
+  field_text: true
+  field_text_title: true
   langcode: true
   links: true
   search_api_excerpt: true

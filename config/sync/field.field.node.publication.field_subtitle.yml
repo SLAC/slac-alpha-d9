@@ -1,0 +1,19 @@
+uuid: 4095d389-476c-412a-8595-0a3415552387
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.publication
+id: node.publication.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: publication
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

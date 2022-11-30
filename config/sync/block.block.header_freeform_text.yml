@@ -1,0 +1,21 @@
+uuid: 297b8f7f-106d-45b6-9029-c03df0ba39a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+  theme:
+    - slac
+id: header_freeform_text
+theme: slac
+region: disabled
+weight: 0
+provider: null
+plugin: single_rendered_site_settings_block
+settings:
+  id: single_rendered_site_settings_block
+  label: 'Header freeform text'
+  label_display: '0'
+  provider: site_settings
+  setting: header_freeform_text
+visibility: {  }

@@ -16,9 +16,9 @@
       "type": "package",
       "package": {
         "name": "slac/slac",
-        "version": "1.0.0-alpha5",
+        "version": "1.0.0-alpha6",
         "dist": {
-          "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0.alpha.5/slac.zip",
+          "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.6/slac.zip",
           "type": "zip"
         },
         "type": "drupal-theme"
@@ -75,6 +75,7 @@
     "drupal/migrate_plus": "^6.0",
     "drupal/migrate_tools": "^6.0",
     "drupal/moderated_content_bulk_publish": "^2.0",
+    "drupal/name": "^1.0@RC",
     "drupal/node_revision_delete": "^1.0@RC",
     "drupal/oembed_providers": "^2.0",
     "drupal/pantheon_advanced_page_cache": "^2.0",

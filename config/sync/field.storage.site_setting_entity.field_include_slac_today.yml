@@ -1,0 +1,18 @@
+uuid: 543134f5-2d24-46b1-981b-ec455d676d09
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.field_include_slac_today
+field_name: field_include_slac_today
+entity_type: site_setting_entity
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
