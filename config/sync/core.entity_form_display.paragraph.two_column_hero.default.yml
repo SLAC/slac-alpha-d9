@@ -3,39 +3,38 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.two_column_hero.field_body
-    - field.field.paragraph.two_column_hero.field_button_link
+    - field.field.paragraph.two_column_hero.field_image
+    - field.field.paragraph.two_column_hero.field_node
     - field.field.paragraph.two_column_hero.field_paragraph
-    - field.field.paragraph.two_column_hero.field_text
     - paragraphs.paragraphs_type.two_column_hero
   module:
-    - link
+    - media_library
     - paragraphs
-    - text
 id: paragraph.two_column_hero.default
 targetEntityType: paragraph
 bundle: two_column_hero
 mode: default
 content:
-  field_body:
-    type: text_textarea
-    weight: 1
+  field_image:
+    type: media_library_widget
+    weight: 0
     region: content
     settings:
-      rows: 5
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-  field_button_link:
-    type: link_default
-    weight: 3
+  field_node:
+    type: entity_reference_autocomplete
+    weight: 2
     region: content
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_paragraph:
     type: paragraphs
-    weight: 2
+    weight: 1
     region: content
     settings:
       title: Paragraph
@@ -50,14 +49,6 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
-    third_party_settings: {  }
-  field_text:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true
