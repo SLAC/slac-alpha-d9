@@ -104,7 +104,6 @@ module:
   sitewide_alert: 0
   slac_core: 0
   slac_helper: 0
-  smart_date: 0
   slac_yaml_content: 0
   smart_date: 0
   smart_trim: 0
