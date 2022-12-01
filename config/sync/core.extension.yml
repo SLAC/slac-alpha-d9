@@ -106,6 +106,7 @@ module:
   slac_helper: 0
   smart_date: 0
   slac_yaml_content: 0
+  smart_date: 0
   smart_trim: 0
   style_options: 0
   svg_image_field: 0
