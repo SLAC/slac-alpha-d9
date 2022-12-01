@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.basic_html
     - filter.format.restricted_html
+    - filter.format.table
     - node.type.event
     - node.type.homepage
     - node.type.landing_page
@@ -56,6 +57,7 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'use text format restricted_html'
+  - 'use text format table'
   - 'use workbench access'
   - 'view event revisions'
   - 'view homepage revisions'

@@ -19,6 +19,7 @@ dependencies:
     - paragraphs.paragraphs_type.promo_box
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.table
     - paragraphs.paragraphs_type.video_lightbox
     - paragraphs.paragraphs_type.wide_card
     - paragraphs.paragraphs_type.wysiwyg
@@ -55,6 +56,7 @@ settings:
       video_lightbox: video_lightbox
       wide_card: wide_card
       wysiwyg: wysiwyg
+      table: table
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -71,6 +73,9 @@ settings:
         enabled: true
       card:
         weight: -69
+        enabled: false
+      card_with_icon:
+        weight: 48
         enabled: false
       cards_with_show_more:
         weight: -68
@@ -111,8 +116,14 @@ settings:
       image_hero:
         weight: -56
         enabled: false
+      image_lightbox:
+        weight: 61
+        enabled: false
       media_card:
         weight: -55
+        enabled: false
+      media_grid:
+        weight: 63
         enabled: false
       microsite_hero:
         weight: -54
@@ -141,8 +152,17 @@ settings:
       small_card_with_solid_background:
         weight: -46
         enabled: false
+      tab_item:
+        weight: 76
+        enabled: false
+      table:
+        weight: 73
+        enabled: true
       table_of_contents:
         weight: -45
+        enabled: false
+      tabs:
+        weight: 75
         enabled: false
       tout:
         weight: -43

@@ -1,0 +1,26 @@
+uuid: 4fc88d24-b8da-401d-84e2-5c2e6bcc213d
+langcode: en
+status: true
+dependencies:
+  module:
+    - token_filter
+name: Table
+format: table
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: false
+    weight: 0
+    settings:
+      replace_empty: '0'
