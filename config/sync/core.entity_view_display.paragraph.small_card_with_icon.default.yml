@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.small_card_with_icon.field_body
     - field.field.paragraph.small_card_with_icon.field_icon
     - field.field.paragraph.small_card_with_icon.field_link
     - field.field.paragraph.small_card_with_icon.field_short_text
@@ -12,19 +11,11 @@ dependencies:
   module:
     - fontawesome
     - link
-    - text
 id: paragraph.small_card_with_icon.default
 targetEntityType: paragraph
 bundle: small_card_with_icon
 mode: default
 content:
-  field_body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_icon:
     type: fontawesome_icon_formatter
     label: above
