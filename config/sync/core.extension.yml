@@ -114,6 +114,7 @@ module:
   sitewide_alert: 0
   slac_core: 0
   slac_helper: 0
+  slac_yaml_content: 0
   smart_trim: 0
   stanford_person_importer: 0
   style_options: 0
@@ -146,6 +147,7 @@ module:
   webform_ui: 0
   workbench_access: 0
   workflows: 0
+  yaml_content: 0
   pathauto: 1
   views: 10
   paragraphs: 11
