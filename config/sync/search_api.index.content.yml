@@ -6,7 +6,6 @@ dependencies:
     - field.storage.media.field_caption
     - field.storage.media.field_long_text
     - field.storage.node.field_long_text
-    - field.storage.node.field_lede
     - field.storage.node.field_name
     - core.entity_view_mode.media.search_index
     - core.entity_view_mode.node.search_index
@@ -72,14 +71,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_long_text
-  lede:
-    label: Lede
-    datasource_id: 'entity:node'
-    property_path: field_lede
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_lede
   media_name:
     label: 'Media name'
     datasource_id: 'entity:media'

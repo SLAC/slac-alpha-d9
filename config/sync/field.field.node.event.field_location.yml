@@ -1,0 +1,19 @@
+uuid: 84441916-ebbd-4b34-8963-037566d80e49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.event
+id: node.event.field_location
+field_name: field_location
+entity_type: node
+bundle: event
+label: Location
+description: 'Enter the address or location of the event.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

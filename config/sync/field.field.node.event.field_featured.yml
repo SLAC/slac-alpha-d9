@@ -1,4 +1,4 @@
-uuid: 72ceb4a8-11c2-48ad-b8a5-c3501fb17b43
+uuid: 06b0af6c-ca93-4dd2-8b75-722f8db4f4c1
 langcode: en
 status: true
 dependencies:
@@ -10,9 +10,9 @@ field_name: field_featured
 entity_type: node
 bundle: event
 label: 'Is featured event?'
-description: 'If this event is featured, it will be eligible for display in the featured event space on the event listing page.'
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

@@ -3,41 +3,42 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.event.field_bio_related_content
+    - field.field.node.event.field_affiliation
+    - field.field.node.event.field_audience
     - field.field.node.event.field_body
     - field.field.node.event.field_boolean
-    - field.field.node.event.field_boolean2
-    - field.field.node.event.field_datetime_range
+    - field.field.node.event.field_contact_name
     - field.field.node.event.field_detail_text
-    - field.field.node.event.field_editorial_group
-    - field.field.node.event.field_external_link
+    - field.field.node.event.field_email
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_lede
-    - field.field.node.event.field_link
-    - field.field.node.event.field_link2
+    - field.field.node.event.field_is_virtual
     - field.field.node.event.field_links
+    - field.field.node.event.field_location
+    - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
-    - field.field.node.event.field_override_text
     - field.field.node.event.field_person_image
+    - field.field.node.event.field_phone
     - field.field.node.event.field_site_setting
+    - field.field.node.event.field_smart_date
+    - field.field.node.event.field_sponsor
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
-    - field.field.node.event.field_text
     - field.field.node.event.field_type
     - field.field.node.event.field_video
+    - field.field.node.event.field_video_link
     - node.type.event
     - workflows.workflow.content
   module:
     - allowed_formats
     - conditional_fields
     - content_moderation
-    - datetime_range
     - field_group
     - link
     - media_library
     - path
+    - smart_date
     - term_reference_tree
     - text
 third_party_settings:
@@ -46,6 +47,7 @@ third_party_settings:
       children:
         - group_event_details
         - group_speaker_details
+        - group_contact_information
         - group_metadata
       label: 'Page Content'
       region: content
@@ -60,20 +62,19 @@ third_party_settings:
         width_breakpoint: 640
     group_event_details:
       children:
-        - field_text
-        - field_datetime_range
-        - field_lede
-        - field_body
         - field_image
-        - field_boolean
-        - field_external_link
+        - field_smart_date
+        - field_is_virtual
+        - field_virtual_event_link
         - field_video
-        - field_link
-        - field_override_text
+        - field_video_link
+        - field_location
+        - field_location_link
+        - field_body
+        - field_sponsor
+        - field_boolean
         - field_links
         - field_detail_text
-        - field_link2
-        - field_boolean2
         - field_site_setting
       label: 'Event Details'
       region: content
@@ -90,12 +91,13 @@ third_party_settings:
     group_speaker_details:
       children:
         - field_name
+        - field_affiliation
         - field_person_image
         - field_long_text
       label: 'Speaker Details'
       region: content
       parent_name: group_page_content
-      weight: 13
+      weight: 12
       format_type: tab
       format_settings:
         classes: ''
@@ -108,10 +110,27 @@ third_party_settings:
       children:
         - field_teaser
         - field_featured
-        - field_type
         - field_tags
-        - field_bio_related_content
+        - field_type
+        - field_audience
       label: Metadata
+      region: content
+      parent_name: group_page_content
+      weight: 14
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_contact_information:
+      children:
+        - field_contact_name
+        - field_email
+        - field_phone
+      label: 'Contact Information'
       region: content
       parent_name: group_page_content
       weight: 13
@@ -123,22 +142,6 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_restrict_editorial_access:
-      children:
-        - field_editorial_group
-      label: 'Editorial Access'
-      region: content
-      parent_name: ''
-      weight: 11
-      format_type: details_sidebar
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: 'Select the group that may edit this page.'
-        required_fields: true
-        weight: 0
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -150,19 +153,23 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_bio_related_content:
-    type: entity_reference_autocomplete
-    weight: 16
+  field_affiliation:
+    type: text_textarea
+    weight: 22
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
+      rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_audience:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_body:
     type: text_textarea
-    weight: 11
+    weight: 39
     region: content
     settings:
       rows: 5
@@ -173,43 +180,22 @@ content:
         hide_guidelines: '1'
   field_boolean:
     type: boolean_checkbox
-    weight: 13
+    weight: 41
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
-  field_boolean2:
-    type: boolean_checkbox
-    weight: 21
+  field_contact_name:
+    type: text_textarea
+    weight: 36
     region: content
     settings:
-      display_label: true
-    third_party_settings:
-      conditional_fields:
-        6555a890-bdd5-49c1-bb91-72f4f94be11f:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form: {  }
-            effect: show
-            effect_options: {  }
-            selector: ''
-  field_datetime_range:
-    type: daterange_default
-    weight: 9
-    region: content
-    settings: {  }
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_detail_text:
     type: text_textarea
-    weight: 19
+    weight: 43
     region: content
     settings:
       rows: 5
@@ -218,57 +204,15 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
-      conditional_fields:
-        3e0839ba-1fc7-4735-96d9-8d22ca98c1eb:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form: {  }
-            effect: show
-            effect_options: {  }
-            selector: ''
-  field_editorial_group:
-    type: entity_reference_autocomplete
-    weight: 12
+      conditional_fields: {  }
+  field_email:
+    type: email_default
+    weight: 37
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
       placeholder: ''
+      size: 60
     third_party_settings: {  }
-  field_external_link:
-    type: link_default
-    weight: 14
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings:
-      conditional_fields:
-        479f96fe-333b-40b2-8781-6e3db9b1d4d9:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: visible
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
   field_featured:
     type: boolean_checkbox
     weight: 12
@@ -278,94 +222,43 @@ content:
     third_party_settings: {  }
   field_image:
     type: media_library_widget
-    weight: 12
+    weight: 31
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-  field_lede:
-    type: text_textarea
-    weight: 10
+  field_is_virtual:
+    type: boolean_checkbox
+    weight: 33
     region: content
     settings:
-      rows: 1
-      placeholder: ''
+      display_label: true
     third_party_settings: {  }
-  field_link:
-    type: link_default
-    weight: 16
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings:
-      conditional_fields:
-        2490df80-6423-4b49-99e9-4b11e0a50fec:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
-  field_link2:
-    type: link_default
-    weight: 20
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings:
-      conditional_fields:
-        a197e55e-88eb-4905-b091-1acd0d3d8fb6:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
   field_links:
     type: link_default
-    weight: 18
+    weight: 42
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings:
-      conditional_fields:
-        a6d6d667-8e83-438e-9daf-17e0fac34575:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
+      conditional_fields: {  }
+  field_location:
+    type: string_textfield
+    weight: 37
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_location_link:
+    type: link_default
+    weight: 38
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_long_text:
     type: text_textarea
     weight: 24
@@ -384,34 +277,6 @@ content:
       placeholder: ''
     third_party_settings:
       conditional_fields: {  }
-  field_override_text:
-    type: text_textarea
-    weight: 17
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings:
-      allowed_formats:
-        hide_help: '1'
-        hide_guidelines: '1'
-      conditional_fields:
-        9406d693-236b-488d-86ae-60c32e56c12b:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
   field_person_image:
     type: media_library_widget
     weight: 23
@@ -420,32 +285,47 @@ content:
       media_types: {  }
     third_party_settings:
       conditional_fields: {  }
+  field_phone:
+    type: number
+    weight: 38
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_site_setting:
     type: options_select
-    weight: 24
+    weight: 44
     region: content
     settings: {  }
     third_party_settings:
-      conditional_fields:
-        c36d8da9-215d-4f24-835f-f1314ad48b2e:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
+      conditional_fields: {  }
+  field_smart_date:
+    type: smartdate_default
+    weight: 32
+    region: content
+    settings:
+      modal: false
+      default_duration: 60
+      default_duration_increments: |-
+        30
+        60|1 hour
+        90
+        120|2 hours
+        custom
+      show_extra: false
+      hide_date: true
+    third_party_settings: {  }
+  field_sponsor:
+    type: text_textarea
+    weight: 40
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_tags:
     type: term_reference_tree
-    weight: 14
+    weight: 13
     region: content
     settings:
       start_minimized: true
@@ -465,44 +345,28 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
-  field_text:
-    type: string_textfield
-    weight: 8
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_type:
     type: options_select
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_video:
     type: media_library_widget
-    weight: 15
+    weight: 35
     region: content
     settings:
       media_types: {  }
     third_party_settings:
-      conditional_fields:
-        496febf4-7041-46ad-baff-48e4a1b0415e:
-          entity_type: node
-          bundle: event
-          dependee: field_boolean
-          settings:
-            state: '!visible'
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
+      conditional_fields: {  }
+  field_video_link:
+    type: link_default
+    weight: 36
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   group_metadata:
     weight: 27
     region: content
