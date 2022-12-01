@@ -1,0 +1,58 @@
+- entity: "taxonomy_term"
+  vid: "Publication Type"
+  name: "Article Newspaper/Magazine"
+- entity: "taxonomy_term"
+  vid: "Publication Type"
+  name: "Book"
+- entity: "taxonomy_term"
+  vid: "Publication Type"
+  name:  "Journal Article"
+- entity: "taxonomy_term"
+  vid: "Publication Type"
+  name:  "Other"
+- entity: "taxonomy_term"
+  vid: "Publication Type"
+  name:  "Thesis"
+- entity: "taxonomy_term"
+  vid: "Publication Type"
+  name:  "SLAC"
+- entity: "taxonomy_term"
+  vid: "Publication Types"
+  name: "Publications"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC'
+- entity: "taxonomy_term"
+  vid: "Publication Types"
+  name: "Reports"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC'
+- entity: "taxonomy_term"
+  vid: "Publication Types"
+  name: "Technical Notes"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC'
+- entity: "taxonomy_term"
+  vid: "Publication Types"
+  name: "Working Papers"
+  parent:
+  - '#process':
+      callback: 'reference'
+      args:
+        - 'taxonomy_term'
+        - vid: 'tags'
+          name: 'SLAC'

@@ -1,0 +1,8 @@
+name: SLAC YAML Content
+type: module
+description: Default content for SLAC sites imported on initial install.
+package: Custom
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - yaml_content:yaml_content
