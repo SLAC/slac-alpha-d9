@@ -14,16 +14,19 @@ dependencies:
     - field.field.node.publication.field_pages
     - field.field.node.publication.field_paragraphs
     - field.field.node.publication.field_publication_place
+    - field.field.node.publication.field_publication_slac_type
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_publisher
     - field.field.node.publication.field_subtitle
     - field.field.node.publication.field_topics
+    - field.field.node.publication.field_volume
     - node.type.publication
   module:
     - datetime
     - entity_reference_revisions
     - link
     - name
+    - options
     - user
 id: node.publication.default
 targetEntityType: node
@@ -135,13 +138,19 @@ content:
     third_party_settings: {  }
     weight: 111
     region: content
-  field_publication_type:
-    type: entity_reference_label
+  field_publication_slac_type:
+    type: list_default
     label: above
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
-    weight: 103
+    weight: 119
+    region: content
+  field_publication_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 118
     region: content
   field_publisher:
     type: string
@@ -166,6 +175,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 116
+    region: content
+  field_volume:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 117
     region: content
   links:
     settings: {  }

@@ -15,9 +15,8 @@ use Drupal\Core\Routing\RouteMatchInterface;
  * Implements hook_help().
  */
 function slac_yaml_content_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    case 'help.page.slac_yaml_content':
-      return t('
+  if ($route_name == 'help.page.slac_yaml_content') {
+    return t('
         <p>This module is intended for installation of default content upon initial install.  It can be disabled after initial installation.</p>
       ');
   }
