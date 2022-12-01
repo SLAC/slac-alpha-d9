@@ -19,6 +19,7 @@ dependencies:
     - datetime
     - entity_reference_revisions
     - link
+    - slac_helper
     - text
     - user
 id: node.blog.default
@@ -26,29 +27,21 @@ targetEntityType: node
 bundle: blog
 mode: default
 content:
-  field_category:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 111
-    region: content
   field_date:
-    type: datetime_default
+    type: datetime_custom
     label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      date_format: 'F j, Y'
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_dek:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
@@ -57,7 +50,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_link:
     type: link
@@ -69,7 +62,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -78,39 +71,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 106
-    region: content
-  field_series:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 110
+    weight: 6
     region: content
   field_tags:
-    type: entity_reference_label
-    label: hidden
+    type: slac_tag
+    label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 109
-    region: content
-  field_teaser:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 107
-    region: content
-  field_teaser_image:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: true
-    third_party_settings: {  }
-    weight: 108
+    weight: 7
     region: content
   field_text:
     type: string
@@ -118,13 +87,17 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_category: true
+  field_series: true
+  field_teaser: true
+  field_teaser_image: true
   langcode: true
   search_api_excerpt: true
