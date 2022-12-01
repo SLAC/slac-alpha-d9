@@ -16,9 +16,9 @@
       "type": "package",
       "package": {
         "name": "slac/slac",
-        "version": "1.0.0-alpha6",
+        "version": "1.0.0-alpha7",
         "dist": {
-          "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.6/slac.zip",
+          "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.7/slac.zip",
           "type": "zip"
         },
         "type": "drupal-theme"
