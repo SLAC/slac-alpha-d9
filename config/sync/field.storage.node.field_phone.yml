@@ -1,18 +1,19 @@
-uuid: 8b39c2ea-f6d7-4fe7-8ee9-1154ca6eb35b
+uuid: 7b6bf52a-c757-4636-b5d6-c0ed45977a83
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_bio_related_content
-field_name: field_bio_related_content
+id: node.field_phone
+field_name: field_phone
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: node
+  unsigned: false
+  size: normal
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

@@ -115,6 +115,7 @@ module:
   slac_core: 0
   slac_helper: 0
   slac_yaml_content: 0
+  smart_date: 0
   smart_trim: 0
   stanford_person_importer: 0
   style_options: 0

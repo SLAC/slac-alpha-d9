@@ -1,17 +1,14 @@
-uuid: aa49aef6-9d53-4efb-9ab4-bf0b4a91532f
+uuid: e511bf4e-9631-4f50-81c1-dd69f0a0fc9c
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_location
-field_name: field_location
+id: node.field_is_virtual
+field_name: field_is_virtual
 entity_type: node
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

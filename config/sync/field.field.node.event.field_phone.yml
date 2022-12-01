@@ -1,0 +1,23 @@
+uuid: a6b20ff5-3c6c-4949-bd51-e6f62dbb6d92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.event
+id: node.event.field_phone
+field_name: field_phone
+entity_type: node
+bundle: event
+label: 'Contact Phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

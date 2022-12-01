@@ -1,15 +1,15 @@
-uuid: 7f0f76b9-5e95-4b90-890d-a7a7098bdbe7
+uuid: 6c37c437-074b-4573-8d6c-83bee9f81cc1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_boolean2
+    - field.storage.node.field_is_virtual
     - node.type.event
-id: node.event.field_boolean2
-field_name: field_boolean2
+id: node.event.field_is_virtual
+field_name: field_is_virtual
 entity_type: node
 bundle: event
-label: 'Include Visitor Info?'
+label: 'Virtual Event?'
 description: ''
 required: false
 translatable: false

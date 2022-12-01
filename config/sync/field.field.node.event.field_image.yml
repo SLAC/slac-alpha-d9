@@ -12,7 +12,7 @@ entity_type: node
 bundle: event
 label: 'Event Image'
 description: 'This image will be displayed on the event page unless there is a video, and the video will be displayed instead.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -1,18 +1,16 @@
-uuid: aa49aef6-9d53-4efb-9ab4-bf0b4a91532f
+uuid: f070fce0-4b25-413f-9b2e-ab936655d7ee
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-id: node.field_location
-field_name: field_location
+id: node.field_video_link
+field_name: field_video_link
 entity_type: node
-type: string
-settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true

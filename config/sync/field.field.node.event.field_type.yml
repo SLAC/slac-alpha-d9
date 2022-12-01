@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      event_: event_type
+      event_type: event_type
     sort:
       field: name
       direction: asc

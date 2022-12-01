@@ -1,9 +1,9 @@
-uuid: 77b09447-785d-426b-812c-da41cf5a6b06
+uuid: 41a1af74-bb13-45c4-b557-2983dd8eb009
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_lede
+    - field.storage.node.field_affiliation
     - node.type.event
   module:
     - allowed_formats
@@ -11,12 +11,12 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - restricted_html
-id: node.event.field_lede
-field_name: field_lede
+      - basic_html
+id: node.event.field_affiliation
+field_name: field_affiliation
 entity_type: node
 bundle: event
-label: Lede
+label: 'Speaker Affiliation'
 description: ''
 required: false
 translatable: false

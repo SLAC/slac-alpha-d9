@@ -97,6 +97,7 @@
     "drupal/simple_sitemap": "^3.11",
     "drupal/site_settings": "^1.19",
     "drupal/sitewide_alert": "^2.0",
+    "drupal/smart_date": "^3.6",
     "drupal/smart_trim": "^2.0",
     "drupal/style_options": "^1.0@alpha",
     "drupal/svg_image_field": "^2.1",
