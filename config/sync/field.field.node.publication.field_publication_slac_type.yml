@@ -11,7 +11,7 @@ id: node.publication.field_publication_slac_type
 field_name: field_publication_slac_type
 entity_type: node
 bundle: publication
-label: 'Publication SLAC Type'
+label: 'SLAC Publication Type'
 description: ''
 required: false
 translatable: false
