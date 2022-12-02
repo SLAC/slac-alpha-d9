@@ -1,0 +1,15 @@
+uuid: 3537e213-60e6-4e2e-8cfe-3366247361c1
+langcode: en
+status: true
+dependencies: {  }
+name: embed
+label: 'Embed (300)'
+effects:
+  55904b06-b04b-4c0a-ab93-f4c867ac2614:
+    uuid: 55904b06-b04b-4c0a-ab93-f4c867ac2614
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: false
