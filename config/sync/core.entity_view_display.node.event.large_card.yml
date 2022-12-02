@@ -6,19 +6,21 @@ dependencies:
     - core.entity_view_mode.node.large_card
     - field.field.node.event.field_affiliation
     - field.field.node.event.field_audience
-    - field.field.node.event.field_body
     - field.field.node.event.field_boolean
+    - field.field.node.event.field_conference_link
     - field.field.node.event.field_contact_name
     - field.field.node.event.field_detail_text
     - field.field.node.event.field_email
+    - field.field.node.event.field_experience
+    - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_is_virtual
     - field.field.node.event.field_links
     - field.field.node.event.field_location
     - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
+    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_person_image
     - field.field.node.event.field_phone
     - field.field.node.event.field_site_setting
@@ -28,7 +30,6 @@ dependencies:
     - field.field.node.event.field_teaser
     - field.field.node.event.field_type
     - field.field.node.event.field_video
-    - field.field.node.event.field_video_link
     - node.type.event
   module:
     - slac_core
@@ -42,25 +43,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
-    region: content
-  field_body:
-    type: trimmed_first_wysiwyg_paragraph
-    label: hidden
-    settings:
-      trim_length: '40'
-      trim_type: words
-      trim_suffix: ...
-      trim_options:
-        heading_remove: heading_remove
-        retain_formatting: retain_formatting
-      wrap_output: 0
-      wrap_class: trimmed
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-    third_party_settings: {  }
-    weight: 8
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -102,16 +84,19 @@ hidden:
   field_affiliation: true
   field_audience: true
   field_boolean: true
+  field_conference_link: true
   field_contact_name: true
   field_detail_text: true
   field_email: true
+  field_experience: true
+  field_external_link: true
   field_featured: true
-  field_is_virtual: true
   field_links: true
   field_location: true
   field_location_link: true
   field_long_text: true
   field_name: true
+  field_paragraphs: true
   field_person_image: true
   field_phone: true
   field_site_setting: true
@@ -119,7 +104,6 @@ hidden:
   field_sponsor: true
   field_tags: true
   field_video: true
-  field_video_link: true
   langcode: true
   links: true
   search_api_excerpt: true

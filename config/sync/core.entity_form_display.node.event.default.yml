@@ -5,19 +5,21 @@ dependencies:
   config:
     - field.field.node.event.field_affiliation
     - field.field.node.event.field_audience
-    - field.field.node.event.field_body
     - field.field.node.event.field_boolean
+    - field.field.node.event.field_conference_link
     - field.field.node.event.field_contact_name
     - field.field.node.event.field_detail_text
     - field.field.node.event.field_email
+    - field.field.node.event.field_experience
+    - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_is_virtual
     - field.field.node.event.field_links
     - field.field.node.event.field_location
     - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
+    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_person_image
     - field.field.node.event.field_phone
     - field.field.node.event.field_site_setting
@@ -27,13 +29,13 @@ dependencies:
     - field.field.node.event.field_teaser
     - field.field.node.event.field_type
     - field.field.node.event.field_video
-    - field.field.node.event.field_video_link
     - node.type.event
     - workflows.workflow.content
   module:
     - allowed_formats
     - conditional_fields
     - content_moderation
+    - entity_reference_revisions
     - field_group
     - link
     - media_library
@@ -64,10 +66,9 @@ third_party_settings:
       children:
         - field_image
         - field_smart_date
-        - field_is_virtual
-        - field_virtual_event_link
+        - field_conference_link
         - field_video
-        - field_video_link
+        - field_external_link
         - field_location
         - field_location_link
         - field_body
@@ -111,8 +112,9 @@ third_party_settings:
         - field_teaser
         - field_featured
         - field_tags
-        - field_type
+        - field_experience
         - field_audience
+        - field_type
       label: Metadata
       region: content
       parent_name: group_page_content
@@ -163,27 +165,24 @@ content:
     third_party_settings: {  }
   field_audience:
     type: options_select
-    weight: 15
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_body:
-    type: text_textarea
-    weight: 39
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings:
-      allowed_formats:
-        hide_help: '1'
-        hide_guidelines: '1'
   field_boolean:
     type: boolean_checkbox
-    weight: 41
+    weight: 40
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_conference_link:
+    type: link_default
+    weight: 33
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_contact_name:
     type: text_textarea
@@ -195,7 +194,7 @@ content:
     third_party_settings: {  }
   field_detail_text:
     type: text_textarea
-    weight: 43
+    weight: 42
     region: content
     settings:
       rows: 5
@@ -213,6 +212,20 @@ content:
       placeholder: ''
       size: 60
     third_party_settings: {  }
+  field_experience:
+    type: options_select
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_external_link:
+    type: link_default
+    weight: 35
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_featured:
     type: boolean_checkbox
     weight: 12
@@ -227,16 +240,9 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
-  field_is_virtual:
-    type: boolean_checkbox
-    weight: 33
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   field_links:
     type: link_default
-    weight: 42
+    weight: 41
     region: content
     settings:
       placeholder_url: ''
@@ -245,7 +251,7 @@ content:
       conditional_fields: {  }
   field_location:
     type: string_textfield
-    weight: 37
+    weight: 36
     region: content
     settings:
       size: 60
@@ -253,7 +259,7 @@ content:
     third_party_settings: {  }
   field_location_link:
     type: link_default
-    weight: 38
+    weight: 37
     region: content
     settings:
       placeholder_url: ''
@@ -277,6 +283,16 @@ content:
       placeholder: ''
     third_party_settings:
       conditional_fields: {  }
+  field_paragraphs:
+    type: entity_reference_revisions_autocomplete
+    weight: 44
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_person_image:
     type: media_library_widget
     weight: 23
@@ -294,7 +310,7 @@ content:
     third_party_settings: {  }
   field_site_setting:
     type: options_select
-    weight: 44
+    weight: 43
     region: content
     settings: {  }
     third_party_settings:
@@ -317,7 +333,7 @@ content:
     third_party_settings: {  }
   field_sponsor:
     type: text_textarea
-    weight: 40
+    weight: 39
     region: content
     settings:
       rows: 5
@@ -325,7 +341,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: term_reference_tree
-    weight: 13
+    weight: 15
     region: content
     settings:
       start_minimized: true
@@ -347,26 +363,18 @@ content:
         hide_guidelines: '1'
   field_type:
     type: options_select
-    weight: 14
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   field_video:
     type: media_library_widget
-    weight: 35
+    weight: 34
     region: content
     settings:
       media_types: {  }
     third_party_settings:
       conditional_fields: {  }
-  field_video_link:
-    type: link_default
-    weight: 36
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
   group_metadata:
     weight: 27
     region: content
@@ -388,13 +396,13 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 10
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -407,7 +415,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -438,7 +446,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
