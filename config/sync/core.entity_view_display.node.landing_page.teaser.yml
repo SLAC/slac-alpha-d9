@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.landing_page.field_boolean
     - field.field.node.landing_page.field_editorial_group
-    - field.field.node.landing_page.field_long_text
+    - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_paragraphs
+    - field.field.node.landing_page.field_review_date
+    - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_teaser
     - field.field.node.landing_page.field_teaser_image
     - field.field.node.landing_page.field_text
@@ -76,9 +77,10 @@ content:
     weight: 0
     region: content
 hidden:
-  field_boolean: true
   field_editorial_group: true
-  field_long_text: true
+  field_hero_paragraph: true
+  field_review_date: true
+  field_tags: true
   langcode: true
   links: true
   search_api_excerpt: true
