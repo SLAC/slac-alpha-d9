@@ -3,20 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_boolean
     - field.field.node.landing_page.field_editorial_group
-    - field.field.node.landing_page.field_long_text
+    - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_paragraphs
+    - field.field.node.landing_page.field_review_date
+    - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_teaser
     - field.field.node.landing_page.field_teaser_image
     - field.field.node.landing_page.field_text
     - node.type.landing_page
   module:
     - content_moderation
+    - datetime
     - field_group
     - media_library
     - paragraphs
     - path
+    - term_reference_tree
     - text
 third_party_settings:
   field_group:
@@ -27,7 +30,7 @@ third_party_settings:
       label: 'Page Content'
       region: content
       parent_name: ''
-      weight: 6
+      weight: 1
       format_type: tabs
       format_settings:
         classes: ''
@@ -37,8 +40,7 @@ third_party_settings:
         width_breakpoint: 640
     group_main_content:
       children:
-        - field_long_text
-        - field_boolean
+        - field_hero_paragraph
         - field_paragraphs
       label: 'Main Content'
       region: content
@@ -57,6 +59,7 @@ third_party_settings:
         - field_text
         - field_teaser
         - field_teaser_image
+        - field_tags
       label: Metadata
       region: content
       parent_name: group_page_content
@@ -85,6 +88,22 @@ third_party_settings:
         description: 'Select the group that may edit this page.'
         required_fields: true
         weight: 0
+    group_review_date:
+      children:
+        - field_review_date
+      label: 'Review Date'
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
@@ -92,16 +111,9 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_boolean:
-    type: boolean_checkbox
-    weight: 7
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_editorial_group:
     type: entity_reference_autocomplete
@@ -113,17 +125,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_long_text:
-    type: text_textarea
-    weight: 6
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_paragraphs:
+  field_hero_paragraph:
     type: paragraphs
-    weight: 8
+    weight: 13
     region: content
     settings:
       title: Paragraph
@@ -138,6 +142,41 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_paragraphs:
+    type: paragraphs
+    weight: 14
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_review_date:
+    type: datetime_default
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tags:
+    type: term_reference_tree
+    weight: 12
+    region: content
+    settings:
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
     third_party_settings: {  }
   field_teaser:
     type: text_textarea
@@ -183,7 +222,7 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 4
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -212,7 +251,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
