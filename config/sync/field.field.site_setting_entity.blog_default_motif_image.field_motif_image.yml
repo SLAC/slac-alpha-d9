@@ -1,0 +1,29 @@
+uuid: c6b03e4a-5cd5-4ddf-85b5-708d145c5cfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_motif_image
+    - media.type.image
+    - site_settings.site_setting_entity_type.blog_default_motif_image
+id: site_setting_entity.blog_default_motif_image.field_motif_image
+field_name: field_motif_image
+entity_type: site_setting_entity
+bundle: blog_default_motif_image
+label: 'Motif Image'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
