@@ -10,7 +10,6 @@ dependencies:
     - site_settings.site_setting_entity_type.organization_details
   module:
     - address
-    - svg_image_field
 id: site_setting_entity.organization_details.default
 targetEntityType: site_setting_entity
 bundle: organization_details
@@ -22,31 +21,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_address:
-    type: address_default
+    type: address_plain
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_logo:
-    type: svg_image_field_formatter
-    label: hidden
-    settings:
-      inline: false
-      apply_dimensions: true
-      width: 25
-      height: 25
-      enable_alt: true
-      enable_title: true
-      link: ''
-      force_fill: false
-      sanitize: true
-      sanitize_remote: false
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_organization_name:
     type: string
@@ -54,9 +36,10 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
+  field_logo: true
   fieldset: true
   name: true
   search_api_excerpt: true
