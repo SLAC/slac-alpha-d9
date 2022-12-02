@@ -1,11 +1,11 @@
-uuid: 61995eb1-7f85-4efc-ad24-d5f41528fdae
+uuid: 5e7a1ae4-3b45-4be9-86bb-9ec4cdc71347
 langcode: en
 status: true
 dependencies:
   module:
     - style_options
-id: section
-label: 'Section (Configurable Column Layout)'
+id: section_fixed
+label: 'Section (2:1:1 Layout)'
 icon_uuid: null
 icon_default: null
 description: ''
