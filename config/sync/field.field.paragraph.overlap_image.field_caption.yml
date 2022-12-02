@@ -1,10 +1,10 @@
-uuid: f2a3e683-f9ad-45e1-82f7-c57826f1bb3b
+uuid: 7eedae8a-4c52-42ac-8798-1a6c5c7c6c53
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_long_text
-    - node.type.landing_page
+    - field.storage.paragraph.field_caption
+    - paragraphs.paragraphs_type.overlap_image
   module:
     - allowed_formats
     - text
@@ -12,14 +12,14 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - restricted_html
-id: node.landing_page.field_long_text
-field_name: field_long_text
-entity_type: node
-bundle: landing_page
-label: Intro
+id: paragraph.overlap_image.field_caption
+field_name: field_caption
+entity_type: paragraph
+bundle: overlap_image
+label: Caption
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

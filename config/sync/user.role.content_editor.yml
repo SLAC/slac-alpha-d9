@@ -35,6 +35,7 @@ dependencies:
     - taxonomy
     - toolbar
     - tour
+    - vapn
     - webform
     - workbench_access
 _core:
@@ -58,6 +59,7 @@ permissions:
   - 'access webform overview'
   - 'access webform submission user'
   - 'administer webform element access'
+  - 'bypass vapn'
   - 'create document media'
   - 'create event content'
   - 'create image media'
@@ -112,6 +114,7 @@ permissions:
   - 'edit sitewide alert entities'
   - 'edit terms in event_type'
   - 'edit terms in tags'
+  - 'manage vapn settings'
   - 'rabbit hole bypass media'
   - 'revert all revisions'
   - 'revert event revisions'
@@ -125,6 +128,7 @@ permissions:
   - 'use content transition create_new_draft'
   - 'use content transition publish'
   - 'use text format full_html'
+  - 'use vapn'
   - 'use workbench access'
   - 'view all revisions'
   - 'view any unpublished content'

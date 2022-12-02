@@ -41,6 +41,7 @@ dependencies:
     - taxonomy
     - toolbar
     - update
+    - vapn
     - views_ui
     - webform
     - workbench_access
@@ -74,6 +75,7 @@ permissions:
   - 'administer webform'
   - 'administer webform element access'
   - 'administer webform submission'
+  - 'bypass vapn'
   - 'create animated_icon media'
   - 'create document media'
   - 'create event content'
@@ -140,6 +142,7 @@ permissions:
   - 'edit webform source'
   - 'edit webform twig'
   - 'edit webform variants'
+  - 'manage vapn settings'
   - 'masquerade as author'
   - 'masquerade as content_editor'
   - 'masquerade as reviewer'
@@ -157,6 +160,7 @@ permissions:
   - 'use content transition create_new_draft'
   - 'use content transition publish'
   - 'use text format full_html'
+  - 'use vapn'
   - 'use workbench access'
   - 'view all revisions'
   - 'view all sitewide alert revisions'

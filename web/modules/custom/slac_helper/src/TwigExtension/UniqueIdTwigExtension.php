@@ -2,6 +2,8 @@
 
 namespace Drupal\slac_helper\TwigExtension;
 
+use Drupal\Component\Utility\Crypt;
+use Drupal\Component\Utility\Html;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 
@@ -22,8 +24,15 @@ class UniqueIdTwigExtension extends AbstractExtension {
    */
   public function getFilters() {
     $filters = parent::getFilters();
-    $filters[] = new TwigFilter('unique_id', '\Drupal\Component\Utility\Html::getUniqueId');
+    $filters[] = new TwigFilter('unique_id', [$this, 'uniqueId']);
     return $filters;
+  }
+
+  /**
+   * Generate a unique ID.
+   */
+  public function uniqueId($id) {
+    return Html::getId($id) . '--' . Crypt::randomBytesBase64(8);
   }
 
 }
