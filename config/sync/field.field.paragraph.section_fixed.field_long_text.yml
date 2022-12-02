@@ -1,0 +1,27 @@
+uuid: 82607f72-c789-4c96-bb77-ea120c38e465
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_text
+    - paragraphs.paragraphs_type.section_fixed
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+      - restricted_html
+id: paragraph.section_fixed.field_long_text
+field_name: field_long_text
+entity_type: paragraph
+bundle: section_fixed
+label: Intro
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
