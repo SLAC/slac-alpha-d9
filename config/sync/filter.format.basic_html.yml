@@ -2,6 +2,8 @@ uuid: 838a8e2f-3c2b-4291-aceb-e746cabfb015
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.embed
   module:
     - editor
     - media
@@ -71,8 +73,8 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
+      default_view_mode: embed
+      allowed_view_modes:
+        embed: embed
       allowed_media_types:
-        animated_icon: animated_icon
         image: image
