@@ -8,12 +8,15 @@ dependencies:
     - media.type.image
     - media.type.remote_audio
     - media.type.remote_video
+    - node.type.blog
     - node.type.event
+    - node.type.faq
     - node.type.homepage
     - node.type.landing_page
     - node.type.news_article
     - node.type.page
     - node.type.person
+    - node.type.publication
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.tags
     - workflows.workflow.content
@@ -25,6 +28,7 @@ dependencies:
     - file
     - filter
     - media
+    - moderated_content_bulk_publish
     - node
     - paragraphs
     - path
@@ -60,48 +64,63 @@ permissions:
   - 'access webform submission user'
   - 'administer webform element access'
   - 'bypass vapn'
+  - 'create blog content'
   - 'create document media'
   - 'create event content'
+  - 'create faq content'
   - 'create image media'
   - 'create landing_page content'
   - 'create media'
   - 'create news_article content'
   - 'create page content'
   - 'create person content'
+  - 'create publication content'
   - 'create remote_audio media'
   - 'create remote_video media'
   - 'create terms in tags'
   - 'create url aliases'
   - 'create webform'
+  - 'delete any blog content'
   - 'delete any event content'
+  - 'delete any faq content'
   - 'delete any landing_page content'
   - 'delete any media'
   - 'delete any news_article content'
   - 'delete any page content'
   - 'delete any person content'
+  - 'delete any publication content'
+  - 'delete blog revisions'
   - 'delete event revisions'
+  - 'delete faq revisions'
   - 'delete homepage revisions'
   - 'delete landing_page revisions'
   - 'delete media'
   - 'delete news_article revisions'
+  - 'delete own blog content'
   - 'delete own event content'
+  - 'delete own faq content'
   - 'delete own homepage content'
   - 'delete own landing_page content'
   - 'delete own news_article content'
   - 'delete own page content'
   - 'delete own person content'
+  - 'delete own publication content'
   - 'delete own webform'
   - 'delete own webform submission'
   - 'delete page revisions'
   - 'delete person revisions'
+  - 'delete publication revisions'
   - 'display eu cookie compliance popup'
+  - 'edit any blog content'
   - 'edit any event content'
+  - 'edit any faq content'
   - 'edit any homepage content'
   - 'edit any image media'
   - 'edit any landing_page content'
   - 'edit any news_article content'
   - 'edit any page content'
   - 'edit any person content'
+  - 'edit any publication content'
   - 'edit any remote_video media'
   - 'edit any webform'
   - 'edit behavior plugin settings'
@@ -115,14 +134,19 @@ permissions:
   - 'edit terms in event_type'
   - 'edit terms in tags'
   - 'manage vapn settings'
+  - 'moderated content bulk publish'
+  - 'moderated content bulk unpublish'
   - 'rabbit hole bypass media'
   - 'revert all revisions'
+  - 'revert blog revisions'
   - 'revert event revisions'
+  - 'revert faq revisions'
   - 'revert homepage revisions'
   - 'revert landing_page revisions'
   - 'revert news_article revisions'
   - 'revert page revisions'
   - 'revert person revisions'
+  - 'revert publication revisions'
   - 'update any media'
   - 'update media'
   - 'use content transition create_new_draft'
@@ -133,6 +157,7 @@ permissions:
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view any webform submission'
+  - 'view blog revisions'
   - 'view latest version'
   - 'view own unpublished content'
   - 'view own webform submission'

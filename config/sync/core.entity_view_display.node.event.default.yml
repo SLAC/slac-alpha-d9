@@ -3,35 +3,38 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.event.field_bio_related_content
-    - field.field.node.event.field_body
+    - field.field.node.event.field_affiliation
+    - field.field.node.event.field_audience
     - field.field.node.event.field_boolean
-    - field.field.node.event.field_boolean2
-    - field.field.node.event.field_datetime_range
+    - field.field.node.event.field_conference_link
+    - field.field.node.event.field_contact_name
     - field.field.node.event.field_detail_text
-    - field.field.node.event.field_editorial_group
+    - field.field.node.event.field_email
+    - field.field.node.event.field_experience
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_lede
-    - field.field.node.event.field_link
-    - field.field.node.event.field_link2
     - field.field.node.event.field_links
+    - field.field.node.event.field_location
+    - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
-    - field.field.node.event.field_override_text
+    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_person_image
+    - field.field.node.event.field_phone
     - field.field.node.event.field_site_setting
+    - field.field.node.event.field_smart_date
+    - field.field.node.event.field_sponsor
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
-    - field.field.node.event.field_text
     - field.field.node.event.field_type
     - field.field.node.event.field_video
     - node.type.event
   module:
-    - addtocal
+    - entity_reference_revisions
     - field_group
     - link
+    - smart_date
     - text
     - user
 third_party_settings:
@@ -125,20 +128,20 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_bio_related_content:
+  field_affiliation:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_audience:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
-    region: content
-  field_body:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
+    weight: 31
     region: content
   field_boolean:
     type: boolean
@@ -148,34 +151,26 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 25
     region: content
-  field_boolean2:
-    type: boolean
+  field_conference_link:
+    type: link
     label: above
     settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 17
+    weight: 33
     region: content
-  field_datetime_range:
-    type: addtocal_view
+  field_contact_name:
+    type: text_default
     label: above
-    settings:
-      timezone_override: ''
-      date_format: 'Y-m-d\TH:i:s'
-      separator: '-'
-      location:
-        value: '0'
-        tokenized: ''
-      description:
-        value: '0'
-        tokenized: ''
-      past_events: 0
+    settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 27
     region: content
   field_detail_text:
     type: text_default
@@ -183,6 +178,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 15
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 28
+    region: content
+  field_experience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 32
     region: content
   field_external_link:
     type: link
@@ -194,7 +204,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 10
+    weight: 34
     region: content
   field_featured:
     type: boolean
@@ -204,7 +214,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 30
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -214,37 +224,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 8
-    region: content
-  field_lede:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 20
-    region: content
-  field_link:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_link2:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 16
     region: content
   field_links:
     type: link
@@ -257,6 +236,26 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 14
+    region: content
+  field_location:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_location_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 23
     region: content
   field_long_text:
     type: text_default
@@ -272,12 +271,14 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_override_text:
-    type: text_default
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
     label: above
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 13
+    weight: 35
     region: content
   field_person_image:
     type: entity_reference_entity_view
@@ -288,6 +289,15 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_phone:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 29
+    region: content
   field_site_setting:
     type: entity_reference_label
     label: above
@@ -295,6 +305,26 @@ content:
       link: true
     third_party_settings: {  }
     weight: 18
+    region: content
+  field_smart_date:
+    type: smartdate_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      format: default
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_sponsor:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 24
     region: content
   field_tags:
     type: entity_reference_label
@@ -310,14 +340,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_text:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 19
     region: content
   field_type:
     type: entity_reference_label
@@ -342,6 +364,5 @@ content:
     weight: 0
     region: content
 hidden:
-  field_editorial_group: true
   langcode: true
   search_api_excerpt: true

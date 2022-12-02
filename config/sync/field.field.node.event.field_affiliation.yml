@@ -1,9 +1,9 @@
-uuid: 84465ab8-4510-4d9e-aa18-ac8eacab5798
+uuid: 41a1af74-bb13-45c4-b557-2983dd8eb009
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_body
+    - field.storage.node.field_affiliation
     - node.type.event
   module:
     - allowed_formats
@@ -12,11 +12,11 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - basic_html
-id: node.event.field_body
-field_name: field_body
+id: node.event.field_affiliation
+field_name: field_affiliation
 entity_type: node
 bundle: event
-label: Description
+label: 'Speaker Affiliation'
 description: ''
 required: false
 translatable: false

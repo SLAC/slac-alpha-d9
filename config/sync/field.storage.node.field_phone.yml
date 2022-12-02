@@ -1,17 +1,17 @@
-uuid: 0a937bab-ae9a-4804-a529-54e892e8fed6
+uuid: 7b6bf52a-c757-4636-b5d6-c0ed45977a83
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime_range
     - node
-id: node.field_datetime_range
-field_name: field_datetime_range
+id: node.field_phone
+field_name: field_phone
 entity_type: node
-type: daterange
+type: integer
 settings:
-  datetime_type: datetime
-module: datetime_range
+  unsigned: false
+  size: normal
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -1,15 +1,16 @@
-uuid: cc18bad9-43f0-4362-9433-59cda81707e4
+uuid: 3661e272-1b7a-4fe3-88d3-2bf051450d65
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-id: node.field_boolean2
-field_name: field_boolean2
+id: node.field_conference_link
+field_name: field_conference_link
 entity_type: node
-type: boolean
+type: link
 settings: {  }
-module: core
+module: link
 locked: false
 cardinality: 1
 translatable: true

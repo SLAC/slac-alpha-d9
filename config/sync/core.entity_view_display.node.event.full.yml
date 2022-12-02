@@ -4,33 +4,34 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.event.field_bio_related_content
-    - field.field.node.event.field_body
+    - field.field.node.event.field_affiliation
+    - field.field.node.event.field_audience
     - field.field.node.event.field_boolean
-    - field.field.node.event.field_boolean2
-    - field.field.node.event.field_datetime_range
+    - field.field.node.event.field_conference_link
+    - field.field.node.event.field_contact_name
     - field.field.node.event.field_detail_text
-    - field.field.node.event.field_editorial_group
+    - field.field.node.event.field_email
+    - field.field.node.event.field_experience
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_lede
-    - field.field.node.event.field_link
-    - field.field.node.event.field_link2
     - field.field.node.event.field_links
+    - field.field.node.event.field_location
+    - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
-    - field.field.node.event.field_override_text
+    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_person_image
+    - field.field.node.event.field_phone
     - field.field.node.event.field_site_setting
+    - field.field.node.event.field_smart_date
+    - field.field.node.event.field_sponsor
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
-    - field.field.node.event.field_text
     - field.field.node.event.field_type
     - field.field.node.event.field_video
     - node.type.event
   module:
-    - addtocal
     - link
     - text
     - user
@@ -43,40 +44,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
-    region: content
-  field_body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_boolean2:
-    type: boolean
-    label: hidden
-    settings:
-      format: true-false
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 17
-    region: content
-  field_datetime_range:
-    type: addtocal_view
-    label: hidden
-    settings:
-      timezone_override: ''
-      separator: '-'
-      location:
-        value: false
-        tokenized: ''
-      description:
-        value: false
-        tokenized: ''
-      past_events: false
-      date_format: 'Y-m-d\TH:i:s'
-    third_party_settings: {  }
-    weight: 6
     region: content
   field_detail_text:
     type: text_default
@@ -93,37 +60,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 10
-    region: content
-  field_lede:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_link:
-    type: link
-    label: hidden
-    settings:
-      trim_length: null
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_link2:
-    type: link
-    label: hidden
-    settings:
-      trim_length: null
-      url_only: false
-      url_plain: true
-      rel: '0'
-      target: '0'
-    third_party_settings: {  }
-    weight: 16
     region: content
   field_links:
     type: link
@@ -151,13 +87,6 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_override_text:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 13
-    region: content
   field_person_image:
     type: entity_reference_entity_view
     label: hidden
@@ -184,14 +113,6 @@ content:
     third_party_settings: {  }
     weight: 20
     region: content
-  field_text:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_type:
     type: entity_reference_label
     label: hidden
@@ -215,11 +136,21 @@ content:
     weight: 0
     region: content
 hidden:
-  field_bio_related_content: true
+  field_affiliation: true
+  field_audience: true
   field_boolean: true
-  field_editorial_group: true
+  field_conference_link: true
+  field_contact_name: true
+  field_email: true
+  field_experience: true
   field_external_link: true
   field_featured: true
+  field_location: true
+  field_location_link: true
+  field_paragraphs: true
+  field_phone: true
+  field_smart_date: true
+  field_sponsor: true
   field_teaser: true
   langcode: true
   search_api_excerpt: true
