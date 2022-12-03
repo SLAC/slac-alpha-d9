@@ -8,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.card_with_icon
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.small_card_with_icon
+    - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.video_lightbox
     - paragraphs.paragraphs_type.wysiwyg
   module:
@@ -29,6 +31,8 @@ settings:
       card: card
       card_with_icon: card_with_icon
       image_embed: image_embed
+      small_card_with_icon: small_card_with_icon
+      small_card_with_image: small_card_with_image
       video_lightbox: video_lightbox
       wysiwyg: wysiwyg
     negate: 0
@@ -122,10 +126,10 @@ settings:
         enabled: false
       small_card_with_icon:
         weight: 61
-        enabled: false
+        enabled: true
       small_card_with_image:
         weight: 62
-        enabled: false
+        enabled: true
       small_card_with_solid_background:
         weight: 63
         enabled: false
