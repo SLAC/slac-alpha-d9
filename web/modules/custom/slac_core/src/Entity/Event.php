@@ -53,10 +53,10 @@ class Event extends Node implements EventInterface {
     // correct timezone is set. Values retrieved from the field are not guaranteed
     // to be translated into the correct timezone, so assume they are in UTC zone and
     // convert to the system default (likely to be Los Angeles).
-    $event_date_start = new DrupalDateTime($this->get('field_datetime_range')->value, $storage_timezone);
+    $event_date_start = new DrupalDateTime('@' . $this->get('field_smart_date')->value, $storage_timezone);
     $event_date_start->setTimezone($default_timezone);
 
-    $event_date_end = new DrupalDateTime($this->get('field_datetime_range')->end_value, $storage_timezone);
+    $event_date_end = new DrupalDateTime('@' . $this->get('field_smart_date')->end_value, $storage_timezone);
     $event_date_end->setTimezone($default_timezone);
 
     // Use date comparison to determine order.
@@ -90,7 +90,7 @@ class Event extends Node implements EventInterface {
 
     // Retrieve the end date of this event. An event is only in the past if the end date occurs
     // before the current day. Field values are retrieved in storage tz (UTC), convert to default tz (Los Angeles).
-    $event_date_end = new DrupalDateTime($this->get('field_datetime_range')->end_value,
+    $event_date_end = new DrupalDateTime('@' . $this->get('field_smart_date')->end_value,
       new \DateTimezone(DateTimeItemInterface::STORAGE_TIMEZONE));
     $event_date_end->setTimezone($default_timezone);
 
