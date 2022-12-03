@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_paragraphs
     - paragraphs.paragraphs_type.tab_item
+    - paragraphs.paragraphs_type.table
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       wysiwyg: wysiwyg
+      table: table
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -39,6 +41,9 @@ settings:
         enabled: false
       card:
         weight: 41
+        enabled: false
+      card_with_icon:
+        weight: 47
         enabled: false
       cards_with_show_more:
         weight: 42
@@ -79,8 +84,14 @@ settings:
       image_hero:
         weight: 54
         enabled: false
+      image_lightbox:
+        weight: 61
+        enabled: false
       media_card:
         weight: 55
+        enabled: false
+      media_grid:
+        weight: 63
         enabled: false
       microsite_hero:
         weight: 56
@@ -112,8 +123,14 @@ settings:
       tab_item:
         weight: 66
         enabled: false
+      table:
+        weight: 74
+        enabled: true
       table_of_contents:
         weight: 65
+        enabled: false
+      tabs:
+        weight: 76
         enabled: false
       tout:
         weight: 67
