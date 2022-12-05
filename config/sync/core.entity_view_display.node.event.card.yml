@@ -51,7 +51,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -60,7 +60,7 @@ content:
       view_mode: card_image_only
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_location:
     type: string
@@ -68,7 +68,27 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 7
+    region: content
+  field_paragraphs:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      more_aria_label: 'Read more about [node:title]'
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_smart_date:
     type: smartdate_plain
@@ -77,7 +97,7 @@ content:
       timezone_override: ''
       separator: '-'
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_teaser:
     type: trimmed_first_wysiwyg_paragraph
@@ -121,7 +141,6 @@ hidden:
   field_location_link: true
   field_long_text: true
   field_name: true
-  field_paragraphs: true
   field_person_image: true
   field_phone: true
   field_site_setting: true
