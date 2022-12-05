@@ -11,7 +11,7 @@ field_name: field_motif_image
 entity_type: site_setting_entity
 bundle: blog_default_motif_image
 label: 'Motif Image'
-description: ''
+description: 'If a blog does not have a hero or teaser image, the motif image will be used as a fallback where-ever blog images are displayed.'
 required: true
 translatable: true
 default_value: {  }

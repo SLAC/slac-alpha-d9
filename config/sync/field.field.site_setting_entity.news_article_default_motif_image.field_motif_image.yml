@@ -11,7 +11,7 @@ field_name: field_motif_image
 entity_type: site_setting_entity
 bundle: news_article_default_motif_image
 label: 'Motif Image'
-description: 'If a news article does not have a hero or teaser image, the motif image will be used as a fallback.'
+description: 'If a news article does not have a hero or teaser image, the motif image will be used as a fallback where-ever news article images are displayed.'
 required: false
 translatable: true
 default_value: {  }
