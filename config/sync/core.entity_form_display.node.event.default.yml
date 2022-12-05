@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.event.field_affiliation
     - field.field.node.event.field_audience
+    - field.field.node.event.field_body
     - field.field.node.event.field_boolean
     - field.field.node.event.field_conference_link
     - field.field.node.event.field_contact_name
@@ -19,7 +20,6 @@ dependencies:
     - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
-    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_person_image
     - field.field.node.event.field_phone
     - field.field.node.event.field_site_setting
@@ -35,7 +35,6 @@ dependencies:
     - allowed_formats
     - conditional_fields
     - content_moderation
-    - entity_reference_revisions
     - field_group
     - link
     - media_library
@@ -169,6 +168,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_body:
+    type: text_textarea
+    weight: 38
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_boolean:
     type: boolean_checkbox
     weight: 40
@@ -283,16 +290,6 @@ content:
       placeholder: ''
     third_party_settings:
       conditional_fields: {  }
-  field_paragraphs:
-    type: entity_reference_revisions_autocomplete
-    weight: 44
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_person_image:
     type: media_library_widget
     weight: 23
