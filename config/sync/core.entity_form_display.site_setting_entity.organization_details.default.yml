@@ -7,6 +7,7 @@ dependencies:
     - field.field.site_setting_entity.organization_details.field_address
     - field.field.site_setting_entity.organization_details.field_logo
     - field.field.site_setting_entity.organization_details.field_organization_name
+    - field.field.site_setting_entity.organization_details.field_text
     - site_settings.site_setting_entity_type.organization_details
   module:
     - address
@@ -18,7 +19,7 @@ mode: default
 content:
   field_acronym:
     type: string_textfield
-    weight: 12
+    weight: 5
     region: content
     settings:
       size: 60
@@ -26,13 +27,13 @@ content:
     third_party_settings: {  }
   field_address:
     type: address_default
-    weight: 13
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_logo:
     type: svg_image_field_widget
-    weight: 14
+    weight: 8
     region: content
     settings:
       progress_indicator: throbber
@@ -41,7 +42,15 @@ content:
     third_party_settings: {  }
   field_organization_name:
     type: string_textfield
-    weight: 11
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: string_textfield
+    weight: 7
     region: content
     settings:
       size: 60
@@ -49,7 +58,7 @@ content:
     third_party_settings: {  }
   fieldset:
     type: string_textfield
-    weight: -4
+    weight: 1
     region: content
     settings:
       size: 60
@@ -57,14 +66,14 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 10
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
@@ -72,7 +81,7 @@ content:
     third_party_settings: {  }
   user_id:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
