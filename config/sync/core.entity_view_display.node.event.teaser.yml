@@ -33,6 +33,7 @@ dependencies:
     - node.type.event
   module:
     - slac_core
+    - smart_date
     - user
 id: node.event.teaser
 targetEntityType: node
@@ -42,7 +43,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -52,6 +53,23 @@ content:
       link: false
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_location:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_smart_date:
+    type: smartdate_plain
+    label: hidden
+    settings:
+      timezone_override: ''
+      separator: '-'
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_teaser:
     type: trimmed_first_wysiwyg_paragraph
@@ -69,8 +87,9 @@ content:
       more_class: more-link
       more_text: More
       summary_handler: full
+      more_aria_label: 'Read more about [node:title]'
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_type:
     type: entity_reference_label
@@ -92,7 +111,6 @@ hidden:
   field_external_link: true
   field_featured: true
   field_links: true
-  field_location: true
   field_location_link: true
   field_long_text: true
   field_name: true
@@ -100,7 +118,6 @@ hidden:
   field_person_image: true
   field_phone: true
   field_site_setting: true
-  field_smart_date: true
   field_sponsor: true
   field_tags: true
   field_video: true
