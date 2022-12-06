@@ -46,6 +46,7 @@ dependencies:
     - path
     - rabbit_hole
     - search_api
+    - single_content_sync
     - site_settings
     - sitewide_alert
     - system
@@ -189,6 +190,8 @@ permissions:
   - 'edit webform source'
   - 'edit webform twig'
   - 'edit webform variants'
+  - 'export single content'
+  - 'import single content'
   - 'manage vapn settings'
   - 'masquerade as author'
   - 'masquerade as content_editor'
