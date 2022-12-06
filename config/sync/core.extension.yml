@@ -6,6 +6,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
+  aggregator: 0
   allowed_formats: 0
   animated_gif: 0
   automated_cron: 0
@@ -51,6 +52,7 @@ module:
   environment_indicator_ui: 0
   estimated_read_time: 0
   facets: 0
+  feeds: 0
   field: 0
   field_encrypt: 0
   field_group: 0
@@ -74,6 +76,7 @@ module:
   layout_paragraphs: 0
   link: 0
   lottiefiles_field: 0
+  mailsystem: 0
   masquerade: 0
   maxlength: 0
   media: 0
@@ -109,7 +112,9 @@ module:
   search_api: 0
   search_api_db: 0
   selection_sharer: 0
+  sendgrid_integration: 0
   shortcut: 0
+  single_content_sync: 0
   site_settings: 0
   sitewide_alert: 0
   slac_core: 0
