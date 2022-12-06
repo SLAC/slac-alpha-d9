@@ -16,6 +16,7 @@ dependencies:
     - node.type.person
     - node.type.publication
   module:
+    - aggregator
     - comment
     - contextual
     - environment_indicator
@@ -45,6 +46,7 @@ permissions:
   - 'access contextual links'
   - 'access environment indicator'
   - 'access fontawesome additional settings'
+  - 'access news feeds'
   - 'access shortcuts'
   - 'access toolbar'
   - 'display eu cookie compliance popup'
