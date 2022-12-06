@@ -1,12 +1,14 @@
 _core:
   default_config_hash: g4qz7cPnloXFwtnLYfIKI2VS0gf_UFOz_I2uQiiulC8
-apikey: ''
+apikey: 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
 test_defaults:
-  to: noreply@slac.stanford.edu
+  to: lhaas@forumone.com
   subject: 'Test Email from SendGrid Module'
   body:
     value: 'Test Message for SendGrid.'
     format: plain_text
-  from_name: ''
-  to_name: ''
+  from_name: slac@forumone.com
+  to_name: LYNN
   reply_to: ''
+trackopens: 0
+trackclicks: 0
