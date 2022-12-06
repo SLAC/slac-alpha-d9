@@ -2,7 +2,6 @@ _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 ignored_config_entities:
   - 'webform.webform.*'
-  - 'webform.webform_options.*'
   - ~webform.webform.example_wizard
   - ~webform.webform.example_style_guide
   - ~webform.webform.example_input_masks
