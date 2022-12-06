@@ -1,12 +1,13 @@
 uuid: 0ca6487a-dbaf-46f2-aebc-0f6990466ce0
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.media.field_caption
     - field.storage.media.field_long_text
     - field.storage.node.field_long_text
     - field.storage.node.field_name
+    - search_api.server.database
     - core.entity_view_mode.media.search_index
     - core.entity_view_mode.node.search_index
   module:
@@ -190,4 +191,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: null
+server: database
