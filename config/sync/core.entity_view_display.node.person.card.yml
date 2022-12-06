@@ -51,6 +51,7 @@ hidden:
   field_address: true
   field_affiliations: true
   field_awardshonors: true
+  field_body: true
   field_editorial_group: true
   field_education: true
   field_email: true
