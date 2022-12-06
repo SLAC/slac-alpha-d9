@@ -7,7 +7,8 @@ label: Local
 description: 'Configuration settings for local development.'
 weight: 0
 folder: ../config/splits/local
-module: {  }
+module:
+  webform_examples: 0
 theme: {  }
 blacklist: {  }
 graylist: {  }
