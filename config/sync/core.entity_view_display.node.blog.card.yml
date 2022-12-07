@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.blog.field_category
     - field.field.node.blog.field_date
     - field.field.node.blog.field_dek
+    - field.field.node.blog.field_editorial_group
     - field.field.node.blog.field_hero_paragraph
     - field.field.node.blog.field_link
     - field.field.node.blog.field_paragraphs
+    - field.field.node.blog.field_review_date
     - field.field.node.blog.field_series
     - field.field.node.blog.field_tags
     - field.field.node.blog.field_teaser
@@ -82,8 +84,10 @@ hidden:
   field_category: true
   field_date: true
   field_dek: true
+  field_editorial_group: true
   field_hero_paragraph: true
   field_link: true
+  field_review_date: true
   field_series: true
   field_tags: true
   field_text: true
