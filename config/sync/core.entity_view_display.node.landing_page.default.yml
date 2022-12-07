@@ -3,17 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_editorial_group
     - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_paragraphs
-    - field.field.node.landing_page.field_review_date
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_teaser
     - field.field.node.landing_page.field_teaser_image
     - field.field.node.landing_page.field_text
     - node.type.landing_page
   module:
-    - datetime
     - entity_reference_revisions
     - user
 id: node.landing_page.default
@@ -39,15 +36,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_review_date:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_tags:
     type: entity_reference_label
     label: above
@@ -70,7 +58,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_editorial_group: true
   field_teaser: true
   field_teaser_image: true
   langcode: true
