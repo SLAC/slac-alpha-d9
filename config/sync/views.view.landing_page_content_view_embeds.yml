@@ -17,7 +17,7 @@ dependencies:
     - text
     - user
 id: landing_page_content_view_embeds
-label: 'Landing Page Content View Embeds'
+label: 'Landing Page Content Lists'
 module: views
 description: 'Views filtered by content type intended to be selected by content editors for the corresponding Content Type Landing Pages.'
 tag: ''
@@ -162,7 +162,7 @@ display:
         type: mini
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 9
           total_pages: null
           id: 0
           tags:
@@ -303,7 +303,7 @@ display:
         - 'config:field.storage.node.field_teaser'
   embed_events:
     id: embed_events
-    display_title: 'Embed Events'
+    display_title: 'Events List'
     display_plugin: embed
     position: 1
     display_options:
@@ -599,7 +599,7 @@ display:
         - 'config:field.storage.node.field_teaser'
   embed_news_articles:
     id: embed_news_articles
-    display_title: 'Embed News Articles'
+    display_title: 'News Articles List'
     display_plugin: embed
     position: 1
     display_options:
