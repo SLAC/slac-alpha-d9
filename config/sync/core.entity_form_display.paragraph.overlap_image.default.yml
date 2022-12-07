@@ -7,7 +7,7 @@ dependencies:
     - field.field.paragraph.overlap_image.field_caption
     - field.field.paragraph.overlap_image.field_image
     - field.field.paragraph.overlap_image.field_link
-    - field.field.paragraph.overlap_image.field_long_text
+    - field.field.paragraph.overlap_image.field_plain_long_text
     - field.field.paragraph.overlap_image.field_short_text
     - field.field.paragraph.overlap_image.field_text
     - paragraphs.paragraphs_type.overlap_image
@@ -50,8 +50,8 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-  field_long_text:
-    type: text_textarea
+  field_plain_long_text:
+    type: string_textarea
     weight: 4
     region: content
     settings:
