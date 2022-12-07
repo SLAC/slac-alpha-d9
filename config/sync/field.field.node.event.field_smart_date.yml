@@ -12,7 +12,7 @@ field_name: field_smart_date
 entity_type: node
 bundle: event
 label: 'Event Date'
-description: ''
+description: 'Multi-day events must be saved as "All day".'
 required: true
 translatable: false
 default_value:
