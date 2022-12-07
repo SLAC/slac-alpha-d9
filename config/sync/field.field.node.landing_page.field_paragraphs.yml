@@ -18,6 +18,7 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
+    - paragraphs.paragraphs_type.tab_item
     - paragraphs.paragraphs_type.table
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.two_column_hero
@@ -55,6 +56,7 @@ settings:
       two_column_hero: two_column_hero
       video_hero: video_hero
       table: table
+      tab_item: tab_item
     negate: 1
     target_bundles_drag_drop:
       accordion:
@@ -141,6 +143,9 @@ settings:
       section:
         weight: -59
         enabled: false
+      section_fixed:
+        weight: 71
+        enabled: false
       small_card_with_icon:
         weight: -58
         enabled: true
@@ -152,7 +157,7 @@ settings:
         enabled: true
       tab_item:
         weight: -43
-        enabled: false
+        enabled: true
       table:
         weight: -45
         enabled: true

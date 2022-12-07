@@ -11,7 +11,7 @@ entity_type: paragraph
 bundle: overlap_image
 label: 'Override caption?'
 description: ''
-required: true
+required: false
 translatable: true
 default_value:
   -

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.event.field_affiliation
     - field.field.node.event.field_audience
+    - field.field.node.event.field_body
     - field.field.node.event.field_boolean
     - field.field.node.event.field_conference_link
     - field.field.node.event.field_contact_name
@@ -19,19 +20,17 @@ dependencies:
     - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
-    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_person_image
-    - field.field.node.event.field_phone
     - field.field.node.event.field_site_setting
     - field.field.node.event.field_smart_date
     - field.field.node.event.field_sponsor
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
+    - field.field.node.event.field_text
     - field.field.node.event.field_type
     - field.field.node.event.field_video
     - node.type.event
   module:
-    - entity_reference_revisions
     - field_group
     - link
     - smart_date
@@ -142,6 +141,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 31
+    region: content
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 35
     region: content
   field_boolean:
     type: boolean
@@ -271,15 +277,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_paragraphs:
-    type: entity_reference_revisions_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 35
-    region: content
   field_person_image:
     type: entity_reference_entity_view
     label: above
@@ -288,15 +285,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_phone:
-    type: number_integer
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 29
     region: content
   field_site_setting:
     type: entity_reference_label
@@ -340,6 +328,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 36
     region: content
   field_type:
     type: entity_reference_label

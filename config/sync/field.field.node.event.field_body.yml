@@ -1,9 +1,9 @@
-uuid: 522a7f70-1d49-493d-af77-f73437983d17
+uuid: a5256557-36ac-4c7a-85ff-a86bd8042691
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_teaser
+    - field.storage.node.field_body
     - node.type.event
   module:
     - allowed_formats
@@ -12,14 +12,14 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - basic_html
-id: node.event.field_teaser
-field_name: field_teaser
+id: node.event.field_body
+field_name: field_body
 entity_type: node
 bundle: event
-label: Teaser
-description: 'Leave blank to use the trimmed value of the Description field as the teaser.'
+label: Description
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
