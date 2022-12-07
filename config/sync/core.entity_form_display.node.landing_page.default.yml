@@ -3,10 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_editorial_group
     - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_paragraphs
-    - field.field.node.landing_page.field_review_date
     - field.field.node.landing_page.field_tags
     - field.field.node.landing_page.field_teaser
     - field.field.node.landing_page.field_teaser_image
@@ -14,7 +12,6 @@ dependencies:
     - node.type.landing_page
   module:
     - content_moderation
-    - datetime
     - field_group
     - media_library
     - paragraphs
@@ -72,38 +69,6 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
-    group_editorial_access:
-      children:
-        - field_editorial_group
-      label: 'Editorial Access'
-      region: content
-      parent_name: ''
-      weight: 11
-      format_type: details_sidebar
-      format_settings:
-        classes: ''
-        show_empty_fields: true
-        id: ''
-        open: false
-        description: 'Select the group that may edit this page.'
-        required_fields: true
-        weight: 0
-    group_review_date:
-      children:
-        - field_review_date
-      label: 'Review Date'
-      region: content
-      parent_name: ''
-      weight: 12
-      format_type: details_sidebar
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
-        weight: 0
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
@@ -114,16 +79,6 @@ content:
     weight: 4
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_editorial_group:
-    type: entity_reference_autocomplete
-    weight: 12
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_hero_paragraph:
     type: paragraphs
@@ -160,12 +115,6 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
-    third_party_settings: {  }
-  field_review_date:
-    type: datetime_default
-    weight: 14
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_tags:
     type: term_reference_tree
