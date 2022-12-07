@@ -6,9 +6,11 @@ dependencies:
     - field.field.node.blog.field_category
     - field.field.node.blog.field_date
     - field.field.node.blog.field_dek
+    - field.field.node.blog.field_editorial_group
     - field.field.node.blog.field_hero_paragraph
     - field.field.node.blog.field_link
     - field.field.node.blog.field_paragraphs
+    - field.field.node.blog.field_review_date
     - field.field.node.blog.field_series
     - field.field.node.blog.field_tags
     - field.field.node.blog.field_teaser
@@ -96,6 +98,8 @@ content:
     region: content
 hidden:
   field_category: true
+  field_editorial_group: true
+  field_review_date: true
   field_series: true
   field_teaser: true
   field_teaser_image: true

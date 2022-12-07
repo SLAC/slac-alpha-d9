@@ -1,0 +1,29 @@
+uuid: 98f9b9a8-40d4-404c-ace6-ee439cbc7b4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_editorial_group
+    - node.type.blog
+    - taxonomy.vocabulary.editorial_section
+id: node.blog.field_editorial_group
+field_name: field_editorial_group
+entity_type: node
+bundle: blog
+label: 'Editorial Group'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      editorial_section: editorial_section
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
