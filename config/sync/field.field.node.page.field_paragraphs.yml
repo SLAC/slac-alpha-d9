@@ -18,7 +18,8 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
-    - paragraphs.paragraphs_type.tabs
+    - paragraphs.paragraphs_type.tab_item
+    - paragraphs.paragraphs_type.table
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.two_column_hero
     - paragraphs.paragraphs_type.video_hero
@@ -54,7 +55,8 @@ settings:
       tout: tout
       two_column_hero: two_column_hero
       video_hero: video_hero
-      tabs: tabs
+      table: table
+      tab_item: tab_item
     negate: 1
     target_bundles_drag_drop:
       accordion:
@@ -155,16 +157,16 @@ settings:
         enabled: true
       tab_item:
         weight: 76
-        enabled: false
+        enabled: true
       table:
         weight: 73
-        enabled: false
+        enabled: true
       table_of_contents:
         weight: -45
         enabled: false
       tabs:
         weight: 75
-        enabled: true
+        enabled: false
       tout:
         weight: -43
         enabled: true
