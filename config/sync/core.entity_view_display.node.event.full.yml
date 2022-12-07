@@ -22,12 +22,12 @@ dependencies:
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
     - field.field.node.event.field_person_image
-    - field.field.node.event.field_phone
     - field.field.node.event.field_site_setting
     - field.field.node.event.field_smart_date
     - field.field.node.event.field_sponsor
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
+    - field.field.node.event.field_text
     - field.field.node.event.field_type
     - field.field.node.event.field_video
     - node.type.event
@@ -162,8 +162,8 @@ hidden:
   field_featured: true
   field_location: true
   field_location_link: true
-  field_phone: true
   field_sponsor: true
   field_teaser: true
+  field_text: true
   langcode: true
   search_api_excerpt: true
