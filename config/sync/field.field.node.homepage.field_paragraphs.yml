@@ -19,6 +19,8 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.small_card_with_solid_background
+    - paragraphs.paragraphs_type.tab_item
+    - paragraphs.paragraphs_type.table
     - paragraphs.paragraphs_type.table_of_contents
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.video_hero
@@ -55,6 +57,8 @@ settings:
       tout: tout
       table_of_contents: table_of_contents
       video_hero: video_hero
+      table: table
+      tab_item: tab_item
     negate: 1
     target_bundles_drag_drop:
       accordion:
@@ -72,6 +76,9 @@ settings:
       card:
         weight: -64
         enabled: true
+      card_with_icon:
+        weight: 49
+        enabled: false
       cards_with_show_more:
         weight: -62
         enabled: true
@@ -111,9 +118,15 @@ settings:
       image_hero:
         weight: -52
         enabled: true
+      image_lightbox:
+        weight: 62
+        enabled: false
       media_card:
         weight: -51
         enabled: true
+      media_grid:
+        weight: 64
+        enabled: false
       microsite_hero:
         weight: -50
         enabled: true
@@ -132,6 +145,9 @@ settings:
       section:
         weight: -45
         enabled: false
+      section_fixed:
+        weight: 71
+        enabled: false
       small_card_with_icon:
         weight: -44
         enabled: true
@@ -141,9 +157,18 @@ settings:
       small_card_with_solid_background:
         weight: -42
         enabled: true
+      tab_item:
+        weight: 78
+        enabled: true
+      table:
+        weight: 75
+        enabled: true
       table_of_contents:
         weight: -40
         enabled: true
+      tabs:
+        weight: 77
+        enabled: false
       tout:
         weight: -41
         enabled: true
