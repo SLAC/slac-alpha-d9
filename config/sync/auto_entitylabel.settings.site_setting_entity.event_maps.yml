@@ -1,0 +1,9 @@
+status: 1
+pattern: '[site_setting_entity:field_text:value]'
+escape: false
+preserve_titles: false
+dependencies:
+  config:
+    - site_settings.site_setting_entity_type.event_maps
+save: 0
+chunk: '50'
