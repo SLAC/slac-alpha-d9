@@ -5,4 +5,4 @@ dependencies: {  }
 id: event_maps
 label: 'Event: Maps'
 fieldset: 'Event: Maps'
-multiple: false
+multiple: true
