@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.card_with_icon
     - paragraphs.paragraphs_type.image_embed
+    - paragraphs.paragraphs_type.image_lightbox
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.video_lightbox
     - paragraphs.paragraphs_type.wysiwyg
@@ -29,6 +30,8 @@ settings:
       card: card
       card_with_icon: card_with_icon
       image_embed: image_embed
+      image_lightbox: image_lightbox
+      video_lightbox: video_lightbox
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
@@ -91,7 +94,7 @@ settings:
         enabled: false
       image_lightbox:
         weight: 62
-        enabled: false
+        enabled: true
       media_card:
         weight: 54
         enabled: false
