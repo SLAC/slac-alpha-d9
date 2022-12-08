@@ -6,12 +6,12 @@ _core:
   default_config_hash: QOzaA8j2871_aWBJyVZm_LqREilQnXZqRuk3HNANrEo
 id: default
 label: default
-date_format: 'D, M j Y'
+date_format: 'l, F j, Y'
 time_format: 'g:ia'
-time_hour_format: ga
+time_hour_format: 'g:ia'
 allday_label: 'All day'
 separator: ' - '
-join: ', '
+join: ' · '
 ampm_reduce: '1'
 date_first: '1'
 site_time_toggle: '1'
