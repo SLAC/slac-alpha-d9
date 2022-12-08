@@ -53,12 +53,53 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_audience:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_conference_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_contact_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
+    region: content
   field_detail_text:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 9
+    region: content
+  field_email:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -146,6 +187,13 @@ content:
     third_party_settings: {  }
     weight: 13
     region: content
+  field_sponsor:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
   field_tags:
     type: entity_reference_label
     label: above
@@ -153,6 +201,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 12
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 22
     region: content
   field_type:
     type: entity_reference_label
@@ -177,17 +233,10 @@ content:
     weight: 1
     region: content
 hidden:
-  field_audience: true
-  field_body: true
   field_boolean: true
-  field_conference_link: true
-  field_contact_name: true
-  field_email: true
   field_experience: true
   field_external_link: true
   field_featured: true
-  field_sponsor: true
   field_teaser: true
-  field_text: true
   langcode: true
   search_api_excerpt: true
