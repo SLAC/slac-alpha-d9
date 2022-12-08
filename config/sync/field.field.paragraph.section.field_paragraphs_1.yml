@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.cards_with_show_more
     - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.image_embed
+    - paragraphs.paragraphs_type.image_lightbox
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.tabs
@@ -37,6 +38,7 @@ settings:
       card_with_icon: card_with_icon
       fifty_fifty: fifty_fifty
       image_embed: image_embed
+      image_lightbox: image_lightbox
       quote: quote
       video_lightbox: video_lightbox
       wysiwyg: wysiwyg
@@ -102,7 +104,7 @@ settings:
         enabled: false
       image_lightbox:
         weight: 58
-        enabled: false
+        enabled: true
       media_card:
         weight: 54
         enabled: false
