@@ -45,6 +45,26 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_body:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      more_aria_label: 'Read more about [node:title]'
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_experience:
     type: entity_reference_label
     label: hidden
@@ -110,7 +130,6 @@ content:
 hidden:
   field_affiliation: true
   field_audience: true
-  field_body: true
   field_boolean: true
   field_conference_link: true
   field_contact_name: true
