@@ -33,6 +33,7 @@ dependencies:
     - node.type.event
   module:
     - link
+    - slac_helper
     - smart_date
     - text
     - user
@@ -59,14 +60,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 19
+    weight: 18
     region: content
   field_body:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 17
+    weight: 16
     region: content
   field_conference_link:
     type: link_separate
@@ -78,28 +79,36 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 16
+    weight: 15
     region: content
   field_contact_name:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 20
-    region: content
-  field_detail_text:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 9
+    weight: 19
     region: content
   field_email:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 21
+    weight: 20
+    region: content
+  field_external_link:
+    type: slac_helper_slac_button
+    label: hidden
+    settings:
+      trim_length: '80'
+      url_only: ''
+      url_plain: ''
+      rel: ''
+      target: ''
+      button_size: Standard
+      button_style: Primary
+      button_icon: None
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -110,25 +119,13 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-  field_links:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 11
-    region: content
   field_location:
     type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 15
+    weight: 14
     region: content
   field_location_link:
     type: link
@@ -140,7 +137,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 14
+    weight: 13
     region: content
   field_long_text:
     type: text_default
@@ -185,22 +182,22 @@ content:
       add_classes: false
       time_wrapper: true
     third_party_settings: {  }
-    weight: 13
+    weight: 12
     region: content
   field_sponsor:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 18
+    weight: 17
     region: content
   field_tags:
-    type: entity_reference_label
+    type: slac_tag
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 12
+    weight: 11
     region: content
   field_text:
     type: string
@@ -208,7 +205,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 22
+    weight: 21
     region: content
   field_type:
     type: entity_reference_label
@@ -234,9 +231,10 @@ content:
     region: content
 hidden:
   field_boolean: true
+  field_detail_text: true
   field_experience: true
-  field_external_link: true
   field_featured: true
+  field_links: true
   field_teaser: true
   langcode: true
   search_api_excerpt: true
