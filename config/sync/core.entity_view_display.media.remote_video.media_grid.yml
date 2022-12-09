@@ -22,7 +22,7 @@ dependencies:
     - field.field.media.remote_video.field_teaser
     - field.field.media.remote_video.field_thumbnail
     - field.field.media.remote_video.field_transcript
-    - image.style.mosaic_short
+    - image.style.media_grid
     - media.type.remote_video
   module:
     - image
@@ -67,7 +67,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: video_lightbox
+      view_mode: video_lightbox_media_grid
       link: false
     third_party_settings: {  }
     weight: 0
@@ -77,7 +77,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: mosaic_short
+      image_style: media_grid
       image_loading:
         attribute: lazy
     third_party_settings: {  }

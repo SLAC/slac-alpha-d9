@@ -1,0 +1,17 @@
+uuid: 042fda84-e8f5-438b-8a3b-72a9ad02fa4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: media_grid
+label: 'Media Grid'
+effects:
+  9a1388fe-ad3f-45b4-90fb-2483a10b85aa:
+    uuid: 9a1388fe-ad3f-45b4-90fb-2483a10b85aa
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 225
+      crop_type: focal_point
