@@ -1,0 +1,24 @@
+uuid: 18241ab8-e00f-4743-8b4f-63f101f3fe89
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.media_grid
+    - field.field.paragraph.image_lightbox.field_image
+    - paragraphs.paragraphs_type.image_lightbox
+id: paragraph.image_lightbox.media_grid
+targetEntityType: paragraph
+bundle: image_lightbox
+mode: media_grid
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: media_grid
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
