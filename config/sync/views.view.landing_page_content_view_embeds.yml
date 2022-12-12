@@ -288,6 +288,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -601,7 +602,7 @@ display:
     id: embed_news_articles
     display_title: 'News Articles List'
     display_plugin: embed
-    position: 1
+    position: 2
     display_options:
       filters:
         status:

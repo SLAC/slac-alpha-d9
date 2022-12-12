@@ -1,0 +1,21 @@
+uuid: 27dcf75b-39d0-4295-b6e6-14d8ae63b212
+langcode: en
+status: true
+dependencies:
+  module:
+    - views_exposed_filter_blocks
+  theme:
+    - slac
+id: news_exposedfilterblock
+theme: slac
+region: disabled
+weight: 0
+provider: null
+plugin: views_exposed_filter_blocks_block
+settings:
+  id: views_exposed_filter_blocks_block
+  label: 'Exposed filter block - News'
+  label_display: visible
+  provider: views_exposed_filter_blocks
+  view_display: 'landing_page_content_view_embeds:embed_news_articles'
+visibility: {  }
