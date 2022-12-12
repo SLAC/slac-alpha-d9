@@ -1,0 +1,10 @@
+uuid: cc7c3d88-a0d0-4f45-ac2e-1683061edee4
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.media_grid
+label: 'Media Grid'
+targetEntityType: media
+cache: true
