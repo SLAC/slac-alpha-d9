@@ -1,6 +1,6 @@
 uuid: c8ef70fc-c5f4-4bbe-940b-f961b3d04fe2
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.media.short
@@ -9,34 +9,22 @@ dependencies:
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_display_style
+    - field.field.media.image.field_internal_tags
     - field.field.media.image.field_landing_display
     - field.field.media.image.field_link
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
     - field.field.media.image.field_paragraphs
+    - field.field.media.image.field_research_area
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
     - field.field.media.image.field_type
-    - image.style.mosaic_short
     - media.type.image
-  module:
-    - image
 id: media.image.short
 targetEntityType: media
 bundle: image
 mode: short
-content:
-  field_media_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: mosaic_short
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
   created: true
   field_body: true
@@ -48,6 +36,7 @@ hidden:
   field_landing_display: true
   field_link: true
   field_long_text: true
+  field_media_image: true
   field_paragraphs: true
   field_research_area: true
   field_tags: true

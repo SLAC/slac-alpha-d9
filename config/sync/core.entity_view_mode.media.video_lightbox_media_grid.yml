@@ -1,0 +1,10 @@
+uuid: 0ebf7761-831f-4e2b-bb46-9bf545bccb87
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_lightbox_media_grid
+label: 'Video Lightbox (Media Grid)'
+targetEntityType: media
+cache: true

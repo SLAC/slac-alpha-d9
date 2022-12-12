@@ -1,6 +1,6 @@
 uuid: 88b17fbe-2878-4234-bd49-0d2867651989
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.media.mosaic_card

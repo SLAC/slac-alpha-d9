@@ -12,7 +12,7 @@ field_name: field_external_link
 entity_type: node
 bundle: publication
 label: 'External Link'
-description: ''
+description: 'Add a URL to an external source for this publication item.'
 required: false
 translatable: true
 default_value: {  }

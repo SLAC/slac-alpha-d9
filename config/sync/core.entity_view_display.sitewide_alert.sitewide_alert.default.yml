@@ -3,47 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.sitewide_alert.sitewide_alert.field_icon
     - field.field.sitewide_alert.sitewide_alert.field_kicker
   module:
     - sitewide_alert
-    - svg_image_field
     - text
 id: sitewide_alert.sitewide_alert.default
 targetEntityType: sitewide_alert
 bundle: sitewide_alert
 mode: default
 content:
-  field_icon:
-    type: svg_image_field_formatter
+  field_kicker:
+    type: string
     label: hidden
     settings:
-      inline: false
-      apply_dimensions: true
-      width: 25
-      height: 25
-      enable_alt: true
-      enable_title: true
-      link: ''
-      force_fill: false
-      sanitize: true
-      sanitize_remote: false
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 2
-    region: content
-  field_kicker:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   message:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   langcode: true
