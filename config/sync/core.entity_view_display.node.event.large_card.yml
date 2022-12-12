@@ -10,13 +10,11 @@ dependencies:
     - field.field.node.event.field_boolean
     - field.field.node.event.field_conference_link
     - field.field.node.event.field_contact_name
-    - field.field.node.event.field_detail_text
     - field.field.node.event.field_email
     - field.field.node.event.field_experience
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_links
     - field.field.node.event.field_location
     - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
@@ -87,12 +85,10 @@ hidden:
   field_boolean: true
   field_conference_link: true
   field_contact_name: true
-  field_detail_text: true
   field_email: true
   field_experience: true
   field_external_link: true
   field_featured: true
-  field_links: true
   field_location: true
   field_location_link: true
   field_long_text: true

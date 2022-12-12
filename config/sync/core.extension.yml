@@ -3,6 +3,7 @@ _core:
 module:
   address: 0
   addtocal: 0
+  addtocal_augment: 0
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
@@ -33,6 +34,7 @@ module:
   contextual: 0
   crop: 0
   cshs: 0
+  date_augmenter: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
