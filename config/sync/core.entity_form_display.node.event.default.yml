@@ -35,6 +35,7 @@ dependencies:
     - content_moderation
     - field_group
     - link
+    - maxlength
     - media_library
     - path
     - smart_date
@@ -71,8 +72,6 @@ third_party_settings:
         - field_body
         - field_sponsor
         - field_boolean
-        - field_links
-        - field_detail_text
         - field_site_setting
       label: 'Event Details'
       region: content
@@ -328,6 +327,10 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+      maxlength:
+        maxlength_js: 200
+        maxlength_js_label: 'Content display is limited to 40 words or approximately @limit characters. Used: <strong>@count</strong>'
+        maxlength_js_enforce: false
   field_text:
     type: string_textfield
     weight: 38
