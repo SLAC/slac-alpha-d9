@@ -1,4 +1,4 @@
-uuid: 5cb89a36-a88f-42aa-9062-45e7ea8cb2ae
+uuid: af1684b6-a37d-4cc8-a1fa-5bee18016d52
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - views_exposed_filter_blocks
   theme:
     - slac
-id: events_exposedfilterblock
+id: events_exposedfilterblock1
 theme: slac
 region: disabled
 weight: 0
@@ -14,7 +14,7 @@ provider: null
 plugin: views_exposed_filter_blocks_block
 settings:
   id: views_exposed_filter_blocks_block
-  label: 'Exposed filter block - Events'
+  label: 'Exposed filter block - Events1'
   label_display: visible
   provider: views_exposed_filter_blocks
   view_display: 'landing_page_content_view_embeds:embed_events'
