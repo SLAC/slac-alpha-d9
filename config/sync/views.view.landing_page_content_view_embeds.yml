@@ -317,7 +317,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: date
-          order: DESC
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -629,7 +629,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: date
-          order: DESC
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
