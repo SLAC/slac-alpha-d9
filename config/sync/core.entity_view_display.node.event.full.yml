@@ -10,13 +10,11 @@ dependencies:
     - field.field.node.event.field_boolean
     - field.field.node.event.field_conference_link
     - field.field.node.event.field_contact_name
-    - field.field.node.event.field_detail_text
     - field.field.node.event.field_email
     - field.field.node.event.field_experience
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_links
     - field.field.node.event.field_location
     - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
@@ -32,6 +30,7 @@ dependencies:
     - field.field.node.event.field_video
     - node.type.event
   module:
+    - date_augmenter
     - link
     - slac_helper
     - smart_date
@@ -181,7 +180,25 @@ content:
       force_chronological: false
       add_classes: false
       time_wrapper: true
-    third_party_settings: {  }
+    third_party_settings:
+      date_augmenter:
+        status:
+          addtocal: '1'
+        weights:
+          order:
+            addtocal:
+              weight: '0'
+        settings:
+          addtocal:
+            label: 'Add to Calendar'
+            event_title: ''
+            location: ''
+            description: ''
+            max_desc: '60'
+            target: ''
+            past_events: 0
+        augmenter_settings:
+          fields__field_smart_date__settings_edit_form__third_party_settings__date_augmenter__augmenter_settings__active_tab: ''
     weight: 12
     region: content
   field_sponsor:
@@ -231,10 +248,8 @@ content:
     region: content
 hidden:
   field_boolean: true
-  field_detail_text: true
   field_experience: true
   field_featured: true
-  field_links: true
   field_teaser: true
   langcode: true
   search_api_excerpt: true
