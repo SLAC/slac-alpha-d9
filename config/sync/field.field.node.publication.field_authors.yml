@@ -12,7 +12,7 @@ field_name: field_authors
 entity_type: node
 bundle: publication
 label: Authors
-description: ''
+description: 'Authors entered in this field will be displayed on the publication''s detail page. Enter each author as a single entry.'
 required: false
 translatable: false
 default_value: {  }
