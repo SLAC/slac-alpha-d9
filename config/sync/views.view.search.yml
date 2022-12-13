@@ -2120,16 +2120,6 @@ display:
           query_tags: {  }
       relationships: {  }
       header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: true
-          content: '<button id=”search-filter-link” type="button" class="js-lightbox c-filter-modal__trigger c-button c-button--outline" aria-controls="grid-filters">Filter (@total results)</button>'
         display_switch:
           id: display_switch
           table: views
