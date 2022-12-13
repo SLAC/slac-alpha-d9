@@ -25,7 +25,6 @@ dependencies:
   module:
     - better_exposed_filters
     - search_api
-    - slac_core
     - text
     - views_display_switch
 id: search
@@ -2254,16 +2253,6 @@ display:
         header: false
       display_description: 'Displays search results as a grid of cards.'
       header:
-        area_filter_modal:
-          id: area_filter_modal
-          table: views
-          field: area_filter_modal
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: area_filter_modal
-          empty: true
-          content: 'Filter results (@total @results)'
         display_switch:
           id: display_switch
           table: views
@@ -2387,16 +2376,6 @@ display:
         header: false
       display_description: 'Displays search results as a list of teaser cards.'
       header:
-        area_filter_modal:
-          id: area_filter_modal
-          table: views
-          field: area_filter_modal
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: area_filter_modal
-          empty: true
-          content: 'Filter results (@total @results)'
         display_switch:
           id: display_switch
           table: views
