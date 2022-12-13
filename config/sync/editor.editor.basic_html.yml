@@ -22,7 +22,6 @@ settings:
       - bulletedList
       - numberedList
       - blockQuote
-      - insertTable
       - horizontalLine
       - '|'
       - undo

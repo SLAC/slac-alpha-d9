@@ -40,7 +40,6 @@ settings:
             - Blockquote
             - DrupalMediaLibrary
             - DrupalImage
-            - Table
             - HorizontalRule
         -
           name: 'Block Formatting'
