@@ -45,7 +45,7 @@ content:
     type: name_default
     label: above
     settings:
-      format: default
+      format: family_given_initial
       markup: none
       list_format: ''
       link_target: ''

@@ -1,0 +1,8 @@
+uuid: d19401c9-5e35-4310-8720-3702a9a4a404
+langcode: en
+status: true
+dependencies: {  }
+id: family_given_initial
+label: 'Family, Given initial'
+locked: false
+pattern: '(f), + (w).'
