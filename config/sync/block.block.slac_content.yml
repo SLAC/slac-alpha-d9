@@ -11,7 +11,7 @@ _core:
 id: slac_content
 theme: slac
 region: content
-weight: 0
+weight: -15
 provider: null
 plugin: system_main_block
 settings:

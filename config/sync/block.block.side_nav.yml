@@ -11,7 +11,7 @@ dependencies:
 id: side_nav
 theme: slac
 region: disabled
-weight: 0
+weight: 2
 provider: null
 plugin: 'menu_block:main'
 settings:

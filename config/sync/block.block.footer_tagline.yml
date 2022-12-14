@@ -9,7 +9,7 @@ dependencies:
 id: footer_tagline
 theme: slac
 region: disabled
-weight: -9
+weight: -12
 provider: null
 plugin: single_rendered_site_settings_block
 settings:
