@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.media.field_caption
     - field.storage.media.field_long_text
+    - field.storage.node.field_audience
     - field.storage.node.field_category
     - field.storage.node.field_paragraphs
     - field.storage.paragraph.field_body
@@ -16,6 +17,8 @@ dependencies:
     - field.storage.paragraph.field_text
     - field.storage.paragraph.field_title
     - field.storage.node.field_body
+    - field.storage.node.field_type
+    - field.storage.node.field_experience
     - field.storage.node.field_tags
     - field.storage.node.field_series
     - field.storage.node.field_long_text
@@ -27,6 +30,7 @@ dependencies:
     - core.entity_view_mode.node.search_index
   module:
     - media
+    - taxonomy
     - node
     - paragraphs
     - search_api
@@ -226,6 +230,36 @@ field_settings:
     dependencies:
       module:
         - media
+  name:
+    label: 'Audience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_audience:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_audience
+      module:
+        - taxonomy
+  name_1:
+    label: 'Experience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_experience:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_experience
+      module:
+        - taxonomy
+  name_2:
+    label: 'Event Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type
+      module:
+        - taxonomy
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -309,6 +343,14 @@ field_settings:
     property_path: title
     type: text
     boost: !!float 21
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
     dependencies:
       module:
         - node

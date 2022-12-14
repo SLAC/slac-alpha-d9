@@ -9,7 +9,7 @@ dependencies:
 id: news_exposedfilterblock1
 theme: slac
 region: disabled
-weight: 0
+weight: -1
 provider: null
 plugin: views_exposed_filter_blocks_block
 settings:

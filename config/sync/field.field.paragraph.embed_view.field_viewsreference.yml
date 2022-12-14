@@ -31,6 +31,7 @@ settings:
     attachment: 0
   preselect_views:
     landing_page_content_view_embeds: landing_page_content_view_embeds
+    landing_page_filtered_content: landing_page_filtered_content
     landing_page_topic_views: landing_page_topic_views
     aggregator_rss_feed: 0
     aggregator_sources: 0
@@ -48,6 +49,7 @@ settings:
     moderated_content: 0
     related_content_for_detail_pages: 0
     related_content_for_media_pages: 0
+    search: 0
     taxonomy_term: 0
     user_admin_people: 0
     watchdog: 0
@@ -55,10 +57,10 @@ settings:
     who_s_new: 0
     who_s_online: 0
   enabled_settings:
+    exposed_filters: exposed_filters
     argument: 0
     limit: 0
     offset: 0
     pager: 0
     title: 0
-    exposed_filters: 0
 field_type: viewsreference
