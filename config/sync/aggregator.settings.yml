@@ -9,4 +9,4 @@ items:
   teaser_length: 600
   expire: 9676800
 source:
-  list_max: 3
+  list_max: 10
