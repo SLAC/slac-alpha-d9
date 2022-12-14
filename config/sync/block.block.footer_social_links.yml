@@ -11,7 +11,7 @@ dependencies:
 id: footer_social_links
 theme: slac
 region: disabled
-weight: -12
+weight: -15
 provider: null
 plugin: 'menu_block:social-links'
 settings:

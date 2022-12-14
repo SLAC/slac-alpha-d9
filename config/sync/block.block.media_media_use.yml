@@ -9,7 +9,7 @@ dependencies:
 id: media_media_use
 theme: slac
 region: disabled
-weight: 1
+weight: 4
 provider: null
 plugin: single_rendered_site_settings_block
 settings:

@@ -1,0 +1,29 @@
+uuid: 8ab47ef2-97c8-4cfc-b103-e86dc20aab99
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.audience
+  module:
+    - facets
+    - system
+  theme:
+    - slac
+id: audience
+theme: slac
+region: disabled
+weight: 7
+provider: null
+plugin: 'facet_block:audience'
+settings:
+  id: 'facet_block:audience'
+  label: Audience
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: audience
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/1
