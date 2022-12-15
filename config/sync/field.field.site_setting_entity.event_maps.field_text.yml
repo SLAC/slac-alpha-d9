@@ -11,7 +11,7 @@ entity_type: site_setting_entity
 bundle: event_maps
 label: 'Map Title'
 description: 'Add a unique administrative title for this map.'
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
