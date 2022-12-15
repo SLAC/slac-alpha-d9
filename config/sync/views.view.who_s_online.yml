@@ -1,8 +1,9 @@
 uuid: 02aee390-0b4e-4f8f-8f18-353f35e15f2f
 langcode: en
-status: true
+status: false
 dependencies:
   module:
+    - smart_date
     - user
 _core:
   default_config_hash: suDsVMgawXoQt4rfmdfpr05EVX3z3KyfDDTYgeSM898

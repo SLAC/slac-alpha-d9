@@ -1,8 +1,9 @@
 uuid: 1b22cda5-f520-45d5-a47d-e47bb213b2df
 langcode: en
-status: true
+status: false
 dependencies:
   module:
+    - smart_date
     - user
 _core:
   default_config_hash: zji0_13MyVGK7Bn1lUMDeZyyOIZedWvqpYUeM_SioPI

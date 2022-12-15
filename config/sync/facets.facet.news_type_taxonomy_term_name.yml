@@ -1,4 +1,4 @@
-uuid: a6d22f1a-41b5-4127-ac7d-d3e8b35f6e39
+uuid: 0de5b369-7011-47c4-a3a7-d8613c9fb36a
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.landing_page_filtered_content
   module:
     - search_api
-id: event_type
-name: 'Event Type'
+id: news_type_taxonomy_term_name
+name: 'News Type » Taxonomy term » Name'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: event_type
-facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_1'
-field_identifier: name_2
+url_alias: news_type_taxonomy_term_name
+facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_news_all'
+field_identifier: news_type
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: 'All Event Types'
+    default_option_label: 'News Category'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false

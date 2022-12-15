@@ -3,42 +3,55 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_caption
-    - field.storage.media.field_long_text
     - field.storage.node.field_audience
+    - field.storage.media.field_caption
     - field.storage.node.field_category
+    - field.storage.media.field_long_text
+    - field.storage.node.field_type
+    - field.storage.node.field_experience
+    - field.storage.node.field_faq_category
     - field.storage.node.field_paragraphs
     - field.storage.paragraph.field_body
+    - field.storage.node.field_body
     - field.storage.paragraph.field_caption
+    - field.storage.node.field_date
+    - field.storage.node.field_dissertation_type
+    - field.storage.node.field_long_text
     - field.storage.paragraph.field_plain_long_text
+    - field.storage.node.field_publication_type
+    - field.storage.node.field_series
     - field.storage.paragraph.field_short_text
     - field.storage.paragraph.field_tab_heading
     - field.storage.paragraph.field_table
+    - field.storage.node.field_teaser
     - field.storage.paragraph.field_text
     - field.storage.paragraph.field_title
-    - field.storage.node.field_body
-    - field.storage.node.field_type
-    - field.storage.node.field_experience
-    - field.storage.node.field_tags
-    - field.storage.node.field_series
-    - field.storage.node.field_long_text
     - field.storage.node.field_name
-    - field.storage.node.field_teaser
+    - field.storage.node.field_tags
     - field.storage.node.field_topics
     - search_api.server.database
     - core.entity_view_mode.media.search_index
-    - core.entity_view_mode.node.search_index
   module:
-    - media
     - taxonomy
-    - node
     - paragraphs
+    - media
+    - node
     - search_api
 id: content
 name: Content
 description: 'Primary content index for site-wide search. '
 read_only: false
 field_settings:
+  audience:
+    label: 'Audience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_audience:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_audience
+      module:
+        - taxonomy
   caption:
     label: Caption
     datasource_id: 'entity:media'
@@ -47,6 +60,16 @@ field_settings:
     dependencies:
       config:
         - field.storage.media.field_caption
+  category:
+    label: 'Category » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_category:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_category
+      module:
+        - taxonomy
   display_name:
     label: 'Media display name'
     datasource_id: 'entity:media'
@@ -74,6 +97,36 @@ field_settings:
       fields:
         - 'entity:media/bundle'
         - 'entity:node/type'
+  event_type:
+    label: 'Event Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type
+      module:
+        - taxonomy
+  experience:
+    label: 'Experience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_experience:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_experience
+      module:
+        - taxonomy
+  faq_category:
+    label: 'FAQ Category » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_faq_category:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_faq_category
+      module:
+        - taxonomy
   field_body:
     label: 'Content » Paragraph » Caption'
     datasource_id: 'entity:node'
@@ -106,14 +159,22 @@ field_settings:
         - field.storage.paragraph.field_caption
       module:
         - paragraphs
-  field_category:
-    label: Category
+  field_date:
+    label: 'Publication Date'
     datasource_id: 'entity:node'
-    property_path: field_category
+    property_path: field_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date
+  field_dissertation_type:
+    label: 'Dissertation Type'
+    datasource_id: 'entity:node'
+    property_path: field_dissertation_type
     type: string
     dependencies:
       config:
-        - field.storage.node.field_category
+        - field.storage.node.field_dissertation_type
   field_long_text:
     label: 'Speaker bio'
     datasource_id: 'entity:node'
@@ -133,6 +194,14 @@ field_settings:
         - field.storage.paragraph.field_plain_long_text
       module:
         - paragraphs
+  field_publication_type:
+    label: 'Publication Type'
+    datasource_id: 'entity:node'
+    property_path: field_publication_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_publication_type
   field_series:
     label: Series
     datasource_id: 'entity:node'
@@ -174,14 +243,6 @@ field_settings:
         - field.storage.paragraph.field_table
       module:
         - paragraphs
-  field_tags:
-    label: 'Related Topics'
-    datasource_id: 'entity:node'
-    property_path: field_tags
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_tags
   field_teaser:
     label: Teaser
     datasource_id: 'entity:node'
@@ -214,14 +275,6 @@ field_settings:
         - field.storage.paragraph.field_title
       module:
         - paragraphs
-  field_topics:
-    label: Topics
-    datasource_id: 'entity:node'
-    property_path: field_topics
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_topics
   media_name:
     label: 'Media name'
     datasource_id: 'entity:media'
@@ -230,28 +283,8 @@ field_settings:
     dependencies:
       module:
         - media
-  name:
-    label: 'Audience » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_audience:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_audience
-      module:
-        - taxonomy
-  name_1:
-    label: 'Experience » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_experience:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_experience
-      module:
-        - taxonomy
-  name_2:
-    label: 'Event Type » Taxonomy term » Name'
+  news_type:
+    label: 'News Type » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_type:entity:name'
     type: string
@@ -288,9 +321,22 @@ field_settings:
           image: search_index
           remote_video: ''
         'entity:node':
+          blog: ''
           event: ''
-          news_article: search_index
+          faq: ''
+          news_article: ''
           person: ''
+          publication: ''
+  series:
+    label: 'Series » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_series:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_series
+      module:
+        - taxonomy
   sort_date:
     label: 'Sort date'
     property_path: aggregated_field
@@ -320,14 +366,15 @@ field_settings:
       module:
         - node
   tags:
-    label: Tags
-    property_path: aggregated_field
-    type: integer
-    configuration:
-      type: union
-      fields:
-        - 'entity:media/field_tags'
-        - 'entity:node/field_tags'
+    label: 'Tags » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
   teaser:
     label: Teaser
     property_path: aggregated_field
@@ -346,6 +393,16 @@ field_settings:
     dependencies:
       module:
         - node
+  topics:
+    label: 'Topics » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_topics:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_topics
+      module:
+        - taxonomy
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
@@ -393,77 +450,93 @@ processor_settings:
     weights:
       preprocess_index: -15
       preprocess_query: -15
-    all_fields: false
+    all_fields: true
     fields:
+      - audience
       - caption
+      - category
       - display_name
       - entity_type
+      - event_type
+      - experience
+      - faq_category
       - field_body
       - field_body_2
       - field_caption
-      - field_category
+      - field_dissertation_type
       - field_long_text
       - field_plain_long_text
+      - field_publication_type
       - field_series
       - field_short_text
       - field_tab_heading
       - field_table_1
-      - field_tags
       - field_teaser
       - field_text_1
       - field_title_1
-      - field_topics
       - media_name
+      - news_type
       - rendered_item
+      - series
       - speaker_name
+      - tags
       - teaser
       - title
+      - topics
+      - type
     title: true
     alt: true
     tags:
       b: 2
-      em: 1
       h1: 5
       h2: 3
       h3: 2
       strong: 2
-      u: 1
   ignorecase:
     weights:
       preprocess_index: -20
       preprocess_query: -20
-    all_fields: false
+    all_fields: true
     fields:
+      - audience
       - caption
+      - category
       - display_name
       - entity_type
+      - event_type
+      - experience
+      - faq_category
       - field_body
       - field_body_2
       - field_caption
-      - field_category
+      - field_dissertation_type
       - field_long_text
       - field_plain_long_text
+      - field_publication_type
       - field_series
       - field_short_text
       - field_tab_heading
       - field_table_1
-      - field_tags
       - field_teaser
       - field_text_1
       - field_title_1
-      - field_topics
       - media_name
+      - news_type
       - rendered_item
+      - series
       - speaker_name
+      - tags
       - teaser
       - title
+      - topics
+      - type
   language_with_fallback: {  }
   rendered_item: {  }
   stemmer:
     weights:
       preprocess_index: 0
       preprocess_query: 0
-    all_fields: false
+    all_fields: true
     fields:
       - caption
       - display_name
@@ -488,7 +561,7 @@ processor_settings:
     weights:
       preprocess_index: -6
       preprocess_query: -6
-    all_fields: false
+    all_fields: true
     fields:
       - caption
       - display_name
@@ -514,31 +587,40 @@ processor_settings:
     weights:
       preprocess_index: -20
       preprocess_query: -20
-    all_fields: false
+    all_fields: true
     fields:
+      - audience
       - caption
+      - category
       - display_name
       - entity_type
+      - event_type
+      - experience
+      - faq_category
       - field_body
       - field_body_2
       - field_caption
-      - field_category
+      - field_dissertation_type
       - field_long_text
       - field_plain_long_text
+      - field_publication_type
       - field_series
       - field_short_text
       - field_tab_heading
       - field_table_1
-      - field_tags
       - field_teaser
       - field_text_1
       - field_title_1
-      - field_topics
       - media_name
+      - news_type
       - rendered_item
+      - series
       - speaker_name
+      - tags
       - teaser
       - title
+      - topics
+      - type
 tracker_settings:
   default:
     indexing_order: fifo
