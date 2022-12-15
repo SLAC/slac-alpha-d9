@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.sitewide_alert.sitewide_alert.field_alert_message
     - field.field.sitewide_alert.sitewide_alert.field_kicker
   module:
     - datetime_range
@@ -13,9 +14,17 @@ targetEntityType: sitewide_alert
 bundle: sitewide_alert
 mode: default
 content:
+  field_alert_message:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_kicker:
     type: string_textfield
-    weight: 26
+    weight: 1
     region: content
     settings:
       size: 60
@@ -23,18 +32,11 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 0
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
-  message:
-    type: text_textarea
-    weight: -13
-    region: content
-    settings:
-      rows: 4
-      placeholder: ''
-    third_party_settings: {  }
 hidden:
+  message: true
   user_id: true
