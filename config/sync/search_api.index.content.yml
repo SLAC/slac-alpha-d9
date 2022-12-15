@@ -3,39 +3,41 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_audience
     - field.storage.media.field_caption
-    - field.storage.node.field_category
     - field.storage.media.field_long_text
-    - field.storage.node.field_type
-    - field.storage.node.field_experience
-    - field.storage.node.field_faq_category
+    - field.storage.node.field_audience
+    - field.storage.node.field_category
     - field.storage.node.field_paragraphs
     - field.storage.paragraph.field_body
-    - field.storage.node.field_body
     - field.storage.paragraph.field_caption
-    - field.storage.node.field_date
-    - field.storage.node.field_dissertation_type
-    - field.storage.node.field_long_text
     - field.storage.paragraph.field_plain_long_text
-    - field.storage.node.field_publication_type
-    - field.storage.node.field_series
     - field.storage.paragraph.field_short_text
     - field.storage.paragraph.field_tab_heading
     - field.storage.paragraph.field_table
-    - field.storage.node.field_teaser
     - field.storage.paragraph.field_text
     - field.storage.paragraph.field_title
+    - field.storage.node.field_body
+    - field.storage.node.field_dissertation_type
+    - field.storage.node.field_smart_date
+    - field.storage.node.field_type
+    - field.storage.node.field_experience
+    - field.storage.node.field_faq_category
+    - field.storage.node.field_date
+    - field.storage.node.field_publication_type
+    - field.storage.node.field_series
+    - field.storage.node.field_long_text
     - field.storage.node.field_name
     - field.storage.node.field_tags
+    - field.storage.node.field_teaser
     - field.storage.node.field_topics
     - search_api.server.database
     - core.entity_view_mode.media.search_index
+    - core.entity_view_mode.node.search_index
   module:
-    - taxonomy
-    - paragraphs
     - media
+    - taxonomy
     - node
+    - paragraphs
     - search_api
 id: content
 name: Content
@@ -79,6 +81,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.media.field_long_text
+  end_date_value:
+    label: 'Event Date » End timestamp value'
+    datasource_id: 'entity:node'
+    property_path: 'field_smart_date:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_smart_date
   entity_id:
     label: 'Entity ID'
     property_path: aggregated_field
@@ -221,6 +231,14 @@ field_settings:
         - field.storage.paragraph.field_short_text
       module:
         - paragraphs
+  field_smart_date:
+    label: 'Event Date'
+    datasource_id: 'entity:node'
+    property_path: field_smart_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_smart_date
   field_tab_heading:
     label: 'Content » Paragraph » Heading'
     datasource_id: 'entity:node'
@@ -283,16 +301,6 @@ field_settings:
     dependencies:
       module:
         - media
-  news_type:
-    label: 'News Type » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_type:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_type
-      module:
-        - taxonomy
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -321,12 +329,9 @@ field_settings:
           image: search_index
           remote_video: ''
         'entity:node':
-          blog: ''
           event: ''
-          faq: ''
-          news_article: ''
+          news_article: search_index
           person: ''
-          publication: ''
   series:
     label: 'Series » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -475,7 +480,6 @@ processor_settings:
       - field_text_1
       - field_title_1
       - media_name
-      - news_type
       - rendered_item
       - series
       - speaker_name
@@ -521,7 +525,6 @@ processor_settings:
       - field_text_1
       - field_title_1
       - media_name
-      - news_type
       - rendered_item
       - series
       - speaker_name
@@ -612,7 +615,6 @@ processor_settings:
       - field_text_1
       - field_title_1
       - media_name
-      - news_type
       - rendered_item
       - series
       - speaker_name
