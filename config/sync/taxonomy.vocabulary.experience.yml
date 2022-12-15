@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Experience
 vid: experience
-description: ''
+description: 'Used in Events only'
 weight: 0

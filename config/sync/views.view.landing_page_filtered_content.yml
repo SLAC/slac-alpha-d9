@@ -10,7 +10,7 @@ dependencies:
     - text
     - user
 id: landing_page_filtered_content
-label: 'Landing Page Filtered Content'
+label: 'Filterable Landing Page Content'
 module: views
 description: 'Search API enabled, facet filtered lists of content by type'
 tag: Content

@@ -30,14 +30,11 @@ settings:
     page: 0
     attachment: 0
   preselect_views:
-    landing_page_content_view_embeds: landing_page_content_view_embeds
     landing_page_filtered_content: landing_page_filtered_content
-    landing_page_topic_views: landing_page_topic_views
+    pre_filtered_content_lists: pre_filtered_content_lists
     aggregator_rss_feed: 0
     aggregator_sources: 0
     block_content: 0
-    comment: 0
-    comments_recent: 0
     content: 0
     content_recent: 0
     eca_log: 0
@@ -54,8 +51,6 @@ settings:
     user_admin_people: 0
     watchdog: 0
     webform_submissions: 0
-    who_s_new: 0
-    who_s_online: 0
   enabled_settings:
     exposed_filters: exposed_filters
     argument: 0

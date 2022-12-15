@@ -1,4 +1,4 @@
-uuid: 2e4419bc-d58c-49f8-9d5c-d97302ee127e
+uuid: da970d18-51b9-4ec3-8f02-4bb03b646c70
 langcode: en
 status: true
 dependencies:
@@ -14,8 +14,8 @@ dependencies:
     - taxonomy
     - text
     - user
-id: non_search_api_lists_of_content
-label: 'Non-Search API Lists of Content'
+id: pre_filtered_content_lists
+label: 'Pre-filtered Content Lists'
 module: views
 description: 'Pre-filtered lists of content for Embed Views'
 tag: Content
