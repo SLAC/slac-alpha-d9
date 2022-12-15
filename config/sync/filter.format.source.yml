@@ -1,0 +1,17 @@
+uuid: 2ebb9732-182f-4cbc-8398-f254fccccad4
+langcode: en
+status: true
+dependencies:
+  module:
+    - token_filter
+name: Source
+format: source
+weight: 0
+filters:
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: false
+    weight: 0
+    settings:
+      replace_empty: '0'

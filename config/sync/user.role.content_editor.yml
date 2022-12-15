@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.full_html
+    - filter.format.source
     - media.type.document
     - media.type.image
     - media.type.remote_audio
@@ -152,6 +153,7 @@ permissions:
   - 'use content transition create_new_draft'
   - 'use content transition publish'
   - 'use text format full_html'
+  - 'use text format source'
   - 'use vapn'
   - 'use workbench access'
   - 'view all revisions'
