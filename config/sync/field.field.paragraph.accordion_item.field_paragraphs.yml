@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_paragraphs
     - paragraphs.paragraphs_type.accordion_item
     - paragraphs.paragraphs_type.fifty_fifty
+    - paragraphs.paragraphs_type.table
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -25,6 +26,7 @@ settings:
     target_bundles:
       fifty_fifty: fifty_fifty
       wysiwyg: wysiwyg
+      table: table
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -41,6 +43,9 @@ settings:
         enabled: false
       card:
         weight: -63
+        enabled: false
+      card_with_icon:
+        weight: 49
         enabled: false
       cards_with_show_more:
         weight: -62
@@ -60,6 +65,9 @@ settings:
       embed_view:
         weight: -57
         enabled: false
+      embed_webform:
+        weight: 55
+        enabled: false
       extra_large_card:
         weight: -56
         enabled: false
@@ -78,8 +86,14 @@ settings:
       image_hero:
         weight: -52
         enabled: false
+      image_lightbox:
+        weight: 62
+        enabled: false
       media_card:
         weight: -51
+        enabled: false
+      media_grid:
+        weight: 64
         enabled: false
       microsite_hero:
         weight: -50
@@ -99,6 +113,9 @@ settings:
       section:
         weight: -45
         enabled: false
+      section_fixed:
+        weight: 71
+        enabled: false
       small_card_with_icon:
         weight: -44
         enabled: false
@@ -108,14 +125,23 @@ settings:
       small_card_with_solid_background:
         weight: -42
         enabled: false
+      tab_item:
+        weight: 78
+        enabled: false
+      table:
+        weight: 75
+        enabled: true
       table_of_contents:
         weight: -41
         enabled: false
-      text_block:
-        weight: -40
+      tabs:
+        weight: 77
         enabled: false
       tout:
         weight: -39
+        enabled: false
+      two_column_hero:
+        weight: 80
         enabled: false
       video_hero:
         weight: -38
