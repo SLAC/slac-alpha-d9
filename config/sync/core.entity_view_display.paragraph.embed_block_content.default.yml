@@ -1,0 +1,23 @@
+uuid: 64c8ad11-abcf-4db0-ad8e-dc4a058345fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.embed_block_content.field_block_content
+    - paragraphs.paragraphs_type.embed_block_content
+  module:
+    - block_field
+id: paragraph.embed_block_content.default
+targetEntityType: paragraph
+bundle: embed_block_content
+mode: default
+content:
+  field_block_content:
+    type: block_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -17,6 +17,6 @@ settings:
   label: 'Trending News'
   label_display: visible
   provider: aggregator
-  block_count: 10
-  feed: '1'
+  block_count: 9
+  feed: '2'
 visibility: {  }

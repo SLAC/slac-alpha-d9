@@ -9,6 +9,7 @@ dependencies:
     - search_api
     - text
     - user
+    - views_display_switch
 id: landing_page_filtered_content
 label: 'Filterable Landing Page Content'
 module: views
@@ -300,18 +301,18 @@ display:
         options:
           view_modes:
             'entity:media':
-              image: default
-              remote_video: default
+              image: card
+              remote_video: card
             'entity:node':
-              blog: default
-              event: default
-              faq: default
-              homepage: default
-              landing_page: teaser
-              news_article: default
-              page: default
-              person: default
-              publication: default
+              blog: card
+              event: card
+              faq: card
+              homepage: card
+              landing_page: card
+              news_article: card
+              page: card
+              person: card
+              publication: card
       query:
         type: search_api_query
         options:
@@ -508,7 +509,7 @@ display:
     id: block_events_all
     display_title: 'All Events Block'
     display_plugin: block
-    position: 1
+    position: 2
     display_options:
       sorts:
         search_api_relevance:
@@ -537,8 +538,150 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
+      filters:
+        status:
+          id: status
+          table: search_api_index_content
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: status
+            description: ''
+            use_operator: false
+            operator: status_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: status
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        type:
+          id: type
+          table: search_api_index_content
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_options
+          operator: or
+          value:
+            event: event
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_content
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Search Events'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: keywords
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+            expose_fields: false
+            placeholder: ''
+            searched_fields_id: search_api_fulltext_searched_fields
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: 3
+          fields: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       defaults:
         sorts: false
+        filters: false
+        filter_groups: false
       display_description: 'Facet filtered list of Events'
       exposed_block: true
       display_extenders: {  }
@@ -559,9 +702,9 @@ display:
         - 'config:search_api.index.content'
   block_events_past:
     id: block_events_past
-    display_title: 'Past Events Block'
+    display_title: 'Past Events Block List'
     display_plugin: block
-    position: 1
+    position: 7
     display_options:
       title: 'Past Events'
       sorts:
@@ -735,7 +878,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: search_api_date
-          operator: '<'
+          operator: '>'
           value:
             min: ''
             max: ''
@@ -781,7 +924,321 @@ display:
         sorts: false
         filters: false
         filter_groups: false
+        header: false
       display_description: 'Facet filtered list of Past Events'
+      header:
+        display_switch:
+          id: display_switch
+          table: views
+          field: display_switch
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_switch
+          empty: false
+          displays:
+            block_blog_all:
+              enabled: 0
+              label: ''
+            block_events_all:
+              enabled: 0
+              label: ''
+            block_events_past:
+              enabled: 1
+              label: List
+            block_events_past_grid:
+              enabled: 1
+              label: Grid
+            block_faqs_all:
+              enabled: 0
+              label: ''
+            block_news_all:
+              enabled: 0
+              label: ''
+            block_persons_all:
+              enabled: 0
+              label: ''
+            block_publications_all:
+              enabled: 0
+              label: ''
+      exposed_block: true
+      display_extenders: {  }
+      block_description: 'Events Block - Past'
+      allow:
+        items_per_page: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.media.field_caption'
+        - 'config:search_api.index.content'
+  block_events_past_grid:
+    id: block_events_past_grid
+    display_title: 'Past Events Block Grid'
+    display_plugin: block
+    position: 8
+    display_options:
+      title: 'Past Events'
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_content
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        field_smart_date:
+          id: field_smart_date
+          table: search_api_index_content
+          field: field_smart_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      filters:
+        status:
+          id: status
+          table: search_api_index_content
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: status
+            description: ''
+            use_operator: false
+            operator: status_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: status
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        type:
+          id: type
+          table: search_api_index_content
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_options
+          operator: or
+          value:
+            event: event
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_content
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Fulltext search'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: keywords
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              reviewer: '0'
+              administrator: '0'
+              author: '0'
+              manager: '0'
+            expose_fields: false
+            placeholder: ''
+            searched_fields_id: search_api_fulltext_searched_fields
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: 3
+          fields: {  }
+        end_date_value:
+          id: end_date_value
+          table: search_api_index_content
+          field: end_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_date
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: date
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        header: false
+      display_description: 'Facet filtered list of Past Events - Grid/Card Display'
+      header:
+        display_switch:
+          id: display_switch
+          table: views
+          field: display_switch
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_switch
+          empty: false
+          displays:
+            block_blog_all:
+              enabled: 0
+              label: ''
+            block_events_all:
+              enabled: 0
+              label: ''
+            block_events_past:
+              enabled: 1
+              label: List
+            block_events_past_grid:
+              enabled: 1
+              label: Grid
+            block_faqs_all:
+              enabled: 0
+              label: ''
+            block_news_all:
+              enabled: 0
+              label: ''
+            block_persons_all:
+              enabled: 0
+              label: ''
+            block_publications_all:
+              enabled: 0
+              label: ''
       exposed_block: true
       display_extenders: {  }
       block_description: 'Events Block - Past'
@@ -803,7 +1260,7 @@ display:
     id: block_faqs_all
     display_title: 'All FAQs Block'
     display_plugin: block
-    position: 1
+    position: 3
     display_options:
       title: FAQs
       filters:
@@ -972,7 +1429,7 @@ display:
     id: block_news_all
     display_title: 'All News Block'
     display_plugin: block
-    position: 1
+    position: 4
     display_options:
       title: News
       filters:
@@ -1141,7 +1598,7 @@ display:
     id: block_persons_all
     display_title: 'All Persons Block'
     display_plugin: block
-    position: 1
+    position: 5
     display_options:
       title: Persons
       filters:
@@ -1310,7 +1767,7 @@ display:
     id: block_publications_all
     display_title: 'All Publications Block'
     display_plugin: block
-    position: 1
+    position: 6
     display_options:
       title: Publications
       filters:
