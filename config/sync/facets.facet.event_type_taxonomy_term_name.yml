@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: event_type_taxonomy_term_name
-name: 'Event Type » Taxonomy term » Name'
+name: 'Event Type'
 weight: 0
 min_count: 1
 missing: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: 'Event Type'
+    default_option_label: 'All event types'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false
