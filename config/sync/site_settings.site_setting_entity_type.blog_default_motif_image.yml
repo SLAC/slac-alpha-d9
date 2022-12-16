@@ -1,0 +1,8 @@
+uuid: b5f68401-f3e1-4dcd-a126-33c112235945
+langcode: en
+status: true
+dependencies: {  }
+id: blog_default_motif_image
+label: 'Blog default (motif) image'
+fieldset: 'Default (Motif) Images'
+multiple: false

@@ -12,7 +12,7 @@ entity_type: node
 bundle: event
 label: 'Event Type'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      event_: event_type
+      event_type: event_type
     sort:
       field: name
       direction: asc

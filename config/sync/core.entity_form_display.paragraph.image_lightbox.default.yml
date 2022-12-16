@@ -1,0 +1,24 @@
+uuid: 31b6ce4f-2e5b-4e6a-b6f3-58ba12096495
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_lightbox.field_image
+    - paragraphs.paragraphs_type.image_lightbox
+  module:
+    - media_library
+id: paragraph.image_lightbox.default
+targetEntityType: paragraph
+bundle: image_lightbox
+mode: default
+content:
+  field_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

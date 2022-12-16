@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: footer_address
-label: 'Footer address'
+label: 'Footer address line 2'
 fieldset: 'Footer Settings'
 multiple: false

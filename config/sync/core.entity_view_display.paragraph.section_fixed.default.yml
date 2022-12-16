@@ -1,0 +1,86 @@
+uuid: 4b0250d0-dc1b-40c4-abda-ae65f6f2fa1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section_fixed.field_link
+    - field.field.paragraph.section_fixed.field_long_text
+    - field.field.paragraph.section_fixed.field_paragraphs_1
+    - field.field.paragraph.section_fixed.field_paragraphs_2
+    - field.field.paragraph.section_fixed.field_paragraphs_3
+    - field.field.paragraph.section_fixed.field_short_text
+    - field.field.paragraph.section_fixed.field_text
+    - paragraphs.paragraphs_type.section_fixed
+  module:
+    - entity_reference_revisions
+    - link
+    - text
+id: paragraph.section_fixed.default
+targetEntityType: paragraph
+bundle: section_fixed
+mode: default
+content:
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_long_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_paragraphs_1:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraphs_2:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_paragraphs_3:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_short_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+hidden:
+  search_api_excerpt: true

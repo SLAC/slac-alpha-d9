@@ -3,27 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.small_card_with_icon.field_body
+    - field.field.paragraph.small_card_with_icon.field_icon
     - field.field.paragraph.small_card_with_icon.field_link
-    - field.field.paragraph.small_card_with_icon.field_lottiefile
     - field.field.paragraph.small_card_with_icon.field_short_text
     - field.field.paragraph.small_card_with_icon.field_text
     - paragraphs.paragraphs_type.small_card_with_icon
   module:
+    - fontawesome
     - link
-    - lottiefiles_field
-    - text
 id: paragraph.small_card_with_icon.default
 targetEntityType: paragraph
 bundle: small_card_with_icon
 mode: default
 content:
-  field_body:
-    type: text_default
+  field_icon:
+    type: fontawesome_icon_formatter
     label: hidden
-    settings: {  }
+    settings:
+      layers: false
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   field_link:
     type: link
@@ -36,13 +35,6 @@ content:
       target: '0'
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_lottiefile:
-    type: lottiefiles_field
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
     region: content
   field_short_text:
     type: string

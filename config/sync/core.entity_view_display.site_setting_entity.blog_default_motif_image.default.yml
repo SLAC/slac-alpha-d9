@@ -1,0 +1,47 @@
+uuid: f6618bbc-3ac4-4b9f-b5b5-1f5c29e2e8b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.blog_default_motif_image.field_motif_image
+    - site_settings.site_setting_entity_type.blog_default_motif_image
+  module:
+    - user
+id: site_setting_entity.blog_default_motif_image.default
+targetEntityType: site_setting_entity
+bundle: blog_default_motif_image
+mode: default
+content:
+  field_motif_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  fieldset:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  user_id:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

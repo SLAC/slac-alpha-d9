@@ -23,26 +23,22 @@ settings:
     target_bundles: null
     auto_create: 0
   plugin_types:
-    embed: embed
     block: block
+    embed: embed
     default: 0
-    page: 0
     feed: 0
+    page: 0
     attachment: 0
   preselect_views:
-    3_cards_with_show_more: 3_cards_with_show_more
-    landing_pages: landing_pages
-    landing_pages_media: landing_pages_media
-    landing_pages_taxonomy_term: landing_pages_taxonomy_term
-    landing_page_topic_views: landing_page_topic_views
-    news_collection_views: news_collection_views
-    teaser_list: teaser_list
+    landing_page_filtered_content: landing_page_filtered_content
+    pre_filtered_content_lists: pre_filtered_content_lists
+    aggregator_rss_feed: 0
+    aggregator_sources: 0
     block_content: 0
-    comment: 0
-    comments_recent: 0
     content: 0
     content_recent: 0
-    event_type_taxonomy_term: 0
+    eca_log: 0
+    feeds_feed: 0
     files: 0
     frontpage: 0
     media: 0
@@ -55,12 +51,10 @@ settings:
     user_admin_people: 0
     watchdog: 0
     webform_submissions: 0
-    who_s_new: 0
-    who_s_online: 0
   enabled_settings:
-    limit: limit
-    argument: argument
     exposed_filters: exposed_filters
+    argument: 0
+    limit: 0
     offset: 0
     pager: 0
     title: 0

@@ -3,7 +3,7 @@
     "drupal/core": {
       "HTML5 validation is preventing form submit and not fully accessible": "https://www.drupal.org/files/issues/2020-05-05/1797438-165.patch",
       "Claro's preprocessing of field multiple value form's table header cell removes potential changes by others": "https://www.drupal.org/files/issues/2021-11-25/3099026-32_0.patch",
-      "Add a hook to modify oEmbed resource data": "https://www.drupal.org/files/issues/2022-01-05/3042423-52.patch"
+      "Add a hook to modify oEmbed resource data": "https://www.drupal.org/files/issues/2022-12-15/3042423-68.patch"
      },
     "drupal/components": {
       "Template is not defined error on node edit / admin pages": "https://www.drupal.org/files/issues/2021-06-24/DRUP86-template_not_defined.patch"

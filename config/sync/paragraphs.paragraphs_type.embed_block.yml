@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: embed_block
-label: 'Embed Block'
+label: 'Embed Site Setting'
 icon_uuid: null
 icon_default: null
 description: ''

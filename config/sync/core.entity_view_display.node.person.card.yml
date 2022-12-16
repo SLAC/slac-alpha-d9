@@ -38,25 +38,6 @@ targetEntityType: node
 bundle: person
 mode: card
 content:
-  field_body:
-    type: trimmed_first_wysiwyg_paragraph
-    label: hidden
-    settings:
-      trim_length: '24'
-      trim_type: words
-      trim_suffix: ...
-      trim_options:
-        heading_remove: heading_remove
-        retain_formatting: retain_formatting
-      wrap_output: 0
-      wrap_class: trimmed
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      summary_handler: full
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
@@ -66,30 +47,43 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_organization:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_text_title_short:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   field_address: true
   field_affiliations: true
   field_awardshonors: true
+  field_body: true
+  field_boolean: true
   field_editorial_group: true
-  field_education: true
-  field_email: true
-  field_fax: true
-  field_first_name: true
-  field_interestareas: true
-  field_last_name: true
+  field_link: true
   field_links: true
   field_location: true
+  field_long_text: true
   field_mail_code: true
   field_map: true
   field_mobile: true
-  field_organization: true
   field_paragraphs: true
   field_position: true
   field_profile_link: true
   field_teaser: true
   field_telephone: true
-  field_text_title_full: true
-  field_text_title_short: true
+  field_text: true
+  field_text_title: true
   langcode: true
   links: true
   search_api_excerpt: true

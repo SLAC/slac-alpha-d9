@@ -1,4 +1,4 @@
-uuid: 6224d665-aeb8-4a5f-8a12-65b3ebff6f40
+uuid: c60e18ed-9893-49b5-81b6-5eba4a517305
 langcode: en
 status: true
 dependencies:
@@ -9,10 +9,10 @@ id: node.event.field_boolean
 field_name: field_boolean
 entity_type: node
 bundle: event
-label: 'Is external event?'
-description: 'If checked, then this event will not have a detail page and all references will link to the URL included in the external link field.'
+label: 'Include Visitor Info?'
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

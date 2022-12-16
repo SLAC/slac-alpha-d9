@@ -7,20 +7,25 @@ dependencies:
     - media.type.image
     - media.type.remote_audio
     - media.type.remote_video
+    - node.type.blog
     - node.type.event
+    - node.type.faq
     - node.type.homepage
     - node.type.landing_page
     - node.type.news_article
     - node.type.page
     - node.type.person
+    - node.type.publication
     - workflows.workflow.content
   module:
     - content_moderation
     - media
+    - moderated_content_bulk_publish
     - node
     - paragraphs
     - system
     - toolbar
+    - vapn
     - workbench_access
 id: author
 label: 'Content author'
@@ -31,27 +36,37 @@ permissions:
   - 'access content overview'
   - 'access media overview'
   - 'access toolbar'
+  - 'bypass vapn'
+  - 'create blog content'
   - 'create document media'
   - 'create event content'
+  - 'create faq content'
   - 'create image media'
   - 'create landing_page content'
   - 'create news_article content'
   - 'create page content'
   - 'create person content'
+  - 'create publication content'
   - 'create remote_audio media'
   - 'create remote_video media'
   - 'delete media'
+  - 'delete own blog content'
   - 'delete own event content'
+  - 'delete own faq content'
   - 'delete own homepage content'
   - 'delete own landing_page content'
   - 'delete own news_article content'
   - 'delete own page content'
   - 'delete own person content'
+  - 'delete own publication content'
   - 'edit behavior plugin settings'
+  - 'manage vapn settings'
+  - 'moderated content bulk publish'
   - 'update any media'
   - 'update media'
   - 'use content transition create_new_draft'
   - 'use content transition publish'
+  - 'use vapn'
   - 'use workbench access'
   - 'view any unpublished content'
   - 'view latest version'

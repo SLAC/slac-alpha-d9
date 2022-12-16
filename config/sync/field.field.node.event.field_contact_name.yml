@@ -1,0 +1,26 @@
+uuid: c53aab6c-ff1f-4193-a1e4-9cecb4a7fe39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_name
+    - node.type.event
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.event.field_contact_name
+field_name: field_contact_name
+entity_type: node
+bundle: event
+label: 'Contact Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

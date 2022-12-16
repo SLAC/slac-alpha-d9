@@ -1,0 +1,10 @@
+uuid: f10ebb2f-3468-4ebc-96f5-62f66d1cf9da
+langcode: en
+status: true
+dependencies: {  }
+id: image_lightbox
+label: 'Image Lightbox'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

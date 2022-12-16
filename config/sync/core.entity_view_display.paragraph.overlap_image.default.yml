@@ -3,21 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.overlap_image.field_boolean
+    - field.field.paragraph.overlap_image.field_caption
     - field.field.paragraph.overlap_image.field_image
-    - field.field.paragraph.overlap_image.field_long_text
-    - field.field.paragraph.overlap_image.field_lottiefile
-    - field.field.paragraph.overlap_image.field_paragraph
-    - field.field.paragraph.overlap_image.field_paragraph_2
+    - field.field.paragraph.overlap_image.field_link
+    - field.field.paragraph.overlap_image.field_plain_long_text
+    - field.field.paragraph.overlap_image.field_short_text
+    - field.field.paragraph.overlap_image.field_text
     - paragraphs.paragraphs_type.overlap_image
   module:
-    - entity_reference_revisions
-    - lottiefiles_field
+    - link
     - text
 id: paragraph.overlap_image.default
 targetEntityType: paragraph
 bundle: overlap_image
 mode: default
 content:
+  field_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
@@ -25,39 +33,43 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_long_text:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_lottiefile:
-    type: lottiefiles_field
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
     weight: 1
     region: content
-  field_paragraph:
-    type: entity_reference_revisions_entity_view
+  field_link:
+    type: link
     label: hidden
     settings:
-      view_mode: default
-      link: ''
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_plain_long_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_short_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 2
     region: content
-  field_paragraph_2:
-    type: entity_reference_revisions_entity_view
+  field_text:
+    type: string
     label: hidden
     settings:
-      view_mode: default
-      link: ''
+      link_to_entity: false
     third_party_settings: {  }
     weight: 3
     region: content
 hidden:
+  field_boolean: true
   search_api_excerpt: true

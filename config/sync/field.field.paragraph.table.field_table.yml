@@ -1,0 +1,26 @@
+uuid: bfc2856a-cb5a-48d4-a376-4c08591a9561
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_table
+    - paragraphs.paragraphs_type.table
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - table
+id: paragraph.table.field_table
+field_name: field_table
+entity_type: paragraph
+bundle: table
+label: Table
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

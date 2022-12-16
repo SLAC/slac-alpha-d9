@@ -5,18 +5,24 @@ dependencies:
   config:
     - filter.format.basic_html
     - filter.format.restricted_html
+    - filter.format.table
+    - node.type.blog
     - node.type.event
+    - node.type.faq
     - node.type.homepage
     - node.type.landing_page
     - node.type.news_article
     - node.type.page
     - node.type.person
+    - node.type.publication
   module:
+    - aggregator
     - comment
     - contextual
     - environment_indicator
     - eu_cookie_compliance
     - filter
+    - fontawesome
     - media
     - node
     - paragraphs
@@ -39,23 +45,31 @@ permissions:
   - 'access content'
   - 'access contextual links'
   - 'access environment indicator'
+  - 'access fontawesome additional settings'
+  - 'access news feeds'
   - 'access shortcuts'
   - 'access toolbar'
   - 'display eu cookie compliance popup'
+  - 'edit own blog content'
   - 'edit own event content'
+  - 'edit own faq content'
   - 'edit own homepage content'
   - 'edit own landing_page content'
   - 'edit own news_article content'
   - 'edit own page content'
   - 'edit own person content'
+  - 'edit own publication content'
   - 'post comments'
   - 'preview view modes'
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'use text format restricted_html'
+  - 'use text format table'
   - 'use workbench access'
+  - 'view blog revisions'
   - 'view event revisions'
+  - 'view faq revisions'
   - 'view homepage revisions'
   - 'view landing_page revisions'
   - 'view media'
@@ -64,6 +78,7 @@ permissions:
   - 'view own unpublished media'
   - 'view page revisions'
   - 'view person revisions'
+  - 'view publication revisions'
   - 'view published site setting entities'
   - 'view published sitewide alert entities'
   - 'view unpublished paragraphs'

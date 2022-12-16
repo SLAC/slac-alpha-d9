@@ -1,6 +1,0 @@
----
-alert_kicker: 'Kicker'
-alert_type: 'emergency'
-alert_content: |-
-  <p>Short title: These are the details of the alert message. This is a <a href="#">link</a> within an alert.</p>
-  <p>Second title: These are the details of another alert message. This is a <a href="#">link</a> within an alert.</p>

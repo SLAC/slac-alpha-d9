@@ -1,0 +1,33 @@
+uuid: 5fcc2ac6-ed53-4ea6-b8a5-f2b6ed2065a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_publication_slac_type
+field_name: field_publication_slac_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Publications
+    -
+      value: '1'
+      label: Reports
+    -
+      value: '2'
+      label: 'Technical Notes'
+    -
+      value: '3'
+      label: 'Working Papers'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,9 +1,0 @@
----
-modifier_classes: 'c-card--bio'
-title: 'Gregory Jayson'
-url: '#0'
-card_metadata: 'Senior Staff Scientist'
-media: |-
-  <img src="https://picsum.photos/id/1015/800/800" alt="">
-card_content: 'Astrophysics and Particle Physics'
-use_placeholder: true

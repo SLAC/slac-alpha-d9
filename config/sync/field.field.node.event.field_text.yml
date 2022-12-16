@@ -1,4 +1,4 @@
-uuid: 0987653d-d776-4fbf-bbbe-9e7972de407c
+uuid: 8d75fd9b-93a3-4cb3-9f11-9b24d832035f
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ id: node.event.field_text
 field_name: field_text
 entity_type: node
 bundle: event
-label: Kicker
+label: 'Contact Phone'
 description: ''
 required: false
 translatable: true

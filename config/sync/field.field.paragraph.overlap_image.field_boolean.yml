@@ -1,0 +1,23 @@
+uuid: 9df8389e-8ff2-4dbb-a65f-6faa41184bdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_boolean
+    - paragraphs.paragraphs_type.overlap_image
+id: paragraph.overlap_image.field_boolean
+field_name: field_boolean
+entity_type: paragraph
+bundle: overlap_image
+label: 'Override caption?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Override
+  off_label: 'Use default'
+field_type: boolean

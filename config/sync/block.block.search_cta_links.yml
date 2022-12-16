@@ -9,7 +9,7 @@ dependencies:
 id: search_cta_links
 theme: slac
 region: disabled
-weight: 0
+weight: 6
 provider: null
 plugin: single_rendered_site_settings_block
 settings:

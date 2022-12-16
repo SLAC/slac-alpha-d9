@@ -1,0 +1,26 @@
+uuid: 00c41251-ffd4-447e-a25b-367dcbe6da09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_text
+    - paragraphs.paragraphs_type.image_hero
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.image_hero.field_long_text
+field_name: field_long_text
+entity_type: paragraph
+bundle: image_hero
+label: Caption
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

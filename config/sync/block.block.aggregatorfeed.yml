@@ -1,0 +1,22 @@
+uuid: 7be13779-18d1-4718-8f70-d4acfe1fc28a
+langcode: en
+status: true
+dependencies:
+  module:
+    - aggregator
+  theme:
+    - slac
+id: aggregatorfeed
+theme: slac
+region: disabled
+weight: 9
+provider: null
+plugin: aggregator_feed_block
+settings:
+  id: aggregator_feed_block
+  label: 'Trending News'
+  label_display: visible
+  provider: aggregator
+  block_count: 9
+  feed: '2'
+visibility: {  }

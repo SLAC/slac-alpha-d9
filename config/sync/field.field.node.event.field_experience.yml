@@ -1,0 +1,29 @@
+uuid: 0467fe5e-e568-4bb3-9b23-88081c465577
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_experience
+    - node.type.event
+    - taxonomy.vocabulary.experience
+id: node.event.field_experience
+field_name: field_experience
+entity_type: node
+bundle: event
+label: Experience
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      experience: experience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

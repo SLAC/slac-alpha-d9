@@ -22,7 +22,6 @@ settings:
       - bulletedList
       - numberedList
       - blockQuote
-      - insertTable
       - horizontalLine
       - '|'
       - undo
@@ -44,14 +43,17 @@ settings:
     ckeditor5_style:
       styles:
         -
-          label: Lede
+          label: 'Large Text'
           element: '<p class="c-lede">'
         -
-          label: 'Small Paragraph'
+          label: 'Small Text'
           element: '<p class="c-small-paragraph">'
         -
           label: Kicker
           element: '<p class="c-kicker">'
+        -
+          label: 'Big CTA Link'
+          element: '<a class="c-cta-link">'
         -
           label: 'Primary Button'
           element: '<a class="c-button c-button--chevron">'
@@ -64,12 +66,6 @@ settings:
         -
           label: 'Outline Secondary Button'
           element: '<a class="c-button c-button--outline-secondary c-button--chevron">'
-        -
-          label: 'Red Arrow Link'
-          element: '<a class="c-arrow-link">'
-        -
-          label: 'White Arrow Link'
-          element: '<a class="c-arrow-link--white">'
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'

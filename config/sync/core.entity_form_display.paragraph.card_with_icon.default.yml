@@ -1,0 +1,78 @@
+uuid: 9c1d0b7c-33ca-471e-bf59-58b85ffa6d7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_with_icon.field_body
+    - field.field.paragraph.card_with_icon.field_display_style
+    - field.field.paragraph.card_with_icon.field_icon
+    - field.field.paragraph.card_with_icon.field_link
+    - field.field.paragraph.card_with_icon.field_links
+    - field.field.paragraph.card_with_icon.field_short_text
+    - field.field.paragraph.card_with_icon.field_text
+    - paragraphs.paragraphs_type.card_with_icon
+  module:
+    - fontawesome
+    - link
+    - text
+    - view_mode_switch
+id: paragraph.card_with_icon.default
+targetEntityType: paragraph
+bundle: card_with_icon
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_display_style:
+    type: view_mode_switch
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icon:
+    type: fontawesome_icon_widget
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_links:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_short_text:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

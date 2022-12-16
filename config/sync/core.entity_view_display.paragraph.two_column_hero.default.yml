@@ -3,38 +3,34 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.two_column_hero.field_body
-    - field.field.paragraph.two_column_hero.field_button_link
+    - field.field.paragraph.two_column_hero.field_image
+    - field.field.paragraph.two_column_hero.field_node
     - field.field.paragraph.two_column_hero.field_paragraph
-    - field.field.paragraph.two_column_hero.field_text
     - paragraphs.paragraphs_type.two_column_hero
   module:
     - entity_reference_revisions
-    - link
-    - text
 id: paragraph.two_column_hero.default
 targetEntityType: paragraph
 bundle: two_column_hero
 mode: default
 content:
-  field_body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_button_link:
-    type: link
+  field_image:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      trim_length: 80
-      url_only: true
-      url_plain: true
-      rel: '0'
-      target: '0'
+      view_mode: image_hero
+      link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 6
+    region: content
+  field_node:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_card
+      link: false
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_paragraph:
     type: entity_reference_revisions_entity_view
@@ -44,14 +40,6 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_text:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

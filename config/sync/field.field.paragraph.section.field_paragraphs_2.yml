@@ -4,8 +4,14 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_paragraphs_2
+    - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.card_with_icon
+    - paragraphs.paragraphs_type.image_embed
+    - paragraphs.paragraphs_type.image_lightbox
+    - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.video_lightbox
     - paragraphs.paragraphs_type.wysiwyg
   module:
     - entity_reference_revisions
@@ -23,13 +29,19 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      accordion: accordion
       card: card
+      card_with_icon: card_with_icon
+      image_embed: image_embed
+      quote: quote
+      image_lightbox: image_lightbox
+      video_lightbox: video_lightbox
       wysiwyg: wysiwyg
     negate: 0
     target_bundles_drag_drop:
       accordion:
         weight: 36
-        enabled: false
+        enabled: true
       accordion_item:
         weight: 37
         enabled: false
@@ -41,6 +53,9 @@ settings:
         enabled: false
       card:
         weight: 40
+        enabled: true
+      card_with_icon:
+        weight: 49
         enabled: true
       cards_with_show_more:
         weight: 41
@@ -77,12 +92,18 @@ settings:
         enabled: false
       image_embed:
         weight: 52
-        enabled: false
+        enabled: true
       image_hero:
         weight: 53
         enabled: false
+      image_lightbox:
+        weight: 62
+        enabled: true
       media_card:
         weight: 54
+        enabled: false
+      media_grid:
+        weight: 64
         enabled: false
       microsite_hero:
         weight: 55
@@ -98,9 +119,12 @@ settings:
         enabled: false
       quote:
         weight: 59
-        enabled: false
+        enabled: true
       section:
         weight: 60
+        enabled: false
+      section_fixed:
+        weight: 71
         enabled: false
       small_card_with_icon:
         weight: 61
@@ -111,8 +135,17 @@ settings:
       small_card_with_solid_background:
         weight: 63
         enabled: false
+      tab_item:
+        weight: 78
+        enabled: false
+      table:
+        weight: 75
+        enabled: false
       table_of_contents:
         weight: 64
+        enabled: false
+      tabs:
+        weight: 77
         enabled: false
       tout:
         weight: 65
@@ -125,7 +158,7 @@ settings:
         enabled: false
       video_lightbox:
         weight: 68
-        enabled: false
+        enabled: true
       wide_card:
         weight: 69
         enabled: false

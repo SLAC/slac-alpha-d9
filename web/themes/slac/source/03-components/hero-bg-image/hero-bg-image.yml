@@ -1,8 +1,0 @@
----
-hero_title: 'Title lorem ipsum dolor sit amet consectetur dolor sit 17-word count 109 characters example'
-hero_image: '<img src="https://picsum.photos/1440/768?image=11" alt="alt text" />'
-hero_kicker: 'Hero Kicker'
-hero_summary: |-
-  <p>Description provides an informative glimpse of the topic and excites site visitors. Chevron default state does not show when Button is used. This is a 30-word count 188 characters example.</p>
-position: 'left'
-hero_caption: '<p>This is an example caption for the image.</p>'

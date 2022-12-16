@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: small_card_with_image
-label: 'Small Card with Image'
+label: 'Small Card with Optional Image'
 icon_uuid: null
 icon_default: null
 description: ''

@@ -1,0 +1,28 @@
+uuid: 257b254c-fa9b-4338-8bb5-c181a79c6c3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.event_maps.field_body
+    - field.field.site_setting_entity.event_maps.field_text
+    - site_settings.site_setting_entity_type.event_maps
+  module:
+    - text
+id: site_setting_entity.event_maps.default
+targetEntityType: site_setting_entity
+bundle: event_maps
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_text: true
+  fieldset: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

@@ -1,0 +1,56 @@
+uuid: 0a09211e-aaeb-4f30-9b72-a40395fceec8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.publication.field_author_organization
+    - field.field.node.publication.field_authors
+    - field.field.node.publication.field_date
+    - field.field.node.publication.field_dissertation_type
+    - field.field.node.publication.field_doi
+    - field.field.node.publication.field_edition
+    - field.field.node.publication.field_external_link
+    - field.field.node.publication.field_issue
+    - field.field.node.publication.field_pages
+    - field.field.node.publication.field_paragraphs
+    - field.field.node.publication.field_publication_place
+    - field.field.node.publication.field_publication_slac_type
+    - field.field.node.publication.field_publication_type
+    - field.field.node.publication.field_publisher
+    - field.field.node.publication.field_subtitle
+    - field.field.node.publication.field_topics
+    - field.field.node.publication.field_volume
+    - node.type.publication
+  module:
+    - user
+id: node.publication.teaser
+targetEntityType: node
+bundle: publication
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_author_organization: true
+  field_authors: true
+  field_date: true
+  field_dissertation_type: true
+  field_doi: true
+  field_edition: true
+  field_external_link: true
+  field_issue: true
+  field_pages: true
+  field_paragraphs: true
+  field_publication_place: true
+  field_publication_slac_type: true
+  field_publication_type: true
+  field_publisher: true
+  field_subtitle: true
+  field_topics: true
+  field_volume: true
+  langcode: true
+  search_api_excerpt: true

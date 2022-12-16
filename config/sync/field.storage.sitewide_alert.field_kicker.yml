@@ -1,0 +1,21 @@
+uuid: 8883ca75-a9f0-41a5-845f-f2214af8fe47
+langcode: en
+status: true
+dependencies:
+  module:
+    - sitewide_alert
+id: sitewide_alert.field_kicker
+field_name: field_kicker
+entity_type: sitewide_alert
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

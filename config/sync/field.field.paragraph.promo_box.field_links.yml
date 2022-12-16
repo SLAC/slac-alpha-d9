@@ -12,7 +12,7 @@ field_name: field_links
 entity_type: paragraph
 bundle: promo_box
 label: Links
-description: 'For the best user experience, this should be limited to 5 Links.'
+description: ''
 required: false
 translatable: true
 default_value: {  }

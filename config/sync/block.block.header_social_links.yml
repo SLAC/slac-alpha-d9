@@ -11,7 +11,7 @@ dependencies:
 id: header_social_links
 theme: slac
 region: disabled
-weight: -5
+weight: -10
 provider: null
 plugin: 'system_menu_block:social-links'
 settings:

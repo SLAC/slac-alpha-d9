@@ -1,0 +1,23 @@
+uuid: e3e3eba6-c24b-4c8f-ad19-c91fc47c8156
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_boolean
+    - paragraphs.paragraphs_type.image_hero
+id: paragraph.image_hero.field_boolean
+field_name: field_boolean
+entity_type: paragraph
+bundle: image_hero
+label: 'Override caption?'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -3,51 +3,30 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.small_card_with_icon.field_body
+    - field.field.paragraph.small_card_with_icon.field_icon
     - field.field.paragraph.small_card_with_icon.field_link
-    - field.field.paragraph.small_card_with_icon.field_lottiefile
     - field.field.paragraph.small_card_with_icon.field_short_text
     - field.field.paragraph.small_card_with_icon.field_text
     - paragraphs.paragraphs_type.small_card_with_icon
   module:
+    - fontawesome
     - link
-    - lottiefiles_field
-    - text
 id: paragraph.small_card_with_icon.default
 targetEntityType: paragraph
 bundle: small_card_with_icon
 mode: default
 content:
-  field_body:
-    type: text_textarea
-    weight: 3
+  field_icon:
+    type: fontawesome_icon_widget
+    weight: 0
     region: content
-    settings:
-      rows: 5
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_link:
     type: link_default
     weight: 4
     region: content
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_lottiefile:
-    type: lottiefiles_field
-    weight: 0
-    region: content
-    settings:
-      autoplay: 0
-      background: transparent
-      controls: 0
-      hover: 0
-      loop: 0
-      mode: Normal
-      speed: 1
-      selector: ''
-      width: 0
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }

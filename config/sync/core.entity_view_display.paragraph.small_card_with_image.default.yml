@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.small_card_with_image.field_body
     - field.field.paragraph.small_card_with_image.field_image
     - field.field.paragraph.small_card_with_image.field_link
     - field.field.paragraph.small_card_with_image.field_short_text
@@ -11,19 +10,11 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_image
   module:
     - link
-    - text
 id: paragraph.small_card_with_image.default
 targetEntityType: paragraph
 bundle: small_card_with_image
 mode: default
 content:
-  field_body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden

@@ -1,0 +1,55 @@
+uuid: 1a2ffc41-10db-4037-ab1f-f9890b6ff0da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.organization_details.field_acronym
+    - field.field.site_setting_entity.organization_details.field_address
+    - field.field.site_setting_entity.organization_details.field_logo
+    - field.field.site_setting_entity.organization_details.field_organization_name
+    - field.field.site_setting_entity.organization_details.field_text
+    - site_settings.site_setting_entity_type.organization_details
+  module:
+    - address
+id: site_setting_entity.organization_details.default
+targetEntityType: site_setting_entity
+bundle: organization_details
+mode: default
+content:
+  field_acronym:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_address:
+    type: address_plain
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_organization_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_logo: true
+  fieldset: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

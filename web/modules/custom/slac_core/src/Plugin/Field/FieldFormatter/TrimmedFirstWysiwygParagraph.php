@@ -5,7 +5,7 @@ namespace Drupal\slac_core\Plugin\Field\FieldFormatter;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\smart_trim\Plugin\Field\FieldFormatter\SmartTrimFormatter;
 use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\smart_trim\Truncate\TruncateHTML;
+use Drupal\smart_trim\TruncateHTML;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\paragraphs\ParagraphInterface;
 
@@ -160,6 +160,8 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
       ];
       $text = preg_replace($patterns, $replacements, $text);
 
+      $previous_text_len = strlen($text);
+
       // Use SmartTrimFormatter truncation facility to trim to a specific length of words or characters and
       // to place an ellipsis at the end of the string if indicated by settings.
       $truncate = new TruncateHTML();
@@ -170,12 +172,17 @@ class TrimmedFirstWysiwygParagraph extends SmartTrimFormatter {
         ? $truncate->truncateWords($text, $length, $ellipse)
         : $truncate->truncateChars($text, $length, $ellipse);
 
+      $new_text_len = strlen($text);
+
       if ($text) {
         // Assign to render array.
         $element[$delta] = [
           '#type' => 'processed_text',
           '#format' => $format,
           '#text' => $text,
+          '#attributes' => [
+            'is_truncated' => $previous_text_len > $new_text_len,
+          ],
         ];
 
         // If we found and processed text, break.

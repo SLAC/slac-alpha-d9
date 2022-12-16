@@ -4,25 +4,25 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - field.field.node.event.field_bio_related_content
+    - field.field.node.event.field_affiliation
+    - field.field.node.event.field_audience
     - field.field.node.event.field_body
     - field.field.node.event.field_boolean
-    - field.field.node.event.field_boolean2
-    - field.field.node.event.field_datetime_range
-    - field.field.node.event.field_detail_text
-    - field.field.node.event.field_editorial_group
+    - field.field.node.event.field_conference_link
+    - field.field.node.event.field_contact_name
+    - field.field.node.event.field_email
+    - field.field.node.event.field_experience
     - field.field.node.event.field_external_link
     - field.field.node.event.field_featured
     - field.field.node.event.field_image
-    - field.field.node.event.field_lede
-    - field.field.node.event.field_link
-    - field.field.node.event.field_link2
-    - field.field.node.event.field_links
+    - field.field.node.event.field_location
+    - field.field.node.event.field_location_link
     - field.field.node.event.field_long_text
     - field.field.node.event.field_name
-    - field.field.node.event.field_override_text
     - field.field.node.event.field_person_image
     - field.field.node.event.field_site_setting
+    - field.field.node.event.field_smart_date
+    - field.field.node.event.field_sponsor
     - field.field.node.event.field_tags
     - field.field.node.event.field_teaser
     - field.field.node.event.field_text
@@ -30,10 +30,8 @@ dependencies:
     - field.field.node.event.field_video
     - node.type.event
   module:
-    - datetime_range
-    - link
     - slac_core
-    - text
+    - smart_date
     - user
 id: node.event.card
 targetEntityType: node
@@ -43,7 +41,7 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_body:
     type: trimmed_first_wysiwyg_paragraph
@@ -60,41 +58,18 @@ content:
       more_link: 0
       more_class: more-link
       more_text: More
+      more_aria_label: 'Read more about [node:title]'
       summary_handler: full
     third_party_settings: {  }
     weight: 3
     region: content
-  field_boolean:
-    type: boolean
+  field_experience:
+    type: entity_reference_label
     label: hidden
     settings:
-      format: boolean
-      format_custom_false: ''
-      format_custom_true: ''
+      link: false
     third_party_settings: {  }
-    weight: 8
-    region: content
-  field_datetime_range:
-    type: daterange_default
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: html_datetime
-      separator: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_external_link:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 9
+    weight: 6
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -103,26 +78,24 @@ content:
       view_mode: card_image_only
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
-  field_link:
-    type: link
+  field_location:
+    type: string
     label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_override_text:
-    type: text_default
-    label: hidden
-    settings: {  }
+      link_to_entity: false
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_smart_date:
+    type: smartdate_plain
+    label: hidden
+    settings:
+      timezone_override: ''
+      separator: '-'
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_teaser:
     type: trimmed_first_wysiwyg_paragraph
@@ -140,16 +113,9 @@ content:
       more_class: more-link
       more_text: More
       summary_handler: full
+      more_aria_label: 'Read more about [node:title]'
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_text:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
   field_type:
     type: entity_reference_label
@@ -157,22 +123,25 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
-  field_bio_related_content: true
-  field_boolean2: true
-  field_detail_text: true
-  field_editorial_group: true
+  field_affiliation: true
+  field_audience: true
+  field_boolean: true
+  field_conference_link: true
+  field_contact_name: true
+  field_email: true
+  field_external_link: true
   field_featured: true
-  field_lede: true
-  field_link2: true
-  field_links: true
+  field_location_link: true
   field_long_text: true
   field_name: true
   field_person_image: true
   field_site_setting: true
+  field_sponsor: true
   field_tags: true
+  field_text: true
   field_video: true
   langcode: true
   links: true

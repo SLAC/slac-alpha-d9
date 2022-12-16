@@ -1,0 +1,20 @@
+uuid: fdb6bf2c-6402-47d2-a5b4-6317e2cc5811
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sitewide_alert.field_kicker
+  module:
+    - sitewide_alert
+id: sitewide_alert.sitewide_alert.field_kicker
+field_name: field_kicker
+entity_type: sitewide_alert
+bundle: sitewide_alert
+label: Kicker
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

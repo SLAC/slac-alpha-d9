@@ -1,6 +1,6 @@
 _core:
   default_config_hash: GnciVSpJGwXtuBeAb60PIb2f1e3gGcwKpoyRpxgQ3gM
 show_on_admin: 0
-alert_styles: primary|Default
+alert_styles: "emergency|Emergency\r\nannouncement|Announcement\r\ninformation|Information\r\nsuccess|Success\r\nwarning|Warning"
 refresh_interval: 15
-automatic_refresh: 1
+automatic_refresh: 0

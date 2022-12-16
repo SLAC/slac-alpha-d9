@@ -11,7 +11,7 @@ dependencies:
 id: footer_utility
 theme: slac
 region: disabled
-weight: -6
+weight: -11
 provider: null
 plugin: 'system_menu_block:footer-utility'
 settings:

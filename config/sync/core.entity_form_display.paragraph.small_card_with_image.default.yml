@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.small_card_with_image.field_body
     - field.field.paragraph.small_card_with_image.field_image
     - field.field.paragraph.small_card_with_image.field_link
     - field.field.paragraph.small_card_with_image.field_short_text
@@ -12,20 +11,11 @@ dependencies:
   module:
     - link
     - media_library
-    - text
 id: paragraph.small_card_with_image.default
 targetEntityType: paragraph
 bundle: small_card_with_image
 mode: default
 content:
-  field_body:
-    type: text_textarea
-    weight: 3
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 0

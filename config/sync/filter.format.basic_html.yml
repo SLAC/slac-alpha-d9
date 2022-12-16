@@ -2,6 +2,8 @@ uuid: 838a8e2f-3c2b-4291-aceb-e746cabfb015
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.embed
   module:
     - editor
     - media
@@ -18,7 +20,7 @@ filters:
     status: true
     weight: 7
     settings:
-      allowed_html: '<br> <p class="c-lede c-small-paragraph c-kicker"> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a class="c-button c-button--chevron c-button--secondary c-button--outline c-button--outline-secondary c-arrow-link c-arrow-link--white" hreflang href> <cite> <dl> <dt> <dd> <span> <blockquote cite> <ul type> <ol type start> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <div class name id> <strong> <em> <s> <sub> <sup> <li> <hr> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align>'
+      allowed_html: '<br> <p class="c-lede c-small-paragraph c-kicker"> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a class="c-cta-link c-button c-button--chevron c-button--secondary c-button--outline c-button--outline-secondary" hreflang href> <cite> <dl> <dt> <dd> <span> <blockquote cite> <ul type> <ol type start> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <div class name id> <strong> <em> <s> <sub> <sup> <li> <hr> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -71,8 +73,8 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
+      default_view_mode: embed
+      allowed_view_modes:
+        embed: embed
       allowed_media_types:
-        animated_icon: animated_icon
         image: image
