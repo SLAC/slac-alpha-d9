@@ -38,8 +38,8 @@ content:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden
     settings:
-      trim_length: '480'
-      trim_type: chars
+      trim_length: '24'
+      trim_type: words
       trim_suffix: ...
       trim_options:
         heading_remove: heading_remove
@@ -77,8 +77,8 @@ content:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden
     settings:
-      trim_length: '480'
-      trim_type: chars
+      trim_length: '24'
+      trim_type: words
       trim_suffix: ...
       trim_options:
         heading_remove: heading_remove
