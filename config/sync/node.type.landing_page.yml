@@ -14,7 +14,7 @@ third_party_settings:
     minimum_revisions_to_keep: 30
     minimum_age_to_delete: 6
     when_to_delete: 1
-name: 'Landing Page'
+name: 'Listing Page'
 type: landing_page
 description: ''
 help: ''
