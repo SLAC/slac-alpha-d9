@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.large_card
-    - field.field.paragraph.card.field_body
     - field.field.paragraph.card.field_display_style
     - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
@@ -14,19 +13,11 @@ dependencies:
     - paragraphs.paragraphs_type.card
   module:
     - link
-    - text
 id: paragraph.card.large_card
 targetEntityType: paragraph
 bundle: card
 mode: large_card
 content:
-  field_body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
