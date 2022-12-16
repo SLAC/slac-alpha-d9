@@ -70,6 +70,12 @@ hidden:
   field_body: true
   field_boolean: true
   field_editorial_group: true
+  field_education: true
+  field_email: true
+  field_fax: true
+  field_first_name: true
+  field_interestareas: true
+  field_last_name: true
   field_link: true
   field_links: true
   field_location: true
@@ -84,6 +90,7 @@ hidden:
   field_telephone: true
   field_text: true
   field_text_title: true
+  field_text_title_full: true
   langcode: true
   links: true
   search_api_excerpt: true
