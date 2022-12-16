@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.card.field_body
     - field.field.paragraph.card.field_display_style
     - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_link
@@ -13,12 +14,21 @@ dependencies:
   module:
     - link
     - media_library
+    - text
     - view_mode_switch
 id: paragraph.card.default
 targetEntityType: paragraph
 bundle: card
 mode: default
 content:
+  field_body:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_display_style:
     type: view_mode_switch
     weight: 7
