@@ -62,6 +62,7 @@
     "drupal/facets": "^2.0",
     "drupal/field_encrypt": "^3.0",
     "drupal/feeds": "^3.0@beta",
+    "drupal/field_encrypt": "^3.0",
     "drupal/field_group": "^3.2",
     "drupal/focal_point": "^1.5",
     "drupal/fontawesome": "^2.24",
