@@ -1,4 +1,4 @@
-uuid: c381e4ed-7d11-423c-9d72-f58dc909796b
+uuid: bdaeeff0-0ad1-4085-9f5e-bdc5e4e94ccd
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.landing_page_filtered_content
   module:
     - search_api
-id: audience_past_grid_taxonomy_term_name
-name: 'Audience » Taxonomy term » Name'
+id: experience_taxonomy_term_name_past_events_list
+name: 'Experience » Taxonomy term » Name'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: audience_past_grid_taxonomy_term_name
-facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_events_past_grid'
-field_identifier: audience
+url_alias: experience_taxonomy_term_name_past_events_list
+facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_events_past_teaser_list'
+field_identifier: experience
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: Audience
+    default_option_label: 'All Experiences'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false

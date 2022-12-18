@@ -6,5 +6,5 @@ _core:
   default_config_hash: sTQNdPaZBbxILINcrJphEwtu_GLdraxb7Ty4N-xHQHk
 name: 'CAP Org Codes'
 vid: cap_org_codes
-description: ''
+description: 'Used in Person only'
 weight: 0

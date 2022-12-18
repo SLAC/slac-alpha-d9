@@ -1,0 +1,9 @@
+status: 0
+pattern: ''
+escape: false
+preserve_titles: false
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_type
+save: 0
+chunk: '50'

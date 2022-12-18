@@ -12,7 +12,7 @@ dependencies:
     - text
     - user
 id: pre_filtered_content_lists
-label: 'Content Lists - Without filters'
+label: 'Content Lists - Without Filters'
 module: views
 description: 'Lists of content - No exposed filters '
 tag: Content

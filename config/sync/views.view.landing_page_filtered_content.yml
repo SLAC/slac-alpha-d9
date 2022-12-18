@@ -1114,7 +1114,7 @@ display:
         - 'config:search_api.index.content'
   block_events_past_grid:
     id: block_events_past_grid
-    display_title: 'Past Events Grid'
+    display_title: 'Past Events - Grid'
     display_plugin: block
     position: 9
     display_options:

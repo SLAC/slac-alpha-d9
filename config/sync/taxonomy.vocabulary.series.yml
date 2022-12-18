@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Series
 vid: series
-description: ''
+description: 'Used in Blog only'
 weight: 0
