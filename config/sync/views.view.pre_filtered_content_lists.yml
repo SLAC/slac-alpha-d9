@@ -6,18 +6,15 @@ dependencies:
     - core.entity_view_mode.node.card
     - field.storage.node.field_teaser
     - node.type.event
-    - taxonomy.vocabulary.category
-    - taxonomy.vocabulary.event_type
   module:
     - node
     - smart_date
-    - taxonomy
     - text
     - user
 id: pre_filtered_content_lists
-label: 'Pre-filtered Content Lists'
+label: 'Content Lists - Without filters'
 module: views
-description: 'Pre-filtered lists of content for Embed Views'
+description: 'Lists of content - No exposed filters '
 tag: Content
 base_table: node_field_data
 base_field: nid
