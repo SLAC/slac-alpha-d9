@@ -1,4 +1,4 @@
-uuid: 219c3a44-cb48-4c46-91e8-95df076bc71d
+uuid: 8a3e2f9d-6e7c-4092-8269-09492e75d222
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.landing_page_filtered_content
   module:
     - search_api
-id: blog_tags_taxonomy_term_name
-name: 'Tags » Taxonomy term » Name'
+id: audience_taxonomy_term_name_events_grid
+name: 'Audience » Taxonomy term » Name'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: blog_tags_taxonomy_term_name
-facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_blog_all'
-field_identifier: tags
+url_alias: audience_taxonomy_term_name_events_grid
+facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_events_filtered_grid'
+field_identifier: audience
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: Tags
+    default_option_label: 'All Audiences'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false

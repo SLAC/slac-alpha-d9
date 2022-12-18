@@ -1,4 +1,4 @@
-uuid: 2484d914-deff-42d6-8d25-2fdee0ed52e7
+uuid: 881f307a-852a-4989-9781-7567eadae01d
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.landing_page_filtered_content
   module:
     - search_api
-id: experience_past_taxonomy_term_name
-name: 'Experience » Taxonomy term » Name'
+id: publication_date_news_grid
+name: 'Publication Date'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: experience_past_taxonomy_term_name
-facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_events_past'
-field_identifier: experience
+url_alias: publication_date_news_grid
+facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_news_filtered_grid'
+field_identifier: field_date
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: Experience
+    default_option_label: 'All Years'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false
@@ -49,6 +49,15 @@ processor_configs:
       sort: 30
     settings:
       sort: DESC
+  date_item:
+    processor_id: date_item
+    weights:
+      build: 35
+    settings:
+      date_display: actual_date
+      granularity: 6
+      date_format: ''
+      hierarchy: false
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:

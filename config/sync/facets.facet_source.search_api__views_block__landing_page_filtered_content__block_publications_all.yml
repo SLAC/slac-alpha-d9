@@ -1,9 +1,0 @@
-uuid: fa8a4694-7bcc-48c6-9b19-8c51408d4e3b
-langcode: en
-status: true
-dependencies: {  }
-id: search_api__views_block__landing_page_filtered_content__block_publications_all
-name: 'search_api:views_block__landing_page_filtered_content__block_publications_all'
-filter_key: null
-url_processor: query_string
-breadcrumb: {  }

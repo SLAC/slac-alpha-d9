@@ -1,4 +1,4 @@
-uuid: 15a70100-199e-4d5f-b639-9ed0346c1a28
+uuid: 3d252f27-66ce-4112-a508-41b2fd26ca81
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.landing_page_filtered_content
   module:
     - search_api
-id: event_past_type_taxonomy_term_name
-name: 'Event Type » Taxonomy term » Name'
+id: tags_taxonomy_term_name_past_events_list
+name: 'Tags » Taxonomy term » Name'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: event_past_type_taxonomy_term_name
-facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_events_past'
-field_identifier: event_type
+url_alias: tags_taxonomy_term_name_past_events_list
+facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_events_past_teaser_list'
+field_identifier: tags
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: 'Event Type'
+    default_option_label: 'All Tagged Past Events'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false

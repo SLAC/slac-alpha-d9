@@ -1,4 +1,4 @@
-uuid: 0de5b369-7011-47c4-a3a7-d8613c9fb36a
+uuid: a10263c8-0789-45e1-8b1b-4e6640baa0d0
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.landing_page_filtered_content
   module:
     - search_api
-id: news_type_taxonomy_term_name
-name: 'News Type » Taxonomy term » Name'
+id: experience_taxonomy_term_name_events_grid
+name: 'Experience » Taxonomy term » Name'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: news_type_taxonomy_term_name
-facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_news_all'
-field_identifier: news_type
+url_alias: experience_taxonomy_term_name_events_grid
+facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_events_filtered_grid'
+field_identifier: experience
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: 'News Category'
+    default_option_label: 'All Experiences'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false

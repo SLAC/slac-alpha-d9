@@ -1,9 +1,0 @@
-uuid: 610b6b92-5b3c-4981-94f8-2cc38ab184b7
-langcode: en
-status: true
-dependencies: {  }
-id: search_api__views_block__landing_page_filtered_content__block_events_all
-name: 'search_api:views_block__landing_page_filtered_content__block_events_all'
-filter_key: null
-url_processor: query_string
-breadcrumb: {  }
