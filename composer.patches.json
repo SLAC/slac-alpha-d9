@@ -16,6 +16,9 @@
     },
     "drupal/entity_reference_revisions": {
       "InvalidArgumentException: Invalid translation language (und) specified": "patches/3024588-entity_reference_revisions-mr-13.patch"
+    },
+    "drupal/environment_indicator": {
+      "getTitle() in Toolbar Handler returns null value, crashes site": "https://www.drupal.org/files/issues/2022-12-08/3324429-16.patch"
     }
   }
 }
