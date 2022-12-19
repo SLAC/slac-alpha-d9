@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.card_with_icon
     - paragraphs.paragraphs_type.cards_with_show_more
+    - paragraphs.paragraphs_type.embed_view
     - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.image_lightbox
@@ -36,6 +37,7 @@ settings:
       accordion: accordion
       card: card
       cards_with_show_more: cards_with_show_more
+      embed_view: embed_view
       card_with_icon: card_with_icon
       fifty_fifty: fifty_fifty
       image_embed: image_embed
@@ -77,12 +79,15 @@ settings:
       embed_block:
         weight: 44
         enabled: false
+      embed_block_content:
+        weight: 54
+        enabled: false
       embed_full_html_:
         weight: 45
         enabled: false
       embed_view:
         weight: 46
-        enabled: false
+        enabled: true
       embed_webform:
         weight: 47
         enabled: false

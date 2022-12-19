@@ -1270,7 +1270,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: ''
+            description: 'Search [site:name] Past Events'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -1288,7 +1288,7 @@ display:
               author: '0'
               manager: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Search events'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
