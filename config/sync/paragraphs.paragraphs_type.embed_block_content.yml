@@ -1,0 +1,14 @@
+uuid: 027631b3-fbaa-4d9f-92c5-355ccb167533
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: embed_block_content
+label: 'Embed Block Content'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  style_options:
+    enabled: true

@@ -1,0 +1,19 @@
+uuid: ff51b4a5-baaf-4177-a345-4d09bc85fdf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.person
+id: node.person.field_location
+field_name: field_location
+entity_type: node
+bundle: person
+label: 'Location Name'
+description: 'The building title of location'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

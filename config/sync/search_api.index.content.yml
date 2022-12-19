@@ -22,6 +22,9 @@ dependencies:
     - field.storage.node.field_type
     - field.storage.node.field_experience
     - field.storage.node.field_faq_category
+    - field.storage.node.field_last_name
+    - field.storage.node.field_organization
+    - field.storage.node.field_position
     - field.storage.node.field_date
     - field.storage.node.field_publication_type
     - field.storage.node.field_series
@@ -31,8 +34,10 @@ dependencies:
     - field.storage.node.field_teaser
     - field.storage.node.field_topics
     - search_api.server.database
-    - core.entity_view_mode.media.search_index
-    - core.entity_view_mode.node.search_index
+    - core.entity_view_mode.media.card
+    - core.entity_view_mode.media.teaser
+    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.teaser
   module:
     - media
     - taxonomy
@@ -185,6 +190,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_dissertation_type
+  field_last_name:
+    label: 'Last Name'
+    datasource_id: 'entity:node'
+    property_path: field_last_name
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_last_name
   field_long_text:
     label: 'Speaker bio'
     datasource_id: 'entity:node'
@@ -212,14 +225,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_publication_type
-  field_series:
-    label: Series
-    datasource_id: 'entity:node'
-    property_path: field_series
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_series
   field_short_text:
     label: 'Content » Paragraph » Heading'
     datasource_id: 'entity:node'
@@ -301,6 +306,14 @@ field_settings:
     dependencies:
       module:
         - media
+  name:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: string
+    dependencies:
+      module:
+        - taxonomy
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -308,6 +321,26 @@ field_settings:
     indexed_locked: true
     type_locked: true
     hidden: true
+  organization:
+    label: 'Organization » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_organization:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_organization
+      module:
+        - taxonomy
+  position:
+    label: 'Position » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_position:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_position
+      module:
+        - taxonomy
   published:
     label: Published
     property_path: aggregated_field
@@ -317,8 +350,8 @@ field_settings:
       fields:
         - 'entity:media/status'
         - 'entity:node/status'
-  rendered_item:
-    label: 'Rendered item'
+  rendered_item_card:
+    label: 'Rendered Card'
     property_path: rendered_item
     type: text
     configuration:
@@ -326,12 +359,39 @@ field_settings:
         - anonymous
       view_mode:
         'entity:media':
-          image: search_index
+          image: card
           remote_video: ''
         'entity:node':
-          event: ''
-          news_article: search_index
-          person: ''
+          blog: card
+          event: card
+          faq: card
+          homepage: ''
+          landing_page: ''
+          news_article: card
+          page: ''
+          person: card
+          publication: card
+  rendered_item_teaser:
+    label: 'Rendered Teaser'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:media':
+          image: teaser
+          remote_video: ''
+        'entity:node':
+          blog: teaser
+          event: teaser
+          faq: teaser
+          homepage: ''
+          landing_page: ''
+          news_article: teaser
+          page: ''
+          person: teaser
+          publication: teaser
   series:
     label: 'Series » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -389,6 +449,14 @@ field_settings:
       fields:
         - 'entity:media/field_teaser'
         - 'entity:node/field_teaser'
+  tid:
+    label: 'Term ID'
+    datasource_id: 'entity:taxonomy_term'
+    property_path: tid
+    type: integer
+    dependencies:
+      module:
+        - taxonomy
   title:
     label: 'Content title'
     datasource_id: 'entity:node'
@@ -443,6 +511,13 @@ datasource_settings:
     languages:
       default: true
       selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
@@ -469,10 +544,10 @@ processor_settings:
       - field_body_2
       - field_caption
       - field_dissertation_type
+      - field_last_name
       - field_long_text
       - field_plain_long_text
       - field_publication_type
-      - field_series
       - field_short_text
       - field_tab_heading
       - field_table_1
@@ -480,7 +555,11 @@ processor_settings:
       - field_text_1
       - field_title_1
       - media_name
-      - rendered_item
+      - name
+      - organization
+      - position
+      - rendered_item_card
+      - rendered_item_teaser
       - series
       - speaker_name
       - tags
@@ -514,10 +593,10 @@ processor_settings:
       - field_body_2
       - field_caption
       - field_dissertation_type
+      - field_last_name
       - field_long_text
       - field_plain_long_text
       - field_publication_type
-      - field_series
       - field_short_text
       - field_tab_heading
       - field_table_1
@@ -525,7 +604,11 @@ processor_settings:
       - field_text_1
       - field_title_1
       - media_name
-      - rendered_item
+      - name
+      - organization
+      - position
+      - rendered_item_card
+      - rendered_item_teaser
       - series
       - speaker_name
       - tags
@@ -553,7 +636,8 @@ processor_settings:
       - field_text_1
       - field_title_1
       - media_name
-      - rendered_item
+      - rendered_item_card
+      - rendered_item_teaser
       - speaker_name
       - teaser
       - title
@@ -578,7 +662,8 @@ processor_settings:
       - field_text_1
       - field_title_1
       - media_name
-      - rendered_item
+      - rendered_item_card
+      - rendered_item_teaser
       - speaker_name
       - teaser
       - title
@@ -604,10 +689,10 @@ processor_settings:
       - field_body_2
       - field_caption
       - field_dissertation_type
+      - field_last_name
       - field_long_text
       - field_plain_long_text
       - field_publication_type
-      - field_series
       - field_short_text
       - field_tab_heading
       - field_table_1
@@ -615,7 +700,11 @@ processor_settings:
       - field_text_1
       - field_title_1
       - media_name
-      - rendered_item
+      - name
+      - organization
+      - position
+      - rendered_item_card
+      - rendered_item_teaser
       - series
       - speaker_name
       - tags

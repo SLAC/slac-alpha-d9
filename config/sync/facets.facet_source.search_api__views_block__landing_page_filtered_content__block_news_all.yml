@@ -1,9 +1,0 @@
-uuid: 1f182953-6a3f-4ddc-b4cf-f290aa29b197
-langcode: en
-status: true
-dependencies: {  }
-id: search_api__views_block__landing_page_filtered_content__block_news_all
-name: 'search_api:views_block__landing_page_filtered_content__block_news_all'
-filter_key: null
-url_processor: query_string
-breadcrumb: {  }

@@ -1,4 +1,4 @@
-uuid: 4b87d6ed-0dcf-4a4c-8fc8-16342bf50e7e
+uuid: cee5241f-e4d6-4f5f-ae6b-f6c961bdcf02
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ id: node.person.field_links
 field_name: field_links
 entity_type: node
 bundle: person
-label: 'CTA Links'
+label: Links
 description: ''
 required: false
 translatable: true

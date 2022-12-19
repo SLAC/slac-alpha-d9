@@ -1,0 +1,232 @@
+<?php
+
+/**
+ * @file
+ * Contains stanford_person_importer.module.
+ */
+
+use Drupal\Core\Cache\Cache;
+use Drupal\config_pages\ConfigPagesInterface;
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\Core\Form\FormStateInterface;
+//use Drupal\Core\Link;
+use Drupal\migrate_tools\MigrateExecutable;
+use Drupal\migrate\MigrateMessage;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+//use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function stanford_person_importer_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the stanford_person_importer module.
+    case 'help.page.stanford_person_importer':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Migration support for importing of profile information from stanford.edu.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * @implements hook_cron().
+ */
+function stanford_person_importer_cron() {
+
+  // Run the migration every hour.
+  $request_time = \Drupal::time()->getRequestTime();
+  $frequency_in_minutes = 60;
+  $interval = 60 * $frequency_in_minutes;
+  $last_check = \Drupal::state()->get('stanford_person_importer.last_check', 0);
+  if (($request_time - $last_check) < $interval) {
+    return;
+  }
+
+  $migration_id = "su_stanford_person";
+  $migration = \Drupal::service('plugin.manager.migration')->createInstance($migration_id);
+  $migration->set('requirements', []);
+  $executable = new MigrateExecutable($migration, new MigrateMessage());
+  $executable->import();
+  \Drupal::logger('stanford_person_importer')->notice("Successfully completed migration via cron import: $migration_id");
+  \Drupal::state()->set('stanford_person_importer.last_check', $request_time);
+}
+
+
+/**
+ * Migration callback to just get the current timestamp.
+ *
+ * We use this function in migration callback processes because using `time` as
+ * the callback produces messages about "function accepts 0 arguments, 1
+ * argument passed". So we just have our own callback that takes the argument
+ * from the migration process and does nothing with it.
+ *
+ * @param mixed $arg
+ *   Passed parameter from migration plugin `callback`.
+ *
+ * @return int
+ *   Current timestamp.
+ *
+ * @see \Drupal\migrate\Plugin\migrate\process\Callback::transform()
+ */
+function _stanford_profile_person_get_time($arg = NULL) {
+  return time();
+}
+
+/**
+ * Implements hook_entity_form_display_alter().
+ * 
+ * Disable fields on the node edit form that have imported values 
+ * and display a message
+ */
+function stanford_person_importer_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
+
+  // We only care about nodes
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($context['entity_type'] != 'node' || !$node) {
+    return;
+  }
+
+   // Check if the current node was imported.
+  $migration = \Drupal::service('stanford_person_importer.stanford_migrate')->getNodesMigration($node);
+  if (!$migration) {
+    return;
+  }
+
+  // Get field definitions 
+  $field_definitions = $form_display->get('fieldDefinitions');
+  foreach ($form_display->getComponents() as $field_name => $component) {
+
+    // Make sure the field component is one of the field definitions.
+    if (empty($field_definitions[$field_name])) {
+      continue;
+    }
+
+    // When editing an existing node that was imported via migrate module, mark the fields that are mapped from migration as readonly.
+    $field_definition = $field_definitions[$field_name];
+    $columns = $field_definition->getFieldStorageDefinition()->getColumns();
+    $processing = !empty($migration->process[$field_name]);
+
+    // This will check if a migrate process is mapped to a specific column on
+    // the field.
+    foreach (array_keys($columns) as $column) {
+      $processing = $processing ?: !empty($migration->process["$field_name/$column"]);
+    }
+
+    if ($processing) {
+      \Drupal::messenger()
+        ->addWarning(t('Some fields can not be edited since they contain imported & synced data.'));
+
+      // If the default display is configured with some settings, let's use that
+      // for the best display on the entity form. If it's not configured, the
+      // readonly_field_widget module will use some default display settings.
+      $default_display = EntityViewDisplay::load("node.{$node->bundle()}.default");
+      if ($display_component = $default_display->getComponent($field_name)) {
+        $component['settings']['formatter_type'] = $display_component['type'];
+        $component['settings']['formatter_settings'] = $display_component['settings'];
+      }
+      $component['type'] = 'readonly_field_widget';
+      $form_display->setComponent($field_name, $component);
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ *
+ * Before saving imported nodes, set the photo field to a default value if it
+ * doesn't have any legitimate media items.
+ */
+function stanford_person_importer_node_presave(NodeInterface $entity) {
+  // Don't worry about nodes that were manually created or if the field is gone.
+  if (!_stanford_person_importer_node_imported($entity) || !$entity->hasField('field_image')) {
+    return;
+  }
+  $photo_values = $entity->get('field_image')->getValue();
+  $media_storage = \Drupal::entityTypeManager()->getStorage('media');
+  foreach ($photo_values as $value) {
+    // If any delta value has a valid media entity, we don't need to set the
+    // default field value.
+    if ($media_storage->load($value['target_id'])) {
+      return;
+    }
+  }
+
+  $default_photo = $entity->getFieldDefinition('field_image')
+    ->getDefaultValue($entity);
+  // Set the default value of the photo field.
+  $entity->set('field_image', $default_photo);
+}
+
+/**
+ * Was this node imported via migrate module.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ *   Node entity.
+ *
+ * @return bool
+ *   True if it was imported from migration.
+ */
+function _stanford_person_importer_node_imported(NodeInterface $node) {
+  $db_name = 'migrate_map_su_stanford_person';
+  // Check for the table first.
+  if (\Drupal::database()->schema()->tableExists($db_name)) {
+    // Check for the entity id in the destination id column.
+    $migrated = \Drupal::database()
+      ->select($db_name, 'm')
+      ->fields('m')
+      ->condition('destid1', $node->id())
+      ->countQuery()
+      ->execute()
+      ->fetchField();
+
+    return $migrated > 0;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ * 
+ * Populate the Org Codes taxonomy field options on the Config Page
+ */
+function stanford_person_importer_config_pages_presave(ConfigPagesInterface $entity) {
+  if ($entity->bundle() == 'stanford_person_importer') {
+    $terms = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->getQuery()
+      ->condition('vid', 'cap_org_codes')
+      ->execute();
+
+    // No org codes exist, lets load them up.
+    if (empty($terms)) {
+      \Drupal::service('stanford_person_importer.cap')
+        ->setClientId($entity->get('su_person_cap_username')->getString())
+        ->setClientSecret($entity->get('su_person_cap_password')->getString())
+        ->updateOrganizations();
+    }
+
+    // Invalidate the migration cache since some of the org codes or workgroups
+    // probably changed.
+    Cache::invalidateTags(['migration_plugins']);
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ * 
+ * Provide some validation on the Config Pages credential fields
+ */
+function stanford_person_importer_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $field_name = $context['items']->getFieldDefinition()->getName();
+  if ($field_name == 'su_person_cap_password') {
+    // Validate the credentials on the config pages entity form.
+    $element['#element_validate'][] = [
+      'Drupal\stanford_person_importer\Cap',
+      'validateCredentials',
+    ];
+  }
+}

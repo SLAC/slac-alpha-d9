@@ -1,0 +1,19 @@
+uuid: 61a2aa86-871a-4bb4-8f9d-8696c6b3d0f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name
+    - node.type.person
+id: node.person.field_first_name
+field_name: field_first_name
+entity_type: node
+bundle: person
+label: 'First Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
