@@ -4,12 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - field.storage.node.field_teaser
     - node.type.event
   module:
     - node
     - smart_date
-    - text
     - user
 id: pre_filtered_content_lists
 label: 'Content Lists - Without Filters'
@@ -26,16 +24,14 @@ display:
     position: 0
     display_options:
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        field_smart_date_end_value:
+          id: field_smart_date_end_value
+          table: node__field_smart_date
+          field: field_smart_date_end_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: field
+          plugin_id: date
           label: ''
           exclude: false
           alter:
@@ -77,28 +73,17 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_teaser:
-          id: field_teaser
-          table: node__field_teaser
-          field: field_teaser
+          date_format: fallback
+          custom_date_format: ''
+          timezone: ''
+        field_smart_date_value:
+          id: field_smart_date_value
+          table: node__field_smart_date
+          field: field_smart_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: field
+          plugin_id: date
           label: ''
           exclude: false
           alter:
@@ -140,19 +125,9 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: text_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+          date_format: fallback
+          custom_date_format: ''
+          timezone: ''
       pager:
         type: mini
         options:
@@ -201,6 +176,20 @@ display:
           entity_field: created
           plugin_id: date
           order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+        field_smart_date_value:
+          id: field_smart_date_value
+          table: node__field_smart_date
+          field: field_smart_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: date
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -263,6 +252,51 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_smart_date_value:
+          id: field_smart_date_value
+          table: node__field_smart_date
+          field: field_smart_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: date
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: default
         options:
@@ -290,13 +324,156 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags:
-        - 'config:field.storage.node.field_teaser'
+      tags: {  }
+  embed_1:
+    id: embed_1
+    display_title: 'Events List - Past'
+    display_plugin: embed
+    position: 2
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 3
+      sorts:
+        field_smart_date_value:
+          id: field_smart_date_value
+          table: node__field_smart_date
+          field: field_smart_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: date
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            event: event
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_smart_date_end_value:
+          id: field_smart_date_end_value
+          table: node__field_smart_date
+          field: field_smart_date_end_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: date
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: date
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        pager: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      display_description: 'List of 3 Past Events'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   embed_events_upcoming:
     id: embed_events_upcoming
     display_title: 'Events List - Upcoming'
@@ -387,7 +564,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: date
-          operator: '>='
+          operator: '<='
           value:
             min: ''
             max: ''
@@ -438,9 +615,7 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags:
-        - 'config:field.storage.node.field_teaser'
+      tags: {  }
