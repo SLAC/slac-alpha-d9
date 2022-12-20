@@ -9,12 +9,9 @@ dependencies:
     - field.field.taxonomy_term.tags.field_kicker
     - field.field.taxonomy_term.tags.field_lede
     - field.field.taxonomy_term.tags.field_paragraphs
-    - field.field.taxonomy_term.tags.field_research_area
-    - field.field.taxonomy_term.tags.field_rss
     - taxonomy.vocabulary.tags
   module:
     - entity_reference_revisions
-    - link
     - text
 id: taxonomy_term.tags.full
 targetEntityType: taxonomy_term
@@ -54,21 +51,8 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_rss:
-    type: link_separate
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
   description: true
   field_display_style: true
-  field_research_area: true
   langcode: true
   search_api_excerpt: true
