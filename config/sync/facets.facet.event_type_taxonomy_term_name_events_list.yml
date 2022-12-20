@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: event_type_taxonomy_term_name_events_list
-name: 'Event Type » Taxonomy term » Name'
+name: 'Event Type'
 weight: 0
 min_count: 1
 missing: false
