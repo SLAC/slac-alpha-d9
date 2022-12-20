@@ -157,7 +157,20 @@ display:
       cache:
         type: none
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No items to display.'
+            format: basic_html
+          tokenize: false
       sorts:
         search_api_relevance:
           id: search_api_relevance
@@ -2673,7 +2686,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: ''
+            description: 'Search [site:name] People'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -2691,7 +2704,7 @@ display:
               author: '0'
               manager: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Search people'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -2870,7 +2883,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: ''
+            description: 'Search [site:name] People'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -2888,7 +2901,7 @@ display:
               author: '0'
               manager: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Search people'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -2909,8 +2922,43 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options: {  }
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:media':
+              image: card
+              remote_video: card
+            'entity:node':
+              blog: card
+              event: card
+              faq: card
+              homepage: card
+              landing_page: card
+              news_article: card
+              page: card
+              person: teaser
+              publication: card
+            'entity:taxonomy_term':
+              audience: default
+              cap_org_codes: default
+              category: default
+              editorial_section: default
+              event_type: default
+              experience: default
+              faq_category: default
+              news_type: default
+              position: default
+              series: default
+              tags: default
+              topics: default
       defaults:
         title: false
+        style: false
+        row: false
         sorts: false
         filters: false
         filter_groups: false
