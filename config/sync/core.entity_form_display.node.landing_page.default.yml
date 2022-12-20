@@ -18,7 +18,6 @@ dependencies:
     - media_library
     - paragraphs
     - path
-    - term_reference_tree
     - text
 third_party_settings:
   field_group:
@@ -119,15 +118,14 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_tags:
-    type: term_reference_tree
+    type: entity_reference_autocomplete
     weight: 12
     region: content
     settings:
-      start_minimized: true
-      leaves_only: false
-      select_parents: false
-      cascading_selection: 0
-      max_depth: 0
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_teaser:
     type: text_textarea

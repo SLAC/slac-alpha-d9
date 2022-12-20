@@ -9,8 +9,6 @@ dependencies:
     - field.field.taxonomy_term.tags.field_kicker
     - field.field.taxonomy_term.tags.field_lede
     - field.field.taxonomy_term.tags.field_paragraphs
-    - field.field.taxonomy_term.tags.field_research_area
-    - field.field.taxonomy_term.tags.field_rss
     - taxonomy.vocabulary.tags
   module:
     - options
@@ -41,7 +39,5 @@ hidden:
   field_kicker: true
   field_lede: true
   field_paragraphs: true
-  field_research_area: true
-  field_rss: true
   langcode: true
   search_api_excerpt: true
