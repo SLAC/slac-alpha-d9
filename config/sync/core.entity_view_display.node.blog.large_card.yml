@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.blog.field_text
     - node.type.blog
   module:
+    - datetime
     - slac_core
     - user
 id: node.blog.large_card
@@ -24,6 +25,15 @@ targetEntityType: node
 bundle: blog
 mode: large_card
 content:
+  field_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_paragraphs:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden
@@ -80,7 +90,6 @@ content:
     region: content
 hidden:
   field_category: true
-  field_date: true
   field_dek: true
   field_hero_paragraph: true
   field_link: true

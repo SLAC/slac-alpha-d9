@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: series_taxonomy_term_name_blog_list
-name: 'Series » Taxonomy term » Name'
+name: Series
 weight: 0
 min_count: 1
 missing: false
