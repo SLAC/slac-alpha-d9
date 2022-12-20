@@ -60,6 +60,11 @@ if (file_exists($secrets_file)) {
   }
   // Set media migration embed token to media_embed and not entity_embed
   $settings['media_migration_embed_token_transform_destination_filter_plugin'] = 'media_embed';
+
+  // Sendgrid configuration override.
+  if (!empty($secrets['sendgrid_api_key'])) {
+    $config['sendgrid_integration.settings']['apikey'] = $secrets['sendgrid_api_key'];
+  }
 }
 
 // Configure Redis
