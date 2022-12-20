@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: audience_taxonomy_term_name_past_events_list
-name: 'Audience » Taxonomy term » Name'
+name: Audience
 weight: 0
 min_count: 1
 missing: false

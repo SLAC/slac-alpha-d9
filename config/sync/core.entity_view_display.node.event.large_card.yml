@@ -31,6 +31,7 @@ dependencies:
     - node.type.event
   module:
     - slac_core
+    - smart_date
     - user
 id: node.event.large_card
 targetEntityType: node
@@ -40,16 +41,61 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
+    region: content
+  field_body:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      more_aria_label: 'Read more about [node:title]'
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_experience:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: large
+      view_mode: large_image_only
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 4
+    region: content
+  field_location:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_smart_date:
+    type: smartdate_plain
+    label: hidden
+    settings:
+      timezone_override: ''
+      separator: '-'
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_teaser:
     type: trimmed_first_wysiwyg_paragraph
@@ -67,8 +113,9 @@ content:
       more_class: more-link
       more_text: More
       summary_handler: full
+      more_aria_label: 'Read more about [node:title]'
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_type:
     type: entity_reference_label
@@ -76,26 +123,22 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 1
     region: content
 hidden:
   field_affiliation: true
   field_audience: true
-  field_body: true
   field_boolean: true
   field_conference_link: true
   field_contact_name: true
   field_email: true
-  field_experience: true
   field_external_link: true
   field_featured: true
-  field_location: true
   field_location_link: true
   field_long_text: true
   field_name: true
   field_person_image: true
   field_site_setting: true
-  field_smart_date: true
   field_sponsor: true
   field_tags: true
   field_text: true
