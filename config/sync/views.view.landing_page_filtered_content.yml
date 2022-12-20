@@ -1270,7 +1270,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: ''
+            description: 'Search [site:name] Past Events'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -1288,7 +1288,7 @@ display:
               author: '0'
               manager: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Search events'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -1514,7 +1514,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: ''
+            description: 'Search [site:name] Past Events'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -1532,7 +1532,7 @@ display:
               author: '0'
               manager: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Search events'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -1598,8 +1598,43 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options: {  }
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:media':
+              image: card
+              remote_video: card
+            'entity:node':
+              blog: card
+              event: teaser
+              faq: card
+              homepage: card
+              landing_page: card
+              news_article: card
+              page: card
+              person: card
+              publication: card
+            'entity:taxonomy_term':
+              audience: default
+              cap_org_codes: default
+              category: default
+              editorial_section: default
+              event_type: default
+              experience: default
+              faq_category: default
+              news_type: default
+              position: default
+              series: default
+              tags: default
+              topics: default
       defaults:
         title: false
+        style: false
+        row: false
         sorts: false
         filters: false
         filter_groups: false
