@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: tags_taxonomy_term_name_blog_grid
-name: 'Tags » Taxonomy term » Name'
+name: Tags
 weight: 0
 min_count: 1
 missing: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: 'All Tagged Blog Articles'
+    default_option_label: 'All Tags'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false
