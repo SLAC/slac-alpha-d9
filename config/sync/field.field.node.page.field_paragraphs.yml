@@ -83,16 +83,16 @@ settings:
         weight: -70
         enabled: true
       callout_box:
-        weight: -82
+        weight: -85
         enabled: false
       card:
-        weight: -84
+        weight: -83
         enabled: true
       card_with_icon:
-        weight: -85
+        weight: -84
         enabled: true
       cards_with_show_more:
-        weight: -83
+        weight: -82
         enabled: true
       content_card:
         weight: -81
@@ -158,19 +158,19 @@ settings:
         weight: -60
         enabled: false
       section:
-        weight: -59
+        weight: -58
         enabled: false
       section_fixed:
-        weight: -55
+        weight: -59
         enabled: false
       small_card_with_icon:
-        weight: -58
-        enabled: true
-      small_card_with_image:
         weight: -57
         enabled: true
-      small_card_with_solid_background:
+      small_card_with_image:
         weight: -56
+        enabled: true
+      small_card_with_solid_background:
+        weight: -55
         enabled: true
       tab_item:
         weight: -54

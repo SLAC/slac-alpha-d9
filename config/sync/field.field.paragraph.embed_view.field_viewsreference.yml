@@ -30,6 +30,7 @@ settings:
     page: 0
     attachment: 0
   preselect_views:
+    faqs: faqs
     landing_page_filtered_content: landing_page_filtered_content
     pre_filtered_content_lists: pre_filtered_content_lists
     aggregator_rss_feed: 0
@@ -44,6 +45,7 @@ settings:
     media: 0
     media_library: 0
     moderated_content: 0
+    news_rss: 0
     related_content_for_detail_pages: 0
     related_content_for_media_pages: 0
     search: 0
@@ -53,9 +55,9 @@ settings:
     webform_submissions: 0
   enabled_settings:
     exposed_filters: exposed_filters
+    argument: 0
+    limit: 0
+    offset: 0
     pager: 0
     title: 0
-    limit: 0
-    argument: 0
-    offset: 0
 field_type: viewsreference
