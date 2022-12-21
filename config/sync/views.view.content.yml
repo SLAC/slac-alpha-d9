@@ -1286,11 +1286,11 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: datetime
-          operator: '>='
+          operator: '>'
           value:
             min: ''
             max: ''
-            value: '-0 day'
+            value: now
             type: offset
           group: 1
           exposed: false
