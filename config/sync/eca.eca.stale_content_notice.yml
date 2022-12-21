@@ -28,6 +28,6 @@ actions:
     configuration:
       recipient: '[site:mail]'
       subject: '[site:name] - Stale content notice'
-      message: 'Please review your stale content at: [site:url]admin/content/stale [site:mail]'
+      message: 'Please review your stale content at: [site:url]admin/content/stale'
       replace_tokens: false
     successors: {  }
