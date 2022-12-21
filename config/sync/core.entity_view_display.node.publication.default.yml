@@ -11,12 +11,14 @@ dependencies:
     - field.field.node.publication.field_edition
     - field.field.node.publication.field_external_link
     - field.field.node.publication.field_issue
+    - field.field.node.publication.field_other_publication_type
     - field.field.node.publication.field_pages
     - field.field.node.publication.field_paragraphs
     - field.field.node.publication.field_publication_place
     - field.field.node.publication.field_publication_slac_type
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_publisher
+    - field.field.node.publication.field_report_number
     - field.field.node.publication.field_subtitle
     - field.field.node.publication.field_topics
     - field.field.node.publication.field_volume
@@ -113,6 +115,14 @@ content:
     third_party_settings: {  }
     weight: 114
     region: content
+  field_other_publication_type:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 121
+    region: content
   field_pages:
     type: string
     label: above
@@ -159,6 +169,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_report_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 120
     region: content
   field_subtitle:
     type: string
