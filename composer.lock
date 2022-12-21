@@ -11650,10 +11650,10 @@
         },
         {
             "name": "slac/slac",
-            "version": "1.0.0-alpha18",
+            "version": "1.0.0-alpha20",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.18/slac.zip"
+                "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.20/slac.zip"
             },
             "type": "drupal-theme"
         },

@@ -8,12 +8,9 @@ dependencies:
     - field.field.taxonomy_term.tags.field_kicker
     - field.field.taxonomy_term.tags.field_lede
     - field.field.taxonomy_term.tags.field_paragraphs
-    - field.field.taxonomy_term.tags.field_research_area
-    - field.field.taxonomy_term.tags.field_rss
     - taxonomy.vocabulary.tags
   module:
     - allowed_formats
-    - link
     - media_library
     - paragraphs
     - path
@@ -72,24 +69,6 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
-    third_party_settings: {  }
-  field_research_area:
-    type: entity_reference_autocomplete
-    weight: 5
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_rss:
-    type: link_default
-    weight: 6
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   name:
     type: string_textfield

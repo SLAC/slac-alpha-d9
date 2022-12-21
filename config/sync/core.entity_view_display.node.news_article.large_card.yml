@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
+    - datetime
     - link
     - slac_core
     - text
@@ -33,6 +34,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_paragraphs:
     type: trimmed_first_wysiwyg_paragraph
@@ -50,6 +60,7 @@ content:
       more_class: more-link
       more_text: More
       summary_handler: full
+      more_aria_label: 'Read more about [node:title]'
     third_party_settings: {  }
     weight: 2
     region: content
@@ -88,6 +99,7 @@ content:
       more_class: more-link
       more_text: More
       summary_handler: full
+      more_aria_label: 'Read more about [node:title]'
     third_party_settings: {  }
     weight: 3
     region: content
@@ -98,7 +110,7 @@ content:
       view_mode: large
       link: false
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_type:
     type: entity_reference_label
@@ -109,7 +121,6 @@ content:
     weight: 1
     region: content
 hidden:
-  field_date: true
   field_dek: true
   field_editorial_group: true
   field_featured: true
