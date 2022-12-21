@@ -26,8 +26,8 @@ actions:
     plugin: action_send_email_action
     label: 'Send stale content notification email'
     configuration:
-      recipient: '[node:author:mail], [site:mail]'
+      recipient: '[site:mail]'
       subject: '[site:name] - Stale content notice'
-      message: 'Please review your stale content at: [site:url]admin/content/stale'
+      message: 'Please review your stale content at: [site:url]admin/content/stale [site:mail]'
       replace_tokens: false
     successors: {  }
