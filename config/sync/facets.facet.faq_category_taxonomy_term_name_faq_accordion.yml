@@ -1,4 +1,4 @@
-uuid: 7ed52bdb-1c6d-4af2-ab21-ef12ec193f49
+uuid: dc7923a9-44c6-45fd-9fda-b9e1a849a232
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.landing_page_filtered_content
   module:
     - search_api
-id: publication_type_publication_grid
-name: 'Publication Type'
+id: faq_category_taxonomy_term_name_faq_accordion
+name: 'FAQ Category » Taxonomy term » Name'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: publication_type_publication_grid
-facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_publications_filtered_grid'
-field_identifier: field_publication_type
+url_alias: faq_category_taxonomy_term_name_faq_accordion
+facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_faqs_filtered_accordion_list'
+field_identifier: faq_category
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: 'All Types'
+    default_option_label: 'All Categories'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false
