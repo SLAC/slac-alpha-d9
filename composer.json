@@ -119,6 +119,7 @@
     "drupal/views_bulk_operations": "^4.2",
     "drupal/views_display_switch": "^1.1",
     "drupal/views_exposed_filter_blocks": "^1.1",
+    "drupal/views_rss": "^2.0@RC",
     "drupal/views_year_filter": "^2.0",
     "drupal/viewsreference": "^2.0@beta",
     "drupal/viewsreference_filter": "^1.0",
