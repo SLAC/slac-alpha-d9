@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a013644484050d57c6bd770ae884d673",
+    "content-hash": "a82e378e6398cb1656c77cc258a7264a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2592,18 +2592,6 @@
             ],
             "authors": [
                 {
-                    "name": "Pravin Ajaaz",
-                    "homepage": "https://www.drupal.org/user/2910049"
-                },
-                {
-                    "name": "RenatoG",
-                    "homepage": "https://www.drupal.org/user/3326031"
-                },
-                {
-                    "name": "VladimirAus",
-                    "homepage": "https://www.drupal.org/user/673120"
-                },
-                {
                     "name": "bforchhammer",
                     "homepage": "https://www.drupal.org/user/216396"
                 },
@@ -2616,8 +2604,24 @@
                     "homepage": "https://www.drupal.org/user/1001934"
                 },
                 {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "Pravin Ajaaz",
+                    "homepage": "https://www.drupal.org/user/2910049"
+                },
+                {
                     "name": "purushotam.rai",
                     "homepage": "https://www.drupal.org/user/3193859"
+                },
+                {
+                    "name": "RenatoG",
+                    "homepage": "https://www.drupal.org/user/3326031"
+                },
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
                 }
             ],
             "description": "Allows hiding of entity label fields and automatic label creation.",
@@ -5775,6 +5779,10 @@
                     "homepage": "https://www.drupal.org/u/harivenuv",
                     "email": "harivenu.v1992@gmail.com",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "saranya ashokkumar",
+                    "homepage": "https://www.drupal.org/user/3429959"
                 }
             ],
             "description": "Drupal field for lottie animation.",
