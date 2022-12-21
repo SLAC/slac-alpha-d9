@@ -2069,7 +2069,7 @@ display:
           default_row_class: true
           disableifone: 0
           row-start-open: '0'
-          collapsible: 0
+          collapsible: 1
           animated: none
           animation_time: '300'
           heightStyle: auto
