@@ -1,7 +1,9 @@
-uuid: 408320f0-ede8-493f-a002-82a9729f930e
+uuid: 900087f6-8991-4b67-a9b1-65c2a7d9692b
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.aggregator_feed.aggregator_feed.field_kicker
   module:
     - aggregator
 _core:
@@ -23,6 +25,14 @@ content:
     region: content
   feed_icon:
     weight: 5
+    region: content
+  field_kicker:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   image:
     weight: 2
