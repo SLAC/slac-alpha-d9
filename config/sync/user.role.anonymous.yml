@@ -5,7 +5,6 @@ dependencies:
   config:
     - filter.format.restricted_html
   module:
-    - aggregator
     - comment
     - eu_cookie_compliance
     - filter
@@ -23,7 +22,6 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access news feeds'
   - 'display eu cookie compliance popup'
   - 'search content'
   - 'use text format restricted_html'

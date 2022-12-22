@@ -1,9 +1,10 @@
-uuid: de4aee35-3779-4abf-afb6-2a0aa7d44b16
+uuid: 1609524e-4bf8-4e34-b2c7-13808e555620
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.aggregator_feed.summary
+    - field.field.aggregator_feed.aggregator_feed.field_kicker
   module:
     - aggregator
 _core:
@@ -13,10 +14,17 @@ targetEntityType: aggregator_feed
 bundle: aggregator_feed
 mode: summary
 content:
-  items:
+  field_kicker:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 0
     region: content
-  more_link:
+  items:
+    settings: {  }
+    third_party_settings: {  }
     weight: 1
     region: content
 hidden:
@@ -26,4 +34,5 @@ hidden:
   image: true
   langcode: true
   link: true
+  more_link: true
   search_api_excerpt: true

@@ -21,5 +21,5 @@ settings:
   selection: blocks
   selection_settings:
     plugin_ids:
-      aggregator_feed_block: aggregator_feed_block
+      'views_block:aggregator_sources-block_aggregator': 'views_block:aggregator_sources-block_aggregator'
 field_type: block_field
