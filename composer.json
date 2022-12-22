@@ -128,6 +128,7 @@
     "drupal/viewsreference_filter": "^1.0",
     "drupal/webform": "^6.1",
     "drupal/workbench_access": "^1.1",
+    "drupal/yaml_content": "^1.0@alpha",
     "drush/drush": "^10",
     "pantheon-systems/drupal-integrations": "^9",
     "pantheon-upstreams/upstream-configuration": "self.version",

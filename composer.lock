@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2590b2bb9f89434d39229b7ad3a146d6",
+    "content-hash": "ac950e918a2c1dafd97e08453f2b9c51",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9279,6 +9279,66 @@
             "homepage": "https://www.drupal.org/project/workbench_access",
             "support": {
                 "source": "https://git.drupalcode.org/project/workbench_access"
+            }
+        },
+        {
+            "name": "drupal/yaml_content",
+            "version": "1.0.0-alpha8",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/yaml_content.git",
+                "reference": "8.x-1.0-alpha8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/yaml_content-8.x-1.0-alpha8.zip",
+                "reference": "8.x-1.0-alpha8",
+                "shasum": "c18ea8f2aebf4fceb1e87e206988fbee9a6230ad"
+            },
+            "require": {
+                "drupal/core": "^8.7.7 || ^9"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha8",
+                    "datestamp": "1658259314",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DamienMcKenna",
+                    "homepage": "https://www.drupal.org/user/108450"
+                },
+                {
+                    "name": "shrop",
+                    "homepage": "https://www.drupal.org/user/14767"
+                },
+                {
+                    "name": "slucero",
+                    "homepage": "https://www.drupal.org/user/1612534"
+                }
+            ],
+            "description": "Demo content generator using yaml content templates.",
+            "homepage": "https://www.drupal.org/project/yaml_content",
+            "support": {
+                "source": "https://git.drupalcode.org/project/yaml_content"
             }
         },
         {
@@ -19922,6 +19982,7 @@
         "drupal/ultimate_cron": 15,
         "drupal/views_rss": 5,
         "drupal/viewsreference": 10,
+        "drupal/yaml_content": 15,
         "pantheon-upstreams/upstream-configuration": 20,
         "slac/slac": 15
     },
