@@ -89,6 +89,7 @@ module:
   menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
   migrate: 0
   migrate_file: 0
   migrate_plus: 0
