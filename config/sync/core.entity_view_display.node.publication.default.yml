@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.publication.field_edition
     - field.field.node.publication.field_external_link
     - field.field.node.publication.field_issue
-    - field.field.node.publication.field_other_publication_type
+    - field.field.node.publication.field_other_citation
     - field.field.node.publication.field_pages
     - field.field.node.publication.field_paragraphs
     - field.field.node.publication.field_publication_place
@@ -29,6 +29,7 @@ dependencies:
     - link
     - name
     - options
+    - text
     - user
 id: node.publication.default
 targetEntityType: node
@@ -115,11 +116,10 @@ content:
     third_party_settings: {  }
     weight: 114
     region: content
-  field_other_publication_type:
-    type: string
+  field_other_citation:
+    type: text_default
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
     weight: 121
     region: content

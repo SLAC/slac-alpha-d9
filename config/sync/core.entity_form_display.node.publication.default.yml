@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.publication.field_edition
     - field.field.node.publication.field_external_link
     - field.field.node.publication.field_issue
-    - field.field.node.publication.field_other_publication_type
+    - field.field.node.publication.field_other_citation
     - field.field.node.publication.field_pages
     - field.field.node.publication.field_paragraphs
     - field.field.node.publication.field_publication_place
@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.publication.field_volume
     - node.type.publication
   module:
+    - conditional_fields
     - content_moderation
     - datetime
     - field_group
@@ -32,6 +33,7 @@ dependencies:
     - name
     - paragraphs
     - path
+    - text
 third_party_settings:
   field_group:
     group_page_content:
@@ -74,8 +76,8 @@ third_party_settings:
         - field_external_link
         - field_publication_type
         - field_publication_slac_type
-        - field_other_publication_type
         - field_subtitle
+        - field_other_citation
         - field_report_number
         - field_publication_place
         - field_volume
@@ -294,16 +296,16 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
-  field_other_publication_type:
-    type: string_textfield
-    weight: 28
+  field_other_citation:
+    type: text_textarea
+    weight: 29
     region: content
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings:
       conditional_fields:
-        07118e4b-fe44-41d5-a086-36abfc514cc9:
+        efa5cb71-e5f2-4c8c-9538-615f913fc908:
           entity_type: node
           bundle: publication
           dependee: field_publication_type
@@ -455,7 +457,7 @@ content:
             selector: ''
   field_subtitle:
     type: string_textfield
-    weight: 29
+    weight: 28
     region: content
     settings:
       size: 60

@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.publication.field_edition
     - field.field.node.publication.field_external_link
     - field.field.node.publication.field_issue
-    - field.field.node.publication.field_other_publication_type
+    - field.field.node.publication.field_other_citation
     - field.field.node.publication.field_pages
     - field.field.node.publication.field_paragraphs
     - field.field.node.publication.field_publication_place
@@ -167,7 +167,7 @@ content:
     weight: 0
     region: content
 hidden:
-  field_other_publication_type: true
+  field_other_citation: true
   field_paragraphs: true
   field_report_number: true
   field_subtitle: true

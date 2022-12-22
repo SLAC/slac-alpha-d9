@@ -1,0 +1,26 @@
+uuid: 19560fee-f596-4468-8c70-b11e40e3d671
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_citation
+    - node.type.publication
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: node.publication.field_other_citation
+field_name: field_other_citation
+entity_type: node
+bundle: publication
+label: 'Other Citation'
+description: 'Enter custom citation information for other types of publications.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
