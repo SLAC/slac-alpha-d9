@@ -5,4 +5,4 @@ dependencies: {  }
 name: Series
 vid: series
 description: 'Used in Blog only'
-weight: 0
+weight: -1

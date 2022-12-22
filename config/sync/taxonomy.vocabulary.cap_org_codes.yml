@@ -7,4 +7,4 @@ _core:
 name: 'CAP Org Codes'
 vid: cap_org_codes
 description: 'Used in Person only'
-weight: 0
+weight: -3
