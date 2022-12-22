@@ -1,7 +1,0 @@
-- entity: "taxonomy_term"
-  vid: "Experience"
-  name: "In Person"
-- entity: "taxonomy_term"
-  vid: "Experience"
-  name: "Virtual"
-
