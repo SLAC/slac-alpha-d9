@@ -11,7 +11,7 @@ field_name: field_organization
 entity_type: node
 bundle: person
 label: Organization
-description: ''
+description: 'Select the organization code this person belongs to.'
 required: false
 translatable: false
 default_value: {  }

@@ -1,0 +1,19 @@
+uuid: 053b0914-5153-4028-98cb-ccf7d2c32b81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text
+    - node.type.person
+id: node.person.field_text
+field_name: field_text
+entity_type: node
+bundle: person
+label: 'Mail Stop'
+description: 'Enter the code for the mail stop.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

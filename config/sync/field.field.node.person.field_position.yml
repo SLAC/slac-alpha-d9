@@ -11,7 +11,7 @@ field_name: field_position
 entity_type: node
 bundle: person
 label: Position
-description: ''
+description: 'Select this person''s position.'
 required: false
 translatable: false
 default_value: {  }
