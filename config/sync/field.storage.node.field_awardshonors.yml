@@ -1,16 +1,16 @@
-uuid: 2133f862-b73c-4d51-ac7b-0c26f4ca968e
+uuid: 97f29409-24a5-4bbf-8120-fbc0ec0cd56b
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - text
 id: node.field_awardshonors
 field_name: field_awardshonors
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.person.field_profile_link
     - field.field.node.person.field_teaser
     - field.field.node.person.field_telephone
+    - field.field.node.person.field_text
     - field.field.node.person.field_text_title_full
     - field.field.node.person.field_text_title_short
     - node.type.person
@@ -81,6 +82,7 @@ hidden:
   field_profile_link: true
   field_teaser: true
   field_telephone: true
+  field_text: true
   field_text_title_full: true
   field_text_title_short: true
   langcode: true

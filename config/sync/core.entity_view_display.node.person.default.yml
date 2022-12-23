@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.person.field_profile_link
     - field.field.node.person.field_teaser
     - field.field.node.person.field_telephone
+    - field.field.node.person.field_text
     - field.field.node.person.field_text_title_full
     - field.field.node.person.field_text_title_short
     - node.type.person
@@ -59,11 +60,11 @@ content:
     weight: 27
     region: content
   field_awardshonors:
-    type: basic_string
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 26
+    weight: 34
     region: content
   field_body:
     type: text_default
@@ -216,6 +217,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 16
+    region: content
+  field_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 33
     region: content
   field_text_title_full:
     type: string

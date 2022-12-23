@@ -10,7 +10,7 @@ field_name: field_text_title_short
 entity_type: node
 bundle: person
 label: 'Short Title'
-description: ''
+description: 'The short job title will be displayed when this person is displayed in a card or teaser. If no short title is available, the full title will be used.'
 required: false
 translatable: false
 default_value: {  }
