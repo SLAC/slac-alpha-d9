@@ -29,6 +29,7 @@ dependencies:
     - link
     - name
     - options
+    - text
     - user
 id: node.publication.teaser
 targetEntityType: node
@@ -49,7 +50,7 @@ content:
     settings:
       format: default
       markup: none
-      list_format: ''
+      list_format: default
       link_target: ''
       preferred_field_reference: ''
       preferred_field_reference_separator: ', '
@@ -115,6 +116,13 @@ content:
     third_party_settings: {  }
     weight: 8
     region: content
+  field_other_citation:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
   field_pages:
     type: string
     label: hidden
@@ -153,6 +161,14 @@ content:
     third_party_settings: {  }
     weight: 12
     region: content
+  field_report_number:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
   field_volume:
     type: string
     label: hidden
@@ -161,16 +177,22 @@ content:
     third_party_settings: {  }
     weight: 13
     region: content
+  langcode:
+    type: language
+    label: hidden
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
-  field_other_citation: true
   field_paragraphs: true
-  field_report_number: true
   field_subtitle: true
   field_topics: true
-  langcode: true
   search_api_excerpt: true
