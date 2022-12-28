@@ -4,6 +4,10 @@ dependencies:
   module:
     - config_pages
     - taxonomy
+    - stanford_person_importer
+  enforced:
+    module:
+      - stanford_person_importer
 third_party_settings: {  }
 id: config_pages.su_person_orgs
 field_name: su_person_orgs

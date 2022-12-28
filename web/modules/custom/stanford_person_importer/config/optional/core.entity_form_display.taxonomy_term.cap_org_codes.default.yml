@@ -7,6 +7,10 @@ dependencies:
   module:
     - path
     - text
+    - stanford_person_importer
+  enforced:
+    module:
+      - stanford_person_importer
 id: taxonomy_term.cap_org_codes.default
 targetEntityType: taxonomy_term
 bundle: cap_org_codes
