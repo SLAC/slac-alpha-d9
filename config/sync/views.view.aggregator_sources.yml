@@ -1,4 +1,4 @@
-uuid: 3c8ae474-7d43-4c84-9a4e-a500d235ccae
+uuid: f2d619fc-5cd2-4a70-b94b-fb2f8a67ed9c
 langcode: en
 status: true
 dependencies:
@@ -122,6 +122,10 @@ display:
       filters: {  }
       style:
         type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:aggregator_feed'
         options:
@@ -145,6 +149,48 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
+        - user.permissions
+      tags: {  }
+  block_aggregator:
+    id: block_aggregator
+    display_title: 'Trending News Block'
+    display_plugin: block
+    position: 1
+    display_options:
+      title: ''
+      fields: {  }
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 6
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:aggregator_feed'
+        options:
+          relationship: none
+          view_mode: summary
+      defaults:
+        title: false
+        pager: false
+        style: false
+        row: false
+        fields: false
+      display_description: 'Aggregation of trending news from other sites.'
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+      block_description: 'Trending News Block'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
         - user.permissions
       tags: {  }
   feed_1:

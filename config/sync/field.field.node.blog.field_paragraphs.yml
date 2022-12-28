@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.cards_with_show_more
     - paragraphs.paragraphs_type.content_card
     - paragraphs.paragraphs_type.content_embed
+    - paragraphs.paragraphs_type.embed_block_content
     - paragraphs.paragraphs_type.embed_view
     - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
@@ -63,6 +64,7 @@ settings:
       two_column_hero: two_column_hero
       video_hero: video_hero
       wide_card: wide_card
+      embed_block_content: embed_block_content
     negate: 1
     target_bundles_drag_drop:
       accordion:
@@ -95,6 +97,9 @@ settings:
       embed_block:
         weight: -77
         enabled: false
+      embed_block_content:
+        weight: 54
+        enabled: true
       embed_full_html_:
         weight: -76
         enabled: false

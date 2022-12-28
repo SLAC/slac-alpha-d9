@@ -26,15 +26,16 @@ dependencies:
     - field.field.node.person.field_profile_link
     - field.field.node.person.field_teaser
     - field.field.node.person.field_telephone
+    - field.field.node.person.field_text
     - field.field.node.person.field_text_title_full
     - field.field.node.person.field_text_title_short
     - node.type.person
   module:
     - content_moderation
     - field_group
-    - layout_paragraphs
     - link
     - media_library
+    - paragraphs
     - path
     - telephone
     - text
@@ -59,9 +60,9 @@ third_party_settings:
     group_metadata:
       children:
         - field_position
-        - field_interestareas
         - field_organization
         - field_education
+        - field_interestareas
         - field_awardshonors
         - field_affiliations
         - field_links
@@ -107,6 +108,7 @@ third_party_settings:
         - field_email
         - field_location
         - field_address
+        - field_text
         - field_map
       label: 'Contact & Location Information'
       region: content
@@ -133,7 +135,7 @@ content:
     third_party_settings: {  }
   field_address:
     type: string_textarea
-    weight: 19
+    weight: 18
     region: content
     settings:
       rows: 5
@@ -141,15 +143,15 @@ content:
     third_party_settings: {  }
   field_affiliations:
     type: link_default
-    weight: 29
+    weight: 32
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
   field_awardshonors:
-    type: string_textarea
-    weight: 28
+    type: text_textarea
+    weight: 31
     region: content
     settings:
       rows: 5
@@ -168,7 +170,7 @@ content:
         hide_guidelines: '1'
   field_education:
     type: string_textfield
-    weight: 27
+    weight: 29
     region: content
     settings:
       size: 60
@@ -206,7 +208,7 @@ content:
     third_party_settings: {  }
   field_interestareas:
     type: text_textarea
-    weight: 24
+    weight: 30
     region: content
     settings:
       rows: 5
@@ -222,7 +224,7 @@ content:
     third_party_settings: {  }
   field_links:
     type: link_default
-    weight: 30
+    weight: 33
     region: content
     settings:
       placeholder_url: ''
@@ -230,7 +232,7 @@ content:
     third_party_settings: {  }
   field_location:
     type: string_textfield
-    weight: 18
+    weight: 17
     region: content
     settings:
       size: 60
@@ -253,7 +255,7 @@ content:
     third_party_settings: {  }
   field_organization:
     type: entity_reference_autocomplete
-    weight: 25
+    weight: 28
     region: content
     settings:
       match_operator: CONTAINS
@@ -262,17 +264,26 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_paragraphs:
-    type: layout_paragraphs
+    type: paragraphs
     weight: 9
     region: content
     settings:
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_position:
     type: entity_reference_autocomplete
-    weight: 23
+    weight: 27
     region: content
     settings:
       match_operator: CONTAINS
@@ -282,7 +293,7 @@ content:
     third_party_settings: {  }
   field_profile_link:
     type: link_default
-    weight: 31
+    weight: 34
     region: content
     settings:
       placeholder_url: ''
@@ -293,6 +304,14 @@ content:
     weight: 13
     region: content
     settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_text_title_full:
@@ -320,26 +339,26 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 9
     region: content
     settings:
       display_label: true
@@ -370,7 +389,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

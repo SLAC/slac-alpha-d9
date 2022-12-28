@@ -1,0 +1,24 @@
+uuid: 7b2be9ec-c06f-4e17-ba2d-1cf23477b9e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.aggregator_sources
+  module:
+    - views
+  theme:
+    - slac
+id: views_block__aggregator_sources_block_aggregator
+theme: slac
+region: disabled
+weight: 0
+provider: null
+plugin: 'views_block:aggregator_sources-block_aggregator'
+settings:
+  id: 'views_block:aggregator_sources-block_aggregator'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
