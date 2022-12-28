@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_paragraphs_1
     - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.callout_box
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.card_with_icon
     - paragraphs.paragraphs_type.cards_with_show_more
@@ -35,6 +36,7 @@ settings:
   handler_settings:
     target_bundles:
       accordion: accordion
+      callout_box: callout_box
       card: card
       cards_with_show_more: cards_with_show_more
       embed_view: embed_view
@@ -60,7 +62,7 @@ settings:
         enabled: false
       callout_box:
         weight: 39
-        enabled: false
+        enabled: true
       card:
         weight: 40
         enabled: true
