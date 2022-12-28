@@ -11,17 +11,20 @@ dependencies:
     - field.field.node.publication.field_edition
     - field.field.node.publication.field_external_link
     - field.field.node.publication.field_issue
+    - field.field.node.publication.field_other_citation
     - field.field.node.publication.field_pages
     - field.field.node.publication.field_paragraphs
     - field.field.node.publication.field_publication_place
     - field.field.node.publication.field_publication_slac_type
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_publisher
+    - field.field.node.publication.field_report_number
     - field.field.node.publication.field_subtitle
     - field.field.node.publication.field_topics
     - field.field.node.publication.field_volume
     - node.type.publication
   module:
+    - conditional_fields
     - content_moderation
     - datetime
     - field_group
@@ -30,6 +33,7 @@ dependencies:
     - name
     - paragraphs
     - path
+    - text
 third_party_settings:
   field_group:
     group_page_content:
@@ -73,6 +77,8 @@ third_party_settings:
         - field_publication_type
         - field_publication_slac_type
         - field_subtitle
+        - field_other_citation
+        - field_report_number
         - field_publication_place
         - field_volume
         - field_issue
@@ -165,7 +171,7 @@ content:
     third_party_settings: {  }
   field_dissertation_type:
     type: string_textfield
-    weight: 34
+    weight: 36
     region: content
     settings:
       size: 60
@@ -191,7 +197,7 @@ content:
             selector: ''
   field_doi:
     type: link_default
-    weight: 35
+    weight: 37
     region: content
     settings:
       placeholder_url: ''
@@ -215,7 +221,7 @@ content:
             selector: ''
   field_edition:
     type: string_textfield
-    weight: 33
+    weight: 35
     region: content
     settings:
       size: 60
@@ -249,7 +255,7 @@ content:
     third_party_settings: {  }
   field_issue:
     type: string_textfield
-    weight: 31
+    weight: 33
     region: content
     settings:
       size: 60
@@ -290,9 +296,35 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
+  field_other_citation:
+    type: text_textarea
+    weight: 29
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        efa5cb71-e5f2-4c8c-9538-615f913fc908:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_pages:
     type: string_textfield
-    weight: 32
+    weight: 34
     region: content
     settings:
       size: 60
@@ -335,7 +367,7 @@ content:
     third_party_settings: {  }
   field_publication_place:
     type: string_textfield
-    weight: 29
+    weight: 31
     region: content
     settings:
       size: 60
@@ -397,6 +429,32 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_report_number:
+    type: string_textfield
+    weight: 30
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        9c0bcd4a-cac3-4582-aec9-7d3111955170:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
   field_subtitle:
     type: string_textfield
     weight: 28
@@ -433,7 +491,7 @@ content:
     third_party_settings: {  }
   field_volume:
     type: string_textfield
-    weight: 30
+    weight: 32
     region: content
     settings:
       size: 60

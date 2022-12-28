@@ -12,45 +12,187 @@ dependencies:
     - field.field.node.publication.field_edition
     - field.field.node.publication.field_external_link
     - field.field.node.publication.field_issue
+    - field.field.node.publication.field_other_citation
     - field.field.node.publication.field_pages
     - field.field.node.publication.field_paragraphs
     - field.field.node.publication.field_publication_place
     - field.field.node.publication.field_publication_slac_type
     - field.field.node.publication.field_publication_type
     - field.field.node.publication.field_publisher
+    - field.field.node.publication.field_report_number
     - field.field.node.publication.field_subtitle
     - field.field.node.publication.field_topics
     - field.field.node.publication.field_volume
     - node.type.publication
   module:
+    - datetime
+    - link
+    - name
+    - options
+    - text
     - user
 id: node.publication.teaser
 targetEntityType: node
 bundle: publication
 mode: teaser
 content:
+  field_author_organization:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_authors:
+    type: name_default
+    label: hidden
+    settings:
+      format: default
+      markup: none
+      list_format: default
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_dissertation_type:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_doi:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_edition:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_issue:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_other_citation:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_pages:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_publication_place:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_publication_slac_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_publication_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_publisher:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_report_number:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_volume:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  langcode:
+    type: language
+    label: hidden
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
-  field_author_organization: true
-  field_authors: true
-  field_date: true
-  field_dissertation_type: true
-  field_doi: true
-  field_edition: true
-  field_external_link: true
-  field_issue: true
-  field_pages: true
   field_paragraphs: true
-  field_publication_place: true
-  field_publication_slac_type: true
-  field_publication_type: true
-  field_publisher: true
   field_subtitle: true
   field_topics: true
-  field_volume: true
-  langcode: true
   search_api_excerpt: true
