@@ -11,7 +11,7 @@ dependencies:
 id: stale_content_notice
 modeller: core
 label: 'Stale Content Notice'
-version: '1.0'
+version: 1.0.0
 weight: null
 events:
   eca_base_eca_cron:
