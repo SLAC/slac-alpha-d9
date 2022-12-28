@@ -47,13 +47,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_organization:
-    type: entity_reference_label
+  field_text_title_full:
+    type: string
     label: hidden
     settings:
-      link: false
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_text_title_short:
     type: string
@@ -82,6 +82,7 @@ hidden:
   field_mail_code: true
   field_map: true
   field_mobile: true
+  field_organization: true
   field_paragraphs: true
   field_position: true
   field_profile_link: true
@@ -89,7 +90,6 @@ hidden:
   field_telephone: true
   field_text: true
   field_text_title: true
-  field_text_title_full: true
   langcode: true
   links: true
   search_api_excerpt: true
