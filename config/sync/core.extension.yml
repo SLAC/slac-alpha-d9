@@ -47,6 +47,7 @@ module:
   eca_cm: 0
   eca_content: 0
   eca_ui: 0
+  eca_user: 0
   eca_views: 0
   editor: 0
   encrypt: 0
@@ -171,7 +172,7 @@ module:
   pathauto: 1
   views: 10
   paragraphs: 11
-  minimal: 1000
+  slac_profile: 1000
   eu_cookie_compliance: 1001
 theme:
   bartik: 0
@@ -180,4 +181,4 @@ theme:
   gin: 0
   olivero: 0
   slac: 0
-profile: minimal
+profile: slac_profile
