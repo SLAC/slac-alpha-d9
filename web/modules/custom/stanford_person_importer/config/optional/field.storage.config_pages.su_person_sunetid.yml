@@ -3,14 +3,13 @@ status: true
 dependencies:
   module:
     - config_pages
-    - field_encrypt
-third_party_settings:
-  field_encrypt:
-    encrypt: true
-    properties:
-      value: value
-id: config_pages.su_person_cap_username
-field_name: su_person_cap_username
+    - stanford_person_importer
+  enforced:
+    module:
+      - stanford_person_importer
+third_party_settings: {  }
+id: config_pages.su_person_sunetid
+field_name: su_person_sunetid
 entity_type: config_pages
 type: string
 settings:
@@ -19,7 +18,7 @@ settings:
   case_sensitive: false
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

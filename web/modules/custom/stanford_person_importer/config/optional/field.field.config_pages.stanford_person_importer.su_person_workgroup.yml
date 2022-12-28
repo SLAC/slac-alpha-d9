@@ -4,6 +4,11 @@ dependencies:
   config:
     - config_pages.type.stanford_person_importer
     - field.storage.config_pages.su_person_workgroup
+  module:
+    - stanford_person_importer
+  enforced:
+    module:
+      - stanford_person_importer
 id: config_pages.stanford_person_importer.su_person_workgroup
 field_name: su_person_workgroup
 entity_type: config_pages

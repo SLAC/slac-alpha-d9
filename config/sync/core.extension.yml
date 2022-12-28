@@ -132,7 +132,6 @@ module:
   slac_helper: 0
   smart_date: 0
   smart_trim: 0
-  stanford_person_importer: 0
   style_options: 0
   svg_image_field: 0
   system: 0

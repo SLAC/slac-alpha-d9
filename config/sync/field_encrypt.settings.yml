@@ -3,9 +3,48 @@ _core:
 encryption_profile: stanford_real_aes
 make_entities_uncacheable: true
 default_properties:
-  string:
+  address: {  }
+  address_country: {  }
+  address_zone: {  }
+  boolean: {  }
+  comment: {  }
+  datetime: {  }
+  daterange: {  }
+  duration: {  }
+  email:
     - value
-  string_long:
+  link:
+    - uri
+    - title
+  metatag: {  }
+  name: {  }
+  smartdate: {  }
+  timestamp: {  }
+  fontawesome_icon: {  }
+  view_mode_switch: {  }
+  list_float: {  }
+  list_integer: {  }
+  decimal: {  }
+  float: {  }
+  integer: {  }
+  telephone:
+    - value
+  estimated_read_time: {  }
+  block_field: {  }
+  'field_ui:entity_reference:node': {  }
+  entity_reference: {  }
+  file: {  }
+  image: {  }
+  lottiefiles_field: {  }
+  'field_ui:entity_reference:media': {  }
+  svg_image_field: {  }
+  'field_ui:entity_reference:taxonomy_term': {  }
+  'field_ui:entity_reference:user': {  }
+  viewsreference: {  }
+  webform: {  }
+  entity_reference_revisions: {  }
+  'field_ui:entity_reference_revisions:paragraph': {  }
+  list_string:
     - value
   text:
     - value
@@ -14,13 +53,8 @@ default_properties:
   text_with_summary:
     - value
     - summary
-  list_string:
+  string:
     - value
-  email:
-    - value
-  link:
-    - uri
-    - title
-  telephone:
+  string_long:
     - value
 batch_size: 5

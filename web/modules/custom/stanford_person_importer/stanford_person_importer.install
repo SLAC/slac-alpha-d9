@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\File\FileSystemInterface;
+
 /**
  * @file
  * stanford_person_importer.install
@@ -21,10 +23,30 @@
 
 /**
  * Implements hook_install().
+ * @var \Drupal\Core\File\FileSystemInterface $file_system
  */
 function stanford_person_importer_install() {
+
   \Drupal::configFactory()
     ->getEditable('field_encrypt.settings')
     ->set('encryption_profile', 'stanford_real_aes')
     ->save();
+
+  // Create the media directory to save profile images - public://media/person
+  $file_system = \Drupal::service('file_system');
+  $directory = 'public://media';
+  $file_system->prepareDirectory($directory, FileSystemInterface:: CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  $directory = 'public://media/person';
+  $file_system->prepareDirectory($directory, FileSystemInterface:: CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function stanford_person_importer_uninstall() {
+
+  // Remove the person directory and generated images.
+  $file_system = \Drupal::service('file_system');
+  $file_system->deleteRecursive('public://media/person');
 }
