@@ -10,9 +10,9 @@ dependencies:
     - better_exposed_filters
     - entity_reference_revisions
     - search_api
+    - slac_core
     - text
     - user
-    - views_accordion
 id: landing_page_filtered_content
 label: 'Content Lists - With Filters'
 module: views
@@ -2062,21 +2062,13 @@ display:
         groups:
           1: AND
       style:
-        type: views_accordion
+        type: slac_views_accordion
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          disableifone: 0
           row-start-open: '0'
           collapsible: 1
-          animated: none
-          animation_time: '300'
-          heightStyle: auto
-          event: click
-          use_header_icons: 1
-          icon_header: ui-icon-triangle-1-e
-          icon_active_header: ui-icon-triangle-1-s
       row:
         type: fields
         options:
@@ -2094,7 +2086,10 @@ display:
         filter_groups: false
       display_description: 'Filtered list of FAQs - Accordion Display'
       exposed_block: true
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       block_description: FAQs
       allow:
         items_per_page: false
@@ -3103,7 +3098,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: ''
+            description: 'Search [site:name] Publications'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -3121,7 +3116,7 @@ display:
               author: '0'
               manager: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Search publications'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -3142,14 +3137,52 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: default
+        options: {  }
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:media':
+              image: card
+              remote_video: card
+            'entity:node':
+              blog: card
+              event: card
+              faq: card
+              homepage: card
+              landing_page: card
+              news_article: card
+              page: card
+              person: card
+              publication: teaser
+            'entity:taxonomy_term':
+              audience: default
+              cap_org_codes: default
+              category: default
+              editorial_section: default
+              event_type: default
+              experience: default
+              faq_category: default
+              news_type: default
+              position: default
+              series: default
+              tags: default
+              topics: default
       defaults:
         title: false
+        style: false
+        row: false
         sorts: false
         filters: false
         filter_groups: false
       display_description: 'Filtered list of Publications -Teaser/List Display'
       exposed_block: true
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       block_description: 'Publications - List'
       allow:
         items_per_page: false
