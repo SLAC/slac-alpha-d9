@@ -531,7 +531,7 @@ display:
               remote_video: card
             'entity:node':
               blog: card
-              event: teaser
+              event: card
               faq: card
               homepage: card
               landing_page: card
@@ -758,7 +758,7 @@ display:
               remote_video: card
             'entity:node':
               blog: card
-              event: teaser
+              event: card
               faq: card
               homepage: card
               landing_page: card
