@@ -3,9 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.blog
     - node.type.event
+    - node.type.faq
+    - node.type.homepage
+    - node.type.landing_page
     - node.type.news_article
     - node.type.page
+    - node.type.person
+    - node.type.publication
   module:
     - content_moderation
 id: content
@@ -53,7 +59,13 @@ type_settings:
       weight: 2
   entity_types:
     node:
+      - blog
       - event
+      - faq
+      - homepage
+      - landing_page
       - news_article
       - page
+      - person
+      - publication
   default_moderation_state: draft
