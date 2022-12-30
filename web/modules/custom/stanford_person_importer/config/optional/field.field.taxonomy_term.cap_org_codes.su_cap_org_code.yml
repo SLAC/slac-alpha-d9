@@ -4,6 +4,11 @@ dependencies:
   config:
     - field.storage.taxonomy_term.su_cap_org_code
     - taxonomy.vocabulary.cap_org_codes
+  module:
+    - stanford_person_importer
+  enforced:
+    module:
+      - stanford_person_importer
 id: taxonomy_term.cap_org_codes.su_cap_org_code
 field_name: su_cap_org_code
 entity_type: taxonomy_term

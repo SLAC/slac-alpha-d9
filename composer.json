@@ -16,9 +16,9 @@
       "type": "package",
       "package": {
         "name": "slac/slac",
-        "version": "1.0.0-alpha21",
+        "version": "1.0.0-alpha22",
         "dist": {
-          "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.21/slac.zip",
+          "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.22/slac.zip",
           "type": "zip"
         },
         "type": "drupal-theme"
@@ -131,6 +131,7 @@
     "pantheon-systems/drupal-integrations": "^9",
     "pantheon-upstreams/upstream-configuration": "self.version",
     "rvtraveller/qs-composer-installer": "^1.2",
+    "sainsburys/guzzle-oauth2-plugin": "^3.0",
     "slac/slac": "^1.0@alpha",
     "vlucas/phpdotenv": "^4.0",
     "webmozart/path-util": "^2.3"

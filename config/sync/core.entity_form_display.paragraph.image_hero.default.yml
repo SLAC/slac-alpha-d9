@@ -33,7 +33,7 @@ content:
         hide_guidelines: '1'
       maxlength:
         maxlength_js: 188
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_label: 'For the best display, it is recommended to not exceed @limit characters characters. Remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
   field_boolean:
     type: boolean_checkbox
@@ -75,7 +75,8 @@ content:
     third_party_settings:
       maxlength:
         maxlength_js: 109
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_label: 'For the best display, it is recommended to not exceed @limit characters characters. Remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   field_text:
     type: string_textfield
     weight: 0

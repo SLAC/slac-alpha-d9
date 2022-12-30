@@ -736,8 +736,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page_2:
-    id: page_2
+  page_stale_content:
+    id: page_stale_content
     display_title: 'Stale Content'
     display_plugin: page
     position: 2
@@ -1333,7 +1333,10 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       path: admin/content/stale
       menu:
         type: tab

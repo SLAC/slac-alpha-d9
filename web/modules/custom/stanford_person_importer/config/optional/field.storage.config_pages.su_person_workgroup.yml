@@ -2,14 +2,18 @@ langcode: en
 status: true
 dependencies:
   module:
-    - taxonomy
+    - config_pages
+    - stanford_person_importer
+  enforced:
+    module:
+      - stanford_person_importer
 third_party_settings: {  }
-id: taxonomy_term.su_cap_org_code
-field_name: su_cap_org_code
-entity_type: taxonomy_term
+id: config_pages.su_person_workgroup
+field_name: su_person_workgroup
+entity_type: config_pages
 type: string
 settings:
-  max_length: 4
+  max_length: 255
   is_ascii: false
   case_sensitive: false
 module: core
