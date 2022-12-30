@@ -13,7 +13,7 @@ Description
 ---
 
 - This module, the Stanford Person Importer, is a modified version of the Stanford Person's, Stanford Person Importer submodule
-- This module's Person content type is manually configured and has different fields than the Stanford Person content type
+- This module's Person content type has been manually configured and has different fields than the Stanford Person content type
 - This module uses Drupal cron and not Ultimate cron
 - This module adapted the following code from the Stanford Migration module rather than using the full module as a dependency
 -- Migration source plugin for ImageDimensionSkip
@@ -23,9 +23,9 @@ Description
 Installation
 ---
 
-Installation is dependent on 
-- Person content type 
-- public://media/person needs to exist and be writable by the web server
+Installation is dependent on
+- Person content type
+- public://media/person needs to exist and be writable by the web server.  This should have been created upon module install.
 
 1. The following Drupal modules and libraries are dependencies and need to be installed:
   - composer require drupal/config_pages
@@ -48,7 +48,7 @@ Additional Configuration
 ---
 
 Keys
-- Generate a hash key to encrypt the CAP username and password.  For example, you can generate a valid string with: 
+- Generate a hash key to encrypt the CAP username and password.  For example, you can generate a valid string with:
 
     dd if=/dev/urandom bs=32 count=1 | base64 -i -
 
@@ -56,9 +56,10 @@ Keys
 
 Add CAP configuration at: admin/config/importers/person-importer
 - Note that each Work Group or Organization generates a separate migration url that will return at most 25 rows each
+  - Example
 - Each uid returns the one profile specified
 
-Migrations are coded to run every hour on cron.  However, you can manually execute migrations at: 
+Migrations are coded to run every hour on cron.  However, you can manually execute migrations at:
 
   /admin/structure/migrate/manage/su_stanford_person/migrations/su_stanford_person/execute
 

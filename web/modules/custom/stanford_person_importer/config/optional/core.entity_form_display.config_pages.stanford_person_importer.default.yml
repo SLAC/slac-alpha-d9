@@ -11,6 +11,10 @@ dependencies:
     - field.field.config_pages.stanford_person_importer.su_person_workgroup
   module:
     - field_group
+    - stanford_person_importer
+  enforced:
+    module:
+      - stanford_person_importer
 third_party_settings:
   field_group:
     group_authorization:
