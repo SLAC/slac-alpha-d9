@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90217d168884a6fb6b0e0c167e20924e",
+    "content-hash": "a6ac1aa965814f077887baa7ee4271af",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5909,10 +5909,6 @@
                     "homepage": "https://www.drupal.org/u/harivenuv",
                     "email": "harivenu.v1992@gmail.com",
                     "role": "Maintainer"
-                },
-                {
-                    "name": "saranya ashokkumar",
-                    "homepage": "https://www.drupal.org/user/3429959"
                 }
             ],
             "description": "Drupal field for lottie animation.",
@@ -8331,6 +8327,14 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "bizar1984",
+                    "homepage": "https://www.drupal.org/user/3719064"
+                },
+                {
+                    "name": "Gerben Spil",
+                    "homepage": "https://www.drupal.org/user/728030"
+                },
                 {
                     "name": "Sutharsan",
                     "homepage": "https://www.drupal.org/user/73854"
