@@ -16,4 +16,3 @@ dependencies:
   - 'migrate_tools:migrate_tools'
   - 'readonly_field_widget:readonly_field_widget'
   - 'real_aes:real_aes'
-  - 'sainsburys/guzzle-oauth2-plugin'
