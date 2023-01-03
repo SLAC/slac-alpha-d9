@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.news_article.field_date
     - field.field.node.news_article.field_dek
     - field.field.node.news_article.field_editorial_group
-    - field.field.node.news_article.field_featured
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_link
     - field.field.node.news_article.field_paragraphs
@@ -103,16 +102,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 19
-    region: content
-  field_featured:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 17
     region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
