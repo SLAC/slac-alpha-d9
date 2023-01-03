@@ -11012,7 +11012,7 @@
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
-            "version": "dev-main",
+            "version": "1.0",
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
