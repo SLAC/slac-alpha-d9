@@ -2067,7 +2067,7 @@ display:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          row-start-open: '0'
+          row-start-open: none
           collapsible: 1
       row:
         type: fields

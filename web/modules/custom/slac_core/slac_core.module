@@ -12,6 +12,7 @@
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
 use Drupal\slac_core\Entity\Event;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
@@ -227,5 +228,9 @@ function slac_core_preprocess_views_slac_accordion_view(&$variables) {
     if ($row_class = $view->style_plugin->getRowClass($id)) {
       $variables['rows'][$id]['attributes']->addClass($row_class);
     }
+    if ($options['row-start-open'] == 'all' || $options['row-start-open'] == $id) {
+      $variables['rows'][$id]['attributes']->setAttribute('data-accordion-open', 'true');
+    }
   }
+  $variables['collapsible'] = $options['collapsible'];
 }

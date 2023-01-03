@@ -21,7 +21,8 @@ use Drupal\views\Plugin\views\style\StylePluginBase;
  *   display_types = {"normal"}
  * )
  */
-class SlacViewsAccordion extends StylePluginBase {
+class SlacViewsAccordion extends StylePluginBase
+{
   /**
    * {@inheritdoc}
    */
@@ -35,7 +36,8 @@ class SlacViewsAccordion extends StylePluginBase {
   /**
    * Set default options.
    */
-  protected function defineOptions() {
+  protected function defineOptions()
+  {
     $options = parent::defineOptions();
     $options['collapsible'] = ['default' => 0];
     $options['row-start-open'] = ['default' => 0];
@@ -63,12 +65,13 @@ class SlacViewsAccordion extends StylePluginBase {
       $rsopen_options[] = $this->t('Row @number', ['@number' => $i]);
     }
     $rsopen_options['none'] = $this->t('None');
+    $rsopen_options['all'] = $this->t('All');
 
     $form['row-start-open'] = [
       '#type' => 'select',
       '#title' => $this->t('Row to display opened on start'),
       '#default_value' => $this->options['row-start-open'],
-      '#description' => $this->t('Choose which row should start opened when the accordion first loads. If you want all to start closed, choose "None", and make sure to have "Allow for all rows to be closed" on below.'),
+      '#description' => $this->t('Choose which row should start opened when the accordion first loads. If you want all to start closed, choose "None". If you want all to start open, choose "All." If using "None" or "All," make sure to have "Collapsible" enabled below.'),
       '#options' => $rsopen_options,
     ];
 
@@ -76,34 +79,22 @@ class SlacViewsAccordion extends StylePluginBase {
       '#type' => 'checkbox',
       '#title' => $this->t('Collapsible'),
       '#default_value' => $this->options['collapsible'],
-      '#description' => $this->t('Whether all the sections can be closed at once. Allows collapsing the active section.'),
+      '#description' => $this->t('Whether all the sections can be closed or opened at once. Allows collapsing the active section.'),
     ];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function render() {
-    $rows = parent::render();
-    return [
-      '#theme' => $this->themeFunctions(),
-      '#view' => $this->view,
-      '#options' => $this->options,
-      '#rows' => $rows,
-    ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function validate() {
+  public function validate()
+  {
     $errors = parent::validate();
     if (!$this->usesFields()) {
       $errors[] = $this->t('Views accordion requires Fields as row style');
     }
 
-    if ($this->options['collapsible'] !== 1 && $this->options['row-start-open'] === 'none') {
-      $errors[] = $this->t('Setting "Row to display opened on start" to "None" requires "Collapsible" to be enabled.');
+    if ($this->options['collapsible'] !== 1 && ($this->options['row-start-open'] === 'none' || $this->options['row-start-open'] === 'all')) {
+      $errors[] = $this->t('Setting "Row to display opened on start" to "None" or "All" requires "Collapsible" to be enabled.');
     }
     return $errors;
   }
