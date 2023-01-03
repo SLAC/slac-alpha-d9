@@ -18,7 +18,7 @@ events:
     plugin: 'eca_base:eca_cron'
     label: 'ECA cron event'
     configuration:
-      frequency: '*/1 * * * *'
+      frequency: '0 0 * * SUN'
     successors:
       -
         id: eca_switch_account
@@ -39,7 +39,7 @@ actions:
     plugin: action_send_email_action
     label: 'Send stale content notification email'
     configuration:
-      recipient: lhaas@forumone.com
+      recipient: '[site:mail]'
       subject: '[site:name] - Stale content notice'
       message: "Please review your stale content at: [site:url]admin/content/stale\r\n"
       replace_tokens: false
