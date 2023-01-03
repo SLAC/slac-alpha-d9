@@ -1,0 +1,22 @@
+name: slac_default_content
+type: module
+description: Default content to be imported for all SLAC websites.
+package: SLAC
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - default_content
+default_content:
+  taxonomy_term:
+    - c4619105-4b2f-4cf8-9720-d8b3d7fb1e96
+    - a0e6c813-2371-4e97-bcf7-e658558928b0
+    - e8110df2-d11d-4dda-a676-e81be0bfee57
+    - fe5ba884-b994-420c-9609-fabe1993b708
+    - 88dc89bb-61c6-4b41-bb50-41aa15228041
+    - 195fd97f-b9b4-4d52-a5ea-ba3f3e59c677
+    - 0296a58a-2c5d-4902-af2f-40b28dbc8e8f
+    - ff1632f2-db54-400b-8022-f9b9b8f6930e
+    - ca8a53b2-30cc-4706-8f06-9c2dfe66c7bd
+    - 5913654a-977c-4490-95df-59dc6f961350
+    - 2be97742-22be-4ffd-a83a-930a1dfb46aa
+    - 383e0cfd-4d7c-4ae5-8ae7-3a5c2c0e0f4c

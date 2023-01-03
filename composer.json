@@ -47,6 +47,7 @@
     "drupal/core-recommended": "^9",
     "drupal/core-vendor-hardening": "^9",
     "drupal/cshs": "^3.6",
+    "drupal/default_content": "^2.0@alpha",
     "drupal/devel": "^4.1",
     "drupal/diff": "^1.0",
     "drupal/duration_field": "^2.0",
