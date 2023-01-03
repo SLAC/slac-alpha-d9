@@ -29,6 +29,7 @@ dependencies:
     - link
     - name
     - options
+    - slac_helper
     - text
     - user
 id: node.publication.default
@@ -36,19 +37,24 @@ targetEntityType: node
 bundle: publication
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_author_organization:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 108
+    weight: 7
     region: content
   field_authors:
     type: name_default
     label: above
     settings:
-      format: family_given_initial
+      format: short_full
       markup: none
       list_format: ''
       link_target: ''
@@ -57,16 +63,16 @@ content:
       alternative_field_reference: ''
       alternative_field_reference_separator: ', '
     third_party_settings: {  }
-    weight: 107
+    weight: 6
     region: content
   field_date:
-    type: datetime_default
+    type: datetime_custom
     label: above
     settings:
       timezone_override: ''
-      format_type: medium
+      date_format: 'F j, Y'
     third_party_settings: {  }
-    weight: 104
+    weight: 3
     region: content
   field_dissertation_type:
     type: string
@@ -74,7 +80,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 115
+    weight: 14
     region: content
   field_doi:
     type: link
@@ -86,7 +92,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 109
+    weight: 8
     region: content
   field_edition:
     type: string
@@ -94,7 +100,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 113
+    weight: 12
     region: content
   field_external_link:
     type: link
@@ -106,7 +112,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 106
+    weight: 5
     region: content
   field_issue:
     type: string
@@ -114,14 +120,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 114
+    weight: 13
     region: content
   field_other_citation:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 121
+    weight: 19
     region: content
   field_pages:
     type: string
@@ -129,16 +135,16 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 112
+    weight: 11
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_publication_place:
     type: string
@@ -146,21 +152,21 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 111
+    weight: 10
     region: content
   field_publication_slac_type:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 119
+    weight: 18
     region: content
   field_publication_type:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 118
+    weight: 17
     region: content
   field_publisher:
     type: string
@@ -168,7 +174,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 105
+    weight: 4
     region: content
   field_report_number:
     type: string
@@ -176,7 +182,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 120
+    weight: 20
     region: content
   field_subtitle:
     type: string
@@ -184,15 +190,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 110
+    weight: 9
     region: content
   field_topics:
-    type: entity_reference_label
+    type: slac_tag
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 116
+    weight: 15
     region: content
   field_volume:
     type: string
@@ -200,12 +206,12 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 117
+    weight: 16
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
   langcode: true
