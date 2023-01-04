@@ -12,6 +12,7 @@
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
 use Drupal\slac_core\Entity\Event;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
@@ -201,4 +202,35 @@ function slac_core_field_widget_paragraphs_form_alter(&$element, FormStateInterf
       ];
     }
   }
+}
+
+/**
+ * Prepares variables for SLAC accordion views rows templates.
+ *
+ * Default template: views-slac-accordion-view.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - view: The view object.
+ *   - rows: An array of row items. Each row is an array of content.
+ */
+function slac_core_preprocess_views_slac_accordion_view(&$variables) {
+  $view = $variables['view'];
+  $rows = $variables['rows'];
+  $style = $view->style_plugin;
+  $options = $style->options;
+
+  $variables['default_row_class'] = !empty($options['default_row_class']);
+  foreach ($rows as $id => $row) {
+    $variables['rows'][$id] = [];
+    $variables['rows'][$id]['content'] = $row;
+    $variables['rows'][$id]['attributes'] = new Attribute();
+    if ($row_class = $view->style_plugin->getRowClass($id)) {
+      $variables['rows'][$id]['attributes']->addClass($row_class);
+    }
+    if ($options['row-start-open'] == 'all' || $options['row-start-open'] == $id) {
+      $variables['rows'][$id]['attributes']->setAttribute('data-accordion-open', 'true');
+    }
+  }
+  $variables['collapsible'] = $options['collapsible'];
 }
