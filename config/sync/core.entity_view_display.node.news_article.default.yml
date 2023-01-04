@@ -21,7 +21,6 @@ dependencies:
     - datetime
     - entity_reference_revisions
     - field_group
-    - layout_paragraphs
     - link
     - text
     - user
@@ -125,13 +124,13 @@ content:
     weight: 3
     region: content
   field_paragraphs:
-    type: layout_paragraphs
-    label: hidden
+    type: entity_reference_revisions_entity_view
+    label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 20
     region: content
   field_source_link:
     type: link
