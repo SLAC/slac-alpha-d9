@@ -7,12 +7,11 @@ dependencies:
     - field.storage.node.field_answer
     - search_api.index.content
   module:
-    - better_exposed_filters
     - entity_reference_revisions
     - search_api
+    - slac_core
     - text
     - user
-    - views_accordion
 id: landing_page_filtered_content
 label: 'Content Lists - With Filters'
 module: views
@@ -122,37 +121,15 @@ display:
             offset_label: Offset
           quantity: 9
       exposed_form:
-        type: bef
+        type: basic
         options:
           submit_button: Apply
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: basic_html
-          bef:
-            general:
-              autosubmit: false
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-              reset_button_always_show: false
-            filter:
-              search_api_fulltext:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
       access:
         type: perm
         options:
@@ -367,7 +344,10 @@ display:
       relationships: {  }
       header: {  }
       footer: {  }
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -2130,7 +2110,7 @@ display:
               author: '0'
               manager: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Search FAQs by keyword'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -2152,21 +2132,13 @@ display:
         groups:
           1: AND
       style:
-        type: views_accordion
+        type: slac_views_accordion
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          disableifone: 0
-          row-start-open: '0'
+          row-start-open: none
           collapsible: 1
-          animated: none
-          animation_time: '300'
-          heightStyle: auto
-          event: click
-          use_header_icons: 1
-          icon_header: ui-icon-triangle-1-e
-          icon_active_header: ui-icon-triangle-1-s
       row:
         type: fields
         options:
@@ -2184,7 +2156,10 @@ display:
         filter_groups: false
       display_description: 'Filtered list of FAQs - Accordion Display'
       exposed_block: true
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       block_description: FAQs
       allow:
         items_per_page: false

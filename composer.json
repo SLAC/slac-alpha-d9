@@ -16,9 +16,9 @@
       "type": "package",
       "package": {
         "name": "slac/slac",
-        "version": "1.0.0-alpha23",
+        "version": "1.0.0-alpha24",
         "dist": {
-          "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.23/slac.zip",
+          "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.24/slac.zip",
           "type": "zip"
         },
         "type": "drupal-theme"
@@ -61,7 +61,6 @@
     "drupal/estimated_read_time": "^1.0",
     "drupal/eu_cookie_compliance": "^1.19",
     "drupal/facets": "^2.0",
-    "drupal/field_encrypt": "^3.0",
     "drupal/feeds": "^3.0@beta",
     "drupal/field_encrypt": "^3.0",
     "drupal/field_group": "^3.2",

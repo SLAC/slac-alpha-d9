@@ -27,6 +27,11 @@ targetEntityType: node
 bundle: blog
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_date:
     type: datetime_custom
     label: hidden
@@ -34,7 +39,7 @@ content:
       timezone_override: ''
       date_format: 'F j, Y'
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_paragraphs:
     type: trimmed_first_wysiwyg_paragraph
@@ -54,7 +59,15 @@ content:
       more_aria_label: 'Read more about [node:title]'
       summary_handler: full
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  field_series:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_teaser:
     type: trimmed_first_wysiwyg_paragraph
@@ -74,7 +87,7 @@ content:
       more_aria_label: 'Read more about [node:title]'
       summary_handler: full
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_teaser_image:
     type: entity_reference_entity_view
@@ -83,12 +96,12 @@ content:
       view_mode: large_image_only
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   field_category: true
@@ -96,9 +109,6 @@ hidden:
   field_editorial_group: true
   field_hero_paragraph: true
   field_link: true
-  field_paragraphs: true
-  field_review_date: true
-  field_series: true
   field_tags: true
   field_text: true
   langcode: true
