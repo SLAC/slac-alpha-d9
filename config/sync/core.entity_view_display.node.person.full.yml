@@ -34,7 +34,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - link
-    - slac_core
     - slac_helper
     - telephone
     - text
@@ -44,12 +43,17 @@ targetEntityType: node
 bundle: person
 mode: full
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_address:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   field_affiliations:
     type: link
@@ -61,21 +65,21 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 16
+    weight: 17
     region: content
   field_awardshonors:
-    type: basic_string
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 17
+    weight: 18
     region: content
   field_body:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_education:
     type: string
@@ -83,14 +87,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
   field_email:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_fax:
     type: telephone_link
@@ -98,7 +102,7 @@ content:
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
   field_image:
     type: entity_reference_entity_view
@@ -107,14 +111,14 @@ content:
       view_mode: headshot
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_interestareas:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   field_links:
     type: link
@@ -126,7 +130,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_location:
     type: string
@@ -134,7 +138,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 10
+    weight: 11
     region: content
   field_map:
     type: link
@@ -146,7 +150,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 12
+    weight: 13
     region: content
   field_mobile:
     type: telephone_link
@@ -154,7 +158,7 @@ content:
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
@@ -163,7 +167,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   field_profile_link:
     type: slac_helper_slac_button
@@ -178,25 +182,14 @@ content:
       rel: 0
       target: 0
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_teaser:
-    type: trimmed_first_wysiwyg_paragraph
+    type: text_default
     label: hidden
-    settings:
-      trim_length: '600'
-      trim_type: chars
-      trim_suffix: ''
-      wrap_output: 0
-      wrap_class: trimmed
-      more_link: 0
-      more_class: more-link
-      more_text: More
-      more_aria_label: 'Read more about [node:title]'
-      summary_handler: full
-      trim_options: {  }
+    settings: {  }
     third_party_settings: {  }
-    weight: 20
+    weight: 19
     region: content
   field_telephone:
     type: telephone_link
@@ -204,7 +197,15 @@ content:
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 8
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 20
     region: content
   field_text_title_full:
     type: string
@@ -212,7 +213,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_text_title_short:
     type: string
@@ -220,7 +221,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   field_editorial_group: true
@@ -229,7 +230,6 @@ hidden:
   field_mail_code: true
   field_organization: true
   field_position: true
-  field_text: true
   langcode: true
   links: true
   search_api_excerpt: true
