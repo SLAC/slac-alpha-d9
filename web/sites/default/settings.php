@@ -141,6 +141,15 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   }
 }
 
+// Set domain masking configuration
+if (isset($_SERVER['HTTP_X_MASKED_HOST'])) {
+  $config['pantheon_domain_masking.settings']['domain'] = $_SERVER['HTTP_X_MASKED_HOST'];
+}
+
+if(isset($_SERVER['HTTP_X_MASKED_PATH'])) {
+  $config['pantheon_domain_masking.settings']['subpath'] = $_SERVER['HTTP_X_MASKED_PATH'];
+}
+
 /**
  * If there is a local settings file, then include it
  */
