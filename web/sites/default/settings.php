@@ -140,7 +140,6 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
       break;
   }
 }
-$config['pantheon_domain_masking.settings']['domain'] = 'slac.com';
 
 // Set domain masking configuration
 if (isset($_SERVER['HTTP_X_MASKED_HOST'])) {
