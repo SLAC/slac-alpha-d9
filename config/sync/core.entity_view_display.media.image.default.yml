@@ -8,16 +8,13 @@ dependencies:
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_display_style
-    - field.field.media.image.field_internal_tags
     - field.field.media.image.field_landing_display
     - field.field.media.image.field_link
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
     - field.field.media.image.field_paragraphs
-    - field.field.media.image.field_research_area
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
-    - field.field.media.image.field_type
     - image.style.scale_large
     - media.type.image
   module:
@@ -50,14 +47,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_internal_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 11
     region: content
   field_link:
     type: link
@@ -98,14 +87,6 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-  field_research_area:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
-    region: content
   field_tags:
     type: entity_reference_label
     label: above
@@ -120,14 +101,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 9
-    region: content
-  field_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 5
     region: content
   name:
     type: string

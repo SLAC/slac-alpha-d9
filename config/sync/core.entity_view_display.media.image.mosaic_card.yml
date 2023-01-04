@@ -9,16 +9,13 @@ dependencies:
     - field.field.media.image.field_caption
     - field.field.media.image.field_credit
     - field.field.media.image.field_display_style
-    - field.field.media.image.field_internal_tags
     - field.field.media.image.field_landing_display
     - field.field.media.image.field_link
     - field.field.media.image.field_long_text
     - field.field.media.image.field_media_image
     - field.field.media.image.field_paragraphs
-    - field.field.media.image.field_research_area
     - field.field.media.image.field_tags
     - field.field.media.image.field_teaser
-    - field.field.media.image.field_type
     - media.type.image
   module:
     - options
@@ -62,27 +59,11 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_research_area:
-    type: entity_reference_entity_id
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
 hidden:
   created: true
   field_body: true
   field_caption: true
   field_credit: true
-  field_internal_tags: true
   field_landing_display: true
   field_link: true
   field_paragraphs: true

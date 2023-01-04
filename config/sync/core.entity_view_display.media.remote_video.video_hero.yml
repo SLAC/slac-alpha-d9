@@ -10,19 +10,16 @@ dependencies:
     - field.field.media.remote_video.field_credit
     - field.field.media.remote_video.field_display_style
     - field.field.media.remote_video.field_duration
-    - field.field.media.remote_video.field_internal_tags
     - field.field.media.remote_video.field_landing_display
     - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
     - field.field.media.remote_video.field_paragraphs
-    - field.field.media.remote_video.field_research_area
     - field.field.media.remote_video.field_source_name
     - field.field.media.remote_video.field_tags
     - field.field.media.remote_video.field_teaser
     - field.field.media.remote_video.field_thumbnail
     - field.field.media.remote_video.field_transcript
-    - image.style.video_hero
     - media.type.remote_video
   module:
     - image
@@ -73,12 +70,10 @@ hidden:
   field_credit: true
   field_display_style: true
   field_duration: true
-  field_internal_tags: true
   field_landing_display: true
   field_link: true
   field_long_text: true
   field_paragraphs: true
-  field_research_area: true
   field_source_name: true
   field_tags: true
   field_teaser: true
