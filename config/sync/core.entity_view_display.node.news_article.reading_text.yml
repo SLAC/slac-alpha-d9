@@ -19,7 +19,7 @@ dependencies:
     - field.field.node.news_article.field_type
     - node.type.news_article
   module:
-    - layout_paragraphs
+    - entity_reference_revisions
     - link
     - user
 id: node.news_article.reading_text
@@ -45,13 +45,13 @@ content:
     weight: 1
     region: content
   field_paragraphs:
-    type: layout_paragraphs
-    label: hidden
+    type: entity_reference_revisions_entity_view
+    label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_text:
     type: string

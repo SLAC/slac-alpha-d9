@@ -9,7 +9,6 @@ dependencies:
     - field.storage.paragraph.field_paragraph
     - search_api.index.content
   module:
-    - better_exposed_filters
     - search_api
     - slac_core
     - user
@@ -528,7 +527,7 @@ display:
             offset_label: Offset
           quantity: 9
       exposed_form:
-        type: bef
+        type: basic
         options:
           submit_button: Apply
           reset_button: false
@@ -537,38 +536,6 @@ display:
           expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: basic_html
-          bef:
-            general:
-              autosubmit: false
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-              reset_button_always_show: false
-            sort:
-              plugin_id: bef
-              advanced:
-                combine: false
-                combine_rewrite: ''
-                reset: false
-                reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
-                is_secondary: false
-            filter:
-              search_api_fulltext:
-                plugin_id: bef_hidden
-                advanced:
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
       access:
         type: perm
         options:

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c680c26534b4a890c9a7344eea42523",
+    "content-hash": "47f05ba8f16e95cddcb42dfd444f59f3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11007,22 +11007,6 @@
             "time": "2022-11-30T23:22:43+00:00"
         },
         {
-            "name": "pantheon-upstreams/upstream-configuration",
-            "version": "1.0",
-            "dist": {
-                "type": "path",
-                "url": "upstream-configuration",
-                "reference": "9542d5ac59c22fe5b54868cc99367db9e9895f51"
-            },
-            "type": "project",
-            "extra": {
-                "_README": "To make a custom upstream, clone this repository and add any dependencies to be provided by this upstream to this composer.json file. Leave the root-level composer.json file for the exclusive use of each individual site; do not modify it after your custom upstream has been published. See https://pantheon.io/docs/create-custom-upstream for more information."
-            },
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
             "name": "paragonie/random_compat",
             "version": "v9.99.100",
             "source": {
@@ -19983,7 +19967,6 @@
         "drupal/views_rss": 5,
         "drupal/viewsreference": 10,
         "drupal/yaml_content": 15,
-        "pantheon-upstreams/upstream-configuration": 20,
         "slac/slac": 15
     },
     "prefer-stable": true,
