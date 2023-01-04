@@ -12,7 +12,6 @@ module:
   animated_gif: 0
   auto_entitylabel: 0
   automated_cron: 0
-  better_exposed_filters: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -20,7 +19,6 @@ module:
   breakpoint: 0
   ckeditor: 0
   ckeditor5: 0
-  color: 0
   comment: 0
   components: 0
   conditional_fields: 0
@@ -33,7 +31,6 @@ module:
   content_moderation: 0
   contextual: 0
   crop: 0
-  cshs: 0
   date_augmenter: 0
   datetime: 0
   datetime_range: 0
@@ -54,7 +51,6 @@ module:
   entity_reference_revisions: 0
   environment_indicator: 0
   environment_indicator_ui: 0
-  estimated_read_time: 0
   facets: 0
   feeds: 0
   field: 0
@@ -68,17 +64,9 @@ module:
   gin_toolbar: 0
   google_tag: 0
   help: 0
-  history: 0
   image: 0
   jquery_ui: 0
-  jquery_ui_accordion: 0
-  jquery_ui_datepicker: 0
-  jquery_ui_slider: 0
-  jquery_ui_touch_punch: 0
   key: 0
-  language: 0
-  layout_discovery: 0
-  layout_paragraphs: 0
   link: 0
   lottiefiles_field: 0
   mailsystem: 0
@@ -130,7 +118,6 @@ module:
   sitewide_alert: 0
   slac_core: 0
   slac_helper: 0
-  slac_yaml_content: 0
   smart_date: 0
   smart_trim: 0
   stanford_person_importer: 0
@@ -139,7 +126,6 @@ module:
   system: 0
   taxonomy: 0
   telephone: 0
-  term_reference_tree: 0
   text: 0
   token: 0
   token_filter: 0
@@ -153,16 +139,12 @@ module:
   view_mode_select_by_token: 0
   view_mode_switch: 0
   view_modes_display: 0
-  views_accordion: 0
   views_bulk_operations: 0
-  views_display_switch: 0
-  views_exposed_filter_blocks: 0
   views_rss: 0
   views_rss_core: 0
   views_rss_dc: 0
   views_rss_format: 0
   views_ui: 0
-  views_year_filter: 0
   viewsreference: 0
   viewsreference_filter: 0
   webform: 0
@@ -170,7 +152,6 @@ module:
   webform_ui: 0
   workbench_access: 0
   workflows: 0
-  yaml_content: 0
   pathauto: 1
   views: 10
   paragraphs: 11

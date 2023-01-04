@@ -21,7 +21,6 @@ dependencies:
   module:
     - datetime
     - entity_reference_revisions
-    - layout_paragraphs
     - link
     - slac_helper
     - text
@@ -74,13 +73,13 @@ content:
     weight: 6
     region: content
   field_paragraphs:
-    type: layout_paragraphs
-    label: hidden
+    type: entity_reference_revisions_entity_view
+    label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 8
+    weight: 10
     region: content
   field_tags:
     type: slac_tag
