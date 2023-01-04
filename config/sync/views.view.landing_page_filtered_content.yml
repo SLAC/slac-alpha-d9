@@ -10,9 +10,9 @@ dependencies:
     - better_exposed_filters
     - entity_reference_revisions
     - search_api
+    - slac_core
     - text
     - user
-    - views_accordion
 id: landing_page_filtered_content
 label: 'Content Lists - With Filters'
 module: views
@@ -2130,7 +2130,7 @@ display:
               author: '0'
               manager: '0'
             expose_fields: false
-            placeholder: ''
+            placeholder: 'Search FAQs by keyword'
             searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
@@ -2152,21 +2152,13 @@ display:
         groups:
           1: AND
       style:
-        type: views_accordion
+        type: slac_views_accordion
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          disableifone: 0
-          row-start-open: '0'
+          row-start-open: none
           collapsible: 1
-          animated: none
-          animation_time: '300'
-          heightStyle: auto
-          event: click
-          use_header_icons: 1
-          icon_header: ui-icon-triangle-1-e
-          icon_active_header: ui-icon-triangle-1-s
       row:
         type: fields
         options:
@@ -2184,7 +2176,10 @@ display:
         filter_groups: false
       display_description: 'Filtered list of FAQs - Accordion Display'
       exposed_block: true
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       block_description: FAQs
       allow:
         items_per_page: false
