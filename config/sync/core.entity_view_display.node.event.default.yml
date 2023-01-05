@@ -59,8 +59,6 @@ third_party_settings:
         - field_image
         - field_smart_date
         - field_video
-        - field_links
-        - field_detail_text
         - field_site_setting
         - field_boolean
         - field_external_link
@@ -352,5 +350,4 @@ content:
     weight: 0
     region: content
 hidden:
-  langcode: true
   search_api_excerpt: true
