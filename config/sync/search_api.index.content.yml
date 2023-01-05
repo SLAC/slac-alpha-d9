@@ -3,35 +3,37 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_caption
-    - field.storage.media.field_long_text
     - field.storage.node.field_audience
+    - field.storage.media.field_caption
     - field.storage.node.field_category
-    - field.storage.node.field_paragraphs
-    - field.storage.paragraph.field_body
-    - field.storage.paragraph.field_caption
-    - field.storage.paragraph.field_plain_long_text
-    - field.storage.paragraph.field_short_text
-    - field.storage.paragraph.field_tab_heading
-    - field.storage.paragraph.field_table
-    - field.storage.paragraph.field_text
-    - field.storage.paragraph.field_title
-    - field.storage.node.field_body
-    - field.storage.node.field_dissertation_type
+    - field.storage.media.field_long_text
     - field.storage.node.field_smart_date
     - field.storage.node.field_type
     - field.storage.node.field_experience
     - field.storage.node.field_faq_category
+    - field.storage.node.field_paragraphs
+    - field.storage.paragraph.field_body
+    - field.storage.node.field_body
+    - field.storage.paragraph.field_caption
+    - field.storage.node.field_date
+    - field.storage.node.field_dissertation_type
     - field.storage.node.field_last_name
+    - field.storage.node.field_long_text
+    - field.storage.node.field_hero_paragraph
+    - field.storage.paragraph.field_paragraph
+    - field.storage.paragraph.field_plain_long_text
+    - field.storage.node.field_publication_type
+    - field.storage.paragraph.field_short_text
+    - field.storage.paragraph.field_tab_heading
+    - field.storage.paragraph.field_table
+    - field.storage.node.field_teaser
+    - field.storage.paragraph.field_text
+    - field.storage.paragraph.field_title
     - field.storage.node.field_organization
     - field.storage.node.field_position
-    - field.storage.node.field_date
-    - field.storage.node.field_publication_type
     - field.storage.node.field_series
-    - field.storage.node.field_long_text
     - field.storage.node.field_name
     - field.storage.node.field_tags
-    - field.storage.node.field_teaser
     - field.storage.node.field_topics
     - search_api.server.database
     - core.entity_view_mode.media.card
@@ -39,10 +41,10 @@ dependencies:
     - core.entity_view_mode.node.card
     - core.entity_view_mode.node.teaser
   module:
-    - media
     - taxonomy
-    - node
     - paragraphs
+    - media
+    - node
     - search_api
 id: content
 name: Content
@@ -206,6 +208,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_long_text
+  field_paragraph:
+    label: 'Hero » Paragraph » Content'
+    datasource_id: 'entity:node'
+    property_path: 'field_hero_paragraph:entity:field_paragraph'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_hero_paragraph
+        - field.storage.paragraph.field_paragraph
+      module:
+        - paragraphs
   field_plain_long_text:
     label: 'Content » Paragraph » Description'
     datasource_id: 'entity:node'
@@ -526,6 +539,20 @@ processor_settings:
       preprocess_query: -30
   entity_status: {  }
   entity_type: {  }
+  highlight:
+    weights:
+      postprocess_query: 0
+    prefix: '<strong><em>'
+    suffix: '</em></strong>'
+    excerpt: true
+    excerpt_always: false
+    excerpt_length: 256
+    exclude_fields:
+      - rendered_item_card
+      - rendered_item_teaser
+      - teaser
+    highlight: server
+    highlight_partial: false
   html_filter:
     weights:
       preprocess_index: -15
@@ -546,6 +573,7 @@ processor_settings:
       - field_dissertation_type
       - field_last_name
       - field_long_text
+      - field_paragraph
       - field_plain_long_text
       - field_publication_type
       - field_short_text
@@ -595,6 +623,7 @@ processor_settings:
       - field_dissertation_type
       - field_last_name
       - field_long_text
+      - field_paragraph
       - field_plain_long_text
       - field_publication_type
       - field_short_text
@@ -630,6 +659,7 @@ processor_settings:
       - field_body_2
       - field_caption
       - field_long_text
+      - field_paragraph
       - field_plain_long_text
       - field_table_1
       - field_teaser
@@ -656,6 +686,7 @@ processor_settings:
       - field_body_2
       - field_caption
       - field_long_text
+      - field_paragraph
       - field_plain_long_text
       - field_table_1
       - field_teaser
@@ -691,6 +722,7 @@ processor_settings:
       - field_dissertation_type
       - field_last_name
       - field_long_text
+      - field_paragraph
       - field_plain_long_text
       - field_publication_type
       - field_short_text
