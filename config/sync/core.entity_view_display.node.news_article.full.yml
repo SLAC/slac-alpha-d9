@@ -116,5 +116,4 @@ hidden:
   field_source_name: true
   field_teaser: true
   field_teaser_image: true
-  langcode: true
   search_api_excerpt: true

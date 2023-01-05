@@ -4,7 +4,8 @@
 /web/core/
 /web/modules/contrib/
 /web/themes/contrib/
-/web/profiles/contrib/
+/web/profiles/contrib
+/web/profiles/slac_profile
 /web/libraries/
 
 # Ignore sensitive information
@@ -29,3 +30,5 @@
 /.gitattributes
 /.drush-lock-update
 .vscode
+
+/config/sync/webform.webform._test*
