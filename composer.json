@@ -131,7 +131,6 @@
     "drupal/yaml_content": "^1.0@alpha",
     "drush/drush": "^10",
     "pantheon-systems/drupal-integrations": "^9",
-    "pantheon-upstreams/upstream-configuration": "self.version",
     "rvtraveller/qs-composer-installer": "^1.2",
     "sainsburys/guzzle-oauth2-plugin": "^3.0",
     "slac/slac": "^1.0@alpha",
