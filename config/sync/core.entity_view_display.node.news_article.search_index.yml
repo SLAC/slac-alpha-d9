@@ -72,6 +72,5 @@ hidden:
   field_teaser: true
   field_teaser_image: true
   field_type: true
-  langcode: true
   links: true
   search_api_excerpt: true

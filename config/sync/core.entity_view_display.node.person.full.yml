@@ -230,6 +230,5 @@ hidden:
   field_mail_code: true
   field_organization: true
   field_position: true
-  langcode: true
   links: true
   search_api_excerpt: true
