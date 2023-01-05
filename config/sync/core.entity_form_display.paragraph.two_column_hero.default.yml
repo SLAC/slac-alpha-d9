@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.two_column_hero.field_image
+    - field.field.paragraph.two_column_hero.field_link
     - field.field.paragraph.two_column_hero.field_node
     - field.field.paragraph.two_column_hero.field_paragraph
     - paragraphs.paragraphs_type.two_column_hero
   module:
+    - link
+    - maxlength
     - media_library
     - paragraphs
 id: paragraph.two_column_hero.default
@@ -17,14 +20,26 @@ mode: default
 content:
   field_image:
     type: media_library_widget
-    weight: 0
+    weight: 1
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: /news/rss
+      placeholder_title: 'RSS Feed'
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   field_node:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -34,7 +49,7 @@ content:
     third_party_settings: {  }
   field_paragraph:
     type: paragraphs
-    weight: 1
+    weight: 2
     region: content
     settings:
       title: Paragraph
