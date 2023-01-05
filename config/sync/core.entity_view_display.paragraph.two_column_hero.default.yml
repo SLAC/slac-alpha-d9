@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.two_column_hero.field_image
+    - field.field.paragraph.two_column_hero.field_link
     - field.field.paragraph.two_column_hero.field_node
     - field.field.paragraph.two_column_hero.field_paragraph
     - paragraphs.paragraphs_type.two_column_hero
   module:
     - entity_reference_revisions
+    - link
 id: paragraph.two_column_hero.default
 targetEntityType: paragraph
 bundle: two_column_hero
@@ -22,6 +24,18 @@ content:
       link: false
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_node:
     type: entity_reference_entity_view

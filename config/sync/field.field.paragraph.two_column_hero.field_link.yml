@@ -1,0 +1,28 @@
+uuid: b5241c24-d1c4-4784-b2c2-6fb1a31f83aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.two_column_hero
+  module:
+    - link
+id: paragraph.two_column_hero.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: two_column_hero
+label: 'RSS Feed Link'
+description: 'Enter a link to an RSS Feed.  An RSS Feed for News Articles has been been created for you at /news/rss.  Contact your site administrator to create additional RSS Feeds for other content on your site.   '
+required: false
+translatable: true
+default_value:
+  -
+    attributes: {  }
+    uri: 'internal:/news/rss'
+    title: 'RSS Feed'
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link
