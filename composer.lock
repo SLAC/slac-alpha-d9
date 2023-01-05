@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47f05ba8f16e95cddcb42dfd444f59f3",
+    "content-hash": "a4a28430d960a991f539d8f3c0ab0baf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11936,10 +11936,10 @@
         },
         {
             "name": "slac/slac",
-            "version": "1.0.0-alpha24",
+            "version": "1.0.0-alpha25",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.24/slac.zip"
+                "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.25/slac.zip"
             },
             "type": "drupal-theme"
         },
