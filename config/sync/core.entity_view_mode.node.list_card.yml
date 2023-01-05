@@ -1,0 +1,10 @@
+uuid: 324a742a-1bcc-4bcd-a275-ff942be0f3fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.list_card
+label: 'List Card'
+targetEntityType: node
+cache: true
