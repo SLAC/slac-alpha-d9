@@ -20,7 +20,7 @@ dependencies:
     - field.field.node.publication.field_publisher
     - field.field.node.publication.field_report_number
     - field.field.node.publication.field_subtitle
-    - field.field.node.publication.field_topics
+    - field.field.node.publication.field_tags
     - field.field.node.publication.field_volume
     - node.type.publication
     - workflows.workflow.content
@@ -101,7 +101,7 @@ third_party_settings:
         required_fields: true
     group_metadata:
       children:
-        - field_topics
+        - field_tags
       label: Metadata
       region: content
       parent_name: group_page_content
@@ -482,9 +482,9 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
-  field_topics:
+  field_tags:
     type: entity_reference_autocomplete
-    weight: 25
+    weight: 38
     region: content
     settings:
       match_operator: CONTAINS

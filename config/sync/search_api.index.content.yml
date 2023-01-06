@@ -34,7 +34,6 @@ dependencies:
     - field.storage.node.field_series
     - field.storage.node.field_name
     - field.storage.node.field_tags
-    - field.storage.node.field_topics
     - search_api.server.database
     - core.entity_view_mode.media.card
     - core.entity_view_mode.media.teaser
@@ -479,16 +478,6 @@ field_settings:
     dependencies:
       module:
         - node
-  topics:
-    label: 'Topics » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_topics:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_topics
-      module:
-        - taxonomy
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
@@ -593,7 +582,6 @@ processor_settings:
       - tags
       - teaser
       - title
-      - topics
       - type
     title: true
     alt: true
@@ -643,7 +631,6 @@ processor_settings:
       - tags
       - teaser
       - title
-      - topics
       - type
   language_with_fallback: {  }
   rendered_item: {  }
@@ -742,7 +729,6 @@ processor_settings:
       - tags
       - teaser
       - title
-      - topics
       - type
 tracker_settings:
   default:
