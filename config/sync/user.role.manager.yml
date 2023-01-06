@@ -35,7 +35,6 @@ dependencies:
     - conditional_fields
     - content_moderation
     - file
-    - google_tag
     - masquerade
     - media
     - moderated_content_bulk_publish
@@ -74,7 +73,6 @@ permissions:
   - 'access webform submission user'
   - 'add site setting entities'
   - 'add sitewide alert entities'
-  - 'administer google tag manager'
   - 'administer search_api'
   - 'administer site setting entities'
   - 'administer sitewide alert entities'
