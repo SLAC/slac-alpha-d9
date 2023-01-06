@@ -20,7 +20,7 @@ dependencies:
     - field.field.node.publication.field_publisher
     - field.field.node.publication.field_report_number
     - field.field.node.publication.field_subtitle
-    - field.field.node.publication.field_topics
+    - field.field.node.publication.field_tags
     - field.field.node.publication.field_volume
     - node.type.publication
   module:
@@ -29,7 +29,6 @@ dependencies:
     - link
     - name
     - options
-    - slac_helper
     - text
     - user
 id: node.publication.default
@@ -192,13 +191,13 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
-  field_topics:
-    type: slac_tag
+  field_tags:
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 15
+    weight: 21
     region: content
   field_volume:
     type: string

@@ -1,26 +1,26 @@
-uuid: 5c055445-2f6f-47ce-988b-5d8b575c4d37
+uuid: 92f502ab-e509-4b25-9834-d0526d7e7339
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_topics
+    - field.storage.node.field_tags
     - node.type.publication
-    - taxonomy.vocabulary.topics
-id: node.publication.field_topics
-field_name: field_topics
+    - taxonomy.vocabulary.tags
+id: node.publication.field_tags
+field_name: field_tags
 entity_type: node
 bundle: publication
-label: Topics
+label: Tags
 description: ''
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      topics: topics
+      tags: tags
     sort:
       field: name
       direction: asc
