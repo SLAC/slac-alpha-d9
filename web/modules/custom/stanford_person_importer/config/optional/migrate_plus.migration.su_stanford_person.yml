@@ -143,7 +143,6 @@ process:
   field_text_title_full/value: long_title
   field_text_title_short: short_title
   field_email: email
-  field_telephone: phone
   field_mobile: phone
   field_mail_code: mailcode
   field_location: office
