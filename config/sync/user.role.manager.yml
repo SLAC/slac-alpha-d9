@@ -26,7 +26,6 @@ dependencies:
     - taxonomy.vocabulary.position
     - taxonomy.vocabulary.series
     - taxonomy.vocabulary.tags
-    - taxonomy.vocabulary.topics
     - user.role.author
     - user.role.content_editor
     - user.role.reviewer
@@ -108,7 +107,6 @@ permissions:
   - 'create terms in position'
   - 'create terms in series'
   - 'create terms in tags'
-  - 'create terms in topics'
   - 'create url aliases'
   - 'create webform'
   - 'delete all sitewide alert revisions'
@@ -155,7 +153,6 @@ permissions:
   - 'delete terms in position'
   - 'delete terms in series'
   - 'delete terms in tags'
-  - 'delete terms in topics'
   - 'edit any blog content'
   - 'edit any event content'
   - 'edit any faq content'
@@ -181,7 +178,6 @@ permissions:
   - 'edit terms in position'
   - 'edit terms in series'
   - 'edit terms in tags'
-  - 'edit terms in topics'
   - 'edit webform assets'
   - 'edit webform source'
   - 'edit webform twig'

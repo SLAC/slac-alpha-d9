@@ -21,7 +21,7 @@ dependencies:
     - field.field.node.publication.field_publisher
     - field.field.node.publication.field_report_number
     - field.field.node.publication.field_subtitle
-    - field.field.node.publication.field_topics
+    - field.field.node.publication.field_tags
     - field.field.node.publication.field_volume
     - node.type.publication
   module:
@@ -36,6 +36,11 @@ targetEntityType: node
 bundle: publication
 mode: teaser
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_author_organization:
     type: string
     label: hidden
@@ -177,15 +182,6 @@ content:
     third_party_settings: {  }
     weight: 13
     region: content
-  langcode:
-    type: language
-    label: hidden
-    settings:
-      link_to_entity: false
-      native_language: false
-    third_party_settings: {  }
-    weight: 16
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -194,5 +190,5 @@ content:
 hidden:
   field_paragraphs: true
   field_subtitle: true
-  field_topics: true
+  field_tags: true
   search_api_excerpt: true

@@ -20,9 +20,10 @@ dependencies:
     - field.field.node.publication.field_publisher
     - field.field.node.publication.field_report_number
     - field.field.node.publication.field_subtitle
-    - field.field.node.publication.field_topics
+    - field.field.node.publication.field_tags
     - field.field.node.publication.field_volume
     - node.type.publication
+    - workflows.workflow.content
   module:
     - conditional_fields
     - content_moderation
@@ -100,7 +101,7 @@ third_party_settings:
         required_fields: true
     group_metadata:
       children:
-        - field_topics
+        - field_tags
       label: Metadata
       region: content
       parent_name: group_page_content
@@ -214,8 +215,10 @@ content:
             grouping: OR
             values_set: 3
             value: ''
-            values: "1\r\n3"
-            value_form: {  }
+            values: "1\r\n2\r\n3"
+            value_form:
+              -
+                value: '2'
             effect: show
             effect_options: {  }
             selector: ''
@@ -479,9 +482,9 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
-  field_topics:
+  field_tags:
     type: entity_reference_autocomplete
-    weight: 25
+    weight: 38
     region: content
     settings:
       match_operator: CONTAINS
@@ -515,13 +518,6 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
-  langcode:
-    type: language_select
-    weight: 1
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 8
