@@ -38,6 +38,11 @@ targetEntityType: node
 bundle: person
 mode: card
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
@@ -88,6 +93,5 @@ hidden:
   field_telephone: true
   field_text: true
   field_text_title: true
-  langcode: true
   links: true
   search_api_excerpt: true
