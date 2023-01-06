@@ -67,6 +67,7 @@ module:
   help: 0
   image: 0
   jquery_ui: 0
+  jquery_ui_accordion: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
   jquery_ui_touch_punch: 0
@@ -142,6 +143,7 @@ module:
   view_mode_select_by_token: 0
   view_mode_switch: 0
   view_modes_display: 0
+  views_accordion: 0
   views_bulk_operations: 0
   views_rss: 0
   views_rss_core: 0
