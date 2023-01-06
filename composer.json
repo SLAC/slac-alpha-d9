@@ -196,10 +196,16 @@
       "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
     ],
     "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../../files/private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config",
+      "rm -rf vendor/simplesamlphp/simplesamlphp/metadata && ln -sf ../../../../files/private/simplesamlphp/metadata vendor/simplesamlphp/simplesamlphp/metadata",
+      "rm -rf vendor/simplesamlphp/simplesamlphp/cert && ln -sf ../../../../files/private/simplesamlphp/cert vendor/simplesamlphp/simplesamlphp/cert"
     ],
     "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../../files/private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config",
+      "rm -rf vendor/simplesamlphp/simplesamlphp/metadata && ln -sf ../../../../files/private/simplesamlphp/metadata vendor/simplesamlphp/simplesamlphp/metadata",
+      "rm -rf vendor/simplesamlphp/simplesamlphp/cert && ln -sf ../../../../files/private/simplesamlphp/cert vendor/simplesamlphp/simplesamlphp/cert"
     ],
     "post-create-project-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
