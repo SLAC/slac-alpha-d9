@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.basic_html
     - filter.format.restricted_html
+    - filter.format.source
     - filter.format.table
     - node.type.blog
     - node.type.event
@@ -20,7 +21,6 @@ dependencies:
     - comment
     - contextual
     - environment_indicator
-    - eu_cookie_compliance
     - filter
     - fontawesome
     - media
@@ -49,7 +49,6 @@ permissions:
   - 'access news feeds'
   - 'access shortcuts'
   - 'access toolbar'
-  - 'display eu cookie compliance popup'
   - 'edit own blog content'
   - 'edit own event content'
   - 'edit own faq content'
@@ -65,6 +64,7 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'use text format restricted_html'
+  - 'use text format source'
   - 'use text format table'
   - 'use workbench access'
   - 'view blog revisions'

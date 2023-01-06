@@ -39,6 +39,11 @@ targetEntityType: node
 bundle: person
 mode: large_card
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_body:
     type: trimmed_first_wysiwyg_paragraph
     label: hidden
@@ -92,6 +97,5 @@ hidden:
   field_text: true
   field_text_title_full: true
   field_text_title_short: true
-  langcode: true
   links: true
   search_api_excerpt: true

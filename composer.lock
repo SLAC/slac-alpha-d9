@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0a3ac366056a8d4903b2d68ec90820d",
+    "content-hash": "c91764fa5ff54d14849b124dc478cf2f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3555,72 +3555,6 @@
             }
         },
         {
-            "name": "drupal/cshs",
-            "version": "3.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/cshs.git",
-                "reference": "8.x-3.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/cshs-8.x-3.6.zip",
-                "reference": "8.x-3.6",
-                "shasum": "d3989da7d546947644fa8ad99b490e04c8a7f252"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9",
-                "php": ">=7.3.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-3.6",
-                    "datestamp": "1650996358",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Walter Jenner",
-                    "homepage": "https://drupal.org/u/valderama"
-                },
-                {
-                    "name": "Sergii Bondarenko",
-                    "homepage": "https://drupal.org/u/BR0kEN",
-                    "email": "sb@firstvector.org"
-                },
-                {
-                    "name": "Daneel Cruz",
-                    "homepage": "https://drupal.org/u/daneelcm"
-                },
-                {
-                    "name": "Purushotam Rai",
-                    "homepage": "https://drupal.org/u/purushotam.rai"
-                }
-            ],
-            "description": "A simple client-side hierarchical select widget for taxonomy terms.",
-            "homepage": "https://www.drupal.org/project/cshs",
-            "keywords": [
-                "client-side-select",
-                "hierarchical-select",
-                "module",
-                "select",
-                "taxonomy"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/cshs",
-                "issues": "https://www.drupal.org/project/issues/cshs"
-            }
-        },
-        {
             "name": "drupal/ctools",
             "version": "4.0.3",
             "source": {
@@ -4545,52 +4479,6 @@
             "homepage": "https://www.drupal.org/project/environment_indicator",
             "support": {
                 "source": "https://git.drupalcode.org/project/environment_indicator"
-            }
-        },
-        {
-            "name": "drupal/estimated_read_time",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/estimated_read_time.git",
-                "reference": "1.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/estimated_read_time-1.0.0.zip",
-                "reference": "1.0.0",
-                "shasum": "8f2aa443cffbc3b27dd1ea9f9917f753aac1066e"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10",
-                "mtownsend/read-time": "^2"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0",
-                    "datestamp": "1658713241",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Taltavull",
-                    "homepage": "https://www.drupal.org/u/mtalt"
-                }
-            ],
-            "description": "Creates a field that estimates the read time of an entity.",
-            "homepage": "https://drupal.org/project/estimated_read_time",
-            "support": {
-                "source": "https://git.drupalcode.org/project/estimated_read_time",
-                "issues": "https://www.drupal.org/project/issues/estimated_read_time"
             }
         },
         {
@@ -5804,59 +5692,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/key",
                 "issues": "http://drupal.org/project/key"
-            }
-        },
-        {
-            "name": "drupal/layout_paragraphs",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/layout_paragraphs.git",
-                "reference": "1.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_paragraphs-1.0.0.zip",
-                "reference": "1.0.0",
-                "shasum": "6b4bbb8fc50f70092d1c1ed720076be9f8904218"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9",
-                "drupal/paragraphs": "^1.6"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0",
-                    "datestamp": "1660594254",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "itamair",
-                    "homepage": "https://www.drupal.org/user/1179076"
-                },
-                {
-                    "name": "justin2pin",
-                    "homepage": "https://www.drupal.org/user/278450"
-                }
-            ],
-            "description": "Layout Paragraphs",
-            "homepage": "https://www.drupal.org/project/layout_paragraphs",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/layout_paragraphs",
-                "issues": "https://www.drupal.org/project/issues/layout_paragraphs"
             }
         },
         {
@@ -8207,84 +8042,6 @@
             }
         },
         {
-            "name": "drupal/term_reference_tree",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/term_reference_tree.git",
-                "reference": "8.x-1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/term_reference_tree-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "e0da478d18be3193232c200b32dc8464fa509957"
-            },
-            "require": {
-                "drupal/core": "^8.9 || ^9.1"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1633351519",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "See other contributors",
-                    "homepage": "https://www.drupal.org/node/1088348/committers",
-                    "role": "contributor"
-                },
-                {
-                    "name": "Dave Reid",
-                    "homepage": "https://www.drupal.org/user/53892"
-                },
-                {
-                    "name": "MoustafaEid",
-                    "homepage": "https://www.drupal.org/user/1126928"
-                },
-                {
-                    "name": "VladimirAus",
-                    "homepage": "https://www.drupal.org/user/673120"
-                },
-                {
-                    "name": "alex_optim",
-                    "homepage": "https://www.drupal.org/user/3317601"
-                },
-                {
-                    "name": "carpenter.490",
-                    "homepage": "https://www.drupal.org/user/804142"
-                },
-                {
-                    "name": "dgtlmoon",
-                    "homepage": "https://www.drupal.org/user/25027"
-                },
-                {
-                    "name": "sdrycroft",
-                    "homepage": "https://www.drupal.org/user/151544"
-                },
-                {
-                    "name": "sumitmadan",
-                    "homepage": "https://www.drupal.org/user/1538790"
-                }
-            ],
-            "description": "An expanding/collapsing tree widget for selecting terms in a taxonomy term reference field.",
-            "homepage": "https://drupal.org/project/term_reference_tree",
-            "support": {
-                "source": "https://git.drupalcode.org/project/term_reference_tree",
-                "issues": "https://drupal.org/project/issues/term_reference_tree"
-            }
-        },
-        {
             "name": "drupal/token",
             "version": "1.11.0",
             "source": {
@@ -8909,99 +8666,6 @@
             }
         },
         {
-            "name": "drupal/views_display_switch",
-            "version": "1.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/views_display_switch.git",
-                "reference": "1.1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_display_switch-1.1.4.zip",
-                "reference": "1.1.4",
-                "shasum": "4482e2f0c494401a4cb5daecff475be894bffc8b"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.1.4",
-                    "datestamp": "1671403145",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Lukas von Blarer",
-                    "homepage": "https://www.drupal.org/user/598412"
-                }
-            ],
-            "description": "Provides links to switch between displays in views",
-            "homepage": "https://www.drupal.org/project/views_display_switch",
-            "support": {
-                "source": "http://cgit.drupalcode.org/views_display_switch",
-                "issues": "https://www.drupal.org/project/issues/views_display_switch"
-            }
-        },
-        {
-            "name": "drupal/views_exposed_filter_blocks",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/views_exposed_filter_blocks.git",
-                "reference": "8.x-1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_exposed_filter_blocks-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "2048627423977430c04aff0d55f85e1b8f798a0f"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1591636550",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Anybody",
-                    "homepage": "https://www.drupal.org/user/291091"
-                },
-                {
-                    "name": "thomas.frobieter",
-                    "homepage": "https://www.drupal.org/user/409335"
-                }
-            ],
-            "description": "Provides separate exposed filter blocks for views which are not page views.",
-            "homepage": "https://www.drupal.org/project/views_exposed_filter_blocks",
-            "support": {
-                "source": "https://git.drupalcode.org/project/views_exposed_filter_blocks"
-            }
-        },
-        {
             "name": "drupal/views_rss",
             "version": "2.0.0-rc2",
             "source": {
@@ -9075,54 +8739,6 @@
             "homepage": "https://www.drupal.org/project/views_rss",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_rss"
-            }
-        },
-        {
-            "name": "drupal/views_year_filter",
-            "version": "2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/views_year_filter.git",
-                "reference": "2.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_year_filter-2.1.1.zip",
-                "reference": "2.1.1",
-                "shasum": "8db1dc4fa9e1298ef06f34a09af8fef36705e885"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.1.1",
-                    "datestamp": "1669398495",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "abjih",
-                    "homepage": "https://www.drupal.org/user/3519087"
-                },
-                {
-                    "name": "berramou",
-                    "homepage": "https://www.drupal.org/user/3535998"
-                }
-            ],
-            "description": "Add Year filter to views.",
-            "homepage": "https://www.drupal.org/project/views_year_filter",
-            "support": {
-                "source": "https://git.drupalcode.org/project/views_year_filter"
             }
         },
         {
@@ -11067,71 +10683,6 @@
                 "source": "https://github.com/mkalkbrenner/php-htmldiff/tree/master"
             },
             "time": "2016-07-25T17:07:32+00:00"
-        },
-        {
-            "name": "mtownsend/read-time",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mtownsend5512/read-time.git",
-                "reference": "b43f178095383bda3cdf606c8a288bf8cacf537e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mtownsend5512/read-time/zipball/b43f178095383bda3cdf606c8a288bf8cacf537e",
-                "reference": "b43f178095383bda3cdf606c8a288bf8cacf537e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4|^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Mtownsend\\ReadTime\\Providers\\ReadTimeServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Mtownsend\\ReadTime\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mark Townsend",
-                    "email": "mtownsend5512@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A PHP package to show users how long it takes to read content.",
-            "keywords": [
-                "Minutes",
-                "article",
-                "blog",
-                "content",
-                "medium",
-                "min",
-                "read",
-                "reading",
-                "time"
-            ],
-            "support": {
-                "issues": "https://github.com/mtownsend5512/read-time/issues",
-                "source": "https://github.com/mtownsend5512/read-time/tree/2.0.0"
-            },
-            "time": "2021-01-11T13:46:58+00:00"
         },
         {
             "name": "mtownsend/xml-to-array",
@@ -14148,10 +13699,10 @@
         },
         {
             "name": "slac/slac",
-            "version": "1.0.0-alpha24",
+            "version": "1.0.0-alpha26",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.24/slac.zip"
+                "url": "https://github.com/SLAC/slac-drupal-profile-theme/releases/download/v1.0.0-alpha.26/slac.zip"
             },
             "type": "drupal-theme"
         },

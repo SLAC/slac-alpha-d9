@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.paragraph.field_block
     - paragraphs.paragraphs_type.embed_block
+    - site_settings.site_setting_entity_type.event_maps
+    - site_settings.site_setting_entity_type.event_visitor_details
 id: paragraph.embed_block.field_block
 field_name: field_block
 entity_type: paragraph
@@ -18,10 +20,12 @@ default_value_callback: ''
 settings:
   handler: 'default:site_setting_entity'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      event_maps: event_maps
+      event_visitor_details: event_visitor_details
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: null
+    auto_create_bundle: event_maps
 field_type: entity_reference
