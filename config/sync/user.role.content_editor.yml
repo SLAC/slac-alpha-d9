@@ -23,7 +23,6 @@ dependencies:
     - comment
     - content_moderation
     - contextual
-    - eu_cookie_compliance
     - file
     - media
     - moderated_content_bulk_publish
@@ -108,7 +107,6 @@ permissions:
   - 'delete page revisions'
   - 'delete person revisions'
   - 'delete publication revisions'
-  - 'display eu cookie compliance popup'
   - 'edit any blog content'
   - 'edit any event content'
   - 'edit any faq content'
