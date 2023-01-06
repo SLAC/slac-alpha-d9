@@ -79,11 +79,11 @@ function _stanford_profile_person_get_time($arg = NULL) {
 
 /**
  * Implements hook_entity_form_display_alter().
- * 
- * Disable fields on the node edit form that have imported values 
+ *
+ * Disable fields on the node edit form that have imported values
  * and display a message
  */
-function stanford_person_importer_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
+/*function stanford_person_importer_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
 
   // We only care about nodes
   $node = \Drupal::routeMatch()->getParameter('node');
@@ -97,7 +97,7 @@ function stanford_person_importer_entity_form_display_alter(EntityFormDisplayInt
     return;
   }
 
-  // Get field definitions 
+  // Get field definitions
   $field_definitions = $form_display->get('fieldDefinitions');
   foreach ($form_display->getComponents() as $field_name => $component) {
 
@@ -133,7 +133,7 @@ function stanford_person_importer_entity_form_display_alter(EntityFormDisplayInt
       $form_display->setComponent($field_name, $component);
     }
   }
-}
+}*/
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -190,7 +190,7 @@ function _stanford_person_importer_node_imported(NodeInterface $node) {
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
- * 
+ *
  * Populate the Org Codes taxonomy field options on the Config Page
  */
 function stanford_person_importer_config_pages_presave(ConfigPagesInterface $entity) {
@@ -217,7 +217,7 @@ function stanford_person_importer_config_pages_presave(ConfigPagesInterface $ent
 
 /**
  * Implements hook_field_widget_form_alter().
- * 
+ *
  * Provide some validation on the Config Pages credential fields
  */
 function stanford_person_importer_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
