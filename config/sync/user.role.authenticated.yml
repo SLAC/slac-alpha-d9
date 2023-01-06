@@ -21,7 +21,6 @@ dependencies:
     - comment
     - contextual
     - environment_indicator
-    - eu_cookie_compliance
     - filter
     - fontawesome
     - media
@@ -50,7 +49,6 @@ permissions:
   - 'access news feeds'
   - 'access shortcuts'
   - 'access toolbar'
-  - 'display eu cookie compliance popup'
   - 'edit own blog content'
   - 'edit own event content'
   - 'edit own faq content'
