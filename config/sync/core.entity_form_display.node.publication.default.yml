@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.publication.field_topics
     - field.field.node.publication.field_volume
     - node.type.publication
+    - workflows.workflow.content
   module:
     - conditional_fields
     - content_moderation
@@ -214,8 +215,10 @@ content:
             grouping: OR
             values_set: 3
             value: ''
-            values: "1\r\n3"
-            value_form: {  }
+            values: "1\r\n2\r\n3"
+            value_form:
+              -
+                value: '2'
             effect: show
             effect_options: {  }
             selector: ''
@@ -515,13 +518,6 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
-  langcode:
-    type: language_select
-    weight: 1
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 8
