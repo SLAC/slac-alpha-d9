@@ -1,0 +1,58 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 50427ebe-4699-4b6f-8dee-adbdc50dd9da
+  bundle: remote_video
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  name:
+    -
+      value: 'About SLAC'
+  created:
+    -
+      value: 1672968189
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /media/about-slac
+      langcode: en
+      pathauto: 1
+  rh_action:
+    -
+      value: bundle_default
+  rh_redirect_response:
+    -
+      value: 301
+  rh_redirect_fallback_action:
+    -
+      value: bundle_default
+  field_boolean:
+    -
+      value: false
+  field_caption:
+    -
+      value: '<p dir="ltr">Placeholder video or image caption followed by credit. Click on the video icon will open a lightbox to show video in place.&nbsp;&nbsp;</p>'
+      format: restricted_html
+  field_credit:
+    -
+      value: '<p>Firstname Lastname/SLAC National Accelerator Laboratory</p>'
+      format: restricted_html
+  field_display_style:
+    -
+      value: square
+  field_landing_display:
+    -
+      value: false
+  field_media_oembed_video:
+    -
+      value: 'https://www.youtube.com/watch?v=rNILy3YIULE&t=14s'

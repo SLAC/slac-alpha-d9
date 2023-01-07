@@ -39,7 +39,7 @@
 # `ddev exec terminus site:list` will show available sites
 
 environment_variables:
-  project: slac-alpha-d9.dev
+  project: slac-alpha-d9.live
 
 auth_command:
   command: |

@@ -36,6 +36,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  default_content: 0
   duration_field: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
@@ -120,6 +121,7 @@ module:
   site_settings: 0
   sitewide_alert: 0
   slac_core: 0
+  slac_default_content: 0
   slac_helper: 0
   smart_date: 0
   smart_trim: 0

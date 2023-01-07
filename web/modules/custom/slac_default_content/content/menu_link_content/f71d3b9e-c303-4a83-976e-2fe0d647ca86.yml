@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: f71d3b9e-c303-4a83-976e-2fe0d647ca86
+  bundle: main
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Research
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      uri: 'https://live-slac-alpha-d9.pantheonsite.io/research'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: -50
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
