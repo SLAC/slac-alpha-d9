@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: c9a4442b-540f-4ba7-b01f-4853ea9932cc
+  bundle: footer
+  default_langcode: en
+  depends:
+    44e51240-ce35-4926-b40e-f59b106ca9bc: menu_link_content
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'E.g. link within your site'
+  menu_name:
+    -
+      value: footer
+  link:
+    -
+      uri: 'internal:/research'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:44e51240-ce35-4926-b40e-f59b106ca9bc'
+  revision_translation_affected:
+    -
+      value: true
+  view_mode:
+    -
+      value: default

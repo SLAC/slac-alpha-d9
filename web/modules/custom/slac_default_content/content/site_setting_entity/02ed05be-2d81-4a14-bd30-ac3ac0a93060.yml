@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: site_setting_entity
+  uuid: 02ed05be-2d81-4a14-bd30-ac3ac0a93060
+  bundle: organization_details
+  default_langcode: en
+  depends:
+    62a6c4fb-52bc-4210-baa2-02394c8d0021: user
+default:
+  user_id:
+    -
+      entity: 62a6c4fb-52bc-4210-baa2-02394c8d0021
+  name:
+    -
+      value: 'Organization Details'
+  fieldset:
+    -
+      value: 'Organization Details'
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1669766359
+  field_acronym:
+    -
+      value: YSN
+  field_address:
+    -
+      langcode: ''
+      country_code: US
+      administrative_area: CA
+      locality: 'Menlo Park'
+      postal_code: '94025'
+      address_line1: '2575 Sandhill Road'
+      address_line2: ''
+  field_organization_name:
+    -
+      value: 'Your Site Name'

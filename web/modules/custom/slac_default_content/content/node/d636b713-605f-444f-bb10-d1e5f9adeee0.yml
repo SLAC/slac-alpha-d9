@@ -1,0 +1,234 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d636b713-605f-444f-bb10-d1e5f9adeee0
+  bundle: page
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+    bf463fba-68fe-4478-91b5-779b68e7b8c8: media
+    50427ebe-4699-4b6f-8dee-adbdc50dd9da: media
+    ac3ff98a-d2c0-4a6b-8093-c92bbad4aaca: media
+default:
+  revision_uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  title:
+    -
+      value: Research
+  created:
+    -
+      value: 1672954851
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /research
+      langcode: en
+      pathauto: 0
+  field_hero_paragraph:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 20d76bf4-592b-4ea0-89f4-25ee620a2bb0
+          bundle: article_hero
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1672954872
+          behavior_settings:
+            -
+              value: {  }
+          field_image:
+            -
+              entity: bf463fba-68fe-4478-91b5-779b68e7b8c8
+  field_paragraphs:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c38d221a-11fc-4892-a602-19779837ee48
+          bundle: wysiwyg
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1672954892
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_body:
+            -
+              value: '<p class="c-lede">This is description teaser for research. To edit this placeholder content, click on the "Edit" tab near the top of the page . When finished, scroll to the bottom of the page and click "Save." To disable this page or add a new page, click “Site Actions” and then “Manage Pages.”</p>'
+              format: basic_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 92c77eda-864b-4b90-a072-ebb1edcc5f0c
+          bundle: video_lightbox
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1672955091
+          behavior_settings:
+            -
+              value: {  }
+          field_video:
+            -
+              entity: 50427ebe-4699-4b6f-8dee-adbdc50dd9da
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 820d9691-d77f-46f0-bc75-2b7beac7326d
+          bundle: wysiwyg
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1672955351
+          behavior_settings:
+            -
+              value: {  }
+          field_body:
+            -
+              value: '<p>Lorem ipsum dolor sit amet consectetur. Adipiscing ornare vestibulum sem suspendisse fermentum volutpat sollicitudin. Accumsan non arcu in venenatis rhoncus eu. Proin in sed et malesuada. Senectus metus etiam commodo sed proin. Adipiscing sed mauris posuere eget. Amet quis pellentesque sit pellentesque sagittis. A elit nec etiam quis. Nisl et amet auctor ac. A elit viverra sit amet eleifend adipiscing morbi convallis pellentesque.</p>'
+              format: basic_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d8941692-324f-44c0-ad62-bb7069349d85
+          bundle: fifty_fifty
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1672955370
+          behavior_settings:
+            -
+              value:
+                style_options: {  }
+          field_paragraph:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: be9f5968-9138-44f9-b2b6-08ca38d76ec6
+                  bundle: image_embed
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1672955428
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_boolean:
+                    -
+                      value: false
+                  field_image:
+                    -
+                      entity: ac3ff98a-d2c0-4a6b-8093-c92bbad4aaca
+                  field_view_mode:
+                    -
+                      value: centered
+          field_paragraph_2:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: ae365a70-4e58-490b-99df-866433f38a92
+                  bundle: wysiwyg
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1672955491
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_body:
+                    -
+                      value: '<h5 dir="ltr"><strong>Image text side-by-side</strong></h5><p dir="ltr"><span>Image and text side-by-side is a compelling way to show content and shorten the length of page means less scrolling before reaching the bottom. Image can be placed right or left of the text column. Nequet in eget habitasse id aliquam semper neque venenatis. Facilisi ut vestibulum aliquet malesuada ornare commodo mauris ac id. Odio id ipsum faucibus id diam urna ut faucibus. Eget odio sed sit dolor interdum in. Maecenas ut integer rhoncus pretium enim a nulla.</span></p>'
+                      format: basic_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 07b9ddec-0fbf-4902-8749-5ee8432b5444
+          bundle: wysiwyg
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1672955528
+          behavior_settings:
+            -
+              value: {  }
+          field_body:
+            -
+              value: '<p>Lorem ipsum dolor sit amet consectetur. Adipiscing ornare vestibulum sem suspendisse fermentum volutpat sollicitudin. Accumsan non arcu in venenatis rhoncus eu. Proin in sed et malesuada. Senectus metus etiam commodo sed proin. Adipiscing sed mauris posuere eget. Amet quis pellentesque sit pellentesque sagittis. A elit nec etiam quis. Nisl et amet auctor ac. A elit viverra sit amet eleifend adipiscing morbi convallis pellentesque.</p>'
+              format: basic_html
+  field_review_date:
+    -
+      value: '2023-07-04'
+  field_teaser:
+    -
+      value: '<p>This is description teaser for research. To edit this placeholder content, click on the "Edit" tab near the top of the page . When finished, scroll to the bottom of the page and click "Save." To disable this page or add a new page, click “Site Actions” and then “Manage Pages.”</p>'
+      format: restricted_html

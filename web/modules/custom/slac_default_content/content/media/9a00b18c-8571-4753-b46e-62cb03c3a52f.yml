@@ -1,0 +1,50 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 9a00b18c-8571-4753-b46e-62cb03c3a52f
+  bundle: image
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+    ae969c1f-9cf2-4319-b836-abe5fbe12d1e: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  name:
+    -
+      value: Drupal9-template-card-smaller.jpg
+  created:
+    -
+      value: 1673047101
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /media/drupal9-template-card-smallerjpg
+      langcode: en
+      pathauto: 1
+  field_boolean:
+    -
+      value: false
+  field_credit:
+    -
+      value: '<p>Firstname Lastname/SLAC National Accelerator Laboratory</p>'
+      format: restricted_html
+  field_display_style:
+    -
+      value: square
+  field_landing_display:
+    -
+      value: false
+  field_media_image:
+    -
+      entity: ae969c1f-9cf2-4319-b836-abe5fbe12d1e
+      alt: 'SLAC aerial view'
+      title: ''
+      width: 330
+      height: 220

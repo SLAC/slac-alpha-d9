@@ -1,0 +1,162 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a3393c37-0f55-48bf-9354-a28f20f4fcbb
+  bundle: page
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+default:
+  revision_uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  title:
+    -
+      value: About
+  created:
+    -
+      value: 1672969957
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /about
+      langcode: en
+      pathauto: 0
+  field_paragraphs:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 55af9f7e-8292-4043-8439-345e2eb506e6
+          bundle: wysiwyg
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1672969987
+          behavior_settings:
+            -
+              value: {  }
+          field_body:
+            -
+              value: '<p class="c-lede" dir="ltr"><span>This is description teaser for about page. To edit this placeholder content, click on the "Edit" tab near the top of the page . When finished, scroll to the bottom of the page and click "Save." To disable this page or add a new page, click “Site Actions” and then “Manage Pages.”</span></p>'
+              format: basic_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 16df688d-39aa-49d8-b88c-2c9d1c3171e7
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1673045508
+          behavior_settings:
+            -
+              value:
+                style_options: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_num_of_cols:
+            -
+              value: 1
+          field_paragraphs_1:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 8c1dc7ed-d124-4682-9c92-776ffdb89ec6
+                  bundle: wysiwyg
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1673047405
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_body:
+                    -
+                      value: '<h2>Image text side-by-side</h2>'
+                      format: basic_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: b83ec6e3-d5d6-4d05-8d2f-648d6d2a242f
+                  bundle: wysiwyg
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1673046022
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  field_body:
+                    -
+                      value: '<drupal-media data-entity-type="media" data-entity-uuid="8e52d9e1-eb2f-463e-9b7f-7adfef878261" data-align="right">&nbsp;</drupal-media><p>This example of image and text side-by-side is a nice way to show a close-up of something or someone. Amet sit tincidunt. Mauris diam augue et tincidunt elementum consequat convallis pellentesque a ut. Aliquet rutrum nunc arcu neque nunc tempus. In dolor in euismod blandit pulvinar. Aenean malesuada amet libero vitae iaculis aenean pharetra euylg. Lorem ipsum dolor sit amet consectetur. Turpis sed nisl justo duis. Accumsan blandit justo libero sed ultrices. Ac vel urna at viverra aliquet. Vestibulum accumsan donec semper aenean duis lectus in vitae. Tellus ultricies viverra suspendisse enim condimentum.&nbsp;</p><p>This example of image and text side-by-side is a nice way to show a close-up of something or someone. Amet sit tincidunt. Mauris diam augue et tincidunt elementum consequat convallis pellentesque a ut. Aliquet rutrum nunc arcu neque nunc tempus. In dolor in euismod blandit pulvinar. Aenean malesuada amet libero vitae iaculis aenean pharetra euylg. Lorem ipsum dolor sit amet consectetur. Turpis sed nisl justo duis. Accumsan blandit justo libero sed ultrices. Ac vel urna at viverra aliquet. Vestibulum accumsan donec semper aenean duis lectus in vitae. Tellus ultricies viverra suspendisse enim condimentum.</p>'
+                      format: basic_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 57891658-a2e5-4637-a032-4575dae5fdce
+                  bundle: wysiwyg
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1673047527
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_body:
+                    -
+                      value: '<p><a class="c-button c-button--chevron">Optional Button</a> <a class="c-button c-button--chevron">Button</a></p>'
+                      format: basic_html
+  field_review_date:
+    -
+      value: '2023-07-04'

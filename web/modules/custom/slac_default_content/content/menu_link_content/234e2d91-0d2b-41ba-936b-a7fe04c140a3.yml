@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 234e2d91-0d2b-41ba-936b-a7fe04c140a3
+  bundle: footer-contact
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Coming to SLAC'
+  menu_name:
+    -
+      value: footer-contact
+  link:
+    -
+      uri: 'internal:/coming-to-slac'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -49
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  view_mode:
+    -
+      value: default
