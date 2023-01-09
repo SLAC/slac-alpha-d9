@@ -1,0 +1,281 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ceb86a87-5958-4998-843b-f951b986082a
+  bundle: homepage
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+    bf463fba-68fe-4478-91b5-779b68e7b8c8: media
+    ac3ff98a-d2c0-4a6b-8093-c92bbad4aaca: media
+default:
+  revision_uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  title:
+    -
+      value: SLAC
+  created:
+    -
+      value: 1673028978
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /home
+      langcode: en
+      pathauto: 0
+  field_hero_paragraph:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bbda26d9-9bbf-4a35-bad2-356adaba54cd
+          bundle: image_hero
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1673043569
+          behavior_settings:
+            -
+              value:
+                style_options: {  }
+          field_body:
+            -
+              value: '<p>To edit this page,&nbsp;<a>log in with your SLAC Windows credentials</a>. After you log in, return to the homepage, and use it as a template to begin building your site.</p>'
+              format: restricted_html
+          field_boolean:
+            -
+              value: false
+          field_button_link:
+            -
+              uri: 'internal:/resources'
+              title: 'Button optional'
+              options: {  }
+          field_image:
+            -
+              entity: bf463fba-68fe-4478-91b5-779b68e7b8c8
+          field_short_text:
+            -
+              value: 'Welcome to your site!'
+          field_text:
+            -
+              value: 'SLAC Drupal Template'
+  field_paragraphs:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7801faab-705c-48ac-87f1-7ee662320b5a
+          bundle: wysiwyg
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1673043643
+          behavior_settings:
+            -
+              value: {  }
+          field_body:
+            -
+              value: '<h2 dir="ltr"><span>Title that grabs attention and accurately describes lorem ipsum dolor</span></h2><p><span>Description teaser is informative and compelling. To edit this placeholder content, click on the "Edit" tab near the top of the page. When finished, scroll to the bottom of the page and click "Save." To disable this page or add a new page, click “Site Actions” and then “Manage Pages.”</span></p><p><a class="c-button c-button--chevron"><span>Button Optional</span></a><span> </span><a class="c-button c-button--chevron"><span>Optional</span></a></p>'
+              format: basic_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 78c46b79-5b6b-4a69-81a4-78758a819d74
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1673043734
+          behavior_settings:
+            -
+              value:
+                style_options:
+                  section_bg:
+                    css_class: '6'
+          revision_translation_affected:
+            -
+              value: true
+          field_link:
+            -
+              uri: 'internal:/about'
+              title: ''
+              options: {  }
+          field_num_of_cols:
+            -
+              value: 3
+          field_paragraphs_3:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 718326b6-3f3d-41e4-b296-38871f4a0e94
+                  bundle: card
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1673043766
+                  behavior_settings:
+                    -
+                      value:
+                        style_options: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  field_body:
+                    -
+                      value: '<p>Description provides an informative glimpse of the topic and excites site visitors to learn more. Nice to be short and simple. This is a 35-word count paragraph example. Lorem ipsum dolor sit amet lectus magna.</p>'
+                      format: restricted_html
+                  field_image:
+                    -
+                      entity: ac3ff98a-d2c0-4a6b-8093-c92bbad4aaca
+                  field_link:
+                    -
+                      uri: 'internal:/resources'
+                      title: ''
+                      options: {  }
+                  field_links:
+                    -
+                      uri: 'internal:/resources'
+                      title: 'Button Optional'
+                      options: {  }
+                  field_short_text:
+                    -
+                      value: 'A title here that grabs attention and an image that complement your topic'
+                  field_text:
+                    -
+                      value: 'Upload an Image to Basic Card'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: ddc9c84f-5191-41e5-b9c3-949643e3dba6
+                  bundle: card
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1673043841
+                  behavior_settings:
+                    -
+                      value:
+                        style_options: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  field_body:
+                    -
+                      value: '<p>Description provides an informative glimpse of the topic and excites site visitors to learn more. Nice to be short and simple. This is a 35-word count paragraph example.</p>'
+                      format: restricted_html
+                  field_image:
+                    -
+                      entity: ac3ff98a-d2c0-4a6b-8093-c92bbad4aaca
+                  field_link:
+                    -
+                      uri: 'internal:/research'
+                      title: ''
+                      options: {  }
+                  field_links:
+                    -
+                      uri: 'internal:/research'
+                      title: 'Button optional'
+                      options: {  }
+                  field_short_text:
+                    -
+                      value: 'A title here that grabs attention and an image that complement your topic lorem ipsum'
+                  field_text:
+                    -
+                      value: 'Upload an Image to Basic Card'
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: c4cc8cc0-8a8f-4d28-bab3-d3b4a8d4e23c
+                  bundle: card
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1673043860
+                  behavior_settings:
+                    -
+                      value:
+                        style_options: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  field_body:
+                    -
+                      value: '<p>Description provides an informative glimpse of the topic and excites site visitors to learn more. Nice to be short and simple. This is a 26-word count.</p>'
+                      format: restricted_html
+                  field_image:
+                    -
+                      entity: ac3ff98a-d2c0-4a6b-8093-c92bbad4aaca
+                  field_link:
+                    -
+                      uri: 'internal:/about'
+                      title: ''
+                      options: {  }
+                  field_links:
+                    -
+                      uri: 'internal:/about'
+                      title: 'Button optional'
+                      options: {  }
+                  field_short_text:
+                    -
+                      value: 'A title here and image above is placeholder'
+                  field_text:
+                    -
+                      value: 'Upload an Image to Basic Card'
+          field_short_text:
+            -
+              value: 'Title lorem ipsum'
+          field_text:
+            -
+              value: 'Services & Features'
