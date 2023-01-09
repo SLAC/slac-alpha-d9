@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.card
     - field.field.node.news_article.field_date
     - field.field.node.news_article.field_dek
-    - field.field.node.news_article.field_editorial_group
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_link
     - field.field.node.news_article.field_paragraphs
@@ -121,7 +120,6 @@ content:
     region: content
 hidden:
   field_dek: true
-  field_editorial_group: true
   field_hero_paragraph: true
   field_link: true
   field_tags: true

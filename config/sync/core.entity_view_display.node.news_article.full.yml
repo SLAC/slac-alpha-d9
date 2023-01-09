@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.news_article.field_date
     - field.field.node.news_article.field_dek
-    - field.field.node.news_article.field_editorial_group
     - field.field.node.news_article.field_hero_paragraph
     - field.field.node.news_article.field_link
     - field.field.node.news_article.field_paragraphs
@@ -111,7 +110,6 @@ content:
     weight: 1
     region: content
 hidden:
-  field_editorial_group: true
   field_source_link: true
   field_source_name: true
   field_teaser: true

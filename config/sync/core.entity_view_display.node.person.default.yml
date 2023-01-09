@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.person.field_affiliations
     - field.field.node.person.field_awardshonors
     - field.field.node.person.field_body
-    - field.field.node.person.field_editorial_group
     - field.field.node.person.field_education
     - field.field.node.person.field_email
     - field.field.node.person.field_fax
@@ -253,6 +252,5 @@ content:
     weight: 4
     region: content
 hidden:
-  field_editorial_group: true
   field_teaser: true
   search_api_excerpt: true
