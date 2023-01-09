@@ -117,6 +117,9 @@ module:
   selection_sharer: 0
   sendgrid_integration: 0
   shortcut: 0
+  simple_sitemap: 0
+  simple_sitemap_engines: 0
+  simple_sitemap_views: 0
   simplesamlphp_auth: 0
   single_content_sync: 0
   site_settings: 0

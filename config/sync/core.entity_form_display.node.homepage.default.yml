@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.homepage.field_editorial_group
     - field.field.node.homepage.field_hero_paragraph
     - field.field.node.homepage.field_paragraphs
     - node.type.homepage
+    - workflows.workflow.content
   module:
     - content_moderation
     - field_group
@@ -40,16 +40,6 @@ content:
     weight: 3
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_editorial_group:
-    type: entity_reference_autocomplete
-    weight: 13
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_hero_paragraph:
     type: paragraphs
@@ -87,13 +77,6 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 1
-    region: content
-    settings:
-      include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
