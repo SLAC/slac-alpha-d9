@@ -100,6 +100,7 @@ module:
   options: 0
   page_cache: 0
   pantheon_advanced_page_cache: 0
+  pantheon_domain_masking: 0
   path: 0
   path_alias: 0
   rabbit_hole: 0
@@ -116,6 +117,7 @@ module:
   selection_sharer: 0
   sendgrid_integration: 0
   shortcut: 0
+  simplesamlphp_auth: 0
   single_content_sync: 0
   site_settings: 0
   sitewide_alert: 0
@@ -157,6 +159,7 @@ module:
   workbench_access: 0
   workflows: 0
   pathauto: 1
+  externalauth: 10
   views: 10
   paragraphs: 11
   minimal: 1000

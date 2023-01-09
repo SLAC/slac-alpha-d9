@@ -234,3 +234,27 @@ function slac_core_preprocess_views_slac_accordion_view(&$variables) {
   }
   $variables['collapsible'] = $options['collapsible'];
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function slac_core_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['simplesamlphp_auth_login_link'])) {
+
+    $form['login_title'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h1',
+      '#value' => t('Login'),
+      '#weight' => -999,
+    ];
+    $form['intro_text'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'p',
+      '#value' => t('Welcome back! Log in to access the website'),
+      '#weight' => -998,
+    ];
+    $form['simplesamlphp_auth_login_link']['#weight'] = -99;
+
+    unset($form['name'], $form['pass'], $form['actions']);
+  }
+}

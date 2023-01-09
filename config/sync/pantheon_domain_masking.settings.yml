@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: nQMgfYnC_0g3f22E1i2wQrn5kwG6ofCbC4HeAwDLO3Q
+domain: example.com
+enabled: 'no'
+allow_platform: 'yes'
+subpath: ''
