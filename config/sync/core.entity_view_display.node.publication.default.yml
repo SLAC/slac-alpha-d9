@@ -29,6 +29,7 @@ dependencies:
     - link
     - name
     - options
+    - slac_helper
     - text
     - user
 id: node.publication.default
@@ -53,7 +54,7 @@ content:
     type: name_default
     label: above
     settings:
-      format: short_full
+      format: full
       markup: none
       list_format: ''
       link_target: ''
@@ -192,7 +193,7 @@ content:
     weight: 9
     region: content
   field_tags:
-    type: entity_reference_label
+    type: slac_tag
     label: above
     settings:
       link: true
