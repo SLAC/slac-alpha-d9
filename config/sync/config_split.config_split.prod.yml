@@ -8,12 +8,12 @@ description: 'Configuration settings for the live production site.'
 weight: 0
 folder: ../config/splits/prod
 module:
+  google_tag: 0
   stanford_ssp: 0
 theme: {  }
 blacklist:
   - google_tag.settings
   - simplesamlphp_auth.settings
-  - stanford_ssp.settings
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true

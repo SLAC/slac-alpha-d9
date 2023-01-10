@@ -1,10 +1,10 @@
 _core:
   default_config_hash: RMy8ch2MOT68bCD63OGZQRdMk2pD6UXPEZMuCIisbfs
 langcode: en
-activate: true
+activate: false
 auth_source: default-sp
 login_link_display_name: 'Log in with your SLAC ID'
-login_link_show: true
+login_link_show: false
 user_name: uid
 unique_id: uid
 mail_attr: mail
