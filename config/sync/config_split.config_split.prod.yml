@@ -9,7 +9,6 @@ weight: 0
 folder: ../config/splits/prod
 module:
   google_tag: 0
-  stanford_ssp: 0
 theme: {  }
 blacklist:
   - google_tag.settings
