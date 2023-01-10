@@ -109,6 +109,7 @@ hidden:
   field_editorial_group: true
   field_hero_paragraph: true
   field_link: true
+  field_review_date: true
   field_tags: true
   field_text: true
   search_api_excerpt: true
