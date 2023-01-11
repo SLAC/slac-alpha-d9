@@ -155,6 +155,9 @@ class SlacAggregatorFeedBlock extends BlockBase implements ContainerFactoryPlugi
       $build['list'] = [
         '#theme' => 'item_list',
         '#items' => [],
+        '#attributes' => [
+          'class' => ['c-list--clean']
+        ]
       ];
       foreach ($items as $item) {
         $build['list']['#items'][$item->id()] = [
