@@ -10,7 +10,8 @@ folder: ../config/splits/local
 module:
   webform_examples: 0
 theme: {  }
-blacklist: {  }
+blacklist:
+  - simplesamlphp_auth.settings
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
