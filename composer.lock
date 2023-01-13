@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "568ef0f74d764f90af0b06c0c5facf3e",
+    "content-hash": "601cf8af52201ee3ed3adf37709f4d23",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7164,58 +7164,6 @@
                 "source": "https://git.drupalcode.org/project/search_api",
                 "issues": "https://www.drupal.org/project/issues/search_api",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
-            }
-        },
-        {
-            "name": "drupal/selection_sharer",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/selection_sharer.git",
-                "reference": "8.x-1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/selection_sharer-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "90775f7313764f044196d39e37f57334cc0f6f5e"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1590277532",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "jarodriguez",
-                    "homepage": "https://www.drupal.org/user/1551452"
-                },
-                {
-                    "name": "psf_",
-                    "homepage": "https://www.drupal.org/user/2674035"
-                }
-            ],
-            "description": "Medium like popover menu to share on Twitter or by email any text selected on the page.",
-            "homepage": "https://www.drupal.org/project/selection_sharer",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/selection_sharer",
-                "issues": "https://www.drupal.org/project/issues/selection_sharer"
             }
         },
         {
