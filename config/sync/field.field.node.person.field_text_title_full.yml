@@ -10,7 +10,7 @@ field_name: field_text_title_full
 entity_type: node
 bundle: person
 label: 'Full Title'
-description: 'The full job title will be displayed on this person''s profile detail page.'
+description: 'Enter the full job title to be displayed on this person''s profile detail page.'
 required: false
 translatable: false
 default_value: {  }
