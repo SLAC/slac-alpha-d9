@@ -153,7 +153,6 @@ module:
   viewsreference: 0
   viewsreference_filter: 0
   webform: 0
-  webform_templates: 0
   webform_ui: 0
   workbench_access: 0
   workflows: 0
