@@ -9,14 +9,10 @@ dependencies:
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.card_with_icon
     - paragraphs.paragraphs_type.cards_with_show_more
-    - paragraphs.paragraphs_type.content_card
     - paragraphs.paragraphs_type.content_embed
     - paragraphs.paragraphs_type.embed_block_content
     - paragraphs.paragraphs_type.embed_view
     - paragraphs.paragraphs_type.embed_webform
-    - paragraphs.paragraphs_type.extra_large_card
-    - paragraphs.paragraphs_type.fifty_fifty_staggered
-    - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
   module:
     - entity_reference_revisions
@@ -38,15 +34,11 @@ settings:
       card_with_icon: card_with_icon
       card: card
       cards_with_show_more: cards_with_show_more
-      content_card: content_card
       content_embed: content_embed
       embed_block_content: embed_block_content
       embed_view: embed_view
       embed_webform: embed_webform
-      extra_large_card: extra_large_card
-      fifty_fifty_staggered: fifty_fifty_staggered
       image_hero: image_hero
-      image_carousel: image_carousel
     negate: 1
     target_bundles_drag_drop:
       accordion:

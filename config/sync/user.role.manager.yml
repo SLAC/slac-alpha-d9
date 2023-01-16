@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - media.type.animated_icon
     - media.type.document
     - media.type.image
     - media.type.remote_audio
@@ -83,7 +82,6 @@ permissions:
   - 'administer webform element access'
   - 'administer webform submission'
   - 'bypass vapn'
-  - 'create animated_icon media'
   - 'create blog content'
   - 'create document media'
   - 'create event content'

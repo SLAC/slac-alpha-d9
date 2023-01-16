@@ -10,26 +10,17 @@ dependencies:
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.card_with_icon
     - paragraphs.paragraphs_type.cards_with_show_more
-    - paragraphs.paragraphs_type.content_card
     - paragraphs.paragraphs_type.content_embed
     - paragraphs.paragraphs_type.embed_block_content
     - paragraphs.paragraphs_type.embed_view
-    - paragraphs.paragraphs_type.extra_large_card
-    - paragraphs.paragraphs_type.fifty_fifty_staggered
-    - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.media_card
-    - paragraphs.paragraphs_type.microsite_hero
-    - paragraphs.paragraphs_type.microsite_navigation_marker
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
-    - paragraphs.paragraphs_type.small_card_with_solid_background
     - paragraphs.paragraphs_type.tab_item
     - paragraphs.paragraphs_type.table
-    - paragraphs.paragraphs_type.table_of_contents
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.two_column_hero
-    - paragraphs.paragraphs_type.video_hero
     - paragraphs.paragraphs_type.wide_card
   module:
     - entity_reference_revisions
@@ -51,27 +42,18 @@ settings:
       card_with_icon: card_with_icon
       card: card
       cards_with_show_more: cards_with_show_more
-      content_card: content_card
       content_embed: content_embed
       embed_block_content: embed_block_content
       embed_view: embed_view
-      extra_large_card: extra_large_card
-      fifty_fifty_staggered: fifty_fifty_staggered
       image_hero: image_hero
       article_hero: article_hero
-      image_carousel: image_carousel
       media_card: media_card
-      microsite_hero: microsite_hero
-      microsite_navigation_marker: microsite_navigation_marker
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
-      small_card_with_solid_background: small_card_with_solid_background
       tab_item: tab_item
       table: table
-      table_of_contents: table_of_contents
       tout: tout
       two_column_hero: two_column_hero
-      video_hero: video_hero
       wide_card: wide_card
     negate: 1
     target_bundles_drag_drop:

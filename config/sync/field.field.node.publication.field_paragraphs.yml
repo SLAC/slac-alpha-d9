@@ -9,20 +9,15 @@ dependencies:
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.cards_with_show_more
-    - paragraphs.paragraphs_type.content_card
     - paragraphs.paragraphs_type.content_embed
-    - paragraphs.paragraphs_type.image_carousel
     - paragraphs.paragraphs_type.image_hero
     - paragraphs.paragraphs_type.media_card
-    - paragraphs.paragraphs_type.microsite_hero
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
-    - paragraphs.paragraphs_type.small_card_with_solid_background
     - paragraphs.paragraphs_type.tab_item
     - paragraphs.paragraphs_type.table
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.two_column_hero
-    - paragraphs.paragraphs_type.video_hero
   module:
     - entity_reference_revisions
 id: node.publication.field_paragraphs
@@ -42,21 +37,16 @@ settings:
       accordion_item: accordion_item
       card: card
       cards_with_show_more: cards_with_show_more
-      content_card: content_card
       content_embed: content_embed
-      image_carousel: image_carousel
       image_hero: image_hero
       article_hero: article_hero
       media_card: media_card
-      microsite_hero: microsite_hero
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
-      small_card_with_solid_background: small_card_with_solid_background
       tab_item: tab_item
       tout: tout
       two_column_hero: two_column_hero
       table: table
-      video_hero: video_hero
     negate: 1
     target_bundles_drag_drop:
       accordion:
