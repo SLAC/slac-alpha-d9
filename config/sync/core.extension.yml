@@ -114,7 +114,6 @@ module:
   sendgrid_integration: 0
   shortcut: 0
   simple_sitemap: 0
-  simplesamlphp_auth: 0
   single_content_sync: 0
   site_settings: 0
   sitewide_alert: 0
