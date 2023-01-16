@@ -827,7 +827,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: search_api
-          order: DESC
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
@@ -1067,7 +1067,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: search_api
-          order: DESC
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
