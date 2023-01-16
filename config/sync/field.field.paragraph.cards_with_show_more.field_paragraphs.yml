@@ -6,7 +6,6 @@ dependencies:
     - field.storage.paragraph.field_paragraphs
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.cards_with_show_more
-    - paragraphs.paragraphs_type.content_card
     - paragraphs.paragraphs_type.media_card
   module:
     - entity_reference_revisions
@@ -25,7 +24,6 @@ settings:
   handler_settings:
     target_bundles:
       card: card
-      content_card: content_card
       media_card: media_card
     negate: 0
     target_bundles_drag_drop:

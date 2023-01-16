@@ -7,7 +7,6 @@ dependencies:
     - node.type.landing_page
     - paragraphs.paragraphs_type.article_hero
     - paragraphs.paragraphs_type.image_hero
-    - paragraphs.paragraphs_type.microsite_hero
     - paragraphs.paragraphs_type.two_column_hero
   module:
     - entity_reference_revisions
@@ -27,7 +26,6 @@ settings:
     target_bundles:
       article_hero: article_hero
       image_hero: image_hero
-      microsite_hero: microsite_hero
       two_column_hero: two_column_hero
     negate: 0
     target_bundles_drag_drop:

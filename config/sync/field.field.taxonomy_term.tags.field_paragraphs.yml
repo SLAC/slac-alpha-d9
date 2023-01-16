@@ -8,7 +8,6 @@ dependencies:
     - paragraphs.paragraphs_type.callout_box
     - paragraphs.paragraphs_type.embed_block
     - paragraphs.paragraphs_type.embed_full_html_
-    - paragraphs.paragraphs_type.extra_large_card
     - paragraphs.paragraphs_type.fifty_fifty
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.overlap_image
@@ -39,7 +38,6 @@ settings:
       callout_box: callout_box
       embed_block: embed_block
       embed_full_html_: embed_full_html_
-      extra_large_card: extra_large_card
       fifty_fifty: fifty_fifty
       image_embed: image_embed
       overlap_image: overlap_image

@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_paragraphs_3
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.card_with_icon
+    - paragraphs.paragraphs_type.content_embed
     - paragraphs.paragraphs_type.image_embed
     - paragraphs.paragraphs_type.image_lightbox
     - paragraphs.paragraphs_type.section
@@ -29,6 +30,7 @@ settings:
     target_bundles:
       card_with_icon: card_with_icon
       card: card
+      content_embed: content_embed
       image_embed: image_embed
       image_lightbox: image_lightbox
       video_lightbox: video_lightbox
@@ -56,12 +58,9 @@ settings:
       cards_with_show_more:
         weight: -81
         enabled: false
-      content_card:
-        weight: -80
-        enabled: false
       content_embed:
         weight: -79
-        enabled: false
+        enabled: true
       embed_block:
         weight: -78
         enabled: false
@@ -77,17 +76,8 @@ settings:
       embed_webform:
         weight: -75
         enabled: false
-      extra_large_card:
-        weight: -74
-        enabled: false
       fifty_fifty:
         weight: -73
-        enabled: false
-      fifty_fifty_staggered:
-        weight: -72
-        enabled: false
-      image_carousel:
-        weight: -71
         enabled: false
       image_embed:
         weight: -70
@@ -103,12 +93,6 @@ settings:
         enabled: false
       media_grid:
         weight: -56
-        enabled: false
-      microsite_hero:
-        weight: -66
-        enabled: false
-      microsite_navigation_marker:
-        weight: -65
         enabled: false
       overlap_image:
         weight: -64
@@ -131,17 +115,11 @@ settings:
       small_card_with_image:
         weight: -58
         enabled: false
-      small_card_with_solid_background:
-        weight: -57
-        enabled: false
       tab_item:
         weight: -45
         enabled: false
       table:
         weight: -47
-        enabled: false
-      table_of_contents:
-        weight: -55
         enabled: false
       tabs:
         weight: -46
@@ -151,9 +129,6 @@ settings:
         enabled: false
       two_column_hero:
         weight: -53
-        enabled: false
-      video_hero:
-        weight: -52
         enabled: false
       video_lightbox:
         weight: -51
