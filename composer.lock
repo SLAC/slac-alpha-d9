@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5f06bb1ea1de9e3ee89123d3fc707ad",
+    "content-hash": "55ad8be49c8bf67cf8a42f1cac3812a4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2447,54 +2447,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/allowed_formats",
                 "issues": "https://www.drupal.org/project/issues/allowed_formats"
-            }
-        },
-        {
-            "name": "drupal/animated_gif",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/animated_gif.git",
-                "reference": "2.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/animated_gif-2.0.2.zip",
-                "reference": "2.0.2",
-                "shasum": "0681db53ca550072ba9cd3adc8a340e6b2f608e7"
-            },
-            "require": {
-                "drupal/core": "^9.3 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.2",
-                    "datestamp": "1660560314",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Grimreaper",
-                    "homepage": "https://www.drupal.org/user/2388214"
-                },
-                {
-                    "name": "StijnStroobants",
-                    "homepage": "https://www.drupal.org/user/1787140"
-                }
-            ],
-            "description": "Allows you to render animated GIFs without image style.",
-            "homepage": "https://www.drupal.org/project/animated_gif",
-            "support": {
-                "source": "https://git.drupalcode.org/project/animated_gif"
             }
         },
         {
@@ -5518,52 +5470,6 @@
                 "source": "http://cgit.drupalcode.org/libraries",
                 "issues": "http://drupal.org/project/issues/libraries",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/lottiefiles_field",
-            "version": "1.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/lottiefiles_field.git",
-                "reference": "1.1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/lottiefiles_field-1.1.4.zip",
-                "reference": "1.1.4",
-                "shasum": "974e937feb7e015a3b2cfa1cd30f76d139a9fdbd"
-            },
-            "require": {
-                "drupal/core": "^8.8.0 || ^9.0  || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.1.4",
-                    "datestamp": "1671198090",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Hari Venu",
-                    "homepage": "https://www.drupal.org/u/harivenuv",
-                    "email": "harivenu.v1992@gmail.com",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Drupal field for lottie animation.",
-            "homepage": "http://drupal.org/project/lottiefiles_field",
-            "support": {
-                "source": "https://git.drupalcode.org/project/lottiefiles_field"
             }
         },
         {
