@@ -25,7 +25,7 @@ default:
       value: true
   path:
     -
-      alias: /media/drupal9-template-card-square.jpg
+      alias: /media/drupal9-template-card-squarejpg
       langcode: en
       pathauto: 1
   rh_action:
