@@ -100,7 +100,7 @@ $conf['environment_indicator_overwritten_fixed'] = FALSE;
 // Set local config split to be active on local environments.
 $config['config_split.config_split.local']['status'] = TRUE;
 $config['config_split.config_split.prod']['status'] = FALSE;
-$config['config_split.config_split.dev']['status'] = FALSE;
+$config['config_split.config_split.dev_test']['status'] = FALSE;
 
 // Pantheon Env Specific Config
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
@@ -111,7 +111,7 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
       $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
       $config['config_split.config_split.local']['status'] = FALSE;
       $config['config_split.config_split.prod']['status'] = FALSE;
-      $config['config_split.config_split.dev']['status'] = TRUE;
+      $config['config_split.config_split.dev_test']['status'] = TRUE;
       break;
     case 'test':
       $config['environment_indicator.indicator']['name'] = 'Test';
@@ -119,7 +119,7 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
       $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
       $config['config_split.config_split.local']['status'] = FALSE;
       $config['config_split.config_split.prod']['status'] = FALSE;
-      $config['config_split.config_split.dev']['status'] = TRUE;
+      $config['config_split.config_split.dev_test']['status'] = TRUE;
       break;
     case 'live':
       $config['environment_indicator.indicator']['name'] = 'Live!';
@@ -127,7 +127,7 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
       $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
       $config['config_split.config_split.local']['status'] = FALSE;
       $config['config_split.config_split.prod']['status'] = TRUE;
-      $config['config_split.config_split.dev']['status'] = FALSE;
+      $config['config_split.config_split.dev_test']['status'] = FALSE;
       break;
     default:
       //Multidev catchall
@@ -136,7 +136,7 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
       $config['environment_indicator.indicator']['fg_color'] = '#ffffff';
       $config['config_split.config_split.local']['status'] = TRUE;
       $config['config_split.config_split.prod']['status'] = FALSE;
-      $config['config_split.config_split.dev']['status'] = FALSE;
+      $config['config_split.config_split.dev_test']['status'] = FALSE;
       break;
   }
 }

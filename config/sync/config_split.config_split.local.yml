@@ -10,7 +10,7 @@ folder: ../config/splits/local
 module:
   webform_examples: 0
 theme: {  }
-blacklist:
+blacklist: null
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true
