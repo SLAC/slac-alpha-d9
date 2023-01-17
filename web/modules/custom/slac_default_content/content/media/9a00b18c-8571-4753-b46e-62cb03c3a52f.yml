@@ -25,7 +25,7 @@ default:
       value: true
   path:
     -
-      alias: /media/drupal9-template-card-smallerjpg
+      alias: /media/drupal9-template-card-smaller.jpg
       langcode: en
       pathauto: 1
   field_boolean:
