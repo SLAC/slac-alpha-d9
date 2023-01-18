@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 413081d8-0e6c-425f-86fc-64791fb88fd5
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+default:
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  filename:
+    -
+      value: Drupal9-template-card.jpg
+  uri:
+    -
+      value: 'public://2023-01/Drupal9-template-card.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 91696
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1672955438

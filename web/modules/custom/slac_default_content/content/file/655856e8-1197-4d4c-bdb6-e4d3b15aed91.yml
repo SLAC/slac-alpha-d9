@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 655856e8-1197-4d4c-bdb6-e4d3b15aed91
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+default:
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  filename:
+    -
+      value: lJua1CBiZsQohGC-iWJ250wPLiQyttMzA9WWA7YFNwQ.jpg
+  uri:
+    -
+      value: 'public://oembed_thumbnails/2023-01/lJua1CBiZsQohGC-iWJ250wPLiQyttMzA9WWA7YFNwQ.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 182059
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1672968198
