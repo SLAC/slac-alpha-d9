@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: bbf2b6e8-10dc-4b62-8cc3-46e4b47173bb
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+default:
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  filename:
+    -
+      value: Drupal9-template-card-square.jpg
+  uri:
+    -
+      value: 'public://2023-01/Drupal9-template-card-square.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 44113
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1673047991
