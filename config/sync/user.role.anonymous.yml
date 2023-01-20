@@ -2,12 +2,8 @@ uuid: d015d00e-e1fb-49cb-967b-ee22991e4f9e
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.restricted_html
   module:
     - aggregator
-    - comment
-    - filter
     - media
     - search
     - site_settings
@@ -20,11 +16,9 @@ label: 'Anonymous user'
 weight: -10
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
   - 'access news feeds'
   - 'search content'
-  - 'use text format restricted_html'
   - 'view media'
   - 'view published site setting entities'
   - 'view published sitewide alert entities'
