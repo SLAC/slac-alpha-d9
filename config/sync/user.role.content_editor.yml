@@ -3,6 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.basic_html
+    - filter.format.restricted_html
+    - filter.format.source
+    - filter.format.table
     - media.type.document
     - media.type.image
     - media.type.remote_audio
@@ -16,55 +20,59 @@ dependencies:
     - node.type.page
     - node.type.person
     - node.type.publication
+    - taxonomy.vocabulary.audience
+    - taxonomy.vocabulary.category
     - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.experience
+    - taxonomy.vocabulary.faq_category
+    - taxonomy.vocabulary.news_type
+    - taxonomy.vocabulary.position
+    - taxonomy.vocabulary.series
     - taxonomy.vocabulary.tags
     - workflows.workflow.content
   module:
-    - comment
     - content_moderation
     - contextual
-    - file
+    - filter
+    - fontawesome
     - media
     - moderated_content_bulk_publish
     - node
     - paragraphs
     - path
     - rabbit_hole
-    - site_settings
+    - redirect
     - sitewide_alert
     - system
     - taxonomy
     - toolbar
     - tour
     - vapn
-    - webform
     - workbench_access
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
 label: 'Content editor'
-weight: -8
+weight: -7
 is_admin: false
 permissions:
   - 'access administration pages'
-  - 'access any webform configuration'
   - 'access content overview'
   - 'access contextual links'
-  - 'access files overview'
+  - 'access fontawesome additional settings'
   - 'access media overview'
-  - 'access own webform configuration'
-  - 'access site settings overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'access tour'
-  - 'access webform help'
-  - 'access webform overview'
-  - 'access webform submission user'
-  - 'administer webform element access'
+  - 'add sitewide alert entities'
+  - 'administer menu'
+  - 'administer redirects'
   - 'bypass vapn'
   - 'create blog content'
   - 'create document media'
   - 'create event content'
   - 'create faq content'
+  - 'create homepage content'
   - 'create image media'
   - 'create landing_page content'
   - 'create media'
@@ -74,18 +82,30 @@ permissions:
   - 'create publication content'
   - 'create remote_audio media'
   - 'create remote_video media'
+  - 'create terms in audience'
+  - 'create terms in category'
+  - 'create terms in event_type'
+  - 'create terms in experience'
+  - 'create terms in faq_category'
+  - 'create terms in news_type'
+  - 'create terms in position'
+  - 'create terms in series'
   - 'create terms in tags'
   - 'create url aliases'
-  - 'create webform'
+  - 'delete all sitewide alert revisions'
   - 'delete any blog content'
+  - 'delete any document media'
   - 'delete any event content'
   - 'delete any faq content'
+  - 'delete any image media'
   - 'delete any landing_page content'
   - 'delete any media'
   - 'delete any news_article content'
   - 'delete any page content'
   - 'delete any person content'
   - 'delete any publication content'
+  - 'delete any remote_audio media'
+  - 'delete any remote_video media'
   - 'delete blog revisions'
   - 'delete event revisions'
   - 'delete faq revisions'
@@ -94,20 +114,33 @@ permissions:
   - 'delete media'
   - 'delete news_article revisions'
   - 'delete own blog content'
+  - 'delete own document media'
   - 'delete own event content'
   - 'delete own faq content'
   - 'delete own homepage content'
+  - 'delete own image media'
   - 'delete own landing_page content'
   - 'delete own news_article content'
   - 'delete own page content'
   - 'delete own person content'
   - 'delete own publication content'
-  - 'delete own webform'
-  - 'delete own webform submission'
+  - 'delete own remote_audio media'
+  - 'delete own remote_video media'
   - 'delete page revisions'
   - 'delete person revisions'
   - 'delete publication revisions'
+  - 'delete sitewide alert entities'
+  - 'delete terms in audience'
+  - 'delete terms in category'
+  - 'delete terms in event_type'
+  - 'delete terms in experience'
+  - 'delete terms in faq_category'
+  - 'delete terms in news_type'
+  - 'delete terms in position'
+  - 'delete terms in series'
+  - 'delete terms in tags'
   - 'edit any blog content'
+  - 'edit any document media'
   - 'edit any event content'
   - 'edit any faq content'
   - 'edit any homepage content'
@@ -117,23 +150,37 @@ permissions:
   - 'edit any page content'
   - 'edit any person content'
   - 'edit any publication content'
+  - 'edit any remote_audio media'
   - 'edit any remote_video media'
-  - 'edit any webform'
   - 'edit behavior plugin settings'
-  - 'edit own comments'
+  - 'edit own blog content'
+  - 'edit own document media'
+  - 'edit own event content'
+  - 'edit own faq content'
+  - 'edit own homepage content'
   - 'edit own image media'
+  - 'edit own landing_page content'
+  - 'edit own news_article content'
   - 'edit own page content'
+  - 'edit own person content'
+  - 'edit own publication content'
+  - 'edit own remote_audio media'
   - 'edit own remote_video media'
-  - 'edit own webform'
-  - 'edit own webform submission'
   - 'edit sitewide alert entities'
+  - 'edit terms in audience'
+  - 'edit terms in category'
   - 'edit terms in event_type'
+  - 'edit terms in experience'
+  - 'edit terms in faq_category'
+  - 'edit terms in news_type'
+  - 'edit terms in position'
+  - 'edit terms in series'
   - 'edit terms in tags'
-  - 'manage vapn settings'
+  - 'moderated content bulk archive'
   - 'moderated content bulk publish'
   - 'moderated content bulk unpublish'
   - 'rabbit hole bypass media'
-  - 'revert all revisions'
+  - 'revert all sitewide alert revisions'
   - 'revert blog revisions'
   - 'revert event revisions'
   - 'revert faq revisions'
@@ -147,13 +194,29 @@ permissions:
   - 'update media'
   - 'use content transition create_new_draft'
   - 'use content transition publish'
+  - 'use content transition unpublish'
+  - 'use text format basic_html'
+  - 'use text format restricted_html'
+  - 'use text format source'
+  - 'use text format table'
   - 'use vapn'
   - 'use workbench access'
+  - 'view all media revisions'
   - 'view all revisions'
+  - 'view all sitewide alert revisions'
   - 'view any unpublished content'
-  - 'view any webform submission'
   - 'view blog revisions'
+  - 'view event revisions'
+  - 'view faq revisions'
+  - 'view homepage revisions'
+  - 'view landing_page revisions'
   - 'view latest version'
+  - 'view news_article revisions'
   - 'view own unpublished content'
-  - 'view own webform submission'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view person revisions'
+  - 'view publication revisions'
   - 'view the administration theme'
+  - 'view unpublished paragraphs'
+  - 'view unpublished sitewide alert entities'
