@@ -94,6 +94,7 @@ dependencies:
     - update
     - vapn
     - views_ui
+    - vppr
     - webform
     - workflows
 id: developer
@@ -127,11 +128,14 @@ permissions:
   - 'administer aggregator_feed display'
   - 'administer aggregator_feed fields'
   - 'administer aggregator_feed form display'
+  - 'administer audience vocabulary terms'
   - 'administer block_content display'
   - 'administer block_content fields'
   - 'administer block_content form display'
   - 'administer block_content_type labels'
   - 'administer blocks'
+  - 'administer cap_org_codes vocabulary terms'
+  - 'administer category vocabulary terms'
   - 'administer comment display'
   - 'administer comment fields'
   - 'administer comment form display'
@@ -154,10 +158,14 @@ permissions:
   - 'administer display modes'
   - 'administer easy breadcrumb'
   - 'administer eca'
+  - 'administer editorial_section vocabulary terms'
   - 'administer encrypt'
   - 'administer entity clone'
   - 'administer environment indicator settings'
+  - 'administer event_type vocabulary terms'
+  - 'administer experience vocabulary terms'
   - 'administer facets'
+  - 'administer faq_category vocabulary terms'
   - 'administer feeds'
   - 'administer feeds_feed display'
   - 'administer feeds_feed fields'
@@ -186,6 +194,7 @@ permissions:
   - 'administer migrations'
   - 'administer modules'
   - 'administer news feeds'
+  - 'administer news_type vocabulary terms'
   - 'administer node display'
   - 'administer node fields'
   - 'administer node form display'
@@ -200,11 +209,13 @@ permissions:
   - 'administer paragraphs types'
   - 'administer paragraphs_type labels'
   - 'administer pathauto'
+  - 'administer position vocabulary terms'
   - 'administer redirect settings'
   - 'administer redirects'
   - 'administer responsive images'
   - 'administer search'
   - 'administer search_api'
+  - 'administer series vocabulary terms'
   - 'administer shortcut_set labels'
   - 'administer shortcuts'
   - 'administer single content sync'
@@ -223,6 +234,7 @@ permissions:
   - 'administer smart date formats'
   - 'administer social-links menu items'
   - 'administer software updates'
+  - 'administer tags vocabulary terms'
   - 'administer taxonomy'
   - 'administer taxonomy_term display'
   - 'administer taxonomy_term fields'

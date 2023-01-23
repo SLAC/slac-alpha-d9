@@ -51,6 +51,7 @@ dependencies:
     - toolbar
     - tour
     - vapn
+    - vppr
     - webform
     - workbench_access
 id: manager
@@ -75,13 +76,21 @@ permissions:
   - 'access webform submission user'
   - 'add site setting entities'
   - 'add sitewide alert entities'
+  - 'administer audience vocabulary terms'
+  - 'administer category vocabulary terms'
+  - 'administer event_type vocabulary terms'
+  - 'administer experience vocabulary terms'
+  - 'administer faq_category vocabulary terms'
   - 'administer main menu items'
   - 'administer menu'
+  - 'administer news_type vocabulary terms'
   - 'administer nodes'
+  - 'administer position vocabulary terms'
   - 'administer redirects'
+  - 'administer series vocabulary terms'
   - 'administer sitewide alert'
   - 'administer sitewide alert entities'
-  - 'administer taxonomy'
+  - 'administer tags vocabulary terms'
   - 'administer webform'
   - 'administer webform element access'
   - 'administer webform submission'

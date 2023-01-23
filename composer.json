@@ -114,6 +114,7 @@
     "drupal/views_rss": "^2.0@RC",
     "drupal/viewsreference": "^2.0@beta",
     "drupal/viewsreference_filter": "^1.0",
+    "drupal/vppr": "^1.2",
     "drupal/webform": "^6.1",
     "drupal/workbench_access": "^1.1",
     "drupal/yaml_content": "^1.0@alpha",
