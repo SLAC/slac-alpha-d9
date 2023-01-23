@@ -158,7 +158,6 @@ permissions:
   - 'administer display modes'
   - 'administer easy breadcrumb'
   - 'administer eca'
-  - 'administer editorial_section vocabulary terms'
   - 'administer encrypt'
   - 'administer entity clone'
   - 'administer environment indicator settings'
