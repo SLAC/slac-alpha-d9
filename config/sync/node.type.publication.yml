@@ -16,7 +16,7 @@ third_party_settings:
     when_to_delete: 1
 name: Publication
 type: publication
-description: 'Publications can list books, journal articles, news and magazine articles, and thesis dissertations using APA citation style. '
+description: 'Use Publications for books, journal articles, news and magazine articles, and thesis dissertations using APA citation style. '
 help: ''
 new_revision: true
 preview_mode: 1

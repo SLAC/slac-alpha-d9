@@ -16,7 +16,7 @@ third_party_settings:
     when_to_delete: 1
 name: Person
 type: person
-description: ''
+description: 'Person content can be automatically generated via the Stanford Person Importer (see your web admin for additional information).  Manually enter information in the additional fields to complete the Person''s profile.'
 help: ''
 new_revision: true
 preview_mode: 1

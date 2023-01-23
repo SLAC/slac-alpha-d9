@@ -36,6 +36,7 @@ dependencies:
     - filter
     - fontawesome
     - media
+    - menu_admin_per_menu
     - moderated_content_bulk_publish
     - node
     - paragraphs
@@ -74,6 +75,7 @@ permissions:
   - 'access webform submission user'
   - 'add site setting entities'
   - 'add sitewide alert entities'
+  - 'administer main menu items'
   - 'administer menu'
   - 'administer nodes'
   - 'administer redirects'
