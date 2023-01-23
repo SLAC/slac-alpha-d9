@@ -17,7 +17,7 @@ field_name: field_teaser
 entity_type: node
 bundle: blog
 label: Teaser
-description: 'Populate the teaser to display on a card or teaser view mode, and when the article is shared in social media. If no teaser is added, the Dek will be used.'
+description: 'Populate the teaser to display on a card or teaser view mode, and when the article is shared in social media. If no teaser is added, the Dek will be used.  Text entered here will be used in Google and Site Search indexes and results.  If left blank, search engines will attempt to use the trimmed value of full text fields instead.'
 required: false
 translatable: true
 default_value: {  }

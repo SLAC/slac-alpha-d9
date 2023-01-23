@@ -26,6 +26,7 @@ dependencies:
     - filter
     - fontawesome
     - media
+    - menu_admin_per_menu
     - node
     - paragraphs
     - path
@@ -47,6 +48,7 @@ permissions:
   - 'access media overview'
   - 'access toolbar'
   - 'access tour'
+  - 'administer main menu items'
   - 'administer menu'
   - 'bypass vapn'
   - 'create blog content'

@@ -16,7 +16,7 @@ third_party_settings:
     when_to_delete: 1
 name: 'Listing Page'
 type: landing_page
-description: ''
+description: 'Use Listing Pages to display automatically generated lists of other types of content such as FAQs, Events, People, and Publications.'
 help: ''
 new_revision: true
 preview_mode: 1

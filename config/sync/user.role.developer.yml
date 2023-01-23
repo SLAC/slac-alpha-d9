@@ -33,7 +33,6 @@ dependencies:
     - user.role.authenticated
     - user.role.author
     - user.role.content_editor
-    - user.role.developer
     - user.role.manager
     - user.role.reviewer
     - workflows.workflow.content
@@ -46,7 +45,6 @@ dependencies:
     - conditional_fields
     - config
     - config_pages
-    - config_split
     - contact
     - content_moderation
     - crop
@@ -67,6 +65,7 @@ dependencies:
     - mailsystem
     - masquerade
     - media
+    - menu_admin_per_menu
     - menu_link_content
     - metatag
     - migrate_tools
@@ -124,6 +123,7 @@ permissions:
   - 'access webform submission user'
   - 'add site setting entities'
   - 'add sitewide alert entities'
+  - 'administer admin menu items'
   - 'administer aggregator_feed display'
   - 'administer aggregator_feed fields'
   - 'administer aggregator_feed form display'
@@ -142,7 +142,6 @@ permissions:
   - 'administer config_pages fields'
   - 'administer config_pages form display'
   - 'administer config_pages_type labels'
-  - 'administer configuration split'
   - 'administer contact forms'
   - 'administer contact_form labels'
   - 'administer contact_message display'
@@ -165,9 +164,13 @@ permissions:
   - 'administer feeds_feed form display'
   - 'administer feeds_feed_type labels'
   - 'administer filters'
+  - 'administer footer menu items'
+  - 'administer footer-contact menu items'
+  - 'administer footer-utility menu items'
   - 'administer image styles'
   - 'administer key configuration overrides'
   - 'administer keys'
+  - 'administer main menu items'
   - 'administer media'
   - 'administer media display'
   - 'administer media fields'
@@ -218,6 +221,7 @@ permissions:
   - 'administer sitewide_alert fields'
   - 'administer sitewide_alert form display'
   - 'administer smart date formats'
+  - 'administer social-links menu items'
   - 'administer software updates'
   - 'administer taxonomy'
   - 'administer taxonomy_term display'
@@ -238,6 +242,9 @@ permissions:
   - administer_mailsystem
   - 'bypass node access'
   - 'bypass vapn'
+  - 'clone block_content entity'
+  - 'clone media entity'
+  - 'clone node entity'
   - 'create blog content'
   - 'create document media'
   - 'create event content'
@@ -391,7 +398,6 @@ permissions:
   - 'masquerade as authenticated'
   - 'masquerade as author'
   - 'masquerade as content_editor'
-  - 'masquerade as developer'
   - 'masquerade as manager'
   - 'masquerade as reviewer'
   - 'moderated content bulk archive'
@@ -415,6 +421,8 @@ permissions:
   - 'skip comment approval'
   - 'switch shortcut sets'
   - 'synchronize configuration'
+  - 'take_ownership_on_clone media entity'
+  - 'take_ownership_on_clone node entity'
   - 'update any media'
   - 'update media'
   - 'use content transition create_new_draft'

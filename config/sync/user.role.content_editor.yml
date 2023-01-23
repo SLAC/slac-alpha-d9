@@ -36,6 +36,7 @@ dependencies:
     - filter
     - fontawesome
     - media
+    - menu_admin_per_menu
     - moderated_content_bulk_publish
     - node
     - paragraphs
@@ -65,6 +66,7 @@ permissions:
   - 'access toolbar'
   - 'access tour'
   - 'add sitewide alert entities'
+  - 'administer main menu items'
   - 'administer menu'
   - 'administer redirects'
   - 'bypass vapn'
