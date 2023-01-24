@@ -5,4 +5,4 @@ dependencies: {  }
 name: Experience
 vid: experience
 description: 'Used in Events only'
-weight: -6
+weight: -5

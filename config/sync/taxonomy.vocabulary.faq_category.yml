@@ -5,4 +5,4 @@ dependencies: {  }
 name: 'FAQ Category'
 vid: faq_category
 description: 'Used in FAQS only'
-weight: -5
+weight: -4
