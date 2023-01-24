@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: tags_taxonomy_term_name_publications_list
-name: 'Tags » Taxonomy term » Name'
+name: Tags
 weight: 0
 min_count: 1
 missing: false
