@@ -122,7 +122,8 @@
     "rvtraveller/qs-composer-installer": "^1.2",
     "sainsburys/guzzle-oauth2-plugin": "^3.0",
     "simplesamlphp/simplesamlphp": " ^1.19",
-    "slac/slac": "^1.0@alpha"
+    "slac/slac": "^1.0@alpha",
+    "vlucas/phpdotenv": "^5.5"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
