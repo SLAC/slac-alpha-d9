@@ -1,4 +1,4 @@
-uuid: a4c97de8-0e68-4440-9006-0ddfc6de94f1
+uuid: 4a6cd9a8-b4a7-4ea7-9010-eb20e5ae441b
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.landing_page_filtered_content
   module:
     - search_api
-id: topics_taxonomy_term_name_publication_list
-name: Topics
+id: tags_taxonomy_term_name_publications_list
+name: 'Tags » Taxonomy term » Name'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: topics_taxonomy_term_name_publication_list
+url_alias: tags_taxonomy_term_name_publications_list
 facet_source_id: 'search_api:views_block__landing_page_filtered_content__block_publications_filtered_teaser_list'
-field_identifier: topics
+field_identifier: tags
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -30,7 +30,7 @@ widget:
   type: dropdown
   config:
     show_numbers: true
-    default_option_label: 'All Topics'
+    default_option_label: 'All Tags'
 empty_behavior:
   behavior: none
 only_visible_when_facet_source_is_visible: false

@@ -5,4 +5,4 @@ dependencies: {  }
 name: 'Event Type'
 vid: event_type
 description: 'Used in Events only'
-weight: -8
+weight: -6
