@@ -44,7 +44,6 @@
     "drupal/config_split": "^1.7",
     "drupal/core-composer-scaffold": "^9",
     "drupal/core-recommended": "^9",
-    "drupal/core-vendor-hardening": "^9",
     "drupal/default_content": "^2.0@alpha",
     "drupal/devel": "^4.1",
     "drupal/duration_field": "^2.0",
@@ -123,9 +122,7 @@
     "rvtraveller/qs-composer-installer": "^1.2",
     "sainsburys/guzzle-oauth2-plugin": "^3.0",
     "simplesamlphp/simplesamlphp": " ^1.19",
-    "slac/slac": "^1.0@alpha",
-    "vlucas/phpdotenv": "^4.0",
-    "webmozart/path-util": "^2.3"
+    "slac/slac": "^1.0@alpha"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
@@ -152,7 +149,6 @@
       "cweagans/composer-patches": true,
       "composer/installers": true,
       "drupal/core-composer-scaffold": true,
-      "drupal/core-vendor-hardening": true,
       "drupal/console-extend-plugin": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "rvtraveller/qs-composer-installer": true,
@@ -194,15 +190,15 @@
     ],
     "post-install-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../../files/private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config",
-      "rm -rf vendor/simplesamlphp/simplesamlphp/metadata && ln -sf ../../../../files/private/simplesamlphp/metadata vendor/simplesamlphp/simplesamlphp/metadata",
-      "rm -rf vendor/simplesamlphp/simplesamlphp/cert && ln -sf ../../../../files/private/simplesamlphp/cert vendor/simplesamlphp/simplesamlphp/cert"
+      "ln -sf ../../../../files/private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config",
+      "ln -sf ../../../../files/private/simplesamlphp/metadata vendor/simplesamlphp/simplesamlphp/metadata",
+      "ln -sf ../../../../files/private/simplesamlphp/cert vendor/simplesamlphp/simplesamlphp/cert"
     ],
     "post-update-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../../files/private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config",
-      "rm -rf vendor/simplesamlphp/simplesamlphp/metadata && ln -sf ../../../../files/private/simplesamlphp/metadata vendor/simplesamlphp/simplesamlphp/metadata",
-      "rm -rf vendor/simplesamlphp/simplesamlphp/cert && ln -sf ../../../../files/private/simplesamlphp/cert vendor/simplesamlphp/simplesamlphp/cert"
+      "ln -sf ../../../../files/private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config",
+      "ln -sf ../../../../files/private/simplesamlphp/metadata vendor/simplesamlphp/simplesamlphp/metadata",
+      "ln -sf ../../../../files/private/simplesamlphp/cert vendor/simplesamlphp/simplesamlphp/cert"
     ],
     "post-create-project-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
