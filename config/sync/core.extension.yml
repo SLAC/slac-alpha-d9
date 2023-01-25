@@ -17,23 +17,19 @@ module:
   block_content: 0
   block_field: 0
   breakpoint: 0
-  ckeditor: 0
   ckeditor5: 0
-  comment: 0
   components: 0
   conditional_fields: 0
   config: 0
   config_filter: 0
   config_ignore: 0
   config_pages: 0
-  contact: 0
   content_moderation: 0
   contextual: 0
   crop: 0
   date_augmenter: 0
   datetime: 0
   datetime_range: 0
-  dblog: 0
   duration_field: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
@@ -49,13 +45,11 @@ module:
   entity_clone: 0
   entity_reference_revisions: 0
   environment_indicator: 0
-  environment_indicator_ui: 0
   facets: 0
   feeds: 0
   field: 0
   field_encrypt: 0
   field_group: 0
-  field_ui: 0
   file: 0
   filter: 0
   focal_point: 0
@@ -101,7 +95,6 @@ module:
   path: 0
   path_alias: 0
   rabbit_hole: 0
-  rdf: 0
   readonly_field_widget: 0
   real_aes: 0
   redirect: 0
@@ -131,7 +124,6 @@ module:
   token: 0
   token_filter: 0
   toolbar: 0
-  tour: 0
   twig_field_value: 0
   twig_tweak: 0
   update: 0
@@ -146,12 +138,10 @@ module:
   views_rss_core: 0
   views_rss_dc: 0
   views_rss_format: 0
-  views_ui: 0
   viewsreference: 0
   viewsreference_filter: 0
   vppr: 0
   webform: 0
-  webform_examples: 0
   webform_ui: 0
   workbench_access: 0
   workflows: 0
