@@ -30,6 +30,7 @@ module:
   date_augmenter: 0
   datetime: 0
   datetime_range: 0
+  dblog: 0
   duration_field: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
@@ -50,6 +51,7 @@ module:
   field: 0
   field_encrypt: 0
   field_group: 0
+  field_ui: 0
   file: 0
   filter: 0
   focal_point: 0
@@ -138,6 +140,7 @@ module:
   views_rss_core: 0
   views_rss_dc: 0
   views_rss_format: 0
+  views_ui: 0
   viewsreference: 0
   viewsreference_filter: 0
   vppr: 0
