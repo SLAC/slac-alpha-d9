@@ -40,7 +40,6 @@ dependencies:
     - aggregator
     - auto_entitylabel
     - block
-    - comment
     - conditional_fields
     - config
     - content_moderation
@@ -97,7 +96,6 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access any webform configuration'
-  - 'access comments'
   - 'access content overview'
   - 'access feed overview'
   - 'access files overview'
@@ -120,9 +118,7 @@ permissions:
   - 'administer blocks'
   - 'administer cap_org_codes vocabulary terms'
   - 'administer category vocabulary terms'
-  - 'administer comment types'
   - 'administer comment_type labels'
-  - 'administer comments'
   - 'administer config_pages_type labels'
   - 'administer contact_form labels'
   - 'administer content types'
@@ -303,7 +299,6 @@ permissions:
   - 'edit behavior plugin settings'
   - 'edit conditional fields'
   - 'edit own blog content'
-  - 'edit own comments'
   - 'edit own document media'
   - 'edit own event content'
   - 'edit own faq content'
@@ -360,7 +355,6 @@ permissions:
   - 'moderated content bulk publish'
   - 'moderated content bulk unpublish'
   - 'notify of path changes'
-  - 'post comments'
   - 'rabbit hole administer media'
   - 'rabbit hole bypass media'
   - 'revert all revisions'
@@ -374,7 +368,6 @@ permissions:
   - 'revert page revisions'
   - 'revert person revisions'
   - 'revert publication revisions'
-  - 'skip comment approval'
   - 'switch shortcut sets'
   - 'synchronize configuration'
   - 'take_ownership_on_clone media entity'
