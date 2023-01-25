@@ -45,7 +45,6 @@ dependencies:
     - conditional_fields
     - config
     - config_pages
-    - contact
     - content_moderation
     - crop
     - easy_breadcrumb
@@ -90,7 +89,6 @@ dependencies:
     - system
     - taxonomy
     - toolbar
-    - tour
     - update
     - vapn
     - views_ui
@@ -114,11 +112,8 @@ permissions:
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access site settings overview'
-  - 'access site-wide contact form'
   - 'access taxonomy overview'
   - 'access toolbar'
-  - 'access tour'
-  - 'access user contact forms'
   - 'access webform help'
   - 'access webform overview'
   - 'access webform submission user'
@@ -146,11 +141,7 @@ permissions:
   - 'administer config_pages fields'
   - 'administer config_pages form display'
   - 'administer config_pages_type labels'
-  - 'administer contact forms'
   - 'administer contact_form labels'
-  - 'administer contact_message display'
-  - 'administer contact_message fields'
-  - 'administer contact_message form display'
   - 'administer content types'
   - 'administer crop'
   - 'administer crop types'

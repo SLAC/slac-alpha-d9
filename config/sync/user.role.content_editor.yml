@@ -47,7 +47,6 @@ dependencies:
     - system
     - taxonomy
     - toolbar
-    - tour
     - vapn
     - workbench_access
 _core:
@@ -63,7 +62,6 @@ permissions:
   - 'access fontawesome additional settings'
   - 'access media overview'
   - 'access toolbar'
-  - 'access tour'
   - 'add sitewide alert entities'
   - 'administer main menu items'
   - 'administer redirects'
