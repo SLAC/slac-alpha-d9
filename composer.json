@@ -119,6 +119,7 @@
     "drupal/yaml_content": "^1.0@alpha",
     "drush/drush": "^10",
     "pantheon-systems/drupal-integrations": "^9",
+    "pantheon-systems/pantheon_domain_masking": "^2.0",
     "rvtraveller/qs-composer-installer": "^1.2",
     "sainsburys/guzzle-oauth2-plugin": "^3.0",
     "simplesamlphp/simplesamlphp": " ^1.19",

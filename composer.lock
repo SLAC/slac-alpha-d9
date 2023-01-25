@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbac6f2cec6491a7cb18936c5dd502ba",
+    "content-hash": "d81d70fb5e73f437de9cc087092a1c23",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -10359,6 +10359,40 @@
                 "source": "https://github.com/pantheon-systems/drupal-integrations/tree/9.0.4"
             },
             "time": "2022-11-30T23:22:43+00:00"
+        },
+        {
+            "name": "pantheon-systems/pantheon_domain_masking",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pantheon-systems/pantheon_domain_masking.git",
+                "reference": "e3e24d8740efbe5b3e2dee8ffb764c89dcf293ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pantheon-systems/pantheon_domain_masking/zipball/e3e24d8740efbe5b3e2dee8ffb764c89dcf293ae",
+                "reference": "e3e24d8740efbe5b3e2dee8ffb764c89dcf293ae",
+                "shasum": ""
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Domain masking middleware for Drupal 8",
+            "homepage": "https://www.drupal.org/project/pantheon_domain_masking",
+            "keywords": [
+                "drupal"
+            ],
+            "support": {
+                "issues": "https://www.drupal.org/project/issues/pantheon_domain_masking",
+                "source": "http://cgit.drupalcode.org/pantheon_domain_masking"
+            },
+            "time": "2022-11-21T15:40:03+00:00"
         },
         {
             "name": "paragonie/random_compat",
