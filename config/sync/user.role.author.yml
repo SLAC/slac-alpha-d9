@@ -34,7 +34,6 @@ dependencies:
     - sitewide_alert
     - system
     - toolbar
-    - tour
     - vapn
     - workbench_access
 id: author
@@ -47,7 +46,6 @@ permissions:
   - 'access fontawesome additional settings'
   - 'access media overview'
   - 'access toolbar'
-  - 'access tour'
   - 'administer main menu items'
   - 'bypass vapn'
   - 'create blog content'
