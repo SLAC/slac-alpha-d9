@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.event.field_email
     - field.field.node.event.field_experience
     - field.field.node.event.field_external_link
-    - field.field.node.event.field_featured
     - field.field.node.event.field_image
     - field.field.node.event.field_location
     - field.field.node.event.field_location_link
@@ -216,13 +215,6 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
-  field_featured:
-    type: boolean_checkbox
-    weight: 12
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_image:
     type: media_library_widget
