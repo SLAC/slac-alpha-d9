@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.event.field_email
     - field.field.node.event.field_experience
     - field.field.node.event.field_external_link
-    - field.field.node.event.field_featured
     - field.field.node.event.field_image
     - field.field.node.event.field_location
     - field.field.node.event.field_location_link
@@ -195,16 +194,6 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 15
-    region: content
-  field_featured:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 30
     region: content
   field_image:
     type: entity_reference_entity_view

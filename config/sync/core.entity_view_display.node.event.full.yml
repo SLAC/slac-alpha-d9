@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.event.field_email
     - field.field.node.event.field_experience
     - field.field.node.event.field_external_link
-    - field.field.node.event.field_featured
     - field.field.node.event.field_image
     - field.field.node.event.field_location
     - field.field.node.event.field_location_link
@@ -249,7 +248,5 @@ content:
 hidden:
   field_boolean: true
   field_experience: true
-  field_featured: true
   field_teaser: true
-  langcode: true
   search_api_excerpt: true
