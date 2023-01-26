@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: embed_block_content
+label: 'Embed Block Content'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  style_options:
+    enabled: true

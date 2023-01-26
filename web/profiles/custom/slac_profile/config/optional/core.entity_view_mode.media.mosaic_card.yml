@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.mosaic_card
+label: 'Mosaic Card'
+targetEntityType: media
+cache: true

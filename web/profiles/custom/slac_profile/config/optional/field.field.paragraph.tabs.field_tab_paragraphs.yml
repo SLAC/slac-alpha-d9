@@ -1,0 +1,138 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tab_paragraphs
+    - paragraphs.paragraphs_type.tab_item
+    - paragraphs.paragraphs_type.tabs
+  module:
+    - entity_reference_revisions
+id: paragraph.tabs.field_tab_paragraphs
+field_name: field_tab_paragraphs
+entity_type: paragraph
+bundle: tabs
+label: Items
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      tab_item: tab_item
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 38
+        enabled: false
+      accordion_item:
+        weight: 39
+        enabled: false
+      article_hero:
+        weight: 40
+        enabled: false
+      callout_box:
+        weight: 41
+        enabled: false
+      card:
+        weight: 42
+        enabled: false
+      cards_with_show_more:
+        weight: 43
+        enabled: false
+      content_card:
+        weight: 44
+        enabled: false
+      content_embed:
+        weight: 45
+        enabled: false
+      embed_block:
+        weight: 46
+        enabled: false
+      embed_full_html_:
+        weight: 47
+        enabled: false
+      embed_view:
+        weight: 48
+        enabled: false
+      embed_webform:
+        weight: 49
+        enabled: false
+      extra_large_card:
+        weight: 50
+        enabled: false
+      fifty_fifty:
+        weight: 51
+        enabled: false
+      fifty_fifty_staggered:
+        weight: 52
+        enabled: false
+      image_carousel:
+        weight: 53
+        enabled: false
+      image_embed:
+        weight: 54
+        enabled: false
+      image_hero:
+        weight: 55
+        enabled: false
+      media_card:
+        weight: 56
+        enabled: false
+      microsite_hero:
+        weight: 57
+        enabled: false
+      microsite_navigation_marker:
+        weight: 58
+        enabled: false
+      overlap_image:
+        weight: 59
+        enabled: false
+      promo_box:
+        weight: 60
+        enabled: false
+      quote:
+        weight: 61
+        enabled: false
+      section:
+        weight: 62
+        enabled: false
+      small_card_with_icon:
+        weight: 63
+        enabled: false
+      small_card_with_image:
+        weight: 64
+        enabled: false
+      small_card_with_solid_background:
+        weight: 65
+        enabled: false
+      tab_item:
+        weight: 68
+        enabled: true
+      table_of_contents:
+        weight: 66
+        enabled: false
+      tabs:
+        weight: 67
+        enabled: false
+      tout:
+        weight: 69
+        enabled: false
+      two_column_hero:
+        weight: 70
+        enabled: false
+      video_hero:
+        weight: 71
+        enabled: false
+      video_lightbox:
+        weight: 72
+        enabled: false
+      wide_card:
+        weight: 73
+        enabled: false
+      wysiwyg:
+        weight: 74
+        enabled: false
+field_type: entity_reference_revisions

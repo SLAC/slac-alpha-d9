@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Editorial Section'
+vid: editorial_section
+description: 'Sections or groups that have restricted editorial permissions via Workbench Access.'
+weight: -7

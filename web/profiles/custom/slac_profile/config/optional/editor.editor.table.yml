@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.table
+  module:
+    - ckeditor5
+format: table
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - insertTable
+  plugins: {  }
+image_upload: {  }

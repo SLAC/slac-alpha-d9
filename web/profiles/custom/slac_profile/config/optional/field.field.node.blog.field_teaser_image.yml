@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_image
+    - media.type.image
+    - node.type.blog
+id: node.blog.field_teaser_image
+field_name: field_teaser_image
+entity_type: node
+bundle: blog
+label: 'Teaser Image'
+description: 'Populate the teaser image to display on a card or teaser view mode, and when the article is shared in social media. If no teaser image is added, the default image set in Site Settings will be used.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

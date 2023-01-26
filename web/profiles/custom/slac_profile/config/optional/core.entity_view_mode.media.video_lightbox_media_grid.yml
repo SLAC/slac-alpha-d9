@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.video_lightbox_media_grid
+label: 'Video Lightbox (Media Grid)'
+targetEntityType: media
+cache: true

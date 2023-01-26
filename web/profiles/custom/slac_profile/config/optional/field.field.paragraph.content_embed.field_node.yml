@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_node
+    - node.type.event
+    - node.type.landing_page
+    - node.type.news_article
+    - node.type.page
+    - node.type.person
+    - paragraphs.paragraphs_type.content_embed
+id: paragraph.content_embed.field_node
+field_name: field_node
+entity_type: paragraph
+bundle: content_embed
+label: 'Node Reference'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+      event: event
+      landing_page: landing_page
+      news_article: news_article
+      person: person
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: event
+field_type: entity_reference

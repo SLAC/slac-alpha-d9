@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: large
+label: 'Large (600×600)'
+effects:
+  b08b6108-368d-49e4-877c-65c481ba0e97:
+    uuid: b08b6108-368d-49e4-877c-65c481ba0e97
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 600
+      crop_type: focal_point

@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.remote_audio.field_boolean
+    - field.field.media.remote_audio.field_caption
+    - field.field.media.remote_audio.field_long_text
+    - field.field.media.remote_audio.field_media_oembed_art19
+    - field.field.media.remote_audio.field_tags
+    - field.field.media.remote_audio.field_transcript
+    - media.type.remote_audio
+id: media.remote_audio.media_library
+targetEntityType: media
+bundle: remote_audio
+mode: media_library
+content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_boolean: true
+  field_caption: true
+  field_long_text: true
+  field_media_oembed_art19: true
+  field_tags: true
+  field_transcript: true
+  path: true
+  status: true
+  uid: true

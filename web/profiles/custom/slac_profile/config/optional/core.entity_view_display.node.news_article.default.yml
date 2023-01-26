@@ -1,0 +1,207 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news_article.field_date
+    - field.field.node.news_article.field_dek
+    - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_link
+    - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_source_link
+    - field.field.node.news_article.field_source_name
+    - field.field.node.news_article.field_tags
+    - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
+    - field.field.node.news_article.field_text
+    - field.field.node.news_article.field_type
+    - node.type.news_article
+  module:
+    - datetime
+    - entity_reference_revisions
+    - field_group
+    - link
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_page_content:
+      children:
+        - group_main_content
+        - group_metadata
+      label: 'Page Content'
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_metadata:
+      children:
+        - field_teaser
+        - field_source_link
+        - field_source_name
+        - field_type
+        - field_tags
+      label: Metadata
+      parent_name: group_page_content
+      region: content
+      weight: 2
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+    group_main_content:
+      children:
+        - field_hero_paragraph
+        - field_link
+        - field_text
+        - field_paragraphs
+      label: 'Main Content'
+      parent_name: group_page_content
+      region: content
+      weight: 1
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+id: node.news_article.default
+targetEntityType: node
+bundle: news_article
+mode: default
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_dek:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_hero_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_paragraphs_1:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_source_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_source_name:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_teaser:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

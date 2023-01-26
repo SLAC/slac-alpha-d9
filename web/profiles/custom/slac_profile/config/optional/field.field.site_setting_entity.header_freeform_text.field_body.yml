@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.header_freeform_text
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+      - full_html
+id: site_setting_entity.header_freeform_text.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: header_freeform_text
+label: WYSIWYG
+description: 'Content added to this setting will be displayed in the upper-right area of the header, above the menu.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.embed_block_content.field_block_content
+    - paragraphs.paragraphs_type.embed_block_content
+  module:
+    - block_field
+id: paragraph.embed_block_content.default
+targetEntityType: paragraph
+bundle: embed_block_content
+mode: default
+content:
+  field_block_content:
+    type: block_field_default
+    weight: 0
+    region: content
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

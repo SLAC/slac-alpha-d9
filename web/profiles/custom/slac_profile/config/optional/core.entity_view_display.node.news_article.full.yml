@@ -1,0 +1,116 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.news_article.field_date
+    - field.field.node.news_article.field_dek
+    - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_link
+    - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_source_link
+    - field.field.node.news_article.field_source_name
+    - field.field.node.news_article.field_tags
+    - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
+    - field.field.node.news_article.field_text
+    - field.field.node.news_article.field_type
+    - node.type.news_article
+  module:
+    - datetime
+    - entity_reference_revisions
+    - link
+    - slac_helper
+    - text
+    - user
+id: node.news_article.full
+targetEntityType: node
+bundle: news_article
+mode: full
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_dek:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_hero_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_tags:
+    type: slac_tag
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_source_link: true
+  field_source_name: true
+  field_teaser: true
+  field_teaser_image: true
+  search_api_excerpt: true

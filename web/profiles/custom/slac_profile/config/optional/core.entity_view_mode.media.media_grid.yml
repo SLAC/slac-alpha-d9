@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.media_grid
+label: 'Media Grid'
+targetEntityType: media
+cache: true

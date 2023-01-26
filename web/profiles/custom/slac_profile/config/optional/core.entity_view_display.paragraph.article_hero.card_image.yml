@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.card_image
+    - field.field.paragraph.article_hero.field_body
+    - field.field.paragraph.article_hero.field_image
+    - paragraphs.paragraphs_type.article_hero
+id: paragraph.article_hero.card_image
+targetEntityType: paragraph
+bundle: article_hero
+mode: card_image
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_body: true
+  search_api_excerpt: true

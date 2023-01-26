@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - sitewide_alert
+    - text
+id: sitewide_alert.field_alert_message
+field_name: field_alert_message
+entity_type: sitewide_alert
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

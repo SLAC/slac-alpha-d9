@@ -1,0 +1,4 @@
+show_on_admin: 0
+alert_styles: "emergency|Emergency\r\nannouncement|Announcement\r\ninformation|Information\r\nsuccess|Success\r\nwarning|Warning"
+refresh_interval: 15
+automatic_refresh: 0

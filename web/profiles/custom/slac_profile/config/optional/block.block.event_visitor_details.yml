@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+  theme:
+    - slac
+id: event_visitor_details
+theme: slac
+region: disabled
+weight: -4
+provider: null
+plugin: single_rendered_site_settings_block
+settings:
+  id: single_rendered_site_settings_block
+  label: 'Event Visitor Details'
+  label_display: '0'
+  provider: site_settings
+  setting: event_visitor_details
+visibility: {  }

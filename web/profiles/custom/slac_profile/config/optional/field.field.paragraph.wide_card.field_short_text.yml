@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_short_text
+    - paragraphs.paragraphs_type.wide_card
+id: paragraph.wide_card.field_short_text
+field_name: field_short_text
+entity_type: paragraph
+bundle: wide_card
+label: Title
+description: 'If there are links added to the Description field, the Link field should not be used.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,98 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor5
+format: basic_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - style
+      - bold
+      - italic
+      - strikethrough
+      - subscript
+      - superscript
+      - link
+      - bulletedList
+      - numberedList
+      - blockQuote
+      - horizontalLine
+      - '|'
+      - undo
+      - redo
+      - removeFormat
+      - '|'
+      - drupalMedia
+      - '|'
+      - sourceEditing
+      - '-'
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Large Text'
+          element: '<p class="c-lede">'
+        -
+          label: 'Small Text'
+          element: '<p class="c-small-paragraph">'
+        -
+          label: Kicker
+          element: '<p class="c-kicker">'
+        -
+          label: 'Big CTA Link'
+          element: '<a class="c-cta-link">'
+        -
+          label: 'Primary Button'
+          element: '<a class="c-button c-button--chevron">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="c-button c-button--secondary c-button--chevron">'
+        -
+          label: 'Outline Button'
+          element: '<a class="c-button c-button--outline c-button--chevron">'
+        -
+          label: 'Outline Secondary Button'
+          element: '<a class="c-button c-button--outline-secondary c-button--chevron">'
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<span>'
+        - '<a hreflang>'
+        - '<blockquote cite>'
+        - '<ul type>'
+        - '<ol type>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<img src alt height width data-entity-type data-entity-uuid data-align data-caption>'
+        - '<div class name id>'
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    media_media:
+      allow_view_mode_override: false
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

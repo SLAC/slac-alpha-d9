@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.sitewide_alert.field_alert_message
+  module:
+    - allowed_formats
+    - sitewide_alert
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: sitewide_alert.sitewide_alert.field_alert_message
+field_name: field_alert_message
+entity_type: sitewide_alert
+bundle: sitewide_alert
+label: 'Alert Message'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

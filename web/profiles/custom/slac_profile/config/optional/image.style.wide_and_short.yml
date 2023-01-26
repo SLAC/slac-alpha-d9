@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide_and_short
+label: 'Wide and Short (800x200)'
+effects:
+  49295f28-6fd8-427e-9452-176373afe24e:
+    uuid: 49295f28-6fd8-427e-9452-176373afe24e
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 200
+      crop_type: focal_point

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: two_column_hero
+label: 'Two Column Hero'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 43a2eade-449b-408b-ac5f-fb199aaf09fd
+  bundle: social-links
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Youtube
+  menu_name:
+    -
+      value: social-links
+  link:
+    -
+      uri: 'http://www.youtube.com/slac'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: -46
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  view_mode:
+    -
+      value: default
+  field_icon:
+    -
+      value: youtube

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: footer-utility
+label: 'Footer utility'
+description: 'Commonly used resource and regulatory links'
+locked: false

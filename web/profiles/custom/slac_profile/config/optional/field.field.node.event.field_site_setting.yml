@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_setting
+    - node.type.event
+    - site_settings.site_setting_entity_type.event_maps
+id: node.event.field_site_setting
+field_name: field_site_setting
+entity_type: node
+bundle: event
+label: Map
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:site_setting_entity'
+  handler_settings:
+    target_bundles:
+      event_maps: event_maps
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

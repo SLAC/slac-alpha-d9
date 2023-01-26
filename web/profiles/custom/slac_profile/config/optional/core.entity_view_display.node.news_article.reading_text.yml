@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.reading_text
+    - field.field.node.news_article.field_date
+    - field.field.node.news_article.field_dek
+    - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_link
+    - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_source_link
+    - field.field.node.news_article.field_source_name
+    - field.field.node.news_article.field_tags
+    - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
+    - field.field.node.news_article.field_text
+    - field.field.node.news_article.field_type
+    - node.type.news_article
+  module:
+    - entity_reference_revisions
+    - link
+    - user
+id: node.news_article.reading_text
+targetEntityType: node
+bundle: news_article
+mode: reading_text
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_date: true
+  field_dek: true
+  field_hero_paragraph: true
+  field_source_link: true
+  field_source_name: true
+  field_tags: true
+  field_teaser: true
+  field_teaser_image: true
+  field_type: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Position
+vid: position
+description: 'Used in Person only. Types: Staff, Faculty, Post Grad, Researcher, Professor, Professor Emeritus'
+weight: -2

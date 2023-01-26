@@ -1,0 +1,7 @@
+enable_dialog_node_edit_form: true
+enable_dialog_admin_content: true
+current_translation_only: 0
+workflow: editorial
+workflow_state_draft: draft
+workflow_state_unpublished: archived
+workflow_state_published: published

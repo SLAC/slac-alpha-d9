@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.centered
+    - core.entity_view_mode.paragraph.centered_wide
+    - field.storage.paragraph.field_view_mode
+    - paragraphs.paragraphs_type.image_embed
+  module:
+    - view_mode_switch
+id: paragraph.image_embed.field_view_mode
+field_name: field_view_mode
+entity_type: paragraph
+bundle: image_embed
+label: 'Component style'
+description: 'Select the component display style.'
+required: false
+translatable: false
+default_value:
+  -
+    value: centered
+default_value_callback: ''
+settings:
+  allowed_view_modes:
+    centered: centered
+    centered_wide: centered_wide
+field_type: view_mode_switch

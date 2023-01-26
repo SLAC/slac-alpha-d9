@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content
+  module:
+    - eca_base
+    - eca_user
+    - eca_views
+id: stale_content_notice
+modeller: core
+label: 'Stale Content Notice'
+version: 1.0.0
+weight: null
+events:
+  eca_base_eca_cron:
+    plugin: 'eca_base:eca_cron'
+    label: 'ECA cron event'
+    configuration:
+      frequency: '0 0 * * SUN'
+    successors:
+      -
+        id: eca_switch_account
+        condition: null
+conditions:
+  eca_count:
+    plugin: eca_count
+    configuration:
+      left: stalecontent
+      right: '0'
+      operator: greaterthan
+      type: numeric
+      case: false
+      negate: false
+gateways: {  }
+actions:
+  action_send_email_action:
+    plugin: action_send_email_action
+    label: 'Send stale content notification email'
+    configuration:
+      recipient: '[site:mail]'
+      subject: '[site:name] - Stale content notice'
+      message: "Please review your stale content at: [site:url]admin/content/stale\r\n"
+      replace_tokens: false
+    successors: {  }
+  eca_views_query:
+    plugin: eca_views_query
+    label: 'Views: Execute query'
+    configuration:
+      token_name: stalecontent
+      view_id: content
+      display_id: page_stale_content
+      arguments: ''
+    successors:
+      -
+        id: action_send_email_action
+        condition: eca_count
+  eca_switch_account:
+    plugin: eca_switch_account
+    label: 'User: switch current account'
+    configuration:
+      user_id: '1'
+    successors:
+      -
+        id: eca_views_query
+        condition: null

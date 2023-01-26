@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_organization_name
+    - site_settings.site_setting_entity_type.organization_details
+id: site_setting_entity.organization_details.field_organization_name
+field_name: field_organization_name
+entity_type: site_setting_entity
+bundle: organization_details
+label: 'Organization Name'
+description: 'The full name of the organization to be used in the header and footer.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

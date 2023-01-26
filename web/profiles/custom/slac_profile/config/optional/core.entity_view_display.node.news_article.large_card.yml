@@ -1,0 +1,127 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.large_card
+    - field.field.node.news_article.field_date
+    - field.field.node.news_article.field_dek
+    - field.field.node.news_article.field_hero_paragraph
+    - field.field.node.news_article.field_link
+    - field.field.node.news_article.field_paragraphs
+    - field.field.node.news_article.field_source_link
+    - field.field.node.news_article.field_source_name
+    - field.field.node.news_article.field_tags
+    - field.field.node.news_article.field_teaser
+    - field.field.node.news_article.field_teaser_image
+    - field.field.node.news_article.field_text
+    - field.field.node.news_article.field_type
+    - node.type.news_article
+  module:
+    - datetime
+    - link
+    - slac_core
+    - text
+    - user
+id: node.news_article.large_card
+targetEntityType: node
+bundle: news_article
+mode: large_card
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_paragraphs:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      more_aria_label: 'Read more about [node:title]'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_source_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_source_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_teaser:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      more_aria_label: 'Read more about [node:title]'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_dek: true
+  field_hero_paragraph: true
+  field_link: true
+  field_tags: true
+  field_text: true
+  links: true
+  search_api_excerpt: true

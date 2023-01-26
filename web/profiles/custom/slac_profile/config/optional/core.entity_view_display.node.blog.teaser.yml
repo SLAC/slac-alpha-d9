@@ -1,0 +1,114 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.blog.field_category
+    - field.field.node.blog.field_date
+    - field.field.node.blog.field_dek
+    - field.field.node.blog.field_editorial_group
+    - field.field.node.blog.field_hero_paragraph
+    - field.field.node.blog.field_link
+    - field.field.node.blog.field_paragraphs
+    - field.field.node.blog.field_review_date
+    - field.field.node.blog.field_series
+    - field.field.node.blog.field_tags
+    - field.field.node.blog.field_teaser
+    - field.field.node.blog.field_teaser_image
+    - field.field.node.blog.field_text
+    - node.type.blog
+  module:
+    - datetime
+    - slac_core
+    - user
+id: node.blog.teaser
+targetEntityType: node
+bundle: blog
+mode: teaser
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_date:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'F j, Y'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_paragraphs:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      more_aria_label: 'Read more about [node:title]'
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_series:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_teaser:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      more_aria_label: 'Read more about [node:title]'
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_teaser_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_category: true
+  field_dek: true
+  field_editorial_group: true
+  field_hero_paragraph: true
+  field_link: true
+  field_review_date: true
+  field_tags: true
+  field_text: true
+  search_api_excerpt: true

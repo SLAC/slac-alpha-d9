@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.event_maps
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - source
+id: site_setting_entity.event_maps.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: event_maps
+label: 'Map IFrame '
+description: 'Enter the HTML iframe code for the map.  For optimal map display, consider changing default iframe settings to <strong>width="100%" height="600"</strong>. To ensure map is accessible to screen readers, include a <em>title attribute with the name and/or a brief description of the map</em>, such as title="Name of the Map".'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
