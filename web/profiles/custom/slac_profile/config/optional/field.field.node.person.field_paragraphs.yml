@@ -1,0 +1,147 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.person
+    - paragraphs.paragraphs_type.accordion_item
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.card_with_icon
+    - paragraphs.paragraphs_type.cards_with_show_more
+    - paragraphs.paragraphs_type.content_embed
+    - paragraphs.paragraphs_type.embed_block_content
+    - paragraphs.paragraphs_type.embed_view
+    - paragraphs.paragraphs_type.embed_webform
+    - paragraphs.paragraphs_type.image_hero
+    - paragraphs.paragraphs_type.table
+  module:
+    - entity_reference_revisions
+id: node.person.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: person
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion_item: accordion_item
+      card_with_icon: card_with_icon
+      card: card
+      cards_with_show_more: cards_with_show_more
+      content_embed: content_embed
+      embed_block_content: embed_block_content
+      embed_view: embed_view
+      embed_webform: embed_webform
+      image_hero: image_hero
+      table: table
+    negate: 1
+    target_bundles_drag_drop:
+      accordion:
+        weight: -87
+        enabled: false
+      accordion_item:
+        weight: -86
+        enabled: true
+      article_hero:
+        weight: -70
+        enabled: false
+      callout_box:
+        weight: -85
+        enabled: false
+      card:
+        weight: -83
+        enabled: true
+      card_with_icon:
+        weight: -84
+        enabled: true
+      cards_with_show_more:
+        weight: -82
+        enabled: true
+      content_embed:
+        weight: -80
+        enabled: true
+      embed_block:
+        weight: -77
+        enabled: false
+      embed_block_content:
+        weight: -79
+        enabled: true
+      embed_full_html_:
+        weight: -78
+        enabled: false
+      embed_view:
+        weight: -76
+        enabled: true
+      embed_webform:
+        weight: -75
+        enabled: true
+      fifty_fifty:
+        weight: -73
+        enabled: false
+      image_embed:
+        weight: -68
+        enabled: false
+      image_hero:
+        weight: -71
+        enabled: true
+      image_lightbox:
+        weight: -67
+        enabled: false
+      media_card:
+        weight: -66
+        enabled: false
+      media_grid:
+        weight: -65
+        enabled: false
+      overlap_image:
+        weight: -62
+        enabled: false
+      promo_box:
+        weight: -61
+        enabled: false
+      quote:
+        weight: -60
+        enabled: false
+      section:
+        weight: -59
+        enabled: false
+      section_fixed:
+        weight: -55
+        enabled: false
+      small_card_with_icon:
+        weight: -58
+        enabled: false
+      small_card_with_image:
+        weight: -57
+        enabled: false
+      tab_item:
+        weight: -49
+        enabled: false
+      table:
+        weight: -54
+        enabled: true
+      tabs:
+        weight: -52
+        enabled: false
+      tout:
+        weight: -51
+        enabled: false
+      two_column_hero:
+        weight: -50
+        enabled: false
+      video_lightbox:
+        weight: -47
+        enabled: false
+      wide_card:
+        weight: -46
+        enabled: false
+      wysiwyg:
+        weight: -45
+        enabled: false
+field_type: entity_reference_revisions

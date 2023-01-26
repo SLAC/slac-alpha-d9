@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: article_hero
+label: 'Hero without Overlay'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: thumbnail
+label: 'Thumbnail (120×120)'
+effects:
+  f1b955c6-20b8-4a0e-9bd6-affab3f610ca:
+    uuid: f1b955c6-20b8-4a0e-9bd6-affab3f610ca
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 120
+      height: 120
+      crop_type: focal_point

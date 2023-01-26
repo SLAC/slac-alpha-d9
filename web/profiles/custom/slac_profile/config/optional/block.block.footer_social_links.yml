@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social-links
+  module:
+    - menu_block
+  theme:
+    - slac
+id: footer_social_links
+theme: slac
+region: disabled
+weight: -15
+provider: null
+plugin: 'menu_block:social-links'
+settings:
+  id: 'menu_block:social-links'
+  label: 'Footer Social Links'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'social-links:'
+  suggestion: social_links
+visibility: {  }

@@ -1,0 +1,14 @@
+uuid: dfb4418a-175b-46c5-8fbd-24f3ae42f311
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.homepage
+id: node_type_homepage
+entity_type_id: node_type
+entity_id: homepage
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

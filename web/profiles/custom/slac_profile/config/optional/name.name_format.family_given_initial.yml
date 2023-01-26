@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: family_given_initial
+label: 'Family, Given initial'
+locked: false
+pattern: '(f), + (w).'

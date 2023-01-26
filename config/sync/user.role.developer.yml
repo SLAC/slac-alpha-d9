@@ -49,7 +49,6 @@ dependencies:
     - encrypt
     - entity_clone
     - entity_reference_revisions
-    - environment_indicator
     - facets
     - feeds
     - file
@@ -129,7 +128,6 @@ permissions:
   - 'administer eca'
   - 'administer encrypt'
   - 'administer entity clone'
-  - 'administer environment indicator settings'
   - 'administer event_type vocabulary terms'
   - 'administer experience vocabulary terms'
   - 'administer facets'
@@ -356,7 +354,9 @@ permissions:
   - 'moderated content bulk unpublish'
   - 'notify of path changes'
   - 'rabbit hole administer media'
+  - 'rabbit hole administer node'
   - 'rabbit hole bypass media'
+  - 'rabbit hole bypass node'
   - 'revert all revisions'
   - 'revert all sitewide alert revisions'
   - 'revert blog revisions'

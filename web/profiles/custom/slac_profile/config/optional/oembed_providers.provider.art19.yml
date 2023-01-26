@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies: {  }
+id: art19
+label: ART19
+provider_url: 'https://www.art19.com'
+endpoints:
+  -
+    schemes:
+      - 'https://art19.com/shows/*'
+      - 'https://art19.com/shows/*/episodes/*'
+      - 'https://www.art19.com/shows/*'
+      - 'https://www.art19.com/shows/*/episodes/*'
+      - 'http://art19.com/shows/*'
+      - 'http://art19.com/shows/*/episodes/*'
+      - 'http://www.art19.com/shows/*'
+      - 'http://www.art19.com/shows/*/episodes/*'
+    url: 'https://art19.com/oembed.json'
+    discovery: false
+    formats:
+      json: true
+      xml: false

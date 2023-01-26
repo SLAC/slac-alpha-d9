@@ -1,0 +1,172 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 2d640f1e-bd17-4a61-8c13-dd6522b914fb
+  bundle: page
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+    ac3ff98a-d2c0-4a6b-8093-c92bbad4aaca: media
+default:
+  revision_uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  title:
+    -
+      value: Resources
+  created:
+    -
+      value: 1672968699
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /resources
+      langcode: en
+      pathauto: 0
+  field_paragraphs:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0ad2f4cd-e680-4659-9d7e-6bf77d594df6
+          bundle: wysiwyg
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1673045333
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_body:
+            -
+              value: '<p class="c-lede">This is description teaser for resources. To edit this placeholder content, click on the "Edit" tab near the top of the page . When finished, scroll to the bottom of the page and click "Save." To disable this page or add a new page, click “Site Actions” and then “Manage Pages.”</p>'
+              format: basic_html
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3a8bb565-296d-4363-972b-49c7ab2acaa8
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1673028753
+          behavior_settings:
+            -
+              value:
+                style_options: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_num_of_cols:
+            -
+              value: 1
+          field_paragraphs_1:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 5e008816-d703-49fc-bcce-fb919af49b85
+                  bundle: wysiwyg
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1673028782
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_body:
+                    -
+                      value: '<p>Description provides an informative glimpse of the topic and excites site visitors to learn more. Nice to be short and simple. This is a 35-word count paragraph example. Lorem ipsum dolor sit amet lectus magna.</p><h4>This is an ordered list</h4><ol><li>Lorem ipsum dolor sit amet, consectetur adipiscing amet elit. Tincidunt non sit facilisi ac ipsum.</li><li>Lorem ipsum dolor sit amet, consectetur adipiscing amet elit. Tincidunt non sit facilisi ac ipsum.</li></ol><h4>This is an unordered list</h4><ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing amet elit. Tincidunt non sit facilisi ac ipsum.</li><li>Lorem ipsum dolor sit amet, consectetur adipiscing amet elit. Tincidunt non sit facilisi ac ipsum.</li></ul>'
+                      format: basic_html
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 851858dc-e6e6-4610-a374-8b943be96f3e
+                  bundle: image_embed
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1673028803
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_boolean:
+                    -
+                      value: false
+                  field_image:
+                    -
+                      entity: ac3ff98a-d2c0-4a6b-8093-c92bbad4aaca
+                  field_view_mode:
+                    -
+                      value: centered
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: ca3b61c5-1fce-497c-8c7e-72c81dc37583
+                  bundle: wysiwyg
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1673028823
+                  behavior_settings:
+                    -
+                      value: {  }
+                  field_body:
+                    -
+                      value: '<p>Description provides an informative glimpse of the topic and excites site visitors to learn more. Nice to be short and simple. This is a 35-word count paragraph example. Lorem ipsum dolor sit amet lectus magna.</p><p><a class="c-cta-link" href="/research">Optional Link</a></p><p><a class="c-cta-link" href="/research">Optional Link</a></p>'
+                      format: basic_html
+  field_review_date:
+    -
+      value: '2023-07-04'
+  field_teaser:
+    -
+      value: '<p>This is description teaser for resources. To edit this placeholder content, click on the "Edit" tab near the top of the page . When finished, scroll to the bottom of the page and click "Save." To disable this page or add a new page, click “Site Actions” and then “Manage Pages.”</p>'
+      format: restricted_html

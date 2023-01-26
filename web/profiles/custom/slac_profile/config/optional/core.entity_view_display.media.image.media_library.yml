@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.image.field_body
+    - field.field.media.image.field_boolean
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_credit
+    - field.field.media.image.field_display_style
+    - field.field.media.image.field_landing_display
+    - field.field.media.image.field_link
+    - field.field.media.image.field_long_text
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_paragraphs
+    - field.field.media.image.field_tags
+    - field.field.media.image.field_teaser
+    - image.style.medium
+    - media.type.image
+  module:
+    - image
+id: media.image.media_library
+targetEntityType: media
+bundle: image
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_body: true
+  field_boolean: true
+  field_caption: true
+  field_credit: true
+  field_display_style: true
+  field_landing_display: true
+  field_link: true
+  field_long_text: true
+  field_media_image: true
+  field_paragraphs: true
+  field_tags: true
+  field_teaser: true
+  name: true
+  search_api_excerpt: true
+  uid: true

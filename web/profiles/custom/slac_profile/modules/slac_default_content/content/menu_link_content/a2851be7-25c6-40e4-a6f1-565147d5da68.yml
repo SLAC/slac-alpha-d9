@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: a2851be7-25c6-40e4-a6f1-565147d5da68
+  bundle: footer-contact
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Contact Us'
+  description:
+    -
+      value: 'Collaborate with us to make an impact.'
+  menu_name:
+    -
+      value: footer-contact
+  link:
+    -
+      uri: 'internal:/contact-us'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: true
+  weight:
+    -
+      value: -50
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  view_mode:
+    -
+      value: default

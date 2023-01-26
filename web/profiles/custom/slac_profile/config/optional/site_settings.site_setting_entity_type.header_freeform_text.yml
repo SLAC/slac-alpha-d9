@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: header_freeform_text
+label: 'Header freeform text'
+fieldset: 'Header freeform text'
+multiple: false

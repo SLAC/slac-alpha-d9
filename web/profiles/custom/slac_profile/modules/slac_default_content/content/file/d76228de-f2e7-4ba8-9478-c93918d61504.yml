@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: d76228de-f2e7-4ba8-9478-c93918d61504
+  default_langcode: en
+  depends:
+    64990a79-63b0-4b4e-b63f-21b6e9fea568: user
+default:
+  uid:
+    -
+      entity: 64990a79-63b0-4b4e-b63f-21b6e9fea568
+  filename:
+    -
+      value: Drupal9-template-hero-banner.jpg
+  uri:
+    -
+      value: 'public://2023-01/Drupal9-template-hero-banner.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 855187
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1672947198

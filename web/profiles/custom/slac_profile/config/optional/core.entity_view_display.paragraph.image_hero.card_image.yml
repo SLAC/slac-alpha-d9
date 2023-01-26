@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.card_image
+    - field.field.paragraph.image_hero.field_body
+    - field.field.paragraph.image_hero.field_boolean
+    - field.field.paragraph.image_hero.field_button_link
+    - field.field.paragraph.image_hero.field_image
+    - field.field.paragraph.image_hero.field_long_text
+    - field.field.paragraph.image_hero.field_short_text
+    - field.field.paragraph.image_hero.field_text
+    - paragraphs.paragraphs_type.image_hero
+id: paragraph.image_hero.card_image
+targetEntityType: paragraph
+bundle: image_hero
+mode: card_image
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: inline
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_body: true
+  field_boolean: true
+  field_button_link: true
+  field_long_text: true
+  field_short_text: true
+  field_text: true
+  search_api_excerpt: true

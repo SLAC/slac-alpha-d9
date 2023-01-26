@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.small_card_with_icon.field_icon
+    - field.field.paragraph.small_card_with_icon.field_link
+    - field.field.paragraph.small_card_with_icon.field_short_text
+    - field.field.paragraph.small_card_with_icon.field_text
+    - paragraphs.paragraphs_type.small_card_with_icon
+  module:
+    - fontawesome
+    - link
+id: paragraph.small_card_with_icon.default
+targetEntityType: paragraph
+bundle: small_card_with_icon
+mode: default
+content:
+  field_icon:
+    type: fontawesome_icon_widget
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_short_text:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

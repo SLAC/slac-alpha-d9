@@ -1,0 +1,146 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.card
+    - field.field.media.remote_video.field_body
+    - field.field.media.remote_video.field_boolean
+    - field.field.media.remote_video.field_caption
+    - field.field.media.remote_video.field_credit
+    - field.field.media.remote_video.field_display_style
+    - field.field.media.remote_video.field_duration
+    - field.field.media.remote_video.field_landing_display
+    - field.field.media.remote_video.field_link
+    - field.field.media.remote_video.field_long_text
+    - field.field.media.remote_video.field_media_oembed_video
+    - field.field.media.remote_video.field_paragraphs
+    - field.field.media.remote_video.field_source_name
+    - field.field.media.remote_video.field_tags
+    - field.field.media.remote_video.field_teaser
+    - field.field.media.remote_video.field_thumbnail
+    - field.field.media.remote_video.field_transcript
+    - image.style.card
+    - media.type.remote_video
+  module:
+    - duration_field
+    - image
+    - slac_core
+    - text
+id: media.remote_video.card
+targetEntityType: media
+bundle: remote_video
+mode: card
+content:
+  created:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_body:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_boolean:
+    type: boolean
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_duration:
+    type: duration_time_display
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_long_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_teaser:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '24'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_thumbnail:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: card
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_caption: true
+  field_credit: true
+  field_display_style: true
+  field_landing_display: true
+  field_link: true
+  field_media_oembed_video: true
+  field_paragraphs: true
+  field_source_name: true
+  field_tags: true
+  field_transcript: true
+  search_api_excerpt: true
+  uid: true

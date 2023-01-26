@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-utility
+  module:
+    - system
+  theme:
+    - slac
+id: footer_utility
+theme: slac
+region: disabled
+weight: -11
+provider: null
+plugin: 'system_menu_block:footer-utility'
+settings:
+  id: 'system_menu_block:footer-utility'
+  label: 'Footer utility'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

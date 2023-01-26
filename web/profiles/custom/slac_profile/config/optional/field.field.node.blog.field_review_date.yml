@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_review_date
+    - node.type.blog
+  module:
+    - datetime
+id: node.blog.field_review_date
+field_name: field_review_date
+entity_type: node
+bundle: blog
+label: 'Review by Date'
+description: 'Enter the date this content needs to be reviewed by.  Initially defaults to 180 days from now.'
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+180 days'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.centered
+    - field.field.paragraph.image_embed.field_boolean
+    - field.field.paragraph.image_embed.field_image
+    - field.field.paragraph.image_embed.field_long_text
+    - field.field.paragraph.image_embed.field_view_mode
+    - paragraphs.paragraphs_type.image_embed
+  module:
+    - text
+id: paragraph.image_embed.centered
+targetEntityType: paragraph
+bundle: image_embed
+mode: centered
+content:
+  field_boolean:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: centered
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_long_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_view_mode: true
+  search_api_excerpt: true

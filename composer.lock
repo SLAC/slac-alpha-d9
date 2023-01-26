@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d81d70fb5e73f437de9cc087092a1c23",
+    "content-hash": "41802a5a0dd8766bea02ff5de66945a5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2969,6 +2969,59 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/config_pages",
                 "issues": "http://drupal.org/project/issues/config_pages"
+            }
+        },
+        {
+            "name": "drupal/config_profile",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/config_profile.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/config_profile-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "22cf2b765920c36552718101ff51fb20b8f3c15d"
+            },
+            "require": {
+                "drupal/config_filter": "*",
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1612424971",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "akalam",
+                    "homepage": "https://www.drupal.org/user/534318"
+                },
+                {
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                }
+            ],
+            "description": "Updates a install profile on drush cex",
+            "homepage": "https://www.drupal.org/project/config_profile",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/config_profile",
+                "issues": "https://www.drupal.org/project/issues/config_profile"
             }
         },
         {

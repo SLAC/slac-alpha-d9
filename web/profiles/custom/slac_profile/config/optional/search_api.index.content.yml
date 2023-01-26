@@ -1,0 +1,885 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience
+    - field.storage.node.field_text
+    - field.storage.node.field_category
+    - field.storage.node.field_paragraphs
+    - field.storage.paragraph.field_button_links
+    - field.storage.paragraph.field_button_link
+    - field.storage.paragraph.field_caption
+    - field.storage.paragraph.field_body
+    - field.storage.paragraph.field_block
+    - field.storage.paragraph.field_paragraph
+    - field.storage.site_setting_entity.field_link
+    - field.storage.paragraph.field_short_text
+    - field.storage.paragraph.field_tab_heading
+    - field.storage.paragraph.field_text
+    - field.storage.paragraph.field_title
+    - field.storage.node.field_dek
+    - field.storage.node.field_body
+    - field.storage.node.field_editorial_group
+    - field.storage.node.field_education
+    - field.storage.node.field_smart_date
+    - field.storage.node.field_type
+    - field.storage.node.field_experience
+    - field.storage.node.field_text_title_full
+    - field.storage.node.field_links
+    - field.storage.node.field_location_link
+    - field.storage.node.field_organization
+    - field.storage.node.field_position
+    - field.storage.node.field_date
+    - field.storage.node.field_publication_type
+    - field.storage.node.field_series
+    - field.storage.node.field_text_title_short
+    - field.storage.node.field_publication_slac_type
+    - field.storage.node.field_long_text
+    - field.storage.node.field_name
+    - field.storage.node.field_subtitle
+    - field.storage.node.field_tags
+    - field.storage.node.field_teaser
+    - search_api.server.database
+  module:
+    - taxonomy
+    - node
+    - paragraphs
+    - site_settings
+    - search_api
+id: content
+name: Content
+description: 'Primary content index for site-wide search. '
+read_only: false
+field_settings:
+  audience:
+    label: 'Audience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_audience:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_audience
+      module:
+        - taxonomy
+  audience_full:
+    label: 'Audience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_audience:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_audience
+      module:
+        - taxonomy
+  category:
+    label: 'Category » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_category:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_category
+      module:
+        - taxonomy
+  category_full:
+    label: 'Category » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_category:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_category
+      module:
+        - taxonomy
+  end_date_value:
+    label: 'Event Date » End timestamp value'
+    datasource_id: 'entity:node'
+    property_path: 'field_smart_date:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_smart_date
+  entity_id:
+    label: 'Entity ID'
+    property_path: aggregated_field
+    type: integer
+    configuration:
+      type: first
+      fields:
+        - 'entity:node/nid'
+  event_type:
+    label: 'Event Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type
+      module:
+        - taxonomy
+  experience:
+    label: 'Experience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_experience:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_experience
+      module:
+        - taxonomy
+  experience_full:
+    label: 'Experience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_experience:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_experience
+      module:
+        - taxonomy
+  field_date:
+    label: 'Publication Date'
+    datasource_id: 'entity:node'
+    property_path: field_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date
+  field_education:
+    label: Education
+    datasource_id: 'entity:node'
+    property_path: field_education
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_education
+  field_publication_slac_type:
+    label: 'SLAC Publication Type'
+    datasource_id: 'entity:node'
+    property_path: field_publication_slac_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_publication_slac_type
+  field_publication_slac_type_full:
+    label: 'SLAC Publication Type'
+    datasource_id: 'entity:node'
+    property_path: field_publication_slac_type
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_publication_slac_type
+  field_publication_type:
+    label: 'Publication Type'
+    datasource_id: 'entity:node'
+    property_path: field_publication_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_publication_type
+  field_publication_type_full:
+    label: 'Publication Type'
+    datasource_id: 'entity:node'
+    property_path: field_publication_type
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_publication_type
+  field_short_text:
+    label: 'Content » Paragraph » Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_short_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_short_text
+      module:
+        - paragraphs
+  field_smart_date:
+    label: 'Event Date'
+    datasource_id: 'entity:node'
+    property_path: field_smart_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_smart_date
+  field_subtitle:
+    label: Subtitle
+    datasource_id: 'entity:node'
+    property_path: field_subtitle
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_subtitle
+  field_tab_heading:
+    label: 'Content » Paragraph » Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_tab_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_tab_heading
+      module:
+        - paragraphs
+  field_text:
+    label: 'Author Name'
+    datasource_id: 'entity:node'
+    property_path: field_text
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_text
+  field_text_1:
+    label: 'Content » Paragraph » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_text
+      module:
+        - paragraphs
+  field_text_title_full:
+    label: 'Full Title'
+    datasource_id: 'entity:node'
+    property_path: field_text_title_full
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_text_title_full
+  field_text_title_short:
+    label: 'Short Title'
+    datasource_id: 'entity:node'
+    property_path: field_text_title_short
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_text_title_short
+  field_title:
+    label: 'Content » Paragraph » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_title
+      module:
+        - paragraphs
+  name_1:
+    label: 'Editorial Group » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_editorial_group:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_editorial_group
+      module:
+        - taxonomy
+  news_type:
+    label: 'Event Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type
+      module:
+        - taxonomy
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  organization:
+    label: 'Organization » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_organization:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_organization
+      module:
+        - taxonomy
+  organization_full:
+    label: 'Organization » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_organization:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_organization
+      module:
+        - taxonomy
+  position:
+    label: 'Position » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_position:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_position
+      module:
+        - taxonomy
+  position_full:
+    label: 'Position » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_position:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_position
+      module:
+        - taxonomy
+  processed:
+    label: 'Dek » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_dek:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_dek
+  processed_11:
+    label: 'Speaker Bio » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_long_text:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_long_text
+  processed_12:
+    label: 'Speaker Name » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_name:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_name
+  processed_13:
+    label: 'Teaser » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_teaser:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_teaser
+  processed_19:
+    label: 'Content » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_caption:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_caption
+      module:
+        - paragraphs
+  processed_20:
+    label: 'Content » Paragraph » Content » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_body
+        - field.storage.paragraph.field_paragraph
+      module:
+        - paragraphs
+  processed_21:
+    label: 'Content » Paragraph » Content » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_caption:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_caption
+        - field.storage.paragraph.field_paragraph
+      module:
+        - paragraphs
+  processed_4:
+    label: 'Content » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_body
+      module:
+        - paragraphs
+  processed_6:
+    label: 'Description » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+  published:
+    label: Published
+    property_path: aggregated_field
+    type: boolean
+    configuration:
+      type: first
+      fields:
+        - 'entity:node/status'
+  series:
+    label: 'Series » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_series:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_series
+      module:
+        - taxonomy
+  sort_date:
+    label: 'Sort date'
+    property_path: aggregated_field
+    type: date
+    configuration:
+      type: last
+      fields:
+        - 'entity:node/created'
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  tags:
+    label: 'Tags » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
+  tags_full:
+    label: 'Tags » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
+  title:
+    label: 'Content title'
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 21
+    dependencies:
+      module:
+        - node
+  title_1:
+    label: 'Links » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_links:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_links
+  title_11:
+    label: 'Content » Paragraph » Content » Paragraph » Button » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_button_link:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_button_link
+        - field.storage.paragraph.field_paragraph
+      module:
+        - paragraphs
+  title_12:
+    label: 'Content » Paragraph » Content » Paragraph » Button Links » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_button_links:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_button_links
+        - field.storage.paragraph.field_paragraph
+      module:
+        - paragraphs
+  title_2:
+    label: 'Location Link » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_link:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_location_link
+  title_4:
+    label: 'Content » Paragraph » Button » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_button_link:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_button_link
+      module:
+        - paragraphs
+  title_5:
+    label: 'Content » Paragraph » Button Links » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_button_links:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_button_links
+      module:
+        - paragraphs
+  title_6:
+    label: 'Content » Paragraph » Content » Paragraph » Block » Site Setting » Title Link » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_block:entity:field_link:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_block
+        - field.storage.paragraph.field_paragraph
+        - field.storage.site_setting_entity.field_link
+      module:
+        - paragraphs
+        - site_settings
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  type_full:
+    label: 'Event Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_type:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_type
+      module:
+        - taxonomy
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected:
+        - faq
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  entity_type: {  }
+  highlight:
+    weights:
+      postprocess_query: 0
+    prefix: '<strong><em>'
+    suffix: '</em></strong>'
+    excerpt: true
+    excerpt_always: false
+    excerpt_length: 256
+    exclude_fields:
+      - teaser
+    highlight: server
+    highlight_partial: false
+  html_filter:
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+    all_fields: true
+    fields:
+      - audience
+      - audience_full
+      - category
+      - category_full
+      - event_type
+      - experience
+      - experience_full
+      - field_education
+      - field_publication_slac_type
+      - field_publication_slac_type_full
+      - field_publication_type
+      - field_publication_type_full
+      - field_short_text
+      - field_subtitle
+      - field_tab_heading
+      - field_text
+      - field_text_1
+      - field_text_title_full
+      - field_text_title_short
+      - field_title
+      - name_1
+      - news_type
+      - organization
+      - organization_full
+      - position
+      - position_full
+      - processed
+      - processed_11
+      - processed_12
+      - processed_13
+      - processed_19
+      - processed_20
+      - processed_21
+      - processed_4
+      - processed_6
+      - series
+      - tags
+      - tags_full
+      - title
+      - title_1
+      - title_11
+      - title_12
+      - title_2
+      - title_4
+      - title_5
+      - title_6
+      - type
+      - type_full
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+  ignorecase:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+    all_fields: false
+    fields:
+      - audience_full
+      - category_full
+      - experience_full
+      - field_education
+      - field_publication_slac_type
+      - field_publication_type
+      - field_short_text
+      - field_subtitle
+      - field_tab_heading
+      - field_text
+      - field_text_1
+      - field_text_title_full
+      - field_text_title_short
+      - field_title
+      - name_1
+      - organization_full
+      - position_full
+      - processed
+      - processed_11
+      - processed_12
+      - processed_13
+      - processed_19
+      - processed_20
+      - processed_21
+      - processed_4
+      - processed_6
+      - series
+      - tags_full
+      - title
+      - title_1
+      - title_11
+      - title_12
+      - title_2
+      - title_4
+      - title_5
+      - title_6
+      - type
+      - type_full
+  language_with_fallback: {  }
+  rendered_item: {  }
+  stemmer:
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+    all_fields: true
+    fields:
+      - audience_full
+      - category_full
+      - experience_full
+      - field_education
+      - field_publication_slac_type_full
+      - field_publication_type_full
+      - field_short_text
+      - field_subtitle
+      - field_tab_heading
+      - field_text
+      - field_text_1
+      - field_text_title_full
+      - field_text_title_short
+      - field_title
+      - name_1
+      - organization_full
+      - position_full
+      - processed
+      - processed_11
+      - processed_12
+      - processed_13
+      - processed_19
+      - processed_20
+      - processed_21
+      - processed_4
+      - processed_6
+      - series
+      - tags_full
+      - title
+      - title_1
+      - title_11
+      - title_12
+      - title_2
+      - title_4
+      - title_5
+      - title_6
+      - type_full
+    exceptions:
+      mexican: mexic
+      texan: texa
+  tokenizer:
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+    all_fields: true
+    fields:
+      - audience_full
+      - category_full
+      - experience_full
+      - field_education
+      - field_publication_slac_type_full
+      - field_publication_type_full
+      - field_short_text
+      - field_subtitle
+      - field_tab_heading
+      - field_text
+      - field_text_1
+      - field_text_title_full
+      - field_text_title_short
+      - field_title
+      - name_1
+      - organization_full
+      - position_full
+      - processed
+      - processed_11
+      - processed_12
+      - processed_13
+      - processed_19
+      - processed_20
+      - processed_21
+      - processed_4
+      - processed_6
+      - series
+      - tags_full
+      - title
+      - title_1
+      - title_11
+      - title_12
+      - title_2
+      - title_4
+      - title_5
+      - title_6
+      - type_full
+    spaces: ''
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '2'
+  transliteration:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+    all_fields: true
+    fields:
+      - audience
+      - audience_full
+      - category
+      - category_full
+      - event_type
+      - experience
+      - experience_full
+      - field_education
+      - field_publication_slac_type
+      - field_publication_slac_type_full
+      - field_publication_type
+      - field_publication_type_full
+      - field_short_text
+      - field_subtitle
+      - field_tab_heading
+      - field_text
+      - field_text_1
+      - field_text_title_full
+      - field_text_title_short
+      - field_title
+      - name_1
+      - news_type
+      - organization
+      - organization_full
+      - position
+      - position_full
+      - processed
+      - processed_11
+      - processed_12
+      - processed_13
+      - processed_19
+      - processed_20
+      - processed_21
+      - processed_4
+      - processed_6
+      - series
+      - tags
+      - tags_full
+      - title
+      - title_1
+      - title_11
+      - title_12
+      - title_2
+      - title_4
+      - title_5
+      - title_6
+      - type
+      - type_full
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: database

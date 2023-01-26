@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.extra_large_card
+label: 'Extra Large Card'
+targetEntityType: media
+cache: true

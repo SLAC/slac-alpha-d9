@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: medium
+label: 'Medium (280×280)'
+effects:
+  e7285465-e189-44bd-89bc-ca1c700f98de:
+    uuid: e7285465-e189-44bd-89bc-ca1c700f98de
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 280
+      height: 280
+      crop_type: focal_point

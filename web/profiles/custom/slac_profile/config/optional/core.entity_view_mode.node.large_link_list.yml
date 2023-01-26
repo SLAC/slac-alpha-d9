@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.large_link_list
+label: 'Large link list'
+targetEntityType: node
+cache: true

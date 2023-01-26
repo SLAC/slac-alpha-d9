@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.one_col_tall
+label: 'One Column Tall'
+targetEntityType: media
+cache: true

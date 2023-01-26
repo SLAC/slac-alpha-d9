@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: card_with_icon
+label: 'Card with Icon'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  style_options:
+    enabled: true

@@ -1,0 +1,9 @@
+theme: current
+defaults:
+  sender: sendgrid_integration
+  formatter: sendgrid_integration
+modules:
+  sendgrid_integration:
+    none:
+      sender: sendgrid_integration
+      formatter: sendgrid_integration

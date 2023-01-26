@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.mosaic_card
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.mosaic_card
+targetEntityType: taxonomy_term
+bundle: tags
+mode: mosaic_card
+content: {  }
+hidden:
+  description: true
+  search_api_excerpt: true

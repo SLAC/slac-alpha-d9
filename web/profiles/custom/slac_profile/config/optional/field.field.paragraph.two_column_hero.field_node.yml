@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_node
+    - node.type.blog
+    - node.type.event
+    - node.type.news_article
+    - paragraphs.paragraphs_type.two_column_hero
+id: paragraph.two_column_hero.field_node
+field_name: field_node
+entity_type: paragraph
+bundle: two_column_hero
+label: 'Right Column Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      blog: blog
+      event: event
+      news_article: news_article
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: event
+field_type: entity_reference

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_audience
     - field.storage.node.field_text
-    - field.storage.node.field_author_organization
     - field.storage.node.field_category
     - field.storage.node.field_paragraphs
     - field.storage.paragraph.field_button_links
@@ -26,9 +25,7 @@ dependencies:
     - field.storage.node.field_smart_date
     - field.storage.node.field_type
     - field.storage.node.field_experience
-    - field.storage.node.field_faq_category
     - field.storage.node.field_text_title_full
-    - field.storage.node.field_last_name
     - field.storage.node.field_links
     - field.storage.node.field_location_link
     - field.storage.node.field_organization
@@ -141,34 +138,6 @@ field_settings:
         - field.storage.node.field_experience
       module:
         - taxonomy
-  faq_category:
-    label: 'FAQ Category » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_faq_category:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_faq_category
-      module:
-        - taxonomy
-  faq_category_full:
-    label: 'FAQ Category » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_faq_category:entity:name'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_faq_category
-      module:
-        - taxonomy
-  field_author_organization:
-    label: 'Author Organization'
-    datasource_id: 'entity:node'
-    property_path: field_author_organization
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_author_organization
   field_date:
     label: 'Publication Date'
     datasource_id: 'entity:node'
@@ -185,14 +154,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_education
-  field_last_name:
-    label: 'Last Name'
-    datasource_id: 'entity:node'
-    property_path: field_last_name
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_last_name
   field_publication_slac_type:
     label: 'SLAC Publication Type'
     datasource_id: 'entity:node'
@@ -635,7 +596,8 @@ datasource_settings:
   'entity:node':
     bundles:
       default: true
-      selected: {  }
+      selected:
+        - faq
     languages:
       default: true
       selected: {  }
@@ -672,11 +634,7 @@ processor_settings:
       - event_type
       - experience
       - experience_full
-      - faq_category
-      - faq_category_full
-      - field_author_organization
       - field_education
-      - field_last_name
       - field_publication_slac_type
       - field_publication_slac_type_full
       - field_publication_type
@@ -734,10 +692,7 @@ processor_settings:
       - audience_full
       - category_full
       - experience_full
-      - faq_category_full
-      - field_author_organization
       - field_education
-      - field_last_name
       - field_publication_slac_type
       - field_publication_type
       - field_short_text
@@ -783,10 +738,7 @@ processor_settings:
       - audience_full
       - category_full
       - experience_full
-      - faq_category_full
-      - field_author_organization
       - field_education
-      - field_last_name
       - field_publication_slac_type_full
       - field_publication_type_full
       - field_short_text
@@ -832,10 +784,7 @@ processor_settings:
       - audience_full
       - category_full
       - experience_full
-      - faq_category_full
-      - field_author_organization
       - field_education
-      - field_last_name
       - field_publication_slac_type_full
       - field_publication_type_full
       - field_short_text
@@ -886,11 +835,7 @@ processor_settings:
       - event_type
       - experience
       - experience_full
-      - faq_category
-      - faq_category_full
-      - field_author_organization
       - field_education
-      - field_last_name
       - field_publication_slac_type
       - field_publication_slac_type_full
       - field_publication_type

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_body
+    - site_settings.site_setting_entity_type.footer_address
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: site_setting_entity.footer_address.field_body
+field_name: field_body
+entity_type: site_setting_entity
+bundle: footer_address
+label: WYSIWYG
+description: 'Content entered here will be injected into the footer address on Line 2. This setting should be used for Mailstop or other identifying text that should be added to this department''s address.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

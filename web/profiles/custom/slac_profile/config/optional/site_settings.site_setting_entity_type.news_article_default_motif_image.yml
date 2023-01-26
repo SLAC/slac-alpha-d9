@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: news_article_default_motif_image
+label: 'News article default (motif) image'
+fieldset: 'Default (Motif) Images'
+multiple: false

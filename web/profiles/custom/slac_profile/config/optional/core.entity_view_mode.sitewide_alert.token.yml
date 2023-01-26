@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - sitewide_alert
+id: sitewide_alert.token
+label: Token
+targetEntityType: sitewide_alert
+cache: true

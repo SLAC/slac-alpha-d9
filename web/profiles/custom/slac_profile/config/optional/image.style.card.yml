@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: card
+label: 'Card (600x300)'
+effects:
+  a4b9a0d2-2a9e-4566-95d5-3f028571e183:
+    uuid: a4b9a0d2-2a9e-4566-95d5-3f028571e183
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 600
+      height: 300
+      crop_type: focal_point

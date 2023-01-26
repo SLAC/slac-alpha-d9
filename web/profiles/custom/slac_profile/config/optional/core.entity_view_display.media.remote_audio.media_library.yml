@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.remote_audio.field_boolean
+    - field.field.media.remote_audio.field_caption
+    - field.field.media.remote_audio.field_long_text
+    - field.field.media.remote_audio.field_media_oembed_art19
+    - field.field.media.remote_audio.field_tags
+    - field.field.media.remote_audio.field_transcript
+    - image.style.medium
+    - media.type.remote_audio
+  module:
+    - image
+id: media.remote_audio.media_library
+targetEntityType: media
+bundle: remote_audio
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_boolean: true
+  field_caption: true
+  field_long_text: true
+  field_media_oembed_art19: true
+  field_tags: true
+  field_transcript: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

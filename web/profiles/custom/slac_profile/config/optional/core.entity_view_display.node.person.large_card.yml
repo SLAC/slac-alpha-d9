@@ -1,0 +1,98 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.large_card
+    - field.field.node.person.field_address
+    - field.field.node.person.field_affiliations
+    - field.field.node.person.field_awardshonors
+    - field.field.node.person.field_body
+    - field.field.node.person.field_education
+    - field.field.node.person.field_email
+    - field.field.node.person.field_fax
+    - field.field.node.person.field_first_name
+    - field.field.node.person.field_image
+    - field.field.node.person.field_interestareas
+    - field.field.node.person.field_last_name
+    - field.field.node.person.field_links
+    - field.field.node.person.field_location
+    - field.field.node.person.field_mail_code
+    - field.field.node.person.field_map
+    - field.field.node.person.field_mobile
+    - field.field.node.person.field_organization
+    - field.field.node.person.field_paragraphs
+    - field.field.node.person.field_position
+    - field.field.node.person.field_profile_link
+    - field.field.node.person.field_teaser
+    - field.field.node.person.field_telephone
+    - field.field.node.person.field_text
+    - field.field.node.person.field_text_title_full
+    - field.field.node.person.field_text_title_short
+    - node.type.person
+  module:
+    - slac_core
+    - user
+id: node.person.large_card
+targetEntityType: node
+bundle: person
+mode: large_card
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_body:
+    type: trimmed_first_wysiwyg_paragraph
+    label: hidden
+    settings:
+      trim_length: '40'
+      trim_type: words
+      trim_suffix: ...
+      trim_options:
+        heading_remove: heading_remove
+        retain_formatting: retain_formatting
+      wrap_output: 0
+      wrap_class: trimmed
+      more_link: 0
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_image_only
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_address: true
+  field_affiliations: true
+  field_awardshonors: true
+  field_education: true
+  field_email: true
+  field_fax: true
+  field_first_name: true
+  field_interestareas: true
+  field_last_name: true
+  field_links: true
+  field_location: true
+  field_mail_code: true
+  field_map: true
+  field_mobile: true
+  field_organization: true
+  field_paragraphs: true
+  field_position: true
+  field_profile_link: true
+  field_teaser: true
+  field_telephone: true
+  field_text: true
+  field_text_title_full: true
+  field_text_title_short: true
+  links: true
+  search_api_excerpt: true

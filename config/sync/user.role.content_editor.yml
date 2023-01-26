@@ -178,6 +178,7 @@ permissions:
   - 'moderated content bulk publish'
   - 'moderated content bulk unpublish'
   - 'rabbit hole bypass media'
+  - 'rabbit hole bypass node'
   - 'revert all sitewide alert revisions'
   - 'revert blog revisions'
   - 'revert event revisions'

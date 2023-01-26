@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.header_freeform_text.field_body
+    - site_settings.site_setting_entity_type.header_freeform_text
+  module:
+    - text
+id: site_setting_entity.header_freeform_text.default
+targetEntityType: site_setting_entity
+bundle: header_freeform_text
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  fieldset: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

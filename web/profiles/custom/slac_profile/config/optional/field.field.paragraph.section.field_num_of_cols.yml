@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_num_of_cols
+    - paragraphs.paragraphs_type.section
+  module:
+    - options
+id: paragraph.section.field_num_of_cols
+field_name: field_num_of_cols
+entity_type: paragraph
+bundle: section
+label: Columns
+description: 'Select how many columns you''d like this section to have.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

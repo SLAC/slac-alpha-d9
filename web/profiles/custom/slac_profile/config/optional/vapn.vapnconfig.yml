@@ -1,0 +1,10 @@
+vapn: null
+vapn_node_list:
+  - blog
+  - event
+  - faq
+  - landing_page
+  - news_article
+  - page
+  - person
+  - publication

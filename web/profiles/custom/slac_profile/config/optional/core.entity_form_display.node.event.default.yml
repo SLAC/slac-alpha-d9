@@ -1,0 +1,428 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.field_affiliation
+    - field.field.node.event.field_audience
+    - field.field.node.event.field_body
+    - field.field.node.event.field_boolean
+    - field.field.node.event.field_conference_link
+    - field.field.node.event.field_contact_name
+    - field.field.node.event.field_email
+    - field.field.node.event.field_experience
+    - field.field.node.event.field_external_link
+    - field.field.node.event.field_featured
+    - field.field.node.event.field_image
+    - field.field.node.event.field_location
+    - field.field.node.event.field_location_link
+    - field.field.node.event.field_long_text
+    - field.field.node.event.field_name
+    - field.field.node.event.field_person_image
+    - field.field.node.event.field_site_setting
+    - field.field.node.event.field_smart_date
+    - field.field.node.event.field_sponsor
+    - field.field.node.event.field_tags
+    - field.field.node.event.field_teaser
+    - field.field.node.event.field_text
+    - field.field.node.event.field_type
+    - field.field.node.event.field_video
+    - node.type.event
+    - workflows.workflow.content
+  module:
+    - allowed_formats
+    - conditional_fields
+    - content_moderation
+    - field_group
+    - link
+    - maxlength
+    - media_library
+    - path
+    - smart_date
+    - text
+third_party_settings:
+  field_group:
+    group_page_content:
+      children:
+        - group_event_details
+        - group_speaker_details
+        - group_contact_information
+        - group_metadata
+      label: 'Page Content'
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_event_details:
+      children:
+        - field_image
+        - field_smart_date
+        - field_conference_link
+        - field_video
+        - field_external_link
+        - field_location
+        - field_location_link
+        - field_body
+        - field_sponsor
+        - field_boolean
+        - field_site_setting
+      label: 'Event Details'
+      region: content
+      parent_name: group_page_content
+      weight: 11
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_speaker_details:
+      children:
+        - field_name
+        - field_affiliation
+        - field_person_image
+        - field_long_text
+      label: 'Speaker Details'
+      region: content
+      parent_name: group_page_content
+      weight: 12
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_metadata:
+      children:
+        - field_teaser
+        - field_featured
+        - field_tags
+        - field_experience
+        - field_audience
+        - field_type
+      label: Metadata
+      region: content
+      parent_name: group_page_content
+      weight: 14
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_contact_information:
+      children:
+        - field_contact_name
+        - field_email
+        - field_text
+      label: 'Contact Information'
+      region: content
+      parent_name: group_page_content
+      weight: 13
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_affiliation:
+    type: text_textarea
+    weight: 22
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_audience:
+    type: options_select
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_body:
+    type: text_textarea
+    weight: 38
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_boolean:
+    type: boolean_checkbox
+    weight: 40
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_conference_link:
+    type: link_default
+    weight: 33
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_contact_name:
+    type: text_textarea
+    weight: 36
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 37
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_experience:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_external_link:
+    type: link_default
+    weight: 35
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 31
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_location:
+    type: string_textfield
+    weight: 36
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_location_link:
+    type: link_default
+    weight: 37
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_long_text:
+    type: text_textarea
+    weight: 24
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      conditional_fields: {  }
+  field_name:
+    type: text_textarea
+    weight: 21
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      conditional_fields: {  }
+  field_person_image:
+    type: media_library_widget
+    weight: 23
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      conditional_fields: {  }
+  field_site_setting:
+    type: options_select
+    weight: 43
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields: {  }
+  field_smart_date:
+    type: smartdate_default
+    weight: 32
+    region: content
+    settings:
+      modal: false
+      default_duration: 60
+      default_duration_increments: |-
+        30
+        60|1 hour
+        90
+        120|2 hours
+        custom
+      show_extra: false
+      hide_date: true
+    third_party_settings: {  }
+  field_sponsor:
+    type: text_textarea
+    weight: 39
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_teaser:
+    type: text_textarea
+    weight: 11
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+      maxlength:
+        maxlength_js: 200
+        maxlength_js_label: 'Content display is limited to 40 words or approximately @limit characters. Used: <strong>@count</strong>'
+        maxlength_js_enforce: false
+  field_text:
+    type: string_textfield
+    weight: 38
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_type:
+    type: options_select
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_video:
+    type: media_library_widget
+    weight: 34
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      conditional_fields: {  }
+  group_metadata:
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields: {  }
+  group_speaker_details:
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

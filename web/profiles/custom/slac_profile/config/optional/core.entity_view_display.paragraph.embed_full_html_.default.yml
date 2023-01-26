@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.embed_full_html_.field_body
+    - paragraphs.paragraphs_type.embed_full_html_
+  module:
+    - text
+id: paragraph.embed_full_html_.default
+targetEntityType: paragraph
+bundle: embed_full_html_
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.embed_webform.field_add_webform
+    - paragraphs.paragraphs_type.embed_webform
+  module:
+    - webform
+id: paragraph.embed_webform.default
+targetEntityType: paragraph
+bundle: embed_webform
+mode: default
+content:
+  field_add_webform:
+    type: webform_entity_reference_entity_view
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

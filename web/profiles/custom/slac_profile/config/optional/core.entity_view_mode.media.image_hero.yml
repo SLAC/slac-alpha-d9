@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.image_hero
+label: 'Image Hero'
+targetEntityType: media
+cache: true

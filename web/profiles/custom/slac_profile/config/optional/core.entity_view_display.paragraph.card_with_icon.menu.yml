@@ -1,0 +1,87 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.menu
+    - field.field.paragraph.card_with_icon.field_body
+    - field.field.paragraph.card_with_icon.field_display_style
+    - field.field.paragraph.card_with_icon.field_icon
+    - field.field.paragraph.card_with_icon.field_link
+    - field.field.paragraph.card_with_icon.field_links
+    - field.field.paragraph.card_with_icon.field_short_text
+    - field.field.paragraph.card_with_icon.field_text
+    - paragraphs.paragraphs_type.card_with_icon
+  module:
+    - fontawesome
+    - link
+    - text
+    - view_mode_switch
+id: paragraph.card_with_icon.menu
+targetEntityType: paragraph
+bundle: card_with_icon
+mode: menu
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_display_style:
+    type: view_mode_switch_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_icon:
+    type: fontawesome_icon_formatter
+    label: above
+    settings:
+      layers: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_short_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true
