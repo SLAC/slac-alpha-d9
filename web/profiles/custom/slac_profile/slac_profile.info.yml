@@ -45,6 +45,7 @@ dependencies:
   - focal_point:focal_point
   - fontawesome:fontawesome
   - gin_toolbar:gin_toolbar
+  - drupal:help
   - drupal:image
   - jquery_ui:jquery_ui
   - jquery_ui_accordion:jquery_ui_accordion
@@ -85,6 +86,7 @@ dependencies:
   - redis:redis
   - drupal:responsive_image
   - rh_media:rh_media
+  - rh_node:rh_node
   - drupal:search
   - search_api:search_api
   - search_api_db:search_api_db

@@ -1,0 +1,119 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.restricted_html
+    - filter.format.source
+    - filter.format.table
+    - media.type.document
+    - media.type.image
+    - media.type.remote_audio
+    - media.type.remote_video
+    - node.type.blog
+    - node.type.event
+    - node.type.faq
+    - node.type.homepage
+    - node.type.landing_page
+    - node.type.news_article
+    - node.type.page
+    - node.type.person
+    - node.type.publication
+    - workflows.workflow.content
+  module:
+    - content_moderation
+    - filter
+    - fontawesome
+    - media
+    - menu_admin_per_menu
+    - node
+    - paragraphs
+    - path
+    - rabbit_hole
+    - sitewide_alert
+    - system
+    - toolbar
+    - vapn
+    - workbench_access
+id: author
+label: 'Content author'
+weight: -8
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access fontawesome additional settings'
+  - 'access media overview'
+  - 'access toolbar'
+  - 'administer main menu items'
+  - 'bypass vapn'
+  - 'create blog content'
+  - 'create document media'
+  - 'create event content'
+  - 'create faq content'
+  - 'create image media'
+  - 'create landing_page content'
+  - 'create media'
+  - 'create news_article content'
+  - 'create page content'
+  - 'create person content'
+  - 'create publication content'
+  - 'create remote_audio media'
+  - 'create remote_video media'
+  - 'create url aliases'
+  - 'delete media'
+  - 'delete own blog content'
+  - 'delete own document media'
+  - 'delete own event content'
+  - 'delete own faq content'
+  - 'delete own homepage content'
+  - 'delete own image media'
+  - 'delete own landing_page content'
+  - 'delete own news_article content'
+  - 'delete own page content'
+  - 'delete own person content'
+  - 'delete own publication content'
+  - 'delete own remote_audio media'
+  - 'delete own remote_video media'
+  - 'edit behavior plugin settings'
+  - 'edit own blog content'
+  - 'edit own document media'
+  - 'edit own event content'
+  - 'edit own faq content'
+  - 'edit own homepage content'
+  - 'edit own image media'
+  - 'edit own landing_page content'
+  - 'edit own news_article content'
+  - 'edit own page content'
+  - 'edit own person content'
+  - 'edit own publication content'
+  - 'edit own remote_audio media'
+  - 'edit own remote_video media'
+  - 'rabbit hole bypass media'
+  - 'rabbit hole bypass node'
+  - 'update media'
+  - 'use content transition create_new_draft'
+  - 'use text format basic_html'
+  - 'use text format restricted_html'
+  - 'use text format source'
+  - 'use text format table'
+  - 'use vapn'
+  - 'use workbench access'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view blog revisions'
+  - 'view event revisions'
+  - 'view faq revisions'
+  - 'view homepage revisions'
+  - 'view landing_page revisions'
+  - 'view latest version'
+  - 'view news_article revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view person revisions'
+  - 'view publication revisions'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'
+  - 'view unpublished sitewide alert entities'
