@@ -24,7 +24,6 @@ dependencies:
     - taxonomy.vocabulary.category
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.experience
-    - taxonomy.vocabulary.faq_category
     - taxonomy.vocabulary.news_type
     - taxonomy.vocabulary.position
     - taxonomy.vocabulary.series
@@ -112,7 +111,6 @@ permissions:
   - 'create terms in category'
   - 'create terms in event_type'
   - 'create terms in experience'
-  - 'create terms in faq_category'
   - 'create terms in news_type'
   - 'create terms in position'
   - 'create terms in series'
@@ -167,7 +165,6 @@ permissions:
   - 'delete terms in category'
   - 'delete terms in event_type'
   - 'delete terms in experience'
-  - 'delete terms in faq_category'
   - 'delete terms in news_type'
   - 'delete terms in position'
   - 'delete terms in series'
@@ -209,7 +206,6 @@ permissions:
   - 'edit terms in category'
   - 'edit terms in event_type'
   - 'edit terms in experience'
-  - 'edit terms in faq_category'
   - 'edit terms in news_type'
   - 'edit terms in position'
   - 'edit terms in series'

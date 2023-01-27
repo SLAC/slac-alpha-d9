@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_caption
     - field.storage.node.field_answer
     - search_api.index.content
   module:
@@ -11,7 +10,6 @@ dependencies:
     - entity_reference_revisions
     - search_api
     - slac_core
-    - text
     - user
 id: landing_page_filtered_content
 label: 'Content Lists - With Filters'
@@ -374,14 +372,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_blog_filtered_grid:
     id: block_blog_filtered_grid
@@ -571,14 +567,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_blog_filtered_teaser_list:
     id: block_blog_filtered_teaser_list
@@ -803,14 +797,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_events_filtered_grid:
     id: block_events_filtered_grid
@@ -1043,14 +1035,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_events_filtered_teaser_list:
     id: block_events_filtered_teaser_list
@@ -1318,14 +1308,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_events_past_grid:
     id: block_events_past_grid
@@ -1562,14 +1550,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_events_past_teaser_list:
     id: block_events_past_teaser_list
@@ -1841,14 +1827,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_faqs_filtered_accordion_list:
     id: block_faqs_filtered_accordion_list
@@ -2386,14 +2370,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_news_filtered_teaser_list:
     id: block_news_filtered_teaser_list
@@ -2618,14 +2600,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_persons_filtered_grid:
     id: block_persons_filtered_grid
@@ -2815,14 +2795,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_persons_filtered_teaser_list:
     id: block_persons_filtered_teaser_list
@@ -3047,14 +3025,12 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   block_publications_filtered_teaser_list:
     id: block_publications_filtered_teaser_list
@@ -3282,12 +3258,10 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
