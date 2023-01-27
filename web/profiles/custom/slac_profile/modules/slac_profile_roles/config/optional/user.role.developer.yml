@@ -29,6 +29,11 @@ dependencies:
     - taxonomy.vocabulary.position
     - taxonomy.vocabulary.series
     - taxonomy.vocabulary.tags
+    - user.role.authenticated
+    - user.role.author
+    - user.role.content_editor
+    - user.role.manager
+    - user.role.reviewer
     - workflows.workflow.content
   module:
     - aggregator
@@ -51,6 +56,7 @@ dependencies:
     - image
     - key
     - mailsystem
+    - masquerade
     - media
     - menu_admin_per_menu
     - metatag
@@ -182,7 +188,7 @@ permissions:
   - 'administer webform labels'
   - 'administer webform submission'
   - 'administer workflows'
-  - 'administer_mailsystem'
+  - administer_mailsystem
   - 'bypass node access'
   - 'bypass vapn'
   - 'clone block_content entity'
@@ -337,6 +343,11 @@ permissions:
   - 'import configuration'
   - 'import single content'
   - 'manage vapn settings'
+  - 'masquerade as authenticated'
+  - 'masquerade as author'
+  - 'masquerade as content_editor'
+  - 'masquerade as manager'
+  - 'masquerade as reviewer'
   - 'moderated content bulk archive'
   - 'moderated content bulk publish'
   - 'moderated content bulk unpublish'
