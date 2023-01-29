@@ -12,7 +12,6 @@ dependencies:
   - auto_entitylabel:auto_entitylabel
   - drupal:automated_cron
   - better_exposed_filters:better_exposed_filters
-  - drupal:big_pipe
   - drupal:block
   - drupal:block_content
   - block_field:block_field
@@ -87,7 +86,6 @@ dependencies:
   - drupal:responsive_image
   - rh_media:rh_media
   - rh_node:rh_node
-  - drupal:search
   - search_api:search_api
   - search_api_db:search_api_db
   - sendgrid_integration:sendgrid_integration

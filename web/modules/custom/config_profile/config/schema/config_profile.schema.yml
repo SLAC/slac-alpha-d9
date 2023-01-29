@@ -1,0 +1,17 @@
+config_profile.settings:
+  type: config_object
+  label: 'Config profile settings'
+  mapping:
+    profile:
+      type: string
+      label: 'Installation profile'
+      translatable: false
+      nullable: true
+    blacklist:
+      type: sequence
+      label: 'Blacklist of config names that should not be exported to the profile'
+      sequence:
+        type: string
+        label: 'Config name'
+        translatable: false
+        nullable: false

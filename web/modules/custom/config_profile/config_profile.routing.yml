@@ -1,0 +1,7 @@
+config_profile.settings:
+  path: '/admin/config/development/configuration/profile'
+  defaults:
+    _form: '\Drupal\config_profile\Form\Settings'
+    _title: 'Profile'
+  requirements:
+    _permission: 'export configuration'

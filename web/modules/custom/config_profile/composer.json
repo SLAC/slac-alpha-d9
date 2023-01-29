@@ -1,0 +1,14 @@
+{
+  "name": "drupal/config_profile",
+  "type": "drupal-module",
+  "description": "Updates a install profile on drush cex",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/config_profile",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/config_profile",
+    "source": "http://cgit.drupalcode.org/config_profile"
+  },
+  "require": { }
+}
