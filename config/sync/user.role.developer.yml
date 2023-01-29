@@ -71,7 +71,6 @@ dependencies:
     - rabbit_hole
     - redirect
     - responsive_image
-    - search
     - search_api
     - shortcut
     - simple_sitemap
@@ -163,7 +162,6 @@ permissions:
   - 'administer redirect settings'
   - 'administer redirects'
   - 'administer responsive images'
-  - 'administer search'
   - 'administer search_api'
   - 'administer series vocabulary terms'
   - 'administer shortcut_set labels'
