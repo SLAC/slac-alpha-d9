@@ -2,11 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.media.field_caption
     - search_api.index.content
   module:
     - search_api
-    - text
     - user
 id: pre_filtered_content_lists
 label: 'Content Lists - Without Filters'
@@ -115,7 +113,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: none
+        type: search_api_tag
         options: {  }
       empty: {  }
       sorts:
@@ -318,13 +316,11 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   embed_events_homepage_list3:
     id: embed_events_homepage_list3
@@ -546,12 +542,10 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   embed_events_past_list3:
     id: embed_events_past_list3
@@ -773,12 +767,10 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'
   embed_events_upcoming_list3:
     id: embed_events_upcoming_list3
@@ -1032,11 +1024,9 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.media.field_caption'
         - 'config:search_api.index.content'

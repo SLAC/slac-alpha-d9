@@ -10,7 +10,7 @@ dependencies:
 id: slac_main_menu
 theme: slac
 region: header
-weight: 0
+weight: -8
 provider: null
 plugin: 'system_menu_block:main'
 settings:

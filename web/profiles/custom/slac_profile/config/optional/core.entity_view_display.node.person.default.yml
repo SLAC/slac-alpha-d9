@@ -31,6 +31,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - link
+    - telephone
     - text
     - user
 id: node.person.default
@@ -92,9 +93,10 @@ content:
     weight: 15
     region: content
   field_fax:
-    type: basic_string
+    type: telephone_link
     label: above
-    settings: {  }
+    settings:
+      title: ''
     third_party_settings: {  }
     weight: 18
     region: content
@@ -171,9 +173,10 @@ content:
     weight: 22
     region: content
   field_mobile:
-    type: basic_string
+    type: telephone_link
     label: above
-    settings: {  }
+    settings:
+      title: ''
     third_party_settings: {  }
     weight: 17
     region: content
@@ -215,9 +218,10 @@ content:
     weight: 29
     region: content
   field_telephone:
-    type: basic_string
+    type: telephone_link
     label: above
-    settings: {  }
+    settings:
+      title: ''
     third_party_settings: {  }
     weight: 16
     region: content
