@@ -156,7 +156,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: none
+        type: search_api_tag
         options: {  }
       empty:
         area:
@@ -573,6 +573,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.category_taxonomy_term_name_blog_grid'
+        - 'config:facets.facet.series_taxonomy_term_name_blog_grid'
+        - 'config:facets.facet.tags_taxonomy_term_name_blog_grid'
         - 'config:search_api.index.content'
   block_blog_filtered_teaser_list:
     id: block_blog_filtered_teaser_list
@@ -803,6 +806,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.category_taxonomy_term_name_blog_list'
+        - 'config:facets.facet.series_taxonomy_term_name_blog_list'
+        - 'config:facets.facet.tags_taxonomy_term_name_blog_list'
         - 'config:search_api.index.content'
   block_events_filtered_grid:
     id: block_events_filtered_grid
@@ -1041,6 +1047,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.audience_taxonomy_term_name_events_grid'
+        - 'config:facets.facet.event_type_taxonomy_term_name_events_grid'
+        - 'config:facets.facet.experience_taxonomy_term_name_events_grid'
+        - 'config:facets.facet.tags_taxonomy_term_name_events_grid'
         - 'config:search_api.index.content'
   block_events_filtered_teaser_list:
     id: block_events_filtered_teaser_list
@@ -1314,6 +1324,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.audience_taxonomy_term_name_events_list'
+        - 'config:facets.facet.event_type_taxonomy_term_name_events_list'
+        - 'config:facets.facet.experience_taxonomy_term_name_events_list'
+        - 'config:facets.facet.tags_taxonomy_term_name_events_list'
         - 'config:search_api.index.content'
   block_events_past_grid:
     id: block_events_past_grid
@@ -1556,6 +1570,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.audience_taxonomy_term_name_past_events_grid'
+        - 'config:facets.facet.event_type_taxonomy_term_name_past_events_grid'
+        - 'config:facets.facet.experience_taxonomy_term_name_past_events_grid'
+        - 'config:facets.facet.tags_taxonomy_term_name_past_events_grid'
         - 'config:search_api.index.content'
   block_events_past_teaser_list:
     id: block_events_past_teaser_list
@@ -1833,6 +1851,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.audience_taxonomy_term_name_past_events_list'
+        - 'config:facets.facet.event_type_taxonomy_term_name_past_events_list'
+        - 'config:facets.facet.experience_taxonomy_term_name_past_events_list'
+        - 'config:facets.facet.tags_taxonomy_term_name_past_events_list'
         - 'config:search_api.index.content'
   block_faqs_filtered_accordion_list:
     id: block_faqs_filtered_accordion_list
@@ -2180,6 +2202,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.faq_category_taxonomy_term_name_faq_accordion'
         - 'config:field.storage.node.field_answer'
         - 'config:search_api.index.content'
   block_news_filtered_grid:
@@ -2376,6 +2399,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.news_type_taxonomy_term_name_news_grid'
+        - 'config:facets.facet.publication_date_news_grid'
+        - 'config:facets.facet.tags_taxonomy_term_name_news_articles_grid'
         - 'config:search_api.index.content'
   block_news_filtered_teaser_list:
     id: block_news_filtered_teaser_list
@@ -2606,6 +2632,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.news_type_taxonomy_term_name_news_grid_list'
+        - 'config:facets.facet.publication_date_news_list'
+        - 'config:facets.facet.tags_taxonomy_term_name_news_articles_list'
         - 'config:search_api.index.content'
   block_persons_filtered_grid:
     id: block_persons_filtered_grid
@@ -2801,6 +2830,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.organization_taxonomy_term_name_person_grid'
+        - 'config:facets.facet.position_taxonomy_term_name_person_grid'
         - 'config:search_api.index.content'
   block_persons_filtered_teaser_list:
     id: block_persons_filtered_teaser_list
@@ -3031,6 +3062,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.organization_taxonomy_term_name_person_list'
+        - 'config:facets.facet.position_taxonomy_term_name_person_list'
         - 'config:search_api.index.content'
   block_publications_filtered_teaser_list:
     id: block_publications_filtered_teaser_list
@@ -3264,4 +3297,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:facets.facet.publication_type_publication_list'
+        - 'config:facets.facet.tags_taxonomy_term_name_publications_list'
         - 'config:search_api.index.content'

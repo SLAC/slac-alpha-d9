@@ -5,7 +5,6 @@ dependencies:
   module:
     - aggregator
     - media
-    - search
     - site_settings
     - sitewide_alert
     - system
@@ -18,7 +17,6 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access news feeds'
-  - 'search content'
   - 'view media'
   - 'view published site setting entities'
   - 'view published sitewide alert entities'

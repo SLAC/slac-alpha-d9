@@ -494,7 +494,7 @@ display:
         options:
           perm: 'access feed overview'
       cache:
-        type: none
+        type: tag
         options: {  }
       empty:
         result:
