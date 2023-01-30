@@ -1,4 +1,3 @@
-uuid: 37cb2286-1a94-433f-9cdf-05cac8093988
 langcode: en
 status: true
 dependencies:
@@ -48,8 +47,6 @@ dependencies:
     - toolbar
     - vapn
     - workbench_access
-_core:
-  default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
 label: 'Content editor'
 weight: -7

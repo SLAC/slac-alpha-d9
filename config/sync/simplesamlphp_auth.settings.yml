@@ -11,7 +11,7 @@ mail_attr: mail
 header_no_cache: true
 role:
   population: null
-  eval_every_time: 2
+  eval_every_time: true
 register_users: true
 allow:
   set_drupal_pwd: false
