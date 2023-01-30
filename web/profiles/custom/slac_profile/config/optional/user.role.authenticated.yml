@@ -1,0 +1,30 @@
+uuid: 1d974c67-fc84-4ddd-8081-ce2677fa1c56
+langcode: en
+status: true
+dependencies:
+  module:
+    - aggregator
+    - contextual
+    - media
+    - shortcut
+    - site_settings
+    - sitewide_alert
+    - system
+    - view_modes_display
+    - workbench_access
+_core:
+  default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
+id: authenticated
+label: 'Authenticated user'
+weight: -99
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access contextual links'
+  - 'access news feeds'
+  - 'access shortcuts'
+  - 'preview view modes'
+  - 'use workbench access'
+  - 'view media'
+  - 'view published site setting entities'
+  - 'view published sitewide alert entities'

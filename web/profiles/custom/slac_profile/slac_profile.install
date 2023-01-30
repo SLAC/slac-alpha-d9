@@ -6,6 +6,7 @@
  */
 
 use Drupal\user\Entity\User;
+use Drupal\user\Entity\Role;
 use Drupal\shortcut\Entity\Shortcut;
 /**
  * Implements hook_install().
@@ -15,6 +16,7 @@ use Drupal\shortcut\Entity\Shortcut;
  * @see system_install()
  */
 function slac_profile_install() {
+  
   // Assign user 1 the "administrator" role.
   /** @var \Drupal\user\Entity\User $user */
   $user = User::load(1);

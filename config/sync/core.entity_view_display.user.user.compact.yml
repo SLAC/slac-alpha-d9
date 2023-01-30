@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.su_display_name
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:

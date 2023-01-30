@@ -12,10 +12,10 @@
       "Support Migrate Plus >=4.2": "https://www.drupal.org/files/issues/2022-08-12/media_migration-3269743-18.patch"
     },
     "drupal/viewsreference": {
-      "Exposed filters not working for Views in Paragraphs": "https://www.drupal.org/files/issues/2021-12-07/viewsreference-exposed_filters_not_working-3129609-12.patch"
+      "Exposed filters not working for Views in Paragraphs": "https://www.drupal.org/files/issues/2021-12-07/viewsreference-exposed_filters_not_working-3129609-15.patch"
     },
     "drupal/entity_reference_revisions": {
-      "InvalidArgumentException: Invalid translation language (und) specified": "patches/3024588-entity_reference_revisions-mr-13.patch"
+      "InvalidArgumentException: Invalid translation language (und) specified": "https://www.drupal.org/files/issues/2021-09-30/3024588-28-invalid_translation_language.patch"
     }
   }
 }

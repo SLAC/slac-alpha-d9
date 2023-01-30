@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: main
-label: 'Main navigation'
-description: 'The main navigation menu for the site.'
-locked: true

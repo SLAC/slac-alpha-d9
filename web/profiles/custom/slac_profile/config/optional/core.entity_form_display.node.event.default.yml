@@ -37,6 +37,7 @@ dependencies:
     - media_library
     - path
     - smart_date
+    - term_reference_tree
     - text
 third_party_settings:
   field_group:
@@ -103,7 +104,6 @@ third_party_settings:
     group_metadata:
       children:
         - field_teaser
-        - field_featured
         - field_tags
         - field_experience
         - field_audience
@@ -296,14 +296,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_tags:
-    type: entity_reference_autocomplete
+    type: term_reference_tree
     weight: 14
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
     third_party_settings: {  }
   field_teaser:
     type: text_textarea

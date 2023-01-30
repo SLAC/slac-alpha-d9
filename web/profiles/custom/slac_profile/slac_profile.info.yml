@@ -29,7 +29,9 @@ dependencies:
   - date_augmenter:date_augmenter
   - drupal:datetime
   - drupal:datetime_range
+  - drupal:dblog
   - duration_field:duration_field
+  - drupal:dynamic_page_cache
   - easy_breadcrumb:easy_breadcrumb
   - drupal:editor
   - encrypt:encrypt
@@ -105,9 +107,11 @@ dependencies:
   - drupal:text
   - token:token
   - token_filter:token_filter
+  - drupal:search
   - drupal:toolbar
   - twig_field_value:twig_field_value
   - twig_tweak:twig_tweak
+  - drupal:update
   - drupal:user
   - vapn:vapn
   - view_mode_select_by_token:view_mode_select_by_token
@@ -144,12 +148,10 @@ install:
   - eca_ui:eca_ui
   - eca_user:eca_user
   - eca_views:eca_views
-  - environment_indicator:environment_indicator
   - externalauth:externalauth
   - google_tag:google_tag
   - masquerade:masquerade
   - pantheon_domain_masking:pantheon_domain_masking
-  - simplesamlphp_auth:simplesamlphp_auth
   - single_content_sync:single_content_sync
   - stanford_person_importer:stanford_person_importer
 themes:

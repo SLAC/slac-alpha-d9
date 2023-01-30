@@ -1,0 +1,23 @@
+uuid: 7c683386-e287-4c41-8f7a-2964c790f2ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: HK-i4oj7kD9UCrHKkuSky2WQKjsOOxoGoMQ1InmitAI
+id: user.su_display_name
+field_name: su_display_name
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
