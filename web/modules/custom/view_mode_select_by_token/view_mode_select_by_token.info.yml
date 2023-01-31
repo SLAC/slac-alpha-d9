@@ -1,6 +1,9 @@
 name: View Mode Select by Token
 type: module
 description: Allows for setting the view mode for an Entity Reference field by a token.
-package: Custom
+package: SLAC
 core: 8.x
 core_version_requirement: ^8 || ^9
+
+hidden: true
+required: true

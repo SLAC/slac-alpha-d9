@@ -1,13 +1,9 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - stanford_person_importer
-  enforced:
-    module:
-      - stanford_person_importer
+dependencies: {  }
 id: stanford_person_importer
 label: 'Person Importer'
+token: null
 context:
   show_warning: true
   group:

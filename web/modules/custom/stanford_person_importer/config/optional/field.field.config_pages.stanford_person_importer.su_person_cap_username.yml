@@ -4,11 +4,6 @@ dependencies:
   config:
     - config_pages.type.stanford_person_importer
     - field.storage.config_pages.su_person_cap_username
-  module:
-    - stanford_person_importer
-  enforced:
-    module:
-      - stanford_person_importer
 id: config_pages.stanford_person_importer.su_person_cap_username
 field_name: su_person_cap_username
 entity_type: config_pages
@@ -17,7 +12,7 @@ label: 'CAP Username'
 description: ''
 required: true
 translatable: false
-default_value: 'slac-it'
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: string

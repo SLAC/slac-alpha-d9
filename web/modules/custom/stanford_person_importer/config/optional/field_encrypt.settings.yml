@@ -1,0 +1,58 @@
+encryption_profile: stanford_real_aes
+make_entities_uncacheable: true
+default_properties:
+  address: {  }
+  address_country: {  }
+  address_zone: {  }
+  boolean: {  }
+  comment: {  }
+  datetime: {  }
+  daterange: {  }
+  duration: {  }
+  email:
+    - value
+  link:
+    - uri
+    - title
+  metatag: {  }
+  name: {  }
+  smartdate: {  }
+  timestamp: {  }
+  fontawesome_icon: {  }
+  view_mode_switch: {  }
+  list_float: {  }
+  list_integer: {  }
+  decimal: {  }
+  float: {  }
+  integer: {  }
+  telephone:
+    - value
+  estimated_read_time: {  }
+  block_field: {  }
+  'field_ui:entity_reference:node': {  }
+  entity_reference: {  }
+  file: {  }
+  image: {  }
+  lottiefiles_field: {  }
+  'field_ui:entity_reference:media': {  }
+  svg_image_field: {  }
+  'field_ui:entity_reference:taxonomy_term': {  }
+  'field_ui:entity_reference:user': {  }
+  viewsreference: {  }
+  webform: {  }
+  entity_reference_revisions: {  }
+  'field_ui:entity_reference_revisions:paragraph': {  }
+  list_string:
+    - value
+  text:
+    - value
+  text_long:
+    - value
+  text_with_summary:
+    - value
+    - summary
+  string:
+    - value
+  string_long:
+    - value
+batch_size: 5

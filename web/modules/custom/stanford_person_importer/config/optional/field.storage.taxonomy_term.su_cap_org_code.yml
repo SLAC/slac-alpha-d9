@@ -3,19 +3,14 @@ status: true
 dependencies:
   module:
     - taxonomy
-    - stanford_person_importer
-  enforced:
-    module:
-      - stanford_person_importer
-third_party_settings: {  }
 id: taxonomy_term.su_cap_org_code
 field_name: su_cap_org_code
 entity_type: taxonomy_term
 type: string
 settings:
   max_length: 4
-  is_ascii: false
   case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: -1

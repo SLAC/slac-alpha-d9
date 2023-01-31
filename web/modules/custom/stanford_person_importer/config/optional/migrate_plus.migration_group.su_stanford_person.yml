@@ -1,11 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - stanford_person_importer
-  enforced:
-    module:
-      - stanford_person_importerdde
+dependencies: {  }
 id: su_stanford_person
 label: 'Stanford Person'
 description: 'Import profile data from who.stanford.edu.'

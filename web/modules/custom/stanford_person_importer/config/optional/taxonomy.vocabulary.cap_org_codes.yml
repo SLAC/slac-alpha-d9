@@ -1,12 +1,7 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - stanford_person_importer
-  enforced:
-    module:
-      - stanford_person_importer
+dependencies: {  }
 name: 'CAP Org Codes'
 vid: cap_org_codes
-description: ''
-weight: 0
+description: 'Used in Person only'
+weight: -9

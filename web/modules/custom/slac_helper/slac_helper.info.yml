@@ -1,4 +1,8 @@
 name: SLAC Theme Helper
 description: Provides additional functionality for the base SLAC theme
+package: SLAC
 type: module
 core_version_requirement: ^8.9 || ^9
+
+hidden: true
+required: true

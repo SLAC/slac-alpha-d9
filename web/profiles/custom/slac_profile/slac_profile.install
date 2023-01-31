@@ -6,7 +6,6 @@
  */
 
 use Drupal\user\Entity\User;
-use Drupal\user\Entity\Role;
 use Drupal\shortcut\Entity\Shortcut;
 /**
  * Implements hook_install().
@@ -43,9 +42,11 @@ function slac_profile_install() {
   // Select default theme
   \Drupal::configFactory()->getEditable('system.theme')->set('default', 'slac')->save(TRUE);
 
+  // Enable Stanford Person Importer
+  /*
+  \Drupal::service('module_installer')->install(['stanford_person_importer']);
   // Add demo content
-  Drupal::service('module_installer')->install(['slac_default_content']);
-
+  \Drupal::service('module_installer')->install(['slac_default_content']);
   // Add roles and permissions
-  Drupal::service('module_installer')->install(['slac_profile_roles']);
+  \Drupal::service('module_installer')->install(['slac_profile_roles']);*/
 }

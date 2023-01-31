@@ -149,11 +149,11 @@ install:
   - eca_user:eca_user
   - eca_views:eca_views
   - externalauth:externalauth
-  - google_tag:google_tag
-  - masquerade:masquerade
+  - pantheon_advanced_page_cache:pantheon_advanced_page_cache
   - pantheon_domain_masking:pantheon_domain_masking
+  - simplesamlphp_auth:simplesamlphp_auth
   - single_content_sync:single_content_sync
-  - stanford_person_importer:stanford_person_importer
+  - term_reference_tree:term_reference_tree
 themes:
   - claro
   - gin
