@@ -102,6 +102,7 @@
     "drupal/smart_trim": "^2.0",
     "drupal/style_options": "^1.0@alpha",
     "drupal/svg_image_field": "^2.1",
+    "drupal/term_reference_tree": "^1.1",
     "drupal/token_filter": "^1.4",
     "drupal/twig_field_value": "^2.0",
     "drupal/twig_tweak": "^3.1",
