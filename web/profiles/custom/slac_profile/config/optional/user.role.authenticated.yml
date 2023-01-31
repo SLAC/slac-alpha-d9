@@ -5,7 +5,6 @@ dependencies:
     - aggregator
     - contextual
     - media
-    - search
     - shortcut
     - site_settings
     - sitewide_alert
@@ -22,7 +21,6 @@ permissions:
   - 'access news feeds'
   - 'access shortcuts'
   - 'preview view modes'
-  - 'search content'
   - 'use workbench access'
   - 'view media'
   - 'view published site setting entities'

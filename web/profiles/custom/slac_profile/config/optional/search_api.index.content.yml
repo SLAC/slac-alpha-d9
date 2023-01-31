@@ -2,17 +2,21 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_answer
+    - field.storage.paragraph.field_body
     - field.storage.node.field_audience
     - field.storage.node.field_text
     - field.storage.node.field_category
     - field.storage.node.field_paragraphs
-    - field.storage.paragraph.field_button_links
-    - field.storage.paragraph.field_button_link
+    - field.storage.paragraph.field_block_content
     - field.storage.paragraph.field_caption
-    - field.storage.paragraph.field_body
-    - field.storage.paragraph.field_block
+    - field.storage.paragraph.field_paragraphs_1
     - field.storage.paragraph.field_paragraph
-    - field.storage.site_setting_entity.field_link
+    - field.storage.paragraph.field_paragraphs_3
+    - field.storage.paragraph.field_paragraphs_4
+    - field.storage.paragraph.field_paragraphs_2
+    - field.storage.paragraph.field_paragraph_2
+    - field.storage.paragraph.field_plain_long_text
     - field.storage.paragraph.field_short_text
     - field.storage.paragraph.field_tab_heading
     - field.storage.paragraph.field_text
@@ -25,8 +29,6 @@ dependencies:
     - field.storage.node.field_type
     - field.storage.node.field_experience
     - field.storage.node.field_text_title_full
-    - field.storage.node.field_links
-    - field.storage.node.field_location_link
     - field.storage.node.field_organization
     - field.storage.node.field_position
     - field.storage.node.field_date
@@ -41,16 +43,26 @@ dependencies:
     - field.storage.node.field_teaser
     - search_api.server.database
   module:
+    - paragraphs
     - taxonomy
     - node
-    - paragraphs
-    - site_settings
     - search_api
 id: content
 name: Content
 description: 'Primary content index for site-wide search. '
 read_only: false
 field_settings:
+  answer:
+    label: 'Answer » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_answer:entity:field_body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_answer
+        - field.storage.paragraph.field_body
+      module:
+        - paragraphs
   audience:
     label: 'Audience » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -137,6 +149,17 @@ field_settings:
         - field.storage.node.field_experience
       module:
         - taxonomy
+  field_block_content:
+    label: 'Content » Paragraph » Block Content'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_block_content'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_block_content
+      module:
+        - paragraphs
   field_date:
     label: 'Publication Date'
     datasource_id: 'entity:node'
@@ -153,6 +176,19 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_education
+  field_plain_long_text:
+    label: 'Content » Paragraph » Content » Paragraph » Content » Paragraph » Description'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_paragraphs_1:entity:field_plain_long_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_paragraph
+        - field.storage.paragraph.field_paragraphs_1
+        - field.storage.paragraph.field_plain_long_text
+      module:
+        - paragraphs
   field_publication_slac_type:
     label: 'SLAC Publication Type'
     datasource_id: 'entity:node'
@@ -344,6 +380,18 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_dek
+  processed_1:
+    label: 'Content » Paragraph » Content » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraphs_1:entity:field_body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_body
+        - field.storage.paragraph.field_paragraphs_1
+      module:
+        - paragraphs
   processed_11:
     label: 'Speaker Bio » Processed text'
     datasource_id: 'entity:node'
@@ -379,7 +427,7 @@ field_settings:
         - field.storage.paragraph.field_caption
       module:
         - paragraphs
-  processed_20:
+  processed_2:
     label: 'Content » Paragraph » Content » Paragraph » Caption » Processed text'
     datasource_id: 'entity:node'
     property_path: 'field_paragraphs:entity:field_paragraph:entity:field_body:processed'
@@ -391,15 +439,15 @@ field_settings:
         - field.storage.paragraph.field_paragraph
       module:
         - paragraphs
-  processed_21:
-    label: 'Content » Paragraph » Content » Paragraph » Caption » Processed text'
+  processed_3:
+    label: 'Content » Paragraph » Content » Paragraph » Content » Paragraph » Caption » Processed text'
     datasource_id: 'entity:node'
-    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_caption:processed'
+    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_paragraph:entity:field_body:processed'
     type: text
     dependencies:
       config:
         - field.storage.node.field_paragraphs
-        - field.storage.paragraph.field_caption
+        - field.storage.paragraph.field_body
         - field.storage.paragraph.field_paragraph
       module:
         - paragraphs
@@ -414,6 +462,18 @@ field_settings:
         - field.storage.paragraph.field_body
       module:
         - paragraphs
+  processed_5:
+    label: 'Content » Paragraph » Content » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraphs_3:entity:field_body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_body
+        - field.storage.paragraph.field_paragraphs_3
+      module:
+        - paragraphs
   processed_6:
     label: 'Description » Processed text'
     datasource_id: 'entity:node'
@@ -422,6 +482,43 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_body
+  processed_7:
+    label: 'Content » Paragraph » Content » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraphs_4:entity:field_body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_body
+        - field.storage.paragraph.field_paragraphs_4
+      module:
+        - paragraphs
+  processed_8:
+    label: 'Content » Paragraph » Content » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraphs_2:entity:field_body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_body
+        - field.storage.paragraph.field_paragraphs_2
+      module:
+        - paragraphs
+  processed_9:
+    label: 'Content » Paragraph » Content » Paragraph » Content » Paragraph » Caption » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_paragraph_2:entity:field_body:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_paragraphs
+        - field.storage.paragraph.field_body
+        - field.storage.paragraph.field_paragraph
+        - field.storage.paragraph.field_paragraph_2
+      module:
+        - paragraphs
   published:
     label: Published
     property_path: aggregated_field
@@ -487,82 +584,6 @@ field_settings:
     dependencies:
       module:
         - node
-  title_1:
-    label: 'Links » Link text'
-    datasource_id: 'entity:node'
-    property_path: 'field_links:title'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_links
-  title_11:
-    label: 'Content » Paragraph » Content » Paragraph » Button » Link text'
-    datasource_id: 'entity:node'
-    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_button_link:title'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_paragraphs
-        - field.storage.paragraph.field_button_link
-        - field.storage.paragraph.field_paragraph
-      module:
-        - paragraphs
-  title_12:
-    label: 'Content » Paragraph » Content » Paragraph » Button Links » Link text'
-    datasource_id: 'entity:node'
-    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_button_links:title'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_paragraphs
-        - field.storage.paragraph.field_button_links
-        - field.storage.paragraph.field_paragraph
-      module:
-        - paragraphs
-  title_2:
-    label: 'Location Link » Link text'
-    datasource_id: 'entity:node'
-    property_path: 'field_location_link:title'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_location_link
-  title_4:
-    label: 'Content » Paragraph » Button » Link text'
-    datasource_id: 'entity:node'
-    property_path: 'field_paragraphs:entity:field_button_link:title'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_paragraphs
-        - field.storage.paragraph.field_button_link
-      module:
-        - paragraphs
-  title_5:
-    label: 'Content » Paragraph » Button Links » Link text'
-    datasource_id: 'entity:node'
-    property_path: 'field_paragraphs:entity:field_button_links:title'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_paragraphs
-        - field.storage.paragraph.field_button_links
-      module:
-        - paragraphs
-  title_6:
-    label: 'Content » Paragraph » Content » Paragraph » Block » Site Setting » Title Link » Link text'
-    datasource_id: 'entity:node'
-    property_path: 'field_paragraphs:entity:field_paragraph:entity:field_block:entity:field_link:title'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_paragraphs
-        - field.storage.paragraph.field_block
-        - field.storage.paragraph.field_paragraph
-        - field.storage.site_setting_entity.field_link
-      module:
-        - paragraphs
-        - site_settings
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
@@ -595,8 +616,7 @@ datasource_settings:
   'entity:node':
     bundles:
       default: true
-      selected:
-        - faq
+      selected: {  }
     languages:
       default: true
       selected: {  }
@@ -626,6 +646,7 @@ processor_settings:
       preprocess_query: -15
     all_fields: true
     fields:
+      - answer
       - audience
       - audience_full
       - category
@@ -633,7 +654,9 @@ processor_settings:
       - event_type
       - experience
       - experience_full
+      - field_block_content
       - field_education
+      - field_plain_long_text
       - field_publication_slac_type
       - field_publication_slac_type_full
       - field_publication_type
@@ -653,25 +676,23 @@ processor_settings:
       - position
       - position_full
       - processed
+      - processed_1
       - processed_11
       - processed_12
       - processed_13
       - processed_19
-      - processed_20
-      - processed_21
+      - processed_2
+      - processed_3
       - processed_4
+      - processed_5
       - processed_6
+      - processed_7
+      - processed_8
+      - processed_9
       - series
       - tags
       - tags_full
       - title
-      - title_1
-      - title_11
-      - title_12
-      - title_2
-      - title_4
-      - title_5
-      - title_6
       - type
       - type_full
     title: true
@@ -710,20 +731,11 @@ processor_settings:
       - processed_12
       - processed_13
       - processed_19
-      - processed_20
-      - processed_21
       - processed_4
       - processed_6
       - series
       - tags_full
       - title
-      - title_1
-      - title_11
-      - title_12
-      - title_2
-      - title_4
-      - title_5
-      - title_6
       - type
       - type_full
   language_with_fallback: {  }
@@ -734,10 +746,13 @@ processor_settings:
       preprocess_query: 0
     all_fields: true
     fields:
+      - answer
       - audience_full
       - category_full
       - experience_full
+      - field_block_content
       - field_education
+      - field_plain_long_text
       - field_publication_slac_type_full
       - field_publication_type_full
       - field_short_text
@@ -752,24 +767,22 @@ processor_settings:
       - organization_full
       - position_full
       - processed
+      - processed_1
       - processed_11
       - processed_12
       - processed_13
       - processed_19
-      - processed_20
-      - processed_21
+      - processed_2
+      - processed_3
       - processed_4
+      - processed_5
       - processed_6
+      - processed_7
+      - processed_8
+      - processed_9
       - series
       - tags_full
       - title
-      - title_1
-      - title_11
-      - title_12
-      - title_2
-      - title_4
-      - title_5
-      - title_6
       - type_full
     exceptions:
       mexican: mexic
@@ -780,10 +793,13 @@ processor_settings:
       preprocess_query: -6
     all_fields: true
     fields:
+      - answer
       - audience_full
       - category_full
       - experience_full
+      - field_block_content
       - field_education
+      - field_plain_long_text
       - field_publication_slac_type_full
       - field_publication_type_full
       - field_short_text
@@ -798,24 +814,22 @@ processor_settings:
       - organization_full
       - position_full
       - processed
+      - processed_1
       - processed_11
       - processed_12
       - processed_13
       - processed_19
-      - processed_20
-      - processed_21
+      - processed_2
+      - processed_3
       - processed_4
+      - processed_5
       - processed_6
+      - processed_7
+      - processed_8
+      - processed_9
       - series
       - tags_full
       - title
-      - title_1
-      - title_11
-      - title_12
-      - title_2
-      - title_4
-      - title_5
-      - title_6
       - type_full
     spaces: ''
     ignored: ._-
@@ -827,6 +841,7 @@ processor_settings:
       preprocess_query: -20
     all_fields: true
     fields:
+      - answer
       - audience
       - audience_full
       - category
@@ -834,7 +849,9 @@ processor_settings:
       - event_type
       - experience
       - experience_full
+      - field_block_content
       - field_education
+      - field_plain_long_text
       - field_publication_slac_type
       - field_publication_slac_type_full
       - field_publication_type
@@ -854,25 +871,23 @@ processor_settings:
       - position
       - position_full
       - processed
+      - processed_1
       - processed_11
       - processed_12
       - processed_13
       - processed_19
-      - processed_20
-      - processed_21
+      - processed_2
+      - processed_3
       - processed_4
+      - processed_5
       - processed_6
+      - processed_7
+      - processed_8
+      - processed_9
       - series
       - tags
       - tags_full
       - title
-      - title_1
-      - title_11
-      - title_12
-      - title_2
-      - title_4
-      - title_5
-      - title_6
       - type
       - type_full
 tracker_settings:

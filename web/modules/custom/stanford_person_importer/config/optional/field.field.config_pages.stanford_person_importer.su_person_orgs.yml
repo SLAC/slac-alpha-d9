@@ -5,11 +5,6 @@ dependencies:
     - config_pages.type.stanford_person_importer
     - field.storage.config_pages.su_person_orgs
     - taxonomy.vocabulary.cap_org_codes
-  module:
-    - stanford_person_importer
-  enforced:
-    module:
-      - stanford_person_importer
 id: config_pages.stanford_person_importer.su_person_orgs
 field_name: su_person_orgs
 entity_type: config_pages

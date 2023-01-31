@@ -2644,19 +2644,6 @@ display:
     display_options:
       title: Persons
       sorts:
-        field_last_name:
-          id: field_last_name
-          table: search_api_index_content
-          field: field_last_name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api
-          order: ASC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
         search_api_relevance:
           id: search_api_relevance
           table: search_api_index_content
@@ -2841,19 +2828,6 @@ display:
     display_options:
       title: Persons
       sorts:
-        field_last_name:
-          id: field_last_name
-          table: search_api_index_content
-          field: field_last_name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api
-          order: ASC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
         search_api_relevance:
           id: search_api_relevance
           table: search_api_index_content

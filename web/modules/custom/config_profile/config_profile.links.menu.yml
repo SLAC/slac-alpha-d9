@@ -1,0 +1,6 @@
+config_profile.settings:
+  title: 'Config Profile'
+  description: 'Settings for the Config Profile module'
+  route_name: config_profile.settings
+  parent: config.sync
+

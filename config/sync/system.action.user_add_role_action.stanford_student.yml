@@ -1,0 +1,14 @@
+uuid: be5651a7-a71d-4fee-b00b-fd02aec9a2cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.stanford_student
+  module:
+    - user
+id: user_add_role_action.stanford_student
+label: 'Add the Stanford Student role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: stanford_student

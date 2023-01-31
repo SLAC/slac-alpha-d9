@@ -2,10 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_body
     - field.storage.node.field_paragraphs
-    - field.storage.node.field_teaser
-    - field.storage.paragraph.field_paragraph
     - search_api.index.content
   module:
     - better_exposed_filters
@@ -563,7 +560,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: none
+        type: search_api_tag
         options: {  }
       empty:
         area:
@@ -770,10 +767,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_body'
         - 'config:field.storage.node.field_paragraphs'
-        - 'config:field.storage.node.field_teaser'
-        - 'config:field.storage.paragraph.field_paragraph'
         - 'config:search_api.index.content'
   search_list:
     id: search_list
@@ -803,8 +797,5 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_body'
         - 'config:field.storage.node.field_paragraphs'
-        - 'config:field.storage.node.field_teaser'
-        - 'config:field.storage.paragraph.field_paragraph'
         - 'config:search_api.index.content'

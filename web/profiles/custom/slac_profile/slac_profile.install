@@ -5,7 +5,6 @@
  * Install, update and uninstall functions for the standard installation profile.
  */
 
-use \Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
 use Drupal\shortcut\Entity\Shortcut;
 /**
@@ -16,21 +15,12 @@ use Drupal\shortcut\Entity\Shortcut;
  * @see system_install()
  */
 function slac_profile_install() {
+  
   // Assign user 1 the "administrator" role.
   /** @var \Drupal\user\Entity\User $user */
   $user = User::load(1);
   $user->addRole('administrator');
   $user->save();
-
-  // This doesn't seem to have any affect on the outcome.
-  $existing_roles = Role::loadMultiple();
-  $slac_roles = array("developer");
-  foreach($slac_roles as $role) {
-    if(!isset($existing_roles[$role])){
-      $new_role = Role::create(array('id' => $role, 'label' => ucwords($role)));
-      $new_role->save();
-     }
-  }
 
   // Populate the default shortcut set.
   $shortcut = Shortcut::create([
@@ -52,9 +42,11 @@ function slac_profile_install() {
   // Select default theme
   \Drupal::configFactory()->getEditable('system.theme')->set('default', 'slac')->save(TRUE);
 
+  // Enable Stanford Person Importer
+  /*
+  \Drupal::service('module_installer')->install(['stanford_person_importer']);
   // Add demo content
-  Drupal::service('module_installer')->install(['slac_default_content']);
-
+  \Drupal::service('module_installer')->install(['slac_default_content']);
   // Add roles and permissions
-  Drupal::service('module_installer')->install(['slac_profile_roles']);
+  \Drupal::service('module_installer')->install(['slac_profile_roles']);*/
 }

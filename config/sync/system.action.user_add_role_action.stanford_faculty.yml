@@ -1,0 +1,14 @@
+uuid: 17b7a6bd-2602-4e39-9a36-399ba6038bd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.stanford_faculty
+  module:
+    - user
+id: user_add_role_action.stanford_faculty
+label: 'Add the Stanford Faculty role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: stanford_faculty

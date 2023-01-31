@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-name: 'FAQ Category'
-vid: faq_category
-description: 'Used in FAQS only'
-weight: -4

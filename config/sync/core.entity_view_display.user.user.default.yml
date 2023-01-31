@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.su_display_name
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:

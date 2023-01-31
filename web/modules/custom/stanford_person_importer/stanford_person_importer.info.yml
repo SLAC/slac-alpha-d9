@@ -1,10 +1,11 @@
-name: 'Stanford Person Importer'
+name: 'SLAC - Stanford Person Importer'
 type: module
 description: 'Migration support for importing of profile information from stanford.edu.'
 core_version_requirement: '^8.8 || ^9'
 package: SLAC
 version: 9.x-0.1-dev
 dependencies:
+  - 'drupal:taxonomy'
   - 'config_pages:config_pages'
   - 'drupal:migrate'
   - 'drupal:telephone'

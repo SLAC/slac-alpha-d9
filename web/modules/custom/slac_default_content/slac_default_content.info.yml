@@ -1,0 +1,53 @@
+name: SLAC Demo Content
+type: module
+package: SLAC
+description: Default content to be imported into SLAC websites.  This includes some taxonomy terms as well as demo content.
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - default_content
+default_content:
+  taxonomy_term:
+    - c4619105-4b2f-4cf8-9720-d8b3d7fb1e96
+    - a0e6c813-2371-4e97-bcf7-e658558928b0
+    - e8110df2-d11d-4dda-a676-e81be0bfee57
+    - fe5ba884-b994-420c-9609-fabe1993b708
+    - 88dc89bb-61c6-4b41-bb50-41aa15228041
+    - 195fd97f-b9b4-4d52-a5ea-ba3f3e59c677
+    - 0296a58a-2c5d-4902-af2f-40b28dbc8e8f
+    - ff1632f2-db54-400b-8022-f9b9b8f6930e
+    - ca8a53b2-30cc-4706-8f06-9c2dfe66c7bd
+    - 5913654a-977c-4490-95df-59dc6f961350
+    - 2be97742-22be-4ffd-a83a-930a1dfb46aa
+    - 383e0cfd-4d7c-4ae5-8ae7-3a5c2c0e0f4c
+  node:
+    - d636b713-605f-444f-bb10-d1e5f9adeee0
+    - 2d640f1e-bd17-4a61-8c13-dd6522b914fb
+    - a3393c37-0f55-48bf-9354-a28f20f4fcbb
+    - ceb86a87-5958-4998-843b-f951b986082a
+  site_setting_entity:
+    - 02ed05be-2d81-4a14-bd30-ac3ac0a93060
+  menu_link_content:
+    - 44e51240-ce35-4926-b40e-f59b106ca9bc
+    - 5fb3646c-428b-4fda-91a9-af55148bc66e
+    - ed7eeaf5-78c1-4276-b70a-8c0912518390
+    - c9a4442b-540f-4ba7-b01f-4853ea9932cc
+    - a2851be7-25c6-40e4-a6f1-565147d5da68
+    - 234e2d91-0d2b-41ba-936b-a7fe04c140a3
+    - 1fd7123b-875a-4e03-9c71-33debf36dae2
+    - b2c90221-c9d8-4bf0-be0c-05b837a169ba
+    - f71d3b9e-c303-4a83-976e-2fe0d647ca86
+    - 44fcf201-524d-4f54-8658-91496a5436d1
+    - 9776d3e8-190c-4dac-9d88-735457a3f3ea
+    - b9aa427a-d283-4c6c-837b-bd495584f116
+    - e3aaf908-08c5-4865-822f-704439df3a41
+    - 3a9732c1-0b38-4697-9a4d-b82279df545c
+    - 43a2eade-449b-408b-ac5f-fb199aaf09fd
+    - 5fd0bf64-09c7-4f63-ac32-b1d57d362b6e
+    - 90b308ef-5bc3-4186-a1ed-36a73304762c
+  media:
+   - bf463fba-68fe-4478-91b5-779b68e7b8c8
+   - ac3ff98a-d2c0-4a6b-8093-c92bbad4aaca
+   - 50427ebe-4699-4b6f-8dee-adbdc50dd9da
+   - 9a00b18c-8571-4753-b46e-62cb03c3a52f
+   - 8e52d9e1-eb2f-463e-9b7f-7adfef878261

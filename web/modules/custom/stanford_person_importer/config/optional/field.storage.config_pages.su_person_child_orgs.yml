@@ -3,10 +3,6 @@ status: true
 dependencies:
   module:
     - config_pages
-    - stanford_person_importer
-  enforced:
-    module:
-      - stanford_person_importer
 id: config_pages.su_person_child_orgs
 field_name: su_person_child_orgs
 entity_type: config_pages

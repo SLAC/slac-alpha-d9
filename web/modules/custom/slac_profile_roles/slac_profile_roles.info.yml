@@ -1,0 +1,8 @@
+name: SLAC Profile Roles
+type: module
+package: SLAC
+description: Defines the initial set of custom roles and permissions for SLAC sites.  This must be installed initially.
+core_version_requirement: ^9 || ^10
+
+hidden: true
+required: true

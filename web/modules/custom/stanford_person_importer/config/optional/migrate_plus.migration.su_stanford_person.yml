@@ -1,11 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - stanford_person_importer
-  enforced:
-    module:
-      - stanford_person_importer
+dependencies: {  }
 id: su_stanford_person
 class: null
 field_plugin_method: null
@@ -139,10 +134,10 @@ process:
     default_value: person
   field_first_name: first_name
   field_last_name: last_name
-  field_text_title_full/format: constants/restricted_html
-  field_text_title_full/value: long_title
+  field_text_title_full: long_title
   field_text_title_short: short_title
   field_email: email
+  field_telephone: phone
   field_mobile: phone
   field_mail_code: mailcode
   field_location: office

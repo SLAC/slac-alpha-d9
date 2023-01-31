@@ -11,7 +11,6 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - basic_html
-      - full_html
 id: node.blog.field_dek
 field_name: field_dek
 entity_type: node

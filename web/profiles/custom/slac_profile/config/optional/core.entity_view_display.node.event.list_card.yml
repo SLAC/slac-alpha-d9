@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.event.field_email
     - field.field.node.event.field_experience
     - field.field.node.event.field_external_link
-    - field.field.node.event.field_featured
     - field.field.node.event.field_image
     - field.field.node.event.field_location
     - field.field.node.event.field_location_link
@@ -103,7 +102,6 @@ hidden:
   field_contact_name: true
   field_email: true
   field_external_link: true
-  field_featured: true
   field_image: true
   field_location_link: true
   field_long_text: true
