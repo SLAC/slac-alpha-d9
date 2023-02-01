@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'FAQs Categories'
+vid: faqs_categories
+description: 'Used in FAQS only'
+weight: 0

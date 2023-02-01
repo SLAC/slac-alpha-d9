@@ -17,7 +17,6 @@ dependencies:
     - paragraphs.paragraphs_type.small_card_with_icon
     - paragraphs.paragraphs_type.small_card_with_image
     - paragraphs.paragraphs_type.tab_item
-    - paragraphs.paragraphs_type.table
     - paragraphs.paragraphs_type.tout
     - paragraphs.paragraphs_type.two_column_hero
     - paragraphs.paragraphs_type.wide_card
@@ -50,7 +49,6 @@ settings:
       small_card_with_icon: small_card_with_icon
       small_card_with_image: small_card_with_image
       tab_item: tab_item
-      table: table
       tout: tout
       two_column_hero: two_column_hero
       wide_card: wide_card
@@ -77,9 +75,6 @@ settings:
       cards_with_show_more:
         weight: -82
         enabled: true
-      content_card:
-        weight: -81
-        enabled: true
       content_embed:
         weight: -80
         enabled: true
@@ -98,18 +93,9 @@ settings:
       embed_webform:
         weight: -75
         enabled: false
-      extra_large_card:
-        weight: -74
-        enabled: true
       fifty_fifty:
         weight: -73
         enabled: false
-      fifty_fifty_staggered:
-        weight: -72
-        enabled: true
-      image_carousel:
-        weight: -69
-        enabled: true
       image_embed:
         weight: -68
         enabled: false
@@ -125,12 +111,6 @@ settings:
       media_grid:
         weight: -65
         enabled: false
-      microsite_hero:
-        weight: -64
-        enabled: true
-      microsite_navigation_marker:
-        weight: -63
-        enabled: true
       overlap_image:
         weight: -62
         enabled: false
@@ -152,18 +132,12 @@ settings:
       small_card_with_image:
         weight: -56
         enabled: true
-      small_card_with_solid_background:
-        weight: -55
-        enabled: true
       tab_item:
         weight: -54
         enabled: true
       table:
         weight: -53
-        enabled: true
-      table_of_contents:
-        weight: -52
-        enabled: true
+        enabled: false
       tabs:
         weight: -51
         enabled: false
@@ -172,9 +146,6 @@ settings:
         enabled: true
       two_column_hero:
         weight: -49
-        enabled: true
-      video_hero:
-        weight: -48
         enabled: true
       video_lightbox:
         weight: -47

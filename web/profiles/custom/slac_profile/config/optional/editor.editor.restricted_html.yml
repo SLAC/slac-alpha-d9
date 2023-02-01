@@ -17,6 +17,7 @@ settings:
       - removeFormat
       - '|'
       - sourceEditing
+      - link
       - '-'
   plugins:
     ckeditor5_sourceEditing:

@@ -192,7 +192,7 @@ content:
             label: 'Add to Calendar'
             event_title: ''
             location: ''
-            description: ''
+            description: '[node:field_body:value]'
             max_desc: '60'
             target: ''
             past_events: 0
