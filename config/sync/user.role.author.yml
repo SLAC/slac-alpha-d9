@@ -29,6 +29,7 @@ dependencies:
     - node
     - paragraphs
     - path
+    - quick_node_clone
     - rabbit_hole
     - sitewide_alert
     - system
@@ -47,6 +48,13 @@ permissions:
   - 'access toolbar'
   - 'administer main menu items'
   - 'bypass vapn'
+  - 'clone blog content'
+  - 'clone event content'
+  - 'clone faq content'
+  - 'clone landing_page content'
+  - 'clone news_article content'
+  - 'clone page content'
+  - 'clone person content'
   - 'create blog content'
   - 'create document media'
   - 'create event content'

@@ -24,6 +24,7 @@ dependencies:
     - taxonomy.vocabulary.editorial_section
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.experience
+    - taxonomy.vocabulary.faq_category
     - taxonomy.vocabulary.news_type
     - taxonomy.vocabulary.position
     - taxonomy.vocabulary.series
@@ -59,6 +60,7 @@ dependencies:
     - paragraphs
     - path
     - pathauto
+    - quick_node_clone
     - rabbit_hole
     - redirect
     - responsive_image
@@ -177,6 +179,14 @@ permissions:
   - administer_mailsystem
   - 'bypass node access'
   - 'bypass vapn'
+  - 'clone blog content'
+  - 'clone event content'
+  - 'clone faq content'
+  - 'clone landing_page content'
+  - 'clone news_article content'
+  - 'clone page content'
+  - 'clone person content'
+  - 'clone publication content'
   - 'create blog content'
   - 'create document media'
   - 'create event content'
@@ -195,6 +205,7 @@ permissions:
   - 'create terms in editorial_section'
   - 'create terms in event_type'
   - 'create terms in experience'
+  - 'create terms in faq_category'
   - 'create terms in news_type'
   - 'create terms in position'
   - 'create terms in series'
@@ -252,6 +263,7 @@ permissions:
   - 'delete terms in editorial_section'
   - 'delete terms in event_type'
   - 'delete terms in experience'
+  - 'delete terms in faq_category'
   - 'delete terms in news_type'
   - 'delete terms in position'
   - 'delete terms in series'
@@ -293,6 +305,7 @@ permissions:
   - 'edit terms in editorial_section'
   - 'edit terms in event_type'
   - 'edit terms in experience'
+  - 'edit terms in faq_category'
   - 'edit terms in news_type'
   - 'edit terms in position'
   - 'edit terms in series'
