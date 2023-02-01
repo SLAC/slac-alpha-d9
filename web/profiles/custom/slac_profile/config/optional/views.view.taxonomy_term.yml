@@ -247,7 +247,20 @@ display:
       relationships: {  }
       link_display: page_1
       link_url: ''
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '[view:title]'
+            format: source
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
