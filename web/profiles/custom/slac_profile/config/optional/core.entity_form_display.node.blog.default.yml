@@ -129,10 +129,15 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_category:
-    type: options_select
+    type: term_reference_tree
     weight: 30
     region: content
-    settings: {  }
+    settings:
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
     third_party_settings: {  }
   field_date:
     type: datetime_default
@@ -149,14 +154,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_editorial_group:
-    type: entity_reference_autocomplete
+    type: term_reference_tree
     weight: 12
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
     third_party_settings: {  }
   field_hero_paragraph:
     type: paragraphs
@@ -209,10 +215,15 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_series:
-    type: options_select
+    type: term_reference_tree
     weight: 29
     region: content
-    settings: {  }
+    settings:
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
     third_party_settings: {  }
   field_tags:
     type: term_reference_tree

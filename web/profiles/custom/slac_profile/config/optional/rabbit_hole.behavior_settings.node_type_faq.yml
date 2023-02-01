@@ -6,7 +6,7 @@ dependencies:
 id: node_type_faq
 entity_type_id: node_type
 entity_id: faq
-action: page_not_found
+action: display_page
 allow_override: 0
 redirect: ''
 redirect_code: 301

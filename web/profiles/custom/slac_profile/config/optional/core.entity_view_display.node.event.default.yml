@@ -94,7 +94,6 @@ third_party_settings:
         - field_teaser
         - field_type
         - field_tags
-        - field_featured
       label: Metadata
       parent_name: group_page_content
       region: content
@@ -277,7 +276,7 @@ content:
             label: 'Add to Calendar'
             event_title: ''
             location: ''
-            description: ''
+            description: '[node:field_body:value]'
             max_desc: '60'
             target: ''
             past_events: 0

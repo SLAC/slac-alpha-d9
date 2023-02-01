@@ -14,7 +14,6 @@ dependencies:
     - paragraphs.paragraphs_type.embed_view
     - paragraphs.paragraphs_type.embed_webform
     - paragraphs.paragraphs_type.image_hero
-    - paragraphs.paragraphs_type.table
   module:
     - entity_reference_revisions
 id: node.person.field_paragraphs
@@ -40,7 +39,6 @@ settings:
       embed_view: embed_view
       embed_webform: embed_webform
       image_hero: image_hero
-      table: table
     negate: 1
     target_bundles_drag_drop:
       accordion:
@@ -126,7 +124,7 @@ settings:
         enabled: false
       table:
         weight: -54
-        enabled: true
+        enabled: false
       tabs:
         weight: -52
         enabled: false

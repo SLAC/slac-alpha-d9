@@ -12,6 +12,7 @@ dependencies:
     - field_group
     - paragraphs
     - path
+    - term_reference_tree
 third_party_settings:
   field_group:
     group_tabs:
@@ -47,7 +48,6 @@ third_party_settings:
         required_fields: true
     group_metadata:
       children:
-        - field_faq_category
         - field_category
       label: Metadata
       region: content
@@ -91,14 +91,15 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_category:
-    type: entity_reference_autocomplete
+    type: term_reference_tree
     weight: 13
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
