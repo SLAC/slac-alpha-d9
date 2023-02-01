@@ -9,7 +9,6 @@ dependencies:
     - filter.format.table
     - media.type.document
     - media.type.image
-    - media.type.remote_audio
     - media.type.remote_video
     - node.type.blog
     - node.type.event
@@ -77,7 +76,6 @@ permissions:
   - 'create page content'
   - 'create person content'
   - 'create publication content'
-  - 'create remote_audio media'
   - 'create remote_video media'
   - 'create terms in audience'
   - 'create terms in category'
@@ -100,7 +98,6 @@ permissions:
   - 'delete any page content'
   - 'delete any person content'
   - 'delete any publication content'
-  - 'delete any remote_audio media'
   - 'delete any remote_video media'
   - 'delete blog revisions'
   - 'delete event revisions'
@@ -120,7 +117,6 @@ permissions:
   - 'delete own page content'
   - 'delete own person content'
   - 'delete own publication content'
-  - 'delete own remote_audio media'
   - 'delete own remote_video media'
   - 'delete page revisions'
   - 'delete person revisions'
@@ -145,7 +141,6 @@ permissions:
   - 'edit any page content'
   - 'edit any person content'
   - 'edit any publication content'
-  - 'edit any remote_audio media'
   - 'edit any remote_video media'
   - 'edit behavior plugin settings'
   - 'edit own blog content'
@@ -159,7 +154,6 @@ permissions:
   - 'edit own page content'
   - 'edit own person content'
   - 'edit own publication content'
-  - 'edit own remote_audio media'
   - 'edit own remote_video media'
   - 'edit sitewide alert entities'
   - 'edit terms in audience'
