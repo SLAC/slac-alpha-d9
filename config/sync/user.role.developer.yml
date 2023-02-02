@@ -48,7 +48,6 @@ dependencies:
     - fontawesome
     - image
     - key
-    - mailsystem
     - media
     - menu_admin_per_menu
     - metatag
@@ -176,7 +175,6 @@ permissions:
   - 'administer webform labels'
   - 'administer webform submission'
   - 'administer workflows'
-  - administer_mailsystem
   - 'bypass node access'
   - 'bypass vapn'
   - 'clone blog content'

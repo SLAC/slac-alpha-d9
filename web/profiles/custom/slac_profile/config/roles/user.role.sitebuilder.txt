@@ -78,8 +78,8 @@ dependencies:
     - vppr
     - webform
     - workflows
-id: developer
-label: 'Developer'
+id: sitebuilder
+label: 'Site Builder'
 weight: -4
 is_admin: false
 permissions:
@@ -176,7 +176,6 @@ permissions:
   - 'administer webform labels'
   - 'administer webform submission'
   - 'administer workflows'
-  - administer_mailsystem
   - 'bypass node access'
   - 'bypass vapn'
   - 'clone block_content entity'

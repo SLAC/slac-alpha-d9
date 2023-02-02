@@ -8,6 +8,7 @@ dependencies:
     - filter.format.table
     - media.type.document
     - media.type.image
+    - media.type.remote_audio
     - media.type.remote_video
     - node.type.blog
     - node.type.event
@@ -22,7 +23,6 @@ dependencies:
     - taxonomy.vocabulary.category
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.experience
-    - taxonomy.vocabulary.faq_category
     - taxonomy.vocabulary.news_type
     - taxonomy.vocabulary.position
     - taxonomy.vocabulary.series
@@ -30,7 +30,7 @@ dependencies:
     - workflows.workflow.content
   module:
     - content_moderation
-    - file
+    - contextual
     - filter
     - fontawesome
     - media
@@ -39,67 +39,31 @@ dependencies:
     - node
     - paragraphs
     - path
-    - quick_node_clone
     - rabbit_hole
     - redirect
-    - single_content_sync
-    - site_settings
     - sitewide_alert
     - system
     - taxonomy
     - toolbar
     - vapn
-    - vppr
-    - webform
     - workbench_access
-id: manager
-label: Manager
-weight: -5
-is_admin: null
+_core:
+  default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
+id: content_editor
+label: 'Content editor'
+weight: -7
+is_admin: false
 permissions:
   - 'access administration pages'
-  - 'access any webform configuration'
   - 'access content overview'
-  - 'access files overview'
+  - 'access contextual links'
   - 'access fontawesome additional settings'
   - 'access media overview'
-  - 'access own webform configuration'
-  - 'access site reports'
-  - 'access site settings overview'
-  - 'access taxonomy overview'
   - 'access toolbar'
-  - 'access webform help'
-  - 'access webform overview'
-  - 'access webform submission user'
-  - 'add site setting entities'
   - 'add sitewide alert entities'
-  - 'administer audience vocabulary terms'
-  - 'administer category vocabulary terms'
-  - 'administer event_type vocabulary terms'
-  - 'administer experience vocabulary terms'
-  - 'administer faq_category vocabulary terms'
   - 'administer main menu items'
-  - 'administer menu'
-  - 'administer news_type vocabulary terms'
-  - 'administer nodes'
-  - 'administer position vocabulary terms'
   - 'administer redirects'
-  - 'administer series vocabulary terms'
-  - 'administer sitewide alert'
-  - 'administer sitewide alert entities'
-  - 'administer tags vocabulary terms'
-  - 'administer webform'
-  - 'administer webform element access'
-  - 'administer webform submission'
-  - 'bypass node access'
   - 'bypass vapn'
-  - 'clone blog content'
-  - 'clone event content'
-  - 'clone faq content'
-  - 'clone landing_page content'
-  - 'clone news_article content'
-  - 'clone page content'
-  - 'clone person content'
   - 'create blog content'
   - 'create document media'
   - 'create event content'
@@ -112,19 +76,17 @@ permissions:
   - 'create page content'
   - 'create person content'
   - 'create publication content'
+  - 'create remote_audio media'
   - 'create remote_video media'
   - 'create terms in audience'
   - 'create terms in category'
   - 'create terms in event_type'
   - 'create terms in experience'
-  - 'create terms in faq_category'
   - 'create terms in news_type'
   - 'create terms in position'
   - 'create terms in series'
   - 'create terms in tags'
   - 'create url aliases'
-  - 'create webform'
-  - 'delete all revisions'
   - 'delete all sitewide alert revisions'
   - 'delete any blog content'
   - 'delete any document media'
@@ -137,9 +99,8 @@ permissions:
   - 'delete any page content'
   - 'delete any person content'
   - 'delete any publication content'
+  - 'delete any remote_audio media'
   - 'delete any remote_video media'
-  - 'delete any webform'
-  - 'delete any webform submission'
   - 'delete blog revisions'
   - 'delete event revisions'
   - 'delete faq revisions'
@@ -158,19 +119,16 @@ permissions:
   - 'delete own page content'
   - 'delete own person content'
   - 'delete own publication content'
+  - 'delete own remote_audio media'
   - 'delete own remote_video media'
-  - 'delete own webform'
-  - 'delete own webform submission'
   - 'delete page revisions'
   - 'delete person revisions'
   - 'delete publication revisions'
-  - 'delete site setting entities'
   - 'delete sitewide alert entities'
   - 'delete terms in audience'
   - 'delete terms in category'
   - 'delete terms in event_type'
   - 'delete terms in experience'
-  - 'delete terms in faq_category'
   - 'delete terms in news_type'
   - 'delete terms in position'
   - 'delete terms in series'
@@ -186,9 +144,8 @@ permissions:
   - 'edit any page content'
   - 'edit any person content'
   - 'edit any publication content'
+  - 'edit any remote_audio media'
   - 'edit any remote_video media'
-  - 'edit any webform'
-  - 'edit any webform submission'
   - 'edit behavior plugin settings'
   - 'edit own blog content'
   - 'edit own document media'
@@ -201,44 +158,22 @@ permissions:
   - 'edit own page content'
   - 'edit own person content'
   - 'edit own publication content'
+  - 'edit own remote_audio media'
   - 'edit own remote_video media'
-  - 'edit own webform'
-  - 'edit own webform submission'
-  - 'edit site setting entities'
   - 'edit sitewide alert entities'
   - 'edit terms in audience'
   - 'edit terms in category'
   - 'edit terms in event_type'
   - 'edit terms in experience'
-  - 'edit terms in faq_category'
   - 'edit terms in news_type'
   - 'edit terms in position'
   - 'edit terms in series'
   - 'edit terms in tags'
-  - 'edit webform assets'
-  - 'edit webform source'
-  - 'edit webform twig'
-  - 'edit webform variants'
-  - 'export block_content content'
-  - 'export feeds_feed content'
-  - 'export media content'
-  - 'export menu_link_content content'
-  - 'export node content'
-  - 'export redirect content'
-  - 'export shortcut content'
-  - 'export single content'
-  - 'export site_setting_entity content'
-  - 'export sitewide_alert content'
-  - 'export taxonomy_term content'
-  - 'export user content'
-  - 'export webform_submission content'
-  - 'import single content'
   - 'moderated content bulk archive'
   - 'moderated content bulk publish'
   - 'moderated content bulk unpublish'
   - 'rabbit hole bypass media'
   - 'rabbit hole bypass node'
-  - 'revert all revisions'
   - 'revert all sitewide alert revisions'
   - 'revert blog revisions'
   - 'revert event revisions'
@@ -264,7 +199,6 @@ permissions:
   - 'view all revisions'
   - 'view all sitewide alert revisions'
   - 'view any unpublished content'
-  - 'view any webform submission'
   - 'view blog revisions'
   - 'view event revisions'
   - 'view faq revisions'
@@ -274,11 +208,9 @@ permissions:
   - 'view news_article revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
-  - 'view own webform submission'
   - 'view page revisions'
   - 'view person revisions'
   - 'view publication revisions'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
-  - 'view unpublished site setting entities'
   - 'view unpublished sitewide alert entities'

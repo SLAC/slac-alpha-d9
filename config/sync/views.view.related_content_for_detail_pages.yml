@@ -10,7 +10,7 @@ dependencies:
     - node
     - user
 id: related_content_for_detail_pages
-label: related_content_for_detail_pages
+label: 'Related Content for Detail Pages'
 module: views
 description: 'Content related to node via Tags'
 tag: ''
