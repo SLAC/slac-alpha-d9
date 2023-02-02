@@ -514,7 +514,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: 'Search [site:name] Blogs'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] Blogs'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -526,11 +526,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search blogs'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -712,7 +716,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: 'Search [site:name] Blogs'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] Blogs'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -724,11 +728,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search blogs'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -944,7 +952,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Search Events'
-            description: 'Search  [site:name] Events'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] Events'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -956,11 +964,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search events'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -1186,7 +1198,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Search Events'
-            description: 'Search [site:name] Events'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] Events'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -1198,11 +1210,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search events'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -1464,7 +1480,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: 'Search [site:name] Past Events'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] Past Events'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -1476,11 +1492,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search events'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -1710,7 +1730,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: 'Search [site:name] Past Events'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] Past Events'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -1722,11 +1742,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search events'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -2340,7 +2364,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: 'Search [site:name] News'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] News'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -2352,11 +2376,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search news'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -2538,7 +2566,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: 'Search [site:name] News'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] News'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -2550,11 +2578,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search news'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -2758,7 +2790,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: 'Search [site:name] People'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] People'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -2770,11 +2802,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search people'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -2942,7 +2978,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: 'Search [site:name] People'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] People'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -2954,11 +2990,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search people'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -3174,7 +3214,7 @@ display:
           expose:
             operator_id: search_api_fulltext_op
             label: 'Fulltext search'
-            description: 'Search [site:name] Publications'
+            description: 'Search [site_settings:organization_details--organization_details--field_organization_name] Publications'
             use_operator: false
             operator: search_api_fulltext_op
             operator_limit_selection: false
@@ -3186,11 +3226,15 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
+              stanford_faculty: '0'
+              stanford_staff: '0'
+              stanford_student: '0'
             expose_fields: false
             placeholder: 'Search publications'
             searched_fields_id: search_api_fulltext_searched_fields
