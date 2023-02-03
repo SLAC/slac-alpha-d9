@@ -8,7 +8,6 @@ dependencies:
     - filter.format.table
     - media.type.document
     - media.type.image
-    - media.type.remote_audio
     - media.type.remote_video
     - node.type.blog
     - node.type.event
@@ -29,6 +28,7 @@ dependencies:
     - node
     - paragraphs
     - path
+    - quick_node_clone
     - rabbit_hole
     - sitewide_alert
     - system
@@ -47,6 +47,13 @@ permissions:
   - 'access toolbar'
   - 'administer main menu items'
   - 'bypass vapn'
+  - 'clone blog content'
+  - 'clone event content'
+  - 'clone faq content'
+  - 'clone landing_page content'
+  - 'clone news_article content'
+  - 'clone page content'
+  - 'clone person content'
   - 'create blog content'
   - 'create document media'
   - 'create event content'
@@ -58,7 +65,6 @@ permissions:
   - 'create page content'
   - 'create person content'
   - 'create publication content'
-  - 'create remote_audio media'
   - 'create remote_video media'
   - 'create url aliases'
   - 'delete media'
@@ -73,7 +79,6 @@ permissions:
   - 'delete own page content'
   - 'delete own person content'
   - 'delete own publication content'
-  - 'delete own remote_audio media'
   - 'delete own remote_video media'
   - 'edit behavior plugin settings'
   - 'edit own blog content'
@@ -87,7 +92,6 @@ permissions:
   - 'edit own page content'
   - 'edit own person content'
   - 'edit own publication content'
-  - 'edit own remote_audio media'
   - 'edit own remote_video media'
   - 'rabbit hole bypass media'
   - 'rabbit hole bypass node'

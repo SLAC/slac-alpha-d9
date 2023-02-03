@@ -89,6 +89,7 @@ permissions:
   - 'access files overview'
   - 'access fontawesome additional settings'
   - 'access media overview'
+  - 'access news feeds'
   - 'access own webform configuration'
   - 'access site in maintenance mode'
   - 'access site reports'
