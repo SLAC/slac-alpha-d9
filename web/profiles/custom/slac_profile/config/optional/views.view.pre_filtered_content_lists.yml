@@ -296,7 +296,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       query:
@@ -521,7 +520,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       defaults:
@@ -746,7 +744,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       defaults:
@@ -1002,7 +999,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       defaults:

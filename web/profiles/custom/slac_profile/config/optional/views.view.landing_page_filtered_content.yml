@@ -351,7 +351,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       query:
@@ -577,7 +576,6 @@ display:
         - user.permissions
       tags:
         - 'config:facets.facet.category_taxonomy_term_name_blog_grid'
-        - 'config:facets.facet.series_taxonomy_term_name_blog_grid'
         - 'config:facets.facet.tags_taxonomy_term_name_blog_grid'
         - 'config:search_api.index.content'
   block_blog_filtered_teaser_list:
@@ -788,7 +786,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       defaults:
@@ -814,7 +811,6 @@ display:
         - user.permissions
       tags:
         - 'config:facets.facet.category_taxonomy_term_name_blog_list'
-        - 'config:facets.facet.series_taxonomy_term_name_blog_list'
         - 'config:facets.facet.tags_taxonomy_term_name_blog_list'
         - 'config:search_api.index.content'
   block_events_filtered_grid:
@@ -1315,7 +1311,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       defaults:
@@ -1847,7 +1842,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       defaults:
@@ -2638,7 +2632,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       defaults:
@@ -3050,7 +3043,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       defaults:
@@ -3286,7 +3278,6 @@ display:
               faq_category: default
               news_type: default
               position: default
-              series: default
               tags: default
               topics: default
       defaults:
