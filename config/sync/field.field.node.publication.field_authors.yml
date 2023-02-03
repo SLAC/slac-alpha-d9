@@ -12,19 +12,19 @@ field_name: field_authors
 entity_type: node
 bundle: publication
 label: Authors
-description: 'Authors entered in this field will be displayed on the publication''s detail page. Enter each author as a single entry.'
+description: 'Authors entered in this field will be displayed on the publication''s detail page and on the list of citations.  Enter each author as a single entry.  Enter an author''s organization in the Last Name field such Last Name/Organization.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   components:
-    title: true
+    title: false
     given: true
     middle: true
     family: true
-    generational: true
-    credentials: true
+    generational: false
+    credentials: false
   minimum_components:
     title: false
     given: true
@@ -36,14 +36,14 @@ settings:
     title: 31
     given: 63
     middle: 127
-    family: 63
+    family: 127
     generational: 15
     credentials: 255
   labels:
     title: Title
-    given: Given/First
-    middle: 'Middle name(s)'
-    family: Family/Last
+    given: First
+    middle: Middle
+    family: Last/Organization
     generational: Generational
     credentials: Credentials
   allow_family_or_given: false
@@ -91,7 +91,7 @@ settings:
   widget_layout: stacked
   component_layout: default
   show_component_required_marker: false
-  credentials_inline: true
+  credentials_inline: false
   override_format: default
   field_type:
     title: text

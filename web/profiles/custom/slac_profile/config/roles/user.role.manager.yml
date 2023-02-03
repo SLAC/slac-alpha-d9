@@ -25,11 +25,12 @@ dependencies:
     - taxonomy.vocabulary.faq_category
     - taxonomy.vocabulary.news_type
     - taxonomy.vocabulary.position
-    - taxonomy.vocabulary.series
     - taxonomy.vocabulary.tags
     - workflows.workflow.content
   module:
+    - aggregator
     - content_moderation
+    - contextual
     - file
     - filter
     - fontawesome
@@ -42,6 +43,7 @@ dependencies:
     - quick_node_clone
     - rabbit_hole
     - redirect
+    - shortcut
     - single_content_sync
     - site_settings
     - sitewide_alert
@@ -49,6 +51,7 @@ dependencies:
     - taxonomy
     - toolbar
     - vapn
+    - view_modes_display
     - vppr
     - webform
     - workbench_access
@@ -59,11 +62,15 @@ is_admin: null
 permissions:
   - 'access administration pages'
   - 'access any webform configuration'
+  - 'access content'
   - 'access content overview'
+  - 'access contextual links'
   - 'access files overview'
   - 'access fontawesome additional settings'
   - 'access media overview'
+  - 'access news feeds'
   - 'access own webform configuration'
+  - 'access shortcuts'
   - 'access site reports'
   - 'access site settings overview'
   - 'access taxonomy overview'
@@ -78,15 +85,18 @@ permissions:
   - 'administer event_type vocabulary terms'
   - 'administer experience vocabulary terms'
   - 'administer faq_category vocabulary terms'
+  - 'administer footer menu items'
+  - 'administer footer-contact menu items'
+  - 'administer footer-utility menu items'
   - 'administer main menu items'
   - 'administer menu'
   - 'administer news_type vocabulary terms'
   - 'administer nodes'
   - 'administer position vocabulary terms'
+  - 'administer redirect settings'
   - 'administer redirects'
-  - 'administer series vocabulary terms'
-  - 'administer sitewide alert'
   - 'administer sitewide alert entities'
+  - 'administer social-links menu items'
   - 'administer tags vocabulary terms'
   - 'administer webform'
   - 'administer webform element access'
@@ -96,10 +106,12 @@ permissions:
   - 'clone blog content'
   - 'clone event content'
   - 'clone faq content'
+  - 'clone homepage content'
   - 'clone landing_page content'
   - 'clone news_article content'
   - 'clone page content'
   - 'clone person content'
+  - 'clone publication content'
   - 'create blog content'
   - 'create document media'
   - 'create event content'
@@ -120,7 +132,6 @@ permissions:
   - 'create terms in faq_category'
   - 'create terms in news_type'
   - 'create terms in position'
-  - 'create terms in series'
   - 'create terms in tags'
   - 'create url aliases'
   - 'create webform'
@@ -130,6 +141,7 @@ permissions:
   - 'delete any document media'
   - 'delete any event content'
   - 'delete any faq content'
+  - 'delete any homepage content'
   - 'delete any image media'
   - 'delete any landing_page content'
   - 'delete any media'
@@ -173,7 +185,6 @@ permissions:
   - 'delete terms in faq_category'
   - 'delete terms in news_type'
   - 'delete terms in position'
-  - 'delete terms in series'
   - 'delete terms in tags'
   - 'edit any blog content'
   - 'edit any document media'
@@ -213,7 +224,6 @@ permissions:
   - 'edit terms in faq_category'
   - 'edit terms in news_type'
   - 'edit terms in position'
-  - 'edit terms in series'
   - 'edit terms in tags'
   - 'edit webform assets'
   - 'edit webform source'
@@ -222,20 +232,15 @@ permissions:
   - 'export block_content content'
   - 'export feeds_feed content'
   - 'export media content'
-  - 'export menu_link_content content'
   - 'export node content'
-  - 'export redirect content'
-  - 'export shortcut content'
-  - 'export single content'
   - 'export site_setting_entity content'
   - 'export sitewide_alert content'
-  - 'export taxonomy_term content'
-  - 'export user content'
   - 'export webform_submission content'
   - 'import single content'
   - 'moderated content bulk archive'
   - 'moderated content bulk publish'
   - 'moderated content bulk unpublish'
+  - 'preview view modes'
   - 'rabbit hole bypass media'
   - 'rabbit hole bypass node'
   - 'revert all revisions'
@@ -271,6 +276,7 @@ permissions:
   - 'view homepage revisions'
   - 'view landing_page revisions'
   - 'view latest version'
+  - 'view media'
   - 'view news_article revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
@@ -278,6 +284,8 @@ permissions:
   - 'view page revisions'
   - 'view person revisions'
   - 'view publication revisions'
+  - 'view published site setting entities'
+  - 'view published sitewide alert entities'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
   - 'view unpublished site setting entities'

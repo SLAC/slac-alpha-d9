@@ -20,20 +20,25 @@ dependencies:
     - node.type.publication
     - workflows.workflow.content
   module:
+    - aggregator
     - content_moderation
+    - contextual
+    - file
     - filter
     - fontawesome
     - media
-    - menu_admin_per_menu
     - node
     - paragraphs
     - path
     - quick_node_clone
     - rabbit_hole
+    - shortcut
+    - site_settings
     - sitewide_alert
     - system
     - toolbar
     - vapn
+    - view_modes_display
     - workbench_access
 id: author
 label: 'Content author'
@@ -41,23 +46,30 @@ weight: -8
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access content'
   - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
   - 'access fontawesome additional settings'
   - 'access media overview'
+  - 'access news feeds'
+  - 'access shortcuts'
   - 'access toolbar'
-  - 'administer main menu items'
   - 'bypass vapn'
   - 'clone blog content'
   - 'clone event content'
   - 'clone faq content'
+  - 'clone homepage content'
   - 'clone landing_page content'
   - 'clone news_article content'
   - 'clone page content'
   - 'clone person content'
+  - 'clone publication content'
   - 'create blog content'
   - 'create document media'
   - 'create event content'
   - 'create faq content'
+  - 'create homepage content'
   - 'create image media'
   - 'create landing_page content'
   - 'create media'
@@ -67,7 +79,13 @@ permissions:
   - 'create publication content'
   - 'create remote_video media'
   - 'create url aliases'
+  - 'delete blog revisions'
+  - 'delete event revisions'
+  - 'delete faq revisions'
+  - 'delete homepage revisions'
+  - 'delete landing_page revisions'
   - 'delete media'
+  - 'delete news_article revisions'
   - 'delete own blog content'
   - 'delete own document media'
   - 'delete own event content'
@@ -80,6 +98,9 @@ permissions:
   - 'delete own person content'
   - 'delete own publication content'
   - 'delete own remote_video media'
+  - 'delete page revisions'
+  - 'delete person revisions'
+  - 'delete publication revisions'
   - 'edit behavior plugin settings'
   - 'edit own blog content'
   - 'edit own document media'
@@ -93,8 +114,18 @@ permissions:
   - 'edit own person content'
   - 'edit own publication content'
   - 'edit own remote_video media'
+  - 'preview view modes'
   - 'rabbit hole bypass media'
   - 'rabbit hole bypass node'
+  - 'revert blog revisions'
+  - 'revert event revisions'
+  - 'revert faq revisions'
+  - 'revert homepage revisions'
+  - 'revert landing_page revisions'
+  - 'revert news_article revisions'
+  - 'revert page revisions'
+  - 'revert person revisions'
+  - 'revert publication revisions'
   - 'update media'
   - 'use content transition create_new_draft'
   - 'use text format basic_html'
@@ -112,12 +143,14 @@ permissions:
   - 'view homepage revisions'
   - 'view landing_page revisions'
   - 'view latest version'
+  - 'view media'
   - 'view news_article revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'
   - 'view person revisions'
   - 'view publication revisions'
+  - 'view published site setting entities'
+  - 'view published sitewide alert entities'
   - 'view the administration theme'
   - 'view unpublished paragraphs'
-  - 'view unpublished sitewide alert entities'

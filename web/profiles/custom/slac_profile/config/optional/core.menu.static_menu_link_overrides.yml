@@ -5,3 +5,9 @@ definitions:
     weight: -45
     expanded: false
     enabled: false
+  redis__statistics_overview:
+    enabled: false
+    menu_name: admin
+    parent: system.admin_reports
+    expanded: false
+    weight: 0

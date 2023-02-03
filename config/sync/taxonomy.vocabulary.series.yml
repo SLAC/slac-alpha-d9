@@ -1,8 +1,0 @@
-uuid: a2fbb004-8adb-49de-8826-2ea94a06ca49
-langcode: en
-status: true
-dependencies: {  }
-name: Series
-vid: series
-description: 'Used in Blog only'
-weight: -1

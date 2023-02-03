@@ -10,5 +10,5 @@ locked: true
 delimiter: ', '
 and: text
 delimiter_precedes_last: never
-el_al_min: 3
-el_al_first: 1
+el_al_min: 6
+el_al_first: 6

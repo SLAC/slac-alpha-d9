@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: Category
+name: 'Blog Category'
 vid: category
 description: 'Used in Blog only'
 weight: -8

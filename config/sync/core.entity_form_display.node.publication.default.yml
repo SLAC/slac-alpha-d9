@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.publication.field_author_organization
     - field.field.node.publication.field_authors
     - field.field.node.publication.field_date
     - field.field.node.publication.field_dissertation_type
@@ -125,14 +124,6 @@ content:
     weight: 3
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_author_organization:
-    type: string_textfield
-    weight: 22
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_authors:
     type: name_default
