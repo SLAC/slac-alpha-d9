@@ -35,7 +35,6 @@ dependencies:
   - easy_breadcrumb:easy_breadcrumb
   - drupal:editor
   - encrypt:encrypt
-  - entity_clone:entity_clone
   - entity_reference_revisions:entity_reference_revisions
   - facets:facets
   - drupal:field
@@ -80,6 +79,7 @@ dependencies:
   - drupal:page_cache
   - drupal:path
   - drupal:path_alias
+  - quick_node_clone:quick_node_clone
   - rabbit_hole:rabbit_hole
   - readonly_field_widget:readonly_field_widget
   - real_aes:real_aes

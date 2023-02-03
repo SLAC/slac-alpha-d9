@@ -34,7 +34,6 @@ dependencies:
     - field.storage.node.field_position
     - field.storage.node.field_date
     - field.storage.node.field_publication_type
-    - field.storage.node.field_series
     - field.storage.node.field_text_title_short
     - field.storage.node.field_publication_slac_type
     - field.storage.node.field_long_text
@@ -528,16 +527,6 @@ field_settings:
       type: first
       fields:
         - 'entity:node/status'
-  series:
-    label: 'Series » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_series:entity:name'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_series
-      module:
-        - taxonomy
   sort_date:
     label: 'Sort date'
     property_path: aggregated_field
@@ -690,7 +679,6 @@ processor_settings:
       - processed_7
       - processed_8
       - processed_9
-      - series
       - tags
       - tags_full
       - title
@@ -734,7 +722,6 @@ processor_settings:
       - processed_19
       - processed_4
       - processed_6
-      - series
       - tags_full
       - title
       - type
@@ -781,7 +768,6 @@ processor_settings:
       - processed_7
       - processed_8
       - processed_9
-      - series
       - tags_full
       - title
       - type_full
@@ -828,7 +814,6 @@ processor_settings:
       - processed_7
       - processed_8
       - processed_9
-      - series
       - tags_full
       - title
       - type_full
@@ -885,7 +870,6 @@ processor_settings:
       - processed_7
       - processed_8
       - processed_9
-      - series
       - tags
       - tags_full
       - title

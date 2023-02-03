@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.publication.field_author_organization
     - field.field.node.publication.field_authors
     - field.field.node.publication.field_date
     - field.field.node.publication.field_dissertation_type
@@ -39,14 +38,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
-    region: content
-  field_author_organization:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 5
     region: content
   field_authors:
     type: name_default

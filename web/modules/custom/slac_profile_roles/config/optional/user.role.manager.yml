@@ -1,4 +1,3 @@
-uuid: 50a1b896-dd57-403b-8a5b-185bf593079e
 langcode: en
 status: true
 dependencies:
@@ -9,7 +8,6 @@ dependencies:
     - filter.format.table
     - media.type.document
     - media.type.image
-    - media.type.remote_audio
     - media.type.remote_video
     - node.type.blog
     - node.type.event
@@ -24,6 +22,7 @@ dependencies:
     - taxonomy.vocabulary.category
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.experience
+    - taxonomy.vocabulary.faq_category
     - taxonomy.vocabulary.news_type
     - taxonomy.vocabulary.position
     - taxonomy.vocabulary.series
@@ -40,6 +39,7 @@ dependencies:
     - node
     - paragraphs
     - path
+    - quick_node_clone
     - rabbit_hole
     - redirect
     - single_content_sync
@@ -93,6 +93,13 @@ permissions:
   - 'administer webform submission'
   - 'bypass node access'
   - 'bypass vapn'
+  - 'clone blog content'
+  - 'clone event content'
+  - 'clone faq content'
+  - 'clone landing_page content'
+  - 'clone news_article content'
+  - 'clone page content'
+  - 'clone person content'
   - 'create blog content'
   - 'create document media'
   - 'create event content'
@@ -105,12 +112,12 @@ permissions:
   - 'create page content'
   - 'create person content'
   - 'create publication content'
-  - 'create remote_audio media'
   - 'create remote_video media'
   - 'create terms in audience'
   - 'create terms in category'
   - 'create terms in event_type'
   - 'create terms in experience'
+  - 'create terms in faq_category'
   - 'create terms in news_type'
   - 'create terms in position'
   - 'create terms in series'
@@ -130,7 +137,6 @@ permissions:
   - 'delete any page content'
   - 'delete any person content'
   - 'delete any publication content'
-  - 'delete any remote_audio media'
   - 'delete any remote_video media'
   - 'delete any webform'
   - 'delete any webform submission'
@@ -152,7 +158,6 @@ permissions:
   - 'delete own page content'
   - 'delete own person content'
   - 'delete own publication content'
-  - 'delete own remote_audio media'
   - 'delete own remote_video media'
   - 'delete own webform'
   - 'delete own webform submission'
@@ -165,6 +170,7 @@ permissions:
   - 'delete terms in category'
   - 'delete terms in event_type'
   - 'delete terms in experience'
+  - 'delete terms in faq_category'
   - 'delete terms in news_type'
   - 'delete terms in position'
   - 'delete terms in series'
@@ -180,7 +186,6 @@ permissions:
   - 'edit any page content'
   - 'edit any person content'
   - 'edit any publication content'
-  - 'edit any remote_audio media'
   - 'edit any remote_video media'
   - 'edit any webform'
   - 'edit any webform submission'
@@ -196,7 +201,6 @@ permissions:
   - 'edit own page content'
   - 'edit own person content'
   - 'edit own publication content'
-  - 'edit own remote_audio media'
   - 'edit own remote_video media'
   - 'edit own webform'
   - 'edit own webform submission'
@@ -206,6 +210,7 @@ permissions:
   - 'edit terms in category'
   - 'edit terms in event_type'
   - 'edit terms in experience'
+  - 'edit terms in faq_category'
   - 'edit terms in news_type'
   - 'edit terms in position'
   - 'edit terms in series'

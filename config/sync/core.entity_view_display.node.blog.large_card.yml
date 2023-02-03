@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.blog.field_link
     - field.field.node.blog.field_paragraphs
     - field.field.node.blog.field_review_date
-    - field.field.node.blog.field_series
     - field.field.node.blog.field_tags
     - field.field.node.blog.field_teaser
     - field.field.node.blog.field_teaser_image
@@ -60,14 +59,6 @@ content:
       summary_handler: full
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_series:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 6
     region: content
   field_teaser:
     type: trimmed_first_wysiwyg_paragraph

@@ -192,7 +192,7 @@ content:
             event_title: ''
             location: ''
             description: '[node:field_body:value]'
-            max_desc: '60'
+            max_desc: ''
             target: ''
             past_events: 0
         augmenter_settings:

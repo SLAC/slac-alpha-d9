@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.blog.field_link
     - field.field.node.blog.field_paragraphs
     - field.field.node.blog.field_review_date
-    - field.field.node.blog.field_series
     - field.field.node.blog.field_tags
     - field.field.node.blog.field_teaser
     - field.field.node.blog.field_teaser_image
@@ -111,7 +110,6 @@ content:
 hidden:
   field_editorial_group: true
   field_review_date: true
-  field_series: true
   field_teaser: true
   field_teaser_image: true
   search_api_excerpt: true

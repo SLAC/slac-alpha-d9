@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.blog.field_link
     - field.field.node.blog.field_paragraphs
     - field.field.node.blog.field_review_date
-    - field.field.node.blog.field_series
     - field.field.node.blog.field_tags
     - field.field.node.blog.field_teaser
     - field.field.node.blog.field_teaser_image
@@ -214,17 +213,6 @@ content:
     weight: 13
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_series:
-    type: term_reference_tree
-    weight: 29
-    region: content
-    settings:
-      start_minimized: true
-      leaves_only: false
-      select_parents: false
-      cascading_selection: 0
-      max_depth: 0
     third_party_settings: {  }
   field_tags:
     type: term_reference_tree
