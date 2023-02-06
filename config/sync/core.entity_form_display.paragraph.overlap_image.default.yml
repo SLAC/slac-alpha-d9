@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.overlap_image.field_boolean
+    - field.field.paragraph.overlap_image.field_button_links
     - field.field.paragraph.overlap_image.field_caption
     - field.field.paragraph.overlap_image.field_image
     - field.field.paragraph.overlap_image.field_link
@@ -26,6 +27,14 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_button_links:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_caption:
     type: text_textarea
