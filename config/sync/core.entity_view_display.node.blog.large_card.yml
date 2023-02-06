@@ -31,6 +31,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_date:
     type: datetime_custom
     label: hidden
@@ -95,7 +103,6 @@ content:
     weight: 1
     region: content
 hidden:
-  field_category: true
   field_dek: true
   field_editorial_group: true
   field_hero_paragraph: true
