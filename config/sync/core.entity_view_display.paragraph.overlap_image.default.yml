@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.overlap_image.field_boolean
+    - field.field.paragraph.overlap_image.field_button_links
     - field.field.paragraph.overlap_image.field_caption
     - field.field.paragraph.overlap_image.field_image
     - field.field.paragraph.overlap_image.field_link
@@ -13,12 +14,28 @@ dependencies:
     - paragraphs.paragraphs_type.overlap_image
   module:
     - link
+    - slac_helper
     - text
 id: paragraph.overlap_image.default
 targetEntityType: paragraph
 bundle: overlap_image
 mode: default
 content:
+  field_button_links:
+    type: slac_helper_slac_button
+    label: hidden
+    settings:
+      trim_length: '80'
+      button_size: Standard
+      button_style: Secondary
+      button_icon: None
+      url_only: false
+      url_plain: false
+      rel: 0
+      target: 0
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_caption:
     type: text_default
     label: hidden
