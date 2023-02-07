@@ -190,8 +190,8 @@ content:
           addtocal:
             label: 'Add to Calendar'
             event_title: ''
-            location: ''
-            description: '[node:field_body:value]'
+            location: '[node:field_location_link:uri]'
+            description: "[node:field_body:value]\r\n\r\nLink to event page: [current-page:url]"
             max_desc: ''
             target: ''
             past_events: 0
