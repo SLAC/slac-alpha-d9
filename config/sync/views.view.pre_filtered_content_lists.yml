@@ -274,9 +274,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: card
               event: card
@@ -287,19 +284,6 @@ display:
               page: card
               person: card
               publication: card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       query:
         type: search_api_query
         options:
@@ -499,9 +483,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: list_card
               event: list_card
@@ -512,19 +493,6 @@ display:
               page: list_card
               person: list_card
               publication: list_card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       defaults:
         title: false
         style: false
@@ -724,9 +692,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: card
               event: card
@@ -737,19 +702,6 @@ display:
               page: card
               person: card
               publication: card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       defaults:
         title: false
         style: false
@@ -980,9 +932,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: card
               event: card
@@ -993,19 +942,6 @@ display:
               page: card
               person: card
               publication: card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       defaults:
         title: false
         style: false

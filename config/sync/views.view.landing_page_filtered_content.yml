@@ -329,9 +329,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: card
               event: card
@@ -342,19 +339,6 @@ display:
               page: card
               person: card
               publication: card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       query:
         type: search_api_query
         options:
@@ -578,7 +562,6 @@ display:
         - user.permissions
       tags:
         - 'config:facets.facet.category_taxonomy_term_name_blog_grid'
-        - 'config:facets.facet.series_taxonomy_term_name_blog_grid'
         - 'config:facets.facet.tags_taxonomy_term_name_blog_grid'
         - 'config:search_api.index.content'
   block_blog_filtered_teaser_list:
@@ -766,9 +749,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: teaser
               event: card
@@ -779,19 +759,6 @@ display:
               page: card
               person: card
               publication: card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       defaults:
         title: false
         style: false
@@ -815,7 +782,6 @@ display:
         - user.permissions
       tags:
         - 'config:facets.facet.category_taxonomy_term_name_blog_list'
-        - 'config:facets.facet.series_taxonomy_term_name_blog_list'
         - 'config:facets.facet.tags_taxonomy_term_name_blog_list'
         - 'config:search_api.index.content'
   block_events_filtered_grid:
@@ -1293,9 +1259,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: card
               event: teaser
@@ -1306,19 +1269,6 @@ display:
               page: card
               person: card
               publication: card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       defaults:
         style: false
         row: false
@@ -1825,9 +1775,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: card
               event: teaser
@@ -1838,19 +1785,6 @@ display:
               page: card
               person: card
               publication: card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       defaults:
         title: false
         style: false
@@ -2616,9 +2550,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: card
               event: card
@@ -2629,19 +2560,6 @@ display:
               page: card
               person: card
               publication: card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       defaults:
         title: false
         style: false
@@ -3028,9 +2946,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: card
               event: card
@@ -3041,19 +2956,6 @@ display:
               page: card
               person: teaser
               publication: card
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       defaults:
         title: false
         style: false
@@ -3264,9 +3166,6 @@ display:
         type: search_api
         options:
           view_modes:
-            'entity:media':
-              image: card
-              remote_video: card
             'entity:node':
               blog: card
               event: card
@@ -3277,19 +3176,6 @@ display:
               page: card
               person: card
               publication: teaser
-            'entity:taxonomy_term':
-              audience: default
-              cap_org_codes: default
-              category: default
-              editorial_section: default
-              event_type: default
-              experience: default
-              faq_category: default
-              news_type: default
-              position: default
-              series: default
-              tags: default
-              topics: default
       defaults:
         title: false
         style: false

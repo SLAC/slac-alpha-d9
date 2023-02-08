@@ -1,0 +1,23 @@
+uuid: 573d3d90-4d7e-48e4-aebc-0c33c40d0d03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_links
+    - paragraphs.paragraphs_type.overlap_image
+  module:
+    - link
+id: paragraph.overlap_image.field_button_links
+field_name: field_button_links
+entity_type: paragraph
+bundle: overlap_image
+label: 'Button Links'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
