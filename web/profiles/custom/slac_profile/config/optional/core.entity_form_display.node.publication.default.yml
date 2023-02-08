@@ -1,0 +1,572 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.publication.field_authors
+    - field.field.node.publication.field_date
+    - field.field.node.publication.field_dissertation_type
+    - field.field.node.publication.field_doi
+    - field.field.node.publication.field_edition
+    - field.field.node.publication.field_external_link
+    - field.field.node.publication.field_issue
+    - field.field.node.publication.field_other_citation
+    - field.field.node.publication.field_pages
+    - field.field.node.publication.field_paragraphs
+    - field.field.node.publication.field_publication_place
+    - field.field.node.publication.field_publication_slac_type
+    - field.field.node.publication.field_publication_type
+    - field.field.node.publication.field_publisher
+    - field.field.node.publication.field_report_number
+    - field.field.node.publication.field_subtitle
+    - field.field.node.publication.field_tags
+    - field.field.node.publication.field_volume
+    - node.type.publication
+    - workflows.workflow.content
+  module:
+    - conditional_fields
+    - content_moderation
+    - datetime
+    - field_group
+    - link
+    - maxlength
+    - name
+    - paragraphs
+    - path
+    - term_reference_tree
+    - text
+third_party_settings:
+  field_group:
+    group_page_content:
+      children:
+        - group_main_content
+        - group_publication_type_citation
+        - group_metadata
+      label: 'Page Content'
+      region: content
+      parent_name: ''
+      weight: 20
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_main_content:
+      children:
+        - field_paragraphs
+      label: 'Main Content'
+      region: content
+      parent_name: group_page_content
+      weight: 26
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_publication_type_citation:
+      children:
+        - field_authors
+        - field_author_organization
+        - field_date
+        - field_publisher
+        - field_external_link
+        - field_publication_type
+        - field_publication_slac_type
+        - field_subtitle
+        - field_other_citation
+        - field_report_number
+        - field_publication_place
+        - field_volume
+        - field_issue
+        - field_pages
+        - field_edition
+        - field_dissertation_type
+        - field_doi
+      label: 'Publication Type & Citation'
+      region: content
+      parent_name: group_page_content
+      weight: 27
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_metadata:
+      children:
+        - field_tags
+      label: Metadata
+      region: content
+      parent_name: group_page_content
+      weight: 28
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.publication.default
+targetEntityType: node
+bundle: publication
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_authors:
+    type: name_default
+    weight: 21
+    region: content
+    settings:
+      override_field_settings: false
+      labels:
+        title: Title
+        given: Given
+        middle: 'Middle name(s)'
+        family: Family
+        generational: Generational
+        credentials: Credentials
+      widget_layout: stacked
+      show_component_required_marker: false
+      credentials_inline: false
+      size:
+        title: 6
+        given: 20
+        middle: 20
+        family: 20
+        generational: 5
+        credentials: 35
+      title_display:
+        title: description
+        given: description
+        middle: description
+        family: description
+        generational: description
+        credentials: description
+    third_party_settings: {  }
+  field_date:
+    type: datetime_default
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_dissertation_type:
+    type: string_textfield
+    weight: 36
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        fba265ba-24d9-4fc2-bc42-068aa2940c0c:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_doi:
+    type: link_default
+    weight: 37
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings:
+      conditional_fields:
+        c8a0c660-bc0c-4fb3-9fbf-d380d77bb288:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: OR
+            values_set: 3
+            value: ''
+            values: "1\r\n2\r\n3"
+            value_form:
+              -
+                value: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_edition:
+    type: string_textfield
+    weight: 35
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        cde3d3f1-1739-425c-86ed-dca9eaf42293:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '1'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_external_link:
+    type: link_default
+    weight: 25
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_issue:
+    type: string_textfield
+    weight: 33
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        3d5a04eb-0aa1-4a21-857a-9b65742597b2:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+        9223c8bc-855e-4e56-882c-3a581ece916a:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_other_citation:
+    type: text_textarea
+    weight: 29
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        efa5cb71-e5f2-4c8c-9538-615f913fc908:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '5'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_pages:
+    type: string_textfield
+    weight: 34
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        069c0a79-e0f7-4b8d-88d0-d71a3c7ad6d9:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: OR
+            values_set: 3
+            value: ''
+            values: "1\r\n2\r\n"
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_paragraphs:
+    type: paragraphs
+    weight: 10
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_publication_place:
+    type: string_textfield
+    weight: 31
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        d427e8d4-5cdc-4be4-b31c-ad8eefa11c28:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '1'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_publication_slac_type:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings:
+      conditional_fields:
+        ff2f3f4f-05a6-4559-aa70-76644ea80e0f:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_publication_type:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_publisher:
+    type: string_textfield
+    weight: 24
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_report_number:
+    type: string_textfield
+    weight: 30
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        9c0bcd4a-cac3-4582-aec9-7d3111955170:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '4'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_subtitle:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        80179737-ecd0-4797-9e5f-cb288eda7a4c:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: OR
+            values_set: 3
+            value: ''
+            values: "1\r\n4\r\n5"
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_tags:
+    type: term_reference_tree
+    weight: 38
+    region: content
+    settings:
+      start_minimized: true
+      leaves_only: false
+      select_parents: false
+      cascading_selection: 0
+      max_depth: 0
+    third_party_settings: {  }
+  field_volume:
+    type: string_textfield
+    weight: 32
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        193c47c3-9589-454b-b0cb-5d1f6a6ffdbc:
+          entity_type: node
+          bundle: publication
+          dependee: field_publication_type
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  moderation_state:
+    type: moderation_state_default
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
