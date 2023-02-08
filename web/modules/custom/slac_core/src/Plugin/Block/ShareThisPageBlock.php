@@ -154,28 +154,28 @@ class ShareThisPageBlock extends BlockBase implements ContainerFactoryPluginInte
     // Get the page title
     $request = \Drupal::request();
     if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
-      $title = \Drupal::service('title_resolver')->getTitle($request, $route); 
+      $title = \Drupal::service('title_resolver')->getTitle($request, $route);
+
+      if (is_array($title) && !empty($title['#markup'])) {
+        $title = $title['#markup'];
+      }
+
+      $links['#email'] = [
+        'url' => 'mailto:' . '?subject=' . $title . '&body=' . Url::fromRoute('<current>', [], ['absolute' => 'true'])->toString(),
+        'title' => $this->t('Email'),
+        'icon_name' => 'email',
+      ];
+
+      $build = [
+        'links' => $links,
+      ];
+
+      if (isset($this->configuration['hero_type'])) {
+        $build['hero_type'] = Html::cleanCssIdentifier($this->configuration['hero_type']);
+      }
+
+      return $build;
     }
-
-    if (is_array($title) && !empty($title['#markup'])) {
-      $title = $title['#markup'];
-    }
-
-    $links['#email'] = [
-      'url' => 'mailto:' . '?subject=' . $title . '&body=' . Url::fromRoute('<current>', [], ['absolute' => 'true'])->toString(),
-      'title' => $this->t('Email'),
-      'icon_name' => 'email',
-    ];
-
-    $build = [
-      'links' => $links,
-    ];
-
-    if (isset($this->configuration['hero_type'])) {
-      $build['hero_type'] = Html::cleanCssIdentifier($this->configuration['hero_type']);
-    }
-
-    return $build;
   }
 
   /**
