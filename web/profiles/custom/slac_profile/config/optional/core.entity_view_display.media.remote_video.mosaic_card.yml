@@ -3,25 +3,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.mosaic_card
-    - field.field.media.remote_video.field_body
-    - field.field.media.remote_video.field_boolean
     - field.field.media.remote_video.field_caption
     - field.field.media.remote_video.field_credit
-    - field.field.media.remote_video.field_display_style
-    - field.field.media.remote_video.field_duration
-    - field.field.media.remote_video.field_landing_display
-    - field.field.media.remote_video.field_link
     - field.field.media.remote_video.field_long_text
     - field.field.media.remote_video.field_media_oembed_video
-    - field.field.media.remote_video.field_paragraphs
-    - field.field.media.remote_video.field_source_name
-    - field.field.media.remote_video.field_tags
-    - field.field.media.remote_video.field_teaser
     - field.field.media.remote_video.field_thumbnail
-    - field.field.media.remote_video.field_transcript
     - media.type.remote_video
   module:
-    - options
     - text
     - view_mode_select_by_token
 id: media.remote_video.mosaic_card
@@ -29,23 +17,6 @@ targetEntityType: media
 bundle: remote_video
 mode: mosaic_card
 content:
-  field_boolean:
-    type: boolean
-    label: hidden
-    settings:
-      format: boolean
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_display_style:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_long_text:
     type: text_default
     label: hidden
@@ -73,18 +44,9 @@ content:
     region: content
 hidden:
   created: true
-  field_body: true
   field_caption: true
   field_credit: true
-  field_duration: true
-  field_landing_display: true
-  field_link: true
   field_media_oembed_video: true
-  field_paragraphs: true
-  field_source_name: true
-  field_tags: true
-  field_teaser: true
-  field_transcript: true
   name: true
   search_api_excerpt: true
   uid: true

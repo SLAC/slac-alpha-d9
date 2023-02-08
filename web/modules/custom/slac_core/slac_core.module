@@ -142,20 +142,6 @@ function slac_core_views_query_alter(ViewExecutable $view, QueryPluginBase $quer
 }
 
 /**
- * Implements hook_media_view().
- */
-function slac_core_media_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
-  if ($build['#view_mode'] == 'full') {
-    if ($entity->field_boolean->first()->getValue()["value"] == 0) {
-      $roles = \Drupal::currentUser()->getRoles();
-      if (in_array('anonymous', $roles, TRUE)) {
-        throw new AccessDeniedHttpException();
-      }
-    }
-  }
-}
-
-/**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  */
 function slac_core_field_widget_paragraphs_form_alter(&$element, FormStateInterface $form_state, $context) {
