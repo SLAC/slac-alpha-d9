@@ -395,11 +395,12 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              author: '0'
               content_editor: '0'
               reviewer: '0'
-              administrator: '0'
-              author: '0'
               manager: '0'
+              developer: '0'
+              administrator: '0'
             expose_fields: false
             placeholder: 'Search term'
             searched_fields_id: search_api_fulltext_searched_fields
@@ -430,7 +431,6 @@ display:
           value:
             blog: blog
             event: event
-            faq: faq
             homepage: homepage
             landing_page: landing_page
             news_article: news_article
