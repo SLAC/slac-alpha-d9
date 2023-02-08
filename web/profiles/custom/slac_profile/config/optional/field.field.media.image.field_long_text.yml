@@ -16,7 +16,7 @@ field_name: field_long_text
 entity_type: media
 bundle: image
 label: 'Display name'
-description: '<strong>Note:</strong> Be sure to enter a display name if this media entity has a detail page, or will be displayed as a poster.'
+description: 'This name will be displayed when this image is displayed in a lightbox.'
 required: false
 translatable: true
 default_value: {  }
