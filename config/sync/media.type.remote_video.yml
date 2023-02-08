@@ -1,7 +1,12 @@
 uuid: 8cc6f1a6-f0f7-4517-91d4-23ca507b39b7
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: null
 id: remote_video
 label: 'Remote Video'
 description: ''
