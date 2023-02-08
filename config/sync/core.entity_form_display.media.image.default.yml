@@ -11,66 +11,9 @@ dependencies:
     - media.type.image
   module:
     - allowed_formats
-    - field_group
     - focal_point
     - path
     - text
-third_party_settings:
-  field_group:
-    group_page_content:
-      children:
-        - group_main_content
-        - group_metadata
-      label: 'Page Content'
-      region: content
-      parent_name: ''
-      weight: 2
-      format_type: tabs
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        direction: horizontal
-        width_breakpoint: 640
-    group_main_content:
-      children:
-        - field_media_image
-        - field_body
-        - field_caption
-        - field_credit
-        - field_link
-        - field_paragraphs
-      label: 'Main Content'
-      region: content
-      parent_name: group_page_content
-      weight: 19
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: open
-        description: ''
-        required_fields: true
-    group_metadata:
-      children:
-        - field_teaser
-        - field_display_style
-        - field_boolean
-        - field_landing_display
-        - field_tags
-      label: Metadata
-      region: content
-      parent_name: group_page_content
-      weight: 20
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -78,13 +21,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 13
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_caption:
     type: text_textarea
-    weight: 5
+    weight: 3
     region: content
     settings:
       rows: 5
@@ -95,7 +38,7 @@ content:
         hide_guidelines: '1'
   field_credit:
     type: text_textarea
-    weight: 6
+    weight: 4
     region: content
     settings:
       rows: 5
@@ -117,7 +60,7 @@ content:
         hide_guidelines: '1'
   field_media_image:
     type: image_focal_point
-    weight: 3
+    weight: 2
     region: content
     settings:
       progress_indicator: throbber
@@ -135,20 +78,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
