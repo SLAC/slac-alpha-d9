@@ -1,25 +1,24 @@
-uuid: edcaf61c-bbfb-4a77-8b4c-543fac2c93bb
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_long_text
-    - media.type.image
+    - media.type.remote_video
   module:
     - allowed_formats
     - text
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - restricted_html
-id: media.image.field_long_text
+      - plain_text
+id: media.remote_video.field_long_text
 field_name: field_long_text
 entity_type: media
-bundle: image
+bundle: remote_video
 label: 'Display name'
-description: 'This name will be displayed when this image is displayed in a lightbox.'
+description: 'This name will be displayed when this video is displayed in a lightbox.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
