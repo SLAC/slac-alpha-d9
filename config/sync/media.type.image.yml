@@ -1,7 +1,12 @@
 uuid: da224ca4-3cf8-44c2-9431-ab60ad17a7fc
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
 id: image
 label: Image
 description: ''
