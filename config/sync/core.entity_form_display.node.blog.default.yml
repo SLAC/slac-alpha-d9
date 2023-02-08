@@ -71,7 +71,6 @@ third_party_settings:
         - field_teaser
         - field_teaser_image
         - field_tags
-        - field_series
         - field_category
       label: Metadata
       region: content
