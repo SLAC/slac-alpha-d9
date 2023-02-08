@@ -5,47 +5,48 @@ dependencies:
     - field.storage.node.field_answer
     - field.storage.paragraph.field_body
     - field.storage.node.field_audience
-    - field.storage.node.field_text
     - field.storage.node.field_category
-    - field.storage.node.field_paragraphs
-    - field.storage.paragraph.field_block_content
-    - field.storage.paragraph.field_caption
-    - field.storage.paragraph.field_paragraphs_1
-    - field.storage.paragraph.field_paragraph
-    - field.storage.paragraph.field_paragraphs_3
-    - field.storage.paragraph.field_paragraphs_4
-    - field.storage.paragraph.field_paragraphs_2
-    - field.storage.paragraph.field_paragraph_2
-    - field.storage.paragraph.field_plain_long_text
-    - field.storage.paragraph.field_short_text
-    - field.storage.paragraph.field_tab_heading
-    - field.storage.paragraph.field_text
-    - field.storage.paragraph.field_title
-    - field.storage.node.field_dek
-    - field.storage.node.field_body
-    - field.storage.node.field_editorial_group
-    - field.storage.node.field_education
     - field.storage.node.field_smart_date
     - field.storage.node.field_type
     - field.storage.node.field_experience
+    - field.storage.node.field_paragraphs
+    - field.storage.paragraph.field_block_content
+    - field.storage.node.field_date
+    - field.storage.node.field_education
+    - field.storage.paragraph.field_paragraph
+    - field.storage.paragraph.field_paragraphs_1
+    - field.storage.paragraph.field_plain_long_text
+    - field.storage.node.field_publication_slac_type
+    - field.storage.node.field_publication_type
+    - field.storage.paragraph.field_short_text
+    - field.storage.node.field_subtitle
+    - field.storage.paragraph.field_tab_heading
+    - field.storage.node.field_text
+    - field.storage.paragraph.field_text
     - field.storage.node.field_text_title_full
+    - field.storage.node.field_text_title_short
+    - field.storage.paragraph.field_title
+    - field.storage.node.field_editorial_group
     - field.storage.node.field_organization
     - field.storage.node.field_position
-    - field.storage.node.field_date
-    - field.storage.node.field_publication_type
-    - field.storage.node.field_text_title_short
-    - field.storage.node.field_publication_slac_type
+    - field.storage.node.field_dek
     - field.storage.node.field_long_text
     - field.storage.node.field_name
-    - field.storage.node.field_subtitle
-    - field.storage.node.field_tags
     - field.storage.node.field_teaser
+    - field.storage.paragraph.field_caption
+    - field.storage.paragraph.field_paragraphs_3
+    - field.storage.node.field_body
+    - field.storage.paragraph.field_paragraphs_4
+    - field.storage.paragraph.field_paragraphs_2
+    - field.storage.paragraph.field_paragraph_2
+    - field.storage.node.field_tags
     - search_api.server.database
   module:
     - paragraphs
     - taxonomy
     - node
     - search_api
+    - search_api_exclude
 id: content
 name: Content
 description: 'Primary content index for site-wide search. '
@@ -625,8 +626,7 @@ processor_settings:
     excerpt: true
     excerpt_always: false
     excerpt_length: 256
-    exclude_fields:
-      - teaser
+    exclude_fields: {  }
     highlight: server
     highlight_partial: false
   html_filter:
@@ -726,6 +726,7 @@ processor_settings:
       - type
       - type_full
   language_with_fallback: {  }
+  node_exclude: {  }
   rendered_item: {  }
   stemmer:
     weights:
