@@ -22,7 +22,15 @@ dependencies:
   - drupal:config
   - config_filter:config_filter
   - config_ignore:config_ignore
+  - config_distro:config_distro
+  - config_distro_filter:config_distro_filter
+  - config_merge:config_merge
+  - config_normalizer:config_normalizer
   - config_pages:config_pages
+  - config_provider:config_provider
+  - config_snapshot:config_snapshot
+  - config_sync:config_sync
+  - config_update:config_update
   - drupal:content_moderation
   - drupal:contextual
   - crop:crop
@@ -90,6 +98,7 @@ dependencies:
   - rh_node:rh_node
   - search_api:search_api
   - search_api_db:search_api_db
+  - search_api_exclude:search_api_exclude
   - sendgrid_integration:sendgrid_integration
   - drupal:shortcut
   - simple_sitemap:simple_sitemap
@@ -141,6 +150,7 @@ install:
   - admin_toolbar_links_access_filter:admin_toolbar_links_access_filter
   - admin_toolbar_tools:admin_toolbar_tools
   - aggregator:aggregator
+  - animated_gif:animated_gif
   - eca:eca
   - eca_base:eca_base
   - eca_cm:eca_cm
@@ -151,7 +161,7 @@ install:
   - externalauth:externalauth
   - pantheon_advanced_page_cache:pantheon_advanced_page_cache
   - pantheon_domain_masking:pantheon_domain_masking
-  - simplesamlphp_auth:simplesamlphp_auth
+#  - simplesamlphp_auth:simplesamlphp_auth
   - single_content_sync:single_content_sync
   - term_reference_tree:term_reference_tree
 themes:
