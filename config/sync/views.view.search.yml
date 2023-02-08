@@ -336,7 +336,7 @@ display:
         options:
           perm: 'access content'
       cache:
-        type: search_api_tag
+        type: none
         options: {  }
       empty:
         area:
