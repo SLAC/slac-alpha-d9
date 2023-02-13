@@ -90,6 +90,7 @@ permissions:
   - 'administer footer-utility menu items'
   - 'administer main menu items'
   - 'administer menu'
+  - 'administer news feeds'
   - 'administer news_type vocabulary terms'
   - 'administer nodes'
   - 'administer position vocabulary terms'
