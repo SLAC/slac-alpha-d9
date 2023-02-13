@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.field_editorial_group
     - taxonomy.vocabulary.editorial_section
 id: section
 plural_label: Sections
@@ -11,8 +10,4 @@ scheme: taxonomy
 scheme_settings:
   vocabularies:
     - editorial_section
-  fields:
-    -
-      entity_type: node
-      bundle: page
-      field: field_editorial_group
+  fields: {  }
